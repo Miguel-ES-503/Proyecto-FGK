@@ -6,7 +6,7 @@
   //Manda  allamar plantillas
   require_once 'templates/header.php';
 
-  require_once 'templates/MenuVertical.php';
+  //require_once 'templates/MenuVertical.php';
 
   require_once 'templates/MenuHorizontal.php';
 
@@ -17,7 +17,7 @@
 <!--div principal-->
 <div class="container-fluid text-center"><br>
   <!--Navbar-->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="background-color: #2D2D2E">
 
     <!-- Navbar brand -->
     <a class="navbar-brand" href="#">Creación de empresa</a>

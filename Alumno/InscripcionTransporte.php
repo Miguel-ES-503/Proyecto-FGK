@@ -40,7 +40,7 @@
       <br><br><br>
       <table class="table table-responsive-lg float-left">
 
-        <thead class="thead-dark">
+        <thead  style="background-color: #2D2D2E; color: white;">
           <tr>
             <th colspan="2" align="justify">Solicitud de Transporte</th>
             <th> <a href="IndicacionesTrans.php?id=<?php echo $alumno; ?>" class="btn btn-info"><img src="../img/add.png" width="25px" height="30px"></a><br>Crear Solicitud</th>

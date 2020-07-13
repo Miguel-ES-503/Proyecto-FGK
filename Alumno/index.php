@@ -4,7 +4,7 @@
 
 ?>
 
-<title>Maycool Padilla</title>
+<title>InicioAlumno</title>
 
 <?php
 
@@ -40,100 +40,6 @@
 ?>
 
 
-<style type="text/css">
-
-#novedades{
-  float: left;
-}
-
-#avisos{
- 
-display: inline-block;
- 
-
-}
-
-#enlaces{
-
- float: right;
-  
-
-
- 
-
-
- 
-}
-
-.btn-leer{
-  font-family: sans-serif;
-  font-size: 15px;
-  color: #fff;
-
-
-  width: 60%;
-  height: 30px;
-  border-radius: 25px;
-  background: #BE0032;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-	#imginicio
-	{
-		height: 46em;
-
-		background: url(../img/Estudiante.png);
-		background-repeat: no-repeat;
-
-		background-size: 100% 100%;
-	}
-
-
-@media only screen and (max-width: 767px) {
-
-	#imginicio {
-
-		height: 38em;
-        margin-right: 15px;
-		background: url(../img/EstudianteMovil.png);
-		background-repeat: no-repeat;
-
-		background-size: 100% 100%;
-
-	}
-
-
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-
-	#imginicio {
-
-		height: 30em;
-        margin-right: 15px;
-		background: url(../img/SuperUserTable.png);
-		background-repeat: no-repeat;
-
-		background-size: 100% 100%;
-
-	}
-
-
-}
-
-</style>
   <div class="container-fluid text-center" style="background-color: white; ">
 
     <div class="text-center"">
@@ -183,13 +89,13 @@ display: inline-block;
     <img class="img-fluid" src="../img/logonegro.png" width="150px">
     </div>
         <br>
-    <center><button class="btn-leer" style="margin-top: 8px; ">Leer</button></center>
+    <center><button class="btn-leer" >Leer</button></center>
     </div>
     <div id="avisos">
     <h3  style="font-weight: bold;">Avisos<h3>
     <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
     <div style="float: right; " ><p style="text-align: left;">Boletin:<br>
-    Miguel </p></div>
+    </p></div>
     </div>
     <div id="enlaces">
     <table  >

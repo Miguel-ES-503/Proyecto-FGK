@@ -32,42 +32,7 @@
   $stmt1->execute();
 
 ?>
-<style>
-.title{
-background-color: #c7c7c7;
-margin-top: -1px;
-color: black;
-height: 70px;
-margin-left: -1.5%;
 
-height: 55px;
-width: 110%;
-
-
-}
-.title2,.icon{
-	float: left;
-}
-.main-title
-{
-text-align: left;
-font-size: 35px;
-margin-left: 30px;
-margin-top: 1px;
-font-weight: bold;
-letter-spacing: 3px;
-}
-.icon 
-{
-
-	width: 30px;
-	margin-top: 12px;
-  margin-left: 20px;
-  margin-right: 20px;
-	transform: rotate(180deg);
-}
-
-</style>
 
 <div class="container-fluid text-center">
 <div class="title">
