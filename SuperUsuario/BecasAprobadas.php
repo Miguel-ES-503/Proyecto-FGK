@@ -1,5 +1,6 @@
 <?php
-include 'Modularidad/CabeceraInicio.php';
+//include 'Modularidad/CabeceraInicio.php';
+error_reporting(0);
 ?>
 <title>Lista de becas por ciclos</title>
 

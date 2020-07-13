@@ -1,6 +1,8 @@
 <?php
 //Modularidad para inicializar el Head y <!DOCTYPE html>
-include 'Modularidad/CabeceraInicio.php';
+//Cambiar Despues
+//include 'Modularidad/CabeceraInicio.php';
+error_reporting(0);
 ?>
 <title>Inicio Super Usuario</title>
 

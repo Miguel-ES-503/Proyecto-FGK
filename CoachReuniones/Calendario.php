@@ -39,8 +39,10 @@ $eventsFin = $stmt2->fetchAll();
 
 
 ?>
-    <link rel="stylesheet" type="text/css" href="css/Encabezado.css">
+<head>
+  <link rel="stylesheet" type="text/css" href="css/Encabezado.css">
     <link rel="stylesheet" type="text/css" href="css/Calendario.css">
+</head>
 <div class="title">
 
 <a href="index.php" ><img src="../img/back.png" class="icon"></a>

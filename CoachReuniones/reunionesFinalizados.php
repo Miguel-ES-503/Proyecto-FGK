@@ -13,36 +13,20 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
 <br>
-<!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center">
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Fase Reuniones</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-				<a class="nav-link active" href="#">Reuniones</a>
-			</li>
-		</li>
-		 
-	</ul>
-	<!-- Links -->   
+<link rel="stylesheet" type="text/css" href="css/Reuniones-Finalizadas.css">
+<div class="title">
+    <img src="../img/back.png" class="icon">
+    <h2 class="main-title" >Reuniones</h2>
+    <div class="title2">
+        <br>
+    <div class="title2-text">
+    <a href="LIS-Reunion.php" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Ver Reuniones</p></a>
+    
 </div>
-<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
+</div>
+</div>
+<div class="container-fluid text-center">
 
-<!--/.Navbar-->
 <br>
 
 

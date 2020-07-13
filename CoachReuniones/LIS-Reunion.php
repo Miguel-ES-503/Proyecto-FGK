@@ -14,31 +14,19 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <br>
 <!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center">
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Reuniones Activos</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-		<li class="nav-item">
-			<a class="nav-link active" href="#">Reuniones</a>
-		</li> 
-	</ul>
-	<!-- Links -->   
+<link rel="stylesheet" type="text/css" href="css/Reuniones-Finalizadas.css">
+<div class="title">
+    <img src="../img/back.png" class="icon">
+    <h2 class="main-title" >Reuniones</h2>
+    <div class="title2">
+        <br>
+    <div class="title2-text">
+    <a href="SIT-CrearReunion.php" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Crear Reunión</p></a>
+    
 </div>
-<!-- Collapsible content -->
-</nav>
+</div>
+</div>
+<div class="container-fluid text-center">
 <!--/.Navbar-->
 
 <!--/.Navbar-->
@@ -50,16 +38,13 @@ include 'Modularidad/MenuVertical.php';
 
 <br>
 
-<div class="card">
-  <div class="card-header">
-     <span class="float-left">  
+<div>
+  <div>
+     <span class="first-title">  
         Reuniones Activos 
       </span>
-    
-    <span class="float-right"> 
-  <a href="SIT-CrearReunion.php" class="btn btn-danger"><img src="../img/add.png" width="25px" height="30px">Crear Reunión</a>
-    </span> 
   </div>
+  <br>
   <div class="card-body">
   	<div class="table-responsive">
   		<table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed " >

@@ -1,5 +1,7 @@
 <?php
-include 'Modularidad/CabeceraInicio.php';
+//Cambiar despues
+//include 'Modularidad/CabeceraInicio.php';
+error_reporting(0);
 ?>
 <title>Expdiente de alumno</title>
 <?php

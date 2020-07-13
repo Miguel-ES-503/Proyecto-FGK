@@ -1,7 +1,8 @@
 <?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos?>
 <?php
 //Modularidad para inicializar el Head y <!DOCTYPE html>
-include 'Modularidad/CabeceraInicio.php';
+//include 'Modularidad/CabeceraInicio.php';
+error_reporting(0);
 ?>
 <title>FGK | Creación de alumnos</title>
 

@@ -11,38 +11,20 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
-
+<link rel="stylesheet" type="text/css" href="css/Record-Alumnos.css">
+<div class="title">
+    <img src="../img/back.png" class="icon">
+    <h2 class="main-title" >Record de Alumnos</h2>
+    <div class="title2">
+        <br>
+    <div class="title2-text">
+    <a href="#" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Alumnos</p></a>
+    
+</div>
+</div>
+</div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-
-	<br>
-	<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Record  de alumnos</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active " href="#">Alumnos</a>
-			</li>			
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
 
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 
