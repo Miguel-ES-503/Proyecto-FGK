@@ -1,0 +1,60 @@
+.Imfo-Left,#calendar
+{
+	margin-top: -20px;
+}
+#calendar {
+        background-color: #ffffff;
+        float: left;
+        width: 100%;
+        display: inline-block;
+        margin-left: -1%
+    	}
+      .fc-title{
+        color: #BE0032;
+      }
+
+  .Imfo-Left
+  {
+  	float: left;
+  	margin-top: 20px;
+  	margin-right: 70px;
+  	
+  }
+  .Imfo-Left-title
+  {
+  	color: black;
+  	font-weight: bold;
+  	font-size: 20px;
+  	letter-spacing: 2px;
+  }
+  .Imfo-Left-1-title
+  {
+  	color: #BE0032;
+  	font-weight: bold;
+  }
+  #first
+  {
+  	margin-top: -10px;
+  }
+  .Imfo-Left-1-text
+  {
+  	margin-top: -10px;
+  	color: black;
+  	font-weight: bold;
+  	font-size: 14px;
+  	margin-bottom: 18px;
+  }
+ .Imfo-Left-1
+ {
+ 	background-color: #DCD7D7;
+ 	border-radius: 20px;
+ 	width: 110%;
+ 	height: 440px;
+
+ }
+.Imfo-Left-1-title,
+.Imfo-Left-1-text
+{
+	margin-left:20px;
+
+}

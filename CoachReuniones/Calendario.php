@@ -14,9 +14,9 @@ include 'Modularidad/MenuVertical.php';
 
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-<br>
+<!--<br>
 <h1>Calendario</h1>
-<br>
+<br>-->
 
 <?php
  require_once '../Conexion/conexion.php';
@@ -39,17 +39,27 @@ $eventsFin = $stmt2->fetchAll();
 
 
 ?>
+    <link rel="stylesheet" type="text/css" href="css/Encabezado.css">
+    <link rel="stylesheet" type="text/css" href="css/Calendario.css">
+<div class="title">
 
-  <style>
-
-    	#calendar {
-        background-color: #ffffff;
-    	}
-      .fc-title{
-        color: #fff;
-      }
-    </style>
-
+<a href="index.php" ><img src="../img/back.png" class="icon"></a>
+  <h2 class="main-title" >Calendario</h2>
+</div>
+<div class="Imfo-Left">
+<p class="Imfo-Left-title">Proximos Eventos</p>
+<div class="Imfo-Left-1">
+  <br>
+  <p class="Imfo-Left-1-title" id="first">Taller  "Desarrolla tu creatividad"</p>
+  <p class="Imfo-Left-1-text">Junio 11 , 3:00 pm</p>
+  <p class="Imfo-Left-1-title">Taller "Finanzas en tiempos de Crisis"</p>
+  <p class="Imfo-Left-1-text">Junio 11 , 3:00 pm</p>
+  <p class="Imfo-Left-1-title">Taller "Reputación Online"</p>
+  <p class="Imfo-Left-1-text">Junio 11 , 3:00 pm</p>
+</div>
+  
+</div>
+</div>
     <div class="row">
       <div class="col">
 
@@ -109,7 +119,7 @@ $eventsFin = $stmt2->fetchAll();
   					title: '<?php echo $event['Titulo']; ?>',
   					start: '<?php echo $event['Fecha']; ?>',
   					end: '<?php echo $event['Fecha'];?>',
-  					color: '#009B00',
+  					color: '#BE0032',
   				},
   			<?php endforeach; ?>
 
@@ -120,7 +130,7 @@ $eventsFin = $stmt2->fetchAll();
           title: '<?php echo $event['Titulo']; ?>',
           start: '<?php echo $event['Fecha'];?>',
           end: '<?php echo $event['Fecha']; ?>',
-          color: '#D20000',
+          color: '#BE0032',
         },
         <?php endforeach; ?>
   			]

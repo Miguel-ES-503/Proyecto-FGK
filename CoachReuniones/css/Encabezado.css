@@ -1,0 +1,44 @@
+.title{
+background-color: #ADADB2;
+color: black;
+height: 70px;
+margin-left: -1.5%;
+margin-bottom: 5%;
+height: 55px;
+
+
+}
+h2 , .icon{
+  float: left;
+}
+.main-title
+{
+text-align: left;
+font-size: 25px;
+margin-left: 25px;
+margin-top: 12px;
+font-weight: bold;
+letter-spacing: 5px;
+}
+.icon 
+{
+
+  width: 30px;
+  margin-top: 13px;
+  margin-left: 20px;
+}
+.title2
+{
+
+margin-left: 50px;
+background-color: #BE0032;
+width: 180px;
+height: 54px;
+margin-top: 1px;
+}
+.title2 > p 
+{
+margin-top: 15px;
+color: white;
+font-weight: bold;
+} 
