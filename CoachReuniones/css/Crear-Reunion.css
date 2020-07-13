@@ -63,8 +63,40 @@ letter-spacing: 2px;
 	letter-spacing: 2px;
 	text-align: center;
 }
-#main-body
+.main
 {
-	background-color: #DCD7D7;
+	border-color: #A29C9C;
+	border-width: 5px;
+	border-style: solid;
+	border-radius: 30px;
+	height: 350px;
+}
+form
+{
+margin: 30px;
+margin-top: -10px;
+}
+label
+{
+	color: #BE0032;
+	font-weight: bold;
+}
+.row
+{
+	margin-top: 20px;
+}
+.form-control
+{
+	background-color: #D9D2D2;
+	border-radius: 30px;
+	border-color: white;
+}
+#Guardar_Reunion
+{
+	background-color: #BE0032;
+	width: 25%;
+	color: white;
+	border-radius: 30px;
+	margin:auto;
 }
 

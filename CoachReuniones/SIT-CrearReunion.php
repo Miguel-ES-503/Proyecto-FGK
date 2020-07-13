@@ -46,36 +46,30 @@ include 'Modularidad/MenuVertical.php';
         </div>
         <div>
             <!--Contenido de la caja de crear Cuentas de alumnos Formulario-->
-            <div id="main-body">
-                <!--Inicio del Formulario-->
-                <form class="text-center" action="Modelo/ModeloReunion/GuardarDatosReu.php" method="POST">
-                    <br>
-                    <div id="alerta2"></div>
-                    <br>
-                    <div class="form-row">
-                        <div class="col">
-                            <div class="md-form">
-                                <input type="text" id="NombreReunion" name="NombreReunion" class="form-control"
-                                    placeholder="Nombre de la reunión" readonly>
-                                <label for="materialRegisterFormLastName">Titulo Reunión</label>
-                            </div>
-                        </div>
 
-                        <div class="col">
-                            <!-- Last name -->
-                            <div class="md-form">
-                                <input type="date" id="fecha" name="fecha" class="form-control"
+            <div class="main">
+                 <form class="text-center" action="Modelo/ModeloReunion/GuardarDatosReu.php" method="POST"> 
+                 <div id="alerta2"></div>
+                 <div class="row">
+                     <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                       <div class="Imfo">
+                 <label for="materialRegisterFormLastName">Titulo Reunión</label> 
+                 <input type="text" id="NombreReunion" name="NombreReunion" class="form-control" placeholder="Nombre de la reunión" readonly>
+                       </div>  
+                     </div>
+                         <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                             <div class="Imfo">
+                                 <label for="materialRegisterFormLastName">Fecha</label>
+                                 <input type="date" id="fecha" name="fecha" class="form-control"
                                     placeholder="Nombre Completo" required>
-                                <label for="materialRegisterFormLastName">Fecha</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-row">  
-                        <div class="col">
-                            <!-- First name   Tema , fecha , la hora y el tipo de taller -->
-                            <div class="md-form">
-                                <select id="idempresa" name="idempresa" class="form-control" required>
+                             </div>
+                         </div>
+                 </div>
+                 <div class="row">
+                     <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                        <div class="Imfo">
+                        <label for="materialRegisterFormFirstName">Universidad</label>
+                        <select id="idempresa" name="idempresa" class="form-control" required>
                                     <?php     
                                   echo '<option value="0" disabled selected >Seleccione la opción</option>';
                                   foreach($pdo->query("SELECT * FROM  empresas  WHERE  Tipo =  'Universidad' ORDER by nombre asc") as $row) 
@@ -84,13 +78,13 @@ include 'Modularidad/MenuVertical.php';
                                   }
                                   echo '</select>';
                                   ?>
-                                    <label for="materialRegisterFormFirstName">Universidad</label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <!-- Last name -->
-                            <div class="md-form">
-                                <select id="idCICLO" name="idCICLO" class="form-control" required>
+                              </select>  
+                         </div> 
+                     </div>
+                     <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                        <div class="Imfo">
+                             <label for="materialRegisterFormFirstName">Ciclo</label>
+                             <select id="idCICLO" name="idCICLO" class="form-control" required>
                                     <?php     
                                         echo '<option value="" disabled selected >Seleccione la opción</option>';
                                         foreach($pdo->query("SELECT * FROM ciclos") as $row) 
@@ -99,23 +93,22 @@ include 'Modularidad/MenuVertical.php';
                                         }
                                         echo '</select>';
                                                           ?>
-                                    <label for="materialRegisterFormFirstName">Ciclo</label>
-                            </div>
+                            </select>
+                         </div> 
+                     </div>
+                 </div>
+                 <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                        <div class="Imfo">
+                         <label for="materialRegisterFormLastName">Lugar/Plataforma</label>
+                        <input type="text" id="Lugar" name="Lugar" class="form-control" placeholder="Especifique el lugar" required>
+
                         </div>
-                    </div>
-                    <div class="form-row">
-                            <!--Para recibir el lugar-->
-                          <div class="col">
-                          <div class="md-form">
-                                <input type="text" id="Lugar" name="Lugar" class="form-control"
-                                    placeholder="Especifique el lugar" required>
-                                <label for="materialRegisterFormLastName">Lugar/Plataforma</label>
-                            </div>
-                          </div>
-                        <div class="col">
-                            <!-- First name   Tema , fecha , la hora y el tipo de taller -->
-                            <div class="md-form">
-                                <select type="text" id="tipo" name="tipo" class="form-control" required>
+                        </div> 
+                    <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                        <div class="Imfo">
+                            <label for="materialRegisterFormFirstName">Tipo de reunión</label>
+                             <select type="text" id="tipo" name="tipo" class="form-control" required>
                                     <option value="" disabled selected>Seleccione la opción</option>
                                     <option value="Charla Informativa">Charla Informativa</option>
                                     <option value="Taller">Taller</option>
@@ -123,12 +116,17 @@ include 'Modularidad/MenuVertical.php';
                                     <option value="Otro">Otro</option>
 
                                 </select>
-                                <label for="materialRegisterFormFirstName">Tipo de reunión</label>
-                            </div>
                         </div>
-                    </div>
-                    <input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"
+                        
+                        </div> 
+                        <input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"
                         name="Guardar_Reunion" value="Crear Reunión" id="Guardar_Reunion">
+                 </div>
+
+                 </form>
+                
+            </div>
+                   
                     <hr>
                 </form>
                 <!-- Fin del Formulario -->
