@@ -1,3 +1,6 @@
+///Funcional los Cambios
+
+
 <?php
   require_once 'templates/head.php';
 ?>
