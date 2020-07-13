@@ -35,16 +35,7 @@ $eventsFin = $stmt2->fetchAll();
 ?>
 
 <div class="container-fluid text-center">
-  <style>
-
-    	#calendar {
-        background-color: #ffffff;
-    	}
-      .fc-title{
-        color: #fff;
-      }
-    </style>
-
+  
     <div class="row">
       <div class="col">
 

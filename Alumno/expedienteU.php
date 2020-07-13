@@ -10,7 +10,7 @@
 
   require_once 'templates/header.php';
 
-  require_once 'templates/MenuVertical.php';
+  //require_once 'templates/MenuVertical.php';
 
   require_once 'templates/MenuHorizontal.php';
 
@@ -190,7 +190,7 @@ if ($_GET['id']==null) {
       <br><br><br>
       <h3 class="float-left">Estudios realizados</h3>
       <table class="table table-responsive-lg float-left">
-        <thead class="thead-dark">
+        <thead  style="background-color: #2D2D2E; color: white; ">
           <tr>
             <th scope="col">Universidad</th>
             <th scope="col">Carrera</th>
@@ -230,18 +230,14 @@ if ($_GET['id']==null) {
 <div class="card text-center" style=" border-color: white;
 border-width: 3px;
    border-style: solid;">
-  <div class="card-header" style="color: #fff;
-background-color: #343a40;
-
-
-">
+  <div class="card-header" style="background-color: #2D2D2E; color: white;">
  <h4 class="float-left" style="color:white;">Detalles del Estudio</h4>
   </div>
 
-  <div class="card-body" style="background-color: #ADADB2; ">
+  <div class="card-body" style="background-color: #c7c7c7; ">
           <div class="row">
             <table class="table table-responsive-lg float-left" >
-        <thead class="thead-dark">
+        <thead  style="background-color: #2D2D2E; color: white; ">
           <tr>
             <th scope="col">Universidad</th>
             <th scope="col">Carrera</th>
@@ -336,7 +332,7 @@ background-color: #343a40;
 
          <h4 class="float-left">Inscripciones de Ciclos</h4>           
         <table class="table table-responsive-lg float-left">
-        <thead class="thead-dark">
+        <thead  style="background-color: #2D2D2E; color: white; ">
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Ciclo Universidad</th>
@@ -366,9 +362,7 @@ background-color: #343a40;
 
   </div>
 
-  <div class="card-footer text-muted" style="color: #fff;
-background-color: #343a40;
-border-color: #454d55;">
+  <div class="card-footer text-muted"  style="background-color: #2D2D2E; color: white;border-color: #454d55;">
    
   </div>
 </div>

@@ -100,7 +100,7 @@ if ($consulta6->rowCount()>=1)
   <div>
     <div>
                              
-        <div class="container" style="background: #585858;">
+        <div class="container" style="background: #2D2D2E;">
           <h2 style="color: white; background: #BF3E3E;">Requerimientos para solicitar transporte</h2>
           <br>
            <div class="row">
