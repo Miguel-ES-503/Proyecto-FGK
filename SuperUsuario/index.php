@@ -17,7 +17,6 @@ include 'Modularidad/MenuVertical.php';
 <br>
 
 <br>
-<h1>Maycool Mamon</h1>
 <div class="container-fluid text-center">
 
     <div class="text-center">
