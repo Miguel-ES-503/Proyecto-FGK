@@ -17,10 +17,10 @@ include 'Modularidad/MenuVertical.php';
 <br>
 
 <br>
-
+<h1>Maycool Mamon</h1>
 <div class="container-fluid text-center">
 
-    <div class="text-center"">
+    <div class="text-center">
       <div id="demo" class="carousel slide" data-ride="carousel">
 
     <!-- Indicators -->
