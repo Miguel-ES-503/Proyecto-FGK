@@ -17,7 +17,6 @@ include 'Modularidad/MenuVertical.php';
 <br>
 
 <br>
-
 <div class="container-fluid text-center">
 
     <div class="text-center"">
