@@ -4,7 +4,7 @@
 
 ?>
 
-<title>InicioAlumno</title>
+<title>Alumno</title>
 
 <?php
 
