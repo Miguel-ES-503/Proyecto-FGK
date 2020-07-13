@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="../css/datatables.css">
 
   <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../Alumno/CSS/Alumno-Inicio.css">
 
  <link rel="stylesheet" href="assets1/css1/style.css">
 

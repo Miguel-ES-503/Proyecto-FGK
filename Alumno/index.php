@@ -40,11 +40,6 @@
 ?>
 
 
-<style type="text/css">
-
-
-
-</style>
   <div class="container-fluid text-center" style="background-color: white; ">
 
     <div class="text-center"">
@@ -94,13 +89,13 @@
     <img class="img-fluid" src="../img/logonegro.png" width="150px">
     </div>
         <br>
-    <center><button class="btn-leer" style="margin-top: 8px; ">Leer</button></center>
+    <center><button class="btn-leer" >Leer</button></center>
     </div>
     <div id="avisos">
     <h3  style="font-weight: bold;">Avisos<h3>
     <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
     <div style="float: right; " ><p style="text-align: left;">Boletin:<br>
-    Miguel </p></div>
+    </p></div>
     </div>
     <div id="enlaces">
     <table  >
