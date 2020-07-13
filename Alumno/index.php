@@ -4,7 +4,7 @@
 
 ?>
 
-<title>Miguel se la come</title>
+<title>Inicio</title>
 
 <?php
 

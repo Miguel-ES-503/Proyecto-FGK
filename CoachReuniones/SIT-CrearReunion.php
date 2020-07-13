@@ -17,53 +17,36 @@ include 'Modularidad/MenuVertical.php';
 
 
 </script>
+
+<link rel="stylesheet" type="text/css" href="css/Crear-Reunion.css">
+<div class="title">
+    <img src="../img/back.png" class="icon">
+    <h2 class="main-title" >Reuniones</h2>
+    <div class="title2">
+        <br>
+    <div class="title2-text">
+    <a href="LIS-Reunion.php" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Ver Reuniones</p></a>
+    
+</div>
+</div>
+</div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid ">
     <br>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <!-- Navbar brand -->
-        <a class="navbar-brand" href="#">Fase: Creación Reunión</a>
-
-        <!-- Collapse button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Collapsible content -->
-        <div class="collapse navbar-collapse" id="basicExampleNav">
-
-            <!-- Links -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link active " href="SIT-CrearReunion.php">Crear Reunión</a>
-                </li>
-            </ul>
-            <!-- Links -->
-        </div>
-        <!-- Collapsible content -->
-    </nav>
     <!--/.Navbar-->
     <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
     <!--/.Navbar-->
     <br>
-    <div class="card">
-        <div class="card-header">
-            <b>Nueva Reunión</b>
+    <div >
+        <div>
+            <p  class="title-1">Nueva Reunión</p>
             <span class="float-right">
-
-                <a href="LIS-Reunion.php">
-                    <button type="button" class="btn btn-danger px-3">
-                        <i class="fas fa-users" aria-hidden="true"></i>
-                        Ver Reuniónes
-                    </button>
-                </a>
             </span>
         </div>
-        <div class="card-body">
+        <div>
             <!--Contenido de la caja de crear Cuentas de alumnos Formulario-->
-            <div class="card-body px-lg-5 pt-0">
+            <div id="main-body">
                 <!--Inicio del Formulario-->
                 <form class="text-center" action="Modelo/ModeloReunion/GuardarDatosReu.php" method="POST">
                     <br>
