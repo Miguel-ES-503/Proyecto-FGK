@@ -4,7 +4,7 @@
 
 ?>
 
-<title>Maycool</title>
+<title>Maycool Padilla</title>
 
 <?php
 
