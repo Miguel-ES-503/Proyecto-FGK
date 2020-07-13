@@ -4,7 +4,7 @@
 
 ?>
 
-<title>Alumno</title>
+<title>Miguel</title>
 
 <?php
 
