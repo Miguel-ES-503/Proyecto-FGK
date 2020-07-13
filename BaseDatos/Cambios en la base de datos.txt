@@ -1,0 +1,10 @@
+
+alumnoss@gmail.com
+
+
+Modificaciones a la tabla notificaciones:
+
+1- ALTER TABLE `reuniones` ADD `Lugar` VARCHAR(75) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL AFTER `ID_Sede`;
+ ALTER TABLE `reuniones` CHANGE `ComprobanteLista` `ComprobanteLista` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL;
+ ALTER TABLE `alumnos` ADD `Celular` INT(8) NULL AFTER `FuenteFinacimiento`, ADD `Facebook` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_spanish_ci NULL AFTER `Celular`, ADD `Instagram` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_spanish_ci NULL AFTER `Facebook`, ADD `LinkedIn` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_spanish_ci NULL AFTER `Instagram`;
+ ALTER TABLE `alumnos` ADD `Twitter` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_spanish_ci  NULL AFTER `LinkedIn`;

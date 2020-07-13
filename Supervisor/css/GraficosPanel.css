@@ -1,0 +1,49 @@
+.CabeceraComentario{
+    margin: 0% 0% 0% 0%;
+     display: block;
+}
+
+.GraficosPanel {
+    /*display: inline-block;*/
+}
+
+.DatosTaller{
+   /* display: inline-block;*/
+   color: white;
+   margin: 0%;
+   text-align: left;
+}
+.SeleccionGrafico {
+
+}
+.btnGrafico {
+    margin: 0px 0px 0px 80%;
+}
+body {
+   
+}
+.caja {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    background: #889ccf;
+    padding: 20px;
+    margin: 25px 0 25px;
+    overflow: hidden;
+    border-radius: 5px 38px 86px 0px;
+	-moz-border-radius: 85px 38px 86px 0px;
+	-webkit-border-radius: 85px 38px 86px 0px;
+	border: 7px solid #000000;
+}
+.CargarComentarios{
+	margin: 0% 20% 0% 20%;
+}
+.TituloTaller{
+    margin: 3% 0% 0% 0%;
+    font-size: 25px;
+}
+.Titulo-Graficos{
+    margin: 3% 0% 0% 0%;
+    font-size: 34px;
+}

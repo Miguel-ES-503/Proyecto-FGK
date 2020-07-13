@@ -1,0 +1,12 @@
+/*****************************
+ All rights reserved.
+ AllFont.ru (c) 2011-2015
+ *****************************/
+@font-face {
+    font-family: 'Roboto Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Regular'), local('Roboto-Regular'),
+        url(http://allfont.ru/cache/fonts/roboto-regular_930678068cb1bea8d60f8083f9dab81d.woff) format('woff'),
+        url(http://allfont.ru/cache/fonts/roboto-regular_930678068cb1bea8d60f8083f9dab81d.ttf) format('truetype');
+}

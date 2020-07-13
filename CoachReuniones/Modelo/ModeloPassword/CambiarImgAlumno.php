@@ -1,0 +1,143 @@
+<?php
+//Conexión con la base de datos;
+require_once "../../../BaseDatos/conexion.php";
+session_start();  
+$varsesion =$_POST['iduser'];
+$IDALUMNO = $_POST['idalumno'];
+
+if (isset($_POST['SubirImg'])) 
+{
+    
+
+$consulta=$pdo->prepare("SELECT * FROM usuarios WHERE IDUsuario = :IDUsuario");
+$consulta->bindParam(':IDUsuario',$varsesion);
+$consulta->execute();
+
+
+
+$Foto;
+$IDUser;
+if ($consulta->rowCount() >=0)
+    {
+        $fila=$consulta->fetch();
+        $Foto = $fila['imagen'];
+        $IDUser = $fila['IDUsuario'];
+    }
+
+
+
+
+
+if($_FILES["imgusu"]["error"]>0){
+        //Si entra aqui es porque ha tenido un error al subir la img
+        $_SESSION['message'] = 'No has selecciona la imagen';
+        $_SESSION['message2'] = 'danger';
+        header("Location: ../../Configuracion.php");
+    }
+    else
+    {
+
+
+        if ($Foto !=null) {
+
+         if($Foto != "imgDefault.png")
+         {
+            $destino = "../../../img/imgUser/".$Foto;
+            unlink($destino);
+
+        }
+
+    }
+
+
+      
+        
+        //Si entra aqui es porqueno tenemos ningun error
+        $tipoimg = array("image/jpg","image/png","image/jpeg");
+
+        //verifica con la funcion in_array si el tipo de la imagen es igual a algun tipo de dato en la variable $tipoimg
+        if(in_array($_FILES["imgusu"]["type"], $tipoimg)){
+
+            //hacemos referencia a la ruta donde guardaremos la imagen
+            $rutaimg = '../../../img/imgUser/';
+            
+            //guardamos la extencion de la imagen
+            $extensionimg = explode("/",$_FILES["imgusu"]["type"]);
+            
+            //se genera un numero de 5 cifras para renombrar la imagen
+            //esto es opcional porque esto lo utilice para mis imagenes
+            $d=$IDUser . rand(10000,99999);
+            
+            //en la variable $nombreimg concatenamos toda la ruta y el nombre de la imagen para
+            //que no se escriba si hay otra imagen con el mismo nombre en esa ruta
+            $nombreimg = $rutaimg . "img" .$d . "." . $extensionimg[1];
+
+            //guardamos solo el nombre de la imagen con su extencion
+            $img = "img" . $d . "." . $extensionimg[1];
+
+            //verificamos si existe la carpeta /img y si no existe se crea
+            if(!file_exists($rutaimg)){
+                mkdir($rutaimg);
+            }
+
+
+            //verificamos si existe una imagen con 
+            if(!file_exists($nombreimg)){               
+                //guardando el nombre de la imagen en la base de datos
+
+             
+                
+                //copiano la imagen con la funcion @move_uploaded_file()
+                //y como parametros le pasamos la imagen que subio el usuario
+                //y como segundo parametro toda la ruta hasta con el nombre de la imagen para que la guarde
+                $resultadoimg = @move_uploaded_file($_FILES["imgusu"]["tmp_name"], $nombreimg);
+
+                //Consulta de actualización de datos
+                $consulta=$pdo->prepare("UPDATE usuarios SET  imagen=:imagen  WHERE IDUsuario=:id");
+                $consulta->bindParam(":imagen",$img);
+                $consulta->bindParam(":id",$varsesion);
+
+                //Verifica si ha insertado los datos
+                if ($consulta->execute()) 
+                {
+                //Si todo fue correcto muestra el resultado con exito;
+
+                   $_SESSION['message'] = 'Imagen Cambiada con exito';
+                   $_SESSION['message2'] = 'success';
+                 
+
+
+               header("Location: ../../AlumnoInicio.php?id=".urlencode($IDALUMNO));
+                
+            }
+            else
+            {   
+                
+                $_SESSION['message'] = 'No se pude actualizar la imagen en la BDD';
+                $_SESSION['message2'] = 'danger';
+                header("Location: ../../AlumnoInicio.php?id=".urlencode($IDALUMNO));
+            }
+
+           // echo "Si se pudo subir la IMAGEN";
+        }else{
+
+           $_SESSION['message'] = 'existe una imagen con el mismo nombre generado';
+           $_SESSION['message2'] = 'danger';
+           header("Location: ../../AlumnoInicio.php?id=".urlencode($IDALUMNO));
+                //entra a este else si existe una imagen con el mismo nombre generado
+       }
+   }else{
+
+       $_SESSION['message'] = 'No se pude cambiar la imagen ya que no esta con una extencion valida';
+       $_SESSION['message2'] = 'danger';
+       header("Location: ../../AlumnoInicio.php?id=".urlencode($IDALUMNO));
+            //Si entra a este else es porque la imagen no esta con una extencion valida
+       
+   }
+}
+
+
+
+}
+
+?>

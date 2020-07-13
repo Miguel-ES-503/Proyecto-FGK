@@ -1,0 +1,223 @@
+</div>          
+</div>
+</div>
+<!-- FOOTER START -->
+<div class="footer">
+  <div class="contain">
+    <div class="col">
+      <h1 style="color: white;">Derechos reservados</h1>
+      <ul>
+        <li>
+          <center><img src="../img/logoblanco2.png" width="100" style="width:100px;"></center>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="col social">
+      <h1 style="color: white;">Contáctanos:</h1>
+      <ul>
+        <li>
+         <center><a href="https://www.facebook.com/exalumnos.ccgk?ref=br_tf&epa=SEARCH_BOX"><img src="../img/facebook.png" width="32" style="width:32px;"></a></center> 
+       </li>
+       <li>
+        <center><a href="https://www.instagram.com/bk2oportunidades/"><img src="../img/instagram.png" width="32" style="width: 32px;"></a></center>
+        
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+</div>
+</div>
+<!-- END OF FOOTER -->
+
+  <!-- Bootstrap core JavaScript -->
+  
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/alerta.js"></script> <!--Mostrar el mensaje de alerta-->
+
+ 
+
+
+
+  <!--Validaciones-->
+  <script src="js/FormValidarCuentas.js"></script>
+  <script src="js/FormValidarAlumno.js"></script>
+  <script src="js/FormValidarEmpresas.js"></script>
+  <script src="js/FormCarreras.js" ></script>
+  <script src="js/FormValidarFacultades.js"></script>
+  <script src="js/FormValidarCiclos.js"></script>
+  <script  >//No se si se usa pero para que no marque el error lo quito src="js/ObtnerIDEmpresa.js"</script>
+  <script src="js/FormValidarReunion.js"></script>
+  <Script src="js/alerta.js"></Script>
+  <script src="js/SubidaArchivo.js"></script>
+  
+
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+  <script>
+    
+    $(function() {
+    $("#btnExito").click(function(){        
+      $('#modal_exito').modal('show');
+    });
+});
+
+$(function() {
+    $("#btnFalla").click(function(){        
+      $('#modal_falla').modal('show');
+    });
+});
+  </script>
+
+
+  <script>
+  
+$(document).ready(function() {
+  var table = $('#example').DataTable({
+        
+        "scrollX": true,
+        "scrollY": "50vh",
+        //Esto sirve que se auto ajuste la tabla al aplicar un filtro
+         "scrollCollapse": true,
+     
+        language: {
+            "decimal": "",
+            "emptyTable": "No hay información",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar _MENU_ Entradas",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        },
+        
+        initComplete: function() {
+            //En el columns especificamos las columnas que queremos que tengan filtro
+            this.api().columns([0,1,2,3,4,5,6]).every(function() {
+                var column = this;
+
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo($(column.header()))
+                    .on('change', function() {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val().trim()
+                        );
+                         
+                            column
+                            .search(val ? '^' + val + '$' : '', true, false)
+                            .draw();
+                        
+                        
+                    });
+                    //Este codigo sirve para que no se active el ordenamiento junto con el filtro
+                $(select).click(function(e) {
+                    e.stopPropagation();
+                });
+                //===================
+
+                column.data().unique().sort().each(function(d, j) {
+                    // select.append('<option value="' + d + '">' + d + '</option>')
+                   
+                        select.append('<option value="' + d + '">' + d + '</option>')
+                    
+                });
+
+                
+
+            });
+        },
+        "aoColumnDefs": [
+         { "bSearchable": false
+         //"aTargets": [ 1] sirve para indicar que columna no queremos que funcione el filtro
+         
+          }
+       ] 
+      
+    });
+    //********Esta bendita linea hace la magia, adjusta el header de la tabla con el body 
+    table.columns.adjust();
+} );
+
+</script>
+
+
+<script>
+    var table2 = $('#tableUser').DataTable({
+        orderCellsTop: true,
+        fixedHeader: true,
+        
+        language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    }
+    });
+
+</script>
+
+<script>
+    var table2 = $('#tableUser2').DataTable({
+        orderCellsTop: true,
+        fixedHeader: true,
+        
+        language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    }
+    });
+
+</script>
+
+
+</body>
+
+</html>

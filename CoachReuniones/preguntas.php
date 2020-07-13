@@ -1,0 +1,162 @@
+<?php
+//Modularidad para inicializar el Head y <!DOCTYPE html>
+include 'Modularidad/CabeceraInicio.php';
+?>
+<title>Preguntas frecuentes</title>
+
+<?php
+//Modularaidad para extraere los enlaces en HEAD
+include 'Modularidad/EnlacesCabecera.php';
+//Incluir el menu horizontal
+include 'Modularidad/MenuHorizontal.php';
+include 'Modularidad/MenuVertical.php';
+?>
+
+<!--Comiezo de estructura de trabajo -->
+<div class="container-fluid text-center">
+<br>
+<h1>Preguntas frecuentes</h1>
+<br>
+<a href="javascript:history.back();" class="btn float-left"  title="Regresar" style="margin-left:5%;"><i class="fas fa-chevron-circle-left display-4"></i></a>
+<button type='button' class='btn btn-success btn-agregar' data-toggle='modal' data-target='#myModal3'>Responder a preguntas</button>   
+
+
+
+<!-- Responder a pregunta -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Responder a preguntas</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" style="width:80%; margin:auto">
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="text-dark">Seleccione la pregunta: </label>
+     <?php
+      require_once '../Conexion/conexion.php';
+    $query = "SELECT pregunta FROM preguntas  WHERE estado = 'pendiente' GROUP BY id DESC";
+             $stat = $dbh->prepare($query);
+             $stat->execute();
+             $result = $stat->fetchAll();
+      ?>
+                        <br>
+                            <select name="pregunta" class="form-control" id="year">
+                            <?php
+                            foreach($result as $row)
+                            {
+                                echo '<option value="'.utf8_encode($row["pregunta"]).'">'.utf8_encode($row["pregunta"]).'</option>';
+                            }
+                            ?>
+                            </select>
+
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" class="text-dark">Ingrese la respuesta a la pregunta seleccionada: </label>
+        <textarea name="respuesta"  class="form-control"id="respuesta" cols="20" rows="5"></textarea>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label" for="exampleCheck1">La respuesta dede tener como máximo 255 carácteres</label>
+  </div>
+  <button type="submit" class="btn btn-primary btn1">Enviar</button>
+  </form>
+<br>
+
+          </div>
+        </div>
+      </div>        
+
+</div> <br>
+  <div class="mx-auto" style="width:80%"> 
+  <br>   
+<h3 class="text-left titulo-OneonOne text-white text-center" >Respuestas Guardadas</h3>
+ <div class="panel-body">
+                    <div id="tablapdf" class="sessiones">
+                        <table class="table table-bordered-sm" id="datatable2" >
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Pregunta</th>
+                                    <th>Fecha Pregunta</th>
+                                    <th>Respuesta</th>
+                                    <th>Fecha Respuesta</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        </div>
+                    </div>
+</div>
+
+  <br>
+     <?php 
+              @$pregunta = $_POST['pregunta'];
+              @$respuesta = $_POST['respuesta'];
+            //actualizar estado
+          if(isset($respuesta)){
+            date_default_timezone_set('America/El_Salvador');
+            $fecha = date('Y-m-d H:i');
+            $sql2 = "UPDATE preguntas SET estado=? , respuesta=? , fechaRespuesta=? WHERE pregunta=?";
+            $stmt= $dbh->prepare($sql2);
+            $stmt->execute(['finalizado',utf8_decode($respuesta),$fecha,utf8_decode($pregunta)]);
+            header("Location:preguntas.php");
+            echo  "<p class='text-success text-center' id='prueba'>La respuesta: ".$respuesta." fue enviada con éxito :</p>";
+           }
+             ?> 
+<script type="text/javascript" src="js/datatables.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script>
+      $("#OpenModal").click(function (e) { 
+        e.preventDefault();
+        $('#myModal').modal('show');
+      });
+    </script>
+
+<!-- Horarios inscritos -->
+<script type="text/javascript">
+$(document).ready(function(){
+      fill_datatable();
+      fill_datatable2();    
+      function fill_datatable(year = '')
+      {
+       var dataTable = $('#datatable2').DataTable({
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No hay sessiones One on One disponibles",
+            "info": "Mostrando página  _PAGE_ de _PAGES_",
+            "infoEmpty": "Registros no encontrados",
+            "infoFiltered": "(filtrados  _MAX_  registros del total)",
+            "search": "Buscar",
+            "oPaginate": {
+        "sFirst":    "Primero",
+        "sLast":     "Último",
+        "sNext":     "Siguiente",
+        "sPrevious": "Anterior",
+        "sProcessing":     "Procesando...",
+        "sLoadingRecords": "Cargando..."
+    },
+        },
+        "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
+        "processing" : true,
+        "serverSide" : true,
+        "order" : [],
+        "searching" : true,
+        "ajax" : {
+         url:"fech.php",
+         type:"POST",
+         data:{
+          year:year
+         }
+        }
+       });
+      }
+  });
+  </script>
+
+<?php
+//Incluir el footer
+include 'Modularidad/PiePagina.php';
+?>
+

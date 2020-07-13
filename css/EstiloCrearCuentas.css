@@ -1,0 +1,82 @@
+#myTab
+{
+   background:#343a40;
+}
+
+
+
+.card-body
+{
+	background:#343a40;
+}
+
+a {
+    color: #eff0f0;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #ffdb00;
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: arial;
+}
+
+ h3{
+   
+    color: white;
+    font-family: arial;
+}
+
+hr{
+    background: white;
+}
+
+label
+{
+    color: white;
+}
+
+
+th
+{
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+
+#emp-carr
+{
+    color: white;
+}
+
+#EstiloAlerta
+{
+    margin: 0 auto; 
+    width: 25%; 
+    position: fixed;
+    top: 0; 
+    right: 0;
+    margin-top: 5%; 
+
+}
+
+p
+{   
+    color: white;
+    font-family: arial;
+    text-align: justify;
+}
+
+h5
+{
+     color: white;
+    font-family: arial;
+    text-align: justify;
+}

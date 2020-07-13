@@ -1,0 +1,182 @@
+    .title{
+background-color: #ADADB2;
+margin-top: -30px;
+color: black;
+height: 70px;
+margin-left: -1.5%;
+margin-bottom: 3%;
+height: 55px;
+
+
+}
+h2 , .icon{
+  float: left;
+}
+.main-title
+{
+text-align: left;
+font-size: 25px;
+margin-left: 25px;
+margin-top: 15px;
+font-weight: bold;
+letter-spacing: 5px;
+}
+.icon 
+{
+
+  width: 30px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+#mensaje
+{
+height: 50px;
+margin: auto;
+margin-bottom: 30px;
+width: 100%;
+}
+
+.title-detalles
+{
+	text-align: center;
+	font-weight:bold;
+	font-size: 25px;
+	letter-spacing: 2px;
+	color: black;
+	text-align: left;
+}
+
+#Imfo-1
+{
+	background-color: white;
+    border-color: #aaaaaa;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 40px;
+}
+.Imfo-1-texto1
+{
+color: black;
+}
+.mb-4
+{
+	color: black;
+}
+#divisor
+{
+	 height: 3px;
+  background-color: #aaaaaa;
+  border-radius: 10px;
+}
+label
+{
+	color: black;
+}
+.subtitle-left,.subtitle-right,.subtitle,.subtitle-problem,.subtitle
+{
+	color: black;
+	font-weight: bold;
+	margin-bottom: -5px;
+	
+}
+.subtitle
+{
+	margin-left: 110px;
+}
+.subtitle-problem
+{
+	margin-left: 10%;
+	font-size: 10px;
+}
+.subtitle-left
+{
+	margin-left: 10px;
+}
+.subtitle-right
+{
+	margin-right: 1000px;
+}
+.subtitle
+{
+	margin-right: 75%;
+}
+.subtitle-problem
+{
+	margin-left: 35px;
+}
+#exampleFormControlTextarea3
+{
+background-color: #aaaaaa;
+border-radius: 10px;	
+}
+#input-info-left,#input-info-right,#input-info-problem
+{
+	background-color: #aaaaaa;
+	width: 200px;
+	border-radius: 20px;
+	height: 33px;
+	border-color: white;
+}
+#input-info-right
+{
+	margin-left: 100px;
+}
+#input-info-problem
+{
+	margin-left: 65px;
+}
+#btn-1,#btn-2
+{
+	background: #BE0032;
+	height: 37px;
+	width: 150px;
+	color: white;
+	border-radius: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 120px;
+}
+.picture
+{
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+}
+.card-text,.mb-4
+{
+	color: black;
+	font-weight: bold;
+}
+#texto1
+{
+font-style: italic;
+font-weight: normal;
+margin-left: 4px;
+}
+#Imfo-2
+{
+	background-color: #D9D2D2;
+	 border-color: #aaaaaa;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 40px;
+}
+#exampleFormControlTextarea3
+{
+	background-color: #c7c7c7;
+
+}
+#btn-2
+{
+	margin-top: 40px;
+	margin-bottom: 27px;
+}
+#main
+{
+	margin-top: -30px;
+	border-color: white;
+}
+.title-2
+{
+	margin-left: 30px;
+}

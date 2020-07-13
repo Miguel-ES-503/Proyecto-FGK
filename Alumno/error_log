@@ -1,0 +1,21 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".desinscribir").hide();
+
+    });
+
+</script>
+<script type="text/javascript">
+    function inscribe(alumno, taller, inscribir) {
+          $.post("inscribir.php",{alumno:alumno, taller:taller, inscribir:inscribir},function(data) {
+            if (data==1) {
+              $("#inscribir").hide();
+              $("#desinscribir").show();
+            }else if (data==2) {
+              $("#inscribir").show();
+              $("#desinscribir").hide();
+            }
+          });
+        }
+</script>
+[27-Nov-2019 09:21:18 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oportunidad/public_html/Alumno/SoliHoras.php:15) in /home2/oportunidad/public_html/Alumno/SoliHoras.php on line 50

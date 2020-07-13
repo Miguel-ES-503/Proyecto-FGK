@@ -1,0 +1,111 @@
+#novedades{
+  float: left;
+  font-color: black;
+}
+.Novedad1{
+  text-align: left; 
+  font-weight: bold; 
+  color:black;
+}
+.boletin{
+  text-align: left;
+  color: black;
+}
+
+
+#avisos{
+ 
+display: inline-block;
+ 
+
+}
+.aviso1{
+  font-weight: bold;
+  color: black;
+}
+.textoa{
+  text-align: left;
+  color: black;
+}
+
+#enlaces{
+
+ float: right;
+}
+.enlace1{
+  font-weight: bold;
+  color: black;
+}
+
+.btn-leer{
+  font-family: sans-serif;
+  font-size: 15px;
+  color: #fff;
+margin-top: 8px;
+
+  width: 60%;
+  height: 30px;
+  border-radius: 25px;
+  background: #BE0032;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+	#imginicio {
+
+		height: 30em;
+        margin-right: 15px;
+		background: url(../img/SuperUserTable.png);
+		background-repeat: no-repeat;
+
+		background-size: 100% 100%;
+
+	}
+
+
+}
+
+
+	#imginicio
+	{
+		height: 46em;
+
+		background: url(../img/SuperUser.png);
+		background-repeat: no-repeat;
+
+		background-size: 100% 100%;
+	}
+
+
+@media only screen and (max-width: 767px) {
+
+	#imginicio {
+
+		height: 38em;
+        margin-right: 15px;
+		background: url(../img/SuperUsermovil.png);
+		background-repeat: no-repeat;
+
+		background-size: 100% 100%;
+
+	}
+
+
+}
+.container-fluid text-center{
+  background-color: white;
+}

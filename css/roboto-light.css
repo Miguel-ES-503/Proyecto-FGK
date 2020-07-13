@@ -1,0 +1,12 @@
+/*****************************
+ All rights reserved.
+ AllFont.ru (c) 2011-2015
+ *****************************/
+@font-face {
+    font-family: 'Roboto Light';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Light'), local('RobotoLt-Regular'),
+        url(http://allfont.ru/cache/fonts/roboto-light_85c220ba059dfba8286cf7085f2f591f.woff) format('woff'),
+        url(http://allfont.ru/cache/fonts/roboto-light_85c220ba059dfba8286cf7085f2f591f.ttf) format('truetype');
+}

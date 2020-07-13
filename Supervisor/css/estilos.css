@@ -1,0 +1,60 @@
+
+
+.contenedor {
+	width: 400px;
+	height: 400px;
+	margin: auto;
+	overflow: auto;
+	font-family: 'Open Sans';
+	border-radius: 4px;
+}
+
+
+/*.contenedor hr {
+  background: #1624FF;
+  width: 20%;
+  height: 5px;
+  border: none;
+  margin: 0;
+  border-radius: 50px;
+}
+*/
+/* Scroll Personalizado */
+.textoNoti{
+	font-size: 15px;
+}
+.contenedor::-webkit-scrollbar {
+	width: 7px;
+
+}
+
+.contenedor::-webkit-scrollbar-thumb {
+	background: #2378EB;
+	border-radius: 5px;
+}
+
+.imgUsu, .textoNoti .novisto{
+	float:left;
+	display:inline;
+}
+
+.novisto {
+		bottom: 50%;
+     width: 10px;
+     height: 10px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #BE0032;
+}
+.noti{
+	color: #ADADB2;
+}
+.noti:hover{
+	background-color:#6B7879;
+	color: #FFFFFF;
+}
+.noti:active{
+	background-color:#BF0310;
+	color: #FFFFFF;
+}

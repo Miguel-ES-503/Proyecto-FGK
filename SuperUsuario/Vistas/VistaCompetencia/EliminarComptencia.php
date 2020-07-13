@@ -1,0 +1,79 @@
+<?php require_once "../../../BaseDatos/conexion.php"; ?>
+<?php
+// Realizamos la consulta del usuario
+if (isset($_GET['id'])) {
+	$id=$_GET['id'];
+
+	$consulta=$pdo->prepare("SELECT * FROM competencias WHERE IDComptenecia= :IDComptenecia");
+	$consulta->bindParam(":IDComptenecia",$id);
+	$consulta->execute();
+
+	$ID = '';
+	$Correo = '';
+
+	if ($consulta->rowCount() >=0)
+	{
+		$fila=$consulta->fetch();
+
+		$ID  = $fila['IDComptenecia']; 
+		$nombreComptencia = $fila['Nombre'];
+		
+		
+	}
+
+
+
+}// Fin del consulta del if   
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>eliminar competencia | Workeys</title>
+	<link rel="shortcut icon" href="../img/WorkeysIcon.png" />
+	<link rel="stylesheet" href="../css/master.css">
+	<link rel="stylesheet" type="text/css" href="../../css/EstiloCrearCuentas.css">
+	<link href="../../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!--Estilo css CrearCuentas-->
+	<link rel="stylesheet" type="text/css" href="css/EstiloCrearCuentas.css">
+</head>
+
+<body class="container">
+
+	<br><br><br><br><br><br><br><br><br><br>
+
+
+	<!-- Material form subscription -->
+	<div class="card">
+
+		<h5 class="card-header info-color white-text text-center py-4">
+			<strong style="color:black;">Eliminar Competencia</strong>
+		</h5>
+
+		<!--Card content-->
+		<div class="card-body px-lg-5">
+
+			<!-- Form -->
+			<form class="text-center" style="color: #757575;" action="../../Modelo/ModeloCompetencia/EliminarComptencia.php" method="POST">
+
+				<p>Seguro que desea eliminar la Competencia:</p>
+				<input type="hidden" id="id" name="id" class="form-control" value="<?php echo utf8_encode($ID) ?>"> 
+				<!-- E-mai -->
+				<div class="md-form">
+<input type="text"  id="" class="form-control" value="<?php echo utf8_encode($nombreComptencia)?>"  disabled="true" >
+					<label for="materialSubscriptionFormEmail">Empresa</label>
+				</div>
+
+				<input type="submit" name="EliminarComptencia" class="btn btn-outline-light  btn-rounded btn-block z-depth-0 my-4 waves-effect" value="Eliminar Competencia">
+				
+
+			</form>
+			<!-- Form -->
+			<a href="../../SIT-Competencias.php">Regresar inicio?</a>
+		</div>
+
+
+	</div>
+	<!-- Material form subscription -->
