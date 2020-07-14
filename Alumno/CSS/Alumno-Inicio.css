@@ -150,10 +150,20 @@ height: 70px;
 
 margin-bottom: 3%;
 height: 55px;
-width: 110%;
+width: 100%;
 
 
 
+}
+
+.mx-auto{
+
+      margin-bottom: 12.1em;
+
+
+}
+.sesion{
+      margin-bottom: 23.3em;
 }
 .opciones p{
 

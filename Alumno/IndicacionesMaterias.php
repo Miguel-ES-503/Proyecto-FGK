@@ -6,7 +6,7 @@
   //Manda  allamar plantillas
   require_once 'templates/header.php';
 
-  require_once 'templates/MenuVertical.php';
+  //require_once 'templates/MenuVertical.php';
 
   require_once 'templates/MenuHorizontal.php';
 
@@ -22,6 +22,8 @@
                              
         <div class="container" style="background: white;">
           <h2 style="color: #BF3E3E;">Requerimientos para inscripcion materias</h2>
+          <br>
+          <br>
           <br>
            <div class="row">
              

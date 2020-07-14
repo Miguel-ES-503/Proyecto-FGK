@@ -9,8 +9,12 @@
   require_once 'templates/MenuHorizontal.php';
   require_once '../Conexion/conexion.php';
 ?> 
-<br>
-<a href="javascript:history.back();" class="btn float-left"  title="Regresar" style="margin-left:5%;"><i class="fas fa-chevron-circle-left display-4"></i></a>
+
+<div class="title">
+    <a href="../Alumno/index.php"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Preguntas Frecuentes</h2>
+</div>
+
  <div style="width:40%;" class="mx-auto">
  
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
@@ -46,7 +50,7 @@
 ?>
 </div>
  <br>
- <h1>Preguntas Frecuentes</h1>
+ 
 		<div class="container px-md-2" style="margin-left: 5%;">
            <div class="row">
 

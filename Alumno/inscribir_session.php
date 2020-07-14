@@ -9,15 +9,21 @@
   require '../Conexion/conexion.php';
 
   setlocale(LC_TIME, 'es_SV.UTF-8');
-?> <br>
-<a href="javascript:history.back();" class="btn float-left"  title="Regresar" style="margin-left:5%;"><i class="fas fa-chevron-circle-left display-4"></i></a>
+?> 
 <div class="container-fluid text-center">
-  <h1>Inscripción a Sessiones One on One</h1>
+  <div class="title">
+    <a href=href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Inscribir Sesiones One on One</h2>
+</div>
+
+
 
 </div>
+<div class="sesion">
+
 <!-- /#page-content-wrapper -->
 <table class="table" style="width:70%; margin:auto">
-  <thead class="thead-dark">
+  <thead  style="background-color: #2D2D2E; color: white; ">
     <tr>
     <th scope="col">Fecha</th>
     <th scope="col">Horario</th>
@@ -111,6 +117,8 @@
 <!-- /#page-content-wrapper -->
 
 </div>
+</div>
+
 </div>
 <!-- /#wrapper -->
 

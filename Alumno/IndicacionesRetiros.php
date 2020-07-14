@@ -1,12 +1,12 @@
  <?php require_once 'templates/head.php'; ?>
-<title>Indicaciones transporte</title>
+<title>Indicaciones retiro</title>
  <link rel="stylesheet" href="assets1/css1/style.css">
 <?php  
   
   //Manda  allamar plantillas
   require_once 'templates/header.php';
 
-  require_once 'templates/MenuVertical.php';
+  //require_once 'templates/MenuVertical.php';
 
   require_once 'templates/MenuHorizontal.php';
 
@@ -91,7 +91,7 @@
                            <br> <br><br>
 
                        <table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" >
-                           <thead class="table-dark">
+                           <thead style="background-color: #2D2D2E; color: white;">
                                <tr>  
                                    <th scope="col">Codigo</th>
                                    <th scope="col">Asignatura</th>
