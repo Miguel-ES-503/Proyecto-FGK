@@ -17,10 +17,9 @@
 <!--div principal-->
 <div class="container-fluid text-center"><br>
   <!--Navbar-->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="background-color: #2D2D2E">
+  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #2D2D2E">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Creación de empresa</a>
 
 
 
@@ -48,7 +47,7 @@
   <div class="collapse navbar-collapse" id="basicExampleNav">
 
     <!-- Links -->
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto" >
       
       <li class="nav-item">
         <a class="nav-link active" href="SIT-CrearEmpresas.php">Pensum</a>
@@ -97,7 +96,7 @@
                       
                       
                        <table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" >
-                           <thead class="table-dark">
+                           <thead  style="background-color: #2D2D2E; color: white; ">
                                <tr>  
                                     <th scope="col">Codigo</th>
                                    
@@ -211,6 +210,7 @@
                <!-- Fin Primera columna-->
 
                        <br>
+                       
       
     
            </div> <!--Fin de row-->
@@ -223,7 +223,7 @@
      </div>
   </div> 
   <br>
-  <br>
+  <br><br><br>
 </div><!-- Fin de div principal-->
 
 <!-- /#page-content-wrapper -->
