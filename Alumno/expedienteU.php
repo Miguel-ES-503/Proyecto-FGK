@@ -166,7 +166,7 @@ if ($_GET['id']==null) {
 
 ?>
 <div class="container-fluid text-center">
-  <br><br>
+
   <div class="text-center">
   <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
