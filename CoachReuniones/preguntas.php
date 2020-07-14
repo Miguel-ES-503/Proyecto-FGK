@@ -11,14 +11,15 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
+<link rel="stylesheet" type="text/css" href="css/Preguntas.css">
+<div class="title">
+<a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
+    <h2 class="main-title" >Preguntas Frecuentes</h2>
+</div>
 
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-<br>
-<h1>Preguntas frecuentes</h1>
-<br>
-<a href="javascript:history.back();" class="btn float-left"  title="Regresar" style="margin-left:5%;"><i class="fas fa-chevron-circle-left display-4"></i></a>
-<button type='button' class='btn btn-success btn-agregar' data-toggle='modal' data-target='#myModal3'>Responder a preguntas</button>   
+ 
 
 
 
@@ -57,10 +58,10 @@ include 'Modularidad/MenuVertical.php';
     <label for="exampleInputPassword1" class="text-dark">Ingrese la respuesta a la pregunta seleccionada: </label>
         <textarea name="respuesta"  class="form-control"id="respuesta" cols="20" rows="5"></textarea>
   </div>
-  <div class="form-check">
-    <label class="form-check-label" for="exampleCheck1">La respuesta dede tener como máximo 255 carácteres</label>
+  <div  id="nota">
+    <label  for="exampleCheck1"><b>NOTA: </b>La respuesta dede tener como máximo 255 carácteres</label>
   </div>
-  <button type="submit" class="btn btn-primary btn1">Enviar</button>
+  <button type="submit" class="btn btn-primary btn1" id="btn-modal"><img src="../img/paper.png" id="img">Enviar</button>
   </form>
 <br>
 
@@ -68,14 +69,13 @@ include 'Modularidad/MenuVertical.php';
         </div>
       </div>        
 
-</div> <br>
-  <div class="mx-auto" style="width:80%"> 
-  <br>   
-<h3 class="text-left titulo-OneonOne text-white text-center" >Respuestas Guardadas</h3>
+</div> <br> 
+<h3   id="title-1" >Respuestas Guardadas</h3>
+ <div class="mx-auto"  > 
  <div class="panel-body">
-                    <div id="tablapdf" class="sessiones">
-                        <table class="table table-bordered-sm" id="datatable2" >
-                            <thead class="table-dark">
+                    <div id="tablapdf" class="sessiones" >
+                        <table  id="datatable2"  >
+                            <thead id="cabezera">
                                 <tr>
                                     <th>Pregunta</th>
                                     <th>Fecha Pregunta</th>
@@ -89,8 +89,7 @@ include 'Modularidad/MenuVertical.php';
                         </div>
                     </div>
 </div>
-
-  <br>
+<button type='button' class='btn btn-success btn-agregar' data-toggle='modal' data-target='#myModal3' id="btn"><img src="../img/responder.svg" id="icon">Responder a preguntas</button>  
      <?php 
               @$pregunta = $_POST['pregunta'];
               @$respuesta = $_POST['respuesta'];

@@ -14,41 +14,60 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/Sesiones-ONE.css">
+<!-- CSS only -->
+
+
 <div class="title">
      <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
     <h2 class="main-title" >Sesiones One on One</h2>
 </div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-  <div class="row">
-    <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
-      <button type='button' class='btn btn-success btn-agregar' data-toggle='modal' data-target='#myModal3'><svg class="bi bi-bookmark-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M4.5 2a.5.5 0 0 0-.5.5v11.066l4-2.667 4 2.667V8.5a.5.5 0 0 1 1 0v6.934l-5-3.333-5 3.333V2.5A1.5 1.5 0 0 1 4.5 1h4a.5.5 0 0 1 0 1h-4zm9-1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H13V1.5a.5.5 0 0 1 .5-.5z"/>
-  <path fill-rule="evenodd" d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z"/>
-</svg> Crear Sesiones</button>
-    </div>
-<div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-  <svg class="bi bi-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
-  <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
-</svg> Horarios Disponibles
-</button>
-</div>
-<div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
-  <a href="sessionesAsistencia.php"><button type="button" class="btn btn-info"><i class="fas fa-list-ol"></i> Listado de asistencia</button></a>
-</div>
-<div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
-  <a href="sesionesfinalizadas.php"><button type="button" class="btn btn-warning" ><i class="fas fa-clipboard-list"></i> Sesiones Finalizadas</button></a>
-
-</div>
-  </div>
 
 <!-- Ver Horarios Disponibles-->
 
 <!-- Asistencia-->
 
 <!-- Modal -->
+<div class="row">
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    
+  <nav class="nav flex-column" id="nav">
+    <h2 class="title-1">Menu</h2><button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
+    <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Horarios Disponibles</button>
+    <button type="button" class="nav-link" role="link" onclick="window.location='sessionesAsistencia.php'">Listado de asistencia</button>
+    <button type="button" class="nav-link" role="link" onclick="window.location='sesionesfinalizadas.php'">Listado de asistencia</button>
+</nav>
+  </div>
+    <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
+      <div class="tabla">
+    <div align="right" id="btns">
+    <a href="Reportes/ReporteSession.php"><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
+  <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
+  </div>
+
+ <div class="panel-body" style="float: left;">
+                    <div id="tablapdf">
+                        <table class="table table-bordered-sm" id="datatable2">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Titulo</th>
+                                    <th>Alumno</th>
+                                    <th>Sede</th>
+                                    <th>Asistencia</th>
+                                    <th>Estado</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        </div>
+                    </div>
+</div>
+    
+  </div>
+</div>
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -153,30 +172,11 @@ include 'Modularidad/MenuVertical.php';
           }
         }
       ?>
-  <div> 
-  <div align="right" id="btns">
-    <a href="Reportes/ReporteSession.php"><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
-  <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
-  </div>
- <div class="panel-body">
-                    <div id="tablapdf" style="color: black;">
-                        <table class="table table-bordered-sm" id="datatable2" >
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Titulo</th>
-                                    <th>Alumno</th>
-                                    <th>Sede</th>
-                                    <th>Asistencia</th>
-                                    <th>Estado</th>
-                                    <th>Fecha</th>
-                                    <th>Hora</th>
-                                    <th>Opciones</th>
-                                </tr>
-                            </thead>
-                        </table>
-                        </div>
-                    </div>
+  <div>       
+    </div>
+
 </div>
+
 
   <br> 
 <script type="text/javascript" src="js/datatables.min.js"></script>
@@ -209,7 +209,7 @@ $(document).ready(function(){
         "sNext":     "Siguiente",
         "sPrevious": "Anterior",
         "sProcessing":     "Procesando...",
-        "sLoadingRecords": "Cargando..."
+        "sLoadingRecords": "Cargando...",
     },
         },
         "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],

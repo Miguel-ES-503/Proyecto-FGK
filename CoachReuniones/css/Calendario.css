@@ -58,3 +58,18 @@
 	margin-left:20px;
 
 }
+#btn-event
+{
+  margin-top: -80px;
+  margin-right: 48%;
+  background-color: #BE0037;
+  height: 35px;
+  border-radius: 30px;
+  width: 18%;
+  font-weight: bold;
+}
+#btn-event p
+{
+  text-align: center;
+  font-size: 16px;
+}

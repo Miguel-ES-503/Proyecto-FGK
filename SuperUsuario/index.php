@@ -17,7 +17,7 @@ include 'Modularidad/MenuVertical.php';
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
 
-    <div class="text-center"">
+    <div class="text-center">
       <div id="demo" class="carousel slide" data-ride="carousel">
 
     <!-- Indicators -->
@@ -81,7 +81,7 @@ include 'Modularidad/MenuVertical.php';
     
     <tr>
     <td>
-    <a href="Manual/ManualEstudiante.pdf""><img class="img-fluid" src="../img/manual.png" width="100px" height="100px"><a>
+    <a href="Manual/ManualEstudiante.pdf"><img class="img-fluid" src="../img/manual.png" width="100px" height="100px"><a>
     <td>
     <h4>Manual de usuario</h4>
     </td>
