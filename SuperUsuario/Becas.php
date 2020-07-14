@@ -28,39 +28,18 @@ require_once '../Conexion/conexion.php';
 
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid">
-
-<br>
-
+<div class="title">
+    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+  <h2 class="main-title" >Estados de Becas</h2>
+  <div class="title2">
+  <a class="nav-link active" href="#" >Becas</a>
+</div>
+</div>
 			<!--Comiezo de estructura de trabajo -->
 		<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	
 
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Estados Becas</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active" href="#" >Becas</a>
-			</li>
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
-<br>
-<h1>Lista de Becados por ciclos</h1>
+<h5 style="color:black">Lista de Becados por ciclos</h5>
 
 
 
@@ -71,7 +50,7 @@ require_once '../Conexion/conexion.php';
 			<div class="table-responsive">        
 				<table id="example3" class="table table-striped table-bordered" cellspacing="0" width="100%">
 			
-					<thead>
+					<thead class="thead-dark">
 						<tr>
 							<th scope="col">ID</th>
 							<th scope="col">Nombre</th>
@@ -89,7 +68,7 @@ require_once '../Conexion/conexion.php';
 							<th scope="col">Estado</th> 
 						</tr>
 					</thead>
-					<tfoot class="table-secondary">
+					<tfoot class="thead-dark">
 						<tr>  
 							<th scope="col">ID</th>
 							<th scope="col">Nombre</th>

@@ -79,9 +79,9 @@ $(document).ready(function() {
         buttons:[ 
 			{
 				extend:    'excelHtml5',
-				text:      '<i class="fas fa-file-excel"></i> ',
+				text:      '<img src="../img/excell.png" width="25px" height="25px">',
 				titleAttr: 'Exportar a Excel',
-				className: 'btn btn-success'
+				className: 'btn btn-successs'
 			}
 			
 			

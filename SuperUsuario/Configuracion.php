@@ -5,7 +5,7 @@
 error_reporting(0);
 ?>
 <title>Configuración</title>
-
+<link rel="stylesheet" type="text/css" href="css/configuracion.css">
 <?php
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
@@ -21,42 +21,22 @@ include 'Modularidad/MenuVertical.php';
     bsCustomFileInput.init()
   });
   </script>
-	<br>
+	<div class="title">
+     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Configuración</h2>
+	<div class="title2">
+	<a class="nav-link active" href="#">Datos Personal</a>
+</div>
 	
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Configuración</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active" href="#">Datos Personal</a>
-			</li>
-			
-
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-
+</div>
 	<div class="container py-4 my-2">
-		<br>
 		<div class="float-right"><?php include "Modularidad/Alerta.php"; ?></div>
 
 		<div class="row">
-			<div class="col-md-4 pr-md-5">
+			<div class="col-md-4 pr-md-5" style="background-color: #ADADB2;
+border-radius: 20px;
+padding: 40px; text-align: center;">
 				<img class="w-100 rounded border"  src="../img/imgUser/<?php echo $_SESSION['Foto']?>"  style="width: 25px; height: 325px;" />
 				<div class="pt-4 mt-2" >
 					<section class="mb-4 pb-1" >
@@ -64,28 +44,34 @@ include 'Modularidad/MenuVertical.php';
 						<!--IMG A Subir -->
 						<div class="custom-file">
 							<div class="custom-file">
-							<input type="file" name="imgusu" id="imgusu" class="custom-file-input" accept="image/*" required />
+							<input type="file" name="imgusu" id="imgusu" class="custom-file-input" accept="image/*" class="file" required />
 							<label class="custom-file-label" for="customFileLang" data-browse="Buscar">Seleccionar Archivo</label>
 							</div>
 							<br><br>
-							<input type="submit" name="SubirImg" id="SubirImg" class="btn btn-dark btn-block" value="Cambiar Foto" style="background: #212529;" />
+							<center><button name="SubirImg" id="SubirImg" class="btn btn-dark btn-block" value="Cambiar Foto" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;">Cambiar foto</button></center>
+
 						</div>
 						</form>
 					</section>
 				</div>
 			</div>
 			<div class="col-md-8">
+				<p class="h4 mb-4"> Datos de la cuenta</p>
 				<div class="d-flex align-items-center">
 
-					<table class="table">
-						<thead class="thead-dark">
+					<table class="table" id="configuracion" >
+						<thead class="thead-light" >
 							<tr>
 								<th scope="col">Correo Electrónico</th>
 								<th scope="col">Sede</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="table-light">
+							<tr class="table-light" style="color: black">
 								<td colspan="" rowspan="" headers=""><?php echo $_SESSION['Email'] ?></td>
 								<td colspan="" rowspan="" headers=""><?php echo $_SESSION['Lugar'] ?></td>
 
@@ -97,7 +83,7 @@ include 'Modularidad/MenuVertical.php';
 				<div id="pass"></div>
 
 				<!-- Default form subscription -->
-				<form class="text-center border border-light p-5" action="Modelo/ModeloPassword/CambiarContra.php" method="POST" style="background: #343a40;" >
+				<form class="text-center" action="Modelo/ModeloPassword/CambiarContra.php" method="POST" style="background:white; padding: 30px;" >
 
 					<p class="h4 mb-4">Cambiar Contraseña</p>
 
@@ -109,7 +95,11 @@ include 'Modularidad/MenuVertical.php';
 
 					<!-- Sign in button -->
 
-					<input type="submit" name="cambiarContra" id="Restablecer" class="btn btn-light btn-block" value="Cambiar Contraseña" />
+					<center><button name="cambiarContra" id="Restablecer" class="btn btn-light btn-block" value="Cambiar Contraseña" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white; ">Cambiar Contraseña</button></center>
 
 				</form>
 				<!-- Default form subscription -->

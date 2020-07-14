@@ -73,42 +73,16 @@ include 'Modularidad/EnlacesCabecera.php';
 //include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
-<br>
+
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
+<div class="title">
+    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+  <h2 class="main-title" >Campo Laboral</h2>
 
-	<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+</div>
 
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Campo Laboral</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active" href="CampoLaboral.php">Regresar</a>
-			</li>
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
-
-<br>
-
-
 <div class="text-justify border border-light p-5">
  
 
@@ -118,9 +92,10 @@ include 'Modularidad/MenuVertical.php';
     </div>
     <div class="card-body">
       <div class="row">
-        <div class="col-sm-6 mb-3 mb-md-0">
-          <div class="card">
-            <div class="card-body">
+        <div class="col-sm-6 mb-3 mb-md-0" style="border-radius: 20px; 
+        background-color:#ADADB2;">
+          <div class="card" style="background-color:#ADADB2;>
+            <div class="card-body" id="formulariolaboral">
               
               <p class="mb-4"><b>Alumno: </b><?php echo$Alumno?><br><b>Sede:  </b><?php echo  $Sede ?> -- <b>Class: </b> <?php echo $Class ?> <br> <b>Universidad: </b> <?php echo $Universidad ?></p>
               <hr>
@@ -129,8 +104,9 @@ include 'Modularidad/MenuVertical.php';
                 <div class="col">
                   <!-- First name   Tema , fecha , la hora y el tipo de taller -->
                   <div class="md-form">
-                    <input type="text"  value="<?php echo $StatusAlumno ?>" disabled  class="form-control"  >
                     <label for="materialRegisterFormFirstName">Status Alumno</label>
+                    <input type="text"  disabled value="<?php echo $StatusAlumno ?>" class="form-control">
+                    
                   </div>
                 </div>
               </div>
@@ -140,13 +116,12 @@ include 'Modularidad/MenuVertical.php';
                 <div class="col">
                   <!-- First name   Tema , fecha , la hora y el tipo de taller -->
                   <div class="md-form">
-                    <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" disabled><?php echo$Comentario?></textarea>
                     <label for="materialRegisterFormFirstName">Comentario</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" disabled><?php echo$Comentario?></textarea>
+                    
                   </div>
                 </div>
               </div>  
-              <br>
-
               <div class="form-row">
                 <div class="col">
                   <!-- First name   Tema , fecha , la hora y el tipo de taller -->
@@ -168,9 +143,11 @@ include 'Modularidad/MenuVertical.php';
           </div>
         </div>
 
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
+        <div class="col-sm-6" style="border-radius: 20px; background-color:white; border-color:#ADADB2;">
+          <div class="card" >
+            <div class="card-body" style="background-color:white;
+  border-color:#ADADB2;
+  padding: 20px;>
               <p class="mb-4"><b>Estado: </b> <?php echo $Estado?></p>
 
               <p class="card-text"><b>Comentario:</b></p>
@@ -197,11 +174,19 @@ include 'Modularidad/MenuVertical.php';
 
               <?php if($Estado == "Aprobado"  || $Estado == "Rechazado" )
               {
-                echo '<input type="button" name="EnviarDato" value="Enviar" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0  disabled">';
+                echo '<center><button name="EnviarDato" value="Enviar" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0  disabled" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;" >Enviar</button></center>';
               }
               else
               {
-               echo '<input type="submit" name="EnviarDato" value="Enviar" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0 ">';
+               echo '<center><button name="EnviarDato" value="Enviar" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0 " style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;" >Enviar</button></center>';
              } 
              ?>
 
@@ -212,22 +197,10 @@ include 'Modularidad/MenuVertical.php';
         </div>
       </div>
     </div>
-
-
-  </div>
-  <div class="card-footer text-muted">
-    Solicitud
-  </div>
+</div>
+</div>
 </div>
 
-
-
-
-
-
-</div>
-
-<br>
 
 
 

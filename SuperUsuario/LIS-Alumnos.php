@@ -17,7 +17,7 @@ include 'Modularidad/MenuVertical.php';
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
 	<div class="title">
-    <a href="javascript:history.back();" class="icon"><img src="../img/back.png" class="icon"></a>
+     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Listas  de alumnos</h2>
 	<div class="title2">
 	<a class="nav-link active" href="LIS-Alumnos.php">Alumnos</a>

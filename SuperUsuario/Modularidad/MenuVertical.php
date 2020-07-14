@@ -351,18 +351,19 @@
       </li>
 
 
-
-
-
-         
-
-      </ul>
-    </di>
-                <a class="dropdown-item" href="Configuracion.php" style="color: white;">Configuración</a>
+<li>
+<a class="dropdown-item" href="Configuracion.php" style="color: white;">Configuración</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../CerrarSession.php" style="color: white;">Salir</a>
+
+  </li>       
+
+      </ul>
+
+    </div>
+                
               </div>
-            </li>
+            
           </ul>
         </div>
       </nav>

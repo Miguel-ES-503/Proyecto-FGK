@@ -28,7 +28,7 @@ include 'Modularidad/MenuVertical.php';
   });
   </script>
 <div class="title">
-    <a href="javascript:history.back();" class="icon"><img src="../img/back.png" class="icon"></a>
+      <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Creación de Cuentas</h2>
 	<div class="title2">
 	<a class="nav-link active" href="SIT-CrearAlumno.php">Alumnos</a>

@@ -46,7 +46,7 @@ require_once '../Conexion/conexion.php';
 </style>
 <div class="container-fluid text-center">
 <div class="title">
-    <a href="javascript:history.back();" class="icon"><img src="../img/back.png" class="icon"></a>
+     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Estados de Becas</h2>
 	<div class="title2">
 	<a class="nav-link active" href="#" >Becas</a>

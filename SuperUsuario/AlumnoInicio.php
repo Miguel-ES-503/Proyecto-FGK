@@ -3,7 +3,7 @@
 //include 'Modularidad/CabeceraInicio.php';
 error_reporting(0);
 ?>
-<title>Expdiente de alumno</title>
+<title>Expediente de alumno</title>
 <?php
 include 'Modularidad/EnlacesCabecera.php';
 //include 'Modularidad/MenuHorizontal.php';
@@ -327,7 +327,7 @@ while($fila2 = $stmt2->fetch()){
 		<br>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
 		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Expdiente del Alumno</a>
+		<a class="navbar-brand" href="#">Expediente del Alumno</a>
 
 		<!-- Collapse button -->
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
