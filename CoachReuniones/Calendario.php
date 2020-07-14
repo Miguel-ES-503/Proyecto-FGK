@@ -48,6 +48,7 @@ $eventsFin = $stmt2->fetchAll();
 <a href="index.php" ><img src="../img/back.png" class="icon"></a>
   <h2 class="main-title" >Calendario</h2>
 </div>
+<button class="btn btn-danger" id="btn-event"><p>Crear evento</p></button>
 <div class="Imfo-Left">
 <p class="Imfo-Left-title">Proximos Eventos</p>
 <div class="Imfo-Left-1">

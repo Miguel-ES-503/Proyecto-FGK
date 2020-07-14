@@ -288,11 +288,11 @@ while($fila2 = $stmt2->fetch()){
 <div id="principal" >
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-	<div class="title">
+	<div class="title" style="margin-left: -60px;">
    <a href="../Alumno/index.php"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Expediente del Alumno</h2>
 	<div class="title2">
-	<p>Historial de notas</p>
+ 	<p>Historial de notas</p>
 </div>
 </div>
 	<div >
