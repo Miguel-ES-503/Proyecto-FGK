@@ -16,53 +16,28 @@ include 'Modularidad/MenuVertical.php';
 
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-	<br>
-	<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<div class="title">
+    <a href="javascript:history.back();" class="icon"><img src="../img/back.png" class="icon"></a>
+  <h2 class="main-title" >Solicitudes</h2>
+  <div class="title2">
+  <a class="nav-link active" href="CampoLaboral.php">Campo Laboral</a>
+</div>
+<div class="title21">
+  <a class="nav-link active" href="ListaSolicitudCampoGeneral.php">Lista General</a>
+</div>
 
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Solicitudes</a>
+</div>
 
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active " href="CampoLaboral.php">Campo Laboral</a>
-			</li>
-
-      <li class="nav-item">
-        <a class="nav-link  " href="ListaSolicitudCampoGeneral.php">Lista General</a>
-      </li>
-
-
-    	
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-
-
-	<br>
   <div class="card">
     <div class="card-header">
-    <h4 style="color:black">Solicitudes</h4>
+    <h5 style="color:black">Solicitudes</h5>
    
     
   </div>
   <div class="card-body">
   	<div class="table-responsive">
   		<table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" >
-  			<thead class="table-secondary">
+  			<thead class="thead-dark">
   				<tr>  
   					
   					<th scope="col">ID</th>
@@ -75,7 +50,7 @@ include 'Modularidad/MenuVertical.php';
   					
   				</tr>
   			</thead>
-  			<tfoot class="table-secondary">
+  			<tfoot class="thead-dark">
   				<tr>
   				  <th scope="col">ID</th>
             <th scope="col">Alumno</th>

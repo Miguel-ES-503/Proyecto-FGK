@@ -27,41 +27,16 @@ include 'Modularidad/MenuVertical.php';
     bsCustomFileInput.init()
   });
   </script>
-<br>
-<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
+<div class="title">
+    <a href="javascript:history.back();" class="icon"><img src="../img/back.png" class="icon"></a>
+	<h2 class="main-title" >Creación de Cuentas</h2>
+	<div class="title2">
+	<a class="nav-link active" href="SIT-CrearAlumno.php">Alumnos</a>
+</div>
+	<div class="title21">
+    <a class="nav-link" href="SIT-CrearCuenta.php" >Acceso</a></div>
 
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Creación de cuentas</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active" href="SIT-CrearAlumno.php">Alumnos</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="SIT-CrearCuenta.php">Cuentas</a>
-			</li> 
-
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
-
-<!--/.Navbar-->
-<br>
+</div>
 
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 
@@ -123,19 +98,22 @@ include 'Modularidad/MenuVertical.php';
 	<h5 class="float-left" style="color: black;">Crear Alumnos</h5>
 		<span class="float-right">	
 			<a href="LIS-Alumnos.php">
-				<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal">
+				<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
+    border: 2px solid;width: 200px;height: 38px;">
 					<img src="img/team.png" width="25px" height="25px">
 					Ver Alumnos
 				</button>
 			</a>
 
-			<button type="button" class="btn btn-success px-3" data-toggle="modal" data-target="#exampleModal2">
+			<button type="button" class="btn btn-success px-3" data-toggle="modal" data-target="#exampleModal2" style="border-radius: 20px;
+    border: 2px solid;width: 200px;height: 38px;" >
 				<img src="img/excell.png" width="25px" height="25px">
 				Subir excel
 			</button>
 
 			<a href="ReportesExcel/PlantillaAlumno.php">
-				<button type="button" class="btn btn-primary px-3" data-toggle="modal" data-target="#exampleModal">
+				<button type="button" class="btn btn-primary px-3" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
+    border: 2px solid;width: 200px;height: 38px;">
 				<img src="img/paper1.png" width="25px" height="25px">
 					Descargar Plantilla
 				</button>
@@ -146,47 +124,53 @@ include 'Modularidad/MenuVertical.php';
 	<div class="card-body">
 		<div class="card-body px-lg-5 pt-0">
 			<!-- Form -->
-			<form class="text-center"  action="Modelo/ModeloAlumno/GuardarAlumno.php" method="POST" >
+			<form class="text-left" id="crearcuenta"  action="Modelo/ModeloAlumno/GuardarAlumno.php" method="POST" >
 
 				<div id="alerta"></div>
-				<h6 style="color: white;" class="float-left">Datos generales</h6><br>
+				<h6 style="color: black;" class="float-left">Datos generales</h6><br>
 				<hr>
 				<div class="form-row">
 					<div class="col">
-						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
-						<div class="md-form">
-							<input type="text" id="CarnetAlumno" name="CarnetAlumno" class="form-control" placeholder="0000-SS-FT-0000" required >
-							<label for="materialRegisterFormFirstName">Carnet del alumno</label>
-						</div>
-					</div>
-					<div class="col">
 						<!-- Last name -->
 						<div class="md-form">
-							<input type="text" id="NombreAlumno" name="NombreAlumno" class="form-control" placeholder="Nombre Completo" required >
 							<label for="materialRegisterFormLastName">Nombre del alumno</label>
+							<input type="text" id="NombreAlumno" name="NombreAlumno" class="form-control" placeholder="Nombre Completo" required >
+							
 						</div>
 					</div>
-				</div>
-				<div class="form-row">
 					<div class="col">
 						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 						<div class="md-form">
-							<input type="number" min="2009" id="NClass" name="NClass" class="form-control" placeholder="Promoción" required >
-							<label for="materialRegisterFormFirstName">Class</label>
+							<label for="materialRegisterFormFirstName">Carnet del alumno</label>
+							<input type="text" id="CarnetAlumno" name="CarnetAlumno" class="form-control" placeholder="0000-SS-FT-0000" required >
+							
 						</div>
 					</div>
+					
+					<div class="col">
+						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
+						<div class="md-form">
+							<label for="materialRegisterFormFirstName">Class</label>
+							<input type="number" min="2009" id="NClass" name="NClass" class="form-control" placeholder="Promoción" required >
+							
+						</div>
+					</div>
+
+				</div>
+				<div class="form-row">
+					
 					<div class="col">
 						<!-- Last name -->
 						<div class="md-form">
-							<input type="text" id="correo"  name="correo" class="form-control" placeholder="ejemplo@oportunidades.org.sv" required>
 							<label for="materialRegisterFormLastName">Correo</label>
+							<input type="text" id="correo"  name="correo" class="form-control" placeholder="ejemplo@oportunidades.org.sv" required>
+							
 						</div>
 					</div>
-				</div>
-				<div class="form-row">
 					<div class="col">
 						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 						<div class="md-form">
+							<label for="materialRegisterFormFirstName">Carrera</label>
 							<select type="text" id="NombreCarrera" name="NombreCarrera" class="form-control" required>
 								<?php     
 								echo '<option value="" disabled selected >Seleccione la opción</option>';
@@ -196,13 +180,13 @@ include 'Modularidad/MenuVertical.php';
 								}
 								echo '</select>';
 								?>
-								<label for="materialRegisterFormFirstName">Carrera</label>
+								
 							</div>
 						</div>
-
 						<div class="col">
 							<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 							<div class="md-form">
+								<label for="materialRegisterFormFirstName">Universidad</label>
 								<select id="idempresa" name="idempresa" class="form-control" required>
 									<?php     
 									echo '<option value="" disabled selected >Seleccione la opción</option>';
@@ -212,28 +196,29 @@ include 'Modularidad/MenuVertical.php';
 									}
 									echo '</select>';
 									?>
-									<label for="materialRegisterFormFirstName">Universidad</label>
+									
 								</div>
 							</div>
-						</div>
-						<div class="form-row">
-
-							<div class="col">
+				</div>
+				<div class="form-row">
+					<div class="col">
 								<!-- Last name -->
 								<div class="md-form">
+									<label for="materialRegisterFormLastName">Sexo</label>
 									<select id="Sexo" name="Sexo" class="form-control" required>
 										<option value="" disabled selected >Seleccione la opción</option>
 										<option value="M">Hombre</option>
 										<option value="F">Mujer</option>
 
 									</select>
-									<label for="materialRegisterFormLastName">Sexo</label>
+									
 								</div>
 							</div>
 
-							<div class="col">
+						<div class="col">
 								
 								<div class="md-form">
+									<label for="materialRegisterFormLastName">Proceso</label>
 									<select id="IDStatus" name="IDStatus" class="form-control" required>
 										<?php 
 										echo '<option value="" disabled selected >Seleccione la opción</option>';
@@ -243,20 +228,17 @@ include 'Modularidad/MenuVertical.php';
 										}
 										echo '</select>';
 										?>
-										<label for="materialRegisterFormLastName">Proceso</label>
+										
 									</div>
 
 
 
 							</div>
-						</div>
-
-
-							<div class="form-row">	
-
-								<div class="col">
+						
+						<div class="col">
 									<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 									<div class="md-form">
+										<label for="materialRegisterFormFirstName">Sede</label>
 										<select type="text" id="sede" name="sede" class="form-control" required>
 											<?php 
 											echo '<option value="" disabled selected >Seleccione la opción</option>';
@@ -266,15 +248,17 @@ include 'Modularidad/MenuVertical.php';
 											}
 											echo '</select>';
 											?>
-											<label for="materialRegisterFormFirstName">Sede</label>
+											
 										</div>
 									</div>
-
-
+						</div>
+					
+				<div class="form-row">	
 
 									<div class="col">
 										<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 										<div class="md-form">
+											<label for="materialRegisterFormFirstName">Lugar de asistencia</label>
 											<select type="text" id="Asistencia" name="Asistencia" class="form-control" required>
 												<option value="" disabled selected >Seleccione la opción</option>
 												<option value="SSFT" >San Salvador</option>
@@ -282,16 +266,14 @@ include 'Modularidad/MenuVertical.php';
 											</select>
 
 
-											<label for="materialRegisterFormFirstName">Lugar de asistencia</label>
+											
 										</div>
 									</div>
-								</div>
 
-								<div class="form-row">
-
-									<div class="col">
+								<div class="col">
 										<!-- Last name -->
 										<div class="md-form">
+											<label for="materialRegisterFormFirstName">Status actual (A LA FECHA)</label>
 											<select type="text" id="estadoAlumno" name="statusActual" class="form-control" required >
 												<option value="" disabled selected >Seleccione la opción</option>
 												<option value="Becado" >Becado</option>
@@ -308,11 +290,12 @@ include 'Modularidad/MenuVertical.php';
 												<option value="Pausa" >Pausa</option>
 												<option value="Fallecido">Fallecido</option>
 											</select>	
-											<label for="materialRegisterFormFirstName">Status actual (A LA FECHA)</label>
+											
 										</div>
-									</div>
-									<div class="col">
+									</div>	
+										<div class="col">
 										<div class="md-form">
+											<label for="materialRegisterFormFirstName">Fuente de financiamiento</label>
 											<select type="text" id="financiamiento" name="financiamiento" class="form-control" required >
 												<option value="" disabled selected >Seleccione la opción</option>
 												<option value="Beca Externa con Apoyo Adicional" >Beca Externa con Apoyo Adicional</option>
@@ -321,16 +304,13 @@ include 'Modularidad/MenuVertical.php';
 												<option value="FOM" >FOM</option>
 												<option value="Financiamiento Propio" >Financiamiento Propio</option>
 											</select>	
-											<label for="materialRegisterFormFirstName">Fuente de financiamiento</label>
+											
 										</div>
 									</div>
 								</div>
 
-
-
-
-						
-						<h6 style="color: white;" class="float-left">Historico del alumno de los talleres</h6><br>
+								<br>
+						<h6 style="color: black;" class="float-left">Histórico del alumno de los talleres</h6><br>
 						<hr>
 
 						<div class="form-row">
@@ -338,32 +318,35 @@ include 'Modularidad/MenuVertical.php';
 							<div class="col">
 								<!-- Last name -->
 								<div class="md-form">
+									<label for="materialRegisterFormFirstName">Estado del alumno</label>
 									<select type="text" id="estadoAlumno" name="estadoAlumno" class="form-control" required >
 										<option value="" disabled selected >Seleccione la opción</option>
 										<option value="Activo" >Activo</option>
 										<option value="Graduado" >Graduado</option>
 										<option value="Inactivo" >Inactivo</option>
 									</select>	
-									<label for="materialRegisterFormFirstName">Estado del alumno</label>
+									
 								</div>
 							</div>
 							<div class="col">
 								<div class="md-form">
-									<input type="number" name="cantidaTaller" class="form-control" placeholder="Ingrese la cantida de talleres" min="0" required >
 									<label for="materialRegisterFormFirstName">Cantidad de talleres</label>
+									<input type="number" name="cantidaTaller" class="form-control" placeholder="Ingrese la cantida de talleres" min="0" required >
+									
 								</div>
+
 							</div>
-							
+
+							<div class="col">
+							<div class="md-form">
+							<input type="hidden" id="cargo" name="cargo"  value="Estudiante">
+						<!-- Sign up button -->	
+									<br>		
+								<button name="Guardar_Datos" value="Crear Alumno" id="Guardar_Alumno"> Crear Alumno</button>
+								<!--<input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
+							</div>
 						</div>
-
-						
-					
-
-								<input type="hidden" id="cargo" name="cargo"  value="Estudiante">
-								<!-- Sign up button -->
-								<input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Datos" value="Crear Alumno" id="Guardar_Alumno">
-
-								<hr>          
+					</div>
 							</form>
 						</div>
 						<!-- Fin del Formulario -->
@@ -373,11 +356,6 @@ include 'Modularidad/MenuVertical.php';
 			</div>
 </div>
 <br>
-
-
-
-
-
 
 <?php
 //Incluir el footer

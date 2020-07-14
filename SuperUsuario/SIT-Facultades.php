@@ -1,7 +1,7 @@
 <?php
 include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos
 //Modularidad para inicializar el Head y <!DOCTYPE html>
-include 'Modularidad/CabeceraInicio.php';
+//include 'Modularidad/CabeceraInicio.php';
 ?>
 <title>Facultades</title>
 
@@ -14,41 +14,21 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid ">
-	<!--Navbar-->
-	<br>
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<div class="title">
+    <a href="javascript:history.back();" class="icon"><img src="../img/back.png" class="icon"></a>
+	<h2 class="main-title" >Creación de Facultades</h2>
+	<div class="title2">
+	<a class="nav-link active" href="SIT-CrearEmpresas.php">Empresas</a>
+</div>
+	<div class="title21">
+    <a class="nav-link" href="SIT-CrearCarrera.php">Carreras</a>
+</div>
+<div class="title21">
+    <a class="nav-link" href="SIT-Facultades.php">Facultades</a>
+</div>
 
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Creación de facultades</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link" href="SIT-CrearEmpresas.php">Empresas</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="SIT-CrearCarrera.php">Carreras</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link active" href="SIT-Facultades.php">Facultades</a>
-			</li> 
-
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
+</div>
+	
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 <!-- Comienzo del MODAL DEL FORMULARIO -->
 <!-- Modal -->
@@ -56,7 +36,7 @@ include 'Modularidad/MenuVertical.php';
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel" style="color: black;" >Nuevo Facultad</h5>
+				<h5 class="modal-title" id="exampleModalLabel" style="color: black;">Nuevo Facultad</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -88,20 +68,23 @@ include 'Modularidad/MenuVertical.php';
 
 <br>
 <div class="card">
-	<h5 class="card-header h5 bg-light" style="color: black;">Lista de facultades 
+	<h5 class="card-header" style="color: black;">Lista de facultades
 
 		<span class="float-right">	
-			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal2">
-				<i class="fas fa-briefcase"></i>
-				Nuevo Facultdad
+			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal2" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;">
+				<img src="img/facultad.png" width="25px" height="25px">Nueva Facultad
 			</button>
 		</span>
 	</h5>	
 	<div class="card-body">
 		<div class="table-responsive">
 			<br>
-			<table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" >
-				<thead class="table-secondary">
+			<table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed">
+				<thead class="thead-dark">
 					<tr>  
 						<th scope="col">#</th>
 						<th scope="col">Nombre Facultadad</th>
@@ -110,7 +93,7 @@ include 'Modularidad/MenuVertical.php';
 					</tr>
 				</tr>
 			</thead>
-			<tfoot class="table-secondary">
+			<tfoot class="thead-dark">
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Nombre Facultadad</th>

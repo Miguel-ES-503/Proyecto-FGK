@@ -15,35 +15,15 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center ">
-	<br>
-	<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<div class="title">
+    <a href="javascript:history.back();" class="icon"><img src="../img/back.png" class="icon"></a>
+	<h2 class="main-title" >Creación de Ciclos</h2>
+	<div class="title2">
+	<a class="nav-link active" href="SIT-Ciclos.php">Ciclo</a>
+</div>
 
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Creación de ciclos</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active " href="SIT-Ciclos.php">Ciclo</a>
-			</li>			
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
-
+</div>
+	
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 
 <!-- Comienzo del MODAL DEL FORMULARIO -->
@@ -63,8 +43,9 @@ include 'Modularidad/MenuVertical.php';
 					<div class="col">
 						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 						<div class="md-form">
-							<input type="text" id="idciclo" name="idciclo" class="form-control" placeholder="00-0000" required>
 							<label for="materialRegisterFormFirstName" style="color: black" >Ciclo Actual</label>
+							<input type="text" id="idciclo" name="idciclo" class="form-control" placeholder="00-0000" required>
+							
 						</div>							
 					</div>
 
@@ -72,27 +53,32 @@ include 'Modularidad/MenuVertical.php';
 					<div class="col">
 						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 						<div class="md-form">
-							<input type="date" id="fechaInicio" name="fechaInicio" class="form-control" required>
 							<label for="materialRegisterFormFirstName" style="color: black" >Fecha Inicio</label>
+							<input type="date" id="fechaInicio" name="fechaInicio" class="form-control" required>
+							
 						</div>
 
 						
 						
 
 						<div class="md-form">
-							<input type="date" id="fechaFinal" name="fechaFinal" class="form-control" required>
 							<label for="materialRegisterFormFirstName" style="color: black" >Fecha Final</label>
+							<input type="date" id="fechaFinal" name="fechaFinal" class="form-control" required>
+							
 						</div>
 
 						
 					</div>
-					
-					<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_ciclos" value="Crear Ciclo" id="Guardar_ciclos">
+					<br>
+					<center><button name="Guardar_ciclos" value="Crear Ciclo" id="Guardar_ciclos" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;">Crear Ciclo</button></center>
+     <!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">-->
 				</form>
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-			</div>
+			
 		</div>
 	</div>
 </div>
@@ -100,11 +86,15 @@ include 'Modularidad/MenuVertical.php';
 
 <br>
 <div class="card">
-		<h5 class="card-header h5 bg-light" style="color: black;">Lista de Ciclos
+		<h5 class="card-header" style="color: black; font-weight: bold">Lista de Ciclos
 
 		<span class="float-right">	
-			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal2">
-				<i class="fas fa-university"></i>
+			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal2" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;">
+				<img src="img/facultad.png" width="25px" height="25px">
 				Crear Ciclo
 			</button>
 		</span>
@@ -113,7 +103,7 @@ include 'Modularidad/MenuVertical.php';
 		<div class="table-responsive">
 			<br>
 			<table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" >
-				<thead class="table-secondary">
+				<thead class="thead-dark">
 					<tr>  
 						<th scope="col">Ciclo</th>
 						<th scope="col">Fecha de Inicio</th>
@@ -123,7 +113,7 @@ include 'Modularidad/MenuVertical.php';
 					</tr>
 				</tr>
 			</thead>
-			<tfoot class="table-secondary">
+			<tfoot class="thead-dark">
 				<tr>
 					<th scope="col">Ciclo</th>
 					<th scope="col">Fecha de Inicio</th>

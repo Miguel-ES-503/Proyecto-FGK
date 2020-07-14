@@ -15,45 +15,24 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid ">
-   <br>
-<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="title">
+    <a href="javascript:history.back();" class="icon"><img src="../img/back.png" class="icon"></a>
+	<h2 class="main-title" >Creación de Empresas</h2>
+	<div class="title2">
+	<a class="nav-link active" href="SIT-CrearEmpresas.php">Empresas</a>
+</div>
+	<div class="title21">
+    <a class="nav-link" href="SIT-CrearCarrera.php">Carrera</a>
+</div>
+<div class="title21">
+    <a class="nav-link" href="SIT-Facultades.php">Facultades</a>
+</div>
 
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Creación de empresa</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active" href="SIT-CrearEmpresas.php">Empresas</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="SIT-CrearCarrera.php">Carreras</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="SIT-Facultades.php">Facultades</a>
-			</li> 
-
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
-
+</div>
+	
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 <div class="float-right"> <?php include 'Modularidad/AlertaCorreo.php'?></div>
-<br>
+
 <!-- Comienzo del MODAL DEL FORMULARIO -->
 
 <!-- Modal -->
@@ -74,14 +53,16 @@ include 'Modularidad/MenuVertical.php';
 					<div class="col">
 						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 						<div class="md-form">
-							<input type="text" id="NombreEmpresa" name="NombreEmpresa" class="form-control" placeholder="Nombre completo de la empresa" required >
 							<label for="materialRegisterFormFirstName" style="color: black" >Nombre Empresa</label>
+							<input type="text" id="NombreEmpresa" name="NombreEmpresa" class="form-control" placeholder="Nombre completo de la empresa" required >
+							
 						</div>
 					</div>
 
 					<div class="col">
 						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 						<div class="md-form">
+							<label for="materialRegisterFormFirstName" style="color: black" >Descripción</label>
 							<select id="opciones" name="opciones" class="form-control" required>
 								<option value="" disabled selected >Seleccione la opción</option>
 								<option value="Universidad">Universidad</option>
@@ -90,18 +71,17 @@ include 'Modularidad/MenuVertical.php';
 								
 
 							</select>
-							<label for="materialRegisterFormFirstName" style="color: black" >Descripción</label>
+							
 						</div>
 					</div>
-
-		<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Datos" value="Crear Empresa" id="Guardar_Datos">
+<br>
+		<center><button name="Guardar_Datos" value="Crear Empresa" id="Guardar_Datos" class="crearempresa">Crear Empresa</button></center>
+    <!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 
 				</form>
 
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-			</div>
+			
 		</div>
 	</div>
 </div>
@@ -132,10 +112,11 @@ include 'Modularidad/MenuVertical.php';
 
 <br>
 <div class="card">
-	<h5 class="card-header h5 bg-light" style="color: black;">Empresas 
+	<h5 class="card-header style="color: black;">Empresas 
 
 		<span class="float-right">	
-			<img src="img/company.png" width="30px" height="25px"><button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal">
+			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
+    border: 2px solid;width: 200px;height: 38px;"><img src="img/company.png" width="30px" height="25px">
 				
 				Nueva Empresa
 			</button>

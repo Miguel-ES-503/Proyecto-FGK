@@ -8,6 +8,7 @@
   <!--CSS principal-->
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" type="text/css" href="css/estiloIndexSuperU.css">
+  <link rel="stylesheet" type="text/css" href="css/global.css">
 
   <!--FOOTER-->
   <link rel="stylesheet" href="../css/footer.css">

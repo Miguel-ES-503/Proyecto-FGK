@@ -27,7 +27,7 @@
 
 #tableUser_info
 {
-    color: white;
+    color: black;
 }
 
 
@@ -66,16 +66,23 @@
 
 #myTab
 {
-   background:#343a40;
+   background:white;
 }
 
 
 
 .card-body
 {
-	background:#343a40;
-}
+	background:white;
+  border:none;
 
+}
+.card{
+  border:none;
+}
+.card-header{
+  border:none;
+}
 
 
 
@@ -114,16 +121,20 @@ h4
 h6
 {
  font-family: 'Roboto Light', arial;
+ font-weight: bold;
+ font-size: 18px;
 }
 
 hr{
-    background: white;
+    background:#7c7c7c;
+    height: 1.5px;
 }
 
 label
 {
-    color: white;
+    color: black;
     font-family: 'Roboto Light', arial;
+    text-align: justify;
 }
 
 
@@ -184,7 +195,7 @@ th
 
 p
 {   
-    color: white;
+    color: black;
     font-family: arial;
     text-align: justify;
     font-family: 'Roboto Light', arial;
@@ -192,13 +203,40 @@ p
 
 h5
 {
- color: white;
+ color: black;
  font-family: arial;
  text-align: justify;
  font-family: 'Roboto Regular', arial;
 }
+#Guardar_Alumno{
+  text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    background-color: #BE0032;
+    border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 380px;
+    height: 35px;
 
+}
+#Guardar_Alumno:hover{
+  color: black;
+    background-color: #ADADB2;
+}
+#Guardar_Cuentas2{
+  text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    background-color: #BE0032;
+    border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 380px;
+    height: 35px;
+    
 
+}
 
 
 

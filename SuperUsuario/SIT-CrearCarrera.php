@@ -14,39 +14,23 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuVertical.php';
 ?>
 
-<br>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid ">
-	<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<div class="title">
+    <a href="javascript:history.back();" class="icon"><img src="../img/back.png" class="icon"></a>
+	<h2 class="main-title" >Creación de Carrera</h2>
+	<div class="title2">
+	<a class="nav-link active" href="SIT-CrearEmpresas.php">Empresas</a>
+</div>
+	<div class="title21">
+    <a class="nav-link" href="SIT-CrearCarrera.php">Carreras</a>
+</div>
+<div class="title21">
+    <a class="nav-link" href="SIT-Facultades.php">Facultades</a>
+</div>
 
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Creación de carrera</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
+</div>
 	
-			<li class="nav-item">
-				<a class="nav-link " href="SIT-CrearEmpresas.php">Empresas</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link active" href="SIT-CrearCarrera.php">Carreras</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="SIT-Facultades.php">Facultades</a>
-			</li> 
-
-		</ul>
-		<!-- Links -->   
 	</div>
 	<!-- Collapsible content -->
 </nav>
@@ -74,11 +58,13 @@ include 'Modularidad/MenuVertical.php';
 					<div class="col">
 						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 						<div class="md-form">
-							<input type="text" id="NomCarr" name="NomCarr" class="form-control" placeholder="Nombre completo de la carrera" required>
 							<label for="materialRegisterFormFirstName" style="color: black" >Nombre de Carrera</label>
+							<input type="text" id="NomCarr" name="NomCarr" class="form-control" placeholder="Nombre completo de la carrera" required>
+							
 						</div>
 
 						<div class="md-form">
+							<label for="materialRegisterFormFirstName" style="color: black" >Nombre de la Facultad</label>
 							<select id="Faculta" name="Faculta" class="form-control" required >
 								<?php     
 								echo '<option value="" disabled selected >Seleccione la opción</option>';
@@ -91,7 +77,7 @@ include 'Modularidad/MenuVertical.php';
 
 							</select>
 
-							<label for="materialRegisterFormFirstName" style="color: black" >Nombre de la Facultad</label>
+							
 						</div>
 					</div>
 
@@ -99,19 +85,23 @@ include 'Modularidad/MenuVertical.php';
 					<div class="col">
 						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 						<div class="md-form">
+							<label for="materialRegisterFormFirstName" style="color: black" >Duración Carrera</label>
 							<select id="duracion" name="duracion" class="form-control" required>
 								<option value="" disabled selected >Seleccione la opción</option>
 								<option value="Corta Duración">Corta Duración</option>
 								<option value="Larga Duración">Larga Duración</option>
 							</select>
-							<label for="materialRegisterFormFirstName" style="color: black" >Duración Carrera</label>
+							
 						</div>
 					</div>
-					<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Carrera" value="Crear Carrera" id="Guardar_Carrera">
+					<br>
+					<center><button name="Guardar_Carrera" value="Crear Carrera" id="Guardar_Carrera" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white; ">Crear Carrera</button></center>
+     <!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 			</div>
 		</div>
 	</div>
@@ -120,10 +110,14 @@ include 'Modularidad/MenuVertical.php';
 
 <br>
 <div class="card">
-	<h5 class="card-header h5 bg-light" style="color: black;"> Lista de carreras 
+	<h5 class="card-header" style="color: black;"> Lista de carreras 
 
 		<span class="float-right">	
-			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal2">
+			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal2" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white; ">
 				<i class="fas fa-book"></i>
 				 Nueva Carrera
 			</button>
@@ -133,7 +127,7 @@ include 'Modularidad/MenuVertical.php';
 		<div class="table-responsive">
 			<br>
 			<table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" >
-				<thead class="table-secondary">
+				<thead class="thead-dark">
 					<tr>  
 						<th scope="col">Codigo</th>
 						<th scope="col">Carrera</th>
@@ -144,7 +138,7 @@ include 'Modularidad/MenuVertical.php';
 					</tr>
 				</tr>
 			</thead>
-			<tfoot class="table-secondary">
+			<tfoot class="thead-dark">
 				<tr>
 					<th scope="col">Codigo</th>
 					<th scope="col">Carrera</th>

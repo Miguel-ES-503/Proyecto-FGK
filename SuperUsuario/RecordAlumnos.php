@@ -52,7 +52,7 @@ include 'Modularidad/MenuVertical.php';
 	<h5 class="card-header h5 bg-light" style="color: black;">Lista general
 		<a href="ReportesExcel/RecordAlumnos.php" class="float-right">
 		<button type="button" class="btn btn-success px-3">
-			<i class="fas fa-arrow-circle-down"></i>
+			<img src="img/excell.png" width="25px" height="25"> Descargar
 
 		</button>
 	</a>

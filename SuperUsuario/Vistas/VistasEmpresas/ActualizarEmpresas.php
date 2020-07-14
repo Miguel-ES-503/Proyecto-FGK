@@ -22,16 +22,18 @@ if (isset($_GET['id'])) {
 	<link href="../../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<!--Estilo css CrearCuentas-->
 	<link rel="stylesheet" type="text/css" href="css/EstiloCrearCuentas.css">
+	<link rel="stylesheet" type="text/css" href="css/global.css">
 </head>
 
-<body class="container">
+<body class="container" style="background-color: white">
 
+	
 
 	<!-- Comienzo del MODAL DEL FORMULARIO -->
 
 	<!-- Modal -->
 	<div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: block; padding-right: 16px;" aria-modal="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog" role="document" style="background-color: white">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel" style="color:black;">Actualizar Empresa</h5>
@@ -74,7 +76,8 @@ if (isset($_GET['id'])) {
 							</div>
 						</div>
 		<input type="hidden" name="id" name="id" <?php echo 'value="'.utf8_encode($fila['ID_Empresa']) .'"';?>>
-						<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Datos" value="Actualizar Empresa" id="Guardar_Datos">
+						<center><button name="Guardar_Datos" value="Actualizar Empresa" class="actualizarempresa" id="Guardar_Datos">Actualizar Empresa</button></center>
+    <!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 
 					</form>
 	<a href="../../SIT-CrearEmpresas.php">Regresar inicio?</a>

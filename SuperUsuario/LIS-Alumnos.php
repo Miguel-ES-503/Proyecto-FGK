@@ -16,38 +16,17 @@ include 'Modularidad/MenuVertical.php';
 
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-	<br>
-	<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<div class="title">
+    <a href="javascript:history.back();" class="icon"><img src="../img/back.png" class="icon"></a>
+	<h2 class="main-title" >Listas  de alumnos</h2>
+	<div class="title2">
+	<a class="nav-link active" href="LIS-Alumnos.php">Alumnos</a>
+</div>
+	<div class="title21">
+    <a class="nav-link" href="LIS-Cuentas.php" >Cuentas</a></div>
 
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Listas  de alumnos</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active" href="LIS-Alumnos.php">Alumnos</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="LIS-Cuentas.php">Cuentas</a>
-			</li> 
-
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
+</div>
+	
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 <div class="float-right"> <?php include 'Modularidad/AlertaCorreo.php'?></div>
 
@@ -58,29 +37,29 @@ include 'Modularidad/MenuVertical.php';
 	<h5 class="card-header" style="color: black;">Alumnos de  <?php if($ubicacion == "SS"){ echo "San Salvador";}else{ echo "Santa Ana";}?>
 		
 		<span class="float-right">	
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><img src="img/contact.png" width="25px" height="25px">
 				Realizar Cambios
 			</button>
 
 			<a href="SIT-CrearAlumno.php">
 				<button type="button" class="btn btn-danger px-3">
-					<i class="fas fa-users" aria-hidden="true"></i>
+					<img src="img/team.png" width="25px" height="25px">
 					Crear alumnos
 				</button>
 			</a>
 
 	     		<a href="ReportesExcel/ReportesAlumnos.php">
 	     			<button type="button" class="btn btn-success px-3">
-	     				<i class="fas fa-arrow-circle-down"></i>
+	     				<img src="img/excell.png" width="25px" height="25px"> Descargar
 	     			</button>
 	     		</a>
 		</span>
 	</h5>	
-	<div class="card-body">
+	<div class="card-body" style="background-color: white;">
 		<div class="table-responsive">
 			<br>
 			<table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
-				<thead class="table-secondary">
+				<thead class="thead-dark">
 					<tr> 
 						<th scope="col"><input type='checkbox' name='' class='case' value="" id="todos">Todos</th>
 						<th scope="col">Carnet</th>
@@ -94,7 +73,7 @@ include 'Modularidad/MenuVertical.php';
 						<th scope="col">Ver expediente</th>
 					</tr>
 				</thead>
-				<tfoot class="table-secondary">
+				<tfoot class="thead-dark">
 					<tr>
 						<th scope="col">Todos</th>
 						<th scope="col">Carnet</th>
@@ -127,13 +106,13 @@ include 'Modularidad/MenuVertical.php';
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="color: black">Realizar cambios al estudiante</h5>
+        <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Realizar cambios al estudiante</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-       
+       <label for="materialRegisterFormFirstName" style="color: black;">Status actual (A LA FECHA)</label>
       	<select type="text" id="estadoAlumno" name="statusActual" class="form-control">
       		<option value="" disabled selected >Seleccione la opción</option>
       		<option value="Becado" >Becado</option>
@@ -150,10 +129,10 @@ include 'Modularidad/MenuVertical.php';
       		<option value="Pausa" >Pausa</option>
       		<option value="Fallecido">Fallecido</option>
       	</select>	
-      	<label for="materialRegisterFormFirstName" style="color: black;">Status actual (A LA FECHA)</label>
+      	
 
       	<br>
-
+<label for="materialRegisterFormFirstName" style="color: black;">Fuente de financiamiento</label>
       	<select type="text" id="financiamiento" name="financiamiento" class="form-control" >
       		<option value="" disabled selected >Seleccione la opción</option>
       		<option value="Beca Externa con Apoyo Adicional" >Beca Externa con Apoyo Adicional</option>
@@ -162,10 +141,10 @@ include 'Modularidad/MenuVertical.php';
       		<option value="FOM" >FOM</option>
       		<option value="Financiamiento Propio" >Financiamiento Propio</option>
       	</select>	
-      	<label for="materialRegisterFormFirstName" style="color: black;">Fuente de financiamiento</label>
+      	
 
       	<br>
-
+<label for="materialRegisterFormLastName" style="color: black;">Proceso</label>
       	<select id="IDStatus" name="IDStatus" class="form-control" >
       		<?php 
       		echo '<option value="" disabled selected >Seleccione la opción</option>';
@@ -175,19 +154,22 @@ include 'Modularidad/MenuVertical.php';
       		}
       		echo '</select>';
       		?>
-      		<label for="materialRegisterFormLastName" style="color: black;">Proceso</label>
+      		
       		<br>
+<label for="materialRegisterFormFirstName" style="color: black;">Lugar de asistencia</label>
 
       		<select type="text" id="Asistencia" name="Asistencia" class="form-control">
       			<option value="" disabled selected >Seleccione la opción</option>
       			<option value="SSFT" >San Salvador</option>
       			<option value="SAFT" >Santa Ana</option>
       		</select>
-      		<label for="materialRegisterFormFirstName" style="color: black;">Lugar de asistencia</label>
-
+      		
       </div>
       <div class="modal-footer">
-     <input type="submit" name="cambiar" value="Actualizar" class="btn btn-primary">
+
+     <button name="cambiar" value="Actualizar" class="Actualizar">Actualizar</button>
+
+     <!--<input type="submit" name="cambiar" value="Actualizar" class="Actualizar">-->
       </div>
     </div>
   </div>

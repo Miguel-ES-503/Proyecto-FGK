@@ -15,10 +15,6 @@ include 'Modularidad/MenuVertical.php';
 ?>
 
 <!--Comiezo de estructura de trabajo -->
-<div class="container-fluid">
-<br>
-
-<br>
 <div class="container-fluid text-center">
 
     <div class="text-center"">

@@ -10,7 +10,7 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuVertical.php';
 require_once '../Conexion/conexion.php';
 ?>
-<br>
+
 
 <style type="text/css" media="screen">
 
@@ -45,47 +45,26 @@ require_once '../Conexion/conexion.php';
 
 </style>
 <div class="container-fluid text-center">
+<div class="title">
+    <a href="javascript:history.back();" class="icon"><img src="../img/back.png" class="icon"></a>
+	<h2 class="main-title" >Estados de Becas</h2>
+	<div class="title2">
+	<a class="nav-link active" href="#" >Becas</a>
+</div>
 
-	<!--Comiezo de estructura de trabajo -->
-	<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Estados Becas</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active" href="#" >Becas</a>
-			</li>
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
-<br>
+</div>
+	
 
 <div class="card">
 
 	<div class="card-header">
-		<h4 style="color: black;">Lista de Becados por ciclos</h4>
+		<h5 style="color: black;">Lista de Becados por ciclos</h5>
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
 			<table   id="example3"  class="table table-hover table-sm table-bordered table-fixed" >
-				<p>Descargar Lista becas</p>
-				<thead class="table-secondary">
+				<p>Descargar Lista becas<p>
+				<thead class="thead-dark">
 					<tr>  
 						<th scope="col">ID</th>
 						<th scope="col">Nombre</th>
@@ -104,7 +83,7 @@ require_once '../Conexion/conexion.php';
 					</tr>
 				</tr>
 			</thead>
-			<tfoot class="table-secondary">
+			<tfoot class="thead-dark">
 				<tr>   
 					<th scope="col">ID</th>
 					<th scope="col">Nombre</th>
@@ -162,6 +141,7 @@ require_once '../Conexion/conexion.php';
   	<style>
 	  .colorcito{
 		background: green;
+		
 	}
 	  </style>
 <?php
