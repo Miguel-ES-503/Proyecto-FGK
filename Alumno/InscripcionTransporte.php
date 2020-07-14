@@ -38,7 +38,7 @@
 <!--tabla con informacion de solicitud-->
     <div class="col text-center">
       <br><br><br>
-      <table class="table table-responsive-lg float-left">
+      <table class="table table-responsive-lg">
 
         <thead  style="background-color: #2D2D2E; color: white;">
           <tr>
@@ -125,7 +125,7 @@ $extraeIdAlumno=$dbh->prepare("SELECT `ID_Alumno` FROM `alumnos` WHERE `correo`=
 </div>
 
 
-  <br><br><br><br>
+  <br><br><br><br> <br>
 
 <?php
   require_once 'templates/footer.php';
