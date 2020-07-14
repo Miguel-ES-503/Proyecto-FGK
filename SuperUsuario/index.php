@@ -4,7 +4,7 @@
 //include 'Modularidad/CabeceraInicio.php';
 error_reporting(0);
 ?>
-<title>Inicio Super Usuario</title>
+<title>Inicio Super-Usuario</title>
 
 <?php
 //Modularaidad para extraere los enlaces en HEAD
