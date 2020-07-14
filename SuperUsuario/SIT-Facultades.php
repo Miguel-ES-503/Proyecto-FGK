@@ -36,7 +36,7 @@ include 'Modularidad/MenuVertical.php';
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel" style="color: black;">Nuevo Facultad</h5>
+				<h5 class="modal-title" id="exampleModalLabel" style="color: black;">Nueva Facultad</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -46,18 +46,22 @@ include 'Modularidad/MenuVertical.php';
 					<div id="alerta6"></div>
 					<div class="col">
 						<div class="md-form">
-							<input type="text" id="NombreFac" name="NombreFac" class="form-control" required placeholder="Nombre de la facultad completo">
 							<label for="materialRegisterFormFirstName" style="color: black"  >Nombre de la facultad</label>
+							<input type="text" id="NombreFac" name="NombreFac" class="form-control" required placeholder="Nombre completo de la facultad ">
+							
 						</div>
 					</div>
-
-					<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Facultad" value="Registrar Facultad" id="Guardar_Facultad">
+<br>
+					<center><button name="Guardar_Facultad" value="Registrar Facultad" id="Guardar_Facultad" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;">Registrar Facultad</button></center>
+     <!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 				</form>
 
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-			</div>
+		
 		</div>
 	</div>
 </div>
