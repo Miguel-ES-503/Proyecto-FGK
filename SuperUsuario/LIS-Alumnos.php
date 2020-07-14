@@ -37,19 +37,30 @@ include 'Modularidad/MenuVertical.php';
 	<h5 class="card-header" style="color: black;">Alumnos de  <?php if($ubicacion == "SS"){ echo "San Salvador";}else{ echo "Santa Ana";}?>
 		
 		<span class="float-right">	
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><img src="img/contact.png" width="25px" height="25px">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;"><img src="img/contact.png" width="25px" height="25px">
 				Realizar Cambios
 			</button>
 
 			<a href="SIT-CrearAlumno.php">
-				<button type="button" class="btn btn-danger px-3">
+				<button type="button" class="btn btn-danger px-3" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;">
 					<img src="img/team.png" width="25px" height="25px">
 					Crear alumnos
 				</button>
 			</a>
 
 	     		<a href="ReportesExcel/ReportesAlumnos.php">
-	     			<button type="button" class="btn btn-success px-3">
+	     			<button type="button" class="btn btn-success px-3" style="border-radius: 20px;
+    border: 2px;
+    width: 200px;height: 38px;
+     color:white;">
 	     				<img src="img/excell.png" width="25px" height="25px"> Descargar
 	     			</button>
 	     		</a>
