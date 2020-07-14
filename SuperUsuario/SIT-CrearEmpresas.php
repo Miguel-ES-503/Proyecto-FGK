@@ -61,7 +61,7 @@ include 'Modularidad/MenuVertical.php';
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<img src="img/paper1.png"><h5 class="modal-title" id="exampleModalLabel" style="color: black">Nueva Empresa</h5>
+				<h5 class="modal-title" id="exampleModalLabel" style="color: black">Nueva Empresa</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -135,8 +135,8 @@ include 'Modularidad/MenuVertical.php';
 	<h5 class="card-header h5 bg-light" style="color: black;">Empresas 
 
 		<span class="float-right">	
-			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal">
-				<i class="fas fa-archway"></i>
+			<img src="img/company.png" width="30px" height="25px"><button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal">
+				
 				Nueva Empresa
 			</button>
 		</span>
