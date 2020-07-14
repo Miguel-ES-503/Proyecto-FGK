@@ -59,9 +59,8 @@ include 'Modularidad/MenuVertical.php';
 
 				<form method="post" id="addproduct" action="ImportarArchivo/importAlumno.php" enctype="multipart/form-data" role="form">
 
-					<br>
 					<label id="lblimg" style="color: black;">Seleccione un Archivo Excel en Formato (.xlsx)</label>
-					<br><br>
+					<br>
 					<div class="custom-file">
 						<div class="custom-file">
 							<input type="file"  name="name"  id="name"  class="custom-file-input" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required />
@@ -74,16 +73,17 @@ include 'Modularidad/MenuVertical.php';
 
 
 					
-					<button type="submit" id="SubirArchivo" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" >Importar Datos</button>
+					<center><button type="submit" id="SubirArchivo" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;">Importar Datos</button></center>
 
 				</form>
 
 
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-				
-			</div>
+			
 		</div>
 	</div>
 </div>
