@@ -9,78 +9,29 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 require_once '../Conexion/conexion.php';
 ?>
-<br>
-
-<style type="text/css" media="screen">
-	.dt-buttons
-	{
-		margin-right: 100%;
-		padding: 0%;
-
-	}
-
-	#example3_info
-	{
-		color: white;
-	}
-
-	
-	.paginate_button {
-		color: white;
-		background: linear-gradient(to bottom, 
-			#04040400 0%,
-			#8a8a8a00 100%);
-	}
-  
-  #example3_filter
-  {
-  	margin-top: -5%;
-
-  }
-
-
-</style>
+<link rel="stylesheet" type="text/css" href="css/Becas-Aprobadas.css">
+<div class="title">
+    <img src="../img/back.png" class="icon">
+    <h2 class="main-title" >Estado de Becas</h2>
+    <!--<div class="title2">
+        <br>
+    <div class="title2-text">
+    <a href="#" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Becas</p></a>
+    
+</div>
+</div>-->
+</div>
+<br><br><br>
 <div class="container-fluid text-center">
+<div>
 
-	<!--Comiezo de estructura de trabajo -->
-	<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Estados Becas</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active" href="#" >Becas</a>
-			</li>
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
-<br>
-
-<div class="card">
-
-	<div class="card-header">
+	<div>
 		<h4 style="color: black;">Lista de Becados por ciclos</h4>
 	</div>
-	<div class="card-body">
+	<div class="card-body" style="border-radius: 20px;">
 		<div class="table-responsive">
-			<table   id="example3"  class="table table-hover table-sm table-bordered table-fixed" >
-				<p>Descargar Lista becas</p>
+			<table   id="example3"  class="table table-hover table-sm table-bordered table-fixed">
+				  <a href="#" class="float-left" ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
 				<thead class="table-secondary">
 					<tr>  
 						<th scope="col">ID</th>

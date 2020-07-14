@@ -1,0 +1,92 @@
+.dt-buttons
+	{
+		margin-right: 100%;
+		padding: 0%;
+
+	}
+
+	#example3_info
+	{
+		color: white;
+	}
+
+	
+	.paginate_button {
+		color: white;
+		background: linear-gradient(to bottom, 
+			#04040400 0%,
+			#8a8a8a00 100%);
+	}
+  
+  #example3_filter
+  {
+  	margin-top: -5%;
+
+  }
+
+  .title{
+background-color: #ADADB2;
+color: black;
+height: 70px;
+margin-left: 0%;
+margin-bottom: -2%;
+height: 55px;
+
+
+}
+h2 , .icon{
+  float: left;
+}
+.main-title
+{
+text-align: left;
+font-size: 25px;
+margin-left: 25px;
+margin-top: 12px;
+font-weight: bold;
+letter-spacing: 5px;
+}
+.icon 
+{
+
+  width: 30px;
+  margin-top: 13px;
+  margin-left: 20px;
+}
+.icon-2
+{
+
+  width: 20px;
+  margin-right: 3px;
+  margin-top: -3px;
+}
+
+.title2,
+{
+
+margin-left: 30px;
+background-color: #BE0032;
+width: 150px;
+height: 54px;
+display: inline-block;
+}
+.title2-text
+{
+margin-left:25px;
+margin-top: -8px;
+color: white;
+font-weight: bold;
+letter-spacing: 2px;
+}
+img
+{
+	  width: 30px;
+	  margin-right: 5px;
+}
+#button
+{
+	border-radius: 20px;
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}

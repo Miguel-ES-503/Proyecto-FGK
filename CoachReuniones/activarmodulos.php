@@ -12,18 +12,21 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 require_once '../Conexion/conexion.php';
 ?>
-
+<link rel="stylesheet" type="text/css" href="css/Activar-Modulo.css">
+<div class="title">
+     <a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
+    <h2 class="main-title" >Record de Alumnos</h2>
+</div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-<br>
-<h1>Activar o Desactivar Módulos</h1>
-<br>
-<a href="javascript:history.back();" class="btn float-left"  title="Regresar" style="margin-left:5%;"><i class="fas fa-chevron-circle-left display-4"></i></a>
-
-<br><br><br><br>
-<p class="text-center text-white">Al momento de activar un módulos los alumnos se prodran inscribir a dicho módulo y al momento de desactivar, los alumnos ya no podrán inscribirse hasta que se vuelva a activar el módulo.</p> 
-<table class="table w-50 mx-auto">
-  <thead class="thead-dark">
+  <br>
+<div class="row">
+<div class="col-xs-4 col-sm-4 col-md-6 col-lg-4" id="nota">
+  <strong >NOTA: </strong><p>Al momento de activar un módulos los alumnos se prodran inscribir a dicho módulo y al momento de desactivar, los alumnos ya no podrán inscribirse hasta que se vuelva a activar el módulo.</p>
+</div>
+<div class="col-xs-4 col-sm-4 col-md-6 col-lg-7">
+  <table class="table table-striped" id="table">
+  <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Titulo</th>
@@ -35,11 +38,11 @@ require_once '../Conexion/conexion.php';
 
 // seleccionar módulo mientras que este desactivado
 $stmt2 = $dbh->query("SELECT * FROM modulos WHERE estado = 1");
-	while ($row = $stmt2->fetch()) {
+  while ($row = $stmt2->fetch()) {
     echo "<tr class='bg-light'>";
     echo "<th scope='row'>".$row['id_modulo']."</th>";
     echo "<td>".utf8_encode($row['titulo'])."</td>";
-    echo "<td><form action='actualizarmodulo.php' method='POST'><button type='submit' class='btn btn-danger' value= '".$row['id_modulo']."' name='id'>Desactivar </button> </form> </td>";
+    echo "<td><form action='actualizarmodulo.php' method='POST'><button type='submit' class='btn btn-warning' value= '".$row['id_modulo']."' name='id'><img src='../img/desactivar.png' class='icon-img'>Desactivar </button> </form> </td>";
     echo "</tr>";
 }
 // seleccionar módulo mientras que este activo
@@ -48,12 +51,15 @@ while ($row = $stmt->fetch()) {
     echo "<tr class='bg-light'>";
     echo "<th scope='row'>".$row['id_modulo']."</th>";
     echo "<td>".utf8_encode($row['titulo'])."</td>";
-    echo "<td><form action='actualizarmodulo2.php' method='POST'><button type='submit' class='btn btn-success' value= '".$row['id_modulo']."' name='id'>Activar </button> </form> </td>";
+    echo "<td><form action='actualizarmodulo2.php' method='POST'><button type='submit' class='btn btn-block' value= '".$row['id_modulo']."' name='id' id='btn'><img src='../img/activar.png' class='icon-img-2'>Activar </button> </form> </td>";
     echo "</tr>";
 }
 ?>
   </tbody>
 </table>
+</div>
+</div>
+
 <?php
 //Incluir el footer
 include 'Modularidad/PiePagina.php';

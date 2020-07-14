@@ -45,7 +45,7 @@ include 'Modularidad/MenuVertical.php';
       </span>
   </div>
   <br>
-  <div class="card-body">
+  <div class="card-body" id="main">
   	<div class="table-responsive">
   		<table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed " >
   			<thead class="table-secondary">
@@ -89,13 +89,15 @@ include 'Modularidad/MenuVertical.php';
 <br><br>
 
 
-<div class="card">
-  <div class="card-header">
-     <span class="float-left">  
+<div>
+  <div>
+     <span class="first-title">  
         Reuniones Finalizados 
       </span>
+
   </div>
-  <div class="card-body">
+  <br>
+  <div class="card-body" id="main">
   	<div class="table-responsive">
   		<table  id="tableUser2" class="table table-hover table-sm table-bordered table-fixed" >
   			<thead class="table-secondary">

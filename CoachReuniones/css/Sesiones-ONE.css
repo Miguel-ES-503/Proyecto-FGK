@@ -2,9 +2,9 @@
 background-color: #ADADB2;
 color: black;
 height: 70px;
+margin-left: 0%;
+margin-bottom: -2%;
 height: 55px;
-margin-top: -25px;
-width: 110%;
 
 
 }
@@ -27,36 +27,38 @@ letter-spacing: 5px;
   margin-top: 13px;
   margin-left: 20px;
 }
-.icon-2
+
+.title2,
 {
 
-  width: 20px;
-  margin-right: 3px;
-  margin-top: -3px;
-}
-.title2
-{
-
-margin-left: 300px;
+margin-left: 30px;
 background-color: #BE0032;
-width: 180px;
+width: 150px;
 height: 54px;
+display: inline-block;
 }
-.title2-text 
+.title2-text
 {
-margin-left:16px;
+margin-left:25px;
 margin-top: -8px;
 color: white;
 font-weight: bold;
 letter-spacing: 2px;
 }
-.first-title
+.text
 {
-	font-size: 25px;
-	letter-spacing: 2px;
-}
-#main
-{
-	border-radius: 40px;
+	margin-left: 4px;
+	font-size: 13px;
 }
 
+#btns
+{
+	margin-right: 10px;
+}
+.panel-body
+{
+	background-color: black;
+	width: 98%;
+	margin: auto;
+	margin-top: 20px;
+}

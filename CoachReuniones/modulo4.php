@@ -12,50 +12,41 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
-
+<link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">
+<div class="title">
+  <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
+    
+    <h2 class="main-title" >Aprobar/Reprobar Módulos</h2>
+</div>
 <!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center">
+<div class="container-fluid text-center" id="main">
+  <nav class="nav flex-column" id="nav">
+    <h2 class="title-1">Menu</h2>
+  <a class="nav-link" href="AprobarModulos.php">Módulo C1</a>
+  <a class="nav-link" href="modulo2.php">Módulo C2</a>
+  <a class="nav-link" href="modulo3.php">Módulo B1</a>
+  <a class="nav-link" href="modulo4.php">Modulo B2</a>
+   <a class="nav-link" href="modulo5.php">Módulo A1</a>
+    <a class="nav-link" href="modulo6.php">Módulo A2</a>
+</nav>
 <br>
-<h1>Aprobar/Reprobar módulos</h1>
-<br>
-<a href="javascript:history.back();" class="btn float-left"  title="Regresar" style="margin-left:5%;"><i class="fas fa-chevron-circle-left display-4"></i></a> 
-<br><br><br><br>
-<ul class="nav nav-tabs w-75 mx-auto">
-  <li class="nav-item">
-    <a class="nav-link " href="AprobarModulos.php">Módulo C1</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="modulo2.php">Módulo C2</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="modulo3.php">Módulo B1</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active " href="modulo4.php">Módulo B2</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="modulo5.php">Módulo A1</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link " href="modulo6.php">Módulo A2</a>
-  </li>
-</ul>
-<br> 
+<div class="btn" >
+  <a href="Reportes/ReporteModulo4.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
 
-<a href="Reportes/ReporteModulo4.php" class="float-left" style="margin-left: 12.5%;" target="blank"><button class="btn btn-danger"><i class="fas fa-download"></i> PDF</button></a>
+  <a href="ReportesExcel/ReporteModulo4.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
+</div>
 
-   <a href="ReportesExcel/ReporteModulo4.php" class="float-left" ><button class="btn btn-success"><i class="fas fa-file-excel"></i> EXCEL</button></a>
-<br><br> 
 <!-- Inicio de tabla de asistencia  -->
-    <div class="card-body w-75 mx-auto ">
-      <div class="table-responsive">
-        <form action="Aprobartodos4.php" method="POST">
-      <span class="float-left"> 
-  <!--  <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">  --> 
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
+    <div class="card-body">
+      <div class="table-responsive">  
+        <form action="Aprobartodos.php" method="POST">
+     <!--  <span class="float-left"> 
+   <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">  --> 
+        <!--<input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
         
-      </span>
-<table  id="tableUser2" class="table table-hover table-sm table-bordered table-fixed" >
+      </span>-->
+<table  id="tableUser2" class="main-table">
+        <br>
           <thead class="table-secondary">
             <tr> 
               <th scope="col"><input type='checkbox' name='' class='case' value="" id="todos">Todos</th>
@@ -95,7 +86,7 @@ include 'Modularidad/MenuVertical.php';
               <td><a href='aprobarmodulo2.php?id=".$fila2['id']."&id2=".$fila2['id_alumno']."' class='btn btn-danger'><i class='fas fa-user-times'></i></a> </td>";
             }
           ?>     
-        </tbody>  
+        </tbody> 
       </table>  
 </form>
     </div>
@@ -121,4 +112,3 @@ include 'Modularidad/MenuVertical.php';
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
 ?>
-

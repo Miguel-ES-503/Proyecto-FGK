@@ -11,16 +11,21 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
-
+<link rel="stylesheet" type="text/css" href="css/modulos-moodle.css">
+<div class="title">
+  <a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
+    <h2 class="main-title" >Modulos de Moodle</h2>
+    <div class="title2">
+</div>
+</div>
 <!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center">
-<br>
-<h1>Módulos de Moddle</h1>
-<br>
-<a href="javascript:history.back();" class="btn float-left"  title="Regresar" style="margin-left:5%;"><i class="fas fa-chevron-circle-left display-4"></i></a> 
+<div class="container-fluid text-center" id="main-inicio">
 <!-- botones de redirección -->
-<a href="activarmodulos.php"><button type="buttom" class="btn btn-info"/>Activar Inscripción</button> </a>
-<a href="AprobarModulos.php"><button type="buttom" class="btn btn-primary"/>Aprobar Módulos</button> </a>
+<div class="buttons">
+  <a href="activarmodulos.php"><button type="buttom" class="btn btn-danger"/><img src="../img/add.png" class="icon2">Activar Inscripción</button> </a>
+<a href="AprobarModulos.php"><button type="buttom" class="btn btn-success"/><img src="../img/add.png" class="icon2">Aprobar Modulos</button> </a>
+</div>
+
 <br><br><br>
 <!-- Tabla con datos de alumnos -->
 <div class="card-body">

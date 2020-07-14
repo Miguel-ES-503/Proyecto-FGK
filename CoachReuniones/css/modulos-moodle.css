@@ -2,9 +2,9 @@
 background-color: #ADADB2;
 color: black;
 height: 70px;
+margin-left: 0%;
+margin-bottom: -2%;
 height: 55px;
-margin-top: -25px;
-width: 110%;
 
 
 }
@@ -20,43 +20,60 @@ margin-top: 12px;
 font-weight: bold;
 letter-spacing: 5px;
 }
-.icon 
+.icon
 {
 
   width: 30px;
   margin-top: 13px;
   margin-left: 20px;
 }
-.icon-2
+
+.icon2
 {
 
   width: 20px;
-  margin-right: 3px;
-  margin-top: -3px;
+  margin-right: 10px;
 }
-.title2
+
+.title2,
 {
 
-margin-left: 300px;
+margin-left: 30px;
 background-color: #BE0032;
-width: 180px;
+width: 150px;
 height: 54px;
+display: inline-block;
 }
-.title2-text 
+.title2-text
 {
-margin-left:16px;
+margin-left:25px;
 margin-top: -8px;
 color: white;
 font-weight: bold;
 letter-spacing: 2px;
 }
-.first-title
+
+
+
+.buttons
 {
-	font-size: 25px;
-	letter-spacing: 2px;
+	float: right;
 }
-#main
+
+.main
+{
+background-color: #BE0032;
+border-radius: 40px;
+}
+#example
+{
+	color: black;
+}
+#main-inicio
+{
+	margin-top: 50px;
+}
+.card-body
 {
 	border-radius: 40px;
 }
-
