@@ -11,7 +11,7 @@
 ?> 
 
 <div class="title">
-    <a href="../Alumno/index.php"><img src="../img/proximo.svg" class="icon"></a>
+    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Preguntas Frecuentes</h2>
 </div>
 

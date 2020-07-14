@@ -12,7 +12,7 @@
 ?> 
 <div class="container-fluid text-center">
   <div class="title">
-    <a href=href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Inscribir Sesiones One on One</h2>
 </div>
 

@@ -168,9 +168,10 @@ if ($_GET['id']==null) {
 <div class="container-fluid text-center">
   <br><br>
   <div class="text-center">
-    <br>
-    <h1>Expediente Universidad</h1>
-    <br>
+  <div class="title">
+    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Expediente Universidad</h2>
+</div>
   </div>
   <div class="row">
     <div class="text-center align-self-center" id="carnet">
