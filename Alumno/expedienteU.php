@@ -176,10 +176,11 @@ if ($_GET['id']==null) {
   <div class="row">
     <div class="text-center align-self-center" id="carnet">
       <br>
-      <img src="../img/imgUser/<?php echo $FotoAlumno?>" alt="img de usuario" style = "height: 150px;
+      <img src="../img/imgUser/<?php echo $FotoAlumno?>" alt="img de usuario" style = "height: 170px;
       width: 150px; background-repeat: no-repeat;
       background-position: 50%;
       border-radius: 50%;
+      background-color: #c7c7c7;
       background-size: 100% auto;" >
       <h6 style="color: white;"><?php echo utf8_encode($univerisdad)  ?></h6>
       <h4 style="text-align: center; color: white;"><?php echo $Nombre_Alumno; ?> </h4>
@@ -191,7 +192,7 @@ if ($_GET['id']==null) {
       <br><br><br>
       <h3 class="float-left">Estudios realizados</h3>
       <table class="table table-responsive-lg float-left">
-        <thead  style="background-color: #2D2D2E; color: white; ">
+        <thead  style="background-color: #c7c7c7; color: white; ">
           <tr>
             <th scope="col">Universidad</th>
             <th scope="col">Carrera</th>
