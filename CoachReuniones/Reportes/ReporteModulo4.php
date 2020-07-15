@@ -11,7 +11,7 @@ $stmt = "";
 $stmt = $pdo->prepare("SELECT alumnos.Nombre AS alumno , alumnos.Class,alumnos.ID_Sede, datos_modulos.id_alumno , datos_modulos.id, datos_modulos.id_modulo , empresas.Nombre, datos_modulos.estado FROM datos_modulos LEFT JOIN alumnos ON datos_modulos.id_alumno =  alumnos.ID_Alumno LEFT JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa WHERE datos_modulos.id_modulo = ?  ");
 $pdf = new FPDF("P" , 'mm' , 'A3');
 $pdf->AddPage('landscape');
-//   Insertar Imagenes
+//    Insertar Imagenes
 $pdf->Image('Recursos/funda.png',75, 14, 25, 30, 'png');
 $pdf->Image('Recursos/logo_oportunidades.png',300, 20, 70, 20, 'png');
 
