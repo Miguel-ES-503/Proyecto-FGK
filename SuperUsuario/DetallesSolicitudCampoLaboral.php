@@ -79,23 +79,28 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
   <h2 class="main-title" >Campo Laboral</h2>
+  <div class="title2">
+  <a class="nav-link active" href="CampoLaboral.php">Campo Laboral</a>
 
+</div>
 </div>
 
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
-<div class="text-justify border border-light p-5">
+<div class="text-justify">
  
 
   <div class="card text-center">
     <div class="card-header">
       <h5 style="color: black;">Detalles de trabajo</h5>
     </div>
+    <center><div class="card-footer text-muted" id="soli" style="background-color: #BE0032; height: 40px; border-radius: 30px; width: 400px;">
+    <p style="color: white;">Solicitud de Cambio Laboral</p>
+  </div></center>
     <div class="card-body">
       <div class="row">
-        <div class="col-sm-6 mb-3 mb-md-0" style="border-radius: 20px; 
-        background-color:#ADADB2;">
-          <div class="card" style="background-color:#ADADB2;>
-            <div class="card-body" id="formulariolaboral">
+        <div class="col-sm-6 mb-3 mb-md-0">
+          <div class="card">
+            <div class="card-body"  style="background-color:#ADADB2; border-radius: 25px; border: 2px">
               
               <p class="mb-4"><b>Alumno: </b><?php echo$Alumno?><br><b>Sede:  </b><?php echo  $Sede ?> -- <b>Class: </b> <?php echo $Class ?> <br> <b>Universidad: </b> <?php echo $Universidad ?></p>
               <hr>
@@ -104,8 +109,8 @@ include 'Modularidad/MenuVertical.php';
                 <div class="col">
                   <!-- First name   Tema , fecha , la hora y el tipo de taller -->
                   <div class="md-form">
-                    <label for="materialRegisterFormFirstName">Status Alumno</label>
-                    <input type="text"  disabled value="<?php echo $StatusAlumno ?>" class="form-control">
+                    <label for="materialRegisterFormFirstName"><b>Status Alumno</b></label>
+                    <input type="text"  value="<?php echo $StatusAlumno ?>" disabled  class="form-control"  >
                     
                   </div>
                 </div>
@@ -116,26 +121,38 @@ include 'Modularidad/MenuVertical.php';
                 <div class="col">
                   <!-- First name   Tema , fecha , la hora y el tipo de taller -->
                   <div class="md-form">
-                    <label for="materialRegisterFormFirstName">Comentario</label>
+                    <label for="materialRegisterFormFirstName"><b>Comentario</b></label>
                     <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" disabled><?php echo$Comentario?></textarea>
                     
                   </div>
                 </div>
               </div>  
+              <br>
+
               <div class="form-row">
                 <div class="col">
                   <!-- First name   Tema , fecha , la hora y el tipo de taller -->
                   <div class="md-form">
+                    
                        <?php 
                 if ($Comprobante == null) {
-                 echo " <a href='#' class='btn btn-success px-3 far fas fa-times'> </a><br>";
+                 echo " <button style='border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;'><img src='img/facultad.png' width='25px' height='25px'><a href='#' >Comprobante </a></button>";
                 }else
                 {
-                  echo " <a href='../ComproCambio/".$Comprobante."' class='btn btn-success px-3 far fa-file-alt' target = '_blank'> </a><br>";
+                  echo " <button style='border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;'><img src='img/facultad.png' width='25px' height='25px' ><a href='../ComproCambio/".$Comprobante."' class='btn btn-success px-3 far fa-file-alt' target = '_blank'>Comprobante </a></button>";
                 }
               ?>
-                    <label for="materialRegisterFormFirstName">comprobante</label>
+                    
                   </div>
+                  <br>
                 </div>
                 
               </div>
@@ -143,11 +160,9 @@ include 'Modularidad/MenuVertical.php';
           </div>
         </div>
 
-        <div class="col-sm-6" style="border-radius: 20px; background-color:white; border-color:#ADADB2;">
-          <div class="card" >
-            <div class="card-body" style="background-color:white;
-  border-color:#ADADB2;
-  padding: 20px;>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body" style="background-color: white; border-radius: 25px; border: 4px solid #ADADB2">
               <p class="mb-4"><b>Estado: </b> <?php echo $Estado?></p>
 
               <p class="card-text"><b>Comentario:</b></p>
@@ -162,15 +177,13 @@ include 'Modularidad/MenuVertical.php';
                 <div class="form-group">
                  <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" minlength="1" maxlength="300" name="comentario" placeholder="comentario maximo 300 palabras..." required><?php echo$ComentarioDocente?></textarea>
                </div>
-               <br>
-
-
+              <label for="materialRegisterFormFirstName"><b>Cambiar Estado</b></label>
                <select name="estado"  class="form-control" required >
                 <option  disabled selected >Seleccione una opci&oacute;n</option>
                 <option value="Aprobado">Aprobado</option>
                 <option value="Rechazado">Rechazado</option>
               </select>
-              <br><br>
+              <br>
 
               <?php if($Estado == "Aprobado"  || $Estado == "Rechazado" )
               {
@@ -178,7 +191,7 @@ include 'Modularidad/MenuVertical.php';
     border: 2px solid #BE0032;
     width: 200px;height: 38px;
      background-color: #BE0032;
-     color:white;" >Enviar</button></center>';
+     color:white;" >Enviar<img src="img/click.png" width="25px" height="25px"></button></button></center>';
               }
               else
               {
@@ -186,7 +199,7 @@ include 'Modularidad/MenuVertical.php';
     border: 2px solid #BE0032;
     width: 200px;height: 38px;
      background-color: #BE0032;
-     color:white;" >Enviar</button></center>';
+     color:white;">Enviar<img src="img/click.png" width="25px" height="25px"></button></center>'; 
              } 
              ?>
 
@@ -197,15 +210,18 @@ include 'Modularidad/MenuVertical.php';
         </div>
       </div>
     </div>
+
+
+  </div>
+ 
 </div>
+
+
+
+
+
+
 </div>
-</div>
-
-
-
-
-
-
 
 <?php
 //Incluir el footer

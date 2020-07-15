@@ -41,54 +41,28 @@ else
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
-include 'Modularidad/MenuHorizontal.php';
+//include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
-<br>
+
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-
-	<!--Navbar-->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Horas Sociales</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active" href="AlumnoInicio.php?id=<?php echo$idcorreo ?>" >Regresar</a>
-			</li>
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
-
-
-
-<br>
-
+<div class="title">
+    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+  <h2 class="main-title" >Horas Sociales</h2>
+<div class="title2">
+  <a class="nav-link active" href="AlumnoInicio.php?id=<?php echo$idcorreo ?>" >Expediente Alumno</a>
+</div>
+</div>
 <div class="card">
   <div class="card-header">
-    <b>Solicitudes</b>
+    <h5>Solicitudes</5>
    
   </div>
   <div class="card-body">
   	<div class="table-responsive">
   		<table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed " >
-  			<thead class="table-secondary">
+  			<thead class="thead-dark">
   				<tr>  
   					<th scope="col">ID Solicitud</th>
             <th scope="col">Ciclo</th>
@@ -100,7 +74,7 @@ include 'Modularidad/MenuVertical.php';
   					<th scope="col">Ver</th>
   				</tr>
   			</thead>
-  			<tfoot class="table-secondary">
+  			<tfoot class="thead-dark">
   				<tr>
   				<th scope="col">ID Solicitud</th>
             <th scope="col">Ciclo</th>

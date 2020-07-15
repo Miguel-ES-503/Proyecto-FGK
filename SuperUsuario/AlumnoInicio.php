@@ -324,45 +324,20 @@ while($fila2 = $stmt2->fetch()){
   </script>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-		<br>
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Expediente del Alumno</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-				<a class="nav-link active" href="LIS-Alumnos.php">Regresar</a>
-			</li>
-			<li class="nav-item">
-			    <a href='NotasPorAlumno.php?id=<?php echo$Carnet?>' class="nav-link">Notas</a>
-			</li>
-			
-			<li class="nav-item">
-			    <a href="HorasVinculacionPorAlumno.php?id=<?php echo$id ?>" class="nav-link"  >Horas de vinculación</a>
-			    
-			</li>
-			
-		</li>
-	</ul>
-	<!-- Links -->   
+	<div class="title">
+    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+  <h2 class="main-title" >Expediente del Alumno</h2>
+  <div class="title2">
+  <a class="nav-link active"  href="LIS-Alumnos.php">Alumnos</a>
 </div>
-<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
-
-<!--/.Navbar-->
-<br>
-
+ 
+<div class="title21">
+ <a href='NotasPorAlumno.php?id=<?php echo$Carnet?>' class="nav-link">Notas</a>
+</div>
+<div class="title21">
+ <a href="HorasVinculacionPorAlumno.php?id=<?php echo$id ?>" class="nav-link"  >Horas-vinculación</a>
+</div>
+</div>
   <div>
       <?php
     include "config/Alerta.php";

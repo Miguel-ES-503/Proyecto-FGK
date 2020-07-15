@@ -53,36 +53,13 @@ include 'Modularidad/MenuVertical.php';
   </script>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-
-	<br>
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Notas del alumno</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-				<a class="nav-link active" href="AlumnoInicio.php?id=<?php echo$Correo ?>">Regresar</a>
-			</li>
-		</li>
-	</ul>
-	<!-- Links -->   
+<div class="title">
+    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+  <h2 class="main-title" >Notas del Alumno</h2>
+<div class="title2">
+  <a class="nav-link active" href="AlumnoInicio.php?id=<?php echo$idcorreo ?>" >Expediente Alumno</a>
 </div>
-<!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
-
-<!--/.Navbar-->
-<br>
+</div>
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 
 
@@ -102,38 +79,43 @@ include 'Modularidad/MenuVertical.php';
 					<input type="hidden" name="IDalumno"  value="<?php echo $id ?>"   >
 					<div class="col">
 						<div class="md-form">
-							<input type="number" name="CilcoActual" id="CicloActual" min="1" max="3" required  class="form-control" placeholder="Ciclo correspodiente del estudiante">
 							<label for="materialRegisterFormFirstName" style="color: black" >Ciclo Correspodiente</label>
+							<input type="number" name="CilcoActual" id="CicloActual" min="1" max="3" required  class="form-control" placeholder="Ciclo correspodiente del estudiante">
+							
 						</div>
 					</div>
 					<br>
 
 					<div class="col">
 						<div class="md-form">
-							<input type="number" name="yearNota" id="yearNota" min="2000" required  class="form-control" placeholder="Ingrese el año correspodiente de la nota">
 							<label for="materialRegisterFormFirstName" style="color: black" >Año</label>
+							<input type="number" name="yearNota" id="yearNota" min="2000" required  class="form-control" placeholder="Ingrese el año correspodiente de la nota">
+							
 						</div>
 					</div>
 
-
+<br>
 
 					<div class="custom-file">
 						<div class="custom-file">
+							
 							<input type="file" class="custom-file-input"   name="archivo" id="archivo"  accept="application/pdf,application/vnd.ms-excel"  required />
+							
 							<label class="custom-file-label" for="customFileLang" data-browse="Buscar">Seleccionar Archivo</label>
+							<p style="color: black; text-align: center;">El archivo no debe pesar más de 5MB</p>
 						</div>
 					</div>
-					<p style="color: black; text-align: center;">El archivo no debe pesar más de 5MB</p>
+					
 
 					<div id="alerta6">						
 					</div>
-			
-					<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="GuardarNotas" value="Subir Nota" id="notas">
+			<br>
+					<center><button name="GuardarNotas" value="Subir Nota" id="notas" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;">Subir Notas</button></center>
 				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-
 			</div>
 		</div>
 	</div>
@@ -147,7 +129,11 @@ include 'Modularidad/MenuVertical.php';
 <div class="card">
 	<h5 class="card-header" style="color: black;" >Notas de <?php echo $NombreAlumno ?>
 	<span class="float-right">	
-		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;"><img src="img/score.png" width="25px" height="25px">
 			Subir Nota
 		</button>
 	</span>
@@ -156,7 +142,7 @@ include 'Modularidad/MenuVertical.php';
 	<div class="table-responsive">
 		<br>
 		<table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" >
-			<thead class="table-secondary">
+			<thead class="thead-dark">
 				<tr>  
 					<th scope="col">Ciclo</th>
 					<th scope="col">Año</th>
@@ -164,7 +150,7 @@ include 'Modularidad/MenuVertical.php';
 					<th scope="col">Eliminar</th>
 				</tr>
 			</thead>
-			<tfoot class="table-secondary">
+			<tfoot class="thead-dark">
 				<tr>
 					<th scope="col">Ciclo</th>
 					<th scope="col">Año</th>
