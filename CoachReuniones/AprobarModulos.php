@@ -45,6 +45,7 @@ include 'Modularidad/MenuVertical.php';
         <!--<input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
         
       </span>-->
+      <!-- Descomentariar el reprodado, porfa -->
 <table  id="tableUser2" class="main-table">
         <br>
           <thead class="table-secondary">
