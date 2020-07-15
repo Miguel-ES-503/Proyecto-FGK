@@ -212,7 +212,7 @@ $(document).ready(function(){
         "sLoadingRecords": "Cargando...",
     },
         },
-        "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
+        "lengthMenu": [[5, 25, 50, -1], [50, "All"]],
         "processing" : true,
         "serverSide" : true,
         "order" : [],
