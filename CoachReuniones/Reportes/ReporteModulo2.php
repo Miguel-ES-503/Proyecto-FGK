@@ -49,7 +49,7 @@ $pdf->Cell(40);
  $pdf->Cell(120,6,'Universidad',1,0,'C',1);
  $pdf->Cell(25,6,'Estado',1,0,'C',1);
  $pdf->Ln();
- //$pdf->Cell(0,6,'',1,1,'L');
+ // $pdf->Cell(0,6,'',1,1,'L');
 
 
     $stmt->execute(array('MOD20000002'));  
