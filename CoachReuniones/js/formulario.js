@@ -14,6 +14,7 @@ function init() {
     ul.firstChild.classList.add('active');
 }
 
+
 function next(target) {
     var input = target.previousElementSibling;
 
