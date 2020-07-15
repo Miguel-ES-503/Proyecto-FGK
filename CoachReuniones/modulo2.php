@@ -31,7 +31,9 @@ include 'Modularidad/MenuVertical.php';
     <a class="nav-link" href="modulo6.php">Módulo A2</a>
 </nav>
 <br>
-<a class="nav-link" href="AprobarModulos.php">Módulo C1</a>
+<a href="Reportes/ReporteModulo2.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
+<a class="nav-link" href="listadoaprobados.php">Lista aprobados</a>
+<a class="nav-link" href="listadoreprobados.php">Lista reprobados</a>
 <div class="btn" >
   <a href="Reportes/ReporteModulo2.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
 
