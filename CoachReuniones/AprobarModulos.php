@@ -42,10 +42,10 @@ include 'Modularidad/MenuVertical.php';
         <form action="Aprobartodos.php" method="POST">
      <!--  <span class="float-left"> 
    <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">  --> 
-        <!--<input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
         
-      </span>-->
-      <!-- Descomentariar el reprodado, porfavor -->
+      </span>
+    
       
 <table  id="tableUser2" class="main-table">
         <br>
