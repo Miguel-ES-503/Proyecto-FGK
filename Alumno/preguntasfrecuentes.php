@@ -53,7 +53,7 @@
 
             <?php 
               $num = 1;
-              $query = "SELECT * FROM preguntas WHERE estado = 'finalizado' ";
+              $query = "SELECT * FROM preguntas";
               $stat = $dbh->prepare($query);
               $stat->execute();
               $result = $stat->fetchAll();
@@ -64,8 +64,8 @@
                               echo  "<div class='col-sm-5' style='margin-top:1%' >";
                               echo  "<div class='card'>"; 
                               echo "<div class='card-body'>";
-                              echo "<h5 class='card-title'><b>".($num++).". ".utf8_encode($row["pregunta"])."</b></h5>";
-                              echo "<p class='card-text'>".utf8_encode($row["respuesta"])."</p>
+                              echo "<h5 class='card-title'><b>".($num++).". ".$row["pregunta"]."</b></h5>";
+                              echo "<p class='card-text'>".$row["respuesta"]."</p>
                                     <span class='card-text font-italic'>fecha publicada: ".$row['fechaRespuesta']."</span><br>";
                               echo "<form action='#' method='post'><button type='submit' class='btn btn-primary '"." name='estado' value='"."$row[id]'".">
 <svg class='bi bi-hand-thumbs-up' width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>

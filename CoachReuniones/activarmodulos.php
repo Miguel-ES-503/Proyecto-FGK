@@ -49,7 +49,9 @@ $stmt2 = $dbh->query("SELECT * FROM modulos WHERE estado = 1");
     echo "<td><form action='' method='POST'><button type='submit' class='btn btn-success' value= '".$row['id_modulo']."' name='id' ><i class='fas fa-key'></i>Cambiar</button></form> </td>";
     echo "</tr>";
 }
+
 // seleccionar módulo mientras que este activo
+
 $stmt = $dbh->query("SELECT * FROM modulos WHERE estado = 0");
 while ($row = $stmt->fetch()) {
     echo "<tr class='bg-light'>";

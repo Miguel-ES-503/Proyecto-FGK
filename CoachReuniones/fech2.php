@@ -2,7 +2,7 @@
 require_once '../Conexion/conexion.php';
 $column = array('titulo', 'Nombre','ID_Sede','estado_alumno', 'estado', 'id', 'hora_inicio','id' );
 $searchValue = $_POST['search']['value']; // Search value
-$query = " SELECT one_on_one.titulo , one_on_one.estado , one_on_one.ID_Sede , one_on_one.estado_alumno , one_on_one.fecha , one_on_one.hora_inicio , one_on_one.hora_fin , one_on_one.id, alumnos.Nombre  FROM one_on_one INNER JOIN alumnos ON one_on_one.id_alumno = alumnos.ID_Alumno WHERE one_on_one.estado = 'Pendiente' and (titulo LIKE '%$searchValue%' or one_on_one.ID_Sede LIKE '%$searchValue%' or alumnos.Nombre LIKE '%$searchValue%' or one_on_one.estado LIKE '%$searchValue%' or one_on_one.fecha LIKE '%$searchValue%')";
+$query = " SELECT one_on_one.titulo , one_on_one.estado , one_on_one.ID_Sede , one_on_one.estado_alumno , one_on_one.fecha , one_on_one.hora_inicio , one_on_one.hora_fin , one_on_one.id, alumnos.Nombre, alumnos.correo  FROM one_on_one INNER JOIN alumnos ON one_on_one.id_alumno = alumnos.ID_Alumno WHERE one_on_one.estado = 'Pendiente' and (titulo LIKE '%$searchValue%' or one_on_one.ID_Sede LIKE '%$searchValue%' or alumnos.Nombre LIKE '%$searchValue%' or one_on_one.estado LIKE '%$searchValue%' or one_on_one.fecha LIKE '%$searchValue%')";
 
 if(isset($_POST['order']))
 {
@@ -32,6 +32,7 @@ foreach($result as $row)
  $sub_array = array();
  $sub_array[] = utf8_encode($row['titulo']);
  $sub_array[] = ($row['Nombre']);
+ $sub_array[] = ($row['correo']);
  $sub_array[] = utf8_encode($row['ID_Sede']);
  $sub_array[] = utf8_encode($row['estado_alumno']);
  $sub_array[] = utf8_encode($row['estado']);
