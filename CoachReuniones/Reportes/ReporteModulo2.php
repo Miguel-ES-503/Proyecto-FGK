@@ -8,7 +8,7 @@ setlocale(LC_TIME, 'spanish');
 $date = date('Y-m-d');
 $stmt = "";
 //$coun = $pdo->query("SELECT count(*) FROM one_on_one WHERE estado = 'Finalizado' ")->fetchColumn();
-$stmt = $pdo->prepare("SELECT alumnos.Nombre AS alumno , alumnos.Class,alumnos.ID_Sede, datos_modulos.id_alumno , datos_modulos.id, datos_modulos.id_modulo , empresas.Nombre, datos_modulos.estado FROM datos_modulos LEFT JOIN alumnos ON datos_modulos.id_alumno =  alumnos.ID_Alumno LEFT JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa WHERE datos_modulos.id_modulo = ?  ");
+$stmt = $pdo->prepare("SELECT alumnos.Nombre AS alumno , alumnos.Class,alumnos.ID_Sede,alumnos.Sexo, datos_modulos.id_alumno , datos_modulos.id, datos_modulos.id_modulo , empresas.Nombre, datos_modulos.estado FROM datos_modulos LEFT JOIN alumnos ON datos_modulos.id_alumno =  alumnos.ID_Alumno LEFT JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa WHERE datos_modulos.id_modulo = ?  ");
 $pdf = new FPDF("P" , 'mm' , 'A3');
 $pdf->AddPage('landscape');
 //   Insertar Imagenes
@@ -43,7 +43,8 @@ $pdf->Cell(40);
  $pdf->SetFillColor(232,232,232);
  $pdf->SetFont('Arial','B',12);
  $pdf->Cell(40,6,'ID Alumno',1,0,'C',1);
- $pdf->Cell(73,6,'Alumno',1,0,'C',1);
+ $pdf->Cell(80,6,'Alumno',1,0,'C',1);
+ $pdf->Cell(15,6,'Sexo',1,0,'C',1);
  $pdf->Cell(15,6,'Class',1,0,'C',1);
  $pdf->Cell(33,6,'Sede/Modalidad',1,0,'C',1);
  $pdf->Cell(120,6,'Universidad',1,0,'C',1);
@@ -56,7 +57,8 @@ $pdf->Cell(40);
     while ($fila2=$stmt->fetch())
     {	$pdf->Cell(50);
         $pdf->Cell(40,6,utf8_decode($fila2['id_alumno']),1,0,'C');
-        $pdf->Cell(73,6,utf8_decode($fila2['alumno']),1,0,'C');
+        $pdf->Cell(80,6,utf8_decode($fila2['alumno']),1,0,'C');
+        $pdf->Cell(15,6,utf8_decode($fila2['Sexo']),1,0,'C');
         $pdf->Cell(15,6,utf8_decode($fila2['Class']),1,0,'C');
         $pdf->Cell(33,6,utf8_decode($fila2['ID_Sede']),1,0,'C');
         $pdf->Cell(120,6,($fila2['Nombre']),1,0,'C');
