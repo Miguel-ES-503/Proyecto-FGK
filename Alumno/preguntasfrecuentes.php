@@ -15,9 +15,8 @@
 	<h2 class="main-title" >Preguntas Frecuentes</h2>
 </div>
 
- <div style="width:40%;" class="mx-auto">
  
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+<!-- <form action="" method="POST">
   <fieldset >
     <div class="form-group">
     	<p class="text-white">Todas las preguntas se envian de forma anónima para que los alumnos puedan preguntar sin miedo.</p>
@@ -28,7 +27,7 @@
   <path fill-rule="evenodd" d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
 </svg></button>
   </fieldset>
-</form>
+</form> -->
 <?php 
     include  "../Conexion.php";
     date_default_timezone_set('America/El_Salvador');
@@ -48,9 +47,6 @@
     }
 }
 ?>
-</div>
- <br>
- 
 		<div class="container px-md-2" style="margin-left: 5%;">
            <div class="row">
 
