@@ -35,7 +35,7 @@ include 'Modularidad/MenuVertical.php';
     <h2 class="title-1">Menu</h2><button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
     <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Horarios Disponibles</button>
     <button type="button" class="nav-link" role="link" onclick="window.location='sessionesAsistencia.php'">Listado de asistencia</button>
-    <button type="button" class="nav-link" role="link" onclick="window.location='sesionesfinalizadas.php'">Listado de asistencia</button>
+    <button type="button" class="nav-link" role="link" onclick="window.location='sesionesfinalizadas.php'">Sesiones finalizadas</button>
 </nav>
   </div>
     <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
@@ -242,7 +242,7 @@ $(document).ready(function(){
         "sLoadingRecords": "Cargando...",
     },
         },
-        "lengthMenu": [[5, 25, 50, -1], [50, "All"]],
+        "lengthMenu": [[5, 25, 50, -1], [50, 75, "All"]],
         "processing" : true,
         "serverSide" : true,
         "order" : [],
