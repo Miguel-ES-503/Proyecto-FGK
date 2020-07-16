@@ -32,6 +32,8 @@ include 'Modularidad/MenuVertical.php';
 </nav>
 <br>
 <div class="btn" >
+<a href="listadogeneral6.php" ><button class="btn btn-warning" id="button">Listado general</button></a>
+
   <a href="Reportes/ReporteModulo6.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
 
   <a href="ReportesExcel/ReporteModulo6.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
