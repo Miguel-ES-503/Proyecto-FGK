@@ -44,7 +44,6 @@ include 'Modularidad/MenuVertical.php';
     <a href="Reportes/ReporteSession.php"><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
   <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
   </div>
-
  <div class="panel-body" style="float: left;">
                     <div id="tablapdf">
                         <table class="table table-bordered-sm table-responsive w-100" id="datatable2">
@@ -64,8 +63,7 @@ include 'Modularidad/MenuVertical.php';
                         </table>
                         </div>
                     </div>
-</div>
-    
+          </div>
   </div>
 </div>
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
