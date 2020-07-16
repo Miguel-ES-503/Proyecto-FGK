@@ -35,24 +35,8 @@ include 'Modularidad/MenuVertical.php';
             </div>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" style="width:80%; margin:auto">
   <div class="form-group">
-    <label for="exampleInputEmail1" class="text-dark">Seleccione la pregunta: </label>
-     <?php
-      require_once '../Conexion/conexion.php';
-    $query = "SELECT pregunta FROM preguntas  WHERE estado = 'pendiente' GROUP BY id DESC";
-             $stat = $dbh->prepare($query);
-             $stat->execute();
-             $result = $stat->fetchAll();
-      ?>
-                        <br>
-                            <select name="pregunta" class="form-control" id="year">
-                            <?php
-                            foreach($result as $row)
-                            {
-                                echo '<option value="'.utf8_encode($row["pregunta"]).'">'.utf8_encode($row["pregunta"]).'</option>';
-                            }
-                            ?>
-                            </select>
-
+    <label for="exampleInputEmail1" class="text-dark">Redacte  la pregunta: </label>            
+    <input type="text" name="pregunta" id="year" class="form-control" >
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1" class="text-dark">Ingrese la respuesta a la pregunta seleccionada: </label>
@@ -78,10 +62,8 @@ include 'Modularidad/MenuVertical.php';
                             <thead id="cabezera">
                                 <tr>
                                     <th>Pregunta</th>
-                                    <th>Fecha Pregunta</th>
                                     <th>Respuesta</th>
                                     <th>Fecha Respuesta</th>
-                                    <th>Estado</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -91,15 +73,16 @@ include 'Modularidad/MenuVertical.php';
 </div>
 <button type='button' class='btn btn-success btn-agregar' data-toggle='modal' data-target='#myModal3' id="btn"><img src="../img/responder.svg" id="icon">Responder a preguntas</button>  
      <?php 
+      require_once '../Conexion/conexion.php';
               @$pregunta = $_POST['pregunta'];
               @$respuesta = $_POST['respuesta'];
             //actualizar estado
           if(isset($respuesta)){
             date_default_timezone_set('America/El_Salvador');
             $fecha = date('Y-m-d H:i');
-            $sql2 = "UPDATE preguntas SET estado=? , respuesta=? , fechaRespuesta=? WHERE pregunta=?";
-            $stmt= $dbh->prepare($sql2);
-            $stmt->execute(['finalizado',utf8_decode($respuesta),$fecha,utf8_decode($pregunta)]);
+            $sql2 = "INSERT INTO preguntas (pregunta, respuesta, fechaRespuesta) VALUES (?,?,?)";
+            $stmt2= $dbh->prepare($sql2);
+            $stmt2->execute([$pregunta, $respuesta, $fecha]);
             header("Location:preguntas.php");
             echo  "<p class='text-success text-center' id='prueba'>La respuesta: ".$respuesta." fue enviada con éxito :</p>";
            }

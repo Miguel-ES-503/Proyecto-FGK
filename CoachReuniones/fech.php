@@ -2,7 +2,7 @@
 require_once '../Conexion/conexion.php';
 $column = array('pregunta', 'fechaPregunta','respuesta','fechaRespuesta', 'estado', 'id');
 $searchValue = $_POST['search']['value']; // Search value
-$query = " SELECT * FROM preguntas WHERE pregunta LIKE '%$searchValue%' or respuesta LIKE '%$searchValue%' OR estado LIKE '%$searchValue%'";
+$query = " SELECT * FROM preguntas WHERE pregunta LIKE '%$searchValue%' or respuesta LIKE '%$searchValue%' ";
 
 if(isset($_POST['order']))
 {
@@ -30,12 +30,9 @@ $data = array();
 foreach($result as $row)
 {
  $sub_array = array();
- $sub_array[] = utf8_encode($row['pregunta']);
- $sub_array[] = utf8_encode(strftime("%A %d "." de"." %B del %Y ",strtotime($row['fechaPregunta']))).date('h:i A', strtotime($row['fechaPregunta']));
- $sub_array[] = utf8_encode($row['respuesta']);
+ $sub_array[] = $row['pregunta'];
+ $sub_array[] = $row['respuesta'];
  $sub_array[] = utf8_encode(strftime("%A %d "." de"." %B del %Y ",strtotime($row['fechaRespuesta']))).date('h:i A', strtotime($row['fechaRespuesta']));
- $sub_array[] = utf8_encode($row['estado']);
-
  $sub_array[] = "<form action='eliminarpregunta.php' method='post'><button type='submit' class='btn btn-danger btn-borrar'"." name='eliminar' value='"."$row[id]'"."><i class='fas fa-trash-alt'></i></button></form>
  ";
  $data[] = $sub_array;
