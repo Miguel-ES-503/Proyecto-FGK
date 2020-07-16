@@ -22,8 +22,8 @@ include 'Modularidad/MenuVertical.php';
 <div class="container-fluid text-center" id="main">
   <nav class="nav flex-column" id="nav">
     <h2 class="title-1">Menu</h2>
-  <a class="nav-link" href="AprobarModulos.php">Módulo C1</a>
-  <a class="nav-link" href="modulo2.php">Módulo C2</a>
+<a class="nav-link" href="AprobarModulos.php">Módulo C1</a>  
+<a class="nav-link" href="modulo2.php">Módulo C2</a>
   <a class="nav-link" href="modulo3.php">Módulo B1</a>
   <a class="nav-link" href="modulo4.php">Modulo B2</a>
    <a class="nav-link" href="modulo5.php">Módulo A1</a>
@@ -31,11 +31,11 @@ include 'Modularidad/MenuVertical.php';
 </nav>
 <br>
 <div class="btn" >
-<a href="listadogeneral3.php" ><button class="btn btn-warning" id="button">Listado general</button></a>
+<a href="listadogeneral1.php" ><button class="btn btn-warning" id="button">Listado general</button></a>
 
-  <a href="Reportes/ReporteModulo3.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
+  <a href="Reportes/ReporteModulo1.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
 
-  <a href="ReportesExcel/ReporteModulo3.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
+  <a href="ReportesExcel/ReporteModulo1.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
 </div>
 
 <!-- Inicio de tabla de asistencia  -->
@@ -44,9 +44,9 @@ include 'Modularidad/MenuVertical.php';
         <form action="Aprobartodos.php" method="POST">
      <!--  <span class="float-left"> 
    <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">  --> 
-        <!--<input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
-        
-      </span>-->
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">    
+      </span>
+    
       <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
       <br>
           <thead class="table-secondary">
@@ -57,15 +57,15 @@ include 'Modularidad/MenuVertical.php';
               <th scope="col">Sexo</th>
               <th scope="col">Class</th>
               <th scope="col">Universidad</th>
-              <th scope="col">Aprobar</th>
-              <th scope="col">Reprobar</th>
+              <th scope="col">Estado</th>
             </tr>
           </thead>
 <tbody>
 <?php
-      require_once 'Modelo/ModeloModulos/ListadoModulos/listadomodulos3.php';
-          ?>     
-        </tbody> 
+    require_once 'Modelo/ModeloModulos/ListadoGeneral/listageneral6.php';
+
+?> 
+        </tbody>  
       </table>  
 </form>
     </div>
@@ -91,49 +91,4 @@ include 'Modularidad/MenuVertical.php';
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
