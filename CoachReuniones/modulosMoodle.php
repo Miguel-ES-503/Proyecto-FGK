@@ -36,6 +36,7 @@ include 'Modularidad/MenuVertical.php';
           <tr> 
             <th scope="col">Carnet</th>
             <th scope="col">Alumno</th>
+            <th scope="col">Sexo</th>
             <th scope="col">Class</th>
             <th scope="col">Sede</th>
             <th scope="col">Carrera</th>

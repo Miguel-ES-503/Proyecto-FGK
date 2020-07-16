@@ -38,6 +38,7 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 		
 		<th>".$fila['ID_Alumno']."</th>
 		<th>".$fila['Nombre']."</th>
+		<th>".$fila['Sexo']."</th>
 		<th>".$fila['Class']."</th>
 		<th>".$fila['ID_Sede']."</th>
 		<td>".utf8_encode($fila['nombre'])."</td>
