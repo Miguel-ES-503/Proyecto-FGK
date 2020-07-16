@@ -51,7 +51,6 @@ $stmt2 = $dbh->query("SELECT * FROM modulos WHERE estado = 1");
 }
 
 // seleccionar módulo mientras que este activo
-
 $stmt = $dbh->query("SELECT * FROM modulos WHERE estado = 0");
 while ($row = $stmt->fetch()) {
     echo "<tr class='bg-light'>";
