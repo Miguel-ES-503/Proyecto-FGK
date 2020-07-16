@@ -1,6 +1,6 @@
 <?php
 	
-	require_once "../BaseDatos/conexion.php";
+	require_once "../../BaseDatos/conexion.php";
 	session_start();  
 	$varsesion = $_SESSION['Email'];
 
@@ -20,7 +20,7 @@ if (isset($_GET['id']) && isset($_GET['id2']))
 
 		$_SESSION['message'] = 'Alumnos Aprobado con éxito';
 		$_SESSION['message2'] = 'success';
-		header("Location:AprobarModulos.php?");
+		header("Location:../modulo3.php?");
 	}
 	else
 	{

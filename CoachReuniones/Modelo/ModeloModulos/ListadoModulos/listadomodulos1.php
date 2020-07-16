@@ -42,9 +42,9 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
                 <th>".$fila2['Sexo']."</th>
                 <th><input type='hidden' name='idtaller' id='idtaller' value=>".$fila2['Class']."</th>
                 <th>".utf8_encode($fila2['Nombre'])."</th>
-                <td><a href='aprobarmodulo.php?id=".$fila2['id']."&id2=".$fila2['id_alumno']."' name='ida' class='btn btn-success'><i class='fas fa-user-check'></i></a> </td>
+                <td><a href='AprobacionModulos/aprobarmodulo1.php?id=".$fila2['id']."&id2=".$fila2['id_alumno']."' name='ida' class='btn btn-success'><i class='fas fa-user-check'></i></a> </td>
   
-                <td><a href='aprobarmodulo2.php?id=".$fila2['id']."&id2=".$fila2['id_alumno']."' class='btn btn-danger'><i class='fas fa-user-times'></i></a> </td>";
+                <td><a href='ReprobarModulos/reprobarmodulo1.php?id=".$fila2['id']."&id2=".$fila2['id_alumno']."' class='btn btn-danger'><i class='fas fa-user-times'></i></a> </td>";
               }
             
            

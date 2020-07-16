@@ -16,7 +16,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
     
-    <h2 class="main-title" >Aprobar/Reprobar Módulos</h2>
+    <h2 class="main-title" >Aprobar/Reprobar Módulo 6</h2>
 </div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center" id="main">
@@ -27,11 +27,11 @@ include 'Modularidad/MenuVertical.php';
   <a class="nav-link" href="modulo3.php">Módulo B1</a>
   <a class="nav-link" href="modulo4.php">Modulo B2</a>
    <a class="nav-link" href="modulo5.php">Módulo A1</a>
-    <a class="nav-link" href="modulo6.php">Módulo A2</a>
+    <a class="nav-link active" href="modulo6.php" style="background-color:#BE0032; color:white;">Módulo A2</a>
 </nav>
 <br>
 <div class="btn" >
-<a href="listadogeneral3.php" ><button class="btn btn-warning" id="button">Listado general</button></a>
+<a href="listadogeneral3.php" ><button class="btn btn-warning" id="button">Listado general 6</button></a>
 
   <a href="Reportes/ReporteModulo3.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
 

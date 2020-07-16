@@ -16,13 +16,13 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
     
-    <h2 class="main-title" >Aprobar/Reprobar Módulos</h2>
+    <h2 class="main-title" >Aprobar/Reprobar Módulo 1</h2>
 </div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center" id="main">
   <nav class="nav flex-column" id="nav">
     <h2 class="title-1">Menu</h2>
-<a class="nav-link" href="AprobarModulos.php">Módulo C1</a>  
+<a class="nav-link active" href="AprobarModulos.php" style="background-color:#BE0032; color:white;">Módulo C1</a>  
 <a class="nav-link" href="modulo2.php">Módulo C2</a>
   <a class="nav-link" href="modulo3.php">Módulo B1</a>
   <a class="nav-link" href="modulo4.php">Modulo B2</a>
@@ -31,7 +31,7 @@ include 'Modularidad/MenuVertical.php';
 </nav>
 <br>
 <div class="btn" >
-<a href="listadogeneral1.php" ><button class="btn btn-warning" id="button">Listado general</button></a>
+<a href="listadogeneral1.php" ><button class="btn btn-warning" id="button">Listado general 1</button></a>
 
   <a href="Reportes/ReporteModulo1.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
 
