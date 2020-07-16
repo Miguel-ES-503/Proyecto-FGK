@@ -47,14 +47,14 @@ include 'Modularidad/MenuVertical.php';
         <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">    
       </span>
     
-      
-<table  id="tableUser2" class="main-table">
-        <br>
+      <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
+      <br>
           <thead class="table-secondary">
             <tr> 
               <th scope="col"><input type='checkbox' name='' class='case' value="" id="todos">Todos</th>
               <th scope="col">ID Alumno</th>
               <th scope="col">Alumno</th>
+              <th scope="col">Sexo</th>
               <th scope="col">Class</th>
               <th scope="col">Universidad</th>
               <th scope="col">Aprobar</th>
@@ -62,33 +62,10 @@ include 'Modularidad/MenuVertical.php';
             </tr>
           </thead>
 <tbody>
-            <?php
-  $consulta2=$pdo->prepare("SELECT alumnos.Nombre AS alumno , alumnos.Class, datos_modulos.id_alumno , datos_modulos.id, datos_modulos.id_modulo , empresas.Nombre FROM datos_modulos LEFT JOIN alumnos ON datos_modulos.id_alumno =  alumnos.ID_Alumno LEFT JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa WHERE datos_modulos.id_modulo = ?  AND datos_modulos.estado = 'Pendiente'  ");
+<?php
+    require_once 'Modelo/ModeloModulos/ListadoModulos/listadomodulos1.php';
 
-             $consulta2->execute(array('MOD10000001'));
-              while ($fila2=$consulta2->fetch())
-                {   
-
-                  $asiste;
-                if($fila2['estado'] == "Pendiente")
-                {
-                  $asiste = "Aprobado";
-                }else
-                {
-                  $asiste = $fila2['Reprobado'];
-                } 
-                  echo "
-              <tr class='table-light'>
-              <td><input type='checkbox' name='ActuaAlumno[]' class='case' value=".$fila2['id_alumno']."></td>
-              <th>".$fila2['id_alumno']."</th>
-              <th>".$fila2['alumno']."</th>
-              <th><input type='hidden' name='idtaller' id='idtaller' value=>".$fila2['Class']."</th>
-              <th>".utf8_encode($fila2['Nombre'])."</th>
-              <td><a href='aprobarmodulo.php?id=".$fila2['id']."&id2=".$fila2['id_alumno']."' name='ida' class='btn btn-success'><i class='fas fa-user-check'></i></a> </td>
-
-              <td><a href='aprobarmodulo2.php?id=".$fila2['id']."&id2=".$fila2['id_alumno']."' class='btn btn-danger'><i class='fas fa-user-times'></i></a> </td>";
-            }
-          ?>     
+?> 
         </tbody>  
       </table>  
 </form>
