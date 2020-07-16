@@ -30,6 +30,7 @@
 </form> -->
 <?php 
     include  "../Conexion.php";
+
     date_default_timezone_set('America/El_Salvador');
     $fecha = date('Y-m-d H:i');
     $pregunta = " ";
@@ -47,7 +48,6 @@
     }
 }
 ?>
-
 		<div class="container px-md-2" style="margin-left: 5%;">
            <div class="row">
 

@@ -74,6 +74,7 @@ include 'Modularidad/MenuVertical.php';
 <button type='button' class='btn btn-success btn-agregar' data-toggle='modal' data-target='#myModal3' id="btn"><img src="../img/responder.svg" id="icon">Responder a preguntas</button>  
      <?php 
       require_once '../Conexion/conexion.php';
+      
               @$pregunta = $_POST['pregunta'];
               @$respuesta = $_POST['respuesta'];
             //actualizar estado
