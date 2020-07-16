@@ -14,8 +14,8 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/Sesiones-ONE.css">
+<link rel="stylesheet" href="css/formulario_One_on_One.css">
 <!-- CSS only -->
-
 
 <div class="title">
      <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
@@ -25,7 +25,6 @@ include 'Modularidad/MenuVertical.php';
 <div class="container-fluid text-center">
 
 <!-- Ver Horarios Disponibles-->
-
 <!-- Asistencia-->
 
 <!-- Modal -->
@@ -51,7 +50,7 @@ include 'Modularidad/MenuVertical.php';
                         <table class="table table-bordered-sm" id="datatable2">
                             <thead class="table-dark">
                                 <tr>
-                                    <th>Titulo</th>
+                                    <th>Encargado</th>
                                     <th>Alumno</th>
                                     <th>Sede</th>
                                     <th>Asistencia</th>
@@ -82,7 +81,7 @@ include 'Modularidad/MenuVertical.php';
        <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Titulo</th>
+      <th scope="col">Encargado</th>
       <th scope="col">Fecha</th>
       <th scope="col">Horario</th>
       <th scope="col">Acciones</th>
@@ -116,38 +115,66 @@ include 'Modularidad/MenuVertical.php';
   </div>
 </div>
 
+
 <!-- Responder a pregunta -->
 <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Crear Sesiones One on One</h5>
+          <div class="modal-content" id="contenedor5">
+            <div class="modal-header" id="contendor4" >
+              <h5 class="modal-title text-dark" id="exampleModalLabel">Crear Sesiones One on One</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" style="width:80%; margin:auto">
-  <div class="form-group">
-    <label for="exampleInputEmail1" class="text-dark">Ingrese el titulo de la sesión</label>
-    <input type="text" name="titulo" class="form-control" required>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1" class="text-dark">Ingrese la fecha de la sesión</label>
+            <br><br><br>
+            <form id="formulario" class="h-75" action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" >
+              <br>
+            <ul class="items mx-auto ">
+              <li class="active"></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+  <br><br>
+  <fieldset class="username enable">
+  <label for="exampleInputEmail1" class="text-dark">Seleccione el encargado de la sesión</label>
+    <select name="titulo" id="" class="form-control float-right">
+    <option value="Geo Albanés">Geo Albanés</option>
+    <option value="Ónix Landaverde">Ónix Landaverde</option>
+    </select>
+    <br><br>
+    <div class="icon right button "><i class="arrow"></i></div>
+    <br>
+  </fieldset>
+
+  <fieldset class="email">
+  <label for="exampleInputPassword1" class="text-dark">Ingrese la fecha de la sesión</label>
     <?php $today = date("Y-m-d");?>
-    <input type="date" name="fecha" class="form-control" min='<?php echo $today; ?>' required>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1" class="text-dark">Hora de inicio de la se sesión: </label>
-    <input type="time" name="TimeInit" class="form-control" required>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1" class="text-dark">Hora de finalización de la sesión: </label>
-    <input type="time" name="TimeEnd" class="form-control" required>
-  </div>
-  <button type="submit" class="btn btn-primary btn1">Crear <i class="fas fa-paper-plane"></i></button>
-  </form>
-<br>
-          </div>
+    <input type="date" class="form-control mx-auto" name="fecha" min='<?php echo $today; ?>' />
+    <div class="icon right button"><i class="arrow"></i></div>
+  </fieldset>
+
+  <fieldset class="password">
+  <label for="exampleInputPassword1" class="text-dark">Hora de inicio de la se sesión: </label>
+    <input type="time" name="TimeInit" class="form-control mx-auto" />
+    <div class="icon right button"><i class="arrow"></i></div>
+  </fieldset>
+
+  <fieldset class="password2">
+  <label for="exampleInputPassword1" class="text-dark">Hora de finalización de la sesión: </label>
+    <input type="time"  name="TimeEnd"  class="form-control mx-auto" />
+    <div class="icon right button"><i class="arrow"></i></div>
+  </fieldset>
+
+  <fieldset class="thanks">
+  <button type="submit" class="btn btn-primary btn1 mx-auto text-center">Crear <i class="fas fa-paper-plane"></i></button>
+  </fieldset>
+    <br>
+    <br>
+</form>
+<br><br>
+<br>          </div>
         </div>
       </div>        
 </div> <br> 
@@ -179,6 +206,8 @@ include 'Modularidad/MenuVertical.php';
 
 
   <br> 
+  
+<script src="js/formulario.js"></script>
 <script type="text/javascript" src="js/datatables.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script>
@@ -212,7 +241,7 @@ $(document).ready(function(){
         "sLoadingRecords": "Cargando...",
     },
         },
-        "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
+        "lengthMenu": [[5, 25, 50, -1], [50, "All"]],
         "processing" : true,
         "serverSide" : true,
         "order" : [],

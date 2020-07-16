@@ -24,7 +24,7 @@ include 'Modularidad/MenuVertical.php';
   <nav class="nav flex-column" id="nav">
     <h2 class="title-1">Menu</h2>
 <a class="nav-link" href="AprobarModulos.php">Módulo C1</a>
-  <a class="nav-link" href="modulo2.php">Módulo C2</a>
+  <a class="nav-link active" href="modulo2.php">Módulo C2</a>
   <a class="nav-link" href="modulo3.php">Módulo B1</a>
   <a class="nav-link" href="modulo4.php">Modulo B2</a>
    <a class="nav-link" href="modulo5.php">Módulo A1</a>
@@ -32,6 +32,8 @@ include 'Modularidad/MenuVertical.php';
 </nav>
 <br>
 <div class="btn" >
+<a class="nav-link" href="AprobarModulos.php">Listado general</a>
+
   <a href="Reportes/ReporteModulo2.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
 
   <a href="ReportesExcel/ReporteModulo2.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
