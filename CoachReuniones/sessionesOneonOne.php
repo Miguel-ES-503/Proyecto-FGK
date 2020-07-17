@@ -41,7 +41,7 @@ include 'Modularidad/MenuVertical.php';
     <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
       <div class="tabla">
     <div align="right" id="btns">
-    <a href="Reportes/ReporteSession.php"><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
+    <a href="Reportes/ReporteSession.php"  target='blank'><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
   <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
   </div>
  <div class="panel-body" style="float: left;">

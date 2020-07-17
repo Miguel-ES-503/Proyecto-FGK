@@ -36,12 +36,12 @@ $pdf->Cell(40);
  $pdf->Ln(15);
  $pdf->SetFont('Arial','',10);
  $pdf->SetFont('Arial','B',17);
- $pdf->Cell(112);
+ $pdf->Cell(85);
  $pdf->Cell(140,6,utf8_decode('Lista de asistencia One on One finalizas'), 0, 1);
  $pdf->Ln(10);
  $pdf->SetFillColor(232,232,232);
  $pdf->SetFont('Arial','B',12);
- $pdf->Cell(50,6,'Titulo',1,0,'C',1);
+ $pdf->Cell(50,6,'Encargado',1,0,'C',1);
  $pdf->Cell(55,6,'Nombre',1,0,'C',1);
  $pdf->Cell(30,6,'ID Alumno',1,0,'C',1);
  $pdf->Cell(20,6,'Sede',1,0,'C',1);
@@ -53,15 +53,16 @@ $pdf->Cell(40);
 if ($stmt->rowCount()>=1)
 {
     while ($fila2=$stmt->fetch())
-    {	$pdf->Cell(50,6,utf8_decode($fila2['titulo']),1,0,'C');
+    {   $pdf->Cell(50,6,($fila2['titulo']),1,0,'C');
         $pdf->Cell(55,6,utf8_decode($fila2['Nombre']),1,0,'C');
         $pdf->Cell(30,6,utf8_decode($fila2['id_alumno']),1,0,'C');
         $pdf->Cell(20,6,utf8_decode($fila2['ID_Sede']),1,0,'C');
         $pdf->Cell(15,6,$fila2['cupo'],1,0,'C');
- 	    $pdf->Cell(30,6,utf8_decode($fila2['estado_alumno']),1,0,'C');
- 	    $pdf->Cell(20,6,utf8_decode($fila2['ciclo']),1,0,'C');
- 	    $pdf->Cell(50,6,strftime("%A %d "." de"." %B del %Y ",strtotime($fila2['fecha'])),1,0,'C');
-        $pdf->Cell(30,6,'',1,1,'L');
+        $pdf->Cell(30,6,utf8_decode($fila2['estado_alumno']),1,0,'C');
+        $pdf->Cell(20,6,utf8_decode($fila2['ciclo']),1,0,'C');
+        $pdf->Cell(50,6,strftime("%A %d "." de"." %B del %Y ",strtotime($fila2['fecha'])),1,0,'C');
+         $pdf->Ln();
+         //$pdf->Cell(30,6,'',1,1,'L');
     }
 }
 
