@@ -19,7 +19,7 @@ $LugarFT=$InicialDep . $FinalDep . $FullTime; //Ejemplo SSFT
 $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 
 	// Consulta De La BASE DE DATOS
-$consulta=$pdo->prepare("SELECT alumnos.Nombre AS alumno , alumnos.Class, datos_modulos.fechain, datos_modulos.id_alumno , datos_modulos.id, datos_modulos.estado, datos_modulos.id_modulo , empresas.Nombre FROM datos_modulos LEFT JOIN alumnos ON datos_modulos.id_alumno =  alumnos.ID_Alumno LEFT JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa WHERE datos_modulos.id_modulo = 'MOD40000004' ");
+$consulta=$pdo->prepare("SELECT alumnos.Nombre AS alumno , alumnos.Class, alumnos.Sexo, alumnos.ID_Sede, datos_modulos.fechain, datos_modulos.id_alumno , datos_modulos.id, datos_modulos.estado, datos_modulos.id_modulo , empresas.Nombre FROM datos_modulos LEFT JOIN alumnos ON datos_modulos.id_alumno =  alumnos.ID_Alumno LEFT JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa WHERE datos_modulos.id_modulo = 'MOD40000004' ");
 $consulta->execute(array($LugarFT,$LugarSAT));
 
 
@@ -42,10 +42,13 @@ $pagina = $excel->getActiveSheet()->setTitle('Listado De Alumnos');
 $pagina->setCellValue('A1','Lista De Alumnos');
 $pagina->setCellValue('A2','ID-Alumno');
 $pagina->setCellValue('B2','Nombre');
-$pagina->setCellValue('C2','Class');
-$pagina->setCellValue('D2','Universidad');
-$pagina->setCellValue('E2','Fecha inscripcion');
-$pagina->setCellValue('F2','Estado');
+$pagina->setCellValue('C2','Sexo');
+$pagina->setCellValue('D2','Sede/Modalidad');
+$pagina->setCellValue('E2','Class');
+$pagina->setCellValue('F2','Universidad');
+$pagina->setCellValue('G2','ID-Modulo');
+$pagina->setCellValue('H2','Fecha inscripcion');
+$pagina->setCellValue('I2','Estado');
 
 
 $i = 2;
@@ -55,16 +58,19 @@ if ($consulta->rowCount()>=1)
 	{
 		$pagina->setCellValue('A'.($i+1), $fila2['id_alumno']);
 		$pagina->setCellValue('B'.($i+1), $fila2['alumno']);
-		$pagina->setCellValue('C'.($i+1), $fila2['Class']);
-		$pagina->setCellValue('D'.($i+1), utf8_encode($fila2['Nombre']));
-		$pagina->setCellValue('E'.($i+1), (strftime("%A %d "." de"." %B del %Y ",strtotime($fila2['fechain']))));
-		$pagina->setCellValue('F'.($i+1), $fila2['estado']);
+		$pagina->setCellValue('C'.($i+1), $fila2['Sexo']);
+		$pagina->setCellValue('D'.($i+1), $fila2['ID_Sede']);
+		$pagina->setCellValue('E'.($i+1), $fila2['Class']);
+		$pagina->setCellValue('F'.($i+1), utf8_encode($fila2['Nombre']));
+		$pagina->setCellValue('G'.($i+1), $fila2['id_modulo']);
+		$pagina->setCellValue('H'.($i+1), (strftime("%A %d "." de"." %B del %Y ",strtotime($fila2['fechain']))));
+		$pagina->setCellValue('I'.($i+1), $fila2['estado']);
 		$i++;
 	}		
 }
 
 
- foreach (range('A','G') as $columna) 
+ foreach (range('A','J') as $columna) 
  {
  	$pagina->getColumnDimension($columna)->setAutoSize(true);
  }
