@@ -292,7 +292,7 @@
               ?>
               </a>
 
-         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background: #343a40;">
+         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background:#BE0032">
           <div class="dark border-right" id="sidebar-wrapper">
       <div class="sidebar-heading justify-content-center align-items-center">
         <center>
@@ -347,13 +347,15 @@
       <li>
         <a class="list-group-item list-group-item-action" href="Manual/manual.pdf" >
         <i class="fas fa-info-circle"></i> Instrucciones
+
         </a>
+        <div class="dropdown-divider"></div>
       </li>
 
 
 <li>
 <a class="dropdown-item" href="Configuracion.php" style="color: white;">Configuración</a>
-                <div class="dropdown-divider"></div>
+                
                 <a class="dropdown-item" href="../CerrarSession.php" style="color: white;">Salir</a>
 
   </li>       
