@@ -543,7 +543,6 @@
            <li><a href="pensum.php" class="list-group-item list-group-item-action">  <i class="fas fa-file-pdf"></i> Pensum</a></li>
            
            <li><a href="IndicacionesMaterias.php" class="list-group-item list-group-item-action">  <i class="fas fa-book"></i> Materias</a></li>
-
            <li><a href="IndicacionesRetiros.php" class="list-group-item list-group-item-action">  <i class="fas fa-ban"></i> Retiros</a></li>
            
 
@@ -553,8 +552,7 @@
 
       </li>
                 <li><a href="preguntasfrecuentes.php" class="list-group-item list-group-item-action"><i class="far fa-question-circle"></i> Preguntas Frecuentes</a></li>
-          <li><a href="inscribir_session.php" class="list-group-item list-group-item-action"><i class="fas fa-pencil-alt"></i> Inscribir Sesiones Individuales</a></li>
-         
+          <li><a href="inscribir_session.php" class="list-group-item list-group-item-action"><i class="fas fa-pencil-alt"></i> Inscribir Sesiones Individuales</a></li>      
           <?php 
 $correo = $_SESSION['Email'];
   $stmt =$pdo->prepare("SELECT `ID_Alumno` , `TotalTalleres`, `CantidadModulos` FROM `alumnos` WHERE correo = '$correo' ");
@@ -569,9 +567,7 @@ $correo = $_SESSION['Email'];
      <i class='fas fa-pencil-alt'></i>Inscribir Módulo</a></li>";
     }         
 ?>
-      <li><a href="configuracion.php" class="list-group-item list-group-item-action">  <i class="fas fa-book"></i> Configuración</a></li>
-      <br>
-           
+      <li><a href="configuracion.php" class="list-group-item list-group-item-action">  <i class="fas fa-book"></i> Configuración</a></li>  
     <li><a href="../CerrarSession.php" class="list-group-item list-group-item-action">  <i class=""></i> Salir</a></li>
 
         </ul>
