@@ -554,22 +554,25 @@
       </li>
                 <li><a href="preguntasfrecuentes.php" class="list-group-item list-group-item-action"><i class="far fa-question-circle"></i> Preguntas Frecuentes</a></li>
           <li><a href="inscribir_session.php" class="list-group-item list-group-item-action"><i class="fas fa-pencil-alt"></i> Inscribir Sesiones Individuales</a></li>
+         
+          <?php 
+$correo = $_SESSION['Email'];
+  $stmt =$pdo->prepare("SELECT `ID_Alumno` , `TotalTalleres`, `CantidadModulos` FROM `alumnos` WHERE correo = '$correo' ");
+  $stmt->execute();
+  while($row = $stmt->fetch()){
+      $IDalumno = $row["ID_Alumno"];
+      $totaltalleres = $row["TotalTalleres"];
+      $totalModulos = $row["CantidadModulos"];
+  }
+    if ($totaltalleres <40 OR ($totalModulos < 6) ) {
+     echo "<li><a href='inscribir_modulo.php' class='list-group-item list-group-item-action'>
+     <i class='fas fa-pencil-alt'></i>Inscribir Módulo</a></li>";
+    }         
+?>
       <li><a href="configuracion.php" class="list-group-item list-group-item-action">  <i class="fas fa-book"></i> Configuración</a></li>
       <br>
            
     <li><a href="../CerrarSession.php" class="list-group-item list-group-item-action">  <i class=""></i> Salir</a></li>
-
-
-
-        
-
-
-
-            
-
-
-            
-
 
         </ul>
       </div>
