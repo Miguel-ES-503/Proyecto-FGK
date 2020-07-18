@@ -552,7 +552,7 @@
         </div>
 
       </li>
-                <li><a href="preguntasfrecuentes.php" class="list-group-item list-group-item-action"><i class="fas fa-pencil-alt"></i> Preguntas Frecuentes</a></li>
+                <li><a href="preguntasfrecuentes.php" class="list-group-item list-group-item-action"><i class="far fa-question-circle"></i> Preguntas Frecuentes</a></li>
           <li><a href="inscribir_session.php" class="list-group-item list-group-item-action"><i class="fas fa-pencil-alt"></i> Inscribir Sesiones Individuales</a></li>
       <li><a href="configuracion.php" class="list-group-item list-group-item-action">  <i class="fas fa-book"></i> Configuración</a></li>
       <br>
