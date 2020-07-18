@@ -45,10 +45,16 @@
               $stat = $dbh->prepare($query);
               $stat->execute();
               $result = $stat->fetchAll();
-            ?>
+              
+              $fechaActual = date("Y-m-d");
+              $datetime1 = date_create($fechaActual);
+?>
             <?php
                             foreach($result as $row)
                             {
+                              $createday = $row["fechaRespuesta"];
+                              $datetime2 = date_create($createday);
+                              $interval = date_diff($datetime2, $datetime1);                         
                              echo "
   <div class='card'>
     <div class='card-header bg-dark' id='headingOne'>
@@ -61,6 +67,9 @@
     <div id='collapseOne".($num2++)."' class='collapse ' aria-labelledby='headingOne' data-parent='#accordion'>
       <div class='card-body'>
       ".$row["respuesta"]."
+      <blockquote class='blockquote'>
+  <span class='blockquote-footer float-left'>Publicado hace: <cite title='Fecha'>".  $interval->format('%a días')."</cite></span>
+</blockquote>
       </div>
     </div>
   </div>";

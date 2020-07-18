@@ -1,32 +1,33 @@
 <?php
   require_once 'templates/head.php';
 ?>
-<title>Reuniones</title>
+<title>Inscribir Sesiones One on One</title>
 <?php
   require_once 'templates/header.php';
   //require_once 'templates/MenuVertical.php';
   require_once 'templates/MenuHorizontal.php';
   require '../Conexion/conexion.php';
-
   setlocale(LC_TIME, 'es_SV.UTF-8');
 ?> 
-<div class="container-fluid text-center">
+<div class="container-fluid text-center h-25">
   <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Inscribir Sesiones One on One</h2>
+  <br>
 </div>
 </div>
-<div class="sesion">
+<br><br>
+<div class="sesion mx-5 h-25">
 
 <!-- /#page-content-wrapper -->
-<table class="table table-responsive" style="width:80%; margin:auto">
+<table class="table table-responsive w-100 mx-5">
   <thead  style="background-color: #2D2D2E; color: white; ">
     <tr>
     <th scope="col">Fecha</th>
     <th scope="col">Horario</th>
     <th scope="col">Cupo</th>
     <th scope="col">Encargado</th>
-    <th scope="col">Acción</th>
+    <th scope="col">Acción <span class='invisible'>Hi.</span></th>
     </tr>
   </thead>
   <tbody class="bg-light">
@@ -93,7 +94,7 @@
                             }
                           }
 ?>
-<table class="table table-responsive" style="width:80%; margin:auto">
+<table class="table table-responsive w-100 mx-5" >
   <thead  style="background-color: #2D2D2E; color: white; ">
     <tr>
     <th scope="col">Fecha</th>
@@ -146,12 +147,8 @@
 </div>
 </div>
 <!-- /#wrapper -->
-
 <?php
   require_once 'templates/footer.php';
-?>
-<?php
-  require_once 'templates/head.php';
 ?>
 <title>Reuniones</title>
 <?php
