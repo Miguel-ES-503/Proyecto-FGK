@@ -31,7 +31,6 @@ include 'Modularidad/MenuVertical.php';
 </nav>
 <br>
 <div class="btn" >
-<a href="listadogeneral1.php" ><button class="btn btn-warning" id="button">Listado general</button></a>
 
   <a href="Reportes/ReporteModulo1.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
 
@@ -51,7 +50,6 @@ include 'Modularidad/MenuVertical.php';
       <br>
           <thead class="table-secondary">
             <tr> 
-              <th scope="col"><input type='checkbox' name='' class='case' value="" id="todos">Todos</th>
               <th scope="col">ID Alumno</th>
               <th scope="col">Alumno</th>
               <th scope="col">Sexo</th>

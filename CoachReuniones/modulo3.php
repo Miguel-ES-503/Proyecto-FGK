@@ -56,6 +56,7 @@ include 'Modularidad/MenuVertical.php';
               <th scope="col">Alumno</th>
               <th scope="col">Sexo</th>
               <th scope="col">Class</th>
+              <th scope="col">Sede</th>
               <th scope="col">Universidad</th>
               <th scope="col">Aprobar</th>
               <th scope="col">Reprobar</th>

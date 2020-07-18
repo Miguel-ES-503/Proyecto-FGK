@@ -17,8 +17,7 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 //<td><input type='checkbox' name='ActuaAlumno[]' class='case' value=".$fila['ID_Alumno']."></td>
 
 	// Consulta De La BASE DE DATOS
-
-	$consulta=$pdo->prepare("SELECT * FROM alumnos LEFT JOIN carrera ON alumnos.ID_Carrera = carrera.Id_Carrera WHERE SedeAsistencia =  ? OR  ID_Sede  =  ? ");
+	$consulta=$pdo->prepare("SELECT * FROM alumnos LEFT JOIN carrera ON alumnos.ID_Carrera = carrera.Id_Carrera WHERE SedeAsistencia =  ? OR  SedeAsistencia  =  ? ");
 	
 	$consulta->execute(array($LugarFT,$LugarSAT));
 
@@ -37,15 +36,13 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 				echo "
 		<tr class='table-light'>
 		
-		<th>".$fila['ID_Alumno']."</th>
 		<th>".$fila['Nombre']."</th>
 		<th>".$fila['Sexo']."</th>
-		<th>".$fila['Class']."</th>
-		<th>".$fila['ID_Sede']."</th>
+		<th>".$fila['Class']."/".$fila['ID_Sede']."</th>
 		<td>".utf8_encode($fila['nombre'])."</td>
-		<td>".$fila['TotalTalleres']."</td>	
 		<td>".$fila['CantidadModulos']."/6</td>
-		<td>".$fila['EstadoCerti']."</td>
+		<td>".$fila['TotalTalleres']."</td>	
+		<th>".$fila['EstadoCerti']."</th>
 		</tr>";
 
 	}

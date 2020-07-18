@@ -31,18 +31,16 @@ include 'Modularidad/MenuVertical.php';
 <div class="card-body">
     <div class="table-responsive">
       <br>
-      <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
+      <table  id="example" >
         <thead class="table-secondary">
           <tr> 
-            <th scope="col">Carnet</th>
             <th scope="col">Alumno</th>
             <th scope="col">Sexo</th>
-            <th scope="col">Class</th>
-            <th scope="col">Sede</th>
+            <th scope="col">Class/Sede</th>
             <th scope="col">Carrera</th>
-            <th scope="col">Talleres</th>
             <th scope="col">Módulos Aprobados</th>
-            <th scope="col">Estado Certificación</th>
+            <th scope="col">Talleres</th>
+            <th scope="col">Estado de Certificación</th>
           </tr>
         </thead>
         <tbody class="w-100">
