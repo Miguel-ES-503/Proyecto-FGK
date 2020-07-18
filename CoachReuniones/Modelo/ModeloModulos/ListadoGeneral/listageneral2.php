@@ -19,7 +19,7 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 	// Consulta De La BASE DE DATOS
 
 
-    $consulta2=$pdo->prepare("SELECT alumnos.Nombre AS alumno , alumnos.Class, alumnos.Sexo,  datos_modulos.id_alumno , datos_modulos.id, datos_modulos.id_modulo , datos_modulos.estado, empresas.Nombre FROM datos_modulos LEFT JOIN alumnos ON datos_modulos.id_alumno =  alumnos.ID_Alumno LEFT JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa WHERE datos_modulos.id_modulo = ? AND (datos_modulos.estado = 'Aprobado' OR datos_modulos.estado = 'Reprobado') ");
+    $consulta2=$pdo->prepare("SELECT alumnos.Nombre AS alumno , alumnos.Class, alumnos.Sexo,alumnos.EstadoCerti,  datos_modulos.id_alumno , datos_modulos.id, datos_modulos.id_modulo , datos_modulos.estado, empresas.Nombre FROM datos_modulos LEFT JOIN alumnos ON datos_modulos.id_alumno =  alumnos.ID_Alumno LEFT JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa WHERE datos_modulos.id_modulo = ? AND (datos_modulos.estado = 'Aprobado' OR datos_modulos.estado = 'Reprobado') ");
   
                $consulta2->execute(array('MOD20000002'));
                 while ($fila2=$consulta2->fetch())
@@ -41,7 +41,9 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
                 <th>".$fila2['Sexo']."</th>
                 <th><input type='hidden' name='idtaller' id='idtaller' value=>".$fila2['Class']."</th>
                 <th>".utf8_encode($fila2['Nombre'])."</th>
-                <th>".$fila2['estado']."</th>";
+                <th>".$fila2['estado']."</th>
+                <th>".$fila2['EstadoCerti']."</th>";
+
   
               }
             

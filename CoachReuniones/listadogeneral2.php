@@ -58,6 +58,7 @@ include 'Modularidad/MenuVertical.php';
               <th scope="col">Class</th>
               <th scope="col">Universidad</th>
               <th scope="col">Estado</th>
+              <th scope="col">Estado Certificación</th>
             </tr>
           </thead>
 <tbody>

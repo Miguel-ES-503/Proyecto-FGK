@@ -40,8 +40,9 @@ include 'Modularidad/MenuVertical.php';
             <th scope="col">Class</th>
             <th scope="col">Sede</th>
             <th scope="col">Carrera</th>
-            <th scope="col">Módulos Aprobados</th>
             <th scope="col">Talleres</th>
+            <th scope="col">Módulos Aprobados</th>
+            <th scope="col">Estado Certificación</th>
           </tr>
         </thead>
         <tbody class="w-100">
