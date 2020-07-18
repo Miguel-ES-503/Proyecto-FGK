@@ -46,7 +46,7 @@ $stmt2 = $dbh->query("SELECT * FROM modulos WHERE estado = 1");
     echo "<td>".utf8_encode($row['titulo'])."</td>";
     echo "<td><form action='actualizarmodulo.php' method='POST'><button type='submit' class='btn btn-warning' value= '".$row['id_modulo']."' name='id'><img src='../img/desactivar.png' class='icon-img'>Desactivar </button> </form> </td>";
     echo "<th scope='row'>".utf8_encode($row['password'])."</th>";
-    echo "<td><form action='' method='POST'><button type='submit' class='btn btn-success' value= '".$row['id_modulo']."' name='id' ><i class='fas fa-key'></i>Cambiar</button></form> </td>";
+    echo "<td><form action='cambiarpasswd.php' method='POST'><button type='submit' class='btn btn-success' value= '".$row['id_modulo']."' name='id' ><i class='fas fa-key'></i>Cambiar</button></form> </td>";
     echo "</tr>";
 }
 
