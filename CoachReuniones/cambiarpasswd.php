@@ -39,23 +39,23 @@ $stmt = $dbh->query("SELECT * FROM modulos WHERE id_modulo = '$id' ");
 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
-<form id="regiration_form" novalidate action="action.php" method="post">
+<form id="regiration_form"   action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 <fieldset>
-<h2>Paso 1: Crear su cuenta</h2> <br><br>
+<h2>Paso 1: Insertar cambios</h2> <br><br>
 <div class="form-group">
 <label for="exampleInputEmail1" class="text-dark float-left">Módulo seleccionado: <?php while ($row = $stmt->fetch()) {
     echo utf8_encode($row['titulo']);
 } ?> </label>
 </div>
 <br>
-    <div class="form-group">
+<div class="form-group">
     <label for="" class="text-dark float-left">Ingresar nueva contraseña:</label>
-    <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="password">
+    <input type="password" class="form-control" id="exampleInputEmail1" name="pass1" aria-describedby="emailHelp" placeholder="password" required>
   
 </div>
 <div class="form-group">
 <label for="" class="text-dark float-left">Confirmar nueva contraseña:</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+    <input type="password" class="form-control" id="exampleInputPassword1" name = "pass2" placeholder="password" required>
 </div>
 <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
 </fieldset>
@@ -65,16 +65,76 @@ $stmt = $dbh->query("SELECT * FROM modulos WHERE id_modulo = '$id' ");
 <h2> Paso 2: Verificación</h2>
 <div class="form-group">
 <label for="fName" class="float-left text-dark">Ingrese su contraseña para confirmar </label>
-<input type="text" class="form-control" name="data[fName]" id="fName" placeholder="Nombres">
+<input type="password" class="form-control" name="userpassword" id="fName" placeholder="user password" required>
 </div>
 <input type="button" name="previous" class="previous btn btn-info" value="Previo" />
-<button type="submit" class="btn btn-success">Guardar cambios</button>
+<button type="submit" class="btn btn-success"  value= "<?php echo $id ?>" name='idsave' >Guardar cambios</button>
 </fieldset>
 
 </form>
 </div>
 </div>
 </div>
+<?php
+ $comparar = $_POST['idsave']; 
+ $dato1 = $_POST['pass1'];
+ $dato2 = $_POST['pass2'];
+ $dato3 = $_POST['userpassword'];
+
+ if (isset($comparar)) {
+  
+if ($dato1 == $dato2) {
+    try {
+        $sql2 = "UPDATE modulos SET password = ? WHERE id_modulo =?";
+        $dbh->prepare($sql2)->execute([$dato2, $comparar]);
+        header("Location:activarmodulos.php");
+   } catch (PDOException $e) {
+    header("Location:activarmodulos.php");
+          echo $e->getMessage();
+      }
+   }else{
+       echo "<p class='p-1 mb-1 bg-danger text-white text-center'>Error, la contraseña no es igual a la confirmación </p>";
+   }
+   
+}
+?>
+
+<!-- validar script -->
+<script>
+$(document).ready(function() {
+	//variables
+	var pass1 = $('[name=pass1]');
+	var pass2 = $('[name=pass2]');
+	var confirmacion = "Las contraseñas si coinciden";
+	var negacion = "No coinciden las contraseñas";
+	var vacio = "La contraseña no puede estar vacía";
+	//oculto por defecto el elemento span
+	var span = $('<span></span>').insertAfter(pass2);
+	span.hide();
+	//función que comprueba las dos contraseñas
+	function coincidePassword(){
+	var valor1 = pass1.val();
+	var valor2 = pass2.val();
+	//muestro el span
+	span.show().removeClass();
+	//condiciones dentro de la función
+	if(valor1 != valor2){
+	span.text(negacion).addClass('negacion p-1 mb-1 bg-danger text-white');	
+	}
+	if(valor1.length==0 || valor1==""){
+	span.text(vacio).addClass('negacion p-1 mb-1 bg-danger text-white ');	
+	}
+	if(valor1.length!=0 && valor1==valor2){
+	span.text(confirmacion).removeClass("negacion").addClass('confirmacion p-1 mb-1 bg-success text-white');
+	}
+	}
+	//ejecuto la función al soltar la tecla
+	pass2.keyup(function(){
+	coincidePassword();
+	});
+});
+</script>
+<!-- formulario script -->
 <script>
 $(document).ready(function(){
 var current = 1,current_step,next_step,steps;
