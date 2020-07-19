@@ -33,9 +33,6 @@ include 'Modularidad/MenuVertical.php';
 <div class="btn" >
 <a href="listadogeneral3.php" ><button class="btn btn-warning" id="button">Listado general 4</button></a>
 
-  <a href="Reportes/ReporteModulo3.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
-
-  <a href="ReportesExcel/ReporteModulo3.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
 </div>
 
 <!-- Inicio de tabla de asistencia  -->
