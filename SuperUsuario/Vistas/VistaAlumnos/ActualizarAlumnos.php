@@ -36,27 +36,23 @@ if (isset($_GET['id'])) {
 
 <body class="container">
 	<br>
-	<!-- Material form subscription -->
-	<div class="card">
-
-		<h5 class="card-header info-color white-text text-center py-4">
-			<strong style="color: black;">Actualizar Usuario</strong>
-		</h5>
-
-		<!--Card content-->
-		<div class="card-body px-lg-5">
-			<!-- Form -->
-
+	<div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: block; padding-right: 16px;" aria-modal="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content"  style="border-radius: 30px;">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel" style="color:black;">Actualizar Usuario</h5>
+				</div>
+				<div class="modal-body">
 				<h6 style="color: white;" class="float-left">Datos Generales</h6><br>
 				<hr>
 
-			<?php if ($consulta->rowCount() >=0) {$fila=$consulta->fetch()?>
+					<!--Creación de empresas-->
+					<?php if ($consulta->rowCount() >=0) {$fila=$consulta->fetch()?>
 				<form class="text-center"  action="../../Modelo/ModeloAlumno/ActualizarAlumno.php" method="POST" >
 					<br>
-					<div class="form-row">
 						<div class="col">
-							<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 							<div class="md-form">
+								<div class="md-form">
 								<input type="text" id="CarnetAlumno" name="CarnetAlumno" <?php echo 'value="'.$fila['ID_Alumno'] .'"';  ?> class="form-control">
 								<label for="materialRegisterFormFirstName">Carnet del Alumno</label>
 							</div>
@@ -74,7 +70,9 @@ if (isset($_GET['id'])) {
 						<div class="col">
 							<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 							<div class="md-form">
-								<select type="text" id="NombreCarrera" name="NombreCarrera" class="form-control">
+								<label for="materialRegisterFormFirstName">Carrera</label>
+								<select style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="NombreCarrera" name="NombreCarrera" class="form-control">
 									<?php 
 
 									$ResuConulta4= $fila['ID_Carrera'];
@@ -96,14 +94,16 @@ if (isset($_GET['id'])) {
 									}
 									echo '</select>';
 									?>
-									<label for="materialRegisterFormFirstName">Carrera</label>
+									
 								</div>
 							</div>
 							<div class="col">
 								<!-- Last name -->
 								<div class="md-form">
-									<input type="text" id="NClass" name="NClass" class="form-control" <?php echo 'value="'.$fila['Class'] .'"';  ?>>
 									<label for="materialRegisterFormLastName">Class</label>
+									<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="NClass" name="NClass" class="form-control" <?php echo 'value="'.$fila['Class'] .'"';  ?>>
+									
 								</div>
 							</div>
 						</div>
@@ -112,7 +112,9 @@ if (isset($_GET['id'])) {
 							<div class="col">
 								<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 								<div class="md-form">
-									<select id="idempresa" name="idempresa" class="form-control">
+<label for="materialRegisterFormFirstName">Universidad</label>
+									<select style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" id="idempresa" name="idempresa" class="form-control">
 										<?php 
 
 										$ResuConulta3= $fila['ID_Empresa'];
@@ -134,19 +136,21 @@ if (isset($_GET['id'])) {
 										}
 										echo '</select>';
 										?>
-										<label for="materialRegisterFormFirstName">Universidad</label>
+										
 									</div>
 								</div>
 								<div class="col">
 									<!-- Last name -->
 									<div class="md-form">
-										<select id="Sexo" name="Sexo" class="form-control" >
+										<label for="materialRegisterFormLastName">Sexo</label>
+										<select style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" id="Sexo" name="Sexo" class="form-control" >
 											<option <?php echo 'value="'.$fila['Sexo'] .'"';?>  selected ><?php echo $fila['Sexo'];?></option>
 											<option value="M">Hombre</option>
 											<option value="F">Mujer</option>
 
 										</select>
-										<label for="materialRegisterFormLastName">Sexo</label>
+										
 									</div>
 								</div>
 							</div>
@@ -157,15 +161,19 @@ if (isset($_GET['id'])) {
 										<div class="col">
 											<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 											<div class="md-form">
-												<input type="text" id="correo" name="correo" class="form-control" <?php echo 'value="'.$fila['correo'] .'"';  }?>>
 												<label for="materialRegisterFormFirstName">Correo</label>
+												<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="correo" name="correo" class="form-control" <?php echo 'value="'.$fila['correo'] .'"';  }?>>
+												
 											</div>
 										</div>
 
 								<div class="col">
 									<!-- Last name -->
 									<div class="md-form">
-										<select id="IDStatus" name="IDStatus" class="form-control">
+<label for="materialRegisterFormLastName">Proceso</label>
+										<select style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" id="IDStatus" name="IDStatus" class="form-control">
 											
 											<?php 
 
@@ -189,7 +197,7 @@ if (isset($_GET['id'])) {
 											}
 											echo '</select>';
 											?>
-											<label for="materialRegisterFormLastName">Proceso</label>
+											
 										</div>
 									</div>
 								</div>
@@ -199,7 +207,9 @@ if (isset($_GET['id'])) {
 									<div class="col">
 										<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 										<div class="md-form">
-											<select type="text" id="sede" name="sede" class="form-control" >
+<label for="materialRegisterFormFirstName">Sede</label>
+											<select style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="sede" name="sede" class="form-control" >
 												<?php 
 
 												$ResuConulta= $fila['ID_Sede'];
@@ -223,7 +233,7 @@ if (isset($_GET['id'])) {
 
 												echo '</select>';
 												?>
-												<label for="materialRegisterFormFirstName">Sede</label>
+												
 											</div>
 										</div>
 									
@@ -232,7 +242,9 @@ if (isset($_GET['id'])) {
 										<div class="col">
 											<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 											<div class="md-form">
-												<select type="text" id="Asistencia" name="Asistencia" class="form-control">
+												<label for="materialRegisterFormFirstName">Lugar Asistencia</label>
+												<select style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="Asistencia" name="Asistencia" class="form-control">
 													<?php
 
 													$ResuConulta5= $fila['SedeAsistencia'];
@@ -253,7 +265,7 @@ if (isset($_GET['id'])) {
 													<option value="SSFT" >San Salvador</option>
 													<option value="SAFT" >Santa Ana</option>
 												</select>
-												<label for="materialRegisterFormFirstName">Lugar Asistencia</label>
+												
 											</div>
 										</div>
 									</div>
@@ -262,7 +274,9 @@ if (isset($_GET['id'])) {
 									<div class="col">
 										<!-- Last name -->
 										<div class="md-form">
-											<select type="text" id="estadoAlumno" name="statusActual" class="form-control" required >
+											<label for="materialRegisterFormFirstName">Status actual (A LA FECHA)</label>
+											<select style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="estadoAlumno" name="statusActual" class="form-control" required >
 												<option value="<?php echo $fila['StatusActual'] ?>"selected ><?php echo $fila['StatusActual'] ?></option>
 												<option value="Becado" >Becado</option>
 												<option value="Declinado" >Declinado</option>
@@ -278,12 +292,14 @@ if (isset($_GET['id'])) {
 												<option value="Pausa" >Pausa</option>
 												<option value="Fallecido">Fallecido</option>
 											</select>	
-											<label for="materialRegisterFormFirstName">Status actual (A LA FECHA)</label>
+											
 										</div>
 									</div>
 									<div class="col">
 										<div class="md-form">
-											<select type="text" id="financiamiento" name="financiamiento" class="form-control" required >
+											<label for="materialRegisterFormFirstName">Fuente de financiamiento</label>
+											<select style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="financiamiento" name="financiamiento" class="form-control" required >
 												<option value="<?php echo $fila['FuenteFinacimiento']?>" selected ><?php echo $fila['FuenteFinacimiento']?></option>
 												<option value="Beca Externa con Apoyo Adicional" >Beca Externa con Apoyo Adicional</option>
 												<option value="Borja" >Borja</option>
@@ -291,7 +307,7 @@ if (isset($_GET['id'])) {
 												<option value="FOM" >FOM</option>
 												<option value="Financiamiento Propio" >Financiamiento Propio</option>
 											</select>	
-											<label for="materialRegisterFormFirstName">Fuente de financiamiento</label>
+											
 										</div>
 									</div>
 								</div>
@@ -302,20 +318,24 @@ if (isset($_GET['id'])) {
 									<div class="form-row">
 										<div class="col">
 											<div class="md-form">
-												<select type="text" id="estadoAlumno" name="estadoAlumno" class="form-control" >
+<label for="materialRegisterFormFirstName">Estado</label>
+												<select style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="estadoAlumno" name="estadoAlumno" class="form-control" >
 													<option <?php echo 'value="'.$fila['Estado'] .'"';  ?>  selected ><?php echo $fila['Estado'] ;  ?></option>
 													<option value="Activo" >Activo</option>
 													<option value="Graduado" >Graduado</option>
 													<option value="Inactivo" >Inactivo</option>
 												</select>	
-												<label for="materialRegisterFormFirstName">Estado</label>
+												
 											</div>
 										</div>
 
 										<div class="col">
 											<div class="md-form">
-												<input type="number" name="cantidaTaller" class="form-control" placeholder="Ingrese la cantida de talleres" min="0" required  value="<?php echo $fila['TotalTalleres'] ?>">
-												<label for="materialRegisterFormFirstName">Cantidad de talleres</label>
+<label for="materialRegisterFormFirstName">Cantidad de talleres</label>
+												<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="number" name="cantidaTaller" class="form-control" placeholder="Ingrese la cantida de talleres" min="0" required  value="<?php echo $fila['TotalTalleres'] ?>">
+												
 											</div>
 										</div>
 									</div>
@@ -330,19 +350,25 @@ if (isset($_GET['id'])) {
 
 										<input type="hidden" name="id"  <?php echo 'value="'.$fila['ID_Alumno'].'"';  ?> >
 
-										<!-- Sign in button -->
-										<input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Datos" value="Actualizar Alumno">
-										<a href="../../LIS-Alumnos.php" style="color: white ">Regresar atras?</a>
+						<center><button style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;" name="Guardar_Datos" value="Actualizar Alumno">Actualizar Alumno</button></center>
+    <!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 
-										
+					</form>
+	<a href="../../LIS-Alumnos.php" style="color: white ">Regresar atras?</a>
 
-									</form>
-									<!-- Form -->
-									
-								</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-							</div>
-							<!-- Material form subscription -->
 
+
+
+
+	
 						</body>
 						</html>

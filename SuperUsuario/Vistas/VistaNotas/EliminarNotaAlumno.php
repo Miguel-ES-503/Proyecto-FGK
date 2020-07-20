@@ -47,77 +47,86 @@ if (isset($_GET['id'])) {
 <body class="container">
 
 	<br><br><br><br><br>
+<div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: block; padding-right: 16px;" aria-modal="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content"  style="border-radius: 30px;">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel" style="color:black;">Eliminar Nota Alumno</h5>
 
-
-	<!-- Material form subscription -->
-	<div class="card">
-
-		<h5 class="card-header info-color white-text text-center py-4">
-			<strong style="color:black;">Eliminar Nota</strong>
-		</h5>
-
-		<!--Card content-->
-		<div class="card-body px-lg-5">
-
-			<!-- Form -->
-			<form class="text-center" style="color: #757575;" action="../../Modelo/ModeloNotas/EliminarNotasPorAlumno.php" method="POST">
-
-				<p>Seguro que desea eliminar la Nota:</p>
-				<input type="hidden" id="id" name="id" class="form-control" value="<?php echo $id?>" > 
+			</div>
+				<div class="modal-body">
+					<form class="text-center" action="../../Modelo/ModeloNotas/EliminarNotasPorAlumno.php" method="POST">
+						<div class="col">
+							<div class="md-form">
+								<p>Seguro que desea eliminar la Nota:</p>
+				<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;"  type="hidden" id="id" name="id" class="form-control" value="<?php echo $id?>" > 
 				<input type="hidden" id="id2" name="id2" class="form-control" value="<?php echo $IDAlumno?>" > 
-				<!-- E-mai -->
+<!-- E-mai -->
 
-				<div class="form-row">
+					<div class="form-row">
 					<div class="col">
 						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 						<div class="md-form">
-							<input type="text" id="CarnetAlumno" name="CarnetAlumno" class="form-control" value="<?php echo $alumno?>"  disabled >
 							<label for="materialRegisterFormFirstName">Alumno</label>
+							<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="CarnetAlumno" name="CarnetAlumno" class="form-control" value="<?php echo $alumno?>"  disabled >
+							
 						</div>
 					</div>
 					<div class="col">
 						<!-- Last name -->
 						<div class="md-form">
-							<input type="text" id="NombreAlumno" name="NombreAlumno" class="form-control" value="<?php echo $Comprobante?>" disabled  >
 							<label for="materialRegisterFormLastName">Nombre del archivo</label>
+							<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="NombreAlumno" name="NombreAlumno" class="form-control" value="<?php echo $Comprobante?>" disabled  >
+							
 						</div>
 					</div>
 				</div>
-
-
-
 				<div class="form-row">
 					<div class="col">
 						<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 						<div class="md-form">
-							<input type="text" id="CarnetAlumno" name="CarnetAlumno" class="form-control" value="<?php echo $Ciclo?>"  disabled >
 							<label for="materialRegisterFormFirstName">Ciclo</label>
+							<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="CarnetAlumno" name="CarnetAlumno" class="form-control" value="<?php echo $Ciclo?>"  disabled >
+							
 						</div>
 					</div>
 					<div class="col">
 						<!-- Last name -->
 						<div class="md-form">
-							<input type="text" id="NombreAlumno" name="NombreAlumno" class="form-control" value="<?php echo $year?>"  disabled  >
 							<label for="materialRegisterFormLastName">Año</label>
+							<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="NombreAlumno" name="NombreAlumno" class="form-control" value="<?php echo $year?>"  disabled  >
+							
 						</div>
 					</div>
 				</div>
 				
 
 
-				<!-- Sign in button -->
-				<button class="btn btn-outline-light  btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Eliminar Nota</button>
 
+				
+<br>
+				<!-- Sign in button -->
+				<center><button style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;">Eliminar Nota</button></center>
+				
 			</form>
 			<!-- Form -->
-			<a href="../../NotasPorAlumno.php?id=<?php echo $IDAlumno ?>"  style="color: white; ">Regresar</a>
+			<a href<a href="../../NotasPorAlumno.php?id=<?php echo $IDAlumno ?>"  style="color: white; ">Regresar</a>
 		</div>
 
 
-	</div>
-	<!-- Material form subscription -->
+	</div></center>
 
-	
+
+
 
 
 
