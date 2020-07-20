@@ -35,7 +35,6 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
                   } 
                     echo "
                 <tr class='table-light'>
-                <td><input type='checkbox' name='ActuaAlumno[]' class='case' value=".$fila2['id_alumno']."></td>
                 <th>".$fila2['id_alumno']."</th>
                 <th>".$fila2['alumno']."</th>
                 <th>".$fila2['Sexo']."</th>

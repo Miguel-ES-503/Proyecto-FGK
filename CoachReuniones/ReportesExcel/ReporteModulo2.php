@@ -37,9 +37,9 @@ $excel->getProperties()->setCreator('Oportunidades-FGK')->setLastModifiedBy('Opo
 
 $excel->setActiveSheetIndex(0);
 
-$pagina = $excel->getActiveSheet()->setTitle('Listado De Alumnos');
-
-$pagina->setCellValue('A1','Lista De Alumnos');
+$excel ->getActiveSheet()->setTitle('Listado De Alumnos');
+$excel->mergeCells('B1:I1');
+$pagina->setCellValue('B1','Lista De Alumnos');
 $pagina->setCellValue('A2','ID-Alumno');
 $pagina->setCellValue('B2','Nombre');
 $pagina->setCellValue('C2','Sexo');
@@ -50,6 +50,7 @@ $pagina->setCellValue('G2','ID-Modulo');
 $pagina->setCellValue('H2','Fecha inscripcion');
 $pagina->setCellValue('I2','Estado');
 
+$excel->getActiveSheet()->getStyle('B1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_JUSTIFY);
 
 $i = 2;
 if ($consulta->rowCount()>=1)

@@ -38,8 +38,9 @@ $excel->getProperties()->setCreator('Oportunidades-FGK')->setLastModifiedBy('Opo
 $excel->setActiveSheetIndex(0);
 
 $pagina = $excel->getActiveSheet()->setTitle('Listado De Alumnos');
-
-$pagina->setCellValue('A1','Lista De Alumnos');
+$pagina->mergeCells('B1:I1');
+$pagina->setCellValue('A1','Recursos');
+$pagina->setCellValue('B1','LISTA DE ALUMNOS INSCRITOS AL MODULO 1');
 $pagina->setCellValue('A2','ID-Alumno');
 $pagina->setCellValue('B2','Nombre');
 $pagina->setCellValue('C2','Sexo');

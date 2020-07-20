@@ -20,7 +20,7 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 
 
   
-    $consulta2=$pdo->prepare("SELECT alumnos.Nombre AS alumno , alumnos.Class, alumnos.Sexo, datos_modulos.id_alumno , datos_modulos.id, datos_modulos.id_modulo , empresas.Nombre FROM datos_modulos LEFT JOIN alumnos ON datos_modulos.id_alumno =  alumnos.ID_Alumno LEFT JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa WHERE datos_modulos.id_modulo = ?  AND datos_modulos.estado = 'Pendiente'  ");
+    $consulta2=$pdo->prepare("SELECT alumnos.Nombre AS alumno , alumnos.Class, alumnos.Sexo, alumnos.ID_Sede, datos_modulos.id_alumno , datos_modulos.id, datos_modulos.id_modulo , empresas.Nombre FROM datos_modulos LEFT JOIN alumnos ON datos_modulos.id_alumno =  alumnos.ID_Alumno LEFT JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa WHERE datos_modulos.id_modulo = ?  AND datos_modulos.estado = 'Pendiente'  ");
   
                $consulta2->execute(array('MOD60000006'));
                 while ($fila2=$consulta2->fetch())
@@ -41,6 +41,7 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
                 <th>".$fila2['alumno']."</th>
                 <th>".$fila2['Sexo']."</th>
                 <th><input type='hidden' name='idtaller' id='idtaller' value=>".$fila2['Class']."</th>
+                <th>".$fila2['ID_Sede']."</th>
                 <th>".utf8_encode($fila2['Nombre'])."</th>
                 <td><a href='AprobacionModulos/aprobarmodulo6.php?id=".$fila2['id']."&id2=".$fila2['id_alumno']."' name='ida' class='btn btn-success'><i class='fas fa-user-check'></i></a> </td>
   

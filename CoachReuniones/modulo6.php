@@ -33,9 +33,6 @@ include 'Modularidad/MenuVertical.php';
 <div class="btn" >
 <a href="listadogeneral3.php" ><button class="btn btn-warning" id="button">Listado general 6</button></a>
 
-  <a href="Reportes/ReporteModulo3.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
-
-  <a href="ReportesExcel/ReporteModulo3.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
 </div>
 
 <!-- Inicio de tabla de asistencia  -->
@@ -56,6 +53,7 @@ include 'Modularidad/MenuVertical.php';
               <th scope="col">Alumno</th>
               <th scope="col">Sexo</th>
               <th scope="col">Class</th>
+              <th scope="col">Sede</th>
               <th scope="col">Universidad</th>
               <th scope="col">Aprobar</th>
               <th scope="col">Reprobar</th>
