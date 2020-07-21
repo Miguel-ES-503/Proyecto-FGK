@@ -37,7 +37,7 @@ require_once '../Conexion/conexion.php';
   
   #example3_filter
   {
-  	margin-top: -5%;
+  	margin-top: -4%;
 
   }
 

@@ -43,7 +43,7 @@
 
   <div class="container-fluid text-center" style="background-color: white; ">
 
-    <div class="text-center"">
+    <div class="text-center">
       <div id="demo" class="carousel slide" data-ride="carousel">
 
     <!-- Indicators -->

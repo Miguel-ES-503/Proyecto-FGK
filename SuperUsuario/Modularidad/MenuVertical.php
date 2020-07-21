@@ -1,16 +1,160 @@
-<!-- Page Content -->
-<!-- Page Content -->
-
-
-
 <?php  $idUser=$_SESSION['iduser']; ?>
-    <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg border-bottom" id="menu" style="background-color: #2D2D2E;">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="style_menu.css" rel="stylesheet" type="text/css" />
+   <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="estilo.js"></script>
+</head>
+<style type="text/css">
+  
+  /* The sidepanel menu */
+.sidepanel {
+  height: 658px; /* Specify a height */
+  width: 0px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color:#2D2D2E; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 10px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
 
-    
+/* The sidepanel links */
+.sidepanel a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 13px;
+  color: #2D2D2E;
+  display: block;
+  transition: 0.3s;
+
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+  color: #2D2D2E;
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #2D2D2E;
+  color: white;
+  padding: 15px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #2D2D2E;
+}
+@media only screen and (max-width: 767px) {
+
+  .sidepanel a{
+
+    height: 300px;
+    background-size: 100%;
+    padding: 0px;
+
+  }
+
+
+}
+</style>
+<body>
+
+<div id="mySidepanel" class="sidepanel" style="background-color: #BE0032;">
+  <a href="javascript:void(0)" class="closebtn" style="color: white;" onclick="closeNav()">&times;</a>
+     <div class="dark border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading justify-content-center align-items-center">
+        <center>
+          <img src ="../img/imgUser/<?php echo $_SESSION['Foto']?>" class="rounded-circle" class="img-responsive" style="width: 100px; height: 100px" >
+        </center> 
+        <hr>
+        <b><p style="font-size: 10px; text-align: center; "><?php echo $_SESSION['Email'] ?></p></b>
+      </div>
+      <div class="list-group list-group-flush">
+        <ul class="snip1135">
+          <li>
+            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <i class="fas fa-chalkboard-teacher"></i> Administración <i class="fas fa-sort-down"></i>
+            </a>
+            <div class="collapse" id="collapseExample">  
+              <ul>
+               <li><a href="SIT-CrearAlumno.php" class="list-group-item list-group-item-action">Crear Cuentas</a></li>
+               <li><a href="SIT-CrearEmpresas.php" class="list-group-item list-group-item-action">Crear Empresas</a></li>
+               <li><a href="SIT-Ciclos.php" class="list-group-item list-group-item-action">Crear Ciclos</a></li>
+               <li><a href="SIT-Competencias.php" class="list-group-item list-group-item-action">Crear Competencia</a></li>
+             </ul>
+           </div>
+         </li>
+         <li>
+          <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fas fa-book"></i> Informativo <i class="fas fa-sort-down"></i>
+          </a>
+
+          <div class="collapse" id="collapseExample2">  
+            <ul>
+              <li><a href="BecasAprobadas.php" class="list-group-item list-group-item-action">Estado Beca</a></li> 
+              <li><a href="RecordAlumnos.php" class="list-group-item list-group-item-action">Récord Alumnos</a></li> 
+              <li><a href="LIS-Alumnos.php" class="list-group-item list-group-item-action">Listas Alumnos</a></li> 
+              <li><a href="LIS-Cuentas.php" class="list-group-item list-group-item-action">Lista Cuentas</a></li>
+              
+            </ul>
+          </div>
+        </li>
+        
+        <br>
+        <li>
+          <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fas fa-envelope"></i> Solicitud <i class="fas fa-sort-down"></i>
+          </a>
+          <div class="collapse" id="collapseExample4">  
+            <ul>
+              <li><a href="CampoLaboral.php" class="list-group-item list-group-item-action"  >Campo Laboral</a></li> 
+              
+            </ul>
+          </div>
+      </li>
+
+      <li>
+        <a class="list-group-item list-group-item-action" href="Manual/manual.pdf" >
+        <i class="fas fa-info-circle"></i> Instrucciones
+        </a>
+      </li>
+
+
+
+
+
+         
+
+      </ul>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+</div>
+
+<nav class="navbar navbar-expand-lg border-bottom" id="menu" style="background-color: #2D2D2E;">
+    <button class="openbtn" onclick="openNav()">&#9776;</button>
     <center>
-      <a href="http://portal.workeysoportunidades.org/SuperUsuario/index.php">
+      <a href="index.php">
         <img width="340px" height="80px" src="../img/SideBySideWhiteVersion.png" alt="">
       </a>
     </center>
@@ -148,10 +292,7 @@
 
           });
         </script>
-
-
-
-        <script type="text/javascript">
+  <script type="text/javascript">
         setInterval(function() {
           //Recibir notificaciones
           $.ajax({
@@ -293,7 +434,8 @@
               ?>
               </a>
 
-         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background: #343a40;">
+         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background: #2D2D2E;">
+          
                 <a class="dropdown-item" href="Configuracion.php" style="color: white;">Configuración</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../CerrarSession.php" style="color: white;">Salir</a>
@@ -301,11 +443,23 @@
 
             </li>
           </ul>
-          <button class="btn btn-dark" id="menu-toggle" style="background: #717175;">
-          <i class="fas fa-bars"></i>
+          
           
         </button>
         </div>
-      </nav>
 
+</nav>
 
+</body>
+</html>
+<script type="text/javascript">
+  /* Set the width of the sidebar to 250px (show it) */
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
