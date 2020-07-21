@@ -97,7 +97,7 @@ $pagina->setCellValue('F9','Universidad');
 $pagina->setCellValue('G9','ID-Modulo');
 $pagina->setCellValue('H9','Fecha inscripcion');
 $pagina->setCellValue('I9','Estado');
-$pagina->setCellValue('J9','Estado');
+$pagina->setCellValue('J9','Estado Certificación');
 
 $excel->getActiveSheet()->getStyle('A8:J8')->applyFromArray($estiloTituloReporte);
 $excel->getActiveSheet()->getStyle('C3:F3')->applyFromArray($estiloTituloReporte);
