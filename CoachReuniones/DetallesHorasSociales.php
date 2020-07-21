@@ -91,155 +91,55 @@ include 'Modularidad/MenuVertical.php';
  
 
   <div>
-    <div class="title-2">
-    <h3 class="title-detalles">Detalles del Proyecto</h3>
-    </div>
-    <div class="card-body" style="background-color: white;">
+    <h3 class="mt-0">Detalles del Proyecto</h3>
 
-
-
-  <div class="row" >
-  <div class="col-sm-6 mb-3 mb-md-0" >
-    <div class="Imfo-1">
-    <div >
-      <div class="card-body" id="Imfo-1">
     
-        <p class="mb-4"><span>Alumno: </span><?php echo$Alumno?><br><span>Sede:  </span><?php echo  $Sede ?> -- <span>Class: </span> <?php echo $Class ?> <br> <span>Universidad: </span> <?php echo utf8_decode($Universidad) ?><span><br>Ciclo:</span> <?php echo $ciclo ?><br><span>Cantidad Solicitado: </span> <span><?php echo $CantidadHoras;?></span> horas</p>
-        
-        <hr id="divisor">
 
-        <div class="form-row ">
-          <div class="col-md-3">
-            <!-- First name   Tema , fecha , la hora y el tipo de taller -->
-            <div class="md-form">
-              <label for="materialRegisterFormFirstName" class="subtitle-left">Identificación: </label>
-              <input type="text"  value="<?php echo $id ?>" disabled  class="form-control" id="input-info-left" >
-              
-            </div>
-          </div>
-
-
-          <div class="col-md-9">
-            <!-- Last name -->
-            <div class="md-form">
-<label for="materialRegisterFormLastName" class="subtitle">Cargo</label>
-              <input type="text"  value="<?php echo $Encargado ?>" disabled  class="form-control" id="input-info-right" >
-            </div>
-          </div>
-        </div>
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="form-row">
-          <div class="col-md-4">
-            <!-- First name   Tema , fecha , la hora y el tipo de taller -->
-            <div class="md-form">
-              <label for="materialRegisterFormFirstName" class="subtitle-left">Fecha de inicio</label>
-              <input type="text"  value="<?php echo $FechaInico ?>" disabled  class="form-control" id="input-info-left" >
-            </div>
-          </div>
-
-           <div class="col-md-8">
-            <!-- Last name -->
-            <div class="md-form">
-              <label for="materialRegisterFormLastName" class="subtitle-problem" style="margin-right: -10%;" >Fecha de Finalización</label>
-              <input type="text"  value="<?php echo $FechaFianl ?>" disabled  class="form-control" id="input-info-problem" >
-            </div>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="col">
-            <!-- First name   Tema , fecha , la hora y el tipo de taller -->
-            <div class="md-form">
-              <label for="materialRegisterFormFirstName" class="subtitle">Comentario</label>
-              <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" disabled><?php echo utf8_decode($NombreProyecto); ?></textarea>
-              
-            </div>
-          </div>
-
-        </div>
-
-     
-     <br>
-      <div class="form-row">
-          <div class="col">
-            <!-- First name   Tema , fecha , la hora y el tipo de taller -->
-            <div class="md-form">
-             <?php 
-                if ($comprobante == null) {
-                 echo " <a href='#' class='btn btn-success px-3 far fas fa-times'> </a><br>";
-                }else
-                {
-  echo " <a href='../ComproHoras/$comprobante' class='btn btn-block' id='btn-1'><img src='../img/paper.png' class='picture'>Comprobante</a><br>";
-                }
-              ?>
-             
-    
-            </div>
-          </div>
+    <div class="row mt-4">
+      <div class="col-sm-12  col-md-12  col-lg-6" style="border: solid 1px black;">
+        <div id="Info-1" class="m-lg-5">
           
+          <p id="Info-1_Texto-1" ><b>Alumno:</b> </p>
+          <p id="Info-1_Texto-1">Miguel Angel Barahona Garcia</p><br>
+          <p id="Info-1_Texto-1"><b>Sede: </b></p>
+          <p id="Info-1_Texto-1">SSFT</p>
+          <br>
+          <p id="Info-1_Texto-1"> <b>Class: </b>  </p>
+          <p id="Info-1_Texto-1">2019 </p>
+          <br>
+          <p id="Info-1_Texto-1"><b>Universidad:</b> </p>
+          <p id="Info-1_Texto-1">UDB</p>
         </div>
+        <hr id="linea">
+
+
+        <div class="container ml-lg-5">
+  <form action="/action_page.php">
+    <div class="row">  
+      <div class="col-75">
+        <label id="label">Status del Alumno</label>
+        <input type="text" id="input" name="firstname">
       </div>
     </div>
-  </div>
-  </div>
-
-  <div class="col-sm-6" >
-    <div>
-      <div class="card-body" id="Imfo-2">
-        <p class="mb-4">Estado:<span id="texto1"><?php echo $Estado?></span></p>
-        <p class="card-text" >Comentario:</p>
-        <form action="Modelo/ModeloHorasSociales/VerficarSolicuitud.php" method="POST">
-          <input type="hidden" name="id" value="<?php  echo $id ?>" >
-          <input type="hidden" name="idsoli" value="<?php echo $idsoli  ?>">
-          <input type="hidden" name="correo" value="<?php echo $correo ?>" >
-          <input type="hidden" name="nombreEst" value="<?php echo $Alumno ?>"  >
-
-          <div class="form-group">
-       <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" minlength="1" maxlength="300" name="comentario" placeholder="comentario maximo 300 palabras..." required><?php echo $comentario;  ?></textarea>
-        </div>
-        <p class="card-text">Cambiar Estado:</p>
-        <select name="estado"  class="form-control" required >
-          <option  disabled selected >Seleccione una opci&oacute;n</option>
-          <option value="Aprobado">Aprobado</option>
-          <option value="Rechazado">Rechazado</option>
-        </select><br>
-        <p class="card-text">Ingrese cantidad de horas a asignar:</p>
-        <input type="number" name="horas" class="form-control" min="0" max="40">
-        <?php  if($Estado == "Aprobado" || $Estado == "Rechazado")
-        {
-          echo '<input type="button" name="EnviarDato" value="Enviar" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0  disabled">';
-        }else
-        {
-          echo '<input type="submit" name="EnviarDato" value="Enviar" class="btn btn-block" id="btn-2">';
-        }
-        ?>
-      </form>
+    
+    <div class="row">
+      <div class="col-75">
+        <label id="label">Comentario</label>
+        <textarea id="input"  style="height:200px"></textarea>
+      </div>
     </div>
-  </div>
-</div>
+    <div class="row">
+      <input type="submit" value="Submit" id="btn">
+    </div>
+  </form>
 </div>
 
+
+      </div>
+      <div class="col-sm-12 mt-sm-4 col-md-12 mt-md-4  col-lg-5 ml-lg-1 mt-lg-0 mt-3" style="border: solid 1px black;">
+        <h1>Hola</h1>
+
+      </div>
 
     </div>
     <!--<div class="card-footer text-muted">
@@ -259,8 +159,11 @@ include 'Modularidad/MenuVertical.php';
 
 
 
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <?php
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
