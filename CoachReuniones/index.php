@@ -34,63 +34,187 @@ include 'Modularidad/CabeceraInicio.php';
 
 }
 </style>
-
-
-
 <?php
-//Modularaidad para extraere los enlaces en HEAD
+
 include 'Modularidad/EnlacesCabecera.php';
-//Incluir el menu horizontal
 include 'Modularidad/MenuHorizontal.php';
-include 'Modularidad/MenuVertical.php';
+
 ?>
-
-<!--Comiezo de estructura de trabajo -->
-<div class="container-fluid">
-    <div class="text-center">
-      <div id="demo" class="carousel slide" data-ride="carousel">
-
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-      <li data-target="#demo" data-slide-to="3"></li>
-
-    </ul>
-
-    <!-- The slideshow -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../SuperUsuario/img/Super1slider.jpg">
-      </div>
-      <div class="carousel-item">
-        <img src="../SuperUsuario/img/Super2slider.jpg" >
-      </div>
-      <div class="carousel-item">
-        <img src="../SuperUsuario/img/Super3slider.jpg">
-      </div>
-      <div class="carousel-item">
-        <img src="../SuperUsuario/img/Super4slider.jpg">
-      </div>
+<title>Inicio Coach Reunión</title>
+<!--
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/Super1slider.jpg" alt="First slide">
     </div>
-
-    <!-- Left and right controls -->
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-
-   </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/Super2slider.jpg" alt="Second slide">
     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/Super3slider.jpg" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/Super4slider.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<br>
 <br>
 
+-->
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+   /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+<div class="container-fluid text-center">
+    <br>
+    <br>
+
+     <div>
+        <h1 style="color:#BE0032;"> Bienvenido al sistema Side by Side del Programa Oportunidades</h1>
+    </div>
+   
+
+   
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/Super1slider.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/Super2slider.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/Super3slider.jpg" alt="Third slide">
+    </div>
+        <div class="carousel-item">
+      <img class="d-block w-100" src="img/foto3.jpeg" alt="Fourth slide" style="height: 520px;">
+    </div>
+            <div class="carousel-item">
+      <img class="d-block w-100" src="img/foto2.jpeg" alt="Fifth slide" style="height: 520px;">
+    </div>
+            <div class="carousel-item">
+      <img class="d-block w-100" src="img/foto1.jpeg" alt="Sixth slide" style="height: 520px;">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+    <br>
+    <br>
+    <div class="container">
+    
+    <div id="novedades">
+    <h3 class="Novedad1">Novedades<h3>
+    <img class="img-fluid" src="../img/novedades.png" width="100px" height="100px">
+    <div style="float: right;"><p class="boletin">Boletin</p>
+    <img class="img-fluid" src="../img/logonegro.png" width="150px">
+    </div>
+        <br>
+    <center><button class="btn-leer">Leer</button></center>
+    </div>
+    <div id="avisos">
+    <h3 class="aviso1">Avisos<h3>
+    <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
+    <div style="float: right;"><p class="textoa">Boletin:<br>
+    Texto de prueba </p></div>
+    </div>
+    <div id="enlaces">
+    <table  >
+
+    <h3  class="enlace1">Enlaces<h3>
+    
+    <tr>
+    <td>
+    <a href="Manual/ManualEstudiante.pdf"><img class="img-fluid" src="../img/manual.png" width="100px" height="100px"><a>
+    <td>
+    <h4>Manual de usuario</h4>
+    </td>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <a href="https://workeysoportunidades.org/"><img class="img-fluid" src="../img/landing.png" width="90px" height="90px">
+    </td>
+    <td>
+    <h4>Workey's landing page</h4>
+    </td>
+
+    </tr>
+    </table>
+    </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   <br>
+  </div>
 <?php
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
