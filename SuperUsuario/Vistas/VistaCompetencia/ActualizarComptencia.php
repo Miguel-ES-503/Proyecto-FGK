@@ -48,25 +48,33 @@ if (isset($_GET['id'])) {
 				<div class="modal-body">
 					<div class="col">
 						<form action="../../Modelo/ModeloCompetencia/ActualizarComptencia.php" method="POST">
-						<input type="hidden" name="id" value="<?php echo utf8_encode($id)  ?>"> 
+						<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;"  type="hidden" name="id" value="<?php echo utf8_encode($id)  ?>"> 
 						<div class="md-form">
-			<input type="text" id="siglacomptencia" name="siglacomptencia" class="form-control" placeholder="Sigla de la Comptencia" value="<?php echo $IDComptenecia ?>"> 
 							<label for="materialRegisterFormFirstName" style="color: black" >Sigla de la Competencia</label>
+			<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;"  type="text" id="siglacomptencia" name="siglacomptencia" class="form-control" placeholder="Sigla de la Comptencia" value="<?php echo $IDComptenecia ?>"> 
+							
 							<br>
-	<input type="text" id="comptencia" name="comptencia" class="form-control" placeholder="Nombre de la competencia" value="<?php echo $NombreCompetencia ?>">
 							<label for="materialRegisterFormFirstName" style="color: black" >Nombre de la Competencia</label>
+	<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="comptencia" name="comptencia" class="form-control" placeholder="Nombre de la competencia" value="<?php echo $NombreCompetencia ?>">
+							
 					</div>
-					<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Datos" value="Actualizar competencia" id="Guardar_Datos">
+					<button style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;" name="Guardar_Datos" value="Actualizar competencia" id="Guardar_Datos">Actualizar Competencia</button>
+					
 					</form>
 					<a href="../../SIT-Competencias.php">Regresar</a>
-				</div>
-				<div class="modal-footer">
-
 				</div>
 				</div>
 			</div>
 		</div>
 		<!-- FIN DEL MODAL -->
+</div>
 
 
 

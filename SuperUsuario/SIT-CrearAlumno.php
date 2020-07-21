@@ -14,7 +14,7 @@ error_reporting(0);
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
-//include 'Modularidad/MenuHorizontal.php';
+include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
 
@@ -340,8 +340,8 @@ include 'Modularidad/MenuVertical.php';
 							<div class="col">
 							<div class="md-form">
 							<input type="hidden" id="cargo" name="cargo"  value="Estudiante">
-						<!-- Sign up button -->	
-									<br>		
+						<!-- Sign up button -->		
+									<label for="materialRegisterFormFirstName">Finalizar</label>	
 								<button name="Guardar_Datos" value="Crear Alumno" id="Guardar_Alumno"> Crear Alumno</button>
 								<!--<input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 							</div>

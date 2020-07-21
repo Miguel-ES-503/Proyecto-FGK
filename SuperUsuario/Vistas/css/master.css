@@ -3,10 +3,12 @@
 html,
 body {
   height: 100%;
- background:white;
+   background: url(../img/fondo.jpg);
+
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+ 
 }
 
 
@@ -18,7 +20,7 @@ body {
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: 100% 100%;
-   background-image: url(../../../img/FondoMovil.png);
+   background-image: url(../img/FondoMovil.jpg);
 
  }
 
@@ -27,12 +29,15 @@ body {
 .modal-content{
 	background-color: red;
 	border-color: black;
-	border-radius: 30px;
+	border-radius: 50px;
 	padding: 20px;
+
 
  }
  .modal-body{
 	text-align: left;
+	border-radius: 20px;
+
 }
 
 .form-control{
@@ -40,14 +45,20 @@ body {
 	color: black;
 	border-radius: 20px;
 
+
+
 }
+
 .modal-header{
 	border-color: #ADADB2;
 	border:3px;
+
+
 }
 .modal-footer{
 	border-color: #ADADB2;
 	border:3px;
+
 }
 .actualizarempresa{
 	border-radius: 20px;
@@ -55,4 +66,19 @@ body {
     width: 200px;height: 38px;
      background-color: #BE0032;
      color:white;
+}
+#Guardar_Cuentas{
+	border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;
+}
+.modal-dialog{
+	background-color: white 
+	border-radius: 30px;
+	opacity: 0.85;
+-moz-opacity: 0.85;
+filter: alpha(opacity=85);
+-khtml-opacity: 0.85;
 }

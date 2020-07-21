@@ -24,7 +24,7 @@
 
 
     ?>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 
         <script type="text/javascript">
@@ -447,7 +447,7 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" style="color:white;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" style="color:white;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <img src ="../img/imgUser/<?php echo $_SESSION['Foto']?>" class="rounded-circle" class="img-responsive" style="width: 50px; height: 50px" >
           
           <?php
@@ -487,6 +487,7 @@
             <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
               <i class="fas fa-tasks"></i> Talleres <i class="fas fa-sort-down"></i>
             </a>
+            </li>
             <div class="collapse" id="collapseExample">
               <ul>
                <li><a href="AlumnoInscritos.php" class="list-group-item list-group-item-action">Talleres inscritos</a></li>
@@ -497,10 +498,7 @@
              </ul>
 
             </div>
-          </li>
-
-
-          <?php
+            <?php
           $anio=date("Y");
           $month=date("m");
           $que2=$pdo->prepare("SELECT `estado` FROM `inscripcion` WHERE MONTH(`Fecha`)='".$month."' AND YEAR(`Fecha`)='".$anio."' AND `ID_Sede`='".$_SESSION['Lugar']."'");
@@ -571,6 +569,10 @@ $correo = $_SESSION['Email'];
     <li><a href="../CerrarSession.php" class="list-group-item list-group-item-action">  <i class=""></i> Salir</a></li>
 
         </ul>
+          </li>
+
+
+          
       </div>
     </div>
           </div>

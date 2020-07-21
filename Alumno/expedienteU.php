@@ -10,11 +10,12 @@
 
   require_once 'templates/header.php';
 
-  //require_once 'templates/MenuVertical.php';
+
 
   require_once 'templates/MenuHorizontal.php';
 
   require '../Conexion/conexion.php';
+  require_once 'templates/MenuVertical.php';
 
  $stmt1 =$dbh->prepare("SELECT `ID_Alumno` , A.Nombre , E.Nombre AS 'Universidad' FROM alumnos A INNER JOIN empresas E ON A.ID_Empresa = E.ID_Empresa WHERE correo='".$_SESSION['Email']."'");
 // Ejecutamos
@@ -181,18 +182,20 @@ if ($_GET['id']==null) {
       background-position: 50%;
       border-radius: 50%;
       background-size: 100% auto;" >
-      <h6 style="color: white;"><?php echo utf8_encode($univerisdad)  ?></h6>
-      <h4 style="text-align: center; color: white;"><?php echo $Nombre_Alumno; ?> </h4>
-      <h4 style="color: white;">Carnet U ?</h4>
+       <h4 style="color: white; text-align: center; font-weight: bold;"><?php echo utf8_encode($univerisdad)  ?></h4>
+      
 
     </div>
 
     <div class="col text-center">
       <br><br><br>
-      <h3 class="float-left">Estudios realizados</h3>
-      <table class="table table-responsive-lg float-left">
-        <thead  style="background-color: #c7c7c7; color: black; ">
-          <tr>
+    
+     
+      <h3 style="text-align: left; color: #555555; font-weight: bold;"><?php echo $Nombre_Alumno; ?> </h3>
+      <h5 style="color: #555555; text-align: left;">Carnet U ?</h5>
+      <table class="table table-responsive-lg float-left"  >
+        <thead  style="background-color: #2D2D2E;; color: white; ">
+          <tr >
             <th scope="col">Universidad</th>
             <th scope="col">Carrera</th>
             <th scope="col">Facultad</th>
@@ -201,13 +204,13 @@ if ($_GET['id']==null) {
           
           </tr>
         </thead>
-        <tbody>
+        <tbody >
          
                 <?php
 
 
     while($fila2 = $stmt2->fetch()){
-      echo " <tr class='table-light'>";
+      echo " <tr class='table-dark'>";
         echo "<td scope=\"row\">".$fila2["Universidad"]."</td>";
         echo utf8_encode("<td>".$fila2["CARRERA"]."</td>")  ;
           echo utf8_encode("<td>".$fila2["Facultad"]."</td>") ;
@@ -228,14 +231,12 @@ if ($_GET['id']==null) {
   </div>
 
 <br>
-<div class="card text-center" style=" border-color: white;
-border-width: 3px;
-   border-style: solid;">
-  <div class="card-header" style="background-color: #2D2D2E; color: white;">
- <h4 class="float-left" style="color:white;">Detalles del Estudio</h4>
-  </div>
+<div class="card text-center" style=" border-color: white;border-width: 3px;border-style: solid;">
+  
+ <h3 style="text-align: left; font-weight: bold;">Detalles del Estudio</h3>
+  
 
-  <div class="card-body" style="background-color: #c7c7c7; ">
+  <div class="card-body" style="background-color: white; ">
           <div class="row">
             <table class="table table-responsive-lg float-left" >
         <thead  style="background-color: #2D2D2E; color: white; ">
@@ -251,7 +252,7 @@ border-width: 3px;
           </tr>
         </thead>
         <tbody>
-         <tr class='table-light'>
+         <tr class='table-dark'>
             <th scope="col"> <?php echo $Universi ?> </th>
            <th scope="col"> <?php echo utf8_encode($Carrera)?> </th>
             <th scope="col"> <?php echo $cum?></th>
@@ -314,16 +315,16 @@ border-width: 3px;
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
-                            <div class="card card-udb">
-                                <div class="card-header">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center" >
+                            <div class="card card-udb" style="background-color: #c7c7c7; border-width: medium; border-color: #2D2D2E; border-radius: 3%;"  >
+                                <div class="card-header" >
                                     <b>
                                         <h1>
                    <span id="ContentPlaceHolder1_LbCPorcentaje"><?php echo  number_format($PorcPens, 2, '.', '');  ?>%</span></h1>
                                     </b>
                                 </div>
-                                <div class="card-footer">
-                                    <small>PORCENTAJE DE AVANCE</small>
+                                <div class="card-footer" >
+                                    <small style="font-weight: bold; color: black;">PORCENTAJE DE AVANCE</small>
                                 </div>
                             </div>
                         </div>
@@ -331,10 +332,10 @@ border-width: 3px;
 
                     <br>
 
-         <h4 class="float-left">Inscripciones de Ciclos</h4>           
+                    <h3 style="text-align: left; font-weight: bold;">Inscripciones de Ciclos</h3>        
         <table class="table table-responsive-lg float-left">
         <thead  style="background-color: #2D2D2E; color: white; ">
-          <tr>
+          <tr >
             <th scope="col">ID</th>
             <th scope="col">Ciclo Universidad</th>
             <th scope="col">Comprobante</th>
@@ -346,7 +347,7 @@ border-width: 3px;
           
                       <?php
     while($fila9 = $stmt9->fetch()){
-      echo " <tr class='table-light'>";
+      echo " <tr class='table-dark'>";
         echo "<td scope=\"row\">".$fila9["Id_InscripcionC"]."</td>";
         echo "<td>".$fila9["cicloU"]."</td>";
         echo "<td><a class=\"btn btn-danger\" href=\"../pdfInscripCiclos/?id=".$fila9["comprobante"]."\"><i class=\"fas fa-file-pdf\"></i></a></td>";
@@ -363,9 +364,7 @@ border-width: 3px;
 
   </div>
 
-  <div class="card-footer text-muted"  style="background-color: #2D2D2E; color: white;border-color: #454d55;">
-   
-  </div>
+  
 </div>
 
 

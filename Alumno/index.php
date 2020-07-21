@@ -12,11 +12,12 @@
 //Manda  allamar plantillas
   require_once 'templates/header.php';
 
-
+  //require_once 'templates/MenuVertical.php';
   require_once 'templates/MenuHorizontal.php';
 
 
   require '../Conexion/conexion.php';
+  
 
 
   //Extraemos el carnet del estudiante

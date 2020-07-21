@@ -64,7 +64,7 @@ $stmt = $dbh->query("SELECT * FROM modulos WHERE id_modulo = '$id' ");
 <fieldset>
 <h2> Paso 2: Verificación</h2>
 <div class="form-group">
-<label for="fName" class="float-left text-dark">Ingrese su contraseña para confirmar </label>
+<label for="fName" class="float-left text-dark">Ingrese la contraseña de su usuario confirmar </label>
 <input type="password" class="form-control" name="userpassword" id="fName" placeholder="user password" required>
 </div>
 <input type="button" name="previous" class="previous btn btn-info" value="Previo" />
@@ -80,18 +80,29 @@ $stmt = $dbh->query("SELECT * FROM modulos WHERE id_modulo = '$id' ");
  $dato1 = $_POST['pass1'];
  $dato2 = $_POST['pass2'];
  $dato3 = $_POST['userpassword'];
+$correo =  $_SESSION['Email'];
+
+ $stmt = $dbh->query("SELECT * FROM usuarios WHERE correo = '$correo' ");
+ while ($row = $stmt->fetch()) {
+	  $passuser = $row['contrasena'];
+ }
 
  if (isset($comparar)) {
-  
-if ($dato1 == $dato2) {
-    try {
+	if ($dato1 == $dato2) {
+		if (password_verify($dato3, $passuser)) {
+    	try {
         $sql2 = "UPDATE modulos SET password = ? WHERE id_modulo =?";
-        $dbh->prepare($sql2)->execute([$dato2, $comparar]);
-        header("Location:activarmodulos.php");
-   } catch (PDOException $e) {
-    header("Location:activarmodulos.php");
-          echo $e->getMessage();
-      }
+		$dbh->prepare($sql2)->execute([$dato2, $comparar]);
+		echo "<p class='p-1 mb-1 bg-success text-white text-center'>Contraseña actualizada.</p>";
+        header("Location: activarmodulos.php");
+   		} catch (PDOException $e) {
+    		header("Location:activarmodulos.php");
+          	echo $e->getMessage();
+	  }
+	}else{
+		echo "<p class='p-1 mb-1 bg-danger text-white text-center'>Error, la contraseña de usuario en incorrecta.</p>";
+
+	}
    }else{
        echo "<p class='p-1 mb-1 bg-danger text-white text-center'>Error, la contraseña no es igual a la confirmación </p>";
    }

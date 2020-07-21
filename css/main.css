@@ -44,9 +44,10 @@ body{
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
 .snip1135 {
   font-family: 'Raleway', Arial, sans-serif;
-  text-align: center;
+  text-align: justify;
   text-transform: uppercase;
   font-weight: 500;
+
 }
 .snip1135 * {
   box-sizing: border-box;
@@ -55,7 +56,9 @@ body{
   display: inline-block;
   list-style: outside none none;
   margin: 0 2em 0 -20%;
-  padding: 0;
+  padding-left: 15px;
+
+
 }
 .snip1135 a {
   padding: 0.5em 0;
@@ -63,6 +66,7 @@ body{
   position: relative;
   letter-spacing: 1px;
   text-decoration: none;
+
 }
 .snip1135 a:before,
 .snip1135 a:after {
