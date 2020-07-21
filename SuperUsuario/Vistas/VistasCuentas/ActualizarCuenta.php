@@ -30,15 +30,15 @@ if (isset($_GET['id'])) {
 
 	<br> <br> <br> <br> <br> <br>
 	<!-- Estructura de la caja -->
-	<div class="card" >
-		<h5 class="card-header info-color white-text text-center py-4">
-			<strong style="color:black;">Actualizar Cuenta</strong>
-		</h5>
 
-
-		<!--Contenido de la caja de crear Cuentas de alumnos Formulario-->
-		<div class="card-body px-lg-5 pt-0" >
-			<!--Inicio del Formulario-->
+	<div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: block; padding-right: 16px;" aria-modal="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel" style="color: black">Actualizar Cuenta</h5>
+				</div>
+				<div class="modal-body">
+					<div class="col">
 			<?php if ($consulta->rowCount() >=0) {$fila=$consulta->fetch()?>
 				<form class="text-center" action="../../Modelo/ModeloCuentas/ActualizarCuenta.php" method="POST">	
 					<br>
@@ -49,14 +49,17 @@ if (isset($_GET['id'])) {
 						<div class="col">
 							<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 							<div class="md-form">
-				<input type="email" id="CuentaCorreo" required  name="CuentaCorreo" class="form-control" <?php echo 'value="'.$fila['correo'] .'"';?>  >
 								<label>Correo Electrónico </label>
+				<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="email" id="CuentaCorreo" required  name="CuentaCorreo" class="form-control" <?php echo 'value="'.$fila['correo'] .'"';?>  >
+								
 							</div>
 						</div>
 						<div class="col">
 							<!-- Last name -->
 							<div class="md-form">
-								<select type="text" id="CuentaSede" name="CuentaSede" class="form-control">
+								<label for="materialRegisterFormLastName">SEDE</label>
+								<select style="border-radius: 20px; background-color:#ADADB2;color: black;" type="text" id="CuentaSede" name="CuentaSede" class="form-control">
 
 									<?php 
 
@@ -76,7 +79,7 @@ if (isset($_GET['id'])) {
 
 
 									
-									<label for="materialRegisterFormLastName">SEDE</label>
+									
 								</div>
 							</div>
 						</div>
@@ -85,7 +88,9 @@ if (isset($_GET['id'])) {
 							<div class="col">
 								<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 								<div class="md-form">
-									<select type="text" id="cargo" name="cargo" class="form-control">
+							<label for="materialRegisterFormFirstName">Cargo</label>
+									<select style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="cargo" name="cargo" class="form-control">
 										<option <?php echo 'value="'.$fila['cargo'] .'"';?> ><?php echo $fila['cargo'];?></option>
 										<option value="Estudiante">Estudiante</option>
 										<option value="SuperUsuario">Super Usuario</option>
@@ -94,22 +99,29 @@ if (isset($_GET['id'])) {
 										<option value="SuperVisor">Supervisor</option>
 										<option value="Auxiliar">Auxiliar</option>
 									</select>
-									<label for="materialRegisterFormFirstName">Cargo</label>
+									
 								</div>
 							</div>
 
 							<div class="col">
 							<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 							<div class="md-form">
-		<input type="text" id="nombreUser" name="nombreUser" class="form-control"  <?php   echo 'value="'.$fila['nombre'] .'"';}?> >
-								<label for="materialRegisterFormFirstName">Nombre</label>
+					<label for="materialRegisterFormFirstName">Nombre</label>
+		<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="nombreUser" name="nombreUser" class="form-control"  <?php   echo 'value="'.$fila['nombre'] .'"';}?> >
+								
 							</div>
 						</div>
 
 						</div>
 						<input type="hidden" name="id" id="id" <?php echo 'value="'.$fila['IDUsuario'] .'"';?>>
 
-						<input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Cuenta" value="Actualizar Cuenta" id="Guardar_Cuentas">
+    <center><button style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;" name="Guardar_Cuenta" value="Actualizar Cuenta" id="Guardar_Cuentas">Actualizar Cuenta</button></center>
+						<!--<input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Cuenta" value="Actualizar Cuenta" id="Guardar_Cuentas">-->
 
 
 						<hr>
@@ -121,6 +133,7 @@ if (isset($_GET['id'])) {
 		</div><!-- Fin de la caja --> 
 
 
-
+</div>
+</div>
 	</body>
 	</html>

@@ -81,7 +81,7 @@ $(document).ready(function() {
 				extend:    'excelHtml5',
 				text:      '<img src="../img/excell.png" width="25px" height="25px">',
 				titleAttr: 'Exportar a Excel',
-				className: 'btn btn-successs'
+				className: 'btn btn-success'
 			}
 			
 			

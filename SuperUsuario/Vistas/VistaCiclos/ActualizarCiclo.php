@@ -39,8 +39,10 @@ if (isset($_GET['id'])) {
 						<form action="../../Modelo/ModeloCiclos/AcutalizarCiclo.php" method="POST">
 							
 							<div class="md-form">
-								<input type="text" id="idciclo" name="idciclo" class="form-control" placeholder="20##0#" <?php echo 'value="'.$fila['ID_Ciclo'] .'"';?>>
 								<label for="materialRegisterFormFirstName" style="color: black" >Ciclo Actual</label>
+								<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="idciclo" name="idciclo" class="form-control" placeholder="20##0#" <?php echo 'value="'.$fila['ID_Ciclo'] .'"';?>>
+								
 							</div>							
 						</div>
 
@@ -48,19 +50,27 @@ if (isset($_GET['id'])) {
 						<div class="col">
 							<!-- First name   Tema , fecha , la hora y el tipo de taller -->
 							<div class="md-form">
-								<input type="date" id="fechaInicio" name="fechaInicio" class="form-control" <?php echo 'value="'.$fila['Fechanicio'] .'"';?>>
 								<label for="materialRegisterFormFirstName" style="color: black" >Fecha Inicio</label>
+								<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="date" id="fechaInicio" name="fechaInicio" class="form-control" <?php echo 'value="'.$fila['Fechanicio'] .'"';?>>
+								
 							</div>
 
 
 
 
 							<div class="md-form">
-								<input type="date" id="fechaFinal" name="fechaFinal" class="form-control" <?php echo 'value="'.$fila['FechaFinal'] .'"';}?>>
 								<label for="materialRegisterFormFirstName" style="color: black" >Fecha Final</label>
+								<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="date" id="fechaFinal" name="fechaFinal" class="form-control" <?php echo 'value="'.$fila['FechaFinal'] .'"';}?>>
+								
 							</div>
-
-							<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Ciclo" value="Actualizar Ciclo" id="Guardar_Ciclo" style="padding: 10px;">
+<center><button style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;" name="Guardar_Ciclo" value="Actualizar Ciclo" id="Guardar_Ciclo">Actualizar Ciclo</button></center>
+							
 							<a href="../../SIT-Ciclos.php">Regresar inicio?</a>
 						</div>
 

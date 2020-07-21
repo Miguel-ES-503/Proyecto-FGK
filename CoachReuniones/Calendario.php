@@ -9,7 +9,6 @@ include 'Modularidad/CabeceraInicio.php';
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
 include 'Modularidad/MenuHorizontal.php';
-include 'Modularidad/MenuVertical.php';
 ?>
 
 <!--Comiezo de estructura de trabajo -->
@@ -39,51 +38,33 @@ $eventsFin = $stmt2->fetchAll();
 
 
 ?>
-<head>
-  <link rel="stylesheet" type="text/css" href="css/Encabezado.css">
-    <link rel="stylesheet" type="text/css" href="css/Calendario.css">
-</head>
-<div class="title">
+<br>
+<link rel="stylesheet" type="text/css" href="css/Calendario.css">
+<h1 class="justify-content-lg-end mb-3">Calendario</h1>
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4" id="Info-1">
+		<div class="row" >
+			<h5 class="float-left ml-4">Proximos Eventos</h5>
+		</div>
+        <div class="w-100">
 
-<a href="index.php" ><img src="../img/back.png" class="icon"></a>
-  <h2 class="main-title" >Calendario</h2>
+		<div class="row ml-3" id="actividad">
+			<br>
+			Taller  "Desarrolla tu creatividad
+			</div>
+		<div class="row ml-3" id="fecha" >Junio 11 , 3:00 pm</div>
+		<br>
+		<div class="row ml-3" id="actividad">Taller "Finanzas en tiempos de Crisis</div>
+		<div class="row ml-3" id="fecha">Junio 11 , 3:00 pm</div>
+		<br>
+		<div class="row ml-3" id="actividad">Taller "Reputación Online</div>
+		<div class="row  ml-3" id="fecha">Junio 11 , 3:00 pm</div>
+		<br>
+	</div>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8  col-xl-8 h-25 col-centered bg-ligth" id="calendar" >
+	</div>
 </div>
-<button class="btn btn-danger" id="btn-event"><p>Crear evento</p></button>
-<div class="Imfo-Left">
-<p class="Imfo-Left-title">Proximos Eventos</p>
-<div class="Imfo-Left-1">
-  <br>
-  <p class="Imfo-Left-1-title" id="first">Taller  "Desarrolla tu creatividad"</p>
-  <p class="Imfo-Left-1-text">Junio 11 , 3:00 pm</p>
-  <p class="Imfo-Left-1-title">Taller "Finanzas en tiempos de Crisis"</p>
-  <p class="Imfo-Left-1-text">Junio 11 , 3:00 pm</p>
-  <p class="Imfo-Left-1-title">Taller "Reputación Online"</p>
-  <p class="Imfo-Left-1-text">Junio 11 , 3:00 pm</p>
-</div>
-  
-</div>
-</div>
-    <div class="row">
-      <div class="col">
-
-      </div>
-    
-
-      <div class="col">
-
-      </div>
-    </div>
-
-  <div class="row">
-
-    <div class="col">
-      <div id="calendar" class="col-centered bg-ligth">
-      </div>
-    </div>
-
-  </div>
-
-
 
   <script>
 
@@ -145,11 +126,58 @@ $eventsFin = $stmt2->fetchAll();
 
   </script>
 
-      <br>
+</div>
+
+
+<!--
+<head>
+  <link rel="stylesheet" type="text/css" href="css/Encabezado.css">
+    <link rel="stylesheet" type="text/css" href="css/Calendario.css">
+</head>
+
+<div class="title">
+
+<a href="index.php" ><img src="../img/back.png" class="icon"></a>
+  <h2 class="main-title" >Calendario</h2>
+</div>
+<button class="btn btn-danger" id="btn-event"><p>Crear evento</p></button>
+<div class="Imfo-Left">
+<p class="Imfo-Left-title">Proximos Eventos</p>
+<div class="Imfo-Left-1">
+  <br>
+  <p class="Imfo-Left-1-title" id="first">Taller  "Desarrolla tu creatividad"</p>
+  <p class="Imfo-Left-1-text">Junio 11 , 3:00 pm</p>
+  <p class="Imfo-Left-1-title">Taller "Finanzas en tiempos de Crisis"</p>
+  <p class="Imfo-Left-1-text">Junio 11 , 3:00 pm</p>
+  <p class="Imfo-Left-1-title">Taller "Reputación Online"</p>
+  <p class="Imfo-Left-1-text">Junio 11 , 3:00 pm</p>
+</div>
+  
+</div>
+</div>
+    <div class="row">
+      <div class="col">
+
+      </div>
     
 
+      <div class="col">
 
-</div>
+      </div>
+    </div>
+
+  <div class="row">
+
+    <div class="col">
+      <div id="calendar" class="col-centered bg-ligth">
+      </div>
+    </div>
+
+  </div>
+
+
+-->
+
 <!-- /#page-content-wrapper -->
 
 

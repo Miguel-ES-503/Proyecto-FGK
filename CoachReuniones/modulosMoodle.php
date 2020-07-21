@@ -2,7 +2,7 @@
 //Modularidad para inicializar el Head y <!DOCTYPE html>
 include 'Modularidad/CabeceraInicio.php';
 ?>
-<title>Preguntas frecuentes</title>
+<title>Modulos de Moodle</title>
 <?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos?>
 <?php
 //Modularaidad para extraere los enlaces en HEAD
@@ -41,6 +41,7 @@ include 'Modularidad/MenuVertical.php';
             <th scope="col">Módulos Aprobados</th>
             <th scope="col">Talleres</th>
             <th scope="col">Estado de Certificación</th>
+            <th scope="col">Actualizar</th>
           </tr>
         </thead>
         <tbody class="w-100">

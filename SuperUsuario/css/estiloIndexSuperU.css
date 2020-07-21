@@ -65,47 +65,136 @@ margin-top: 8px;
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-	#imginicio {
+  #imginicio {
 
-		height: 30em;
+    height: 30em;
         margin-right: 15px;
-		background: url(../img/SuperUserTable.png);
-		background-repeat: no-repeat;
+    background: url(../img/SuperUserTable.png);
+    background-repeat: no-repeat;
 
-		background-size: 100% 100%;
+    background-size: 100% 100%;
 
-	}
+  }
 
 
 }
 
 
-	#imginicio
-	{
-		height: 46em;
+  #imginicio
+  {
+    height: 46em;
 
-		background: url(../img/SuperUser.png);
-		background-repeat: no-repeat;
+    background: url(../img/SuperUser.png);
+    background-repeat: no-repeat;
 
-		background-size: 100% 100%;
-	}
+    background-size: 100% 100%;
+  }
 
 
 @media only screen and (max-width: 767px) {
 
-	#imginicio {
+  #movil {
 
-		height: 38em;
-        margin-right: 15px;
-		background: url(../img/SuperUsermovil.png);
-		background-repeat: no-repeat;
+    height: 70em;
+     
 
-		background-size: 100% 100%;
+    
 
-	}
+
+  }
+  #novedades {
+    display: inline-block;
+    width: 200px;
+    height: 168px;
+    background-color: white;
+    padding: 18px;
+
+  }
+.Novedad1{
+ text-align: center;
+  font-weight: bold; 
+  color:black;
+  font-size: 20px;
+}
+.boletin{
+  margin-top: 10px;
+  margin-right: 28px;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  display: block;
+}
+#imagen1{
+  width: 60px;
+  
+  margin-top: 10px;
+  display: inline-block;
+
+}
+#imagen2{
+  float: bottom;
+  width: 90px;
+  display: block;
+}
+.btn-leer{
+  width: 90px;
+  float: center;
+
+}
+#avisos{
+display: inline-block;
+    width: 205px;
+    height: 168px;
+    background-color: white;
+    padding: 18px; 
 
 
 }
+#imagen3{
+width: 60px;
+  
+  margin-top: 5px;
+  display: inline-block;
+margin-right:  95px;
+
+}
+.aviso1{
+  
+  font-weight: bold; 
+  color:black;
+  font-size: 20px;
+}
+.textoa{
+  margin-top: -55px;
+  text-align: left;
+  color: black;
+   font-size: 15px;
+   margin-right: -8px;
+
+
+}
+#enlaces{
+float: left;
+    width: 205px;
+    height: 168px;
+    background-color: white;
+    padding: 18px; 
+    margin-left: 90px;
+}
+.enlace1{
+  font-weight: bold;
+  color: black;
+  font-size: 20px;
+
+}
+.titulo1{
+  font-size: 15px;
+}
+}
+
+
+
+
 .container-fluid text-center{
   background-color: white;
 }

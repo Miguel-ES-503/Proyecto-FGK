@@ -42,40 +42,43 @@ if (isset($_GET['id'])) {
 
 <body class="container">
 
-	<br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br>
 
+<div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: block; padding-right: 16px;" aria-modal="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content"  style="border-radius: 30px;">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel" style="color:black;">Eliminar Facultad</h5>
 
-	<!-- Material form subscription -->
-	<div class="card">
-
-		<h5 class="card-header info-color white-text text-center py-4">
-			<strong style="color:black;">Eliminar Facultad</strong>
-		</h5>
-
-		<!--Card content-->
-		<div class="card-body px-lg-5">
-
-			<!-- Form -->
-			<form class="text-center" style="color: #757575;" action="../../Modelo/ModeloFacultades/EliminarFacultades.php" method="POST">
-
-				<p>Seguro que desea eliminar la empresa:</p>
-				<input type="hidden" id="id" name="id" class="form-control" value="<?php echo $IDCuenta?>"> 
+			</div>
+				<div class="modal-body">
+				<form class="text-left" action="../../Modelo/ModeloFacultades/EliminarFacultades.php" method="POST">
+						<div class="col">
+							<div class="md-form">
+								<p>Seguro que desea eliminar la facultad:</p>
+				<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="hidden" id="id" name="id" class="form-control" value="<?php echo $IDCuenta?>"> 
 				<!-- E-mai -->
 				<div class="md-form">
-					<input type="text" id="" disabled="true" class="form-control" value="<?php echo $Correo?>">
-					<label for="materialSubscriptionFormEmail">Empresa</label>
+					<b><label for="materialSubscriptionFormEmail">Facultad</label></b>
+					<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;"  type="text" id="" disabled="true" class="form-control" value="<?php echo $Correo?>">
+					
 				</div>
 
-				<!-- Sign in button -->
-				<button class="btn btn-outline-light  btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Eliminar Facultad</button>
-
+						
+<br>
+<center><button style="border-radius: 20px;
+    border: 2px solid #BE0032;
+    width: 200px;height: 38px;
+     background-color: #BE0032;
+     color:white;" class="btn btn-outline-light  btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Eliminar Facultad</button>
+</center>
 			</form>
 			<!-- Form -->
 			<a href="../../SIT-Facultades.php">Regresar inicio?</a>
 		</div>
 
-
-	</div>
 	<!-- Material form subscription -->
 
 	

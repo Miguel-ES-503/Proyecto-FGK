@@ -36,14 +36,12 @@ include 'Modularidad/MenuVertical.php';
 </div>
 
 <!-- Inicio de tabla de asistencia  -->
-    <div class="card-body">
-      <div class="table-responsive">  
-        <form action="Aprobartodos.php" method="POST">
-     <!--  <span class="float-left"> 
-   <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">  --> 
-        <!--<input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
-        
-      </span>-->
+<div class="card-body h-100 ">
+      <div class="table-responsive w-100">  
+        <form action="Aprobartodos3.php" method="POST">  <br>
+        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">  
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">    
+    <br>
       <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
       <br>
           <thead class="table-secondary">
