@@ -43,8 +43,10 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 		<td>".$fila['CantidadModulos']."/6</td>
 		<td>".$fila['TotalTalleres']."</td>	
 		<th>".$fila['EstadoCerti']."</th>
+		<th><form action='cambiardatos.php' method='post'><button type='submit' name='id' value='".$fila['ID_Alumno']."' class='btn btn-warning' ><i class='far fa-edit'></i> Actualizar</button></form></th>
 		</tr>";
 
 	}
 }
 ?>
+
