@@ -39,11 +39,47 @@
   }
 
 ?>
+<style type="text/css">
+   /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
 
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
 
   <div class="container-fluid text-center" style="background-color: white; ">
 
     <div class="text-center"">
+    <br>
+    <br>
+    <div>
+        <h1 style="color:#BE0032;"> Bienvenido al sistema Side by Side del Programa Oportunidades</h1>
+    </div>
+    <br>
+   <div class="container" style="max-width: 100%">
+    
+    <div class="row">
+  <div class="column">
+    <img src="../img/foto1.jpg" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="../img/foto2.jpg" alt="Forest" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="../img/foto3.jpg" alt="Mountains" style="width:100%">
+  </div>
+</div>
+
+    </div>
+   
       <div id="demo" class="carousel slide" data-ride="carousel">
 
     <!-- Indicators -->
@@ -62,7 +98,7 @@
         <img src="../img/silder2.png" alt="Chicago">
       </div>
       <div class="carousel-item">
-        <img src="../img/silder3.jpg" alt="New York">
+        <img src="../img/slider3.jpg" alt="New York">
       </div>
       <div class="carousel-item">
         <img src="../img/slider4.jpg" alt="New York">
@@ -81,50 +117,53 @@
     </div>
     <br>
     <br>
-    <div class="container">
+        <div class="row" style="margin-left: 30px;">
+        <div class="col-lg-11 col-md-8 col-sm-8 col-xs-12">
+        <div id="novedades">
+        <h3 style="text-align: left; font-weight: bold;">Novedades<h3>
+        <img class="img-fluid" src="../img/novedades.png" width="100px" height="100px">
+        <div style="float: right;"><p style="text-align: left;">Boletin</p>
+        <img class="img-fluid" src="../img/logonegro.png" width="150px">
+        </div>
+            <br>
+        <center><button class="btn-leer" >Leer</button></center>
+        </div>
+        <div id="avisos" >
+        <h3  style="font-weight: bold;">Avisos<h3>
+        <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
+        <div style="float: right; " ><p style="text-align: left;">Boletin:<br>
+        </p></div>
+        </div>
+        <div id="enlaces">
+        <table  >
+
+        <h3  style="font-weight: bold;">Enlaces<h3>
+        
+        <tr>
+        <td>
+          <a href="Manual/ManualEstudiante.pdf" target="_black">
+        <img class="img-fluid" src="../img/manual.png" width="100px" height="100px">
+        </a>
+        <td>
+        <h4>Manual de usuario</h4>
+        </td>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href="http://workeysoportunidades.org/" target="_black"><img class="img-fluid" src="../img/landing.png" width="90px" height="90px">
+        </td>
+        <td>
+        <h4>Workey's landing page</h4>
+        </td>
+
+        </tr>
+        </table>
+        </div>
+
+
+    </div>
     
-    <div id="novedades">
-    <h3 style="text-align: left; font-weight: bold;">Novedades<h3>
-    <img class="img-fluid" src="../img/novedades.png" width="100px" height="100px">
-    <div style="float: right;"><p style="text-align: left;">Boletin</p>
-    <img class="img-fluid" src="../img/logonegro.png" width="150px">
-    </div>
-        <br>
-    <center><button class="btn-leer" >Leer</button></center>
-    </div>
-    <div id="avisos">
-    <h3  style="font-weight: bold;">Avisos<h3>
-    <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
-    <div style="float: right; " ><p style="text-align: left;">Boletin:<br>
-    </p></div>
-    </div>
-    <div id="enlaces">
-    <table  >
-
-    <h3  style="font-weight: bold;">Enlaces<h3>
-    
-    <tr>
-    <td>
-      <a href="Manual/ManualEstudiante.pdf" target="_black">
-    <img class="img-fluid" src="../img/manual.png" width="100px" height="100px">
-    </a>
-    <td>
-    <h4>Manual de usuario</h4>
-    </td>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <a href="http://workeysoportunidades.org/" target="_black"><img class="img-fluid" src="../img/landing.png" width="90px" height="90px">
-    </td>
-    <td>
-    <h4>Workey's landing page</h4>
-    </td>
-
-    </tr>
-    </table>
-    </div>
-
     </div>
     <br>
     <br>
