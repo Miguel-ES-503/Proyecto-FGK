@@ -26,8 +26,9 @@ include 'Modularidad/MenuVertical.php';
 <h3 class="text-left titulo-OneonOne text-white text-center" >Lista de asistencia</h3>
 <p class="text-white text-center">En este aparto le colocará la asistencia a los alumnos, las opciones son: asistió o no asistió.</p>
 <div class="panel-body">
- <div class="col-xs-4 col-sm-4 col-md-10 col-lg-10">
-      <div class="tabla">
+ <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
+ <br><br>
+      <div class="tabla" >
                     <div id="tablapdf" >
                     <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
         <thead class="table-dark">
@@ -35,6 +36,8 @@ include 'Modularidad/MenuVertical.php';
                                     <th>Titulo</th>
                                     <th>Alumno</th>
                                     <th>Sede</th>
+                                    <th>Sexo</th>
+                                    <th>Universidad</th>
                                     <th>Fecha</th>
                                     <th>Hora</th>
                                     <th>Asistencia</th>
@@ -50,6 +53,7 @@ include 'Modularidad/MenuVertical.php';
                         </div>
                         </div>
                     </div>
+                    
 </div>
 
   <br> 

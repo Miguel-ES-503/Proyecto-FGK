@@ -17,7 +17,7 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 //<td><input type='checkbox' name='ActuaAlumno[]' class='case' value=".$fila['ID_Alumno']."></td>
 
 	// Consulta De La BASE DE DATOS
-	$consulta=$pdo->prepare("SELECT alumnos.Nombre , one_on_one.titulo , one_on_one.estado , one_on_one.ID_Sede ,  one_on_one.id_alumno , one_on_one.fecha , one_on_one.hora_inicio , one_on_one.hora_fin , one_on_one.id  FROM one_on_one LEFT JOIN alumnos ON   alumnos.ID_Alumno = one_on_one.id_alumno WHERE one_on_one.estado = 'Finalizado' and one_on_one.estado_alumno = 'Pendiente' ");
+	$consulta=$pdo->prepare("SELECT alumnos.Nombre , alumnos.Sexo, one_on_one.titulo , one_on_one.estado , one_on_one.ID_Sede ,  one_on_one.id_alumno , one_on_one.fecha , one_on_one.hora_inicio , one_on_one.hora_fin , one_on_one.id ,empresas.Nombre AS universidad  FROM one_on_one INNER JOIN alumnos ON  alumnos.ID_Alumno = one_on_one.id_alumno LEFT JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa WHERE one_on_one.estado = 'Finalizado' and one_on_one.estado_alumno = 'Pendiente' ");
 	
 	$consulta->execute(array($LugarFT,$LugarSAT));
 
@@ -38,6 +38,8 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 		<th>".utf8_encode($fila['titulo'])."</th>
 		<th>".$fila['Nombre']."</th>
 		<th>".$fila['ID_Sede']."</th>
+		<th>".$fila['Sexo']."</th>
+		<th>".$fila['universidad']."</th>
 		<td>".utf8_encode(strftime("%A %d "." de"." %B del %Y ",strtotime($fila['fecha'])))."</td>
 		<th>".$fila['hora_inicio']." - ".$fila['hora_fin']."</th>
 		<th><form action='verificarasistencia2.php' method='post'><button type='submit' title='Asistió' class='btn btn-success btn-borrar display-5'"." name='siasistio' value='"."$fila[id]'"."><i class='fas fa-thumbs-up'></i></button></form>"."<form action='verificarasistencia.php' method='post'><button type='submit' class='btn btn-danger btn-borrar'"." name='noasistio' title='No Asistió' value='"."$fila[id]'"."><i class='fas fa-thumbs-down'></i></button></form></th>
