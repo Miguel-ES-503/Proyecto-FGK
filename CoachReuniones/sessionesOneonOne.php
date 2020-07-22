@@ -19,6 +19,12 @@ include 'Modularidad/MenuVertical.php';
   #regiration_form fieldset:not(:first-of-type) {
     display: none;
   }
+    @media only screen and (max-width: 600px) {
+  .panel-body {
+    margin-left:25%;
+  }
+}
+ 
 </style>
 <!-- CSS only -->
 
@@ -36,7 +42,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="row">
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
     
-  <nav class="nav flex-column" id="nav">
+  <nav class="nav flex-column h-100 w-75" id="nav">
     <h2 class="title-1">Menu</h2>
     <button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
     <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Horarios Disponibles</button>
@@ -46,11 +52,13 @@ include 'Modularidad/MenuVertical.php';
   </div>
     <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
       <div class="tabla">
-    <div align="right" id="btns">
+      <br><br>
+    <div align="right" class="h-100" id="btns">
+    <br>
     <a href="Reportes/ReporteSession.php"  target='blank'><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
-  <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
+    <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
   </div>
- <div class="panel-body" style="float: left;">
+ <div class="panel-body img-fluid " style=" width:85%">
                     <div id="tablapdf">
                         <table class="table table-bordered-sm table-responsive w-100" id="datatable2">
                             <thead class="table-dark">
@@ -216,11 +224,36 @@ include 'Modularidad/MenuVertical.php';
     </div>
 
 </div>
-
-
   <br> 
-  
-<script src="js/formulario.js"></script>
+  <script>
+$(document).ready(function(){
+var current = 1,current_step,next_step,steps;
+steps = $("fieldset").length;
+$(".next").click(function(){
+current_step = $(this).parent();
+next_step = $(this).parent().next();
+next_step.show();
+current_step.hide();
+setProgressBar(++current);
+});
+$(".previous").click(function(){
+current_step = $(this).parent();
+next_step = $(this).parent().prev();
+next_step.show();
+current_step.hide();
+setProgressBar(--current);
+});
+setProgressBar(current);
+// Change progress bar action
+function setProgressBar(curStep){
+var percent = parseFloat(100 / steps) * curStep;
+percent = percent.toFixed();
+$(".progress-bar")
+.css("width",percent+"%")
+.html(percent+"%");
+}
+});
+</script>
 <script type="text/javascript" src="js/datatables.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script>

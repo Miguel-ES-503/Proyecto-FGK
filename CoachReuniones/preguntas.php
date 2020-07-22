@@ -58,7 +58,7 @@ include 'Modularidad/MenuVertical.php';
  <div class="mx-auto"  > 
  <div class="panel-body">
                     <div id="tablapdf" class="sessiones" >
-                        <table  id="datatable2"  >
+                        <table  id="datatable2" class="table table-responsive w-100"  >
                             <thead id="cabezera">
                                 <tr>
                                     <th>Pregunta</th>
@@ -72,7 +72,9 @@ include 'Modularidad/MenuVertical.php';
                     </div>
 </div>
 <button type='button' class='btn btn-success btn-agregar' data-toggle='modal' data-target='#myModal3' id="btn"><img src="../img/responder.svg" id="icon">Responder a preguntas</button>  
-     <?php 
+   
+   <br>  
+      <?php 
       require_once '../Conexion/conexion.php';
 
               @$pregunta = $_POST['pregunta'];
