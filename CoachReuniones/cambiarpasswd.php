@@ -10,6 +10,7 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 require_once '../Conexion/conexion.php';
+
 ?>
 <style type="text/css">
   #regiration_form fieldset:not(:first-of-type) {
@@ -73,7 +74,9 @@ $stmt = $dbh->query("SELECT * FROM modulos WHERE id_modulo = '$id' ");
 
 </form>
 </div>
+<br><br>
 </div>
+<br><br>
 </div>
 <?php
  $comparar = $_POST['idsave']; 

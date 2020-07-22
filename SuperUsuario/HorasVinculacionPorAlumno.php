@@ -50,7 +50,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
   <h2 class="main-title" >Horas Sociales</h2>
-<div class="title2">
+<div class="title2" style="background-color: #9d120e">
   <a class="nav-link active" href="AlumnoInicio.php?id=<?php echo$idcorreo ?>" >Expediente Alumno</a>
 </div>
 </div>

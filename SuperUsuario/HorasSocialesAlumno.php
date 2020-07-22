@@ -70,7 +70,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
   <h2 class="main-title" >Horas Sociales</h2>
-<div class="title2">
+<div class="title2" style="background-color: #9d120e">
   <a class="nav-link active" href="HorasVinculacionPorAlumno.php?id=<?php echo$IDAlumno ?>">Horas por Alumno</a>
 </div>
 </div>
@@ -83,7 +83,7 @@ include 'Modularidad/MenuVertical.php';
     <div class="card-header">
     <h5 style="color: black;">Detalles de proyecto</h5>
     </div>
-    <center><div class="card-footer text-muted" id="soli" style="background-color: #BE0032; height: 40px; border-radius: 30px; width: 400px;">
+    <center><div class="card-footer text-muted" id="soli" style="background-color: #9d120e; height: 40px; border-radius: 30px; width: 400px;">
     <p style="color: white; text-align: center;">Solicitud de Horas de Vinculación</p>
   </div></center>
     <div class="card-body">
@@ -160,9 +160,9 @@ include 'Modularidad/MenuVertical.php';
             <!-- First name   Tema , fecha , la hora y el tipo de taller -->
             <div class="md-form">
               <button style='border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white; text-decoration: none;'>
               <a href="../ComproHoras/<?php echo$Comprobante ?>"  class='px-3 far fa-file-alt'> </a>Comprobante</button>
             </div>
@@ -193,9 +193,9 @@ include 'Modularidad/MenuVertical.php';
         </select>
         <br>
         <center><button name="EnviarDato" value="Enviar" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0 " style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;">Enviar<img src="img/click.png" width="25px" height="25px"></button></center>
       </form>
       <br>

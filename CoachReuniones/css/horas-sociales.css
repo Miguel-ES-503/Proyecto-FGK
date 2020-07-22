@@ -1,3 +1,91 @@
+
+
+/*.title{
+background-color: #ADADB2;
+margin-top: -30px;
+color: black;
+height: 70px;
+margin-left: -1.5%;
+margin-bottom: 3%;
+height: 55px;
+
+
+}
+h2 , .icon{
+  float: left;
+}
+.main-title
+{
+text-align: left;
+font-size: 25px;
+margin-left: 25px;
+margin-top: 15px;
+font-weight: bold;
+letter-spacing: 5px;
+}
+.icon 
+{
+
+  width: 30px;
+  margin-top: 15px;
+  margin-left: 20px;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Responsivo-design*/
+
+/*Resolucion para dispositivos moviles muy pequeños*/
+@media(max-width: 540px)
+{
+
+}
+/*Resolucion para dispositivos moviles  pequeños*/
+@media(min-width: 541px) and (max-width:720px )
+{
+
+}
+/*Resolucion para tablets*/
+@media(min-width: 721px) and (max-width: 960px) 
+{
+#status
+{
+	margin-left: 35px;
+}
+}
+/*Resolucion para pc de escritorio*/
+@media(min-width: 961px){
+	#linea
+{
+	
+	width: 80%;
+	margin-left: 30px;
+	max-width: 100%;
+	margin-bottom: -20px;
+}
+
+#boton1
+{
+	margin-right: 100px;
+}
+
+
+}
+
+
+
 /*Estilo de Formulario 1*/
 * {
   box-sizing: border-box;
@@ -39,54 +127,65 @@ input[type=submit]:hover {
 
 .col-75 {
   float: left;
-  width: 75%;
+  width: 90%;
   margin-top: 6px;
 }
 
+/*Fin de estilo de Formulario*/
 
 
-.title{
-background-color: #ADADB2;
-margin-top: -30px;
-color: black;
-height: 70px;
-margin-left: -1.5%;
-margin-bottom: 3%;
-height: 55px;
-
-
-}
-h2 , .icon{
-  float: left;
-}
-.main-title
+/*Estilo General*/
+#linea
 {
-text-align: left;
-font-size: 25px;
-margin-left: 25px;
-margin-top: 15px;
-font-weight: bold;
-letter-spacing: 5px;
+	background-color: #e4e4e4;
+	height: 3px;
+	margin-top: -20px;
+	border-radius: 10px;
+	width: 89%;
+	margin-left: 30px;
+	max-width: 100%;
+	margin-bottom: -20px;
 }
-.icon 
-{
 
-  width: 30px;
-  margin-top: 15px;
-  margin-left: 20px;
+#btn
+{
+background-color: #9d120e;
+width: 200px;
+border-radius: 30px;
+font-size: 15px;
+margin: auto;
+}
+
+#boton1,#boton2
+{
+	display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#Contenedor1
+{
+	border-color: #e4e4e4;
+	border-style: solid;
+	border-width: 4px;
+	border-radius: 40px;
+}
+
+#Contenedor2
+{
+	border-color: white;
+	border-style: solid;
+	border-width: 4px;
+	border-radius: 40px;
+	background-color: #bcbbbc;
 }
 #Info-1_Texto-1
 {
 	display: inline-block;
 	color: black;
 }
-#linea
-{
-	background-color: #e4e4e4;
-	height: 3px;
-	margin-top: -40px;
-	border-radius: 10px;
-}
+
 
 #label
 {
@@ -100,11 +199,7 @@ letter-spacing: 5px;
 	border-radius: 20px;
 	border-color: white;
 }
-#btn
-{
-background-color: #9d120e;
 
-}
 /*
 #mensaje
 {
