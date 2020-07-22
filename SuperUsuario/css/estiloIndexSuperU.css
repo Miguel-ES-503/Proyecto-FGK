@@ -1,3 +1,6 @@
+#movil{
+  max-width: 100%;
+}
 #novedades{
   float: left;
   font-color: black;
@@ -65,13 +68,9 @@ margin-top: 8px;
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  #imginicio {
+  #movil {
 
-    height: 30em;
-        margin-right: 15px;
-    background: url(../img/SuperUserTable.png);
-    background-repeat: no-repeat;
-
+  
     background-size: 100% 100%;
 
   }
@@ -80,22 +79,13 @@ margin-top: 8px;
 }
 
 
-  #imginicio
-  {
-    height: 46em;
-
-    background: url(../img/SuperUser.png);
-    background-repeat: no-repeat;
-
-    background-size: 100% 100%;
-  }
+ 
 
 
 @media only screen and (max-width: 767px) {
 
   #movil {
-
-    height: 70em;
+max-height: 100%;
 
   }
 
@@ -117,7 +107,7 @@ font-size: 13px;
   }
   
  .sidebar-heading {
-
+margin-bottom: -10px;
   margin-right: -230px;
   font-size: 1.2rem;
   background-color: #0D0D0D;
