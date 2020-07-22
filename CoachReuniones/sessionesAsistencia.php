@@ -25,10 +25,12 @@ include 'Modularidad/MenuVertical.php';
   <br>   
 <h3 class="text-left titulo-OneonOne text-white text-center" >Lista de asistencia</h3>
 <p class="text-white text-center">En este aparto le colocará la asistencia a los alumnos, las opciones son: asistió o no asistió.</p>
- <div class="panel-body">
-                    <div id="tablapdf" class="col-xs-5 col-sm-5 col-md-6 col-lg-6">
+<div class="panel-body">
+ <div class="col-xs-4 col-sm-4 col-md-10 col-lg-10">
+      <div class="tabla">
+                    <div id="tablapdf" >
                     <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
-        <thead class="table-secondary">
+        <thead class="table-dark">
                                 <tr>
                                     <th>Titulo</th>
                                     <th>Alumno</th>
@@ -38,12 +40,14 @@ include 'Modularidad/MenuVertical.php';
                                     <th>Asistencia</th>
                                 </tr>
                             </thead>
-                            <tbody >
+                        <tbody>
                               <?php
           require_once 'Modelo/ModeloAlumno/MostrarDatosReunion2.php';
           ?>
           </tbody>
-                        </table>
+          </table>
+          </div>
+                        </div>
                         </div>
                     </div>
 </div>
