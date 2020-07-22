@@ -28,7 +28,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="panel-body">
  <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
  <br><br>
-      <div class="tabla" >
+      <div class="tabla">
                     <div id="tablapdf" >
                     <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
         <thead class="table-dark">
