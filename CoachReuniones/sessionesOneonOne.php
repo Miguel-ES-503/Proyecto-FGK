@@ -15,6 +15,11 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/Sesiones-ONE.css">
 <link rel="stylesheet" href="css/formulario_One_on_One.css">
+<style type="text/css">
+  #regiration_form fieldset:not(:first-of-type) {
+    display: none;
+  }
+</style>
 <!-- CSS only -->
 
 <div class="title">
@@ -116,66 +121,67 @@ include 'Modularidad/MenuVertical.php';
 
 
 <!-- Responder a pregunta -->
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content" id="contenedor5">
+<div class="modal fade h-100" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+          <div class="modal-content h-100 pb-5 w-100" id="contenedor5">
             <div class="modal-header" id="contendor4" >
               <h5 class="modal-title text-dark" id="exampleModalLabel">Crear Sesiones One on One</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <br><br><br>
-            <form id="formulario" class="h-75" action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" >
-              <br>
-            <ul class="items mx-auto ">
-              <li class="active"></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-  <br><br>
-  <fieldset class="username enable">
+            <br>
+
+            <div class="container pb-5 w-100">
+<div class="progress w-100 h-25  ">
+<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<br>
+<form id="regiration_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST">
+<center></center>
+<fieldset class="username enable  w-75 float-center">
   <label for="exampleInputEmail1" class="text-dark">Seleccione el encargado de la sesión</label>
     <select name="titulo" id="" class="form-control float-right">
     <option value="Geo Albanés">Geo Albanés</option>
     <option value="Ónix Landaverde">Ónix Landaverde</option>
     </select>
-    <br><br>
-    <div class="icon right button "><i class="arrow"></i></div>
+    <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
     <br>
   </fieldset>
 
-  <fieldset class="email">
+  <fieldset class="email enable w-75 pb-5 form-group">
   <label for="exampleInputPassword1" class="text-dark">Ingrese la fecha de la sesión</label>
     <?php $today = date("Y-m-d");?>
-    <input type="date" class="form-control mx-auto" name="fecha" min='<?php echo $today; ?>' />
-    <div class="icon right button"><i class="arrow"></i></div>
+    <input type="date" class="form-control mx-auto" name="fecha" min='<?php echo $today; ?>' required/>
+    <input type="button" name="previous" class="previous btn btn-primary" value="Previo" />
+    <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
+    <br>
   </fieldset>
 
-  <fieldset class="password">
+  <fieldset class="password enable w-75 form-group">
   <label for="exampleInputPassword1" class="text-dark">Hora de inicio de la se sesión: </label>
-    <input type="time" name="TimeInit" class="form-control mx-auto" />
-    <div class="icon right button"><i class="arrow"></i></div>
+    <input type="time" name="TimeInit" class="form-control mx-auto" required />
+    <input type="button" name="previous" class="previous btn btn-primary" value="Previo" />
+    <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
   </fieldset>
 
-  <fieldset class="password2">
+  <fieldset class="password2 enable  w-75 form-group">
   <label for="exampleInputPassword1" class="text-dark">Hora de finalización de la sesión: </label>
-    <input type="time"  name="TimeEnd"  class="form-control mx-auto" />
-    <div class="icon right button"><i class="arrow"></i></div>
+    <input type="time"  name="TimeEnd"  class="form-control mx-auto" required />
+    <input type="button" name="previous" class="previous btn btn-primary" value="Previo" />
+    <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
+    <br>
   </fieldset>
 
-  <fieldset class="thanks">
-  <button type="submit" class="btn btn-primary btn1 mx-auto text-center">Crear <i class="fas fa-paper-plane"></i></button>
+  <fieldset class="thanks enable  w-75 form-group" style=" background-color: #BE0032;">
+  <input type="button" name="previous" class="previous btn btn-primary" value="Previo" />
+  <button type="submit" class="btn btn-success btn1 mx-auto text-center">Crear <i class="fas fa-paper-plane"></i></button>
   </fieldset>
-    <br>
-    <br>
+  <br><br> <br><br>
 </form>
-<br><br>
-<br>          </div>
+</div>       </div>
         </div>
-      </div>        
+      </div>         
 </div> <br> 
 
 
