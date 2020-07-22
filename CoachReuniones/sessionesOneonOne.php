@@ -263,7 +263,6 @@ $(".progress-bar")
         $('#myModal').modal('show');
       });
     </script>
-
 <!-- Horarios inscritos -->
 <script type="text/javascript">
 $(document).ready(function(){
