@@ -3,11 +3,12 @@
 html,
 body {
   height: 100%;
-   background: url(../img/fondo.jpg);
+  /* background: url(../img/fondo.jpg);*/
 
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+  background-color: white;
  
 }
 
@@ -20,7 +21,8 @@ body {
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: 100% 100%;
-   background-image: url(../img/FondoMovil.jpg);
+   background-color: white;
+  /* background-image: url(../img/FondoMovil.jpg);*/
 
  }
 
@@ -41,7 +43,7 @@ body {
 }
 
 .form-control{
-	background-color: #ADADB2;
+	background-color: #bcbcbc;
 	color: black;
 	border-radius: 20px;
 
@@ -62,23 +64,23 @@ body {
 }
 .actualizarempresa{
 	border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;
 }
 #Guardar_Cuentas{
 	border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;
 }
 .modal-dialog{
 	background-color: white 
 	border-radius: 30px;
-	opacity: 0.85;
+	/*opacity: 0.85;
 -moz-opacity: 0.85;
 filter: alpha(opacity=85);
--khtml-opacity: 0.85;
+-khtml-opacity: 0.85;*/
 }

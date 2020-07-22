@@ -43,7 +43,7 @@ if (isset($_GET['id'])) {
 							<div class="col">
 								<div class="md-form">
 									<b><label for="materialRegisterFormFirstName" style="color: black" >Nombre de la facultad</label></b>
-									<input style="border-radius: 20px; background-color: #ADADB2;
+									<input style="border-radius: 20px; background-color: #bcbcbc;
 	color: black;" type="text" id="NombreFac" name="NombreFac" class="form-control"  <?php echo 'value="'.utf8_encode($fila['Nombre']) .'"';}?>>
 									
 								</div>
@@ -52,9 +52,9 @@ if (isset($_GET['id'])) {
 							<input type="hidden" name="id" id="id" <?php echo 'value="'.$fila['IDFacultates'] .'"';?>>		
 
 							<center><button style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;" name="Guardar_Facultad" value="Actualizar Facultad" id="Guardar_Facultad">Actualizar Facultad</button></center>
 							<!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 						</form>

@@ -46,7 +46,7 @@ margin-top: 8px;
   width: 60%;
   height: 30px;
   border-radius: 25px;
-  background: #BE0032;
+  background: #9d120e;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -96,12 +96,33 @@ margin-top: 8px;
   #movil {
 
     height: 70em;
-     
-
-    
-
 
   }
+
+  .sidepanel #sidebar-wrapper { 
+    margin-right: -18px;
+font-size: 13px;
+
+
+    
+  }
+  .linemenu{
+    width: 210px;
+    
+  }
+  #sidebar-wrapper .snip1135{
+    margin-left: 210px;
+    font-size: 13px;
+   
+  }
+  
+ .sidebar-heading {
+
+  margin-right: -230px;
+  font-size: 1.2rem;
+  background-color: #0D0D0D;
+
+}
   #novedades {
     display: inline-block;
     width: 200px;
@@ -190,6 +211,7 @@ float: left;
 .titulo1{
   font-size: 15px;
 }
+
 }
 
 

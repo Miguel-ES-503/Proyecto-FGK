@@ -13,13 +13,14 @@
   
   /* The sidepanel menu */
 .sidepanel {
-  height: 658px; /* Specify a height */
+  
+  height: 100%; /* Specify a height */
   width: 0px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background-color:#2D2D2E; /* Black*/
+  background-color:#2D2D2E; /* Gris oscuro*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 10px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
@@ -29,7 +30,7 @@
 .sidepanel a {
   padding: 8px 8px 8px 8px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 15px;
   color: #2D2D2E;
   display: block;
   transition: 0.3s;
@@ -63,29 +64,21 @@
 .openbtn:hover {
   background-color: #2D2D2E;
 }
-@media only screen and (max-width: 767px) {
-
-  .sidepanel a{
-
-    height: 300px;
-    background-size: 100%;
-    padding: 0px;
-
-  }
 
 
 }
 </style>
 <body>
 
-<div id="mySidepanel" class="sidepanel" style="background-color: #BE0032;">
+<div id="mySidepanel" class="sidepanel" style="background-color:#9d120e;
+     color:white;">
   <a href="javascript:void(0)" class="closebtn" style="color: white;" onclick="closeNav()">&times;</a>
      <div class="dark border-right" id="sidebar-wrapper">
       <div class="sidebar-heading justify-content-center align-items-center">
         <center>
           <img src ="../img/imgUser/<?php echo $_SESSION['Foto']?>" class="rounded-circle" class="img-responsive" style="width: 100px; height: 100px" >
         </center> 
-        <hr>
+        <hr class="linemenu">
         <b><p style="font-size: 10px; text-align: center; "><?php echo $_SESSION['Email'] ?></p></b>
       </div>
       <div class="list-group list-group-flush">
@@ -438,7 +431,7 @@
           
                 <a class="dropdown-item" href="Configuracion.php" style="color: white;">Configuración</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../CerrarSession.php" style="color: white;">Salir</a>
+                <a class="dropdown-item" href="../CerrarSession.php" style="color:white;">Salir</a>
               </div>
 
             </li>

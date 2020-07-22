@@ -15,7 +15,7 @@
   require_once 'templates/MenuHorizontal.php';
 
   require '../Conexion/conexion.php';
-  require_once 'templates/MenuVertical.php';
+
 
  $stmt1 =$dbh->prepare("SELECT `ID_Alumno` , A.Nombre , E.Nombre AS 'Universidad' FROM alumnos A INNER JOIN empresas E ON A.ID_Empresa = E.ID_Empresa WHERE correo='".$_SESSION['Email']."'");
 // Ejecutamos

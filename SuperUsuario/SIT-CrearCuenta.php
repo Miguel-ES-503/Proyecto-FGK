@@ -22,10 +22,10 @@ include 'Modularidad/MenuVertical.php';
 	<div class="title">
      <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Creación de Cuentas</h2>
-	<div class="title2">
+	<div class="title2" style="background-color: #9d120e">
 	<a class="nav-link active" href="SIT-CrearAlumno.php">Alumnos</a>
 </div>
-	<div class="title21">
+	<div class="title21" style="background-color: #9d120e">
     <a class="nav-link" href="SIT-CrearCuenta.php" >Acceso</a></div>
 
 </div>
@@ -50,7 +50,10 @@ include 'Modularidad/MenuVertical.php';
 	     		<a href="LIS-Cuentas.php">
 
 	     			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
-    border: 2px solid;width: 200px;height: 38px;">
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;">
 	     				<img src="img/team.png" width="25px" height="25px">
 	     				Ver Cuentas
 	     			</button>
