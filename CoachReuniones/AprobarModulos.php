@@ -15,14 +15,14 @@ include 'Modularidad/MenuVertical.php';
 <link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
-    
+
     <h2 class="main-title" >Aprobar/Reprobar Módulo 1</h2>
 </div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center" id="main">
   <nav class="nav flex-column" id="nav">
     <h2 class="title-1">Menu</h2>
-<a class="nav-link active" href="AprobarModulos.php" style="background-color:#BE0032; color:white;">Módulo C1</a>  
+<a class="nav-link active" href="AprobarModulos.php" style="background-color:#BE0032; color:white;">Módulo C1</a>
 <a class="nav-link" href="modulo2.php">Módulo C2</a>
   <a class="nav-link" href="modulo3.php">Módulo B1</a>
   <a class="nav-link" href="modulo4.php">Modulo B2</a>
@@ -37,15 +37,15 @@ include 'Modularidad/MenuVertical.php';
 
 <!-- Inicio de tabla de asistencia  -->
     <div class="card-body h-100 ">
-      <div class="table-responsive w-100">  
+      <div class="table-responsive w-100">
         <form action="Aprobartodos.php" method="POST">  <br>
-        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">  
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">    
+        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
     <br>
       <table  id="example" class="table table-hover table-sm table-bordered table-fixed h-100 w-100" >
       <br>
           <thead class="table-secondary h-100 w-100">
-            <tr> 
+            <tr>
               <th scope="col"><input type='checkbox' name='' class='case' value="" id="todos">Todos</th>
               <th scope="col">ID Alumno</th>
               <th scope="col">Alumno</th>
@@ -61,9 +61,9 @@ include 'Modularidad/MenuVertical.php';
 <?php
     require_once 'Modelo/ModeloModulos/ListadoModulos/listadomodulos1.php';
 
-?> 
-        </tbody>  
-      </table>  
+?>
+        </tbody>
+      </table>
 </form>
     </div>
   </div>
@@ -75,7 +75,7 @@ include 'Modularidad/MenuVertical.php';
     $(".case").prop("checked", this.checked);
   });
 
-            // if all checkbox are selected, check the selectall checkbox and viceversa  
+            // if all checkbox are selected, check the selectall checkbox and viceversa
             $(".case").on("click", function() {
               if ($(".case").length == $(".case:checked").length) {
                 $("#todos").prop("checked", true);
@@ -88,4 +88,3 @@ include 'Modularidad/MenuVertical.php';
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
 ?>
-
