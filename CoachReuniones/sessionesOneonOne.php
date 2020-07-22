@@ -141,17 +141,18 @@ include 'Modularidad/MenuVertical.php';
 <!-- Responder a pregunta -->
 <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered ">
-          <div class="modal-content h-100 w-75 pb-5" id="contenedor5">
+          <div class="modal-content h-100 w-100 pb-5" id="contenedor5">
             <div class="modal-header" id="contendor4" >
               <h5 class="modal-title text-dark" id="exampleModalLabel">Crear Sesiones One on One</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="progress ">
-<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+            <br>
+            <div class="progress w-75 mx-auto">
+<div class="progress-bar progress-bar-striped " role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-            <form id="regiration_form"  action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" >
+            <form id="regiration_form" class="float-left p-3 w-100" style="margin-left:5%" action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" >
               <br>
   
   <fieldset class="username enable text-center">
@@ -161,7 +162,7 @@ include 'Modularidad/MenuVertical.php';
     <option value="Ónix Landaverde">Ónix Landaverde</option>
     </select>
     <br><br><br>
-    <button type="button" class="next btn btn-info text-center">Siguiente</button>
+    <button type="button" class="next btn btn-info text-center">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
   </fieldset>
 
   <fieldset class="email enable">
@@ -169,29 +170,30 @@ include 'Modularidad/MenuVertical.php';
     <?php $today = date("Y-m-d");?>
     <input type="date" class="form-control mx-auto" name="fecha" min='<?php echo $today; ?>' />
     <br>
-    <button type="button" class="next btn btn-info">Siguiente</button>
-    <button type="button" name="previous" class="previous btn btn-warning">Anterior</button>
+    <button type="button" name="previous" class="previous btn btn-warning">Anterior <i class="fas fa-arrow-circle-left"></i></button>
+    <button type="button" class="next btn btn-info">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
   </fieldset>
 
   <fieldset class="password enable">
   <label for="exampleInputPassword1" class="text-dark">Hora de inicio de la sesión: </label>
     <input type="time" name="TimeInit" class="form-control mx-auto" />
     <br>
-    <button type="button" class="next btn btn-info">Siguiente</button>
-    <button type="button" name="previous" class="previous btn btn-warning">Anterior</button>
+    <button type="button" name="previous" class="previous btn btn-warning">Anterior <i class="fas fa-arrow-circle-left"></i></button>
+    <button type="button" class="next btn btn-info">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
   </fieldset>
 
   <fieldset class="password2 enable">
   <label for="exampleInputPassword1" class="text-dark">Hora de finalización de la sesión: </label>
     <input type="time"  name="TimeEnd"  class="form-control mx-auto" />
     <br>
-    <button type="button" class="next btn btn-info">Siguiente</button>
-    <button type="button" name="previous" class="previous btn btn-warning">Anterior</button>
-  </fieldset>
+    <button type="button" name="previous" class="previous btn btn-warning">Anterior <i class="fas fa-arrow-circle-left"></i></button>
+    <button type="button" class="next btn btn-info">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
+ </fieldset>
 
   <fieldset class="thanks enable">
   <label for="exampleInputPassword2" class="text-dark">Gracias por crear una sesion OneonOne </label>
   <br><br><br>
+  <button type="button" name="previous" class="previous btn btn-warning">Anterior <i class="fas fa-arrow-circle-left"></i></button>
   <button type="submit" class="submit btn btn-success btn1 mx-auto text-center">Crear <i class="fas fa-paper-plane"></i></button>
   </fieldset>
     <br>
