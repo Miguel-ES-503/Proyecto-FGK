@@ -160,9 +160,9 @@ include 'Modularidad/MenuHorizontal.php';
 
     <br>
     <br>
-    <div class="container">
+    <div class="row">
     
-    <div id="novedades">
+    <div id="novedades" class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
     <h3 class="Novedad1">Novedades<h3>
     <img class="img-fluid" src="../img/novedades.png" width="100px" height="100px">
     <div style="float: right;"><p class="boletin">Boletin</p>
@@ -171,13 +171,13 @@ include 'Modularidad/MenuHorizontal.php';
         <br>
     <center><button class="btn-leer">Leer</button></center>
     </div>
-    <div id="avisos">
+    <div id="avisos" class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
     <h3 class="aviso1">Avisos<h3>
     <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
     <div style="float: right;"><p class="textoa">Boletin:<br>
     Texto de prueba </p></div>
     </div>
-    <div id="enlaces">
+    <div id="enlaces" class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
     <table  >
 
     <h3  class="enlace1">Enlaces<h3>

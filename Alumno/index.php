@@ -53,34 +53,43 @@
   clear: both;
   display: table;
 }
+@media only screen and (min-width: 372px) and (max-width: 757px ) {
+
+#novedades h3, p{
+font-size: 15px;
+
+}
+
+#img1{
+height: 50px;
+width: 50px;
+
+}
+
+#img2{
+  height: 45px;
+width: 100px;
+
+
+}
+
+.btn-leer{
+  height: 20px;
+
+  width: 30%;
+}
+}
 </style>
 
   <div class="container-fluid text-center" style="background-color: white; ">
 
 
     <div class="text-center"">
-    <br>
-    <br>
+    
     <div>
         <h1 style="color:#BE0032;"> Bienvenido al sistema Side by Side del Programa Oportunidades</h1>
     </div>
-    <br>
-   <div class="container" style="max-width: 100%">
     
-    <div class="row">
-  <div class="column">
-    <img src="../img/foto1.jpg" alt="Snow" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="../img/foto2.jpg" alt="Forest" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="../img/foto3.jpg" alt="Mountains" style="width:100%">
-  </div>
-</div>
-
-    </div>
-   
     <div class="text-center">
 
       <div id="demo" class="carousel slide" data-ride="carousel">
@@ -109,9 +118,7 @@
     </div>
 
     <!-- Left and right controls -->
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
+    
     <a class="carousel-control-next" href="#demo" data-slide="next">
       <span class="carousel-control-next-icon"></span>
     </a>
@@ -124,9 +131,9 @@
         <div class="col-lg-11 col-md-8 col-sm-8 col-xs-12">
         <div id="novedades">
         <h3 style="text-align: left; font-weight: bold;">Novedades<h3>
-        <img class="img-fluid" src="../img/novedades.png" width="100px" height="100px">
+        <img class="img-fluid" id="img1" src="../img/novedades.png" width="100px" height="100px">
         <div style="float: right;"><p style="text-align: left;">Boletin</p>
-        <img class="img-fluid" src="../img/logonegro.png" width="150px">
+        <img class="img-fluid" id="img2" src="../img/logonegro.png" width="150px">
         </div>
             <br>
         <center><button class="btn-leer" >Leer</button></center>
@@ -175,6 +182,7 @@
     <br>
     <br>
    
+  </div>
   </div>
 
 <!-- /#page-content-wrapper -->
