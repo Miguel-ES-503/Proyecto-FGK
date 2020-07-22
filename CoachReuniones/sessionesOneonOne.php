@@ -146,7 +146,9 @@ include 'Modularidad/MenuVertical.php';
     <option value="Geo Albanés">Geo Albanés</option>
     <option value="Ónix Landaverde">Ónix Landaverde</option>
     </select>
-    <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
+    <br>
+    <p></p>
+    <button type="button" name="data[password]" class="next btn btn-info">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
     <br>
   </fieldset>
 
@@ -154,28 +156,33 @@ include 'Modularidad/MenuVertical.php';
   <label for="exampleInputPassword1" class="text-dark">Ingrese la fecha de la sesión</label>
     <?php $today = date("Y-m-d");?>
     <input type="date" class="form-control mx-auto" name="fecha" min='<?php echo $today; ?>' required/>
-    <input type="button" name="previous" class="previous btn btn-primary" value="Previo" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
+    <br>
+    <button  type="button" name="previous" class="previous btn btn-primary" >Regresar <i class="fas fa-arrow-circle-left"></i></button>
+    <button type="button" name="data[password]" class="next btn btn-info">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
     <br>
   </fieldset>
 
   <fieldset class="password enable w-75 form-group">
   <label for="exampleInputPassword1" class="text-dark">Hora de inicio de la se sesión: </label>
     <input type="time" name="TimeInit" class="form-control mx-auto" required />
-    <input type="button" name="previous" class="previous btn btn-primary" value="Previo" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
+    <br>
+    <button  type="button" name="previous" class="previous btn btn-primary" >Regresar <i class="fas fa-arrow-circle-left"></i></button>
+    <button type="button" name="data[password]" class="next btn btn-info">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
+   
   </fieldset>
 
   <fieldset class="password2 enable  w-75 form-group">
   <label for="exampleInputPassword1" class="text-dark">Hora de finalización de la sesión: </label>
     <input type="time"  name="TimeEnd"  class="form-control mx-auto" required />
-    <input type="button" name="previous" class="previous btn btn-primary" value="Previo" />
-    <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
     <br>
+    <button  type="button" name="previous" class="previous btn btn-primary" >Regresar <i class="fas fa-arrow-circle-left"></i></button>
+    <button type="button" name="data[password]" class="next btn btn-info">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
+   <br>
   </fieldset>
 
   <fieldset class="thanks enable  w-75 form-group" style=" background-color: #BE0032;">
-  <input type="button" name="previous" class="previous btn btn-primary" value="Previo" />
+  <br>
+  <button  type="button" name="previous" class="previous btn btn-primary" >Regresar <i class="fas fa-arrow-circle-left"></i></button>
   <button type="submit" class="btn btn-success btn1 mx-auto text-center">Crear <i class="fas fa-paper-plane"></i></button>
   </fieldset>
   <br><br> <br><br>
