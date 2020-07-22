@@ -5,7 +5,7 @@ include 'Modularidad/CabeceraInicio.php';
 <title>Inicio Coach Reunión</title>
 
 <style type="text/css">
-  
+
 
 	#imginicio
 	{
@@ -40,7 +40,7 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 
 ?>
-<title>Inicio Coach Reunión</title>
+<title>Inicio Coach-Reunión</title>
 <!--
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -111,16 +111,8 @@ include 'Modularidad/MenuHorizontal.php';
   display: table;
 }
 </style>
+<br>
 <div class="container-fluid text-center">
-    <br>
-    <br>
-
-     <div>
-        <h1 style="color:#BE0032;"> Bienvenido al sistema Side by Side del Programa Oportunidades</h1>
-    </div>
-   
-
-   
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -150,10 +142,6 @@ include 'Modularidad/MenuHorizontal.php';
       <img class="d-block w-100" src="img/foto1.jpeg" alt="Sixth slide" style="height: 520px;">
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
@@ -164,9 +152,9 @@ include 'Modularidad/MenuHorizontal.php';
 
     <br>
     <br>
-    <div class="container">
-    
-    <div id="novedades">
+    <div class="row">
+
+    <div id="novedades" class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
     <h3 class="Novedad1">Novedades<h3>
     <img class="img-fluid" src="../img/novedades.png" width="100px" height="100px">
     <div style="float: right;"><p class="boletin">Boletin</p>
@@ -175,17 +163,17 @@ include 'Modularidad/MenuHorizontal.php';
         <br>
     <center><button class="btn-leer">Leer</button></center>
     </div>
-    <div id="avisos">
+    <div id="avisos" class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
     <h3 class="aviso1">Avisos<h3>
     <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
     <div style="float: right;"><p class="textoa">Boletin:<br>
     Texto de prueba </p></div>
     </div>
-    <div id="enlaces">
+    <div id="enlaces" class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
     <table  >
 
     <h3  class="enlace1">Enlaces<h3>
-    
+
     <tr>
     <td>
     <a href="Manual/ManualEstudiante.pdf"><img class="img-fluid" src="../img/manual.png" width="100px" height="100px"><a>
@@ -219,4 +207,3 @@ include 'Modularidad/MenuHorizontal.php';
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
 ?>
-

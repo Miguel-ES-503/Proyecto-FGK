@@ -12,8 +12,7 @@ display: inline-block;
 h2 , .title2,.icon{
 	float: left;
 }
-.main-title
-{
+.main-title{
 font-weight: bold;
 color: #2D2D2E;
 text-align: left;
@@ -28,53 +27,47 @@ margin-top: 5px;
 	padding: 20px;
 	border:2px;
 }
-.title2
-{
+.title2{
 text-decoration: none;
 margin-left: 50px;
-background-color: #BE0032;
+background-color: #9d120e;
 width: 180px;
 height: 54px;
 text-align: center;
 
 }
-.title21
-{
+.title21{
 text-decoration: none;
 margin-left: 5px;
-background-color: #BE0032;
+background-color: #9d120e;
 width: 180px;
 height: 54px;
 display: inline-block;
 float: left;
 text-align: center;
 }
-.title2 > a 
-{
+.title2 > a {
 margin-top: 10px;
 color: white;
 font-weight: bold;
 text-align: center;
 text-decoration: none;
 }
-.title21 > a
-{
+.title21 > a{
 margin-top: 10px;
 color: white;
 font-weight: bold;
 text-align: center;
 text-decoration: none;
 }
-.icon 
-{
+.icon {
 
 	width: 30px;
 	margin-top: 10px;
       margin-left: 3%;	
       transform: rotate(180deg);
 }
-.example
-{
+.example{
 	background-color: white;
 }
 .card{
@@ -96,14 +89,11 @@ background-color: white;
     font-weight: 600;
     font-size: 15px;
     color: white;
-    background-color: #BE0032;
+    background-color: #9d120e;
     border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 150px;
     height: 30px;
-
-
-
 }
 .Actualizar:hover{
 	color: black;
@@ -136,13 +126,13 @@ background-color: white;
 
 .crearempresa{
 	border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;
 }
 #soli > p {
-	background-color:#BE0032;
+	background-color:#9d120e;
 	text-align: center;
 	font-weight: bold;
 	

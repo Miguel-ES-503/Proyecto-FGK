@@ -18,7 +18,7 @@ include 'Modularidad/MenuVertical.php';
 	<div class="title">
      <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Creación de Ciclos</h2>
-	<div class="title2">
+	<div class="title2" style="background-color: #9d120e">
 	<a class="nav-link active" href="SIT-Ciclos.php">Ciclo</a>
 </div>
 
@@ -71,9 +71,9 @@ include 'Modularidad/MenuVertical.php';
 					</div>
 					<br>
 					<center><button name="Guardar_ciclos" value="Crear Ciclo" id="Guardar_ciclos" style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;">Crear Ciclo</button></center>
      <!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">-->
 				</form>
@@ -90,9 +90,9 @@ include 'Modularidad/MenuVertical.php';
 
 		<span class="float-right">	
 			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal2" style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;">
 				<img src="img/facultad.png" width="25px" height="25px">
 				Crear Ciclo

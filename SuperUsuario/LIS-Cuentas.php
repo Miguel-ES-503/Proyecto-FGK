@@ -17,10 +17,10 @@ include 'Modularidad/MenuVertical.php';
 <div class="container-fluid text-center"> <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Lista Cuentas</h2>
-	<div class="title2">
+	<div class="title2" style="background-color: #9d120e">
 	<a class="nav-link active" href="LIS-Alumnos.php">Alumnos</a>
 </div>
-	<div class="title21">
+	<div class="title21" style="background-color: #9d120e">
     <a class="nav-link" href="LIS-Cuentas.php" >Cuentas</a></div>
 
 </div>
@@ -33,7 +33,10 @@ include 'Modularidad/MenuVertical.php';
 	     	<span class="float-right">	
 	     		<a href="SIT-CrearCuenta.php">
 	     			<button type="button" class="btn btn-danger px-3" style="border-radius: 20px;
-    border: 2px solid;width: 200px;height: 38px;">
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;">
 	     				<img src="img/team.png" width="20px" height="20px">
 	     				Crear Cuentas
 	     			</button>
@@ -84,7 +87,10 @@ include 'Modularidad/MenuVertical.php';
 	     	<span class="float-right">	
 	     		<a href="SIT-CrearAlumno.php">
 	     			<button type="button" class="btn btn-danger px-3" style="border-radius: 20px;
-    border: 2px solid;width: 200px;height: 38px;">
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;">
 	     				<img src="img/team.png" width="20px" height="20px" >
 	     				Crear Alumnos
 	     			</button>

@@ -18,13 +18,13 @@ include 'Modularidad/MenuVertical.php';
   <div class="title">
       <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Creación de Empresas</h2>
-	<div class="title2">
+	<div class="title2" style="background-color: #9d120e">
 	<a class="nav-link active" href="SIT-CrearEmpresas.php">Empresas</a>
 </div>
-	<div class="title21">
+	<div class="title21" style="background-color: #9d120e">
     <a class="nav-link" href="SIT-CrearCarrera.php">Carrera</a>
 </div>
-<div class="title21">
+<div class="title21" style="background-color: #9d120e">
     <a class="nav-link" href="SIT-Facultades.php">Facultades</a>
 </div>
 
@@ -75,7 +75,12 @@ include 'Modularidad/MenuVertical.php';
 						</div>
 					</div>
 <br>
-		<center><button name="Guardar_Datos" value="Crear Empresa" id="Guardar_Datos" class="crearempresa">Crear Empresa</button></center>
+		<center><button style="color: white;
+    background-color: #9d120e;
+    border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 150px;
+    height: 30px;" name="Guardar_Datos" value="Crear Empresa" id="Guardar_Datos" class="crearempresa">Crear Empresa</button></center>
     <!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 
 				</form>
@@ -116,7 +121,10 @@ include 'Modularidad/MenuVertical.php';
 
 		<span class="float-right">	
 			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
-    border: 2px solid;width: 200px;height: 38px;"><img src="img/company.png" width="30px" height="25px">
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;"><img src="img/company.png" width="30px" height="25px">
 				
 				Nueva Empresa
 			</button>

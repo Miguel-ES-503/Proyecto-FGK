@@ -1,8 +1,8 @@
 <?php 
   session_start();  
-  $varsesion = $_SESSION['Email'];
-  $varLugar = $_SESSION['Lugar'];
-  $VarFoto = $_SESSION['Foto'];
+  @$varsesion = $_SESSION['Email'];
+  @$varLugar = $_SESSION['Lugar'];
+  @$VarFoto = $_SESSION['Foto'];
   $varNombre = $_SESSION['Nombre'];
   $varCargo= $_SESSION['Cargo'];
   
@@ -23,6 +23,12 @@
     die();
   }
 
+  if (isset($_SESSION['Email'])){
+}else{
+header('Location: ../login.php');//Aqui lo redireccionas al lugar que quieras.
+ die() ;
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

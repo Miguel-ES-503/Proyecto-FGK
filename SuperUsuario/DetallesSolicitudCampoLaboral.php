@@ -79,7 +79,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
   <h2 class="main-title" >Campo Laboral</h2>
-  <div class="title2">
+  <div class="title2" style="background-color: #9d120e">
   <a class="nav-link active" href="CampoLaboral.php">Campo Laboral</a>
 
 </div>
@@ -93,9 +93,7 @@ include 'Modularidad/MenuVertical.php';
     <div class="card-header">
       <h5 style="color: black;">Detalles de trabajo</h5>
     </div>
-    <center><div class="card-footer text-muted" id="soli" style="background-color: #BE0032; height: 40px; border-radius: 30px; width: 400px;">
-    <p style="color: white;">Solicitud de Cambio Laboral</p>
-  </div></center>
+    
     <div class="card-body">
       <div class="row">
         <div class="col-sm-6 mb-3 mb-md-0">
@@ -137,16 +135,16 @@ include 'Modularidad/MenuVertical.php';
                        <?php 
                 if ($Comprobante == null) {
                  echo " <button style='border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;'><img src='img/facultad.png' width='25px' height='25px'><a href='#' >Comprobante </a></button>";
                 }else
                 {
                   echo " <button style='border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;'><img src='img/facultad.png' width='25px' height='25px' ><a href='../ComproCambio/".$Comprobante."' class='btn btn-success px-3 far fa-file-alt' target = '_blank'>Comprobante </a></button>";
                 }
               ?>
@@ -188,17 +186,17 @@ include 'Modularidad/MenuVertical.php';
               <?php if($Estado == "Aprobado"  || $Estado == "Rechazado" )
               {
                 echo '<center><button name="EnviarDato" value="Enviar" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0  disabled" style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;" >Enviar<img src="img/click.png" width="25px" height="25px"></button></button></center>';
               }
               else
               {
                echo '<center><button name="EnviarDato" value="Enviar" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0 " style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;">Enviar<img src="img/click.png" width="25px" height="25px"></button></center>'; 
              } 
              ?>

@@ -56,7 +56,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
   <h2 class="main-title" >Notas del Alumno</h2>
-<div class="title2">
+<div class="title2" style="background-color: #9d120e">
   <a class="nav-link active" href="AlumnoInicio.php?id=<?php echo$idcorreo ?>" >Expediente Alumno</a>
 </div>
 </div>
@@ -111,9 +111,9 @@ include 'Modularidad/MenuVertical.php';
 					</div>
 			<br>
 					<center><button name="GuardarNotas" value="Subir Nota" id="notas" style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;">Subir Notas</button></center>
 				</form>
 			</div>
@@ -130,9 +130,9 @@ include 'Modularidad/MenuVertical.php';
 	<h5 class="card-header" style="color: black;" >Notas de <?php echo $NombreAlumno ?>
 	<span class="float-right">	
 		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;"><img src="img/score.png" width="25px" height="25px">
 			Subir Nota
 		</button>

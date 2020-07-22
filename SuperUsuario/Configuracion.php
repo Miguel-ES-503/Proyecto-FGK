@@ -24,7 +24,7 @@ include 'Modularidad/MenuVertical.php';
 	<div class="title">
      <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Configuración</h2>
-	<div class="title2">
+	<div class="title2" style="background-color: #9d120e">
 	<a class="nav-link active" href="#">Datos Personal</a>
 </div>
 	
@@ -49,9 +49,9 @@ padding: 40px; text-align: center;">
 							</div>
 							<br><br>
 							<center><button name="SubirImg" id="SubirImg" class="btn btn-dark btn-block" value="Cambiar Foto" style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;">Cambiar foto</button></center>
 
 						</div>
@@ -96,9 +96,9 @@ padding: 40px; text-align: center;">
 					<!-- Sign in button -->
 
 					<center><button name="cambiarContra" id="Restablecer" class="btn btn-light btn-block" value="Cambiar Contraseña" style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white; ">Cambiar Contraseña</button></center>
 
 				</form>
