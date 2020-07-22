@@ -69,13 +69,11 @@ letter-spacing: 5px;
 @media(min-width: 961px){
 	#linea
 {
-	background-color: #e4e4e4;
-	height: 3px;
-	margin-top: -40px;
-	border-radius: 10px;
-	width: 89%;
-	margin-left: 50px;
+	
+	width: 80%;
+	margin-left: 30px;
 	max-width: 100%;
+	margin-bottom: -20px;
 }
 
 #boton1
@@ -137,6 +135,17 @@ input[type=submit]:hover {
 
 
 /*Estilo General*/
+#linea
+{
+	background-color: #e4e4e4;
+	height: 3px;
+	margin-top: -20px;
+	border-radius: 10px;
+	width: 89%;
+	margin-left: 30px;
+	max-width: 100%;
+	margin-bottom: -20px;
+}
 
 #btn
 {

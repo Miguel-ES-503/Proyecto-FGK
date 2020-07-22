@@ -110,7 +110,7 @@ include 'Modularidad/MenuVertical.php';
         <hr id="linea">
 
 
-        <div class="container m-lg-4 m-3">
+        <div class="container m-lg-4 m-3 m-sm-3">
   <form action="/action_page.php">
     <div class="row">  
       <div class="col-75" id="status">
