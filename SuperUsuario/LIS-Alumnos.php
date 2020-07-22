@@ -19,10 +19,10 @@ include 'Modularidad/MenuVertical.php';
 	<div class="title">
      <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Listas  de alumnos</h2>
-	<div class="title2">
+	<div class="title2" style="background-color: #9d120e">
 	<a class="nav-link active" href="LIS-Alumnos.php">Alumnos</a>
 </div>
-	<div class="title21">
+	<div class="title21" style="background-color: #9d120e">
     <a class="nav-link" href="LIS-Cuentas.php" >Cuentas</a></div>
 
 </div>
@@ -38,18 +38,18 @@ include 'Modularidad/MenuVertical.php';
 		
 		<span class="float-right">	
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;"><img src="img/contact.png" width="25px" height="25px">
 				Realizar Cambios
 			</button>
 
 			<a href="SIT-CrearAlumno.php">
 				<button type="button" class="btn btn-danger px-3" style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;">
 					<img src="img/team.png" width="25px" height="25px">
 					Crear alumnos
@@ -178,7 +178,12 @@ include 'Modularidad/MenuVertical.php';
       </div>
       <div class="modal-footer">
 
-     <button name="cambiar" value="Actualizar" class="Actualizar">Actualizar</button>
+     <button style="color: white;
+    background-color: #9d120e;
+    border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 150px;
+    height: 30px; " name="cambiar" value="Actualizar" class="Actualizar">Actualizar</button>
 
      <!--<input type="submit" name="cambiar" value="Actualizar" class="Actualizar">-->
       </div>

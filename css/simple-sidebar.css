@@ -18,7 +18,7 @@ body {
 }
 
 #sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
+  
   font-size: 1.2rem;
   background-color: #0D0D0D;
 }
@@ -40,9 +40,9 @@ body {
   margin-left: 0;
 }
 
-@media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
+@media (min-width: 767px) {
+  #sidebar-wrapper { 
+    margin-left: 0px;
   }
 
   #page-content-wrapper {
