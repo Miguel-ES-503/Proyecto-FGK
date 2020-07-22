@@ -35,6 +35,7 @@ if(isset($id)){
     $query->execute(array(":alumno"=>$alumno,":ciclo"=>$ciclo,":ID_Sede"=>$sedeB, ":id"=>$id));
     echo "<script>window.location.replace('inscribir_session.php');</script>";
     echo "<p class='text-white bg-success p-3 mb-2' text-center> inscripción guardada </p>";
+    echo "<script>alert('inscripción guardada');</script>";
 
 }else{
 		header("Location: inscribir_session.php");

@@ -1,21 +1,23 @@
 <?php
   require_once 'templates/head.php';
 ?>
-<title>Reuniones</title>
+<title>Inscribir Sesiones One on One</title>
 <?php
   require_once 'templates/header.php';
-  require_once 'templates/MenuVertical.php';
+  //require_once 'templates/MenuVertical.php';
   require_once 'templates/MenuHorizontal.php';
   require '../Conexion/conexion.php';
-
   setlocale(LC_TIME, 'es_SV.UTF-8');
-?> <br>
-<a href="javascript:history.back();" class="btn float-left"  title="Regresar" style="margin-left:5%;"><i class="fas fa-chevron-circle-left display-4"></i></a>
-<div class="container-fluid text-center">
-  <h1>Inscripción a Módulo</h1>
-
+?> 
+<div class="container-fluid text-center h-25">
+  <div class="title">
+    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Inscribir módulos</h2>
+  <br>
 </div>
-<!-- /#page-content-wrapper -->
+</div>
+<br><br>
+<div class="sesion mx-5 h-25">
 <table class="table" style="width:70%; margin:auto">
   <thead class="thead-dark">
     <tr>
@@ -72,21 +74,18 @@
                             ?>
   </tbody>
   </table>
+<!-- /#page-content-wrapper -->
 
 </div>
 </div>
 <!-- /#wrapper -->
-
 <?php
   require_once 'templates/footer.php';
-?>
-<?php
-  require_once 'templates/head.php';
 ?>
 <title>Reuniones</title>
 <?php
   require_once 'templates/header.php';
-  require_once 'templates/MenuVertical.php';
+  //require_once 'templates/MenuVertical.php';
   require_once 'templates/MenuHorizontal.php';
   require '../Conexion/conexion.php';
 
@@ -98,6 +97,8 @@
 <!-- /#page-content-wrapper -->
 
 </div>
+</div>
+
 </div>
 <!-- /#wrapper -->
 
