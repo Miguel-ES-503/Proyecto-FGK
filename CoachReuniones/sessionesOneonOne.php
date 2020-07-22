@@ -16,8 +16,7 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/Sesiones-ONE.css">
 <link rel="stylesheet" href="css/formulario_One_on_One.css">
-<<<<<<< HEAD
-=======
+
 <style type="text/css">
   #regiration_form fieldset:not(:first-of-type) {
     display: none;
@@ -29,7 +28,6 @@ include 'Modularidad/MenuVertical.php';
 }
  
 </style>
->>>>>>> 3a7df44937ff48d988c7ba35a97ea728c405ac31
 <!-- CSS only -->
 
 <div class="title">
@@ -46,14 +44,11 @@ include 'Modularidad/MenuVertical.php';
 <div class="row">
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
     
-<<<<<<< HEAD
   <nav class="nav flex-column" id="nav">
     <h2 class="title-1">Menu</h2><button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
-=======
   <nav class="nav flex-column h-100 w-75" id="nav">
     <h2 class="title-1">Menu</h2>
     <button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
->>>>>>> 3a7df44937ff48d988c7ba35a97ea728c405ac31
     <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Horarios Disponibles</button>
     <button type="button" class="nav-link" role="link" onclick="window.location='sessionesAsistencia.php'">Listado de asistencia</button>
     <button type="button" class="nav-link" role="link" onclick="window.location='sesionesfinalizadas.php'">Sesiones finalizadas</button>
