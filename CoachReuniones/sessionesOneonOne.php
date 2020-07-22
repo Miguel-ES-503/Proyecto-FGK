@@ -44,8 +44,9 @@ include 'Modularidad/MenuVertical.php';
 <div class="row">
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
     
-  <nav class="nav flex-column" id="nav">
+  <nav class="nav flex-column h-52" id="nav">
     <h2 class="title-1">Menu</h2>
+    <br>
     <button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
     <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Horarios Disponibles</button>
     <button type="button" class="nav-link" role="link" onclick="window.location='sessionesAsistencia.php'">Listado de asistencia</button>
@@ -139,57 +140,59 @@ include 'Modularidad/MenuVertical.php';
 
 <!-- Responder a pregunta -->
 <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content" id="contenedor5">
+        <div class="modal-dialog modal-dialog-centered ">
+          <div class="modal-content h-100 w-75 pb-5" id="contenedor5">
             <div class="modal-header" id="contendor4" >
               <h5 class="modal-title text-dark" id="exampleModalLabel">Crear Sesiones One on One</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <br><br><br>
-            <form id="formulario" class="h-75" action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" >
+            <div class="progress ">
+<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+            <form id="regiration_form"  action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" >
               <br>
-            <ul class="items mx-auto ">
-              <li class="active"></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-  <br><br>
-  <fieldset class="username enable">
+  
+  <fieldset class="username enable text-center">
   <label for="exampleInputEmail1" class="text-dark">Seleccione el encargado de la sesión</label>
     <select name="titulo" id="" class="form-control float-right">
     <option value="Geo Albanés">Geo Albanés</option>
     <option value="Ónix Landaverde">Ónix Landaverde</option>
     </select>
-    <br><br>
-    <div class="icon right button "><i class="arrow"></i></div>
-    <br>
+    <br><br><br>
+    <button type="button" class="next btn btn-info text-center">Siguiente</button>
   </fieldset>
 
-  <fieldset class="email">
+  <fieldset class="email enable">
   <label for="exampleInputPassword1" class="text-dark">Ingrese la fecha de la sesión</label>
     <?php $today = date("Y-m-d");?>
     <input type="date" class="form-control mx-auto" name="fecha" min='<?php echo $today; ?>' />
-    <div class="icon right button"><i class="arrow"></i></div>
+    <br>
+    <button type="button" class="next btn btn-info">Siguiente</button>
+    <button type="button" name="previous" class="previous btn btn-warning">Anterior</button>
   </fieldset>
 
-  <fieldset class="password">
-  <label for="exampleInputPassword1" class="text-dark">Hora de inicio de la se sesión: </label>
+  <fieldset class="password enable">
+  <label for="exampleInputPassword1" class="text-dark">Hora de inicio de la sesión: </label>
     <input type="time" name="TimeInit" class="form-control mx-auto" />
-    <div class="icon right button"><i class="arrow"></i></div>
+    <br>
+    <button type="button" class="next btn btn-info">Siguiente</button>
+    <button type="button" name="previous" class="previous btn btn-warning">Anterior</button>
   </fieldset>
 
-  <fieldset class="password2">
+  <fieldset class="password2 enable">
   <label for="exampleInputPassword1" class="text-dark">Hora de finalización de la sesión: </label>
     <input type="time"  name="TimeEnd"  class="form-control mx-auto" />
-    <div class="icon right button"><i class="arrow"></i></div>
+    <br>
+    <button type="button" class="next btn btn-info">Siguiente</button>
+    <button type="button" name="previous" class="previous btn btn-warning">Anterior</button>
   </fieldset>
 
-  <fieldset class="thanks">
-  <button type="submit" class="btn btn-primary btn1 mx-auto text-center">Crear <i class="fas fa-paper-plane"></i></button>
+  <fieldset class="thanks enable">
+  <label for="exampleInputPassword2" class="text-dark">Gracias por crear una sesion OneonOne </label>
+  <br><br><br>
+  <button type="submit" class="submit btn btn-success btn1 mx-auto text-center">Crear <i class="fas fa-paper-plane"></i></button>
   </fieldset>
     <br>
     <br>
