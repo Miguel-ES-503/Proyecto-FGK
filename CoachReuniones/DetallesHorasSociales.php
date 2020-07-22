@@ -65,7 +65,6 @@ if (isset($_GET['id'])) {
  ?>
 <title>Lista de reuniones</title>
 <link rel="stylesheet" type="text/css" href="css/horas-sociales.css">
-
 <?php
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
@@ -75,11 +74,23 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <br>
 <!--Comiezo de estructura de trabajo -->
-<!--<div class="container-fluid text-center">
+<!--<div class="container-fluid text-center">-->
+
+ 
+
 <div class="title">
-    <img src="../img/back.png" class="icon">
-  <h2 class="main-title" >Horas de Vinculación</h2>
-</div>-->
+  <div class="row"  >
+   <div class="col-xs-2 ml-2 ml-lg-5 ml-sm-5 ml-md-5">
+    <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+     
+   </div>
+   <div class="col-xs-10">
+     <h2 class="main-title" >Horas de Vinculación</h2>
+   </div>
+ </div>
+    
+  
+</div>
 <!--/.Navbar-->
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
   <!--<div class="row"  >
@@ -87,8 +98,10 @@ include 'Modularidad/MenuVertical.php';
       
     </div>
   </div>-->
+
+<br>
 <div class="text-justify border border-light p-5" id="main">
-    <h3 class="mt-0 mb-3">Detalles del Proyecto</h3>
+    <h3 class="mt-0 mb-3" id="titulo">Detalles del Proyecto</h3>
 
     
 
@@ -127,7 +140,15 @@ include 'Modularidad/MenuVertical.php';
     </div>
     <br><br>
 <div id="boton1" align="center">
-      <input type="submit" value="Comprobante" id="btn">
+  <!--<input type="submit" value="Comprobante"  >-->
+
+<button type="submit" id="btn"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journal-medical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M4 1h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1H2a2 2 0 0 1 2-2z"/>
+  <path d="M2 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2z"/>
+  <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v.634l.549-.317a.5.5 0 1 1 .5.866L9 6l.549.317a.5.5 0 1 1-.5.866L8.5 6.866V7.5a.5.5 0 0 1-1 0v-.634l-.549.317a.5.5 0 1 1-.5-.866L7 6l-.549-.317a.5.5 0 0 1 .5-.866l.549.317V4.5A.5.5 0 0 1 8 4zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+
+</svg> Comprobante</button>
+     
     </div>
       <br><br>
   </form>
@@ -164,7 +185,11 @@ include 'Modularidad/MenuVertical.php';
     </div>
     <br><br><br><br><br>
     <div id="boton2">
-      <input type="submit" value="Enviar" id="btn">
+      <button type="submit" id="btn"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M1.5 13A1.5 1.5 0 0 0 3 14.5h8a1.5 1.5 0 0 0 1.5-1.5V9a.5.5 0 0 0-1 0v4a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 5v8zm7-11a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.5H9a.5.5 0 0 1-.5-.5z"/>
+  <path fill-rule="evenodd" d="M14.354 1.646a.5.5 0 0 1 0 .708l-8 8a.5.5 0 0 1-.708-.708l8-8a.5.5 0 0 1 .708 0z"/>
+</svg> Enviar</button>
+      <!--<input type="submit" value="Enviar" id="btn">-->
     </div>
       
       <br><br>
