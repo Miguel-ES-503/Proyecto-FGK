@@ -46,12 +46,13 @@ include 'Modularidad/MenuVertical.php';
   </div>
  <div class="panel-body" style="float: left;">
                     <div id="tablapdf">
-                        <table class="table table-bordered-sm table-responsive w-100" id="datatable2">
-                            <thead class="table-dark">
+                    <table class="table table-hover table-bordered-sm table-responsive w-100" id="datatable2" >
+                            <thead class="table-secondary" >
                                 <tr>
                                     <th>Encargado</th>
                                     <th>Alumno</th>
                                     <th>Correo</th>
+                                    <th>Universidad</th>
                                     <th>Sede</th>
                                     <th>Asistencia</th>
                                     <th>Estado</th>
