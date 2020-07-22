@@ -264,7 +264,6 @@ $(".progress-bar")
       });
     </script>
 
-
 <!-- Horarios inscritos -->
 <script type="text/javascript">
 $(document).ready(function(){
