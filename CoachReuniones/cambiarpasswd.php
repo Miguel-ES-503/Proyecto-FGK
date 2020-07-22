@@ -77,7 +77,7 @@ $stmt = $dbh->query("SELECT * FROM modulos WHERE id_modulo = '$id' ");
 <br><br>
 </div>
 <br><br>
-</div>
+</div> <br>
 <?php
  $comparar = $_POST['idsave']; 
  $dato1 = $_POST['pass1'];
@@ -180,6 +180,7 @@ $(".progress-bar")
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<br><br><br><br><br><br>
 <?php
 //Incluir el footer
 include 'Modularidad/PiePagina.php';

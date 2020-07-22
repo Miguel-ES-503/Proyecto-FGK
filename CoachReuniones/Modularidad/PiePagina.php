@@ -243,9 +243,7 @@ $(".progress-bar")
 .css("width",percent+"%")
 .html(percent+"%");
 }
-});
-</script>
-
+});</script>
 </body>
 
 </html>

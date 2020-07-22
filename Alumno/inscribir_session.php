@@ -87,7 +87,7 @@
                 echo '<td>'.date('h:i A', strtotime($row['hora_inicio']))." - ".date('h:i A', strtotime($row['hora_fin'])).'</td>';
                 echo '<td>'.$row['cupo'].'</td>';
                 echo '<td>'. utf8_encode($row['titulo']).'</td>';
-                echo "<td><form action='guardarsession.php' method='post'><button type='submit' class='btn btn-primary'"." name='inscribir' value='"."$row[id]'".">Inscribirse</button></form>
+                echo "<td><form action='guardarsession2.php' method='post'><button type='submit' class='btn btn-primary'"." name='inscribir' value='"."$row[id]'".">Inscribirse</button></form>
                 </td>";               
                 echo " </tr>";
               

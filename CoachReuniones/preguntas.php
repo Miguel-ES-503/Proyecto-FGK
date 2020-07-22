@@ -48,17 +48,15 @@ include 'Modularidad/MenuVertical.php';
   <button type="submit" class="btn btn-primary btn1" id="btn-modal"><img src="../img/paper.png" id="img">Enviar</button>
   </form>
 <br>
-
           </div>
         </div>
       </div>        
-
 </div> <br> 
 <h3   id="title-1" >Respuestas Guardadas</h3>
  <div class="mx-auto"  > 
  <div class="panel-body">
                     <div id="tablapdf" class="sessiones" >
-                        <table  id="datatable2"  >
+                        <table  id="datatable2" class="table table-responsive w-100"  >
                             <thead id="cabezera">
                                 <tr>
                                     <th>Pregunta</th>
@@ -72,7 +70,9 @@ include 'Modularidad/MenuVertical.php';
                     </div>
 </div>
 <button type='button' class='btn btn-success btn-agregar' data-toggle='modal' data-target='#myModal3' id="btn"><img src="../img/responder.svg" id="icon">Responder a preguntas</button>  
-     <?php 
+   
+   <br>  
+      <?php 
       require_once '../Conexion/conexion.php';
 
               @$pregunta = $_POST['pregunta'];

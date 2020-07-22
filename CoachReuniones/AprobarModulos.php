@@ -58,16 +58,12 @@ include 'Modularidad/MenuVertical.php';
             </tr>
           </thead>
 <tbody>
-<?php
-    require_once 'Modelo/ModeloModulos/ListadoModulos/listadomodulos1.php';
-
-?>
+<?php   require_once 'Modelo/ModeloModulos/ListadoModulos/listadomodulos1.php'; ?>
         </tbody>
       </table>
 </form>
     </div>
   </div>
-
 </div>
 <script type="text/javascript">
 
