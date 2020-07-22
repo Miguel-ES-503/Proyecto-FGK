@@ -45,8 +45,6 @@ include 'Modularidad/MenuVertical.php';
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
     
   <nav class="nav flex-column" id="nav">
-    <h2 class="title-1">Menu</h2><button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
-  <nav class="nav flex-column h-100 w-75" id="nav">
     <h2 class="title-1">Menu</h2>
     <button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
     <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Horarios Disponibles</button>
