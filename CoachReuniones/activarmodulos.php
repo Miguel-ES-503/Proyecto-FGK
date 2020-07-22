@@ -24,8 +24,8 @@ require_once '../Conexion/conexion.php';
 <div class="col-xs-6 col-sm-7 col-md-7 col-lg-4 h-75" id="nota">
   <strong >NOTA: </strong><p>Al momento de activar un módulos los alumnos se prodran inscribir a dicho módulo y al momento de desactivar, los alumnos ya no podrán inscribirse hasta que se vuelva a activar el módulo.</p>
 </div>
-<div class="col-xs-4 col-sm-4 col-md-6 col-lg-7">
-  <table class="table table-hover w-125 table-responsive" id="table">
+<div class="col-xs-5 col-sm-5 col-md-6 col-lg-7 ">
+  <table class="table table-hover col-xs-5 table-responsive-sm" id="table" >
   <thead>
     <tr>
     <th scope="col">ID</th>

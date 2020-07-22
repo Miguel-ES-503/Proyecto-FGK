@@ -2,6 +2,8 @@
 //Modularidad para inicializar el Head y <!DOCTYPE html>
 include 'Modularidad/CabeceraInicio.php';
       require_once '../Conexion/conexion.php';
+      include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos
+
 ?>
 <title>Sesiones One on One</title>
 
@@ -23,19 +25,29 @@ include 'Modularidad/MenuVertical.php';
   <br>   
 <h3 class="text-left titulo-OneonOne text-white text-center" >Lista de asistencia</h3>
 <p class="text-white text-center">En este aparto le colocará la asistencia a los alumnos, las opciones son: asistió o no asistió.</p>
- <div class="panel-body">
-                    <div id="tablapdf" class="sessiones overflow-auto">
-                        <table class="table table-bordered-sm" id="datatable3" >
-                            <thead class="table-dark">
+<div class="panel-body">
+ <div class="col-xs-4 col-sm-4 col-md-10 col-lg-10">
+      <div class="tabla">
+                    <div id="tablapdf" >
+                    <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
+        <thead class="table-dark">
                                 <tr>
                                     <th>Titulo</th>
                                     <th>Alumno</th>
+                                    <th>Sede</th>
                                     <th>Fecha</th>
                                     <th>Hora</th>
                                     <th>Asistencia</th>
                                 </tr>
                             </thead>
-                        </table>
+                        <tbody>
+                              <?php
+          require_once 'Modelo/ModeloAlumno/MostrarDatosReunion2.php';
+          ?>
+          </tbody>
+          </table>
+          </div>
+                        </div>
                         </div>
                     </div>
 </div>
@@ -51,45 +63,7 @@ include 'Modularidad/MenuVertical.php';
     </script>
 
 <!-- Horarios inscritos -->
-<script type="text/javascript">
-$(document).ready(function(){
-      fill_datatable();
-      fill_datatable2();    
-      function fill_datatable(year = '')
-      {
-       var dataTable = $('#datatable3').DataTable({
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros",
-            "zeroRecords": "No hay sesiones One on One disponibles",
-            "info": "Mostrando página  _PAGE_ de _PAGES_",
-            "infoEmpty": "Registros no encontrados",
-            "infoFiltered": "(filtrados  _MAX_  registros del total)",
-            "search": "Buscar",
-            "oPaginate": {
-        "sFirst":    "Primero",
-        "sLast":     "Último",
-        "sNext":     "Siguiente",
-        "sPrevious": "Anterior",
-        "sProcessing":     "Procesando...",
-        "sLoadingRecords": "Cargando..."
-    },
-        },
-        "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
-        "processing" : true,
-        "serverSide" : true,
-        "order" : [],
-        "searching" : true,
-        "ajax" : {
-         url:"fech3.php",
-         type:"POST",
-         data:{
-          year:year
-         }
-        }
-       });
-      }
-  });
-  </script>
+
 <?php
 //Incluir el footer
 include 'Modularidad/PiePagina.php';

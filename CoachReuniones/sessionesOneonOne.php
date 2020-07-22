@@ -1,7 +1,8 @@
 <?php
 //Modularidad para inicializar el Head y <!DOCTYPE html>
 include 'Modularidad/CabeceraInicio.php';
-      require_once '../Conexion/conexion.php';
+require_once '../Conexion/conexion.php';
+include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos
 ?>
 <title>Sessiones One on One</title>
 
@@ -15,6 +16,7 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/Sesiones-ONE.css">
 <link rel="stylesheet" href="css/formulario_One_on_One.css">
+
 <style type="text/css">
   #regiration_form fieldset:not(:first-of-type) {
     display: none;
@@ -42,7 +44,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="row">
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
     
-  <nav class="nav flex-column h-100 w-75" id="nav">
+  <nav class="nav flex-column" id="nav">
     <h2 class="title-1">Menu</h2>
     <button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
     <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Horarios Disponibles</button>
@@ -60,8 +62,8 @@ include 'Modularidad/MenuVertical.php';
   </div>
  <div class="panel-body img-fluid " style=" width:85%">
                     <div id="tablapdf">
-                    <table class="table table-hover table-bordered-sm table-responsive w-100" id="datatable2" >
-                            <thead class="table-secondary" >
+                    <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
+        <thead class="table-secondary">
                                 <tr>
                                     <th>Encargado</th>
                                     <th>Alumno</th>
@@ -75,6 +77,11 @@ include 'Modularidad/MenuVertical.php';
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                              <?php
+          require_once 'Modelo/ModeloAlumno/MostrarDatosReunion1.php';
+          ?>
+          </tbody>
                         </table>
                         </div>
                     </div>
@@ -131,74 +138,66 @@ include 'Modularidad/MenuVertical.php';
 
 
 <!-- Responder a pregunta -->
-<div class="modal fade h-100" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered">
-          <div class="modal-content h-100 pb-5 w-100" id="contenedor5">
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content" id="contenedor5">
             <div class="modal-header" id="contendor4" >
               <h5 class="modal-title text-dark" id="exampleModalLabel">Crear Sesiones One on One</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <br>
-
-            <div class="container pb-5 w-100">
-<div class="progress w-100 h-25  ">
-<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<br>
-<form id="regiration_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST">
-<center></center>
-<fieldset class="username enable  w-75 float-center">
+            <br><br><br>
+            <form id="formulario" class="h-75" action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" >
+              <br>
+            <ul class="items mx-auto ">
+              <li class="active"></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+  <br><br>
+  <fieldset class="username enable">
   <label for="exampleInputEmail1" class="text-dark">Seleccione el encargado de la sesión</label>
     <select name="titulo" id="" class="form-control float-right">
     <option value="Geo Albanés">Geo Albanés</option>
     <option value="Ónix Landaverde">Ónix Landaverde</option>
     </select>
-    <br>
-    <p></p>
-    <button type="button" name="data[password]" class="next btn btn-info">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
+    <br><br>
+    <div class="icon right button "><i class="arrow"></i></div>
     <br>
   </fieldset>
 
-  <fieldset class="email enable w-75 pb-5 form-group">
+  <fieldset class="email">
   <label for="exampleInputPassword1" class="text-dark">Ingrese la fecha de la sesión</label>
     <?php $today = date("Y-m-d");?>
-    <input type="date" class="form-control mx-auto" name="fecha" min='<?php echo $today; ?>' required/>
-    <br>
-    <button  type="button" name="previous" class="previous btn btn-primary" >Regresar <i class="fas fa-arrow-circle-left"></i></button>
-    <button type="button" name="data[password]" class="next btn btn-info">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
-    <br>
+    <input type="date" class="form-control mx-auto" name="fecha" min='<?php echo $today; ?>' />
+    <div class="icon right button"><i class="arrow"></i></div>
   </fieldset>
 
-  <fieldset class="password enable w-75 form-group">
+  <fieldset class="password">
   <label for="exampleInputPassword1" class="text-dark">Hora de inicio de la se sesión: </label>
-    <input type="time" name="TimeInit" class="form-control mx-auto" required />
-    <br>
-    <button  type="button" name="previous" class="previous btn btn-primary" >Regresar <i class="fas fa-arrow-circle-left"></i></button>
-    <button type="button" name="data[password]" class="next btn btn-info">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
-   
+    <input type="time" name="TimeInit" class="form-control mx-auto" />
+    <div class="icon right button"><i class="arrow"></i></div>
   </fieldset>
 
-  <fieldset class="password2 enable  w-75 form-group">
+  <fieldset class="password2">
   <label for="exampleInputPassword1" class="text-dark">Hora de finalización de la sesión: </label>
-    <input type="time"  name="TimeEnd"  class="form-control mx-auto" required />
-    <br>
-    <button  type="button" name="previous" class="previous btn btn-primary" >Regresar <i class="fas fa-arrow-circle-left"></i></button>
-    <button type="button" name="data[password]" class="next btn btn-info">Siguiente <i class="fas fa-arrow-circle-right"></i></button>
-   <br>
+    <input type="time"  name="TimeEnd"  class="form-control mx-auto" />
+    <div class="icon right button"><i class="arrow"></i></div>
   </fieldset>
 
-  <fieldset class="thanks enable  w-75 form-group" style=" background-color: #BE0032;">
-  <br>
-  <button  type="button" name="previous" class="previous btn btn-primary" >Regresar <i class="fas fa-arrow-circle-left"></i></button>
-  <button type="submit" class="btn btn-success btn1 mx-auto text-center">Crear <i class="fas fa-paper-plane"></i></button>
+  <fieldset class="thanks">
+  <button type="submit" class="btn btn-primary btn1 mx-auto text-center">Crear <i class="fas fa-paper-plane"></i></button>
   </fieldset>
-  <br><br> <br><br>
+    <br>
+    <br>
 </form>
-</div>       </div>
+<br><br>
+<br>          </div>
         </div>
-      </div>         
+      </div>        
 </div> <br> 
 
 
