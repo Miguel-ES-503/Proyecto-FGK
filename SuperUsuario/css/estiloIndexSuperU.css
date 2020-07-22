@@ -1,45 +1,20 @@
-#movil{
-  max-width: 100%;
+.sidebar-heading img{
+  margin-top:30px;
 }
-#novedades{
-  float: left;
-  font-color: black;
-}
-.Novedad1{
-  text-align: left; 
-  font-weight: bold; 
-  color:black;
-}
-.boletin{
-  text-align: left;
-  color: black;
+ .linemenu{
+    width: 210px;
+    }
+#novedades {
+    float: left;
 }
 
-
-#avisos{
- 
-display: inline-block;
- 
-
-}
-.aviso1{
-  font-weight: bold;
-  color: black;
-}
-.textoa{
-  text-align: left;
-  color: black;
+#avisos {
+    display: inline-block;
 }
 
-#enlaces{
-
- float: right;
+#enlaces {
+    float: right;
 }
-.enlace1{
-  font-weight: bold;
-  color: black;
-}
-
 .btn-leer{
   font-family: sans-serif;
   font-size: 15px;
@@ -74,7 +49,9 @@ margin-top: 8px;
     background-size: 100% 100%;
 
   }
-
+.sidebar-heading img{
+  margin-top:30px;
+}
 
 }
 
@@ -82,18 +59,52 @@ margin-top: 8px;
  
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 757px ) {
+/*Cuenta de acceso*/
+#Formularioacceso{
+  display: block;
+}
+#Formularioacceso1{
+  display: block;
+}
+.botonacceso{
+  max-width: 200px;
+  display: inline-block;
+}
+#veralumno{
+  max-width: 180px;
+  margin-right: 120px;
+}
+/*Formulario de crear cuenta*/
+.botonresponsivo{
+max-width: 150px;
+display: block;
 
-  #movil {
-max-height: 100%;
-
-  }
-
-  .sidepanel #sidebar-wrapper { 
+}
+#formularioalumno{
+  display: block;
+}
+#formularioalumno1{
+  display: block;
+}
+#formularioalumno2{
+  display: block;
+}
+#formularioalumno3{
+  display: block;
+}
+#formularioalumno4{
+  display:block;
+}
+.alumnoboton{
+  display: block;
+  max-width: 200px;
+ 
+}
+/*Menu*/
+.sidepanel #sidebar-wrapper { 
     margin-right: -18px;
 font-size: 13px;
-
-
     
   }
   .linemenu{
@@ -103,107 +114,80 @@ font-size: 13px;
   #sidebar-wrapper .snip1135{
     margin-left: 210px;
     font-size: 13px;
+
    
   }
   
  .sidebar-heading {
-margin-bottom: -10px;
+
   margin-right: -230px;
   font-size: 1.2rem;
   background-color: #0D0D0D;
 
-}
-  #novedades {
-    display: inline-block;
-    width: 200px;
-    height: 168px;
-    background-color: white;
-    padding: 18px;
-
-  }
-.Novedad1{
- text-align: center;
-  font-weight: bold; 
-  color:black;
-  font-size: 20px;
-}
-.boletin{
-  margin-top: 10px;
-  margin-right: 28px;
-  text-align: center;
-  color: black;
-  font-size: 20px;
-  display: block;
-}
-#imagen1{
-  width: 60px;
-  
-  margin-top: 10px;
-  display: inline-block;
 
 }
-#imagen2{
-  float: bottom;
-  width: 90px;
-  display: block;
+.sidebar-heading img{
+  margin-top:30px;
 }
-.btn-leer{
-  width: 90px;
-  float: center;
+/*Accesorios de index*/
+#novedades h3, p{
+font-size: 15px;
 
 }
-#avisos{
-display: inline-block;
-    width: 205px;
-    height: 168px;
-    background-color: white;
-    padding: 18px; 
 
+h1{
+font-size: 13px;
 
 }
-#imagen3{
-width: 60px;
-  
-  margin-top: 5px;
-  display: inline-block;
-margin-right:  95px;
-
-}
-.aviso1{
-  
-  font-weight: bold; 
-  color:black;
-  font-size: 20px;
-}
-.textoa{
-  margin-top: -55px;
-  text-align: left;
-  color: black;
-   font-size: 15px;
-   margin-right: -8px;
-
-
-}
-#enlaces{
-float: left;
-    width: 205px;
-    height: 168px;
-    background-color: white;
-    padding: 18px; 
-    margin-left: 90px;
-}
-.enlace1{
-  font-weight: bold;
-  color: black;
-  font-size: 20px;
-
-}
-.titulo1{
+#enlaces h4{
   font-size: 15px;
 }
 
+#enlaces h3, h4{
+font-size: 15px;
+
 }
 
+#avisos h3, p{
+font-size: 15px;
+
+}
+
+#avisos img{
+  height: 50px;
+width: 50px;
+}
+
+
+#enlaces img{
+  height: 50px;
+width: 50px;
+
+
+}
+#img1{
+height: 50px;
+width: 50px;
+
+}
+
+#img2{
+  height: 30px;
+width: 100px;
+
+
+}
+
+.btn-leer{
+  height: 20px;
+
+  width: 30%;
+}
+
+#enlaces{
+  float: left;
+}
+}
 
 
 

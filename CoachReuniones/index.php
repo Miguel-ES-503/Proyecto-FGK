@@ -5,7 +5,7 @@ include 'Modularidad/CabeceraInicio.php';
 <title>Inicio Coach Reunión</title>
 
 <style type="text/css">
-  
+
 
 	#imginicio
 	{
@@ -40,7 +40,7 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 
 ?>
-<title>Inicio Coach Reunión</title>
+<title>Inicio Coach-Reunión</title>
 <!--
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -111,16 +111,8 @@ include 'Modularidad/MenuHorizontal.php';
   display: table;
 }
 </style>
+<br>
 <div class="container-fluid text-center">
-    <br>
-    <br>
-
-     <div>
-        <h1 style="color:#BE0032;"> Bienvenido al sistema Side by Side del Programa Oportunidades</h1>
-    </div>
-   
-
-   
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -161,7 +153,7 @@ include 'Modularidad/MenuHorizontal.php';
     <br>
     <br>
     <div class="row">
-    
+
     <div id="novedades" class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
     <h3 class="Novedad1">Novedades<h3>
     <img class="img-fluid" src="../img/novedades.png" width="100px" height="100px">
@@ -181,7 +173,7 @@ include 'Modularidad/MenuHorizontal.php';
     <table  >
 
     <h3  class="enlace1">Enlaces<h3>
-    
+
     <tr>
     <td>
     <a href="Manual/ManualEstudiante.pdf"><img class="img-fluid" src="../img/manual.png" width="100px" height="100px"><a>
@@ -215,4 +207,3 @@ include 'Modularidad/MenuHorizontal.php';
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
 ?>
-

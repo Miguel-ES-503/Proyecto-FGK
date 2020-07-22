@@ -79,9 +79,7 @@ include 'Modularidad/MenuVertical.php';
     <div class="card-header">
       <h5 style="color: black;">Detalles de trabajo</h5>
     </div>
-    <center><div class="card-footer text-muted" id="soli" style="background-color: #9d120e; height: 40px; border-radius: 30px; width: 400px;">
-    <p style="color: white; text-align: center;">Solicitud de Cambio Laboral</p>
-  </div></center>
+    
     <div class="card-body">
       <div class="row">
         <div class="col-sm-6 mb-3 mb-md-0">

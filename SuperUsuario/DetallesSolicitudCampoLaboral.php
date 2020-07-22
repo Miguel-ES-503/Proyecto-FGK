@@ -98,7 +98,7 @@ include 'Modularidad/MenuVertical.php';
       <div class="row">
         <div class="col-sm-6 mb-3 mb-md-0">
           <div class="card">
-            <div class="card-body"  style="background-color:#ADADB2; border-radius: 25px; border: 2px">
+            <div class="card-body"  style="background-color:#ADADB2; border-radius: 25px; border: 2px;" >
               
               <p class="mb-4"><b>Alumno: </b><?php echo$Alumno?><br><b>Sede:  </b><?php echo  $Sede ?> -- <b>Class: </b> <?php echo $Class ?> <br> <b>Universidad: </b> <?php echo $Universidad ?></p>
               <hr>
@@ -160,7 +160,7 @@ include 'Modularidad/MenuVertical.php';
 
         <div class="col-sm-6">
           <div class="card">
-            <div class="card-body" style="background-color: white; border-radius: 25px; border: 4px solid #ADADB2">
+            <div class="card-body" style="background-color: white; border-radius: 25px; border: 4px solid #ADADB2; ">
               <p class="mb-4"><b>Estado: </b> <?php echo $Estado?></p>
 
               <p class="card-text"><b>Comentario:</b></p>

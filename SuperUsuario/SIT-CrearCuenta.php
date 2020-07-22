@@ -49,7 +49,7 @@ include 'Modularidad/MenuVertical.php';
 	     	<span class="float-right">	
 	     		<a href="LIS-Cuentas.php">
 
-	     			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
+	     			<button type="button" id="veralumno" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
@@ -73,7 +73,7 @@ include 'Modularidad/MenuVertical.php';
 							<div id="alerta2"></div>
 						<br>
 					
-						<div class="form-row">
+						<div class="form-row" id="Formularioacceso">
 								<div class="col">
 									<div class="md-form">
 										<label for="materialRegisterFormFirstName">Nombre completo</label>
@@ -95,7 +95,7 @@ include 'Modularidad/MenuVertical.php';
 								
 							</div>
 
-							<div class="form-row">
+							<div class="form-row" id="Formularioacceso1">
 								
 								<div class="col">
 									<!-- First name   Tema , fecha , la hora y el tipo de taller -->
@@ -129,8 +129,8 @@ include 'Modularidad/MenuVertical.php';
 							</div>
 
 						</div>
-
-						<center><button class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Cuenta" value="Crear Cuenta" id="Guardar_Cuentas2">Crear Cuenta</button></center>
+<br>
+						<center><button class="botonacceso" type="submit" name="Guardar_Cuenta" value="Crear Cuenta" id="Guardar_Cuentas2">Crear Cuenta</button></center>
 
 					</form>
 					<!-- Fin del Formulario -->

@@ -42,7 +42,7 @@ $eventsFin = $stmt2->fetchAll();
 <link rel="stylesheet" type="text/css" href="css/Calendario.css">
 <h1 class="justify-content-lg-end mb-3">Calendario</h1>
 <div class="row">
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4" id="Info-1">
+	<div class="col-xs-4 col-sm-7 col-md-7 col-lg-4 col-xl-4" id="Info-1">
 		<div class="row" >
 			<h5 class="float-left ml-4">Proximos Eventos</h5>
 		</div>

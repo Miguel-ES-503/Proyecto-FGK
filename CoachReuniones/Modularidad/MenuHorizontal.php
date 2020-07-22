@@ -199,7 +199,7 @@
 <!--Inicio -->
 
       <div class="list-group list-group-flush" >
-        <ul class="snip1135" style="margin-left: 20px;">
+        <ul class="snip1135 ml-lg-3" style="text-align: center;">
         
         
 
@@ -212,11 +212,11 @@
           
 
           <li>
-            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="font-size: 14px;">
+            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="font-size: 13px;">
               <i class="fas fa-chalkboard-teacher"></i> Administración <i class="fas fa-sort-down"></i>
             </a>
             <div class="collapse" id="collapseExample">  
-              <ul>
+              <ul class="mr-lg-1">
               <li><a href="SIT-CrearReunion.php" class="list-group-item list-group-item-action">Crear Reunión</a></li>
               <li><a href="LIS-Reunion.php" class="list-group-item list-group-item-action">Reuniones Activos</a></li>
               <li><a href="reunionesFinalizados.php" class="list-group-item list-group-item-action">Reuniones Finalizadas</a></li>
