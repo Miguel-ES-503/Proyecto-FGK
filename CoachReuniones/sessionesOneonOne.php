@@ -44,7 +44,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="row">
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
     
-  <nav class="nav flex-column h-52" id="nav">
+  <nav class="nav flex-column h-100" id="nav">
     <h2 class="title-1">Menu</h2>
     <br>
     <button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
@@ -152,7 +152,7 @@ include 'Modularidad/MenuVertical.php';
             <div class="progress w-75 mx-auto">
 <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-            <form id="regiration_form" class="float-left p-3 w-100" style="margin-left:5%" action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" >
+            <form id="regiration_form" class="float-left ml-3 p-3 w-100" action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" >
               <br>
   
   <fieldset class="username enable text-center">
