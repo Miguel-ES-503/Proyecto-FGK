@@ -49,52 +49,54 @@ include 'Modularidad/MenuVertical.php';
   </a>
 </div>
 <br>
-    <div class="container">
-    
-    <div id="novedades">
-    <h3 class="Novedad1">Novedades<h3>
-    <img class="img-fluid" src="../img/novedades.png" width="100px" height="100px" id="imagen1">
-    <div style="float: right;"><p class="boletin">Boletin</p>
-    <img class="img-fluid" src="../img/logonegro.png" width="150px" id="imagen2">
-    </div>
-        <br>
-    <center><button class="btn-leer">Leer</button></center>
-    </div>
-    <div id="avisos">
-    <h3 class="aviso1">Avisos<h3>
-    <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px" id="imagen3">
-    <div style="float: right;"><p class="textoa">Boletin:<br>
-    Texto de prueba </p></div>
-    </div>
-    <div id="enlaces">
-    <table  >
+   <div class="row" style="">
+        <div class="col-lg-11 col-md-8 col-sm-8 col-xs-12">
+        <div id="novedades">
+        <h3 style="text-align: left; font-weight: bold;">Novedades<h3>
+        <img class="img-fluid" id="img1" src="../img/novedades.png" width="100px" height="100px">
+        <div style="float: right; margin-left: 5px;"><p style="text-align: left;">Boletin</p>
+        <img class="img-fluid" id="img2" src="../img/logonegro.png" width="150px">
+        </div>
+            <br>
+        <center><button class="btn-leer" >Leer</button></center>
+        </div>
+        <div id="avisos" >
+        <h3  style="font-weight: bold;">Avisos<h3>
+        <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
+        <div style="float: right; " ><p style="text-align: left;">Boletin:<br>
+        </p></div>
+        </div>
+        <div id="enlaces">
+        <table>
 
-    <h3  class="enlace1">Enlaces<h3>
-    
-    <tr>
-    <td>
-    <a href="Manual/ManualEstudiante.pdf"><img class="img-fluid" src="../img/manual.png" width="100px" height="100px"><a>
-    <td>
-    <h4 class="titulo1">Manual de usuario</h4>
-    </td>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <a href="https://workeysoportunidades.org/"><img class="img-fluid" src="../img/landing.png" width="90px" height="90px">
-    </td>
-    <td>
-    <h4  class="titulo1">Workey's landing page</h4>
-    </td>
+        <h3  style="font-weight: bold;">Enlaces<h3>
+        
+        <tr>
+        <td>
+          <a href="Manual/ManualEstudiante.pdf" target="_black">
+        <img class="img-fluid" src="../img/manual.png" width="100px" height="100px">
+        </a>
+        <td>
+        <h4>Manual de usuario</h4>
+        </td>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href="http://workeysoportunidades.org/" target="_black"><img class="img-fluid" src="../img/landing.png" width="90px" height="90px">
+        </td>
+        <td>
+        <h4>Workey's landing page</h4>
+        </td>
 
-    </tr>
-    </table>
-    </div>
+        </tr>
+        </table>
+        </div>
+
 
     </div>
     <br>
-    <br>
-    <br>
+    </div>
    
   </div>
 

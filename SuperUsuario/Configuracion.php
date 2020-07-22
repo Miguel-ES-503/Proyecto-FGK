@@ -37,7 +37,7 @@ include 'Modularidad/MenuVertical.php';
 			<div class="col-md-4 pr-md-5" style="background-color: #ADADB2;
 border-radius: 20px;
 padding: 40px; text-align: center;">
-				<img class="w-100 rounded border"  src="../img/imgUser/<?php echo $_SESSION['Foto']?>"  style="width: 25px; height: 325px;" />
+				<img class="w-100 rounded border"  src="../img/imgUser/<?php echo $_SESSION['Foto']?>"  style="width: 25px; height: 300px;" />
 				<div class="pt-4 mt-2" >
 					<section class="mb-4 pb-1" >
 						<form method="POST" action="Modelo/ModeloPassword/CambiarImg.php" enctype="multipart/form-data">
@@ -63,11 +63,11 @@ padding: 40px; text-align: center;">
 				<p class="h4 mb-4"> Datos de la cuenta</p>
 				<div class="d-flex align-items-center">
 
-					<table class="table" id="configuracion" >
-						<thead class="thead-light" >
+					<table class="table" id="configuracion" style="border-radius: 20px; background-color: #ADADB2; border:none; ">
+						<thead class="thead-light">
 							<tr>
-								<th scope="col">Correo Electrónico</th>
-								<th scope="col">Sede</th>
+								<th style="background-color:#ADADB2;border-radius: 15px;color: black;font-size: 15px;font-weight: bold;" scope="col">Correo Electrónico</th>
+								<th style="background-color:#ADADB2; border-radius: 15px;color: black; font-size: 15px;font-weight: bold;" scope="col">Sede</th>
 							</tr>
 						</thead>
 						<tbody>

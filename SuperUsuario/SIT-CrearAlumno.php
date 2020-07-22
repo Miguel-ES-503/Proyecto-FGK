@@ -7,9 +7,7 @@ error_reporting(0);
 
 
 <title>FGK | Creación de alumnos</title>
-<style>
-	
-</style>
+<link rel="stylesheet" type="text/css" href="css/estiloIndexSuperU.css">
 <?php
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
@@ -30,10 +28,10 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
       <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Creación de Cuentas</h2>
-	<div class="title2" style="background-color: #9d120e">
+	<div class="title2">
 	<a class="nav-link active" href="SIT-CrearAlumno.php">Alumnos</a>
 </div>
-	<div class="title21" style="background-color: #9d120e">
+	<div class="title21">
     <a class="nav-link" href="SIT-CrearCuenta.php" >Acceso</a></div>
 
 </div>
@@ -98,7 +96,7 @@ include 'Modularidad/MenuVertical.php';
 	<h5 class="float-left" style="color: black;">Crear Alumnos</h5>
 		<span class="float-right">	
 			<a href="LIS-Alumnos.php">
-				<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
+				<button class="botonresponsivo" type="button" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
@@ -108,7 +106,7 @@ include 'Modularidad/MenuVertical.php';
 				</button>
 			</a>
 
-			<button type="button" class="btn btn-success px-3" data-toggle="modal" data-target="#exampleModal2" style="border-radius: 20px;
+			<button type="button" class="botonresponsivo" data-toggle="modal" data-target="#exampleModal2" style="border-radius: 20px;
     border: 2px solid green;
     width: 200px;height: 38px;
      background-color: green;
@@ -118,7 +116,7 @@ include 'Modularidad/MenuVertical.php';
 			</button>
 
 			<a href="ReportesExcel/PlantillaAlumno.php">
-				<button type="button" class="btn btn-primary px-3" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
+				<button type="button" class="botonresponsivo" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
     border: 2px solid #196fb0;
     width: 200px;height: 38px;
      background-color: #196fb0;
@@ -138,7 +136,7 @@ include 'Modularidad/MenuVertical.php';
 				<div id="alerta"></div>
 				<h6 style="color: black;" class="float-left">Datos generales</h6><br>
 				<hr>
-				<div class="form-row">
+				<div class="form-row" id="formularioalumno">
 					<div class="col">
 						<!-- Last name -->
 						<div class="md-form">
@@ -166,7 +164,7 @@ include 'Modularidad/MenuVertical.php';
 					</div>
 
 				</div>
-				<div class="form-row">
+				<div class="form-row" id="formularioalumno1">
 					
 					<div class="col">
 						<!-- Last name -->
@@ -209,7 +207,7 @@ include 'Modularidad/MenuVertical.php';
 								</div>
 							</div>
 				</div>
-				<div class="form-row">
+				<div class="form-row" id="formularioalumno2">
 					<div class="col">
 								<!-- Last name -->
 								<div class="md-form">
@@ -262,7 +260,7 @@ include 'Modularidad/MenuVertical.php';
 									</div>
 						</div>
 					
-				<div class="form-row">	
+				<div class="form-row" id="formularioalumno3">	
 
 									<div class="col">
 										<!-- First name   Tema , fecha , la hora y el tipo de taller -->
@@ -322,7 +320,7 @@ include 'Modularidad/MenuVertical.php';
 						<h6 style="color: black;" class="float-left">Histórico del alumno de los talleres</h6><br>
 						<hr>
 
-						<div class="form-row">
+						<div class="form-row" id="formularioalumno4">
 
 							<div class="col">
 								<!-- Last name -->
@@ -351,7 +349,7 @@ include 'Modularidad/MenuVertical.php';
 							<input type="hidden" id="cargo" name="cargo"  value="Estudiante">
 						<!-- Sign up button -->		
 									<label for="materialRegisterFormFirstName">Finalizar</label>	
-								<button name="Guardar_Datos" value="Crear Alumno" id="Guardar_Alumno"> Crear Alumno</button>
+								<button name="Guardar_Datos" value="Crear Alumno" id="Guardar_Alumno" class="alumnoboton"> Crear Alumno</button>
 								<!--<input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 							</div>
 						</div>
