@@ -48,11 +48,9 @@ include 'Modularidad/MenuVertical.php';
   <button type="submit" class="btn btn-primary btn1" id="btn-modal"><img src="../img/paper.png" id="img">Enviar</button>
   </form>
 <br>
-
           </div>
         </div>
       </div>        
-
 </div> <br> 
 <h3   id="title-1" >Respuestas Guardadas</h3>
  <div class="mx-auto"  > 
