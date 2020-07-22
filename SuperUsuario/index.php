@@ -48,11 +48,7 @@ include 'Modularidad/MenuVertical.php';
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
-
-    <br>
-    <br>
+<br>
     <div class="container">
     
     <div id="novedades">
@@ -99,10 +95,7 @@ include 'Modularidad/MenuVertical.php';
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-   <br>
+   
   </div>
 
 
