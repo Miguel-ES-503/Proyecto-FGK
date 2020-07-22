@@ -53,13 +53,40 @@
   clear: both;
   display: table;
 }
-@media only screen and (min-width: 372px) and (max-width: 757px ) {
+@media only screen and (min-width: 320px) and (max-width: 767px ) {
 
 #novedades h3, p{
 font-size: 15px;
 
 }
 
+h1{
+font-size: 13px;
+
+}
+
+#enlaces h3, h4{
+font-size: 15px;
+
+}
+
+#avisos h3, p{
+font-size: 15px;
+
+}
+
+#avisos img{
+  height: 50px;
+width: 50px;
+}
+
+
+#enlaces img{
+  height: 50px;
+width: 50px;
+
+
+}
 #img1{
 height: 50px;
 width: 50px;
@@ -67,7 +94,7 @@ width: 50px;
 }
 
 #img2{
-  height: 45px;
+  height: 30px;
 width: 100px;
 
 
@@ -77,6 +104,10 @@ width: 100px;
   height: 20px;
 
   width: 30%;
+}
+
+#enlaces{
+  float: left;
 }
 }
 </style>
@@ -127,12 +158,12 @@ width: 100px;
     </div>
     <br>
     <br>
-        <div class="row" style="margin-left: 30px;">
+        <div class="row" style="">
         <div class="col-lg-11 col-md-8 col-sm-8 col-xs-12">
         <div id="novedades">
         <h3 style="text-align: left; font-weight: bold;">Novedades<h3>
         <img class="img-fluid" id="img1" src="../img/novedades.png" width="100px" height="100px">
-        <div style="float: right;"><p style="text-align: left;">Boletin</p>
+        <div style="float: right; margin-left: 5px;"><p style="text-align: left;">Boletin</p>
         <img class="img-fluid" id="img2" src="../img/logonegro.png" width="150px">
         </div>
             <br>
@@ -145,7 +176,7 @@ width: 100px;
         </p></div>
         </div>
         <div id="enlaces">
-        <table  >
+        <table>
 
         <h3  style="font-weight: bold;">Enlaces<h3>
         
@@ -176,11 +207,7 @@ width: 100px;
     
     </div>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    
    
   </div>
   </div>
