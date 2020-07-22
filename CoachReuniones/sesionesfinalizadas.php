@@ -2,6 +2,7 @@
 //Modularidad para inicializar el Head y <!DOCTYPE html>
 include 'Modularidad/CabeceraInicio.php';
 require_once '../Conexion/conexion.php';
+include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos
 ?>
 <title>Sessiones One on One</title>
 
@@ -63,9 +64,11 @@ $coundd = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Pe
     </div>
 </ul>
  <div class="panel-body">
-                    <div id="tablapdf" class="sessiones overflow-auto " >
-                        <table class="table table-bordered-sm " id="datatable2" >
-                            <thead class="table-dark">
+ <div class="col-xs-4 col-sm-4 col-md-7 col-lg-7">
+      <div class="tabla">
+                    <div id="tablapdf" >
+                    <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
+        <thead class="table-secondary">
                                 <tr>
                                     <th>Titulo</th>
                                     <th>Alumno</th>
@@ -76,54 +79,24 @@ $coundd = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Pe
                                     <th>Hora</th>
                                 </tr>
                             </thead>
-                        </table>
+                        <tbody>
+                              <?php
+          require_once 'Modelo/ModeloAlumno/MostrarDatosReunion3.php';
+          ?>
+          </tbody>
+          </table>
+          </div>
+                        </div>
                         </div>
                     </div>
+                    
 </div>
   <br> 
 <script type="text/javascript" src="js/datatables.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 <!-- Horarios inscritos -->
-<script type="text/javascript">
-$(document).ready(function(){
-      fill_datatable();
-      fill_datatable2();    
-      function fill_datatable(year = '')
-      {
-       var dataTable = $('#datatable2').DataTable({
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros",
-            "zeroRecords": "No hay sesiones One on One disponibles",
-            "info": "Mostrando página  _PAGE_ de _PAGES_",
-            "infoEmpty": "Registros no encontrados",
-            "infoFiltered": "(filtrados  _MAX_  registros del total)",
-            "search": "Buscar",
-            "oPaginate": {
-        "sFirst":    "Primero",
-        "sLast":     "Último",
-        "sNext":     "Siguiente",
-        "sPrevious": "Anterior",
-        "sProcessing":     "Procesando...",
-        "sLoadingRecords": "Cargando..."
-    },
-        },
-        "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
-        "processing" : true,
-        "serverSide" : true,
-        "order" : [],
-        "searching" : true,
-        "ajax" : {
-         url:"fech4.php",
-         type:"POST",
-         data:{
-          year:year
-         }
-        }
-       });
-      }
-  });
-  </script>
+
 <?php
 
 //Incluir el footer
