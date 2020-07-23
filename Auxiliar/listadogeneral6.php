@@ -9,8 +9,8 @@ include 'Modularidad/CabeceraInicio.php';
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
-//include 'Modularidad/MenuHorizontal.php';
-include 'Modularidad/MenuVertical.php';
+include 'Modularidad/MenuHorizontal.php';
+//include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">
 <div class="title">
@@ -32,9 +32,9 @@ include 'Modularidad/MenuVertical.php';
 <br>
 <div class="btn" >
 
-  <a href="Reportes/ReporteModulo5.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
+  <a href="Reportes/ReporteModulo6.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
 
-  <a href="ReportesExcel/ReporteModulo5.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
+  <a href="ReportesExcel/ReporteModulo6.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
 </div>
 
 <!-- Inicio de tabla de asistencia  -->
@@ -61,7 +61,7 @@ include 'Modularidad/MenuVertical.php';
           </thead>
 <tbody>
 <?php
-    require_once 'Modelo/ModeloModulos/ListadoGeneral/listageneral5.php';
+    require_once 'Modelo/ModeloModulos/ListadoGeneral/listageneral6.php';
 
 ?> 
         </tbody>  
