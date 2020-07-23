@@ -69,7 +69,7 @@ $coundd = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Pe
     </div>
 </ul>
 
-<div class="panel-body img-fluid " style=" width:100%">
+<div class="bg-dark w-100 mx-auto rounded">
                     <div id="tablapdf">
                     <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
         <thead class="table-secondary">
