@@ -2,21 +2,20 @@
 //Modularidad para inicializar el Head y <!DOCTYPE html>
 include 'Modularidad/CabeceraInicio.php';
 ?>
-<title>Modulos de Moodle</title>
-<?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos?>
+<title>Activar o Desactivar Módulos</title>
+
 <?php
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
 // include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
+require_once '../Conexion/conexion.php';
 ?>
-<link rel="stylesheet" type="text/css" href="css/modulos-moodle.css">
+<link rel="stylesheet" type="text/css" href="css/Activar-Modulo.css">
 <div class="title">
-<a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
-    <h2 class="main-title" >Activar o Desactivar Modulos</h2>
-    <div class="title2">
-</div>
+     <a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
+    <h2 class="main-title" >Activar o Desactivar Módulos</h2>
 </div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
