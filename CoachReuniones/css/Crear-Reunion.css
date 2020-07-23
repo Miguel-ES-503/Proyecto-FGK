@@ -20,7 +20,7 @@ margin-top: 12px;
 font-weight: bold;
 letter-spacing: 5px;
 }
-.icon 
+.icon
 {
 
   width: 30px;
@@ -42,7 +42,7 @@ background-color: #BE0032;
 width: 180px;
 height: 54px;
 }
-.title2-text 
+.title2-text
 {
 margin-left:16px;
 margin-top: -8px;
@@ -63,18 +63,13 @@ letter-spacing: 2px;
 	letter-spacing: 2px;
 	text-align: center;
 }
-.main
+#main
 {
 	border-color: #A29C9C;
 	border-width: 5px;
 	border-style: solid;
 	border-radius: 30px;
-	height: 350px;
-}
-form
-{
-margin: 30px;
-margin-top: -10px;
+  margin: 0 auto;
 }
 label
 {
@@ -99,4 +94,3 @@ label
 	border-radius: 30px;
 	margin:auto;
 }
-

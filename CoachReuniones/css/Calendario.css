@@ -23,10 +23,6 @@ body
   border-radius: 30px;
   margin-bottom: 30px;
 }
-#calendar
-{
-margin-bottom: 30px;
-}
 #Info-1
 {
   margin: auto;
@@ -138,7 +134,7 @@ body
   	float: left;
   	margin-top: 20px;
   	margin-right: 70px;
-  	
+
   }
   .Imfo-Left-title
   {

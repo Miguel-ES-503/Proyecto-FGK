@@ -15,7 +15,7 @@ include 'Modularidad/MenuVertical.php';
 <link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
-    
+
     <h2 class="main-title" >Aprobar/Reprobar Módulo 6</h2>
 </div>
 <!--Comiezo de estructura de trabajo -->
@@ -37,15 +37,15 @@ include 'Modularidad/MenuVertical.php';
 
 <!-- Inicio de tabla de asistencia  -->
 <div class="card-body h-100 ">
-      <div class="table-responsive w-100">  
+      <div class="table-responsive w-100">
         <form action="Aprobartodos6.php" method="POST">  <br>
-        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">  
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">    
+        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
     <br>
       <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
       <br>
           <thead class="table-secondary">
-            <tr> 
+            <tr>
               <th scope="col"><input type='checkbox' name='' class='case' value="" id="todos">Todos</th>
               <th scope="col">ID Alumno</th>
               <th scope="col">Alumno</th>
@@ -60,9 +60,9 @@ include 'Modularidad/MenuVertical.php';
 <tbody>
 <?php
       require_once 'Modelo/ModeloModulos/ListadoModulos/listadomodulos6.php';
-          ?>     
-        </tbody> 
-      </table>  
+          ?>
+        </tbody>
+      </table>
 </form>
     </div>
   </div>
@@ -74,7 +74,7 @@ include 'Modularidad/MenuVertical.php';
     $(".case").prop("checked", this.checked);
   });
 
-            // if all checkbox are selected, check the selectall checkbox and viceversa  
+            // if all checkbox are selected, check the selectall checkbox and viceversa
             $(".case").on("click", function() {
               if ($(".case").length == $(".case:checked").length) {
                 $("#todos").prop("checked", true);
@@ -83,53 +83,12 @@ include 'Modularidad/MenuVertical.php';
               }
             });
         </script>
-<?php
-//Incluir el footer
-include 'Modularidad/PiePagina.php';
-?>
+        <div class="footer-copyright text-center py-3" style="background: black;margin-top:30%;">
+                  <img class="img-fluid" src="../img/funda.png" width="60px">
+                  </img>
+                  <img class="img-fluid" src="../img/logoblanco2.png" style="margin-left:30px;"></img>
+                  <span style="margin-right:50px; margin-left:50px; color:white; font-size: 18px;">© 2020 Copyright: Pograma Oportunidades</span>
+                  <span style="color: white; font-weight: bold; font-size: 18px;">Contáctanos:</span><a href="https://www.facebook.com/exalumnos.ccgk"><img class="img-fluid" src="../img/facebook.png" style="margin-left:30px; width:60px;"></img></a>
+                  <a href="https://instagram.com/bk2oportunidades?igshid=4rmcd55eld5h"><img class="img-fluid" src="../img/instagram.png" style="margin-left:30px; width:60px;"></a></img>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          </div>

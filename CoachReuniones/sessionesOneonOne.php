@@ -46,7 +46,6 @@ include 'Modularidad/MenuVertical.php';
     
   <nav class="nav flex-column h-100" id="nav">
     <h2 class="title-1">Menu</h2>
-    <br>
     <button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
     <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Horarios Disponibles</button>
     <button type="button" class="nav-link" role="link" onclick="window.location='sessionesAsistencia.php'">Listado de asistencia</button>
@@ -55,9 +54,7 @@ include 'Modularidad/MenuVertical.php';
   </div>
     <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
       <div class="tabla">
-      <br><br>
     <div align="right" class="h-100" id="btns">
-    <br>
     <a href="Reportes/ReporteSession.php"  target='blank'><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
     <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
   </div>
@@ -207,27 +204,48 @@ include 'Modularidad/MenuVertical.php';
 
 
      <?php  
-     @$timeInit = $_POST['TimeInit']; @$timeEnd = $_POST['TimeEnd'];
+
+    @$timeInit = $_POST['TimeInit']; 
+    @$timeEnd = $_POST['TimeEnd'];
+    @$fecha = $_POST['fecha'];
+    @$titulo = $_POST['titulo'];
+    @$TimeStart = $_POST['TimeInit'];
+    @$TimeE  = $_POST['TimeEnd'];
+
+                            
+     if(isset($fecha) && isset($titulo) && isset($TimeStart) && isset($TimeE)){
         if(isset($timeInit)){
           if ($timeInit < $timeEnd) {
-            @$fecha = $_POST['fecha'];
-            @$titulo = $_POST['titulo'];
-            @$TimeStart = $_POST['TimeInit'];
-            @$TimeE  = $_POST['TimeEnd'];
-            $sql = "INSERT INTO one_on_one (titulo, fecha, hora_inicio, hora_fin, cupo, estado, estado_alumno) VALUES (?,?,?,?,?,?,?)";
-            $stmt= $dbh->prepare($sql);
-            $stmt->execute([utf8_decode($titulo), $fecha,$TimeStart,$TimeE,1,'Disponible','Disponible']);
-            header("Location:sessionesOneonOne.php");
-            echo "<p class='text-center text-success font-weight-bold'>Enviado correctamente</p>";
+
+            $stmt2 = $dbh->query("SELECT * FROM one_on_one");
+            
+            while ($row = $stmt2->fetch()) { 
+              $fecha1[] = ($row['fecha'])." ".$row['hora_inicio']." - ".$row['hora_fin'];
+              $titulo1[] = utf8_encode($row['titulo']);
+            }
+            $fechavar[] = $fecha." ".$timeInit." - ".$timeEnd;
+            $titulovar[] = $titulo;
+            
+           if(($fechavar != $fecha1) && ($titulovar != $titulo1)){
+              $sql = "INSERT INTO one_on_one (titulo, fecha, hora_inicio, hora_fin, cupo, estado, estado_alumno) VALUES (?,?,?,?,?,?,?)";
+              $stmt= $dbh->prepare($sql);
+              $stmt->execute([utf8_decode($titulo), $fecha,$TimeStart,$TimeE,1,'Disponible','Disponible']);
+              header("Location:sessionesOneonOne.php");
+              echo "<p class='text-center text-success font-weight-bold'>Enviado correctamente</p>";
+          }else{
+              echo "<script>alert('Error, Ya hay una fecha existente para ese día')</script>";
           }
-          else{
-            echo "<p class='text-danger text-center font-weight-bold' >Error al guardar, la hora de inicio debe ser menor a la hora de finalización</p>";
-          }
+          
+         }
+         else{
+           echo "<p class='text-danger text-center font-weight-bold' >Error al guardar, la hora de inicio debe ser menor a la hora de finalización</p>";
+         }
         }
+      }
       ?>
+
   <div>       
     </div>
-
 </div>
   <br> 
   <script>

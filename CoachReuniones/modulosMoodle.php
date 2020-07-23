@@ -28,12 +28,12 @@ include 'Modularidad/MenuVertical.php';
 
 <br><br><br>
 <!-- Tabla con datos de alumnos -->
-<div class="card-body">
+<div class="card-body" >
     <div class="table-responsive">
       <br>
-      <table  id="example" >
+      <table  id="example"  >
         <thead class="table-secondary">
-          <tr> 
+          <tr>
             <th scope="col">Alumno</th>
             <th scope="col">Sexo</th>
             <th scope="col">Class/Sede</th>
@@ -48,8 +48,8 @@ include 'Modularidad/MenuVertical.php';
           <?php
           require_once 'Modelo/ModeloAlumno/MostrarDatosAlumnos2.php';
           ?>
-        </tbody>        
-      </table>  
+        </tbody>
+      </table>
 
     </div> <!--Fin de la caja responsivo de la tabla-->
   </div>
@@ -58,4 +58,3 @@ include 'Modularidad/MenuVertical.php';
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
 ?>
-
