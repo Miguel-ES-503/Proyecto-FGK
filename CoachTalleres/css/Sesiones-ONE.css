@@ -1,0 +1,130 @@
+.title{
+background-color: #ADADB2;
+color: black;
+height: 70px;
+margin-left: 0%;
+margin-bottom: -2%;
+height: 55px;
+
+
+}
+h2 , .icon{
+  float: left;
+}
+.main-title
+{
+text-align: left;
+font-size: 25px;
+margin-left: 25px;
+margin-top: 12px;
+font-weight: bold;
+letter-spacing: 5px;
+}
+.icon 
+{
+
+  width: 30px;
+  margin-top: 13px;
+  margin-left: 20px;
+}
+
+.title2,
+{
+
+margin-left: 30px;
+background-color: #BE0032;
+width: 150px;
+height: 54px;
+display: inline-block;
+}
+.title2-text
+{
+margin-left:25px;
+margin-top: -8px;
+color: white;
+font-weight: bold;
+letter-spacing: 2px;
+}
+.text
+{
+	margin-left: 4px;
+	font-size: 13px;
+}
+
+#btns
+{
+	margin-right: 10px;
+}
+.panel-body
+{
+	background-color: #BE0032;
+	width: 100%;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 30px;
+}
+
+.row
+{
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+/*Parte de Menu*/
+#nav
+{
+		border-width: 2px;
+	border-color: black;
+	border-style: dotted;
+	border-radius: 40px;
+	width: 60%;
+	margin-left: 35px;
+    margin-top: 70px;
+    height: 84%;
+}
+#nav button
+{
+	margin-bottom: 30px;
+}
+.nav-link
+{
+	width: 140px;
+	color: black;
+	border-radius: 10px;
+	border-color: #ADADB2;
+	border-style: solid;
+	border-width: 1px;
+    margin:auto;
+    margin-top: -5px;
+
+}
+#datatable2
+{
+	width:130px;
+}
+.nav-link:hover
+{
+	background-color: #BE0032;
+	color: white;
+}
+span
+{
+	margin-left: 2px;
+	margin-right: 6px;
+}
+.title-1
+{
+font-size: 20px;
+text-align: center;
+}
+
+#tablapdf
+{
+	margin: 20px;
+}
+.tabla
+{
+	width: 110%;
+	margin-left: -80px;
+
+}
