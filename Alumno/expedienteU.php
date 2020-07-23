@@ -5,6 +5,28 @@
 ?>
 
 <title>Inicio</title>
+<style>
+@media only screen and (min-width: 320px) and (max-width: 767px ) {
+
+.title h2{
+font-size: 20px;
+margin-top: 8px;
+margin-left: 0em;
+
+}
+ .icon{
+height: 18px;
+width: 18px;
+margin-top: 0px;
+ }
+
+.title{
+width: 100%;
+
+}
+
+}
+</style>
 
 <?php
 
@@ -168,14 +190,14 @@ if ($_GET['id']==null) {
 ?>
 <div class="container-fluid text-center">
 
-  <div class="text-center">
+  <div class="row">
   <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Expediente Universidad</h2>
 </div>
   </div>
   <div class="row">
-    <div class="text-center align-self-center" id="carnet" style="background-color:  #c7c7c7;">
+    <div class="text-center align-self-center " id="carnet" style="background-color:  #c7c7c7;">
       <br>
       <img src="../img/imgUser/<?php echo $FotoAlumno?>" alt="img de usuario" style = "height: 170px;
       width: 150px; background-repeat: no-repeat;
