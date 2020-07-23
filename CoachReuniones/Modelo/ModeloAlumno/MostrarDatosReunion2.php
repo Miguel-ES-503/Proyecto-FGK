@@ -42,7 +42,9 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 		<th>".$fila['universidad']."</th>
 		<td>".utf8_encode(strftime("%A %d "." de"." %B del %Y ",strtotime($fila['fecha'])))."</td>
 		<th>".$fila['hora_inicio']." - ".$fila['hora_fin']."</th>
-		<th><form action='verificarasistencia2.php' method='post'><button type='submit' title='Asistió' class='btn btn-success btn-borrar display-5'"." name='siasistio' value='"."$fila[id]'"."><i class='fas fa-thumbs-up'></i></button></form>"."<form action='verificarasistencia.php' method='post'><button type='submit' class='btn btn-danger btn-borrar'"." name='noasistio' title='No Asistió' value='"."$fila[id]'"."><i class='fas fa-thumbs-down'></i></button></form></th>
+		<th><form action='verificarasistencia2.php' method='post'><button type='submit' title='Asistió' class='btn btn-success btn-borrar display-5'"." name='siasistio' value='"."$fila[id]'"."><i class='fas fa-user-plus'></i></button></form>".
+		"</th>
+		<th><form action='verificarasistencia.php' method='post'><button type='submit' class='btn btn-danger btn-borrar'"." name='noasistio' title='No Asistió' value='"."$fila[id]'"."><i class='fas fa-user-times'></i></button></form></th>
 		</tr>";
 		
 	}

@@ -17,12 +17,10 @@ include 'Modularidad/MenuVertical.php';
 ?>
 
 <!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center">
+<div class="container-fluid text-center ">
 <br>
-<h1>Sesiones One on One</h1>
-<br>
-<a href="javascript:history.back();" class="btn float-left"  title="Regresar" style="margin-left:5%;"><i class="fas fa-chevron-circle-left display-4"></i></a>
-  <br>   
+<h1>Sesiones One on One</h1> 
+<div class="bg-dark w-75 mx-auto rounded">
 <h3 class="text-left titulo-OneonOne text-white text-center" >Lista de asistencia</h3>
 <p class="text-white text-center">En este aparto le colocará la asistencia a los alumnos, las opciones son: asistió o no asistió.</p>
 <div class="panel-body">
@@ -40,7 +38,8 @@ include 'Modularidad/MenuVertical.php';
                                     <th>Universidad</th>
                                     <th>Fecha</th>
                                     <th>Hora</th>
-                                    <th>Asistencia</th>
+                                    <th>Asistió</th>
+                                    <th>No Asistió</th>
                                 </tr>
                             </thead>
                         <tbody>
@@ -55,7 +54,7 @@ include 'Modularidad/MenuVertical.php';
                     </div>
                     
 </div>
-
+</div>
   <br> 
 <script type="text/javascript" src="js/datatables.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
