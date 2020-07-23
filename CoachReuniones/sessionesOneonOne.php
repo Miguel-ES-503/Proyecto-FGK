@@ -238,6 +238,7 @@ include 'Modularidad/MenuVertical.php';
           }else{
               echo "<script>alert('Error, Ya hay una fecha existente para ese día')</script>";
           }
+          
          }
          else{
            echo "<p class='text-danger text-center font-weight-bold' >Error al guardar, la hora de inicio debe ser menor a la hora de finalización</p>";
