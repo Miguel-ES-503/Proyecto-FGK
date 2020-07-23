@@ -15,6 +15,11 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
+<link rel="stylesheet" type="text/css" href="css/Sesiones-ONE.css">
+<div class="title">
+     <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+    <h2 class="main-title" >Sesiones One on One</h2>
+</div>
 
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center ">
@@ -23,13 +28,11 @@ include 'Modularidad/MenuVertical.php';
 <div class="bg-dark w-75 mx-auto rounded">
 <h3 class="text-left titulo-OneonOne text-white text-center" >Lista de asistencia</h3>
 <p class="text-white text-center">En este aparto le colocará la asistencia a los alumnos, las opciones son: asistió o no asistió.</p>
-<div class="panel-body">
+
  <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
- <br><br>
-      <div class="tabla">
-                    <div id="tablapdf" >
+                    <div id="tablapdf">
                     <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
-        <thead class="table-dark">
+        <thead class="table-secondary">
                                 <tr>
                                     <th>Titulo</th>
                                     <th>Alumno</th>
@@ -53,7 +56,7 @@ include 'Modularidad/MenuVertical.php';
                         </div>
                     </div>
                     
-</div>
+
 </div>
   <br> 
 <script type="text/javascript" src="js/datatables.min.js"></script>

@@ -24,11 +24,17 @@ $cou = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'No as
 $coundd = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Pendiente'")->fetchColumn();
 
   ?>
+<link rel="stylesheet" type="text/css" href="css/Sesiones-ONE.css">
+<div class="title">
+     <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+    <h2 class="main-title" >Sesiones One on One</h2>
+</div>
+
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
 <br>
 <h1>Sesiones One on One Finalizadas</h1>
-<a href="javascript:history.back();" class="btn float-left"  title="Regresar"><i class="fas fa-chevron-circle-left display-4"></i></a>
+
 <br>
   <div class="mx-auto" style="width:85%"> 
   <br>
@@ -47,9 +53,8 @@ $coundd = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Pe
     Cantidad de cupos disponibles
     <span class="badge badge-primary badge-pill"><?php echo $cound; ?></span>
   </li>
-    </div>
-    <div class="row">
-       <li class="list-group-item d-flex justify-content-between align-items-center" >
+    
+       <li class="list-group-item d-flex justify-content-between align-items-center" style="width: 33.3%;" >
     Cantidad de alumnos con asistencia
     <span class="badge badge-primary badge-pill"><?php echo $co; ?></span>
   </li>
@@ -63,13 +68,11 @@ $coundd = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Pe
   </li>
     </div>
 </ul>
- <div class="panel-body">
- <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
- <br><br>
-      <div class="tabla" >
-                    <div id="tablapdf" >
+
+<div class="panel-body img-fluid " style=" width:100%">
+                    <div id="tablapdf">
                     <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
-        <thead class="table-dark">
+        <thead class="table-secondary">
                                 <tr>
                                     <th>Titulo</th>
                                     <th>Alumno</th>
