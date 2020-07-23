@@ -10,7 +10,7 @@ include 'Modularidad/CabeceraInicio.php';
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
 include 'Modularidad/MenuHorizontal.php';
-include 'Modularidad/MenuVertical.php';
+//include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">
 <div class="title">
@@ -36,7 +36,7 @@ include 'Modularidad/MenuVertical.php';
 </div>
 
 <!-- Inicio de tabla de asistencia  -->
-    <div class="card-body h-100 ">
+    <div class="card-body h-100">
       <div class="table-responsive w-100">
         <form action="Aprobartodos.php" method="POST">  <br>
         <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
@@ -65,6 +65,7 @@ include 'Modularidad/MenuVertical.php';
     </div>
   </div>
 </div>
+
 <script type="text/javascript">
 
   $("#todos").on("click", function() {
@@ -80,7 +81,12 @@ include 'Modularidad/MenuVertical.php';
               }
             });
         </script>
-<?php
-//Incluir el footer
-include 'Modularidad/PiePagina.php';
-?>
+        <div class="footer-copyright text-center py-3" style="background: black;margin-top:30%;">
+                  <img class="img-fluid" src="../img/funda.png" width="60px">
+                  </img>
+                  <img class="img-fluid" src="../img/logoblanco2.png" style="margin-left:30px;"></img>
+                  <span style="margin-right:50px; margin-left:50px; color:white; font-size: 18px;">© 2020 Copyright: Pograma Oportunidades</span>
+                  <span style="color: white; font-weight: bold; font-size: 18px;">Contáctanos:</span><a href="https://www.facebook.com/exalumnos.ccgk"><img class="img-fluid" src="../img/facebook.png" style="margin-left:30px; width:60px;"></img></a>
+                  <a href="https://instagram.com/bk2oportunidades?igshid=4rmcd55eld5h"><img class="img-fluid" src="../img/instagram.png" style="margin-left:30px; width:60px;"></a></img>
+
+          </div>

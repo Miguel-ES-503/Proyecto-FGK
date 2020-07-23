@@ -26,7 +26,7 @@ include 'Modularidad/MenuVertical.php';
         <br>
     <div class="title2-text">
     <a href="LIS-Reunion.php" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Ver Reuniones</p></a>
-    
+
 </div>
 </div>
 </div>
@@ -47,17 +47,17 @@ include 'Modularidad/MenuVertical.php';
         <div>
             <!--Contenido de la caja de crear Cuentas de alumnos Formulario-->
 
-            <div class="main">
-                 <form class="text-center" action="Modelo/ModeloReunion/GuardarDatosReu.php" method="POST"> 
+            <div id="main" class="w-100">
+                 <form class="text-center m-3" action="Modelo/ModeloReunion/GuardarDatosReu.php" method="POST">
                  <div id="alerta2"></div>
                  <div class="row">
-                     <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                     <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
                        <div class="Imfo">
-                 <label for="materialRegisterFormLastName">Titulo Reunión</label> 
+                 <label for="materialRegisterFormLastName">Titulo Reunión</label>
                  <input type="text" id="NombreReunion" name="NombreReunion" class="form-control" placeholder="Nombre de la reunión">
-                       </div>  
+                       </div>
                      </div>
-                         <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                         <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
                              <div class="Imfo">
                                  <label for="materialRegisterFormLastName">Fecha</label>
                                  <input type="date" id="fecha" name="fecha" class="form-control"
@@ -66,46 +66,46 @@ include 'Modularidad/MenuVertical.php';
                          </div>
                  </div>
                  <div class="row">
-                     <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                     <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
                         <div class="Imfo">
                         <label for="materialRegisterFormFirstName">Universidad</label>
                         <select id="idempresa" name="idempresa" class="form-control" required>
-                                    <?php     
+                                    <?php
                                   echo '<option value="0" disabled selected >Seleccione la opción</option>';
-                                  foreach($pdo->query("SELECT * FROM  empresas  WHERE  Tipo =  'Universidad' ORDER by nombre asc") as $row) 
+                                  foreach($pdo->query("SELECT * FROM  empresas  WHERE  Tipo =  'Universidad' ORDER by nombre asc") as $row)
                                   {
                                     echo '<option value="'.$row['ID_Empresa'].'">'.utf8_encode($row['Nombre']).'</option>';
                                   }
                                   echo '</select>';
                                   ?>
-                              </select>  
-                         </div> 
+                              </select>
+                         </div>
                      </div>
-                     <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                     <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
                         <div class="Imfo">
                              <label for="materialRegisterFormFirstName">Ciclo</label>
                              <select id="idCICLO" name="idCICLO" class="form-control" required>
-                                    <?php     
+                                    <?php
                                         echo '<option value="" disabled selected >Seleccione la opción</option>';
-                                        foreach($pdo->query("SELECT * FROM ciclos") as $row) 
+                                        foreach($pdo->query("SELECT * FROM ciclos") as $row)
                                         {
                                           echo '<option value="'.$row['ID_Ciclo'].'">'.$row['ID_Ciclo'].'</option>';
                                         }
                                         echo '</select>';
                                                           ?>
                             </select>
-                         </div> 
+                         </div>
                      </div>
                  </div>
                  <div class="row">
-                    <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                    <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
                         <div class="Imfo">
                          <label for="materialRegisterFormLastName">Lugar/Plataforma</label>
                         <input type="text" id="Lugar" name="Lugar" class="form-control" placeholder="Especifique el lugar" required>
 
                         </div>
-                        </div> 
-                    <div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+                        </div>
+                    <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
                         <div class="Imfo">
                             <label for="materialRegisterFormFirstName">Tipo de reunión</label>
                              <select type="text" id="tipo" name="tipo" class="form-control" required>
@@ -117,16 +117,16 @@ include 'Modularidad/MenuVertical.php';
 
                                 </select>
                         </div>
-                        
-                        </div> 
+
+                        </div>
                         <input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"
                         name="Guardar_Reunion" value="Crear Reunión" id="Guardar_Reunion">
                  </div>
 
                  </form>
-                
+
             </div>
-                   
+
                     <hr>
                 </form>
                 <!-- Fin del Formulario -->
