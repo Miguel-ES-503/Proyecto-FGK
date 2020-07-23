@@ -38,7 +38,7 @@ $coundd = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Pe
 <br>
   <div class="mx-auto" style="width:85%"> 
   <br>
-  <h2 class="text-center text-white">Estadísticas</h2>
+  <h2 class="text-center text-dark">Estadísticas</h2>
   <ul class="list-group">
     <div class="row">
         <li class="list-group-item d-flex justify-content-between align-items-center"  style="width: 33.3%;">
