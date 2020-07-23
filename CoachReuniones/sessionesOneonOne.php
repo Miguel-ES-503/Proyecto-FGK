@@ -207,27 +207,47 @@ include 'Modularidad/MenuVertical.php';
 
 
      <?php  
-     @$timeInit = $_POST['TimeInit']; @$timeEnd = $_POST['TimeEnd'];
+
+    @$timeInit = $_POST['TimeInit']; 
+    @$timeEnd = $_POST['TimeEnd'];
+    @$fecha = $_POST['fecha'];
+    @$titulo = $_POST['titulo'];
+    @$TimeStart = $_POST['TimeInit'];
+    @$TimeE  = $_POST['TimeEnd'];
+
+                            
+     if(isset($fecha) && isset($titulo) && isset($TimeStart) && isset($TimeE)){
         if(isset($timeInit)){
           if ($timeInit < $timeEnd) {
-            @$fecha = $_POST['fecha'];
-            @$titulo = $_POST['titulo'];
-            @$TimeStart = $_POST['TimeInit'];
-            @$TimeE  = $_POST['TimeEnd'];
-            $sql = "INSERT INTO one_on_one (titulo, fecha, hora_inicio, hora_fin, cupo, estado, estado_alumno) VALUES (?,?,?,?,?,?,?)";
-            $stmt= $dbh->prepare($sql);
-            $stmt->execute([utf8_decode($titulo), $fecha,$TimeStart,$TimeE,1,'Disponible','Disponible']);
-            header("Location:sessionesOneonOne.php");
-            echo "<p class='text-center text-success font-weight-bold'>Enviado correctamente</p>";
+
+            $stmt2 = $dbh->query("SELECT * FROM one_on_one");
+            
+            while ($row = $stmt2->fetch()) { 
+              $fecha1[] = ($row['fecha'])." ".$row['hora_inicio']." - ".$row['hora_fin'];
+              $titulo1[] = utf8_encode($row['titulo']);
+            }
+            $fechavar[] = $fecha." ".$timeInit." - ".$timeEnd;
+            $titulovar[] = $titulo;
+            
+           if(($fechavar != $fecha1) && ($titulovar != $titulo1)){
+              $sql = "INSERT INTO one_on_one (titulo, fecha, hora_inicio, hora_fin, cupo, estado, estado_alumno) VALUES (?,?,?,?,?,?,?)";
+              $stmt= $dbh->prepare($sql);
+              $stmt->execute([utf8_decode($titulo), $fecha,$TimeStart,$TimeE,1,'Disponible','Disponible']);
+              header("Location:sessionesOneonOne.php");
+              echo "<p class='text-center text-success font-weight-bold'>Enviado correctamente</p>";
+          }else{
+              echo "<script>alert('Error, Ya hay una fecha existente para ese día')</script>";
           }
-          else{
-            echo "<p class='text-danger text-center font-weight-bold' >Error al guardar, la hora de inicio debe ser menor a la hora de finalización</p>";
-          }
+         }
+         else{
+           echo "<p class='text-danger text-center font-weight-bold' >Error al guardar, la hora de inicio debe ser menor a la hora de finalización</p>";
+         }
         }
+      }
       ?>
+
   <div>       
     </div>
-
 </div>
   <br> 
   <script>
