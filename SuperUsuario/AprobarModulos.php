@@ -1,7 +1,6 @@
 <?php
 //Modularidad para inicializar el Head y <!DOCTYPE html>
-//include 'Modularidad/CabeceraInicio.php';
-error_reporting(0);
+include 'Modularidad/CabeceraInicio.php';
 ?>
 <title>Aprobar módulos</title>
 <?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos?>
@@ -19,8 +18,12 @@ include 'Modularidad/MenuVertical.php';
 
     <h2 class="main-title" >Aprobar/Reprobar Módulo 1</h2>
 </div>
+<div class="btn" >
+<a href="listadogeneral1.php" ><button class="btn btn-warning" id="button">Listado general 1</button></a>
+</div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center" id="main">
+<br><br>
   <nav class="nav flex-column" id="nav">
     <h2 class="title-1">Menu</h2>
 <a class="nav-link active" href="AprobarModulos.php" style="background-color:#BE0032; color:white;">Módulo C1</a>
@@ -30,30 +33,14 @@ include 'Modularidad/MenuVertical.php';
    <a class="nav-link" href="modulo5.php">Módulo A1</a>
     <a class="nav-link" href="modulo6.php">Módulo A2</a>
 </nav>
-<br>
-<div class="btn" >
-<a href="listadogeneral1.php" ><button class="btn btn-warning" id="button" style="border-radius: 20px;
-    border: 2px solid #ffc107;
-    width: 200px;height: 38px;
-     background-color: #ffc107;
-     color:black;">Listado general 1</button></a>
 
-</div>
 
 <!-- Inicio de tabla de asistencia  -->
     <div class="card-body h-100">
       <div class="table-responsive w-100">
         <form action="Aprobartodos.php" method="POST">  <br>
-        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm" style="border-radius: 20px;
-    border: 2px solid #196fb0;
-    width: 100px;height: 38px;
-     background-color: #196fb0;
-     color:white;">
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm" style="border-radius: 20px;
-    border: 2px solid #196fb0;
-    width: 100px;height: 38px;
-     background-color: #196fb0;
-     color:white;">
+        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
     <br>
       <table  id="example" class="table table-hover table-sm table-bordered table-fixed h-100 w-100" >
       <br>
@@ -78,7 +65,85 @@ include 'Modularidad/MenuVertical.php';
     </div>
   </div>
 </div>
+<br>
+<script>
+$(document).ready(function() {
+  var table = $('#example').DataTable({
 
+        "scrollX": true,
+        "scrollY": "50vh",
+        //Esto sirve que se auto ajuste la tabla al aplicar un filtro
+         "scrollCollapse": true,
+
+        language: {
+            "decimal": "",
+            "emptyTable": "No hay información",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar _MENU_ Entradas",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        },
+
+        initComplete: function() {
+            //En el columns especificamos las columnas que queremos que tengan filtro
+            this.api().columns([0,1,2,3,4,5,6]).every(function() {
+                var column = this;
+
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo($(column.header()))
+                    .on('change', function() {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val().trim()
+                        );
+
+                            column
+                            .search(val ? '^' + val + '$' : '', true, false)
+                            .draw();
+
+
+                    });
+                    //Este codigo sirve para que no se active el ordenamiento junto con el filtro
+                $(select).click(function(e) {
+                    e.stopPropagation();
+                });
+                //===================
+
+                column.data().unique().sort().each(function(d, j) {
+                    // select.append('<option value="' + d + '">' + d + '</option>')
+
+                        select.append('<option value="' + d + '">' + d + '</option>')
+
+                });
+
+
+
+            });
+        },
+        "aoColumnDefs": [
+         { "bSearchable": false
+         //"aTargets": [ 1] sirve para indicar que columna no queremos que funcione el filtro
+
+          }
+       ]
+
+    });
+    //********Esta bendita linea hace la magia, adjusta el header de la tabla con el body
+    table.columns.adjust();
+} );
+
+</script>
 <script type="text/javascript">
 
   $("#todos").on("click", function() {
@@ -94,3 +159,12 @@ include 'Modularidad/MenuVertical.php';
               }
             });
         </script>
+        <div class="footer-copyright text-center py-3" style="background: black;margin-top:30%;">
+                  <img class="img-fluid" src="../img/funda.png" width="60px">
+                  </img>
+                  <img class="img-fluid" src="../img/logoblanco2.png" style="margin-left:30px;"></img>
+                  <span style="margin-right:50px; margin-left:50px; color:white; font-size: 18px;">© 2020 Copyright: Pograma Oportunidades</span>
+                  <span style="color: white; font-weight: bold; font-size: 18px;">Contáctanos:</span><a href="https://www.facebook.com/exalumnos.ccgk"><img class="img-fluid" src="../img/facebook.png" style="margin-left:30px; width:60px;"></img></a>
+                  <a href="https://instagram.com/bk2oportunidades?igshid=4rmcd55eld5h"><img class="img-fluid" src="../img/instagram.png" style="margin-left:30px; width:60px;"></a></img>
+
+          </div>

@@ -1,7 +1,6 @@
 <?php
 //Modularidad para inicializar el Head y <!DOCTYPE html>
-//include 'Modularidad/CabeceraInicio.php';
-error_reporting(0);
+include 'Modularidad/CabeceraInicio.php';
 ?>
 <title>Modulos de Moodle</title>
 <?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos?>
@@ -14,33 +13,27 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/modulos-moodle.css">
 <div class="title">
-<a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
+  <a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
     <h2 class="main-title" >Modulos de Moodle</h2>
+    <div class="title2">
+</div>
 </div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center" id="main-inicio">
 <!-- botones de redirección -->
 <div class="buttons">
-  <a href="activarmodulos.php"><button style="border-radius: 20px;
-    border: 2px solid #9d120e;
-    width: 200px;height: 38px;
-     background-color: #9d120e;
-     color:white;" type="buttom" class="btn btn-danger"/><img src="img/calendar.png" class="icon2" width="30px;" height="25px;">Activar Inscripción</button> </a>
-<a href="AprobarModulos.php"><button style="border-radius: 20px;
-    border: 2px solid green;
-    width: 200px;height: 38px;
-     background-color: green;
-     color:white;" type="buttom" class="btn btn-success"/><img src="img/list.png" width="30px;" height="25px;" class="icon2" >Aprobar Modulos</button> </a>
+  <a href="activarmodulos.php"><button type="buttom" class="btn btn-danger"/><img src="../img/add.png" class="icon2">Activar Inscripción</button> </a>
+<a href="AprobarModulos.php"><button type="buttom" class="btn btn-success"/><img src="../img/add.png" class="icon2">Aprobar Modulos</button> </a>
 </div>
 
 <br><br><br>
 <!-- Tabla con datos de alumnos -->
-<div class="card-body bg-dark" >
+<div class="card-body" >
     <div class="table-responsive">
       <br>
-      <table  id="example"  class="table table-responsive table-hover w-100" >
-        <thead class="table-secondary table w-100">
-          <tr class="w-100">
+      <table  id="example"  >
+        <thead class="table-secondary">
+          <tr>
             <th scope="col">Alumno</th>
             <th scope="col">Sexo</th>
             <th scope="col">Class/Sede</th>

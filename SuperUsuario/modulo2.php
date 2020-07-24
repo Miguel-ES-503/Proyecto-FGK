@@ -1,7 +1,6 @@
 <?php
 //Modularidad para inicializar el Head y <!DOCTYPE html>
-//include 'Modularidad/CabeceraInicio.php';
-error_reporting(0);
+include 'Modularidad/CabeceraInicio.php';
 ?>
 <title>Aprobar módulos</title>
 <?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos?>
@@ -20,6 +19,9 @@ include 'Modularidad/MenuVertical.php';
 
     <h2 class="main-title" >Aprobar/Reprobar Módulo 2</h2>
 </div>
+<div class="btn" >
+<a href="listadogeneral2.php" ><button class="btn btn-warning" id="button">Listado general 2</button></a>
+</div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center" id="main">
   <nav class="nav flex-column" id="nav">
@@ -31,29 +33,12 @@ include 'Modularidad/MenuVertical.php';
    <a class="nav-link" href="modulo5.php">Módulo A1</a>
     <a class="nav-link" href="modulo6.php">Módulo A2</a>
 </nav>
-<br>
-<div class="btn" >
-<a href="listadogeneral2.php" ><button class="btn btn-warning" id="button" style="border-radius: 20px;
-    border: 2px solid #ffc107;
-    width: 200px;height: 38px;
-     background-color: #ffc107;
-     color:black;">Listado general 2</button></a>
-</div>
-
 <!-- Inicio de tabla de asistencia  -->
 <div class="card-body h-100 ">
       <div class="table-responsive w-100">
         <form action="Aprobartodos2.php" method="POST">  <br>
-        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm" style="border-radius: 20px;
-    border: 2px solid #196fb0;
-    width: 100px;height: 38px;
-     background-color: #196fb0;
-     color:white;">
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm" style="border-radius: 20px;
-    border: 2px solid #196fb0;
-    width: 100px;height: 38px;
-     background-color: #196fb0;
-     color:white;">
+        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
     <br>
       <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
       <br>
@@ -80,7 +65,79 @@ include 'Modularidad/MenuVertical.php';
     </div>
   </div>
 
-</div>
+</div><br>
+<script>
+$(document).ready(function() {
+  var table = $('#example').DataTable({
+
+        "scrollX": true,
+        "scrollY": "50vh",
+        //Esto sirve que se auto ajuste la tabla al aplicar un filtro
+         "scrollCollapse": true,
+
+        language: {
+            "decimal": "",
+            "emptyTable": "No hay información",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar _MENU_ Entradas",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        },
+
+        initComplete: function() {
+            //En el columns especificamos las columnas que queremos que tengan filtro
+            this.api().columns([0,1,2,3,4,5,6]).every(function() {
+                var column = this;
+
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo($(column.header()))
+                    .on('change', function() {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val().trim()
+                        );
+
+                            column
+                            .search(val ? '^' + val + '$' : '', true, false)
+                            .draw();
+
+
+                    });
+                    //Este codigo sirve para que no se active el ordenamiento junto con el filtro
+                $(select).click(function(e) {
+                    e.stopPropagation();
+                });
+                //===================
+
+                column.data().unique().sort().each(function(d, j) {
+                    // select.append('<option value="' + d + '">' + d + '</option>')
+
+                        select.append('<option value="' + d + '">' + d + '</option>')
+
+                });
+            });
+        },
+        "aoColumnDefs": [
+         { "bSearchable": false
+         //"aTargets": [ 1] sirve para indicar que columna no queremos que funcione el filtro
+          }
+       ]
+    });
+    //********Esta bendita linea hace la magia, adjusta el header de la tabla con el body
+    table.columns.adjust();
+} );
+</script>
 <script type="text/javascript">
 
   $("#todos").on("click", function() {
