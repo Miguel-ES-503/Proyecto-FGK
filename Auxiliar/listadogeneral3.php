@@ -24,7 +24,7 @@ include 'Modularidad/MenuVertical.php';
     <h2 class="title-1">Menu</h2>
 <a class="nav-link" href="AprobarModulos.php">Módulo C1</a>
 <a class="nav-link" href="modulo2.php">Módulo C2</a>
-  <a class="nav-link" href="modulo3.php">Módulo B1</a>
+  <a class="nav-link active" href="modulo3.php" style="background-color:#BE0032; color:white;">Módulo B1</a>
   <a class="nav-link" href="modulo4.php">Modulo B2</a>
    <a class="nav-link" href="modulo5.php">Módulo A1</a>
     <a class="nav-link" href="modulo6.php">Módulo A2</a>
@@ -38,7 +38,7 @@ include 'Modularidad/MenuVertical.php';
 </div>
 
 <!-- Inicio de tabla de asistencia  -->
-    <div class="card-body">
+    <div class="card-body h-100">
       <div class="table-responsive">
         <form action="Aprobartodos.php" method="POST">
      <!--  <span class="float-left">
