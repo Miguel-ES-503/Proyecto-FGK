@@ -2,6 +2,44 @@
   require_once 'templates/head.php';
 ?>
 <title>Expdiente de alumno</title>
+<style>
+@media only screen and (min-width: 320px) and (max-width: 767px ) {
+
+.title h2{
+font-size: 20px;
+margin-top: 8px;
+margin-left: 0em;
+
+}
+ .icon{
+height: 18px;
+width: 18px;
+margin-top: 0px;
+ }
+
+.title{
+width: 100%;
+
+}
+
+ .row, #carnet{
+	width: 280px;
+	height: 250px;
+
+}
+#carnet h4, h6{
+	font-size: 20px;
+
+}
+.Info-Alumno1-sec, .opciones{
+	width: 10px;
+	height: 250px;
+
+
+}
+}
+</style>
+
 <?php
 //llama las plantillas
   require_once 'templates/header.php';
@@ -280,12 +318,13 @@ while($fila2 = $stmt2->fetch()){
 
 
 ?>
+
 <link rel="stylesheet" type="text/css" href="CSS/Alumno-Inicio.css">
 <script src="JS/jquery.js"></script>
 <script src="JS/jquery.knob.js"></script>
 <script src="JS/graficos.js"></script>
 <meta charset="utf-8">
-<div id="principal" >
+<div class="row" >
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
 	<div class="title" style="margin-left: -60px;">
@@ -295,7 +334,7 @@ while($fila2 = $stmt2->fetch()){
  	<p>Historial de notas</p>
 </div>
 </div>
-	<div >
+	<div class="principal">
 
   <div class="alerta" >
       <?php

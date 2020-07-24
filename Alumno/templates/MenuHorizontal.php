@@ -64,7 +64,7 @@
 .openbtn:hover {
   background-color: #2D2D2E;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
 
   
 
@@ -96,7 +96,7 @@ background-color: #0D0D0D;
 
 }
 </style>
-<body>
+<body >
 
 <div id="mySidepanel" class="sidepanel" style="background-color: #BE0032;">
   <a href="javascript:void(0)" class="closebtn" style="color: white;" onclick="closeNav()">&times;</a>
@@ -503,8 +503,6 @@ $correo = $_SESSION['Email'];
 
 </nav>
 
-</body>
-</html>
 <script type="text/javascript">
   /* Set the width of the sidebar to 250px (show it) */
 function openNav() {

@@ -6,6 +6,85 @@
 ?>
 
 <title>Horas de vinculación</title>
+<style type="text/css">
+    .title{
+background-color: #c7c7c7;
+margin-top: -1px;
+color: black;
+height: 70px;
+margin-left: -1.5%;
+margin-bottom: 3%;
+height: 55px;
+
+
+}
+h2 , .icon{
+  float: left;
+}
+.main-title
+{
+text-align: left;
+font-size: 25px;
+margin-left: 25px;
+margin-top: 5px;
+font-weight: bold;
+letter-spacing: 5px;
+}
+.icon 
+{
+
+  width: 30px;
+  margin-top: 15px;
+  margin-left: 20px;
+  transform: rotate(180deg);
+}
+#mensaje
+{
+height: 50px;
+margin: auto;
+margin-bottom: 30px;
+width: 100%;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 800px ) {
+
+.title h2{
+font-size: 20px;
+margin-top: 8px;
+margin-left: 0em;
+
+}
+ .icon{
+height: 18px;
+width: 18px;
+margin-top: 0px;
+ }
+
+.title{
+width: 100%;
+
+}
+
+ .Div1{
+ 
+  -webkit-width: 30%;
+
+
+
+}
+
+#proyecto_name input{
+  width: 140px;
+
+}
+
+#div2{
+  -webkit-display: block;
+
+}
+
+}
+</style>
 
 <?php
 
@@ -26,7 +105,11 @@
     $Universidad = $Datos['ID_Empresa'];
   }
 ?>
-<link rel="stylesheet" type="text/css" href="CSS/horas-vinculacion.css">
+
+
+
+
+
   <div class="title">
   <a href="../Alumno/AlumnoInicio.php"> <img src="../img/proximo.svg" class="icon"></a>
   <h2 class="main-title" >Horas de Vinculación</h2>
@@ -36,7 +119,7 @@
       
     </div>
   </div>
-  <div class="container-fluid text-center" id="main">
+  <div class="container-fluid text-center" style="background-color: white;">
 <center>
   <script type="text/javascript">
   $(document).ready(function () {
@@ -51,7 +134,7 @@
         if (horas>40) {
 
           $("#horasSoc").focus();
-          var html = "<p><span class='alerta'>Alerta: </span>Las horas no deben exceder a 40</p>"
+          var html = "<p><span style='font-weight: bold;''>Alerta: </span>Las horas no deben exceder a 40</p>"
           $('#mensaje').html(html);
           $("#mensaje").show();
           
@@ -67,7 +150,7 @@
         if (Date.parse(FechaInicial) > Date.parse(Final)) 
         {
           $(".fechaInicial").focus();
-          var html = "<p><span class='alerta'>Alerta: </span>La Fecha Inicial no puede ser mayor que la fecha Final</p>"
+          var html = "<p><span style='font-weight: bold;''>Alerta: </span>La Fecha Inicial no puede ser mayor que la fecha Final</p>"
           $('#mensaje').html(html);
           $("#mensaje").show();
           setTimeout(function() {
@@ -80,59 +163,61 @@
     });
   </script>
 
-<h3 class="title-main">Detalles del Proyecto</h3>
+<h3 style="text-align: center;font-weight:bold;font-size: 25px;letter-spacing: 2px;">Detalles del Proyecto</h3>
 <!-- Informacion de alumno-->
 
+<div style="line-height: 10pt;margin-top: -15px;font-size: 15px; margin-top: 20px;border-color: #c7c7c7;border-width: 5px;
+   border-style: solid;  width: 400px;border-radius: 25px;margin-bottom: 25px;" class="Div1" name="Div1">
 <form method="POST"  action="SoliHoras.php" enctype="multipart/form-data">
   
   <input type="text" name="alumno" value="<?php echo $alumno; ?>" hidden>
   <input type="text" name="ciclo" value="<?php echo $cicloActual; ?>" hidden>
   
-  <div class="Info-Alumno1">
-<div class="Div1">
-<div id="proyecto_name">
-<label >Nombre de Proyecto</label>
+
+<div id="proyecto_name" style="margin-top: 30px;display: inline-block;">
+<label style="font-weight: bold;color: black;">Nombre de Proyecto</label>
 <br>
-<input type="text" name="dato1" class="proyecto">
+<input type="text" name="dato1" style="background-color: #c7c7c7;width: 340px;border-radius: 8px;border-color: white;">
 
 </div>
 <!--Parte 2 -->
-<div id="div2">
-<label >Cantidad de Horas</label>
+<div id="div2" style="margin-top: 10px;display: inline-block;">
+<label style="font-weight: bold;color: black;">Cantidad de Horas</label>
 <br>
-<input type="text" name="cantidad" class="input-left" id="horasSoc">
+<input type="text" name="cantidad" style="background-color: #c7c7c7;width: 150px;border-radius: 8px;border-color: white;" id="horasSoc">
 
 </div>
-<div id="div3">
-<label >Encargado</label>
+<div id="div2" style="margin-top: 10px;display: inline-block;margin-left: 20px;">
+<label style="font-weight: bold;color: black;">Encargado</label>
 <br>
-<input type="text" name="Encargado" class="input-right">
+<input type="text" name="Encargado" style="background-color: #c7c7c7;width: 165px;border-radius: 8px;border-color: white;">
 </div>
 <!--Parte 3 -->
 <div class="Fechas">
-<div id="div2">
-<label >Fecha de Inicio</label>
+<div id="div2" style="margin-top: 10px;display: inline-block;">
+<label style="font-weight: bold;color: black;">Fecha de Inicio</label>
 <br>
-<input type="date" name="fecInicio" class="input-left">
+<input type="date" name="fecInicio" style="background-color: #c7c7c7;width: 150px;border-radius: 8px;border-color: white;" class="fechaInicial">
 
 </div>
-<div id="div3">
-<label >Fecha de Finalización</label>
+<div id="div2" style="margin-top: 10px;display: inline-block;margin-left: 20px;">
+<label style="font-weight: bold;color: black;">Fecha de Finalización</label>
 <br>
-<input type="date" name="fecFin" class="input-right">
+<input type="date" name="fecFin" style="background-color: #c7c7c7;width: 165px;border-radius: 8px;border-color: white;" class="fechaFinal">
 </div>
 </div>
-<div id="div2" >
-<label >Comentario</label>
+<div id="proyecto_name" style="margin-top: 10px;display: inline-block;">
+<label style="font-weight: bold;color: black;">Comentario</label>
 <br>
-<textarea name="descrip"></textarea>
+<textarea style="background-color: #c7c7c7;width: 340px;border-radius: 8px;border-color: white;height: 80px;margin-bottom: 15px;" name="descrip"></textarea>
 </div>
-<div id="div2">
-<label >Agregar Archivo</label>
+<div id="proyecto_name" style="margin-top: 10px;display: inline-block;">
+<label style="font-weight: bold;color: black;">Agregar Archivo</label>
 <input type="file" class="form-control-file" name="archivo" value="Enviar">
 <br>
 </div>
-<input type="submit" class="btn btn-primary btn-block" name="Enviar" value="Enviar" id="button1">
+<input type="submit" class="btn btn-primary btn-block" name="Enviar" value="Enviar" style="background: #BE0032;height: 33px;width: 150px;color: white;border-radius: 30px;font-size: 15px;font-weight: bold; text-align: center;">
+<br>
 </div>
 
 
@@ -166,7 +251,7 @@ $solicitud=$_POST['solicitud'];
    </div>
    <div style="margin-left: 30px;margin-top: 10px;">
      <p style="font-weight: bold;color: black;font-size: 13px;">Comentario:</p>
-     <textarea style="background-color: #ADADB2;width: 340px;border-radius: 8px;border-color: white;height: 80px;margin-bottom: 15px;margin-top: -20px;"></textarea>
+     <textarea style="background-color: #c7c7c7;width: 340px;border-radius: 8px;border-color: white;height: 80px;margin-bottom: 15px;margin-top: -20px;"></textarea>
    </div>
       <div style="margin-left: 30px;margin-top: -20px;">
      <p style="font-weight: bold;color: black;font-size: 13px;">Cambiar Estado: </p>

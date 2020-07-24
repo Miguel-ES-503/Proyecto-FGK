@@ -354,7 +354,7 @@ h2,
     color: #fff;
     width: 60%;
     height: 30px;
-    border-radius: 25px;
+    border-radius: 25.bordepx;
     background: #BE0032;
     display: -webkit-box;
     display: -webkit-flex;
