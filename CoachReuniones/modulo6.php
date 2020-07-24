@@ -31,7 +31,7 @@ include 'Modularidad/MenuVertical.php';
 </nav>
 <br>
 <div class="btn" >
-<a href="listadogeneral3.php" ><button class="btn btn-warning" id="button">Listado general 6</button></a>
+<a href="listadogeneral6.php" ><button class="btn btn-warning" id="button">Listado general 6</button></a>
 
 </div>
 
