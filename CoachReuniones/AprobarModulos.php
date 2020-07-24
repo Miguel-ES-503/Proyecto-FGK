@@ -36,7 +36,7 @@ include 'Modularidad/MenuHorizontal.php';
 </div>
 
 <!-- Inicio de tabla de asistencia  -->
-    <div class="card-body h-100">
+    <div class="card-body h-100 bg-dark">
       <div class="table-responsive w-100">
         <form action="Aprobartodos.php" method="POST">  <br>
         <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
