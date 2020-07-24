@@ -55,12 +55,14 @@ include 'Modularidad/MenuHorizontal.php';
     <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
       <div class="tabla">
     <div align="right" class="h-100" id="btns">
+    <br><br><br>
     <a href="Reportes/ReporteSession.php"  target='blank'><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
     <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
   </div>
  <div class="panel-body img-fluid " style=" width:90%">
                     <div id="tablapdf">
-                    <table  id="example" class="table table-hover table-sm table-bordered table-fixed " >
+                    <br>
+                    <table  id="example" class="table table-hover table-sm table-bordered table-fixed table-responsive " >
         <thead class="table-secondary">
                                 <tr>
                                     <th>Encargado</th>
@@ -135,7 +137,6 @@ include 'Modularidad/MenuHorizontal.php';
 </div>
 
 
-<!-- Responder a pregunta -->
 <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered ">
           <div class="modal-content h-100 w-100 pb-5" id="contenedor5">
