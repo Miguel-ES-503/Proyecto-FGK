@@ -25,7 +25,7 @@ include 'Modularidad/MenuHorizontal.php';
 <a class="nav-link" href="AprobarModulos.php">Módulo C1</a>  
 <a class="nav-link" href="modulo2.php">Módulo C2</a>
   <a class="nav-link" href="modulo3.php">Módulo B1</a>
-  <a class="nav-link" href="modulo4.php">Modulo B2</a>
+  <a class="nav-link active" href="modulo4.php" style="background-color:#BE0032; color:white;">Modulo B2</a>
    <a class="nav-link" href="modulo5.php">Módulo A1</a>
     <a class="nav-link" href="modulo6.php">Módulo A2</a>
 </nav>
@@ -86,8 +86,14 @@ include 'Modularidad/MenuHorizontal.php';
               }
             });
         </script>
-<?php
-//Incluir el footer
-// include 'Modularidad/PiePagina.php';
-?>
+<div class="footer-copyright text-center py-3" style="background: black;margin-top:30%;">
+                  <img class="img-fluid" src="../img/funda.png" width="60px">
+                  </img>
+                  <img class="img-fluid" src="../img/logoblanco2.png" style="margin-left:30px;"></img>
+                  <span style="margin-right:50px; margin-left:50px; color:white; font-size: 18px;">© 2020 Copyright: Pograma Oportunidades</span>
+                  <span style="color: white; font-weight: bold; font-size: 18px;">Contáctanos:</span><a href="https://www.facebook.com/exalumnos.ccgk"><img class="img-fluid" src="../img/facebook.png" style="margin-left:30px; width:60px;"></img></a>
+                  <a href="https://instagram.com/bk2oportunidades?igshid=4rmcd55eld5h"><img class="img-fluid" src="../img/instagram.png" style="margin-left:30px; width:60px;"></a></img>
+
+          </div>
+
 
