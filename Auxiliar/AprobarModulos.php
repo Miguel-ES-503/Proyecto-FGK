@@ -90,3 +90,4 @@ include 'Modularidad/MenuHorizontal.php';
                   <a href="https://instagram.com/bk2oportunidades?igshid=4rmcd55eld5h"><img class="img-fluid" src="../img/instagram.png" style="margin-left:30px; width:60px;"></a></img>
 
           </div>
+

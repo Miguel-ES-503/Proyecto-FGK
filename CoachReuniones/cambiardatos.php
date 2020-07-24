@@ -94,7 +94,7 @@ else{
 ?>
 <br><br><br>
   </div>
-<br><br>
+<br><br><br><br>
 <?php
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
