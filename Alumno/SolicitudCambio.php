@@ -5,36 +5,7 @@
 ?>
 
 <title>Cambiar estado laboral</title>
-<style>
-@media only screen and (min-width: 320px) and (max-width: 767px ) {
 
-.title h2{
-font-size: 20px;
-margin-top: 8px;
-margin-left: 0em;
-
-}
- .icon{
-height: 18px;
-width: 18px;
-margin-top: 0px;
- }
-
-.title{
-width: 100%;
-
-}
-
-.border2{
-
-  width: 1em;
-
-
-
-}
-
-}
-</style>
 
 
 <?php
@@ -67,19 +38,19 @@ width: 100%;
   });
   </script>
 
-
-  <h2 style="text-align: center;font-weight:bold;font-size: 25px;">Detalles de trabajo</h2>
+  <h3 style="text-align: center;font-weight:bold;font-size: 25px; flaot: right;">Detalles de trabajo</h3>
  
 
 
 
 
 <center>
-<br><br><br>
+<br>
 <div class="border2 ">
-
-  <form  action="Cambio.php" method="post" class="form-group" enctype="multipart/form-data" >
-  <div class="form-group">
+<form  action="Cambio.php" method="post" class="form-group" enctype="multipart/form-data" >
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="form-group">
   <label for="CambioEstado" style="color: black;">Cambio de estado</label>
             <select class="custom-select" name="status" required>
               <option selected>Selecciona el estatus que desea obtener...</option>
@@ -92,6 +63,13 @@ width: 100%;
               ?>
             </select>
   </div>
+
+</div>
+
+
+</div>
+  
+  
   <div class="form-group">
   <label for="fechaFin" style="color: black;">Fecha de finalización</label>
             <input type="date" name="fechaFin" class="form-control" required>

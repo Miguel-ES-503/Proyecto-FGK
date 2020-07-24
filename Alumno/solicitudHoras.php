@@ -46,44 +46,7 @@ margin-bottom: 30px;
 width: 100%;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 800px ) {
 
-.title h2{
-font-size: 20px;
-margin-top: 8px;
-margin-left: 0em;
-
-}
- .icon{
-height: 18px;
-width: 18px;
-margin-top: 0px;
- }
-
-.title{
-width: 100%;
-
-}
-
- .Div1{
- 
-  -webkit-width: 30%;
-
-
-
-}
-
-#proyecto_name input{
-  width: 140px;
-
-}
-
-#div2{
-  -webkit-display: block;
-
-}
-
-}
 </style>
 
 <?php
@@ -173,13 +136,15 @@ width: 100%;
   <input type="text" name="alumno" value="<?php echo $alumno; ?>" hidden>
   <input type="text" name="ciclo" value="<?php echo $cicloActual; ?>" hidden>
   
-
+<div class="row ml-4">
 <div id="proyecto_name" style="margin-top: 30px;display: inline-block;">
 <label style="font-weight: bold;color: black;">Nombre de Proyecto</label>
 <br>
 <input type="text" name="dato1" style="background-color: #c7c7c7;width: 340px;border-radius: 8px;border-color: white;">
+</div>
 
 </div>
+
 <!--Parte 2 -->
 <div id="div2" style="margin-top: 10px;display: inline-block;">
 <label style="font-weight: bold;color: black;">Cantidad de Horas</label>

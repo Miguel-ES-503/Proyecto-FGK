@@ -46,6 +46,7 @@
       margin-right: 20px;
         transform: rotate(180deg);
     }
+    
    
     .border2{
     
@@ -58,3 +59,33 @@
         border-radius: 25px;
         padding: 14px;
     }
+
+    @media only screen and (min-width: 300px) and (max-width: 767px ) {
+
+      .title h2{
+      font-size: 20px;
+      margin-top: 8px;
+      margin-left: 0em;
+      
+      }
+       .icon{
+      height: 18px;
+      width: 18px;
+      margin-top: 11px;
+       }
+      
+      .title{
+      width: 105%;
+      
+      }
+      
+      .border2{
+      
+        width: 16em;
+        height: 35em;
+      
+      
+      
+      }
+      
+      }
