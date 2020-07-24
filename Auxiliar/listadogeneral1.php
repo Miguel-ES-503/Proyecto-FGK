@@ -38,7 +38,7 @@ include 'Modularidad/MenuHorizontal.php';
 </div>
 
 <!-- Inicio de tabla de asistencia  -->
-    <div class="card-body">
+    <div class="card-body h-100">
       <div class="table-responsive">
         <form action="Aprobartodos.php" method="POST">
      <!--  <span class="float-left">
