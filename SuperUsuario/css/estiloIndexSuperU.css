@@ -60,6 +60,21 @@ margin-top: 8px;
 
 
 @media only screen and (min-width: 320px) and (max-width: 757px ) {
+/*Barra de submenu gris*/
+.title h2{
+font-size: 20px;
+margin-top: 8px;
+margin-left: 0em;
+
+}
+.title{
+  max-width: 100%;
+}
+ .icon{
+height: 18px;
+width: 18px;
+margin-top: 0px;
+}
 /*Cuenta de acceso*/
 #Formularioacceso{
   display: block;

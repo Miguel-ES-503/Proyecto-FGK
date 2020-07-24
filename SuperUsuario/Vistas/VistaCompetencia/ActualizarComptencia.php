@@ -61,14 +61,15 @@ if (isset($_GET['id'])) {
 	color: black;" type="text" id="comptencia" name="comptencia" class="form-control" placeholder="Nombre de la competencia" value="<?php echo $NombreCompetencia ?>">
 							
 					</div>
-					<button style="border-radius: 20px;
-    border: 2px solid #BE0032;
+					<br>
+					<center><button style="border-radius: 20px;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
-     color:white;" name="Guardar_Datos" value="Actualizar competencia" id="Guardar_Datos">Actualizar Competencia</button>
+     background-color: #9d120e;
+     color:white;" name="Guardar_Datos" value="Actualizar competencia" id="Guardar_Datos">Actualizar Competencia</button></center>
 					
 					</form>
-					<a href="../../SIT-Competencias.php">Regresar</a>
+					<a href="../../SIT-Competencias.php"><img src="../../img/left-arrow.png" width="40px" height="40px"></a>
 				</div>
 				</div>
 			</div>

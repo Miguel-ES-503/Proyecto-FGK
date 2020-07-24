@@ -10,13 +10,17 @@ include 'Modularidad/CabeceraInicio.php';
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
 include 'Modularidad/MenuHorizontal.php';
-//include 'Modularidad/MenuVertical.php';
+include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
 
     <h2 class="main-title" >Aprobar/Reprobar Módulo 5</h2>
+</div>
+
+<div class="btn" >
+<a href="listadogeneral5.php" ><button class="btn btn-warning" id="button">Listado general 5</button></a>
 </div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center" id="main">
@@ -29,12 +33,6 @@ include 'Modularidad/MenuHorizontal.php';
    <a class="nav-link active" href="modulo5.php" style="background-color:#BE0032; color:white;">Módulo A1</a>
     <a class="nav-link" href="modulo6.php">Módulo A2</a>
 </nav>
-<br>
-<div class="btn" >
-<a href="listadogeneral5.php" ><button class="btn btn-warning" id="button">Listado general 5</button></a>
-
-</div>
-
 <!-- Inicio de tabla de asistencia  -->
 <div class="card-body h-100 ">
       <div class="table-responsive w-100">
@@ -68,6 +66,75 @@ include 'Modularidad/MenuHorizontal.php';
   </div>
 
 </div>
+<br>
+<script>
+$(document).ready(function() {
+  var table = $('#example').DataTable({
+
+        "scrollX": true,
+        "scrollY": "50vh",
+        //Esto sirve que se auto ajuste la tabla al aplicar un filtro
+         "scrollCollapse": true,
+
+        language: {
+            "decimal": "",
+            "emptyTable": "No hay información",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar _MENU_ Entradas",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        },
+
+        initComplete: function() {
+            //En el columns especificamos las columnas que queremos que tengan filtro
+            this.api().columns([0,1,2,3,4,5,6]).every(function() {
+                var column = this;
+
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo($(column.header()))
+                    .on('change', function() {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val().trim()
+                        );
+                            column
+                            .search(val ? '^' + val + '$' : '', true, false)
+                            .draw();
+                    });
+                    //Este codigo sirve para que no se active el ordenamiento junto con el filtro
+                $(select).click(function(e) {
+                    e.stopPropagation();
+                });
+                //===================
+                column.data().unique().sort().each(function(d, j) {
+                    // select.append('<option value="' + d + '">' + d + '</option>')
+
+                        select.append('<option value="' + d + '">' + d + '</option>')
+
+                });
+            });
+        },
+        "aoColumnDefs": [
+         { "bSearchable": false
+         //"aTargets": [ 1] sirve para indicar que columna no queremos que funcione el filtro
+          }
+       ]
+    });
+    //********Esta bendita linea hace la magia, adjusta el header de la tabla con el body
+    table.columns.adjust();
+} );
+</script>
 <script type="text/javascript">
 
   $("#todos").on("click", function() {

@@ -1,6 +1,7 @@
 <?php
 //Modularidad para inicializar el Head y <!DOCTYPE html>
-include 'Modularidad/CabeceraInicio.php';
+//include 'Modularidad/CabeceraInicio.php';
+error_reporting(0);
 ?>
 <title>Activar o Desactivar Módulos</title>
 
@@ -14,7 +15,7 @@ require_once '../Conexion/conexion.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/Activar-Modulo.css">
 <div class="title">
-     <a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
+     <a href="javascript:history.back();" title=""><img src="img/back.png" class="icon"></a>
     <h2 class="main-title" >Activar o Desactivar Módulos</h2>
 </div>
 <!--Comiezo de estructura de trabajo -->
@@ -22,7 +23,7 @@ require_once '../Conexion/conexion.php';
   <br>
 <div class="row">
 <div class="col-xs-6 col-sm-7 col-md-7 col-lg-4 h-75" id="nota">
-  <strong >NOTA: </strong><p>Al momento de activar un módulos los alumnos se prodran inscribir a dicho módulo y al momento de desactivar, los alumnos ya no podrán inscribirse hasta que se vuelva a activar el módulo.</p>
+  <strong >NOTA: </strong><p>Al momento de activar un módulo los alumnos se podrán inscribir a dicho módulo y al momento de desactivar, los alumnos ya no podrán inscribirse hasta que se vuelva a activar el módulo.</p>
 </div>
 <div class="col-xs-5 col-sm-5 col-md-6 col-lg-7 ">
   <table class="table table-hover col-xs-5 table-responsive-sm" id="table" >

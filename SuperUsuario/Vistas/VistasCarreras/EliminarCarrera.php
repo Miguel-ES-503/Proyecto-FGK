@@ -70,15 +70,15 @@ if (isset($_GET['id'])) {
 <br>
 				<!-- Sign in button -->
 				<center><button style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;">Eliminar Carrera</button></center>
 				<!--<button class="btn btn-outline-light  btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Eliminar Empresa</button>-->
 
 			</form>
 			<!-- Form -->
-				<a href="../../SIT-CrearCarrera.php">Regresar inicio?</a>
+				<a href="../../SIT-CrearCarrera.php"><img src="../../img/left-arrow.png" width="40px" height="40px"></a>
 		</div>
 
 

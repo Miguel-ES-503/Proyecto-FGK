@@ -40,7 +40,7 @@ if (isset($_GET['id'])) {
 				<div class="modal-body">
 					<div class="col">
 			<?php if ($consulta->rowCount() >=0) {$fila=$consulta->fetch()?>
-				<form class="text-center" action="../../Modelo/ModeloCuentas/ActualizarCuenta.php" method="POST">	
+				<form class="text-justify" action="../../Modelo/ModeloCuentas/ActualizarCuenta.php" method="POST">	
 					<br>
 					<div id="alerta2"></div>
 					<br>
@@ -117,16 +117,16 @@ if (isset($_GET['id'])) {
 						<input type="hidden" name="id" id="id" <?php echo 'value="'.$fila['IDUsuario'] .'"';?>>
 
     <center><button style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;" name="Guardar_Cuenta" value="Actualizar Cuenta" id="Guardar_Cuentas">Actualizar Cuenta</button></center>
 						<!--<input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="Guardar_Cuenta" value="Actualizar Cuenta" id="Guardar_Cuentas">-->
 
 
 						<hr>
 					</form>
-					<a href="../../LIS-Cuentas.php">Regresar inicio?</a>
+					<a href="../../LIS-Cuentas.php"><img src="../../img/left-arrow.png" width="40px" height="40px"></a>
 					<!-- Fin del Formulario -->
 				</div> <!--Fin de la caja contendora Formulario-->
 			</div> 
