@@ -29,7 +29,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="card-body bg-dark" >
     <div class="table-responsive">
       <br>
-      <table  id="example"  class="table table-responsive w-100" >
+      <table  id="example"  class="table table-responsive table-hover w-100" >
         <thead class="table-secondary table w-100">
           <tr class="w-100">
             <th scope="col">Alumno</th>

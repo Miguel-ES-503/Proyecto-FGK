@@ -168,7 +168,7 @@ $(document).ready(function() {
         
         initComplete: function() {
             //En el columns especificamos las columnas que queremos que tengan filtro
-            this.api().columns([1,2,3,4,6,7]).every(function() {
+            this.api().columns([0,1,2,3,4,5,6]).every(function() {
                 var column = this;
 
                 var select = $('<select><option value=""></option></select>')
