@@ -60,6 +60,7 @@ include 'Modularidad/MenuVertical.php';
   </div>
  <div class="panel-body img-fluid " style=" width:85%">
                     <div id="tablapdf">
+                    <br>
                     <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
         <thead class="table-secondary">
                                 <tr>
