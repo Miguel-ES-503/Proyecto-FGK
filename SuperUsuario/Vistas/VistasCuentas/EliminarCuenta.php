@@ -70,15 +70,15 @@ if (isset($_GET['id'])) {
 				</div>
 
 				<!-- Sign in button -->
-				<button style="border-radius: 20px;
-    border: 2px solid #BE0032;
+				<center><button style="border-radius: 20px;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
-     color:white;" class="btn btn-outline-light  btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Eliminar Usuario</button>
+     background-color:#9d120e;
+     color:white;" class="btn btn-outline-light  btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Eliminar Usuario</button></center>
 
 			</form>
 			<!-- Form -->
-			<a href="../../LIS-Cuentas.php">Regresar inicio?</a>
+			<a href="../../LIS-Cuentas.php"><img src="../../img/left-arrow.png" width="40px" height="40px"></a>
 		</div>
 
 

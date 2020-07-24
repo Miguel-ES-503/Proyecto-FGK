@@ -1,6 +1,7 @@
 <?php
 //Modularidad para inicializar el Head y <!DOCTYPE html>
-include 'Modularidad/CabeceraInicio.php';
+//include 'Modularidad/CabeceraInicio.php';
+error_reporting(0);
 ?>
 <title>Aprobar módulos</title>
 <?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos?>
@@ -32,9 +33,17 @@ include 'Modularidad/MenuVertical.php';
 <br>
 <div class="btn" >
 
-  <a href="Reportes/ReporteModulo4.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
+  <a href="Reportes/ReporteModulo4.php" target="_blank" ><button class="btn btn-danger" id="button" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;"><img src="../img/PDF.png" width="25px" height="25px">Descargar</button></a>
 
-  <a href="ReportesExcel/ReporteModulo4.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
+  <a href="ReportesExcel/ReporteModulo4.php" class="float-left"  ><button class="btn btn-success" id="button" style="border-radius: 20px;
+    border: 2px solid green;
+    width: 200px;height: 38px;
+     background-color: green;
+     color:white;"><img src="../img/excell.png" width="25px" height="25px">Descargar</button></a>
 </div>
 
 <!-- Inicio de tabla de asistencia  -->

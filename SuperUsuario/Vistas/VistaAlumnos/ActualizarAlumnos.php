@@ -53,8 +53,10 @@ if (isset($_GET['id'])) {
 						<div class="col">
 							<div class="md-form">
 								<div class="md-form">
-								<input type="text" id="CarnetAlumno" name="CarnetAlumno" <?php echo 'value="'.$fila['ID_Alumno'] .'"';  ?> class="form-control">
 								<label for="materialRegisterFormFirstName">Carnet del Alumno</label>
+								<input style="border-radius: 20px; background-color: #ADADB2;
+	color: black;" type="text" id="CarnetAlumno" name="CarnetAlumno" <?php echo 'value="'.$fila['ID_Alumno'] .'"';  ?> class="form-control">
+								
 							</div>
 						</div>
 						<div class="col">
@@ -351,14 +353,14 @@ if (isset($_GET['id'])) {
 										<input type="hidden" name="id"  <?php echo 'value="'.$fila['ID_Alumno'].'"';  ?> >
 
 						<center><button style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;" name="Guardar_Datos" value="Actualizar Alumno">Actualizar Alumno</button></center>
     <!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 
 					</form>
-	<a href="../../LIS-Alumnos.php" style="color: white ">Regresar atras?</a>
+	<a href="../../LIS-Alumnos.php" style="color: white "><img src="../../img/left-arrow.png" width="40px" height="40px"></a>
 
 				</div>
 			</div>

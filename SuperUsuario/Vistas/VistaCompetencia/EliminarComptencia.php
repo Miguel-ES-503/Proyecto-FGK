@@ -42,7 +42,7 @@ if (isset($_GET['id'])) {
 
 <body class="container">
 
-	<br><br><br><br><br><br>
+	
 	<div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: block; padding-right: 16px;" aria-modal="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content"  style="border-radius: 30px;">
@@ -51,7 +51,7 @@ if (isset($_GET['id'])) {
 
 			</div>
 				<div class="modal-body">
-				<form class="text-center" action="../../Modelo/ModeloCompetencia/EliminarComptencia.php" method="POST">
+				<form class="text-left" action="../../Modelo/ModeloCompetencia/EliminarComptencia.php" method="POST">
 
 						<div class="col">
 							<div class="md-form">
@@ -60,26 +60,26 @@ if (isset($_GET['id'])) {
 	color: black;" type="hidden" id="id" name="id" class="form-control" value="<?php echo utf8_encode($ID) ?>"> 
 				<!-- E-mai -->
 				<div class="md-form">
+					<label for="materialSubscriptionFormEmail">Competencia</label>
 <input style="border-radius: 20px; background-color: #ADADB2;
 	color: black;"  type="text"  id="" class="form-control" value="<?php echo utf8_encode($nombreComptencia)?>"  disabled="true" >
-					<label for="materialSubscriptionFormEmail">Competencia</label>
+					
 				</div>
 <br>
 				<!-- Sign in button -->
 				<center><button name="EliminarComptencia" value="Eliminar Competencia" style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;">Eliminar Competencia</button></center>
 				<!--<button class="btn btn-outline-light  btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Eliminar Empresa</button>-->
 
 			</form>
 			<!-- Form -->
-			<a href="../../SIT-Competencias.php">Regresar inicio?</a>
+			<a href="../../SIT-Competencias.php"><img src="../../img/left-arrow.png" width="40px" height="40px"></a>
 		</div>
 
 
-	</div></center>
-	
+	</div>	
 </body>
 </html>

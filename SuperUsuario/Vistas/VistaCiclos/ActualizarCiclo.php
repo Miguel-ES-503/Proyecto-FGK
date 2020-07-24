@@ -65,13 +65,14 @@ if (isset($_GET['id'])) {
 	color: black;" type="date" id="fechaFinal" name="fechaFinal" class="form-control" <?php echo 'value="'.$fila['FechaFinal'] .'"';}?>>
 								
 							</div>
+							<br>
 <center><button style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;" name="Guardar_Ciclo" value="Actualizar Ciclo" id="Guardar_Ciclo">Actualizar Ciclo</button></center>
 							
-							<a href="../../SIT-Ciclos.php">Regresar inicio?</a>
+							<a href="../../SIT-Ciclos.php"><img src="../../img/left-arrow.png" width="40px" height="40px"></a>
 						</div>
 
 						<!-- Sign up button -->

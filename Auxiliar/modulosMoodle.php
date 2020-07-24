@@ -9,11 +9,11 @@ include 'Modularidad/CabeceraInicio.php';
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
 include 'Modularidad/MenuHorizontal.php';
-//include 'Modularidad/MenuVertical.php';
+include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/modulos-moodle.css">
 <div class="title">
-<a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
+  <a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
     <h2 class="main-title" >Modulos de Moodle</h2>
     <div class="title2">
 </div>

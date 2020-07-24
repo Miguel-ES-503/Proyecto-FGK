@@ -1,6 +1,7 @@
 <?php
 //Modularidad para inicializar el Head y <!DOCTYPE html>
-include 'Modularidad/CabeceraInicio.php';
+//include 'Modularidad/CabeceraInicio.php';
+error_reporting(0);
 require_once '../Conexion/conexion.php';
 include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos
 ?>
@@ -55,8 +56,16 @@ include 'Modularidad/MenuVertical.php';
     <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
       <div class="tabla">
     <div align="right" class="h-100" id="btns">
-    <a href="Reportes/ReporteSession.php"  target='blank'><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
-    <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
+    <a href="Reportes/ReporteSession.php"  target='blank'><button style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;" class="btn btn-danger"><img src="img/pdf.png" width="25px" height="25px">Descargar</button></a>
+    <a href="ReportesExcel/ReporteReuniones.php"><button style="border-radius: 20px;
+    border: 2px solid green;
+    width: 200px;height: 38px;
+     background-color: green;
+     color:white;" class="btn btn-success"><img src="../img/excell.png" width="25px" height="25px"> Descargar</button></a> 
   </div>
  <div class="panel-body img-fluid " style=" width:85%">
                     <div id="tablapdf">
