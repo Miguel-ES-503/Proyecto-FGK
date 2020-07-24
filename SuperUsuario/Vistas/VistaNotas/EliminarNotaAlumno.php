@@ -55,7 +55,7 @@ if (isset($_GET['id'])) {
 
 			</div>
 				<div class="modal-body">
-					<form class="text-center" action="../../Modelo/ModeloNotas/EliminarNotasPorAlumno.php" method="POST">
+					<form class="text-justify" action="../../Modelo/ModeloNotas/EliminarNotasPorAlumno.php" method="POST">
 						<div class="col">
 							<div class="md-form">
 								<p>Seguro que desea eliminar la Nota:</p>
@@ -103,23 +103,18 @@ if (isset($_GET['id'])) {
 							
 						</div>
 					</div>
-				</div>
-				
-
-
-
-				
+				</div>				
 <br>
 				<!-- Sign in button -->
 				<center><button style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;">Eliminar Nota</button></center>
 				
 			</form>
 			<!-- Form -->
-			<a href<a href="../../NotasPorAlumno.php?id=<?php echo $IDAlumno ?>"  style="color: white; ">Regresar</a>
+			<a href<a href="../../NotasPorAlumno.php?id=<?php echo $IDAlumno ?>"  style="color: white; "><img src="../../img/left-arrow.png" width="40px" height="40px"></a>
 		</div>
 
 

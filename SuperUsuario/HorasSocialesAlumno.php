@@ -67,25 +67,122 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-<div class="title">
-    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-  <h2 class="main-title" >Horas Sociales</h2>
-<div class="title2" style="background-color: #9d120e">
-  <a class="nav-link active" href="HorasVinculacionPorAlumno.php?id=<?php echo$IDAlumno ?>">Horas por Alumno</a>
-</div>
-</div>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.topnav {
+  overflow: hidden;
+  background-color: #ADADB2;
+  max-width: 100%;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-width: 3px;
+  font-weight: bold;
+
+ 
+}
+.submenu1{
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #9d120e;
+  border-width: 3px;
+  font-weight: bold;
+  height: 65px;
+
+
+
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon1 {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon1 {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    height: 50px;
+  }
+  .titulomenu a{
+    font-size: 15px;
+  }
+}
+</style>
+</head>
+<body>
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+
+
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 
 <div class="text-justify">
  
-
+<div class="topnav" id="myTopnav">
+  <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+  <a href="#home" class="titulomenu" style="background-color:#ADADB2; color: #2D2D2E; font-size: 25px;">Horas Sociales</a>
+  <a href="#news" class="submenu1">News</a>
+  <a href="#contact" class="submenu1">Contact</a>
+  <a href="#about" class="submenu1">About</a>
+  <a href="javascript:void(0);" class="icon1" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
   <div class="card text-center">
     <div class="card-header">
     <h5 style="color: black;">Detalles de proyecto</h5>
     </div>
-    <center><div class="card-footer text-muted" id="soli" style="background-color: #9d120e; height: 40px; border-radius: 30px; width: 400px;">
-    <p style="color: white; text-align: center;">Solicitud de Horas de Vinculación</p>
-  </div></center>
     <div class="card-body">
 
 
@@ -164,7 +261,7 @@ include 'Modularidad/MenuVertical.php';
     width: 200px;height: 38px;
      background-color: #9d120e;
      color:white; text-decoration: none;'>
-              <a href="../ComproHoras/<?php echo$Comprobante ?>"  class='px-3 far fa-file-alt'> </a>Comprobante</button>
+              <a href="../ComproHoras/<?php echo$Comprobante ?>"><img src="img/facultad.png" width="25px" height="25px"> </a>Comprobante</button>
             </div>
           </div>
           

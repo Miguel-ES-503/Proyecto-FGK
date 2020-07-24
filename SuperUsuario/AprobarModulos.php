@@ -1,6 +1,7 @@
 <?php
 //Modularidad para inicializar el Head y <!DOCTYPE html>
-include 'Modularidad/CabeceraInicio.php';
+//include 'Modularidad/CabeceraInicio.php';
+error_reporting(0);
 ?>
 <title>Aprobar módulos</title>
 <?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos?>
@@ -31,7 +32,11 @@ include 'Modularidad/MenuVertical.php';
 </nav>
 <br>
 <div class="btn" >
-<a href="listadogeneral1.php" ><button class="btn btn-warning" id="button">Listado general 1</button></a>
+<a href="listadogeneral1.php" ><button class="btn btn-warning" id="button" style="border-radius: 20px;
+    border: 2px solid #ffc107;
+    width: 200px;height: 38px;
+     background-color: #ffc107;
+     color:black;">Listado general 1</button></a>
 
 </div>
 
@@ -39,8 +44,16 @@ include 'Modularidad/MenuVertical.php';
     <div class="card-body h-100">
       <div class="table-responsive w-100">
         <form action="Aprobartodos.php" method="POST">  <br>
-        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
+        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm" style="border-radius: 20px;
+    border: 2px solid #196fb0;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;">
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm" style="border-radius: 20px;
+    border: 2px solid #196fb0;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;">
     <br>
       <table  id="example" class="table table-hover table-sm table-bordered table-fixed h-100 w-100" >
       <br>
@@ -81,12 +94,3 @@ include 'Modularidad/MenuVertical.php';
               }
             });
         </script>
-        <div class="footer-copyright text-center py-3" style="background: black;margin-top:30%;">
-                  <img class="img-fluid" src="../img/funda.png" width="60px">
-                  </img>
-                  <img class="img-fluid" src="../img/logoblanco2.png" style="margin-left:30px;"></img>
-                  <span style="margin-right:50px; margin-left:50px; color:white; font-size: 18px;">© 2020 Copyright: Pograma Oportunidades</span>
-                  <span style="color: white; font-weight: bold; font-size: 18px;">Contáctanos:</span><a href="https://www.facebook.com/exalumnos.ccgk"><img class="img-fluid" src="../img/facebook.png" style="margin-left:30px; width:60px;"></img></a>
-                  <a href="https://instagram.com/bk2oportunidades?igshid=4rmcd55eld5h"><img class="img-fluid" src="../img/instagram.png" style="margin-left:30px; width:60px;"></a></img>
-
-          </div>

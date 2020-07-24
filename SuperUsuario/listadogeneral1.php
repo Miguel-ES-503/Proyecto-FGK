@@ -1,6 +1,7 @@
 <?php
 //Modularidad para inicializar el Head y <!DOCTYPE html>
-include 'Modularidad/CabeceraInicio.php';
+//include 'Modularidad/CabeceraInicio.php';
+error_reporting(0);
 ?>
 <title>Aprobar módulos</title>
 <?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos?>
@@ -32,9 +33,17 @@ include 'Modularidad/MenuVertical.php';
 <br>
 <div class="btn" >
 
-  <a href="Reportes/ReporteModulo1.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
+  <a href="Reportes/ReporteModulo1.php" target="_blank" ><button class="btn btn-danger" id="button" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;"><img src="../img/PDF.png" width="25px" height="25px">Descargar</button></a>
 
-  <a href="ReportesExcel/ReporteModulo1.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
+  <a href="ReportesExcel/ReporteModulo1.php" class="float-left"  ><button class="btn btn-success" id="button" style="border-radius: 20px;
+    border: 2px solid green;
+    width: 200px;height: 38px;
+     background-color: green;
+     color:white;"><img src="../img/excell.png" width="25px" height="25px">Descargar</button></a>
 </div>
 
 <!-- Inicio de tabla de asistencia  -->
@@ -86,7 +95,7 @@ include 'Modularidad/MenuVertical.php';
               }
             });
         </script>
-        <!-- <div class="footer-copyright text-center py-3" style="background: black;margin-top:30%;">
+        <div class="footer-copyright text-center py-3" style="background: black;margin-top:30%;">
                   <img class="img-fluid" src="../img/funda.png" width="60px">
                   </img>
                   <img class="img-fluid" src="../img/logoblanco2.png" style="margin-left:30px;"></img>
@@ -94,4 +103,4 @@ include 'Modularidad/MenuVertical.php';
                   <span style="color: white; font-weight: bold; font-size: 18px;">Contáctanos:</span><a href="https://www.facebook.com/exalumnos.ccgk"><img class="img-fluid" src="../img/facebook.png" style="margin-left:30px; width:60px;"></img></a>
                   <a href="https://instagram.com/bk2oportunidades?igshid=4rmcd55eld5h"><img class="img-fluid" src="../img/instagram.png" style="margin-left:30px; width:60px;"></a></img>
 
-          </div> -->
+          </div> 

@@ -88,7 +88,7 @@ if (isset($_GET['id'])) {
     <!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 
 					</form>
-	<a href="../../SIT-CrearEmpresas.php">Regresar inicio?</a>
+	<a href="../../SIT-CrearEmpresas.php"><img src="../../img/left-arrow.png" width="40px" height="40px"></a>
 				</div>
 			</div>
 		</div>

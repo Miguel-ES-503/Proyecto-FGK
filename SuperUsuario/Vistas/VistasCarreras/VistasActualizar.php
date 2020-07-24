@@ -100,13 +100,13 @@ if (isset($_GET['id'])) {
 							<input type="hidden" name="id" id="id" <?php echo 'value="'.$fila['Id_Carrera'] .'"';?>>	
 							
 							<center><button style="border-radius: 20px;
-    border: 2px solid #BE0032;
+    border: 2px solid #9d120e;
     width: 200px;height: 38px;
-     background-color: #BE0032;
+     background-color: #9d120e;
      color:white;" name="Guardar_Carrera" value="Actualizar Carrera" id="Guardar_Carrera">Actualizar Carrera</button></center>
 							<!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 						</form>
-						<a href="../../SIT-CrearCarrera.php">Regresar inicio?</a>
+						<a href="../../SIT-CrearCarrera.php"><img src="../../img/left-arrow.png" width="40px" height="40px"></a>
 					</div>
 					
 				</div>

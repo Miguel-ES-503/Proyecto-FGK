@@ -58,10 +58,7 @@ if (isset($_GET['id'])) {
      color:white;" name="Guardar_Facultad" value="Actualizar Facultad" id="Guardar_Facultad">Actualizar Facultad</button></center>
 							<!--<input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 						</form>
-						<a href="../../SIT-Facultades.php">Regresar</a>
-					</div>
-					<div class="modal-footer">
-						
+						<a href="../../SIT-Facultades.php"><img src="../../img/left-arrow.png" width="40px" height="40px"></a>
 					</div>
 				</div>
 			</div>

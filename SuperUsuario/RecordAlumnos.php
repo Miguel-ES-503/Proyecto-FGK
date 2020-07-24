@@ -32,9 +32,9 @@ include 'Modularidad/MenuVertical.php';
 	<h5 class="card-header" style="color: black;">Lista general
 		<a href="ReportesExcel/RecordAlumnos.php" class="float-right">
 		<button type="button" class="btn btn-success px-3" style="border-radius: 20px;
-    border: 2px solid;
+    border: 2px solid green;
     width: 200px;height: 38px;
- 
+ background-color: green;
      color:white;">
 			<img src="img/excell.png" width="25px" height="25"> Descargar
 
