@@ -65,7 +65,6 @@ include 'Modularidad/MenuHorizontal.php';
     </div>
   </div>
 </div>
-
 <script type="text/javascript">
 
   $("#todos").on("click", function() {

@@ -43,8 +43,8 @@ include 'Modularidad/MenuVertical.php';
         <form action="Aprobartodos.php" method="POST">
      <!--  <span class="float-left">
    <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">  -->
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
-      </span>
+        <!-- <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
+      </span> -->
 
       <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
       <br>
@@ -71,21 +71,10 @@ include 'Modularidad/MenuVertical.php';
   </div>
 
 </div>
-<script type="text/javascript">
+<br>
+<?php include_once "js/lista.php"; ?>
+</script>
 
-  $("#todos").on("click", function() {
-    $(".case").prop("checked", this.checked);
-  });
-
-            // if all checkbox are selected, check the selectall checkbox and viceversa
-            $(".case").on("click", function() {
-              if ($(".case").length == $(".case:checked").length) {
-                $("#todos").prop("checked", true);
-              } else {
-                $("#todos").prop("checked", false);
-              }
-            });
-        </script>
         <div class="footer-copyright text-center py-3" style="background: black;margin-top:30%;">
                   <img class="img-fluid" src="../img/funda.png" width="60px">
                   </img>
