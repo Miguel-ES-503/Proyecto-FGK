@@ -15,7 +15,6 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
   <a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
     <h2 class="main-title" >Modulos de Moodle</h2>
-    <div class="title2">
 </div>
 </div>
 <!--Comiezo de estructura de trabajo -->
@@ -28,10 +27,10 @@ include 'Modularidad/MenuVertical.php';
 
 <br><br><br>
 <!-- Tabla con datos de alumnos -->
-<div class="card-body" >
+<div class="card-body  bg-dark" >
     <div class="table-responsive">
       <br>
-      <table  id="example"  >
+      <table  id="example"   >
         <thead class="table-secondary">
           <tr>
             <th scope="col">Alumno</th>
