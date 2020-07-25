@@ -83,7 +83,7 @@ error_reporting(0);
 <!--===============================================================================================-->
 
 </head>
-<body style="background-color: black;">
+<body style="background-color: #2D2D2E;">
   <div class="row mb-5">
     <div class="col-xs-4 col-sm-6 col-md-6 col-lg-7 ml-lg-3 text-center">
       <img class="img-fluid" src="img/fondologin.jpg" style="width: 830px; height: 780px;max-width: 100%;">
