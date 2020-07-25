@@ -68,8 +68,13 @@ error_reporting(0);
     font-family: 'Roboto Light', arial;
 
 }
-
-
+.
+}
+@media screen and (max-width: 760px) {
+  .img-fluid
+  {
+    display: none;
+  }
 
 }
 
@@ -78,9 +83,68 @@ error_reporting(0);
 <!--===============================================================================================-->
 
 </head>
-<body>
+<body style="background-color: black;">
+  <div class="row mb-5">
+    <div class="col-xs-4 col-sm-6 col-md-6 col-lg-7 ml-lg-3 text-center">
+      <img class="img-fluid" src="img/fondologin.jpg" style="width: 830px; height: 780px;max-width: 100%;">
+    </div>
+    <div class="col-xs-4 col-sm-8 col-md-6 col-lg-4" style="margin-top: 100px;margin:auto;">
+      <form class="login100-form validate-form" action="validar.php" method="POST">
+         
+          <img class="img-fluid" src="img/SideBySideWhiteVersion.png" alt="IMG" height="90px" style="max-width: 100%;">
+        
+          <span class="login100-form-title" style="color: white; margin-top: 70px;">
+           Inicio Sesión
+          </span>
+
+          
+          <div class="wrap-input100 validate-input" data-validate = "se requiere un Correo Electrónico">
+            <input class="input100" type="text" name="correo" placeholder="Correo Electrónico" value="<?php  if(isset($_SESSION['Iniciado']))
+            {
+             
+             echo $_SESSION['Iniciado'];
+            }
+            else {
+              
+            }?>">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+          </div>
+            
+          <div class="wrap-input100 validate-input" data-validate = "se requiere una contraseña">
+            <input id="contra" class="input100" type="password" name="contrasena" placeholder="Contraseña">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
+          </div>
+          
+          <div class="container-login100-form-btn">
+            <input type="submit" value="iniciar" name="iniciar" class="login100-form-btn">
+          </div>
+
+          <div class="text-center p-t-12">
+            <span class="txt1">
+              
+            </span>
+            <a class="txt2" href="CambiarContrasena/RecuperarCuenta.php" style="color: white;">
+              Restablecer la contraseña
+            </a>
+          </div>
+
+          <div class="text-center p-t-136">
+            <a class="txt2" href="#">
+              
+              
+            </a>
+          </div>
+        </form>
+    </div>
+  </div>
    
-  <div class="limiter">
+  <!--<div class="limiter">
     <div class="container-login100">
     <img class="img-fluid" src="img/fondologin.jpg" style="width: 830px; height: 800px; float: left; position: static;">
 
@@ -145,7 +209,7 @@ error_reporting(0);
 
     </div>
 
-  </div>
+  </div>-->
 
   
 <?php 
