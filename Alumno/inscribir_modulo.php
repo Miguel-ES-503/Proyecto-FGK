@@ -74,10 +74,57 @@
                             ?>
   </tbody>
   </table>
+
+  <br>
+  <br>
 <!-- /#page-content-wrapper -->
+
+<table class="table" style="width:70%; margin:auto">
+  <thead class="thead-dark">
+    <tr>
+    <th scope="col">Módulos Inscrito</th>
+    <th scope="col">Contraseña</th>
+    </tr>
+  </thead>
+  <tbody class="bg-light">
+  <?php
+  setlocale(LC_TIME, 'spanish');
+
+  $correo2 = $_SESSION['Email'];
+  $stmt11 =$dbh->prepare("SELECT `ID_Alumno` FROM `alumnos` WHERE correo = '$correo2' ");
+  $stmt11->execute();
+  while($row = $stmt11->fetch()){
+      $IDalumno2=$row["ID_Alumno"];
+  }
+
+  $stmt7=$dbh->prepare("SELECT modulos.titulo, modulos.password FROM datos_modulos LEFT JOIN modulos ON datos_modulos.id_modulo = modulos.id_modulo WHERE datos_modulos.id_alumno ='$IDalumno2'");
+  $stmt7->execute();
+
+  
+  
+      ?>                 
+      <?php
+      foreach($stmt7 as $row)
+       {
+         
+        echo " <tr>";
+        echo '<th>'.utf8_encode($row['titulo']).'</th>';
+        echo '<th>'.$row['password'].'</th>';  
+        }           
+           echo " </tr>";
+
+           
+      
+                            ?>
+  </tbody>
+  </table>
 
 </div>
 </div>
+
+
+<br>
+<br>
 <!-- /#wrapper -->
 <?php
   require_once 'templates/footer.php';
