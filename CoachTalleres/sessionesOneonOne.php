@@ -58,9 +58,11 @@ include 'Modularidad/MenuHorizontal.php';
     <a href="Reportes/ReporteSession.php"  target='blank'><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
     <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
   </div>
+  
  <div class="panel-body img-fluid " style=" width:90%">
+ <br>
                     <div id="tablapdf">
-                    <table  id="example" class="table table-hover table-sm table-bordered table-fixed " >
+                    <table  id="example" class="table table-hover table-sm table-bordered table-fixed table-responsive " >
         <thead class="table-secondary">
                                 <tr>
                                     <th>Encargado</th>
