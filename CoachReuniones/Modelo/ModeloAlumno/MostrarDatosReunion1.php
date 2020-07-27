@@ -9,7 +9,7 @@ $FinalDep = $varLugar [1]; // Extraemos la segunda letra
 //Concatenamosid="example"
 $FullTime = "FT";
 $Sabatino = "SAT";
-
+date_default_timezone_set('America/El_Salvador');
 $LugarFT=$InicialDep . $FinalDep . $FullTime; //Ejemplo SSFT
 $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 

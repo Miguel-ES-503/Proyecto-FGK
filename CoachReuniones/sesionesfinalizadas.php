@@ -7,15 +7,12 @@ include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de d
 <title>Sessiones One on One</title>
 
 <?php
- date_default_timezone_set('America/El_Salvador');
+date_default_timezone_set('America/El_Salvador');
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
-?>
-  <?php 
-
 $count = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado = 'Pendiente' ")->fetchColumn();
 $coun = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado = 'Finalizado' ")->fetchColumn();
 $cound = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado = 'Disponible'")->fetchColumn();
@@ -40,38 +37,40 @@ $coundd = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Pe
   <br>
   <h2 class="text-center text-dark">Estadísticas</h2>
   <ul class="list-group">
-    <div class="row">
-        <li class="list-group-item d-flex justify-content-between align-items-center"  style="width: 33.3%;">
+    <div class="row ">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
     Cantidad de alumnos inscritos:
     <span class="badge badge-primary badge-pill"><?php echo $count; ?></span>
+  <p class="hidden">hola!!</p>
   </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center" style="width: 33.3%;">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
     Cantidad de sesiones finalizadas:
     <span class="badge badge-primary badge-pill"><?php echo $coun; ?></span>
+    <p class="hidden">hi.</p>
   </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center" style="width: 33.3%;">
+  <li class="list-group-item d-flex justify-content-between align-items-center" >
     Cantidad de cupos disponibles
     <span class="badge badge-primary badge-pill"><?php echo $cound; ?></span>
   </li>
-    
-       <li class="list-group-item d-flex justify-content-between align-items-center" style="width: 33.3%;" >
+       <li class="list-group-item d-flex justify-content-between align-items-center" >
     Cantidad de alumnos con asistencia
     <span class="badge badge-primary badge-pill"><?php echo $co; ?></span>
   </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center" style="width: 33.3%;">
+  <li class="list-group-item d-flex justify-content-between align-items-center" >
     Cantidad de alumnos sin asistencia
     <span class="badge badge-primary badge-pill"><?php echo $cou; ?></span>
   </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center" style="width: 33.3%;">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
     Asistencia pendiente
     <span class="badge badge-primary badge-pill"><?php echo $coundd; ?></span>
+    <p class="hidden">welcome!!!</p>
   </li>
     </div>
 </ul>
 
 <div class="bg-dark w-100 mx-auto rounded">
                     <div id="tablapdf">
-                    <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
+                    <table  id="example" class="table table-hover table-sm table-bordered table-fixed w-100" >
         <thead class="table-secondary">
                                 <tr>
                                     <th>Titulo</th>
