@@ -42,7 +42,7 @@ include 'Modularidad/MenuVertical.php';
         <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
         <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
     <br>
-      <table  id="example" class="table table-hover table-sm table-bordered table-responsive table-fixed h-100 w-100" >
+      <table  id="example" class="table table-hover table-sm table-bordered table-fixed h-100 w-100" >
       <br>
           <thead class="table-secondary h-100 w-100">
             <tr>
