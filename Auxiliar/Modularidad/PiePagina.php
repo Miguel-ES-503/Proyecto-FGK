@@ -199,7 +199,7 @@ $(document).ready(function() {
     });
 
 </script>
-[2:10 p. m., 24/7/2020] Carlost: <script>
+<script>
 $(document).ready(function(){
 var current = 1,current_step,next_step,steps;
 steps = $("fieldset").length;
