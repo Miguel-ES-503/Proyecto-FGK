@@ -16,7 +16,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
 
-    <h2 class="main-title" >Aprobar/Reprobar Módulos</h2>
+    <h2 class="main-title" >Listado General Módulo 1</h2>
 </div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center" id="main">
