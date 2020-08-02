@@ -14,6 +14,7 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
 <br>
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/horas-sociales.main.css">
 <div class="title">
     <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
@@ -34,6 +35,9 @@ include 'Modularidad/MenuVertical.php';
 <br>
 <br>
 <br>
+<br class="salto">
+<br class="salto">
+<br class="salto">
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
 <div class="card">

@@ -44,4 +44,14 @@
     .salto {
         display: initial;
     }
+    .title-111 {
+        display: inline-block;
+        margin-left: 0%;
+    }
+    .title-222 {
+        margin-left: 0%;
+    }
+    body .general-text {
+        margin-left: 0%;
+    }
 }

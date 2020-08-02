@@ -179,9 +179,12 @@
     padding: 0px;
 
   }
-
-
+  .img-nav{
+    margin-top:-20%;
+    font-size:25px;
+  }
 }
+
 </style>
 <body>
 
@@ -277,16 +280,6 @@
       </ul>
     </div>
 
-
-
-
-
-
-
-
-
-
-
 <!-- Fin -->
   </div>
   <!-- /#sidebar-wrapper -->
@@ -297,7 +290,7 @@
     <button class="openbtn" onclick="openNav()">&#9776;</button>
     <center>
       <a href="http://portal.workeysoportunidades.org/SuperUsuario/index.php">
-        <img width="340px" height="80px" src="../img/SideBySideWhiteVersion.png" alt="">
+        <img class="w-25 h-25 img-nav" src="../img/SideBySideWhiteVersion.png" alt="">
       </a>
     </center>
     
