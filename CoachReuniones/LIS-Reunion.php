@@ -14,6 +14,7 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <br>
 <!--Comiezo de estructura de trabajo -->
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Reuniones-Finalizadas.css">
 <div class="title">
     <img src="../img/back.png" class="icon">

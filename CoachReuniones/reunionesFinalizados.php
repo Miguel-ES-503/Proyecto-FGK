@@ -13,6 +13,7 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
 <br>
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Reuniones-Finalizadas.css">
 <div class="title">
     <img src="../img/back.png" class="icon">
@@ -26,13 +27,8 @@ include 'Modularidad/MenuVertical.php';
 </div>
 </div>
 <div class="container-fluid text-center">
-
 <br>
-
-
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
-
-
 <br>
 
 <div class="card">
