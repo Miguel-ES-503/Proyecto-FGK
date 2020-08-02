@@ -61,8 +61,8 @@ include 'Modularidad/MenuVertical.php';
 	<div class="card-body">
 		<div class="table-responsive">
 			<br>
-			<table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
-				<thead class="table-secondary">
+			<table  id="example" class="table table-hover w-100 table-sm table-bordered table-fixed" >
+				<thead class="table-secondary w-100">
 					<tr> 
 						<!--<th scope="col"><input type='checkbox' name='' class='case' value="" id="todos">Todos</th>-->
 						<th scope="col">Carnet</th>
@@ -88,7 +88,7 @@ include 'Modularidad/MenuVertical.php';
 						<th scope="col">Ver expediente</th>						
 					</tr>
 				</tfoot>
-				<tbody>
+				<tbody class="table h-100 w-100">
 					<?php
 					require_once 'Modelo/ModeloAlumno/MostrarDatosAlumnos.php';
 					?>
