@@ -26,12 +26,12 @@ include 'Modularidad/MenuVertical.php';
 <div class="container-fluid text-center ">
 <br>
 <h1>Sesiones One on One</h1> 
-<div class="bg-dark w-75 mx-auto rounded">
+<div class="bg-dark w-100 mx-auto rounded">
 <h3 class="text-left titulo-OneonOne text-white text-center" >Lista de asistencia</h3>
 <p class="text-white text-center">En este aparto le colocará la asistencia a los alumnos, las opciones son: asistió o no asistió.</p>
 
  <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12">
-                    <div id="tablapdf">
+                    <div id="tablapdf" >
                     <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
         <thead class="table-secondary">
                                 <tr>

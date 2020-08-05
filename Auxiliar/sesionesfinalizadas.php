@@ -15,26 +15,21 @@ include 'Modularidad/MenuHorizontal.php';
 //include 'Modularidad/MenuVertical.php';
 ?>
   <?php 
-
 $count = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado = 'Pendiente' ")->fetchColumn();
 $coun = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado = 'Finalizado' ")->fetchColumn();
 $cound = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado = 'Disponible'")->fetchColumn();
 $co = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Asistio'")->fetchColumn();
 $cou = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'No asistio'")->fetchColumn();
 $coundd = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Pendiente'")->fetchColumn();
-
   ?>
 <link rel="stylesheet" type="text/css" href="css/Sesiones-ONE.css">
 <div class="title">
      <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
-    <h2 class="main-title" >Sesiones One on One</h2>
+    <h2 class="main-title" >Sesiones One on One Finalizadas</h2>
 </div>
 
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-<br>
-<h1>Sesiones One on One Finalizadas</h1>
-
 <br>
   <div class="mx-auto" style="width:85%"> 
   <br>
@@ -53,7 +48,6 @@ $coundd = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Pe
     Cantidad de cupos disponibles
     <span class="badge badge-primary badge-pill"><?php echo $cound; ?></span>
   </li>
-    
        <li class="list-group-item d-flex justify-content-between align-items-center" style="width: 33.3%;" >
     Cantidad de alumnos con asistencia
     <span class="badge badge-primary badge-pill"><?php echo $co; ?></span>
@@ -68,11 +62,9 @@ $coundd = $dbh->query("SELECT count(*) FROM one_on_one WHERE estado_alumno = 'Pe
   </li>
     </div>
 </ul>
-
-<br>
-
 <div class="bg-dark w-100 mx-auto rounded">
-                    <div id="tablapdf">
+  <br>
+                    <div id="tablapdf" >
                     <table  id="example" class="table table-hover table-sm table-bordered table-fixed w-100" >
         <thead class="table-secondary">
                                 <tr>

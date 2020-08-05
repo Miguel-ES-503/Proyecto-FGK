@@ -14,6 +14,7 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Sesiones-ONE.css">
 <link rel="stylesheet" href="css/formulario_One_on_One.css">
 
@@ -25,6 +26,9 @@ include 'Modularidad/MenuVertical.php';
   .panel-body {
     margin-left:25%;
   }
+  .enable {
+    margin-left: 0%;
+}
 }
  
 </style>
@@ -149,9 +153,8 @@ include 'Modularidad/MenuVertical.php';
             <div class="progress w-75 mx-auto">
 <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-            <form id="regiration_form" class="float-left ml-3 p-3 w-100" action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" >
+            <form id="regiration_form" class="float-left ml-3 p-3 w-100 contenido-center" action="<?php echo $_SERVER['PHP_SELF']; ?>" Method="POST" >
               <br>
-  
   <fieldset class="username enable text-center">
   <label for="exampleInputEmail1" class="text-dark">Seleccione el encargado de la sesión</label>
     <select name="titulo" id="" class="form-control float-right">

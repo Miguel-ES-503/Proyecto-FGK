@@ -24,8 +24,8 @@ include 'Modularidad/MenuHorizontal.php';
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center ">
 <br>
-<h1>Sesiones One on One</h1> 
-<div class="bg-dark w-75 mx-auto rounded">
+<br>
+<div class="bg-dark w-100 mx-auto rounded">
 <h3 class="text-left titulo-OneonOne text-white text-center" >Lista de asistencia</h3>
 <p class="text-white text-center">En este aparto le colocará la asistencia a los alumnos, las opciones son: asistió o no asistió.</p>
 
