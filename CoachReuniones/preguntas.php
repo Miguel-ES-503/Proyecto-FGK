@@ -11,6 +11,7 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Preguntas.css">
 <div class="title">
 <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
@@ -19,10 +20,6 @@ include 'Modularidad/MenuVertical.php';
 
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
- 
-
-
-
 <!-- Responder a pregunta -->
 <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -69,12 +66,11 @@ include 'Modularidad/MenuVertical.php';
                         </div>
                     </div>
 </div>
-<button type='button' class='btn btn-success btn-agregar' data-toggle='modal' data-target='#myModal3' id="btn"><img src="../img/responder.svg" id="icon">Responder a preguntas</button>  
-   
+<button type='button' class='btn btn-success btn-agregar add-pregunta' data-toggle='modal' data-target='#myModal3' id="btn">
+  <img src="../img/responder.svg" id="icon">Responder a preguntas</button>  
    <br>  
       <?php 
       require_once '../Conexion/conexion.php';
-
               @$pregunta = $_POST['pregunta'];
               @$respuesta = $_POST['respuesta'];
             //actualizar estado

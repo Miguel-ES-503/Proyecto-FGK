@@ -12,6 +12,7 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Alumnos.css">
 <div class="title">
     <img src="../img/back.png" class="icon">
@@ -22,7 +23,6 @@ include 'Modularidad/MenuVertical.php';
     <a href="LIS-Alumnos.php" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Alumnos</p></a>
     
 </div>
-
 </div>
 <div class="title3">
         <br>
@@ -42,12 +42,11 @@ include 'Modularidad/MenuVertical.php';
 <!--/.Navbar-->
 <br><br>
 <div>
+	<br class="salto">
+	<br class="salto">
+	<br class="salto">
+	<br class="salto">
 	<h5 id="Titulo">Alumnos de  <?php if($ubicacion == "SS"){ echo "San Salvador";}else{ echo "Santa Ana";}?>
-		
-	
-
-		
-
 	     		<a href="ReportesExcel/ReportesAlumnos.php" class="float-right">
 	     			<button type="button" class="btn btn-success px-3" id="btn-excel">
 	     				<img src="../img/excell.png" width="25px" height="30px">
@@ -58,11 +57,12 @@ include 'Modularidad/MenuVertical.php';
 	     
 		</span>
 	</h5>	
+	
 	<div class="card-body">
 		<div class="table-responsive">
 			<br>
-			<table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
-				<thead class="table-secondary">
+			<table  id="example" class="table table-hover w-100 table-sm table-bordered table-fixed" >
+				<thead class="table-secondary w-100">
 					<tr> 
 						<!--<th scope="col"><input type='checkbox' name='' class='case' value="" id="todos">Todos</th>-->
 						<th scope="col">Carnet</th>
@@ -88,7 +88,7 @@ include 'Modularidad/MenuVertical.php';
 						<th scope="col">Ver expediente</th>						
 					</tr>
 				</tfoot>
-				<tbody>
+				<tbody class="table h-100 w-100">
 					<?php
 					require_once 'Modelo/ModeloAlumno/MostrarDatosAlumnos.php';
 					?>

@@ -14,19 +14,16 @@ include 'Modularidad/MenuVertical.php';
 ?>
 
 <script src="js/NombreReunion.js" >
-
-
 </script>
-
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Crear-Reunion.css">
-<div class="title">
+<div class="title div0  ">
     <img src="../img/back.png" class="icon">
-    <h2 class="main-title" >Reuniones</h2>
+    <h2 class="main-title div1" >Reuniones</h2> 
     <div class="title2">
         <br>
-    <div class="title2-text">
-    <a href="LIS-Reunion.php" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Ver Reuniones</p></a>
-
+    <div class="title2-text ">
+    <a href="LIS-Reunion.php" class="text-decoration-none div2 " ><p><img src="../img/Ver.png" class="icon-2">Ver Reuniones</p></a>
 </div>
 </div>
 </div>

@@ -1,6 +1,6 @@
 <?php
 //Cambiar despues
-//include 'Modularidad/CabeceraInicio.php';
+include 'Modularidad/CabeceraInicio.php';
 error_reporting(0);
 ?>
 <title>Expediente de alumno</title>

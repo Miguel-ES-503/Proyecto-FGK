@@ -1,96 +1,90 @@
-.title{
-background-color: #ADADB2;
-color: black;
-height: 70px;
-margin-left: 0%;
-margin-bottom: 5%;
-height: 55px;
-
-
-}
-h2 , .icon{
-  float: left;
-}
-.main-title
-{
-text-align: left;
-font-size: 25px;
-margin-left: 25px;
-margin-top: 12px;
-font-weight: bold;
-letter-spacing: 5px;
-}
-.icon
-{
-
-  width: 30px;
-  margin-top: 13px;
-  margin-left: 20px;
-}
-.icon-2
-{
-
-  width: 20px;
-  margin-right: 3px;
-  margin-top: -3px;
-}
-.title2
-{
-
-margin-left: 300px;
-background-color: #BE0032;
-width: 180px;
-height: 54px;
-}
-.title2-text
-{
-margin-left:16px;
-margin-top: -8px;
-color: white;
-font-weight: bold;
-letter-spacing: 2px;
+.title {
+    background-color: #ADADB2;
+    color: black;
+    height: 70px;
+    margin-left: 0%;
+    margin-bottom: 5%;
+    height: 55px;
 }
 
-.container-fluid
-{
-	margin-top: -5%;
+h2,
+.icon {
+    float: left;
 }
-.title-1
-{
-	color: black;
-	font-weight: bold;
-	font-size: 25px;
-	letter-spacing: 2px;
-	text-align: center;
+
+.main-title {
+    text-align: left;
+    font-size: 25px;
+    margin-left: 25px;
+    margin-top: 12px;
+    font-weight: bold;
+    letter-spacing: 5px;
 }
-#main
-{
-	border-color: #A29C9C;
-	border-width: 5px;
-	border-style: solid;
-	border-radius: 30px;
-  margin: 0 auto;
+
+.icon {
+    width: 30px;
+    margin-top: 13px;
+    margin-left: 20px;
 }
-label
-{
-	color: #BE0032;
-	font-weight: bold;
+
+.icon-2 {
+    width: 20px;
+    margin-right: 3px;
+    margin-top: -3px;
 }
-.row
-{
-	margin-top: 20px;
+
+.title2 {
+    background-color: #BE0032;
+    width: 100%;
+    height: 54px;
 }
-.form-control
-{
-	background-color: #D9D2D2;
-	border-radius: 30px;
-	border-color: white;
+
+.title2-text {
+    margin-top: -8px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
-#Guardar_Reunion
-{
-	background-color: #BE0032;
-	width: 25%;
-	color: white;
-	border-radius: 30px;
-	margin:auto;
+
+.container-fluid {
+    margin-top: -5%;
+}
+
+.title-1 {
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#main {
+    border-color: #A29C9C;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 30px;
+    margin: 0 auto;
+}
+
+label {
+    color: #BE0032;
+    font-weight: bold;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.form-control {
+    background-color: #D9D2D2;
+    border-radius: 30px;
+    border-color: white;
+}
+
+#Guardar_Reunion {
+    background-color: #BE0032;
+    width: 25%;
+    color: white;
+    border-radius: 30px;
+    margin: auto;
 }

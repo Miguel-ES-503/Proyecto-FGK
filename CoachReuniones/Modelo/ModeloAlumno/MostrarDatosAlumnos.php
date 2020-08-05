@@ -39,12 +39,12 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 				echo "
 		<tr class='table-light'>
 		
-		<th>".$fila['ID_Alumno']."</th>
-		<th>".$fila['Nombre']."</th>
-		<th>".$fila['Class']."</th>
-		<th>".$fila['ID_Sede']."</th>
-		<th>".$Asistencia."</th>
-		<th>".$fila['StatusActual']."</th>
+		<th style='width:13.4%'>".$fila['ID_Alumno']."</th>
+		<th style='width:22.1%'>".$fila['Nombre']."</th>
+		<th style='width:7.3%'>".$fila['Class']."</th>
+		<th style='width:7.9%'>".$fila['ID_Sede']."</th>
+		<th style='width:11.9%'>".$Asistencia."</th>
+		<th style='width:21.2%'>".$fila['StatusActual']."</th>
 		<th>".$fila['Estado']."</th>
 		<td><a href='AlumnoInicio.php?id=".$fila['correo']."' class='fas fa-user  btn btn-warning'></a> </td>
 		

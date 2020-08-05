@@ -11,6 +11,7 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Record-Alumnos.css">
 <div class="title">
     <img src="../img/back.png" class="icon">

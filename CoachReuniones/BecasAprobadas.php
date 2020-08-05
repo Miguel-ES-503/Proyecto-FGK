@@ -9,6 +9,7 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 require_once '../Conexion/conexion.php';
 ?>
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Becas-Aprobadas.css">
 <div class="title">
     <img src="../img/back.png" class="icon">
@@ -17,7 +18,6 @@ require_once '../Conexion/conexion.php';
         <br>
     <div class="title2-text">
     <a href="#" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Becas</p></a>
-    
 </div>
 </div>-->
 </div>
@@ -31,7 +31,8 @@ require_once '../Conexion/conexion.php';
 	<div class="card-body" style="border-radius: 20px;">
 		<div class="table-responsive">
 			<table   id="example3"  class="table table-hover table-sm table-bordered table-fixed">
-				  <a href="#" class="float-left" ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
+				  <a href="#" class="float-left" >
+				<button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
 				<thead class="table-secondary">
 					<tr>  
 						<th scope="col">ID</th>
@@ -76,9 +77,6 @@ require_once '../Conexion/conexion.php';
 			<?php
 			include 'Modelo/ModeloBecas/ComprobanteBecas.php'
 			?>
-			
-
-
 		</tbody>        
 	</table>  
 </div>

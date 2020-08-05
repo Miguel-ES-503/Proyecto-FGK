@@ -13,35 +13,31 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/horas-sociales.main.css">
 <br>
-<div class="title">
+<div class="title general-text">
     <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
-    <h2 class="main-title" >Horas Sociales</h2>
+    <h2 class="main-title title-111" >Horas Sociales</h2>
     <div class="title2">
     <div class="title2-text">
-    <a href="HorasVinculacion.php" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Solicitudes</p></a>
-    
+    <a href="HorasVinculacion.php" class="text-decoration-none"><p><img src="../img/Ver.png" class="icon-2">Solicitudes</p></a>
 </div>
 </div>
     <div class="title3">
     <div class="title3-text">
-    <a href="ListaHorasSociales.php" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Lista General</p></a>
+    <a href="ListaHorasSociales.php" class="text-decoration-none title-222" ><p><img src="../img/Ver.png" class="icon-2">Lista General</p></a>
     
 </div>
 </div>
 </div>
-
+<br class="salto">
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-
 <br>
-
-	
-
-
 <br>
-
+<br class="salto">
+<br class="salto">
 <div class="card">
 	<div class="card-header">
 		<b>Solicitudes</b>	

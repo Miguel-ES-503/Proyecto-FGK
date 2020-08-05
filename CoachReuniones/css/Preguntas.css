@@ -1,146 +1,145 @@
-  .title{
-background-color: #ADADB2;
-color: black;
-height: 70px;
-margin-left: 0%;
-margin-bottom: -2%;
-height: 55px;
-
-
-}
-h2 , .icon{
-  float: left;
-}
-.main-title
-{
-text-align: left;
-font-size: 25px;
-margin-left: 25px;
-margin-top: 12px;
-font-weight: bold;
-letter-spacing: 5px;
-}
-.icon 
-{
-
-  width: 30px;
-  margin-top: 13px;
-  margin-left: 20px;
-}
-.icon-2
-{
-
-  width: 20px;
-  margin-right: 3px;
-  margin-top: -3px;
-}
-
-.title2,
-{
-
-margin-left: 30px;
-background-color: #BE0032;
-width: 150px;
-height: 54px;
-display: inline-block;
-}
-.title2-text
-{
-margin-left:25px;
-margin-top: -8px;
-color: white;
-font-weight: bold;
-letter-spacing: 2px;
-}
-
-#title-1
-{
-	color: black;
-	font-size: 20px;
-	text-align: center;
-	margin-top: 30px;
-	margin-bottom: 20px;
-}
-.mx-auto
-{
-	background-color: #2D2D2E;
-	width: 80%;
-	border-radius: 30px;
-}
-
-#tablapdf
-{
-	margin: 20px;
-}
-
-#datatable2
-{
-	width: 30%;
-}
-
-#btn
-{
-	background-color: #BE0032;
-	width: 20%;
-	font-size: 15px;
-	border-radius: 30px;
-	float: right;
-	margin-right: 10%;
-	margin-top: -16px;
-}
-
-
-#icon
-{
-	width: 25px;
-	margin-top: -10px;
-	margin-right:6px;
-}
-#cabezera
-{
-	background-color: #C7C7C7;
-}
-#year,#respuesta
-{
-	background-color: #C7C7C7;
-	border-radius: 20px;
-	border-color: white;
-	border-style: solid;
-	border-width: 2px;
-
-
-}
-
-
-#btn-modal
-{
-	background-color: #BE0037;
-	width: 150px;
-	margin-top: -30px;
-}
-
-
-#img
-{
-	width:25px;
-	height:25px;
-	margin-right: 15px;
-}
-
-#nota
-{
-	color: black;
-	font-size: 13px;
-	text-align: left;
-	margin-top: -20px;
-	margin-left: 5px;
-	margin-bottom: 30px;
-}
-#nota >label
-{
-    color: black;
-}
-#myModal3
-{
-	height: 80%;
-}
+  .title {
+      background-color: #ADADB2;
+      color: black;
+      height: 70px;
+      margin-left: 0%;
+      margin-bottom: -2%;
+      height: 55px;
+  }
+  
+  h2,
+  .icon {
+      float: left;
+  }
+  
+  .main-title {
+      text-align: left;
+      font-size: 25px;
+      margin-left: 25px;
+      margin-top: 12px;
+      font-weight: bold;
+      letter-spacing: 5px;
+  }
+  
+  .icon {
+      width: 30px;
+      margin-top: 13px;
+      margin-left: 20px;
+  }
+  
+  .icon-2 {
+      width: 20px;
+      margin-right: 3px;
+      margin-top: -3px;
+  }
+  
+  .title2 {
+      margin-left: 30px;
+      background-color: #BE0032;
+      width: 150px;
+      height: 54px;
+      display: inline-block;
+  }
+  
+  .title2-text {
+      margin-left: 25px;
+      margin-top: -8px;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 2px;
+  }
+  
+  #title-1 {
+      color: black;
+      font-size: 20px;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+  }
+  
+  .mx-auto {
+      background-color: #2D2D2E;
+      width: 80%;
+      border-radius: 30px;
+  }
+  
+  #tablapdf {
+      margin: 20px;
+  }
+  
+  #datatable2 {
+      width: 30%;
+  }
+  
+  #btn {
+      background-color: #BE0032;
+      width: 20%;
+      font-size: 15px;
+      border-radius: 30px;
+      float: right;
+      margin-right: 10%;
+      margin-top: -16px;
+  }
+  
+  #icon {
+      width: 25px;
+      margin-top: -10px;
+      margin-right: 6px;
+  }
+  
+  #cabezera {
+      background-color: #C7C7C7;
+  }
+  
+  #year,
+  #respuesta {
+      background-color: #C7C7C7;
+      border-radius: 20px;
+      border-color: white;
+      border-style: solid;
+      border-width: 2px;
+  }
+  
+  #btn-modal {
+      background-color: #BE0037;
+      width: 150px;
+      margin-top: -30px;
+  }
+  
+  #img {
+      width: 25px;
+      height: 25px;
+      margin-right: 15px;
+  }
+  
+  #nota {
+      color: black;
+      font-size: 13px;
+      text-align: left;
+      margin-top: -20px;
+      margin-left: 5px;
+      margin-bottom: 30px;
+  }
+  
+  #nota>label {
+      color: black;
+  }
+  
+  #myModal3 {
+      height: 80%;
+  }
+  
+  @media only screen and (max-width: 600px) {
+      #btn {
+          width: 60%;
+          border-radius: 30px;
+          float: left;
+          margin-right: 10%;
+          margin-top: -16px;
+      }
+      #icon {
+          width: 15px;
+          margin-top: -10px;
+          margin-right: 6px;
+      }
+  }
