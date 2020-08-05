@@ -17,7 +17,7 @@ include 'Modularidad/MenuVertical.php';
 </script>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Crear-Reunion.css">
-<div class="title div0  ">
+<div class="title div0 ">
     <img src="../img/back.png" class="icon">
     <h2 class="main-title div1" >Reuniones</h2> 
     <div class="title2">

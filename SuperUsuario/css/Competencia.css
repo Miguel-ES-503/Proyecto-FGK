@@ -1,0 +1,25 @@
+
+@media only screen and (max-width: 640px) {
+    
+    .title {
+        width: 69.5%;
+    }
+    body .div1 {
+        width: 50%;
+    }
+    .div0 {
+        width: 69.5%;
+        display: inline-block;
+    }
+    body .div0 {
+        text-align: center;
+    }
+    body .title2 {
+        width: 69.5%;
+        display: inline-block;
+        margin-left: 0%;
+    }
+
+   
+   
+}
