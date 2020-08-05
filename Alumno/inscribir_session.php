@@ -17,7 +17,7 @@
 </div>
 </div>
 <br><br>
-<div class="sesion mx-5 h-25">
+<div class="sesion mx-5 h-25" style="text-align:center;">
 
 <!-- /#page-content-wrapper -->
 <table class="table table-responsive w-100 mx-5">
@@ -30,7 +30,22 @@
     <th scope="col">Acción <span class='invisible'>Hi.</span></th>
     </tr>
   </thead>
-  <tbody class="bg-light">
+  <tbody style="background-color: #c7c7c7">
+  <tr>
+  <td>10/04/2020</td>
+  <td>10:30 am - 11:30am</td>
+  <td>Disponible</td>
+  <td>Fatima Baldovinos</td>
+  <td>Abierto</td>
+  </tr>
+  <tr>
+  <td>10/04/2020</td>
+  <td>10:30 am - 11:30am</td>
+  <td>Disponible</td>
+  <td>Fatima Baldovinos</td>
+  <td>Abierto</td>
+  </tr>
+  </tr>
   <?php
   //obtener id from alumnos
   $correo = $_SESSION['Email'];
@@ -69,7 +84,7 @@
                 echo '<td>'.date('h:i A', strtotime($row['hora_inicio']))." - ".date('h:i A', strtotime($row['hora_fin'])).'</td>';
                 echo '<td>'.$row['cupo'].'</td>';
                 echo "<td class='text-danger' title='Ya tiene una sesión pendiente'><i class='fas fa-times-circle' style='font-size:25px'></i></td>";        
-                echo " </tr>";
+                echo " </tr> </tbody>";
                 // verificar si el alumno tiene una session pendiente
             }elseif($estado == 'Pendiente'){
                 echo " <tr>";
@@ -78,7 +93,7 @@
                 echo '<td>'.$row['cupo'].'</td>';
                 echo '<td>'. utf8_encode($row['titulo']).'</td>';
                 echo "<td class='text-danger'title='Ya tiene una sesión pendiente' ><i class='fas fa-times-circle' style='font-size:25px'></i></td>";        
-                echo " </tr>";
+                echo " </tr></tbody>";
             } 
             // si no tiene sesiones pendientes dejarlo inscribir
               else{
@@ -89,10 +104,11 @@
                 echo '<td>'. utf8_encode($row['titulo']).'</td>';
                 echo "<td><form action='guardarsession2.php' method='post'><button type='submit' class='btn btn-primary'"." name='inscribir' value='"."$row[id]'".">Inscribirse</button></form>
                 </td>";               
-                echo " </tr>";
+                echo " </tr></tbody>";
               
                             }
                           }
+
 ?>
 <table class="table table-responsive w-100 mx-5" >
   <thead  style="background-color: #2D2D2E; color: white; ">
@@ -104,7 +120,22 @@
     <th scope="col">Acción</th>
     </tr>
   </thead>
-  <tbody class="bg-light">
+  <tbody style="background-color: #c7c7c7">
+  <tr>
+  <td>10/04/2020</td>
+  <td>10:30 am - 11:30am</td>
+  <td>Disponible</td>
+  <td>Fatima Baldovinos  </td>
+  <td>Abierto</td>
+  </tr>
+  <tr>
+  <td>10/04/2020</td>
+  <td>10:30 am - 11:30am</td>
+  <td>Disponible</td>
+  <td>Fatima Baldovinos</td>
+  <td>Abierto</td>
+  </tr>
+  </tr>
 <?php 
                           foreach($result2 as $row)
                             {
@@ -144,6 +175,7 @@
                             ?>
   </tbody>
   </table>
+
 </div>
 </div>
 <!-- /#wrapper -->

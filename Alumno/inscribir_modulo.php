@@ -19,7 +19,7 @@
 <br><br>
 <div class="sesion mx-5 h-25">
 <table class="table" style="width:70%; margin:auto">
-  <thead class="thead-dark">
+  <thead style="background-color: #2D2D2E;; color: white;">
     <tr>
     <th scope="col">Módulos Activos</th>
     <th scope="col">Acción</th>
@@ -60,7 +60,7 @@
       <?php
       foreach($result as $row)
        {
-        echo " <tr>";
+        echo " <tr class='table-dark'>";
         echo '<th>'.utf8_encode($row['titulo']).'</th>';
         if ($IDalumno == $IDalumno2 && ($estado == 'Pendiente'  || $estado == 'Reprobado' )   ) {  
         echo "<td class='text-danger' ><i class='fas fa-times-circle' style='font-size:25px'></i></td>";        
@@ -80,7 +80,7 @@
 <!-- /#page-content-wrapper -->
 
 <table class="table" style="width:70%; margin:auto">
-  <thead class="thead-dark">
+  <thead style="background-color: #2D2D2E;; color: white;">
     <tr>
     <th scope="col">Módulos Inscrito</th>
     <th scope="col">Contraseña</th>
@@ -107,9 +107,9 @@
       foreach($stmt7 as $row)
        {
          
-        echo " <tr>";
-        echo '<th>'.utf8_encode($row['titulo']).'</th>';
-        echo '<th>'.$row['password'].'</th>';  
+        echo " <tr class='table-dark'>";
+        echo '<td>'.utf8_encode($row['titulo']).'</td>';
+        echo '<td>'.$row['password'].'</td>';  
         }           
            echo " </tr>";
 
