@@ -26,8 +26,11 @@
 
 <!--Estructura -->
 <div class="container-fluid text-center">
-  <br>
-  <h1> Transporte</h1>
+<div class="title" style="margin-left: -14px;">
+<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Transporte</h2>
+	
+</div>
   <br>
 
   

@@ -1,0 +1,21 @@
+.title2
+{
+
+margin-left: 150px;
+background-color: #BE0032;
+width: 170px;
+height: 54px;
+}
+.title2-text 
+{
+margin-left:16px;
+margin-top: -8px;
+color: white;
+font-weight: bold;
+letter-spacing: 2px;
+}
+
+.title2-text p{
+
+    color: white;
+}
