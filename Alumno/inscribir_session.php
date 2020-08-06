@@ -20,7 +20,7 @@
 <div class="sesion mx-5 h-25" style="text-align:center;">
 
 <!-- /#page-content-wrapper -->
-<table class="table table-responsive w-100 mx-5">
+<table class="table table-responsive w-100 mx-5" >
   <thead  style="background-color: #2D2D2E; color: white; ">
     <tr>
     <th scope="col">Fecha</th>

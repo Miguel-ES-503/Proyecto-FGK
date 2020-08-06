@@ -15,13 +15,17 @@
  ?>
 
 <!--div principal-->
-<div class="container-fluid text-center"><br>
-  
+<div class="container-fluid text-center">
+<div class="title">
+    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Retiro materias</h2>
+  <br>
+</div> 
   <div>
     <div>
-                             
+                   
         <div class="container" style="background: white;">
-          <h2 style="color: #BF3E3E;">Retiro de materias</h2>
+     
 
 
           <br>
