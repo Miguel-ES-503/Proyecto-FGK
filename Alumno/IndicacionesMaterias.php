@@ -18,7 +18,7 @@
 <div class="container-fluid text-center">
 <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-	<h2 class="main-title" >Requerimientos de inscripcion</h2>
+	<h2 class="main-title" >Requerimiento de inscripcion</h2>
   <br>
 </div> 
   <div>
