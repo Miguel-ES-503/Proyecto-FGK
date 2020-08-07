@@ -37,7 +37,7 @@
 
 		</div>
 
-	
+	<div class="row">
 			<div class="col-md-4 pr-md-5">
 				<div class="Info-1">
 					<h3 class="title1">Foto de Perfil</h3>
@@ -59,7 +59,7 @@
 				</div>
 			</div>
 			</div>
-			<div class="parte2" style="position: absolute; bottom: 150px; right: 80px;" >
+			<div class="parte2" style="position: relative; bottom: 410px; left: 395px;" >
 				<div class="d-flex align-items-center">
 					<h3 class="subtitulo1">Datos de la cuenta</h3>
 					<div class="table-Info">
@@ -100,13 +100,13 @@
 			</div>
 				<!-- Default form subscription -->
 
-
+				</div>
 			</div>
 		</div>
 	</div>
 	</div>
 	<!-- /#page-content-wrapper -->
-<br>
+
 </div>
 
 </div>
