@@ -95,23 +95,29 @@ if ($consulta6->rowCount()>=1)
 ?>
 
 <!--div principal-->
-<div class="container-fluid text-center"><br>
-  
+<div class="container-fluid text-center">
+<div class="title" style="margin-left: -14px; width: 109%;">
+<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Transporte</h2>
+	
+</div>
   <div>
     <div>
                              
-        <div class="container" style="background: #2D2D2E;">
-          <h2 style="color: white; background: #BF3E3E;">Requerimientos para solicitar transporte</h2>
+        <div class="container" style="">
+          <h2 style="">Requerimientos para solicitar transporte</h2>
           <br>
           <br>
           <br>
            <div class="row">
              
               <!--Primera columna-->
-                  <div class="col-sm" style="color: #343434;">
-                   
-                         <ul style="text-align: justify; color: white;" >
-                           <h3 style="color:#A4A4A4;">Requisitos</h3>
+                  <div class="col-sm" style="">
+                    <div class="col-sm-12">
+
+                    <ul style="text-align: justify; color: black;" >
+                           <h3 style="color: #BF3E3E;">Requisitos</h3>
+                           <br>
                             <li>Ser becario activo del Programa Oportunidades.</li>
                             <li>Cumplir todas sus obligaciones como becario.</li>
                             <li>Tambien aplica para becas externas con apoyo FGK:</li>
@@ -120,20 +126,28 @@ if ($consulta6->rowCount()>=1)
                                    <li>ESEN, KEISER, UGV, ECMH, ECCI</li>
                                  </ul>
                          </ul>
+                    </div>
+                   
+                        
                         <br>
+                        <br>
+                        <div class="col-sm-12">
 
-                        <ul style="text-align: justify; color: white; ">
-                          <h4 style="color:#A4A4A4;">Archivos</h4>
+                        <ul style="text-align: justify; color: black; ">
+                          <h4 style="color: #BF3E3E;">Archivos</h4>
+                          <br>
                           
-                           <li>Debera descargar el archivo socioeconomico que se encuentra a continuacion y cuando ya cuente con la informacion completa escanearlo.</lil>
+                           <li>Debera descargar el archivo socioeconomico que se encuentra <br>a continuacion y cuando ya cuente con la informacion<br> completa escanearlo.</lil>
                         
                                <ul>
                                  <span >  
                                  <br>
-                                 <button style="background: #1C1C1C;" type="button" class="btn btn-dark px-3" onclick="location.href='../Alumno/pdf/socioeconomico.docx'"><i class="fas fa-download"></i> Socioeconomico</button>
+                                 <button style="background: #BF3E3E;" type="button" class="btn btn-danger" onclick="location.href='../Alumno/pdf/socioeconomico.docx'"><i class="fas fa-download"></i> Socioeconomico</button>
                                  </span>
                                </ul>
                         </ul>
+                        </div>
+                        
 
                    </div>
 
@@ -142,10 +156,11 @@ if ($consulta6->rowCount()>=1)
        
 
 
-                 <div class="col-sm"  style="color: #343434;">
+                 <div class="col-sm" id="pasos" style="background-color: #c7c7c7">
 
-                         <ol style="text-align: justify; color: white;" >
-                            <h3 style="color:#A4A4A4;">Pasos:</h3>
+                         <ol style="text-align: justify; color: black;" >
+                            <h3 style="color: #BF3E3E;">Pasos:</h3>
+                            <br>
                             <li>Llenar Formulario donde creara el listado de las rutas de buses que toma y con su respectivo precio.</li>
                             <li>Crear horario de los dias que asiste a la Universidad.</li>
                             <li>Finalmente debera agregar como comprobante el archivo socioeconomico escaneado.</li>
@@ -153,13 +168,15 @@ if ($consulta6->rowCount()>=1)
                          </ol>
 
 
-                       <center>
-                         <div class="alert alert-danger " role="alert" style="width: 80%; height:105px; text-align: justify; background: #BF3E3E; color: white; ">
-                           <h4 style="color:white;">Nota:</h4>
-                           <b >No se recibiran solicitudes con documentación incompleta</b>
+                       
+                         
+                         <div class="alert" style="width: 80%; height:105px; text-align: justify; color: #BF3E3E; ">
+                         <img src="../img/alert.svg" class="img-fluid">
+                           <p>  <b>Nota:</b><i> No se recibiran solicitudes con documentación incompleta.</i></p>
                            <br>
+                           
                          </div>
-                      </center>
+                      
          
 
      
@@ -167,9 +184,8 @@ if ($consulta6->rowCount()>=1)
                        <ol>
                          <form style="text-align: justify;color: white;" name="form" action="Modelo/ModeloTransporte/GuardarSoliTrans.php" method="post">
 
-                           <label for="checkbox" class="agree"><input type="checkbox"  class="checkbox" name="checkbox" id="checkbox" onclick= "enableSending();"/> Acepto que he leido completamente la información y los requerimientos de la solicitud de transporte.</label>
+                           <label for="checkbox" class="agree" style="color:black;"><input type="checkbox"  class="checkbox" name="checkbox" id="checkbox" onclick= "enableSending();"/> <i>Acepto que he leido completamente la información y los requerimientos de la solicitud de transporte.</i></label>
 
-              
                         <!--ID ALUMNO-->
                            <input type="hidden" name="iduser" value="<?php echo $_GET['id'];  ?>"> 
                         <!--ID SOLITRANS-->
@@ -180,9 +196,9 @@ if ($consulta6->rowCount()>=1)
 
                            <!--input style="background: #1C1C1C;" type="button" onclick="location.href='SoliTransporte.php?id=<?php echo $solicitud; ?>'" class="submit btn btn-dark"  name = "submit" value="Iniciar proceso" disabled="disabled" -->
 
-
-                           <input style="background: #1C1C1C;" type="submit"  class="submit btn btn-dark" id="Guardar_SoliTrans"  name = "Guardar_SoliTrans" value="Iniciar proceso" disabled="disabled" >
-
+                          <center>
+                           <input style="background: #BF3E3E;" type="submit"  class=" btn btn-danger" id="Guardar_SoliTrans"  name = "Guardar_SoliTrans" value="Iniciar proceso" disabled="disabled" >
+                          </center
                          </form>
           
 
