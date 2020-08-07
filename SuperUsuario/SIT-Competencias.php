@@ -19,7 +19,7 @@ include 'Modularidad/MenuVertical.php';
      <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title div1" >Creación de Competencias</h2>
 	<div class="title2 " style="background-color: #9d120e">
-	<a class="nav-link active" id="competencia" href="#">Competencia</a>
+	<a class="nav-link active" href="#">Competencia</a>
 	<link rel="stylesheet" href="css/Competencia.css">
 </div>
 
@@ -28,9 +28,9 @@ include 'Modularidad/MenuVertical.php';
 <br>
 
 <div class="card">
-	<div class="card-header">
+	<div class="card-header" >
 		<span class="float-left">	
-			<h5 class="card-header">Competencias</h5>
+			<h5 class="card-header" >Competencias</h5>
 		</span>
 		
 		<span class="float-right">	

@@ -13,15 +13,16 @@ include 'Modularidad/EnlacesCabecera.php';
 //include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
+<link rel="stylesheet" href="css/Competencia.css">
 <!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center ">
-	<div class="title">
+	<div class="title div0">
      <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-	<h2 class="main-title" >Creación de Ciclos</h2>
+	<h2 class="main-title div1" >Creación de Ciclos</h2>
 	<div class="title2" style="background-color: #9d120e">
+    <div class="title2-text">
 	<a class="nav-link active" href="SIT-Ciclos.php">Ciclo</a>
 </div>
-
+</div>
 </div>
 	
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
@@ -70,7 +71,7 @@ include 'Modularidad/MenuVertical.php';
 						
 					</div>
 					<br>
-					<center><button name="Guardar_ciclos" value="Crear Ciclo" id="Guardar_ciclos" style="border-radius: 20px;
+					<center><button name="Guardar_ciclos" value="Crear Ciclo" id="Guardar_ciclos" class="boton" style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
@@ -89,11 +90,12 @@ include 'Modularidad/MenuVertical.php';
 		<h5 class="card-header" style="color: black; font-weight: bold">Lista de Ciclos
 
 		<span class="float-right">	
+			<br>
 			<button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#exampleModal2" style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
-     color:white;">
+     color:white; text-align">
 				<img src="img/facultad.png" width="25px" height="25px">
 				Crear Ciclo
 			</button>

@@ -16,6 +16,7 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/Sesiones-ONE.css">
 <link rel="stylesheet" href="css/formulario_One_on_One.css">
+<link rel="stylesheet" href="css/Competencia.css">
 
 <style type="text/css">
   #regiration_form fieldset:not(:first-of-type) {
@@ -25,6 +26,14 @@ include 'Modularidad/MenuVertical.php';
   .panel-body {
     margin-left:25%;
   }
+  .botones{
+    margin-top:25%;
+    margin-left:25%;
+  }
+  .nav{
+    margin-left:20%;
+  }
+  
 }
  
 </style>
@@ -32,7 +41,10 @@ include 'Modularidad/MenuVertical.php';
 
 <div class="title">
      <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
-    <h2 class="main-title" >Sesiones One on One</h2>
+    <h2 class="main-title" >SESIONES ONE ON ONE</h2>
+    <div class="title2" style="background-color: #9d120e">
+	<a class="jjjjj" href="#" >SESIONES</a>
+</div>
 </div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
@@ -42,7 +54,7 @@ include 'Modularidad/MenuVertical.php';
 
 <!-- Modal -->
 <div class="row">
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nav">
     
   <nav class="nav flex-column h-100" id="nav">
     <h2 class="title-1">Menu</h2>
@@ -54,7 +66,7 @@ include 'Modularidad/MenuVertical.php';
   </div>
     <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
       <div class="tabla">
-    <div align="right" class="h-100" id="btns">
+    <div align="right" class="h-100 botones" id="btns">
     <a href="Reportes/ReporteSession.php"  target='blank'><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
     <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
   </div>

@@ -44,16 +44,17 @@ require_once '../Conexion/conexion.php';
   
 
 </style>
+<link rel="stylesheet" href="css/Competencia.css">
 <div class="container-fluid text-center">
-<div class="title">
+<div class="title div0">
      <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-	<h2 class="main-title" >Estados de Becas</h2>
+	<h2 class="main-title div1" >Estados de Becas</h2>
 	<div class="title2" style="background-color: #9d120e">
 	<a class="nav-link active" href="#" >Becas</a>
 </div>
 
 </div>
-	
+	<br><br><br>
 
 <div class="card">
 
@@ -83,26 +84,6 @@ require_once '../Conexion/conexion.php';
 					</tr>
 				</tr>
 			</thead>
-			<tfoot class="thead-dark">
-				<tr>   
-					<th scope="col">ID</th>
-					<th scope="col">Nombre</th>
-					<th scope="col">Class</th>
-					<th scope="col">Sede</th>
-					<th scope="col">Univerisdad</th>
-					<th scope="col">Estado laboral</th>
-					<th scope="col">STATUS ACTUAL</th>
-					<th scope="col">Interno</th>	
-					<th scope="col">Externo</th>
-					<th scope="col">Reuniones</th>
-					<th scope="col">Total</th>	
-					<th scope="col">Horas Vinculación</th>
-					<th scope="col">Porcentaje</th>	
-					<th scope="col">Estado</th>		
-
-				</tr>
-			</tr>
-		</tfoot>
 		<tbody>
 			
 			<?php
