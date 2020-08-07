@@ -34,16 +34,16 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 				}
 
 				echo "
-		<tr class='table-light'>
+		<tr class='table table-light w-100 '>
 		
-		<th>".$fila['Nombre']."</th>
-		<th>".$fila['Sexo']."</th>
-		<th>".$fila['Class']."/".$fila['ID_Sede']."</th>
-		<td>".utf8_encode($fila['nombre'])."</td>
-		<td>".$fila['CantidadModulos']."/6</td>
-		<td>".$fila['TotalTalleres']."</td>	
-		<th>".$fila['EstadoCerti']."</th>
-		<th><form action='cambiardatos.php' method='post'><button type='submit' name='id' value='".$fila['ID_Alumno']."' class='btn btn-warning' ><i class='far fa-edit'></i> Actualizar</button></form></th>
+		<td style='width:22%' >".$fila['Nombre']."</td>
+		<td style='width:5.8%'>".$fila['Sexo']."</td>
+		<td style='width:10.5%'>".$fila['Class']."/".$fila['ID_Sede']."</td>
+		<td style='width:28.3%'>".utf8_encode($fila['nombre'])."</td>
+		<td style='width:5.8%'>".$fila['CantidadModulos']."/6</td>
+		<td style='width:6%'>".$fila['TotalTalleres']."</td>	
+		<td>".$fila['EstadoCerti']."</td>
+		<td><form action='cambiardatos.php' method='post'><button type='submit' name='id' value='".$fila['ID_Alumno']."' class='btn btn-warning' ><i class='far fa-edit'></i> Actualizar</button></form></td>
 		</tr>";
 
 	}

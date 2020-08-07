@@ -1,10 +1,10 @@
 <?php 
   session_start();  
-  $varsesion = $_SESSION['Email'];
-  $varLugar = $_SESSION['Lugar'];
-  $VarFoto = $_SESSION['Foto'];
-  $varNombre = $_SESSION['Nombre'];
-  $varCargo= $_SESSION['Cargo'];
+  @$varsesion = $_SESSION['Email'];
+  @$varLugar = $_SESSION['Lugar'];
+  @$VarFoto = $_SESSION['Foto'];
+  @$varNombre = $_SESSION['Nombre'];
+  @$varCargo= $_SESSION['Cargo'];
   
   $InicialDep = $varLugar [0]; // Extraemos la primera letra
   $FinalDep = $varLugar [1]; // Extraemos la segunda letra
@@ -13,13 +13,13 @@
 
   error_reporting(0);
   if ($varsesion == null || $varsesion = "") {
-  	header("Location: ../login.php");
+  	header("Location: ../index.php");
   	die();
   }
 
 
    if ($varCargo != 'Auxiliar') {
-    header("Location: ../login.php");
+    header("Location: ../index.php");
     die();
   }
 
