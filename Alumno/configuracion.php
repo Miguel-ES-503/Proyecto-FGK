@@ -17,7 +17,7 @@
 
 <!--Comiezo de estructura de trabajo -->
 <link rel="stylesheet" type="text/css" href="CSS/configuracion.css">
-<div class="container-fluid text-center">
+<div class="container-fluid text-center" >
     <script type="text/javascript">
   $(document).ready(function () {
     bsCustomFileInput.init()
@@ -37,7 +37,7 @@
 
 		</div>
 
-		<div class="row">
+	
 			<div class="col-md-4 pr-md-5">
 				<div class="Info-1">
 					<h3 class="title1">Foto de Perfil</h3>
@@ -59,7 +59,7 @@
 				</div>
 			</div>
 			</div>
-			<div class="parte2">
+			<div class="parte2" style="position: absolute; bottom: 150px; right: 80px;" >
 				<div class="d-flex align-items-center">
 					<h3 class="subtitulo1">Datos de la cuenta</h3>
 					<div class="table-Info">
