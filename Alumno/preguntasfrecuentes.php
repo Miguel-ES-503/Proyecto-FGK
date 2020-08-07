@@ -33,8 +33,8 @@
     }
 }
 ?>
-		<div class="container d-flex justify-content-center mx-auto float-center" >
-           <div class="row">
+		<div class="container d-flex justify-content-center mx-auto float-center">
+           <div class="row"  >
               <div  id='accordion'>
             <?php 
               $num = 1;
@@ -56,7 +56,7 @@
                               $datetime2 = date_create($createday);
                               $interval = date_diff($datetime2, $datetime1);                         
                              echo "
-  <div class='card'>
+  <div class='card cambio-card' >
     <div class='card-header bg-dark' id='headingOne'>
       <h5 class='mb-0'>
         <button class='btn btn-link text-decoration-none text-uppercase font-weight-normal text-light float-left ' data-toggle='collapse' data-target='#collapseOne".($num++)."' aria-expanded='true' aria-controls='collapseOne".($num3++)."'>
@@ -64,7 +64,7 @@
         </button>
       </h5>
     </div>
-    <div id='collapseOne".($num2++)."' class='collapse ' aria-labelledby='headingOne' data-parent='#accordion'>
+    <div id='collapseOne".($num2++)."' class='collapse show' aria-labelledby='headingOne' data-parent='#accordion'>
       <div class='card-body'>
       ".$row["respuesta"]."
       <blockquote class='blockquote'>
