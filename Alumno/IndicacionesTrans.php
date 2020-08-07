@@ -113,7 +113,7 @@ if ($consulta6->rowCount()>=1)
              
               <!--Primera columna-->
                   <div class="col-sm" style="">
-                    <div class="col-sm-12">
+                    <div class="col-sm-12" id="requisitos">
 
                     <ul style="text-align: justify; color: black;" >
                            <h3 style="color: #BF3E3E;">Requisitos</h3>
@@ -126,12 +126,13 @@ if ($consulta6->rowCount()>=1)
                                    <li>ESEN, KEISER, UGV, ECMH, ECCI</li>
                                  </ul>
                          </ul>
+                        <br>
                     </div>
                    
                         
+                      
                         <br>
-                        <br>
-                        <div class="col-sm-12">
+                        <div class="col-sm-12" id="archivos">
 
                         <ul style="text-align: justify; color: black; ">
                           <h4 style="color: #BF3E3E;">Archivos</h4>
@@ -146,6 +147,7 @@ if ($consulta6->rowCount()>=1)
                                  </span>
                                </ul>
                         </ul>
+                      <br>
                         </div>
                         
 
@@ -155,7 +157,7 @@ if ($consulta6->rowCount()>=1)
 
        
 
-
+<br>
                  <div class="col-sm" id="pasos" style="background-color: #c7c7c7">
 
                          <ol style="text-align: justify; color: black;" >
