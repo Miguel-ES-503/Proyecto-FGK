@@ -1,577 +1,485 @@
-
-
-<?php 
-
-require_once 'templates/head.php';
-require '../Conexion/conexion.php';
-    
-    $idsoli = $_GET['id'];
-
- 
-       //Consulta en la base si exite pdf
-  $Consulta12 = $pdo->prepare("SELECT `comprobante` , observacion1 FROM solitransporte WHERE idSoliTrans = ?");
-  $Consulta12->execute(array($idsoli));
-  $fila=$Consulta12->fetch();
-  $ArchivoPDF;
-  $ArchivoPDF = $fila['comprobante'];
-  $Comentario = $fila['observacion1'];
- 
-
-//----------------------------------------------------------------------
-//IDA
-//----------------------------------------------------------------------    
-    // consulta para el calculo de total IDA
-       /* $ConsultaTotalI=$pdo->prepare("SELECT SUM(`costo`) as total 
-                               FROM rutasbuses 
-                               WHERE `idSoliTrans`='?' AND `tipo`='IDA'");
-
-        $ConsultaTotalI->execute(array( $idsoli));
-
-        //variable para calcular costo de ida
-        $TotalIda;
-
-        if ($ConsultaTotalI->rowCount() >0)
-        {
-
-          while ( $fila6=$ConsultaTotalI->fetch()) {
-            # code..
-              $TotalIda = $fila6['total'];
- 
-           }
-
-
-          
-
-          
-
-        }//fin if ida*/
-
-//-------------------------------------------------------------------------
-//REGRESO
-//-------------------------------------------------------------------------
-
-
-     //consulta par el calculo de total REGRESO
-       /* $ConsultaTotalR=$pdo->prepare("SELECT SUM(`costo`) as totalR 
-                               FROM rutasbuses 
-                               WHERE `idSoliTrans`='?' AND `tipo`='REGRESO'");
-
-
-
-        $ConsultaTotalR->execute();
-
-        //variable para calcular costo de regreso
-        $TotalRegreso = 0;
-
-        if ($ConsultaTotalR->rowCount() >0)
-        {
-          $fila1=$ConsultaTotalR->fetch();
-
-            if ($fila1['totalR'] != null) {
-              $TotalRegreso = $fila1['totalR'];
-            }else
-            {
-              $TotalRegreso = 0;
-            }
-
-
-        }//fin if regreso*/
-//-------------------------------------------------------------------
-
-
-
-
-
-
-         
-
-
-?>
-
-<title>Inicio</title>
-
 <?php
-  
-
+  require_once 'templates/head.php';
+?>
+<title>Transporte</title>
+<?php
   require_once 'templates/header.php';
-
-  require_once 'templates/MenuVertical.php';
-
+  //require_once 'templates/MenuVertical.php';
   require_once 'templates/MenuHorizontal.php';
+  require '../Conexion/conexion.php';
+
 
   
 
+  setlocale(LC_TIME, 'es_SV.UTF-8');
+
+  //Extraemos el carnet del estudiante
+  $stmt1 =$dbh->prepare("SELECT `ID_Alumno`, `ID_Empresa` FROM `alumnos` WHERE correo='".$_SESSION['Email']."'");
+  // Ejecutamos
+  $stmt1->execute();
+
+  while($fila = $stmt1->fetch()){
+      $alumno=$fila["ID_Alumno"];
+      $universidad=$fila["ID_Empresa"];
+  }
 
 ?>
 
-
-<div class="container-fluid text-center">
-  <script type="text/javascript">
+<!--///////////////////////////////////////////////-->
+<!--Para ver el nombre del archivo que sube-->
+<script type="text/javascript">
   $(document).ready(function () {
     bsCustomFileInput.init()
   });
   </script>
-  <br><br>
-  <div class="text-center">
-
-      <h1>Solicitud de transporte</h1>
-
-     
- <!--Inicio del formulario -->       
-<fieldset >
   
-
- <form action="Modelo/ModeloTransporte/insertarDatosT.php" method="post">
-<div class="form-row">
-
-
-
-    <div class="form-group col-md-4">
-      <label for="inputCity">Dia</label>
-      <select id="dia" name="dia" class="form-control" required>
-        <option selected>Seleccione una opción...</option>
-        <option value="Lunes">Lunes</option>
-        <option value="Martes">Martes</option>
-        <option value="Miercoles">Miercoles</option>
-        <option value="Jueves">Jueves</option>
-        <option value="Viernes">Viernes</option>
-        <option value="Sabado">Sabado</option>
-      </select>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">Horario de Salida</label>
-      <input type="time" id="appt" name="horainicio" class="form-control" min="06:00" max="20:00" required  placeholder="Ingrese su horario">
-    </div>
-
-    <div class="form-group col-md-4">
-      <label for="inputState">Horario de llegada</label>
-      <input type="time" id="appt" name="horafinal" class="form-control" min="06:00" max="20:00" required  placeholder="Ingrese su horario">
-    </div>
-  </div>
-
-
-  <div class="form-row">
-    
-     <div class="form-group col-md-4">
-      <label for="inputCity">Seleccione ida o regreso</label>
-      <select id="tipo" name="tipo" class="form-control" required>
-        <option selected>Seleccione una opción...</option>
-        <option>IDA</option>
-        <option>REGRESO</option>
-      </select>
-    </div>
-
-    <div class="form-group col-md-4">
-      <label for="inputZip">Ruta</label>
-      <input type="text" name="nombreruta" class="form-control" id="inputZip" placeholder="Ingrese la ruta" required>
-    </div>
-
-    <div class="form-group col-md-4">
-      <label for="inputZip">Costo</label>
-      <input type="text" name="costo" class="form-control" id="inputZip" placeholder="Ingrese el costo $" required>
-    </div>
-
-    <!--idsolicitudTrans-->
-    <input type="hidden" name="idSoliT" value="<?php echo $_GET['id'];?>"> 
+  <!--Fin de funcion-->
+  <!--///////////////////////////////////////////////-->
 
 
 
-  </div>
 
+<!--Estructura -->
+<div class="container-fluid text-center">
+<div class="title" style="margin-left: -14px;">
+<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Solicitud Transporte</h2>
+	
+</div>
   <br>
 
-  <input type="submit" id="Ingresar_DatosT" name="Ingresar_DatosT" value="Agregar Costo" class="btn btn-secondary">
+
   
+
+  
+
+  <!--Información de solicitud-->
+  <div class="row">
+
+  
+     <!--Primera columna-->
+     <div class="col-sm" style="color: #343434; width: 100%;">
+        <br>
+
+        <div class="btn-group-toggle" data-toggle="buttons">
+          <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Nueva Ruta bus">
+          <button type="button" class="btn btn-dark px-3" data-toggle="modal" data-target="#ModalCosto" ><i class="fa fa-bus-alt"></i> Agregar ruta bus</button>
+          </span>
+  
+
+          <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Socioeconomico">
+          <button type="button" class="btn btn-dark px-3" data-toggle="modal" data-target="#ModalPdf" > <i class="fa fa-file-pdf"></i> Subir Socioeconómico</button>
+          </span>
+
       
-
-</form>
-</fieldset>
-
-
-
-
-
- <!--Inicio del formulario -->       
-<fieldset>
-  <br><br>
-
- <form action="Modelo/ModeloCostos/GuardarCostos.php" method="post">
-
-<div class="form-row">
-    <?php
-
-     //Consulta para extraer datos de horario
-    $ConsulHorario= $pdo->prepare("SELECT idHorarioTrans, dia, horaEntrada, horaSalida 
-                            FROM horariotransporte 
-                            WHERE idSoliTrans=?");
-
-    $iduser2 = $_GET['id'];
-    $ConsulHorario->execute(array($iduser2));
-
-   
-    ?>
-
-
-
-
-    <div class="form-group col-md-4">
-      <label for="inputCity">Horario</label>  
-
-      <select id="horario" name="horario" class="form-control" required>
-        <option value="" disabled selected>Seleccione Horario..</option>
-
-        <?php
-
-            if ($ConsulHorario->rowCount()>=1) {
-              # code...
-
-              while ($filaH=$ConsulHorario->fetch()) {
-                # code...
-
-                echo "<option value=".$filaH['idHorarioTrans'].">".$filaH['dia']."-----".$filaH['horaEntrada']."-".$filaH['horaSalida'];"</option>";            }
-            }
-
-        ?>
+        </div>
         
-      </select>  
-      
-    </div>
-
-   
 
     
-    <?php
+  
 
-    //Consulta para extraer los datos ingresados a la 
-    //tabla rutas buses de solicitud transporte
+    <!--tabla con informacion de solicitud-->
+    <div class="col text-center">
+      <br><br><br>
 
-    $ConsulRutasB= $pdo->prepare("SELECT idRuta, nombreruta, tipo 
-                            FROM rutasbuses 
-                            WHERE idSoliTrans=?");
+      <!--CSS de las tablas -->
+      <style type="text/css">
+          table {
+            border-collapse: separate;
+            border-spacing: 6px;
+            background:  bottom left repeat-x;
+            color: #fff;
 
-    $idSoli2 = $_GET['id'];
-    $ConsulRutasB->execute(array($idSoli2));
+
+          }
+
+          tr, th{
+            background: white;
+            color: #585858;
+            text-align: center;
 
 
-    ?>
+          }
+          td  {
+            width: 150px;
+            background: #D8D8D8;
+            border-radius: 3px;
+            color: #000;
+          }
 
-    <!--Select que muestra las rutas ingresadas-->
-    <div class="form-group col-md-4">
-      <label for="inputCity">Rutas</label>
-      <select name="ruta" id="ruta" class="form-control" required>
-        <option value="" disabled selected>Seleccione las rutas buses..</option>
+           .oscuro{
+            background: #A4A4A4;
 
-        <?php
-
-            if ($ConsulRutasB->rowCount()>=1) {
-              # code...
-
-              while ($filaRB=$ConsulRutasB->fetch()) {
-                # code...
-
-                echo "<option value=".$filaRB['idRuta'].">".$filaRB['nombreruta']."-----".$filaRB['tipo'];"</option>";            }
-            }
-
-        ?>
-        
-      </select>  
-      
-    </div>
-
-    <div class="form-group col-md-4">
-
-<br>    
-     <input type="submit" id="Guardar_costo" name="Guardar_costo" value="Agregar Horario" class="btn btn-secondary">
-    </div>
-  </div>
+          }
 
 
 
+          h3 {
+            color: #DE0B18;
+          }
 
-
-  <!--idsolicitudTrans-->
-  <input type="hidden" name="solitrans" value="<?php echo $_GET['id'];?>"> 
-     
-
+          h4{
+            color: white;
+          }
+          div.centerTable{
+        text-align: center;
+         }
 
  
-  <br>
 
-  
-  
+        div.centerTable table {
+         margin: 0 auto;
+         text-align: left;
+         width: 100%;
+        }
+        </style>  <!--Fin de CSS de las tablas -->
+
+        
+      <!--Tabla de buses de Ida -->
+        <h3 class="card-header h3s bg-light">Ida a la Universidad</h3>
+        <div class='centerTable'>
+          <table  > 
+          <thead>
+            <tr>
+              <th>nº</th>
+              <th>Ruta de bus</th>
+              <th>Lunes</th>
+              <th>Martes</th>
+              <th>Miercoles</th>
+              <th>Jueves</th>
+              <th>Viernes</th>
+              <th>Sabado</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <?php
+            //Muestra solo las rutas de ida
+
+             $RutasIda= $pdo->prepare("SELECT idRuta, nombreruta, tipo , costo 
+                                       FROM rutasbuses 
+                                       WHERE idSoliTrans=? AND tipo='Ida'");
+
+             $idSoliTrans = $_GET['id'];
+             $RutasIda->execute(array($idSoliTrans));
+             ?>
+              
+             <?php
+             if ($RutasIda->rowCount()>=1) {
+               $n=1;
+               while ($filaRB=$RutasIda->fetch()) {
+                  echo "<tr>
+                        <td>".$n."</td>
+                        <td class='oscuro'>".$filaRB['nombreruta']."</td>
+
+                        <td><input type='checkbox' name='dias[]' tu-attr-precio=".$filaRB['costo']." class='CheckedAK' id='ida1'></td>
+                        <td><input type='checkbox' name='dias[]' tu-attr-precio=".$filaRB['costo']." class='CheckedAK' ></td>
+                        <td><input type='checkbox' name='dias[]' tu-attr-precio=".$filaRB['costo']." class='CheckedAK' ></td>
+                        <td><input type='checkbox' name='dias[]' tu-attr-precio=".$filaRB['costo']." class='CheckedAK' ></td>
+                        <td><input type='checkbox' name='dias[]' tu-attr-precio=".$filaRB['costo']." class='CheckedAK' ></td>
+                        <td><input type='checkbox' name='dias[]' tu-attr-precio=".$filaRB['costo']." class='CheckedAK' ></td>
+                        <td><center><a href='Modelo/ModeloRutas/EliminarRuta.php?id=".$filaRB['idRuta']."&id2=". $_GET['id']."' class='fas fa-trash  btn btn-danger'> </a></center></td>
+                        </tr>";     
+                     $n++;       
+                   }
+               }else{
+                   echo "<tr><td colspan='9'>No ha agregado rutas de Ida</td></tr>";
+                 }
+
+             ?>
+          </tbody>
+
+          <tfoot>
+            <th colspan="7"></th> 
+            <th> &nbsp;&nbsp;Total de ida:  </th>
+            <th colspan="1" > 
+            <input style="background: #DE0B18; border-radius: 25px ; color: white; width:150px; height: 25px; text-align: center;" id="total" type="text" placeholder=" 0.00" class="form-control" disabled value=" $ 0.00"  /></th>
+          </tfoot>
+        </table>
+      </div>
+      <br> <!--Fin Tabla de buses de Ida -->
+
+
+
+
+      
+      <!--Tabla de buses de Regreso -->
+       <div class='centerTable'>
+         <table  id="tablaR2">
+         <h3 class="card-header h3s bg-light" >Regreso a casa</h3>
+         <thead>
+          <tr>
+            <th>nº</th>
+            <th>Ruta de bus</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miercoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+            <th>Sabado</th>
+            <th>Eliminar</th>
+          </tr>
+         </thead>
+
+         <tbody>
+           
+            <?php
+            //Muestra solo las rutas de ida
+
+            $RutasRegreso= $pdo->prepare("SELECT idRuta, nombreruta, tipo , costo FROM rutasbuses WHERE idSoliTrans=? AND tipo='regreso'");
+
+            $idSoliTrans2 = $_GET['id'];
+            $RutasRegreso->execute(array($idSoliTrans2));
+           
+            if ($RutasRegreso->rowCount()>=1) {
+               $m=1;
+               while ($filaRBR=$RutasRegreso->fetch()) {
+               echo "<tr>
+                     <td>".$m."</td>
+                     <td class='oscuro'>".$filaRBR['nombreruta']."</td>
+                     <td><input type='checkbox' tu-attr-precio=".$filaRBR['costo']." class='CheckedAKR' ></td>
+                     <td><input type='checkbox'  tu-attr-precio=".$filaRBR['costo']." class='CheckedAKR' ></td>
+                     <td><input type='checkbox'  tu-attr-precio=".$filaRBR['costo']." class='CheckedAKR' ></td>
+                     <td><input type='checkbox'  tu-attr-precio=".$filaRBR['costo']." class='CheckedAKR' ></td>
+                     <td><input type='checkbox'  tu-attr-precio=".$filaRBR['costo']." class='CheckedAKR' ></td>
+                     <td><input type='checkbox'  tu-attr-precio=".$filaRBR['costo']." class='CheckedAKR' ></td>
+                     <td><center><a href='Modelo/ModeloRutas/EliminarRuta.php?id=".$filaRBR['idRuta']."&id2=". $_GET['id']."' class='fas fa-trash  btn btn-danger'> </a></center></td>
+                     </tr>";     
+                     $m++;       
+                   }
+                }else{
+                   echo "<tr><td colspan='9'>No ha agregado rutas de Regreso</td></tr>";
+                }
+             ?>
+          </tbody>
+
+          <tfoot>
+            <th colspan="7"></th> 
+            <th> Total de regreso:  </th>
+            <th colspan="1" > 
+            <input style="background: #DE0B18; border-radius: 25px; color: white; width:150px; height: 25px; text-align: center;" id="total2" type="text" placeholder="0.00" class="form-control" disabled value="$ 0.00"  /></th>
+          </tfoot>
+         </table>
+       </div><br><!--Fin Tabla de buses de Regreso -->
+
+
+      <!--Tabla de gastos --> 
+      <div class="container" style="width: 85%;" >
+      
+       <div class="row" >
+         <div class="col" >
+          <h3  class="card-header h3s bg-light">Gastos de transporte <i class="fa fa-dollar-sign"></i> <i class="fa fa-bus-alt"></i></h3>
+         </div>
+        
+         <div class="col" style="border-radius:25px; background: gray; color: white; margin-right: 7px; margin-left: 10px;">
+         <label ><h4>Total Semanal: </h4> <div id="resultSemanal" style="color: white;">$ 0.00</div> </label>
+         <br>
+       </div>
+
+       <div class="col" style="border-radius:25px; background: gray; color: white;">
+         <label ><h4>Total Mensual:</h4><div id="ResultMes" style="color: white;">$ 0.00</div></label><br>
+         <input type="hidden" name="" id="Resultinput">
+       </div>
+     </div>
+    </div><br><br> <!--  Fin Tabla de buses Costos -->
+
+    <!-- Horario de Universidad -->
+
+       <div>
+        <br>  
+         <h3 class="card-header h3s bg-light" >Horario Universidad</h3>
+        <br>
+        <span class="float-center">  <br>
+        <button type="button" class="btn btn-dark px-3" data-toggle="modal" data-target="#ModalHorario"><i class="fas fa-calendar"></i>  Crear Horario</button>
+        </span>
+       </div><br>
+
+      <div class='centerTable'>
+         <table  id="makeEditable2" class="float-center" > 
+         <thead>
+           <tr>
+             <th>nº</th>
+             <th >Dia</th>
+             <th>Hora entrada</th>
+             <th>Hora Salida</th>
+             <th>Eliminar</th>
+            </tr>
+          </thead>
+
+          <tbody>
+           
+            <?php
+            //Muestra solo las rutas de ida
+            // Consulta De La BASE DE DATOS
+             $HorarioU=$pdo->prepare("SELECT * FROM `horariotransporte` WHERE `idSoliTrans` = ?");
+             $idSoli = $_GET['id'];
+             $HorarioU->execute(array($idSoli));
+            
+                if ($HorarioU->rowCount()>=1) {
+                   $l=1;
+                  while ($filaH=$HorarioU->fetch()) {
+                     echo "<tr>
+                      <td>".$l."</td>
+                      <td class='oscuro'>".$filaH['dia']."</td>
+                      <td>".$filaH['horaEntrada']."</td>
+                      <td>".$filaH['horaSalida']."</td>
+                      <td><center><a href='Modelo/ModeloHorario/EliminarHorario.php?id=".$fila2['idhorario']."&id2=". $_GET['id']."' class='fas fa-trash  btn btn-danger'> </a></center></td>
+                       </tr>";     
+                     $l++;       
+                   }
+                }else{
+                   echo "<tr><td colspan='5'>No ha agregado horario</td></tr>";
+                }
+
+
+             ?>
+        
+           </tbody>
+
+           </table>
+         </div>
+
+        <?php  
+          // Validacion de PDF-Socioeconomico
+          //------------------------------------
+          //consulta para seleccionar el comprobante
+          $PDF=$pdo->prepare("SELECT comprobante 
+                              FROM `solitransporte` 
+                              WHERE `idSoliTrans` = ?");
+
+          $idSoliiT = $_GET['id'];//extrae id de la solicitud Transporte
+          $PDF->execute(array($idSoliiT));//ejecute consulta
+
+
+          if ($PDF->rowCount()>=1) {
+          //recorre las filas
+              while ($filapdf=$PDF->fetch()) {
+              //Validacion de boton finalizar
+              //------------------------------
+
+              //si comprobante es diferente a vacio
+                if ($filapdf['comprobante'] !=null) {
+
+                 //boton finalizar Acivo
+                  echo "<br><br>
+                  <div class='f1-buttons'>
+                  <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalFinal'>  Finalizar</button>
+                  </div>
+                  <br><br>";
+                }else
+                  {
+
+                  //boton finalizar Bloqueado
+                  echo "<br><br>
+                  <div class='f1-buttons'>
+                  <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#modalFinal'  disabled>  Finalizar</button>
+                  </div>
+                  <br><br>";
+                  } 
+                 
+              }//fin while
+            }//fin de if
+            ?>
+           </div>
+
+
+
+
+
       
 
-</form>
-</fieldset>
+
+    </div>
+  </div>
+</div>
+
+<!--MODALS-->
+<div class="hidden" >
+
+<!-- MODAL RUTAS -->
+<!--**************-->
+
+<div class="modal fade " id="ModalCosto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content" >
+       <div class="modal-header" >
+         <h5 class="modal-title" id="exampleModalLabel">Ruta</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+           </button>
+       </div>
+   <div class="modal-body" >
+
+     <form  method="POST" accept-charset="utf-8" id="rutaform">
+       <div id="alerta5"></div>
+         <div class="col">
+
+           <!--idsolicitudTrans-->
+           <div class="form-group">
+             <label class="sr-only" for="idSoliT">Id de Solicitud</label>
+                <input type="hidden" name="idSoliT"  id="idSolic" value="<?php echo $_GET['id'];?>">
+           </div>
 
 
+           <div class="form-group">
+             <label class="sr-only" for="nombreruta">Nombre de ruta</label>
+               <input type="text" name="nombreruta" id="nombreRuta" placeholder="Nombre de ruta" class="nombreruta form-control"  id="nombreruta">
+             </div>
 
 
-  <h4 class="float-left">IDA</h4>   
-<br><br>  
- <div class="row">
-    <div class="col">
-      <table class="table table-responsive-lg float-left">
-        <thead class="thead-dark">
-          <tr>
-            
-            <th scope="col">Dia</th>
-            <th scope="col">Hora Salida</th>
-            <th scope="col">Hora de llegada</th>
-            <th scope="col">Ruta</th>
-            <th scope="col">Costo</th>
-            <th scope="col">Tipo</th>
+            <div class="form-group">
+               <label class="sr-only" for="costo">Costo</label>
+               <select  name="costo" placeholder="Costo de ruta" id="CostoRuta" class="costo form-control" >
+                 <option selected >Seleccione el costo del bus $</option>
+                 <option>0.20</option>
+                 <option>0.25</option>
+                 <option>0.35</option>
+                 <option>0.50</option>
+                 <option>0.75</option>
+                 <option>1.00</option>
+                 <option>1.25</option>
+                 <option>1.50</option>
+                 <option>1.75</option>
+                 <option>2.00</option>
+               </select>
+                                                   
+            </div>
 
-
-            <th scope="col">Opciones</th>
-          </tr>
-        </thead>
-        <tbody class="bg-light">
-
-          <?php
-           $MuestraHorarioR=$pdo->prepare("SELECT DISTINCT RH.idHorarioTrans ,HT.dia ,HT.horaEntrada                           , HT.horaSalida ,RH.idRuta, RB.nombreruta , RB.costo, RB.tipo                             FROM ruta_horario RH 
-                                          INNER JOIN horariotransporte HT
-                                          ON RH.idHorarioTrans = HT.idHorarioTrans 
-                                          INNER JOIN rutasbuses RB 
-                                          ON RH.idRuta = RB.idRuta 
-                                          WHERE HT.idSoliTrans = ? AND RB.tipo='IDA'");
-
-           $datostrans = $_GET['id'];
-
-                                      
-             $MuestraHorarioR->execute(array($datostrans));
-
-               if ($MuestraHorarioR->rowCount()>=1)
-               {
-                 while ($fila=$MuestraHorarioR->fetch())
-                  {   
-
-                  //calculo de total ida  
-                    $TotalIda = ($fila['costo'] + $TotalIda);
-
-                     echo "
-                         <tr class='table-light'>
-                            <th>".$fila['dia']."</th>
-                            <th>".$fila['horaEntrada']."</th>
-                            <th>".$fila['horaSalida']."</th>
-                            <th>".$fila['nombreruta']."</th>
-                            <th>".number_format($fila['costo'], 2, '.', '')."</th>
-                            <th>".$fila['tipo']."</th>
-                            
-                            <td><center><a href='Modelo/ModeloCostos/EliminarCostos.php?id=".$fila['idHorarioTrans']."&id2=". $fila['idRuta']."&id3=".$_GET['id']."' class='fas fa-trash  btn btn-danger'></a></center></td>
-                         </tr>";
-
-
-
-                   }
-              }
-
-                                    
-
-
-
-          ?>
-
-
+            <div class="form-group">
+               <label class="sr-only" for="tipo">Tipo</label>
+                <select  name="tipo" id="tipoRuta" placeholder="Costo de ruta" class="tipo form-control"  id="tipo">
+                 <option>Seleccione el tipo..</option>
+                 <option>Ida</option>
+                 <option>Regreso</option>
+               </select>
+                                                   
+            </div>
+                           
+          </div>
 
          
-
-
-
-        </tbody>
-         <tfoot>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col">Total  $<?php echo number_format($TotalIda, 2, '.', '');?></th>
-            <th scope="col"></th>
-          </tr>
-        </tfoot>
-      </table>
+          <input class="btn btn-dark btn-rounded btn-block my-4 waves-effect z-depth-0" type="button" name="Guardar_Ruta" value="Crear Ruta" id="Guardar_Ruta"  >
+      </form>       
+                         
     </div>
   </div>
+ </div>
+
+<!-- FIN MODAL RUTAS -->
+<!--**********************-->   
+</div> <!--fin contenedor modals rutas-->
 
 
-<h4 class="float-left">REGRESO</h4>   
-<br><br>  
- <div class="row">
-    <div class="col">
-      <table class="table table-responsive-lg float-left">
-        <thead class="thead-dark">
-          <tr>
-            
-            <th scope="col">Dia</th>
-            <th scope="col">Hora Salida</th>
-            <th scope="col">Hora de llegada</th>
-            <th scope="col">Ruta</th>
-            <th scope="col">Costo</th>
-            <th scope="col">Tipo</th>
-
-
-            <th scope="col">Opciones</th>
-          </tr>
-        </thead>
-        <tbody class="bg-light">
-
-          <?php
-          //Consulta para mostrar en tabla todos los datos
-           $MuestraHorarioR=$pdo->prepare("SELECT DISTINCT RH.idHorarioTrans ,HT.dia ,HT.horaEntrada                           , HT.horaSalida ,RH.idRuta, RB.nombreruta , RB.costo, RB.tipo                             FROM ruta_horario RH 
-                                          INNER JOIN horariotransporte HT
-                                          ON RH.idHorarioTrans = HT.idHorarioTrans 
-                                          INNER JOIN rutasbuses RB 
-                                          ON RH.idRuta = RB.idRuta 
-                                          WHERE HT.idSoliTrans = ? AND RB.tipo='REGRESO'");
-           //variable para traer el id de la solicitud Transporte
-           $datostrans = $_GET['id'];
-
-                                      
-             $MuestraHorarioR->execute(array($datostrans));
-
-               if ($MuestraHorarioR->rowCount()>=1)
-               {  
-                 while ($fila=$MuestraHorarioR->fetch())
-                  {     
-                    //calculo de total regreso
-                    $TotalRegreso = ($fila['costo'] + $TotalRegreso);
-
-                     echo "
-                         <tr class='table-light'>
-                            <th>".$fila['dia']."</th>
-                            <th>".$fila['horaEntrada']."</th>
-                            <th>".$fila['horaSalida']."</th>
-                            <th>".$fila['nombreruta']."</th>
-                            <th>".number_format($fila['costo'], 2, '.', '')."</th>
-                            <th>".$fila['tipo']."</th>
-                            
-                            <td><center><a href='Modelo/ModeloCostos/EliminarCostos.php?id=".$fila['idHorarioTrans']."&id2=". $fila['idRuta']."&id3=".$_GET['id']."' class='fas fa-trash  btn btn-danger'></a></center></td>
-                         </tr>";
-
-
-
-                   }
-              }
-
-
-          ?>
-
-
-        </tbody>
-         <tfoot>
-
-           <tr>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col">Total  $<?php echo number_format($TotalRegreso, 2, '.', ''); ?></th>
-            <th scope="col"></th>
-          </tr>
-
-          
-        </tfoot>
-      </table>
-    </div>
-  </div>
-
-
-
-  <br><br>  
- <div class="row">
-    <div class="col">
-      <table class="table table-responsive-lg float-left">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">$Costo ida</th>
-            <th scope="col">$Costo Regreso</th>
-            <th scope="col">$Total de la semana</th>
-            <th scope="col">$Total del mes</th>
-            <th scope="col">Comprobante</th>
-            <th scope="col">Opciones</th>
-          </tr>
-        </thead>
-        <tbody class="bg-light">
-          <tr>
-            <?php
-
-            //CALCULOS DE TRANSPORTE
-            //--------------------------------------
-
-            //calculo de total a la semana $
-            $TotalSemanal=$TotalIda+$TotalRegreso;
-
-            //calculo de total mensual
-            $TotalMensual=($TotalSemanal*4);
-
-
-            ?>
-
-
-            <th scope="col">$<?php echo number_format($TotalIda, 2, '.', '');?></th>
-            <th scope="col">$<?php echo number_format($TotalRegreso, 2, '.', ''); ?></th>
-            <th scope="col">$<?php echo number_format($TotalSemanal, 2, '.', '');?></th>
-            <th scope="col">$<?php echo number_format($TotalMensual, 2, '.', '');?></th>
-            <?php 
-
-            if ($ArchivoPDF !=null) {
-          echo "<th scope='col'><a href='../pdfTransporte/$ArchivoPDF' class='btn btn-danger' target='_blank'><i class='fas fa-file-pdf' ></i></a></th>";
-            }else
-            {
-          echo "<th scope='col'><button type='button' class='btn btn-danger' disabled><i class='fas fa-file-pdf' ></i></button></th>";
-            } 
-
-
-              if ($ArchivoPDF !=null) {
-          echo "<th scope='col'><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal'>Actualizar</button></th>";
-            }else
-            {
-          echo "<th scope='col'><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal'>Subir Comprobante</button></th>";
-            } 
-             
-             ?>
-             
-
-            
-          </tr>
-
-
-        </tbody>
-        
-      </table>
-    </div>
-  </div>
-
- 
-<?php 
-
-    if ($ArchivoPDF ==null && $TotalMensual == null ) {
-          echo " <center><button type='button' class='btn btn-danger' data-toggle='modal' data-target='#exampleModal2' disabled>Finalizar Solicitud</button></center>";
-            }else
-            {
-          echo " <center><button type='button' class='btn btn-danger' data-toggle='modal' data-target='#exampleModal2' >Finalizar Solicitud</button></center>";
-            }
-
- ?>
- 
-   
-
-
-    </div>
-  </div>
-  <br>
-  <br>
-</div>
-
-<!-- /#page-content-wrapper -->
-
-
-
-</div>
+                       
 
 </div>
 
 
+
+<!-- Modal  Socioeconomico-->
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ModalPdf" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -612,46 +520,85 @@ require '../Conexion/conexion.php';
   </div>
 </div>
 
-<!-- /#wrapper -->
 
 
+ <!--MODALS-->
+ <div class="hidden" >
+
+ <!-- MODAL HORARIO -->
+ <!--**************-->
+
+ <div class="modal fade " id="ModalHorario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" >
+        <div class="modal-header" >
+          <h5 class="modal-title" id="exampleModalLabel">Horario</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <div class="modal-body" >
+
+      <form action="Modelo/ModeloTransporte/GuardarHorario.php" method="POST" accept-charset="utf-8">
+        <div id="alerta5"></div>
+          <div class="col">
+
+            <!--idsolicitudTrans-->
+            <div class="form-group">
+              <label class="sr-only" for="idSoliT">Id de Solicitud</label>
+                 <input type="hidden" name="idSoliT" value="<?php echo $_GET['id'];?>">
+            </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Seguro desea Finalizar la solicitud</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <?php $resultCosto  =  number_format($TotalMensual, 2, '.', ''); ?> 
-        <p style="text-align: justify;">Nota: Recueda el monto solicitado es <b>$<?php echo $resultCosto; ?></b> debera ser aprobado por tu coach de lo contrario ellos te asignara la cantidad o  de ser rechazada</p>
-        <form method="POST" action="Modelo/ModeloTransporte/enviarSolicitudTrans.php">
-            
-          <input type="hidden" name="costototal" value="<?php echo $resultCosto; ?>">
-          <input type="hidden" name="idsol" value="<?php echo $_GET['id']; ?>">
+           
 
-  
-        
-        
-      </div>
-      <div class="modal-footer">
-        <input type="submit" name="Crarsoli" value="Enviar" class="btn btn-secondary">
-        <button type="button"  data-dismiss="modal">Close</button>
-        
-      </div></form>
-    </div>
+
+             <div class="form-group">
+                <label  for="costo">Dias</label>
+                 <select  name="dia" placeholder="Horario" class="costo form-control"  id="dia">
+                  <option>Seleccione una opcion...</option>
+                  <option>Lunes</option>
+                  <option>Martes</option>
+                  <option>Miercoles</option>
+                  <option>Jueves</option>
+                  <option>Viernes</option>
+                  <option>Sabado</option>
+                
+                </select>
+                                                    
+             </div>
+
+              <div class="form-group">
+              <label  for="horaentrada">Hora Entrada</label>
+                <input type="time" class="form-control" id="inputZip" name="horaentrada" class="form-control" min="06:00" max="20:00" placeholder="Ingrese su horario de entrada">
+              </div>
+
+            <div class="form-group">
+              <label  for="horasalida">Hora Salida</label>
+                <input type="time" class="form-control" id="inputZip" name="horasalida" class="form-control" min="06:00" max="20:00" placeholder="Ingrese su horario de salida">
+              </div>
+                            
+           </div>
+
+
+           <input class="btn btn-dark btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="crear_Horario" value="Crear Horario" id="crear_Horario"  >
+       </form>       
+                          
+     </div>
+   </div>
   </div>
-</div>
+
+ <!-- FIN MODAL HORARIO -->
+ <!--**********************-->   
+</div> <!--fin contenedor modals horario-->
+
+</div>                   
 
 
+
+
+  <br><br>
 
 <?php
-
   require_once 'templates/footer.php';
-
 ?>

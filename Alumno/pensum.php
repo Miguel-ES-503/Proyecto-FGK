@@ -52,11 +52,22 @@
       <li class="nav-item">
         <a class="nav-link active" href="SIT-CrearEmpresas.php">Pensum</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="RetiroMateria.php">Inscritas</a>
+      </li>
+
+
        <li class="nav-item">
+        <a class="nav-link" href="RetiroMateria.php">Aprobadas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="SIT-CrearCarrera.php">Reprobadas</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="RetiroMateria.php">Retiros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="SIT-CrearCarrera.php">Aprobadas</a>
+        <a class="nav-link" href="RetiroMateria.php">Consolidado</a>
       </li>
      
     </ul>
