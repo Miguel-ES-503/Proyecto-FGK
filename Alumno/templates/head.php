@@ -1,16 +1,16 @@
 <?php
   session_start();
-  $varsesion = $_SESSION['Email'];
-  $varLugar = $_SESSION['Lugar'];
-  $varfoto = $_SESSION['Foto'];
-  $car=$_SESSION['Cargo'];
+  @$varsesion = $_SESSION['Email'];
+  @$varLugar = $_SESSION['Lugar'];
+  @$varfoto = $_SESSION['Foto'];
+  @$car=$_SESSION['Cargo'];
   error_reporting(0);
   if ($varsesion == null || $varsesion = "") {
-  	header("Location: ../login.php");
+  	header("Location: ../index.php");
   	die();
   }
   if ($car != 'Estudiante') {
-  	header("Location: ../login.php");
+  	header("Location: ../index.php");
   	die();
   }
     include("../BaseDatos/conexion.php");

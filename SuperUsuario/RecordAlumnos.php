@@ -14,20 +14,20 @@ include 'Modularidad/MenuVertical.php';
 ?>
 
 <!--Comiezo de estructura de trabajo -->
+<link rel="stylesheet" href="css/Competencia.css">
 <div class="container-fluid text-center">
-<div class="title">
+<div class="title div0">
      <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-	<h2 class="main-title" >Record  de alumnos</h2>
-	<div class="title2" style="background-color: #9d120e">
-	<a class="nav-link active" href="#">Alumnos</a>
-</div>
-
-
+	<h2 class="main-title">Record  de alumnos</h2>
+	<div class="title2 div1" style="background-color: #9d120e">
+		<a class="nav-link active" href="#">Alumnos</a>
+	</div>
 </div>
 	
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 
-<br>
+<br><br><br>
+
 <div class="card">
 	<h5 class="card-header" style="color: black;">Lista general
 		<a href="ReportesExcel/RecordAlumnos.php" class="float-right">

@@ -15,25 +15,30 @@ include 'Modularidad/MenuVertical.php';
 ?>
 
 <!--Comiezo de estructura de trabajo -->
+<link rel="stylesheet" href="css/Competencia.css">
 <div class="container-fluid text-center">
-	<div class="title">
-     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-	<h2 class="main-title" >Listas  de alumnos</h2>
-	<div class="title2" style="background-color: #9d120e">
-	<a class="nav-link active" href="LIS-Alumnos.php">Alumnos</a>
-</div>
-	<div class="title21" style="background-color: #9d120e">
-    <a class="nav-link" href="LIS-Cuentas.php" >Cuentas</a></div>
 
-</div>
+	<div class="title">
+
+		<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+		<h2 class="main-title" >Listas de alumnos</h2>
+		
+		<div class="title2" style="background-color: #9d120e">
+			<a class="nav-link active" href="LIS-Alumnos.php">Alumnos</a>
+		</div>
+
+		<div class="title2" style="background-color: #9d120e">
+			<a class="nav-link" href="LIS-Cuentas.php" >Cuentas</a>
+		</div>
+	</div>
 	
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 <div class="float-right"> <?php include 'Modularidad/AlertaCorreo.php'?></div>
 
 <!--/.Navbar-->
-<br><br>
+<br><br><br><br>
 <form action="select.php" method="POST">
-<div class="card">
+<div class="card formu">
 	<h5 class="card-header" style="color: black;">Alumnos de  <?php if($ubicacion == "SS"){ echo "San Salvador";}else{ echo "Santa Ana";}?>
 		
 		<span class="float-right">	

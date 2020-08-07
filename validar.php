@@ -120,7 +120,7 @@ if (isset($_POST['iniciar']))
   //Para validar si ya fallo la contrasena o email y asi mantener el correo en el input
   $_SESSION['Iniciado'] = $_POST['correo'];
  $_SESSION['ValidaEntrada'] = 'fallo';
-    header('Location: login.php');
+    header('Location: index.php');
 
   exit;
   //include 'login.php';
@@ -140,7 +140,7 @@ else
 else
 {
 
- include 'login.php';
+ include 'index.php';
  //echo "<script>swal({title:'Error',text:'No se pude ejecutar la acción',type:'error'});</script>";
 
 }
