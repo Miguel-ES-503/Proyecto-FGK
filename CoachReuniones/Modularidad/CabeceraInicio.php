@@ -1,4 +1,4 @@
-}<?php 
+<?php 
   session_start();  
   @$varsesion = $_SESSION['Email'];
   @$varLugar = $_SESSION['Lugar'];
@@ -18,7 +18,7 @@
   }
 
 
-   if ($varCargo != 'SuperUsuario') {
+   if ($varCargo != 'Coach Fase 2') {
     header("Location: ../login.php");
     die();
   }
