@@ -29,12 +29,19 @@ include 'Modularidad/MenuVertical.php';
   .enable {
     margin-left: 0%;
 }
+.botones{
+    margin-top:25%;
+    margin-left:25%;
+  }
+  #nav{
+    margin-left:20%;
+  }
 }
  
 </style>
 <!-- CSS only -->
 
-<div class="title">
+<div class="title div0">
      <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
     <h2 class="main-title" >Sesiones One on One</h2>
 </div>
@@ -58,7 +65,7 @@ include 'Modularidad/MenuVertical.php';
   </div>
     <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
       <div class="tabla">
-    <div align="right" class="h-100" id="btns">
+    <div align="right" class="h-100 botones" id="btns">
     <a href="Reportes/ReporteSession.php"  target='blank'><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
     <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
   </div>

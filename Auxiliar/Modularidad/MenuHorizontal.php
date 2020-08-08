@@ -170,15 +170,34 @@
 .openbtn:hover {
   background-color: #2D2D2E;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
 
-  .sidepanel a{
+  
 
-    height: 300px;
-    background-size: 100%;
-    padding: 0px;
+.sidepanel #sidebar-wrapper { 
+  margin-right: -18px;
+font-size: 13px;
 
-  }
+
+  
+}
+.linemenu{
+  width: 210px;
+  
+}
+#sidebar-wrapper .snip1135{
+  margin-left: 210px;
+  font-size: 13px;
+ 
+}
+
+.sidebar-heading {
+
+margin-right: -230px;
+font-size: 1.2rem;
+background-color: #0D0D0D;
+
+}
 
 
 }
