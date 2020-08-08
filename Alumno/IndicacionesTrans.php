@@ -113,7 +113,7 @@ if ($consulta6->rowCount()>=1)
              
               <!--Primera columna-->
                   <div class="col-sm" style="">
-                    <div class="col-sm-12" id="requisitos">
+                    <div class="col-sm-12 col-xs-12 col-md-12" id="requisitos">
 
                     <ul style="text-align: justify; color: black;" >
                            <h3 style="color: #BF3E3E;">Requisitos</h3>
@@ -132,7 +132,7 @@ if ($consulta6->rowCount()>=1)
                         
                       
                         <br>
-                        <div class="col-sm-12" id="archivos">
+                        <div class="col-sm-12 col-xs-12 col-md-12" id="archivos">
 
                         <ul style="text-align: justify; color: black; ">
                           <h4 style="color: #BF3E3E;">Archivos</h4>
