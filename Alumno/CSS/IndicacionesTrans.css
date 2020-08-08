@@ -1,0 +1,56 @@
+#pasos{
+
+border-radius: 20px;
+
+}
+
+.alert img{
+
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 5px;
+
+
+}
+
+#requisitos{
+border-width: medium;
+border-style: solid;
+border-color: #c7c7c7;
+border-radius: 20px;
+}
+
+#archivos{
+    border-width: medium;
+    border-style: solid;
+    border-color: #c7c7c7;
+    border-radius: 20px;
+    }
+
+    @media (min-width: 320px) and (max-width: 720px) {
+        #archivos {
+            margin-bottom: 15px;
+        }
+    }
+
+
+    #requisitos2{
+        border-width: medium;
+        border-style: solid;
+        border-color: #c7c7c7;
+        border-radius: 20px;
+        }
+        
+        #archivos2{
+            border-width: medium;
+            border-style: solid;
+            border-color: #c7c7c7;
+            border-radius: 20px;
+            }
+        
+            @media (min-width: 320px) and (max-width: 720px) {
+                #archivos2 {
+                    margin-bottom: 15px;
+                }
+            }

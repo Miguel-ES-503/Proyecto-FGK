@@ -170,19 +170,30 @@
 .openbtn:hover {
   background-color: #2D2D2E;
 }
-@media only screen and (max-width: 767px) {
 
-  .sidepanel a{
 
-    height: 300px;
-    background-size: 100%;
-    padding: 0px;
 
-  }
-  .img-nav{
-    margin-top:-20%;
-    font-size:25px;
-  }
+  
+}
+.linemenu{
+  width: 210px;
+  
+}
+#sidebar-wrapper .snip1135{
+  margin-left: 210px;
+  font-size: 13px;
+ 
+}
+
+.sidebar-heading {
+
+margin-right: -230px;
+font-size: 1.2rem;
+background-color: #0D0D0D;
+
+}
+
+
 }
 
 </style>
@@ -289,8 +300,8 @@
 <nav class="navbar navbar-expand-lg border-bottom" id="menu" style="background-color: #2D2D2E;">
     <button class="openbtn" onclick="openNav()">&#9776;</button>
     <center>
-      <a href="http://portal.workeysoportunidades.org/SuperUsuario/index.php">
-        <img class="w-25 h-25 img-nav" src="../img/SideBySideWhiteVersion.png" alt="">
+      <a href="index.php">
+        <img width="340px" height="80px" src="../img/SideBySideWhiteVersion.png" alt="">
       </a>
     </center>
     
