@@ -170,7 +170,13 @@
 .openbtn:hover {
   background-color: #2D2D2E;
 }
+@media only screen and (min-width: 320px) and (max-width: 767px) {
 
+  
+
+.sidepanel #sidebar-wrapper { 
+  margin-right: -18px;
+font-size: 13px;
 
 
   

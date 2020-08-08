@@ -31,7 +31,7 @@ header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
   //   die();
   // }
 
-if ($varCargo != 'Coach Fase 2') {
+   if ($varCargo != 'Coach Fase 2') {
     header("Location: ../login.php");
     die();
   }
