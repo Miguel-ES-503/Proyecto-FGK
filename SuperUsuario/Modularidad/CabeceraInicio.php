@@ -13,18 +13,18 @@
 
   error_reporting(0);
   if ($varsesion == null || $varsesion = "") {
-  	header("Location: ../login.php");
+  	header("Location: ../index.php");
   	die();
   }
 
 
    if ($varCargo != 'SuperUsuario') {
-    header("Location: ../login.php");
+    header("Location: ../index.php");
     die();
   }
   if (isset($_SESSION['Email'])){
   }else{
-  header('Location: ../login.php');//Aqui lo redireccionas al lugar que quieras.
+  header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
    die() ;
   
   }

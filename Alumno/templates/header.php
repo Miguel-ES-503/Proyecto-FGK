@@ -30,6 +30,8 @@
   <link rel="stylesheet" href="../Alumno/CSS/Alumno-Inicio.css">
   <link rel="stylesheet" href="../Alumno/CSS/solicitudCambio.css">
   <link rel="stylesheet" href="../Alumno/CSS/ExpedienteU.css">
+  <link rel="stylesheet" href="../Alumno/CSS/IndicacionesTrans.css">
+  
 
  <link rel="stylesheet" href="assets1/css1/style.css">
 

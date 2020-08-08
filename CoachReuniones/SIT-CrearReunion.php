@@ -116,8 +116,8 @@ include 'Modularidad/MenuVertical.php';
                         </div>
 
                         </div>
-                        <input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"
-                        name="Guardar_Reunion" value="Crear Reunión" id="Guardar_Reunion">
+                        <input class="bot btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"
+                                name="Guardar_Reunion" value="Crear Reunión" id="Guardar_Reunion">
                  </div>
 
                  </form>

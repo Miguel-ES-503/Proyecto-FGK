@@ -207,7 +207,7 @@ $correo = $_SESSION['Email'];
     <button class="openbtn" onclick="openNav()">&#9776;</button>
     <center>
       <a href="http://portal.workeysoportunidades.org/SuperUsuario/index.php">
-        <img width="340px" height="80px" src="../img/SideBySideWhiteVersion.png" alt="">
+        <img width="350px" height="80px" src="../img/SideBySideWhiteVersion.png" alt="">
       </a>
     </center>
     

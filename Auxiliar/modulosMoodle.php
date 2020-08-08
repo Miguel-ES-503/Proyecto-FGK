@@ -32,7 +32,7 @@ include 'Modularidad/MenuVertical.php';
     <div class="table-responsive">
       <br>
       <table  id="example"  >
-        <thead class="table-secondary">
+        <thead class="table-secondary table-bordered">
           <tr>
             <th scope="col">Alumno</th>
             <th scope="col">Sexo</th>
@@ -44,7 +44,7 @@ include 'Modularidad/MenuVertical.php';
             <th scope="col">Actualizar</th>
           </tr>
         </thead>
-        <tbody class="w-100">
+        <tbody class="w-100 table table-bordered table-hover">
           <?php
           require_once 'Modelo/ModeloAlumno/MostrarDatosAlumnos2.php';
           ?>

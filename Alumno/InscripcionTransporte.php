@@ -26,7 +26,7 @@
 
 <!--Estructura -->
 <div class="container-fluid text-center">
-<div class="title" style="margin-left: -14px;">
+<div class="title" style="margin-left: -14px; width: 109%;">
 <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Transporte</h2>
 	
@@ -39,15 +39,17 @@
   <div class="row">
 
 <!--tabla con informacion de solicitud-->
-    <div class="col text-center">
-      <br><br><br>
+    <div class="col text-center col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-left: 100px; margin-bottom: 258px;">
+      <br><br>
+    
+      
       <table class="table table-responsive-lg">
-
-        <thead  style="background-color: #2D2D2E; color: white;">
-          <tr>
-            <th colspan="2" align="justify">Solicitud de Transporte</th>
-            <th> <a href="IndicacionesTrans.php?id=<?php echo $alumno; ?>" class="btn btn-info"><img src="../img/add.png" width="25px" height="30px"></a><br>Crear Solicitud</th>
-          </tr>
+      <a href="IndicacionesTrans.php?id=<?php echo $alumno; ?>" style="float: right; border-radius: 50px; background-color: #BF3E3E;" class="btn btn-info"><img src="../img/add.png" width="40px" height="25px"><b>Crear Solicitud</b></a>
+      
+      <h3 style="text-align: justify;"><b>Solicitud de Transporte</b></h3>
+      <br>
+       
+      <thead  style="background-color: #2D2D2E; color: white;">
           <tr>
             <th scope="col">Ciclo</th>
             <th scope="col">Estado</th>
@@ -108,7 +110,7 @@ $extraeIdAlumno=$dbh->prepare("SELECT `ID_Alumno` FROM `alumnos` WHERE `correo`=
                             
                             
                             
-                            <td><center><a href='DetallesSolicitud.php?id=<?php echo $alumno; ?>'class='btn btn-info'><i class='fas fa-binoculars' > </i> Ver</a></center></td>
+                            <td><center><a href='DetallesSolicitud.php?id=<?php echo $alumno; ?>'class='btn'><i class='fas fa-eye'> </i></a></center></td>
                          </tr>";
   
 
@@ -128,7 +130,6 @@ $extraeIdAlumno=$dbh->prepare("SELECT `ID_Alumno` FROM `alumnos` WHERE `correo`=
 </div>
 
 
-  <br><br><br><br> <br>
 
 <?php
   require_once 'templates/footer.php';

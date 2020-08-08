@@ -31,8 +31,8 @@ include 'Modularidad/MenuVertical.php';
 <div class="card-body" >
     <div class="table table-responsive  table-hover table-striped">
       <br>
-      <table  id="example"  >
-        <thead class="table-secondary">
+      <table  id="example22"  >
+        <thead class="table-secondary table-bordered">
           <tr>
             <th scope="col">Alumno</th>
             <th scope="col">Sexo</th>

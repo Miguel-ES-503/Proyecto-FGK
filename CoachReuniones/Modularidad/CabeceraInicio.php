@@ -12,13 +12,26 @@
   $ubicacion = $InicialDep . $FinalDep;
 
   error_reporting(0);
-  if ($varsesion == null || $varsesion = "") {
-  	header("Location: ../login.php");
-  	die();
-  }
+  if (isset($_SESSION['Email'])){
+    $varsesion = $_SESSION['Email'];
+}else{
+header('Location: ../index.php');//Aqui lo redireccionas al lugar que quieras.
+ die() ;
+
+}
+
+  // if ($varsesion == null || $varsesion = "") {
+  // 	header("Location: ../index.php");
+  // 	die();
+  // }
 
 
-   if ($varCargo != 'Coach Fase 2') {
+  //  if ($varCargo != 'Coach Fase 3') {
+  //   header("Location: ../index.php");
+  //   die();
+  // }
+
+if ($varCargo != 'Coach Fase 2') {
     header("Location: ../login.php");
     die();
   }
@@ -33,8 +46,7 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="shortcut icon" href="../img/WorkeysIcon.png" />
