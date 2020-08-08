@@ -44,7 +44,7 @@
     
       
       <table class="table table-responsive-lg">
-      <a href="IndicacionesTrans.php?id=<?php echo $alumno; ?>" style="float: right; border-radius: 50px; background-color: #BF3E3E;" class="btn btn-info"><img src="../img/add.png" width="40px" height="30px"><b>Crear Solicitud</b></a>
+      <a href="IndicacionesTrans.php?id=<?php echo $alumno; ?>" style="float: right; border-radius: 50px; background-color: #BF3E3E;" class="btn btn-info"><img src="../img/add.png" width="40px" height="25px"><b>Crear Solicitud</b></a>
       
       <h3 style="text-align: justify;"><b>Solicitud de Transporte</b></h3>
       <br>
@@ -110,7 +110,7 @@ $extraeIdAlumno=$dbh->prepare("SELECT `ID_Alumno` FROM `alumnos` WHERE `correo`=
                             
                             
                             
-                            <td><center><a href='DetallesSolicitud.php?id=<?php echo $alumno; ?>'class='btn btn-info'><i class='fas fa-binoculars' > </i> Ver</a></center></td>
+                            <td><center><a href='DetallesSolicitud.php?id=<?php echo $alumno; ?>'class='btn'><i class='fas fa-eye'> </i></a></center></td>
                          </tr>";
   
 
