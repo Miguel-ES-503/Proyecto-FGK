@@ -2,6 +2,7 @@
   require_once 'templates/head.php';
 ?>
 <title>Transporte</title>
+
 <?php
   require_once 'templates/header.php';
   //require_once 'templates/MenuVertical.php';
@@ -39,14 +40,14 @@
   <div class="row">
 
 <!--tabla con informacion de solicitud-->
-    <div class="col text-center col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-left: 100px; margin-bottom: 258px;">
+    <div class="col text-center col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-left: 100px; margin-bottom: 258px;" id="content">
       <br><br>
     
       
       <table class="table table-responsive-lg">
-      <a href="IndicacionesTrans.php?id=<?php echo $alumno; ?>" style="float: right; border-radius: 50px; background-color: #BF3E3E;" class="btn btn-info"><img src="../img/add.png" width="40px" height="25px"><b>Crear Solicitud</b></a>
+      <a href="IndicacionesTrans.php?id=<?php echo $alumno; ?>" id="crearsoli" style="float: right; border-radius: 50px; background-color: #BF3E3E;" class="btn btn-info"><img src="../img/add.png" width="30px" height="25px"><b>Crear Solicitud</b></a>
       
-      <h3 style="text-align: justify;"><b>Solicitud de Transporte</b></h3>
+      <h3 id="h3" style="text-align: justify;"><b>Solicitud de Transporte</b></h3>
       <br>
        
       <thead  style="background-color: #2D2D2E; color: white;">

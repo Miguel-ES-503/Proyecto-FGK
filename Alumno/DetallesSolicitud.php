@@ -16,7 +16,6 @@
 	//Manda  allamar plantillas
   require_once 'templates/header.php';
 
-  require_once 'templates/MenuVertical.php';
 
   require_once 'templates/MenuHorizontal.php';
 
@@ -39,7 +38,7 @@
  ?>
 
 <div class="container-fluid text-center">
-  <br><br>
+
   <div>
     <div>
 	
@@ -47,17 +46,21 @@
 <!--AqUI VA TODO -->
 
  <div class="row justify-content-center">
-
+ <div class="title" style="margin-left: -14px; width: 109%;">
+<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Transporte</h2>
+	
+</div>
         <div class="col-md-12 col-ms-offset-10 col-md-offset-2  abs-center" style="position:static;">
 
-<form style="background: white;">
-	<h2 style="color: red;">Detalles de solicitud Transporte</h2>
+<form style="background: white; ">
+	<h2 style="color: black; ">Detalles de solicitud Transporte</h2>
 
 
 	<center><fieldset style="width: 95%;   "  >
 		<br><br>
-		<div class="table-responsive" style="background: #383131; ">
-							<caption><h5 style="color: white;">Costos</h5></caption>
+		<div class="table-responsive" >
+							<caption><h5 style="color: white;"></h5></caption>
                     			  <table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" name="idA" style="margin-left: 5px;margin-right: 5px; width: 95%;">
                                         <thead class="table-secondary">
                                           <tr>  
@@ -137,9 +140,9 @@
 </center>
 <br><br>
 
-	<fieldset style="width: 60%; margin-left: 10px; ">
+	<fieldset style="width: 95%; margin-left: 525px; ">
 
-      <div class="table-responsive" style="background: #383131;">
+      <div class="table-responsive" style="">
       		<caption><h5 style="color: white;">Horario</h5></caption>
                  <table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" style="margin-left: 10px;margin-right: 5px; width: 95%;">
                       <thead class="table-secondary">
@@ -227,21 +230,22 @@
                                     
             <button type="button" class="btn btn-previous btn-dark" onclick="location.href='CrearSoliTransporte.php?id=<?php echo $alumno; ?>'">Regresar</button>
                                     
-<a href="../pdfTransporte/<?php echo $comprobante ; ?>" target="_blank" class="btn btn-success">Ver Comprobante</a>
+<a href="../pdfTransporte/<?php echo $comprobante ; ?>" target="_blank" class="btn " style=" border-radius: 50px; background-color: #9c9c9c; color: white; height: 40px;" > <img src="../SuperUsuario/img/facultad.png" class="img-fluid" style="margin-right: 3px;" width="30px" height="23px"><b>Ver Comprobante</b></a>
 
          
            <!-- Button trigger modal -->
-		<button type="button" class="btn btn-danger px-4" data-toggle="modal" data-target="#exampleModalCenter" >  Enviar </button>
+		<button type="button" class="btn btn-danger px-4" style=" border-radius: 50px;" data-toggle="modal" data-target="#exampleModalCenter" >  Enviar </button>
 		
 		
 
        </div>
 
 		
-	</fieldset>
+  </fieldset>
+             
 	
 <br>
-
+<br>
 
 
 </form>
