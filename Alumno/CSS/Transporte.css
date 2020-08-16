@@ -1,66 +1,69 @@
-#pasos{
-
-border-radius: 20px;
-
-}
-
-.alert img{
-
-    width: 50px;
-    height: 50px;
-    float: left;
-    margin-right: 5px;
-
-
-}
-
-#requisitos{
-border-width: medium;
-border-style: solid;
-border-color: #c7c7c7;
-border-radius: 20px;
-}
-
-#archivos{
-    border-width: medium;
-    border-style: solid;
-    border-color: #c7c7c7;
-    border-radius: 20px;
-    }
-
-    @media (min-width: 320px) and (max-width: 720px) {
-        #archivos {
-            margin-bottom: 15px;
-        }
-        #crearsoli{
-            position: absolute;
-            top: 100px;
-            width: 170px ;
-            height: 35px;
-            right: 89px;
-            margin-bottom:5px;
-            margin-top: 12px;
-         
-        
-            
-                }
-
-    }
-
-
-    #requisitos2{
-        border-width: medium;
-        border-style: solid;
-        border-color: #c7c7c7;
-        border-radius: 20px;
-        }
-        
-        #archivos2{
-            border-width: medium;
-            border-style: solid;
-            border-color: #c7c7c7;
-            border-radius: 20px;
+            #pasos {
+                border-radius: 20px;
             }
-        
-           
- 
+            
+            .alert img {
+                width: 50px;
+                height: 50px;
+                float: left;
+                margin-right: 5px;
+            }
+            
+            #requisitos {
+                border-width: medium;
+                border-style: solid;
+                border-color: #c7c7c7;
+                border-radius: 20px;
+            }
+            
+            #archivos {
+                border-width: medium;
+                border-style: solid;
+                border-color: #c7c7c7;
+                border-radius: 20px;
+            }
+            
+            .salto {
+                display: none;
+            }
+            
+            @media (min-width: 320px) and (max-width: 720px) {
+                #archivos {
+                    margin-bottom: 15px;
+                }
+                #crearsoli {
+                    position: absolute;
+                    top: 100px;
+                    width: 170px;
+                    height: 35px;
+                    right: 89px;
+                    margin-bottom: 5px;
+                    margin-top: 12px;
+                }
+                .texto {
+                    margin-left: 0%;
+                }
+                .conten {
+                    margin-left: 0%;
+                    text-align: center;
+                }
+                .salto:before {
+                    content: "\a ";
+                    white-space: pre;
+                }
+                #requisitos2 {
+                    border-width: medium;
+                    border-style: solid;
+                    border-color: #c7c7c7;
+                    border-radius: 20px;
+                }
+                #archivos2 {
+                    border-width: medium;
+                    border-style: solid;
+                    border-color: #c7c7c7;
+                    border-radius: 20px;
+                }
+                .salto {
+                    display: initial;
+                }
+            }

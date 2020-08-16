@@ -23,8 +23,6 @@
 
 ?>
 
-
-
 <!--Estructura -->
 <div class="container-fluid text-center">
 <div class="title" style="margin-left: -14px; width: 109%;">
@@ -37,19 +35,19 @@
   
 
   <!--Información de solicitud-->
-  <div class="row">
+  <div class="row w-75 mx-auto">
 
 <!--tabla con informacion de solicitud-->
-    <div class="col text-center col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-left: 100px; margin-bottom: 258px;" id="content">
+    <div class="col text-center col-xs-10 col-sm-10 col-md-10 col-lg-10 conten w-25" style=" margin-bottom: 258px;" id="content">
       <br><br>
     
       
-      <table class="table table-responsive-lg">
+      <table class="table table-responsive-lg">      
       <a href="IndicacionesTrans.php?id=<?php echo $alumno; ?>" id="crearsoli" style="float: right; border-radius: 50px; background-color: #BF3E3E;" class="btn btn-info"><img src="../img/add.png" width="30px" height="25px"><b>Crear Solicitud</b></a>
       
-      <h3 id="h3" style="text-align: justify;"><b>Solicitud de Transporte</b></h3>
+      <h3 id="h3" class="texto" style="text-align: justify;"><b>Solicitud de Transporte</b></h3>
       <br>
-       
+       <br class="salto">
       <thead  style="background-color: #2D2D2E; color: white;">
           <tr>
             <th scope="col">Ciclo</th>

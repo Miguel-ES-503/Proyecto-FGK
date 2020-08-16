@@ -136,10 +136,10 @@
 
         
       <!--Tabla de buses de Ida -->
-        <h3 class="card-header h3s bg-light">Ida a la Universidad</h3>
+        <h3 class="card-header h3s bg-light w-75 mx-auto">Ida a la Universidad</h3>
         <div class='centerTable'>
-          <table  > 
-          <thead>
+          <table  class="table-responsive mx-auto w-75" > 
+          <thead class="table table-bordered mx-auto"> 
             <tr>
               <th>nº</th>
               <th>Ruta de bus</th>
@@ -200,16 +200,12 @@
       </div>
       <br> <!--Fin Tabla de buses de Ida -->
 
-
-
-
-      
       <!--Tabla de buses de Regreso -->
-       <div class='centerTable'>
-         <table  id="tablaR2">
-         <h3 class="card-header h3s bg-light" >Regreso a casa</h3>
-         <thead>
-          <tr>
+       <div class='centerTable mx-auto w-75'>
+         <table  id="tablaR2" class="table-responsive">
+         <h3 class="card-header h3s bg-light w-100 mx-auto" >Regreso a casa</h3>
+         <thead class="table table-bordered">
+         <tr>
             <th>nº</th>
             <th>Ruta de bus</th>
             <th>Lunes</th>
@@ -261,7 +257,7 @@
             <input style="background: #DE0B18; border-radius: 25px; color: white; width:150px; height: 25px; text-align: center;" id="total2" type="text" placeholder="0.00" class="form-control" disabled value="$ 0.00"  /></th>
           </tfoot>
          </table>
-       </div><br><!--Fin Tabla de buses de Regreso -->
+       </div><!--Fin Tabla de buses de Regreso -->
 
 
       <!--Tabla de gastos --> 
@@ -274,7 +270,7 @@
         
          <div class="col" style="border-radius:25px; background: gray; color: white; margin-right: 7px; margin-left: 10px;">
          <label ><h4>Total Semanal: </h4> <div id="resultSemanal" style="color: white;">$ 0.00</div> </label>
-         <br>
+      
        </div>
 
        <div class="col" style="border-radius:25px; background: gray; color: white;">
@@ -282,7 +278,7 @@
          <input type="hidden" name="" id="Resultinput">
        </div>
      </div>
-    </div><br><br> <!--  Fin Tabla de buses Costos -->
+    </div><br><!--  Fin Tabla de buses Costos -->
 
     <!-- Horario de Universidad -->
 
@@ -295,9 +291,9 @@
         </span>
        </div><br>
 
-      <div class='centerTable'>
-         <table  id="makeEditable2" class="float-center" > 
-         <thead>
+      <div class='centerTable w-100  '>
+         <table  id="makeEditable2" class="float-center table-responsive" > 
+         <thead class="table table-bordered ">
            <tr>
              <th>nº</th>
              <th >Dia</th>
