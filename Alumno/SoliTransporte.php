@@ -63,12 +63,16 @@
 
         <div class="btn-group-toggle" data-toggle="buttons">
           <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Nueva Ruta bus">
-          <button type="button" class="btn btn-dark px-3" data-toggle="modal" data-target="#ModalCosto" ><i class="fa fa-bus-alt"></i> Agregar ruta bus</button>
+          <button type="button" class="btn btn-dark px-3" data-toggle="modal" data-target="#ModalCosto" style="border-radius: 20px;
+    border: 2px solid;
+    width: 200px;height: 38px" ><i class="fa fa-bus-alt"></i> Agregar ruta bus</button>
           </span>
   
 
           <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Socioeconomico">
-          <button type="button" class="btn btn-dark px-3" data-toggle="modal" data-target="#ModalPdf" > <i class="fa fa-file-pdf"></i> Subir Socioeconómico</button>
+          <button type="button" class="btn btn-dark px-3" data-toggle="modal" data-target="#ModalPdf" style="border-radius: 20px;
+    border: 2px solid ;
+    width: 205px;height: 38px"> <i class="fa fa-file-pdf"></i> Subir Socioeconómico</button>
           </span>
 
       
@@ -121,24 +125,48 @@
           h4{
             color: white;
           }
-          div.centerTable{
+          div.centerTable.table-responsive{
         text-align: center;
+        float: center;
+         }
+         .table-responsive{
+float: center;
          }
 
- 
+    
 
         div.centerTable table {
          margin: 0 auto;
          text-align: left;
          width: 100%;
         }
+        .modal-content{
+    background-color: white;
+    border-color: black;
+    border-radius: 30px;
+    padding: 20px;
+}
+.modal-body{
+    text-align: left;
+}
+
+.form-control{
+    background-color: #ADADB2;
+    color: black;
+    border-radius: 20px;
+
+}
+.modal-header{
+    border-color: #ADADB2;
+    border:3px;
+}
         </style>  <!--Fin de CSS de las tablas -->
 
         
       <!--Tabla de buses de Ida -->
         <h3 class="card-header h3s bg-light w-75 mx-auto">Ida a la Universidad</h3>
-        <div class='centerTable'>
-          <table  class="table-responsive mx-auto w-75" > 
+        <center><div class='centerTable'>
+          <center><table  class="table-responsive mx-auto w-75" > 
           <thead class="table table-bordered mx-auto"> 
             <tr>
               <th>nº</th>
@@ -196,13 +224,14 @@
             <th colspan="1" > 
             <input style="background: #DE0B18; border-radius: 25px ; color: white; width:150px; height: 25px; text-align: center;" id="total" type="text" placeholder=" 0.00" class="form-control" disabled value=" $ 0.00"  /></th>
           </tfoot>
-        </table>
-      </div>
+        </table></center>
+      </div></center>
       <br> <!--Fin Tabla de buses de Ida -->
 
       <!--Tabla de buses de Regreso -->
        <div class='centerTable mx-auto w-75'>
          <table  id="tablaR2" class="table-responsive">
+          
          <h3 class="card-header h3s bg-light w-100 mx-auto" >Regreso a casa</h3>
          <thead class="table table-bordered">
          <tr>
@@ -284,15 +313,18 @@
 
        <div>
         <br>  
-         <h3 class="card-header h3s bg-light" >Horario Universidad</h3>
+
+         <h3 class="card-header h3s bg-light w-100 mx-auto ">Horario Universidad</h3>
         <br>
         <span class="float-center">  <br>
-        <button type="button" class="btn btn-dark px-3" data-toggle="modal" data-target="#ModalHorario"><i class="fas fa-calendar"></i>  Crear Horario</button>
+        <button type="button" class="btn btn-dark px-3" data-toggle="modal" data-target="#ModalHorario" style="border-radius: 20px;
+    border: 2px solid ;
+    width: 200px;height: 38px"><i class="fas fa-calendar"></i>  Crear Horario</button>
         </span>
        </div><br>
 
-      <div class='centerTable w-100  '>
-         <table  id="makeEditable2" class="float-center table-responsive" > 
+     <div class='centerTable w-100  '>
+         <center><table  id="makeEditable2" class=" table-responsive"> 
          <thead class="table table-bordered ">
            <tr>
              <th>nº</th>
@@ -333,7 +365,7 @@
         
            </tbody>
 
-           </table>
+           </table></center>
          </div>
 
         <?php  
@@ -455,7 +487,11 @@
           </div>
 
          
-          <input class="btn btn-dark btn-rounded btn-block my-4 waves-effect z-depth-0" type="button" name="Guardar_Ruta" value="Crear Ruta" id="Guardar_Ruta"  >
+          <center><input style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;" type="button" name="Guardar_Ruta" value="Crear Ruta" id="Guardar_Ruta"  ></center>
       </form>       
                          
     </div>
@@ -507,8 +543,16 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <input type="submit" id="subirComprobante" name="subirComprobante" value="Guardar Cambios" class="btn btn-secondary">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 100px;height: 38px;
+     background-color: #9d120e;
+     color:white;">Close</button>
+          <input style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;" type="submit" id="subirComprobante" name="subirComprobante" value="Guardar Cambios" class="btn btn-secondary">
       </div>
 
       </form>
@@ -577,7 +621,12 @@
            </div>
 
 
-           <input class="btn btn-dark btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="crear_Horario" value="Crear Horario" id="crear_Horario"  >
+           <center>
+            <input style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;" type="submit" name="crear_Horario" value="Crear Horario" id="crear_Horario"  ></center>
        </form>       
                           
      </div>

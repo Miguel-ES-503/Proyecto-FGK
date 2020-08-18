@@ -43,7 +43,11 @@
     
       
       <table class="table table-responsive-lg">      
-      <a href="IndicacionesTrans.php?id=<?php echo $alumno; ?>" id="crearsoli" style="float: right; border-radius: 50px; background-color: #BF3E3E;" class="btn btn-info"><img src="../img/add.png" width="30px" height="25px"><b>Crear Solicitud</b></a>
+      <a href="IndicacionesTrans.php?id=<?php echo $alumno; ?>" id="crearsoli" style="float: right; border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white; text-decoration: none;" ><img src="../img/add.png" width="30px" height="25px"><b>Crear Solicitud</b></a>
       
       <h3 id="h3" class="texto" style="text-align: justify;"><b>Solicitud de Transporte</b></h3>
       <br>
