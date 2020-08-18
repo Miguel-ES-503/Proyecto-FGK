@@ -21,11 +21,12 @@ require_once '../Conexion/conexion.php';
 <div class="container-fluid text-center">
   <br>
 <div class="row">
-<div class="col-xs-6 col-sm-7 col-md-7 col-lg-4 h-75" id="nota">
+<div class="col-xs-6 col-sm-11 col-md-11 col-lg-4 h-75" id="nota">
   <strong >NOTA: </strong><p>Al momento de activar un módulos los alumnos se prodran inscribir a dicho módulo y al momento de desactivar, los alumnos ya no podrán inscribirse hasta que se vuelva a activar el módulo.</p>
 </div>
-<div class="col-xs-5 col-sm-5 col-md-6 col-lg-7 ">
-  <table class="table table-hover col-xs-5 table-responsive-sm" id="table" >
+<div style="margin: 0 auto">
+<div class="col-xs-5 col-sm-12 col-md-12 col-lg-12 ">
+  <table class="table-responsive" id="table">
   <thead>
     <tr>
     <th scope="col">ID</th>
@@ -43,8 +44,8 @@ $stmt2 = $dbh->query("SELECT * FROM modulos WHERE estado = 1");
     echo "<tr class='bg-light'>";
     echo "<th scope='row'>".$row['id_modulo']."</th>";
     echo "<td>".utf8_encode($row['titulo'])."</td>";
-    echo "<td><form action='actualizarmodulo.php' method='POST'><button type='submit' class='btn btn-warning' value= '".$row['id_modulo']."' name='id'><img src='../img/desactivar.png' class='icon-img'>Desactivar </button> </form> </td>";
-    echo "<td><form action='cambiarpasswd.php' method='POST'><button type='submit' class='btn btn-success' value= '".$row['id_modulo']."' name='id' ><i class='fas fa-key'></i>Cambiar</button></form> </td>";
+    echo "<td><form action='actualizarmodulo.php' method='POST'><button type='submit' class='btn btn-warning' value= '".$row['id_modulo']."' name='id' id='btn-desactivar'><img src='../img/desactivar.png' class='icon-img'>Desactivar </button> </form> </td>";
+    echo "<td><form action='cambiarpasswd.php' method='POST'><button type='submit' class='btn btn-success' value= '".$row['id_modulo']."' name='id' id='btn-cambiar'><i class='fas fa-key'></i>Cambiar</button></form> </td>";
     echo "</tr>";
 }
 
@@ -54,8 +55,8 @@ while ($row = $stmt->fetch()) {
     echo "<tr class='bg-light'>";
     echo "<th scope='row'>".$row['id_modulo']."</th>";
     echo "<td>".utf8_encode($row['titulo'])."</td>";
-    echo "<td><form action='actualizarmodulo2.php' method='POST'><button type='submit' class='btn btn-block' value= '".$row['id_modulo']."' name='id' id='btn'><img src='../img/activar.png' class='icon-img-2'>Activar </button> </form> </td>";
-    echo "<td><form action='cambiarpasswd.php' method='POST'><button type='submit' class='btn btn-success' value= '".$row['id_modulo']."' name='id' ><i class='fas fa-key'></i> Cambiar</button> </form> </td>";
+    echo "<td><form action='actualizarmodulo2.php' method='POST'><button type='submit' class='btn btn-block' value= '".$row['id_modulo']."' name='id' id='btn-activar'><img src='../img/activar.png' class='icon-img-2' >Activar </button> </form> </td>";
+    echo "<td><form action='cambiarpasswd.php' method='POST'><button type='submit' class='btn btn-success' value= '".$row['id_modulo']."' name='id' id='btn-cambiar' ><i class='fas fa-key'></i> Cambiar</button> </form> </td>";
     echo "</tr>";
 }
 ?>
@@ -63,7 +64,8 @@ while ($row = $stmt->fetch()) {
 </table>
 </div>
 </div>
-
+</div>
+<br><br>
 <?php
 //Incluir el footer
 include 'Modularidad/PiePagina.php';

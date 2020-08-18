@@ -17,12 +17,53 @@ include 'Modularidad/MenuVertical.php';
 
     <h2 class="main-title" >Aprobar/Reprobar Módulo 1</h2>
 </div>
+
+  
+<!--Comiezo de estructura de trabajo -->
+<!-- Menu 2-->
+<br><br><br>
 <div class="btn" >
 <a href="listadogeneral1.php" ><button class="btn btn-warning" id="button">Listado general 1</button></a>
 </div>
-<!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center" id="main">
 <br><br>
+<div class="container-fluid text-center" id="main">
+<div class="table-responsive-sm" id="nav1">
+  <table cellpadding="10" align="center">
+    <tr>
+      <tr>
+        <td colspan="2"><p style="color: black;font-size: 20px;text-align: center;margin-bottom: -10px;">*Menu</p></td>
+      </tr>
+      <td><a class="nav-link active ml-2" href="AprobarModulos.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo C1</a></td>
+     <td><a class="nav-link ml-2" href="modulo2.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo C2</a></td>
+    </tr>
+    <tr>
+       <td><a class="nav-link ml-2" href="modulo3.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo B1</a></td>
+     <td><a class="nav-link ml-2" href="modulo4.php" style="width: 80px;font-size: 10px;" id="btn-h">Modulo B2</a></td>
+    </tr>
+    <tr>
+      <td><a class="nav-link ml-2" href="modulo5.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo A1</a></td>
+     <td><a class="nav-link ml-2" href="modulo6.php"style="width: 80px;font-size: 10px;" id="btn-h">Módulo A2</a></td>
+    </tr>
+    </table>
+  </div>
+<div class="table-responsive-sm" id="nav2">
+
+  <table class="table">
+    <tr>
+      <td colspan="6"><h2 class="main-title">* Menu</h2></td>
+    </tr>
+   <tr>
+     <td><a class="nav-link active ml-2" href="AprobarModulos.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo C1</a></td>
+     <td><a class="nav-link ml-2" href="modulo2.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo C2</a></td>
+     <td><a class="nav-link ml-2" href="modulo3.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo B1</a></td>
+     <td><a class="nav-link ml-2" href="modulo4.php" style="width: 80px;font-size: 10px;" id="btn-h">Modulo B2</a></td>
+     <td><a class="nav-link ml-2" href="modulo5.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo A1</a></td>
+     <td><a class="nav-link ml-2" href="modulo6.php"style="width: 80px;font-size: 10px;" id="btn-h">Módulo A2</a></td>
+   </tr>
+  </table>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2" id="nav3">
   <nav class="nav flex-column" id="nav">
     <h2 class="title-1">Menu</h2>
 <a class="nav-link active" href="AprobarModulos.php" style="background-color:#BE0032; color:white;">Módulo C1</a>
@@ -32,11 +73,12 @@ include 'Modularidad/MenuVertical.php';
    <a class="nav-link" href="modulo5.php">Módulo A1</a>
     <a class="nav-link" href="modulo6.php">Módulo A2</a>
 </nav>
-
+</div>
 
 <!-- Inicio de tabla de asistencia  -->
-    <div class="card-body h-100">
-      <div class="table-responsive w-100">
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 w-100 ml-lg-5 ml-md-5">
+    <div class="card-body w-100 h-100" id="cont2">
+      <div class="table-responsive">
         <form action="Aprobartodos.php" method="POST">  <br>
         <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
         <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
@@ -62,6 +104,8 @@ include 'Modularidad/MenuVertical.php';
       </table>
 </form>
     </div>
+  </div>
+</div>
   </div>
 </div>
 <br>

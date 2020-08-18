@@ -31,7 +31,8 @@
     <textarea name="temas" class="form-control" id="" cols="20" rows="10"></textarea>
   </div>
   <button type="submit" class="btn btn-success"  name="finalizar" value='<?php echo $id ?>' >Enviar</button>
-</form>    
+</form>   
+  <a href="inscribir_session.php"><button type="submit" class="btn btn-success"  name="finalizar" value='Eliminar'>Regresar</button></a>
 </div>
 
 <!-- /#wrapper -->
