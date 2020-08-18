@@ -156,28 +156,6 @@ while($fila2 = $stmt2->fetch()){
 		$TotalEmpresasExterna = $fila5['TotalExterna'];
 	}
 
-
-	//Horas sociales
-	/*$consulta6=$dbh->prepare("SELECT * FROM hsociales where ID_Alumno = :IdAlumno AND `ID_Ciclo`='".$cicloActual."' AND `estado`='Aprobado'");
-	$consulta6->bindParam(":IdAlumno", $id);
-	$consulta6->execute();
-
-	$HorasSociales = 0;
-
-	if ($consulta6->rowCount() >0)
-	{
-		$fila6=$consulta6->fetch();
-
-		if ($fila6['CantidadH'] != null) {
-			$HorasSociales = $fila6['CantidadH'];
-		}else
-		{
-			$HorasSociales = 0;
-		}
-
-
-	}
-*/
 	foreach ($dbh->query("SELECT CantidadH FROM hsociales where ID_Alumno = '".$Carnet."' ") as $Datos) {
 		if ($Datos['CantidadH'] != 0) {
 			$HorasSociales = $Datos['CantidadH'];
@@ -324,14 +302,16 @@ while($fila2 = $stmt2->fetch()){
 <script src="JS/jquery.knob.js"></script>
 <script src="JS/graficos.js"></script>
 <meta charset="utf-8">
-<div class="row" >
-<!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center"  ng-app="app">
-	<div class="title" style="margin-left: -9px;">
+<div class="title w-100 linea-color">
 	<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Expediente del Alumno</h2>
 	
 </div>
+<div class="row" >
+
+<!--Comiezo de estructura de trabajo -->
+<div class="container-fluid text-center"  ng-app="app">
+	
 	<div class="principal">
 
   <div class="alerta" >
@@ -356,7 +336,8 @@ while($fila2 = $stmt2->fetch()){
 
 	</div>
 
-<div class="Info-Alumno1-sec">
+	<br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<div class="Info-Alumno1-sec h-100">
 <section class="opciones">
 			<p id="mainTitle" class="parrafo">Carrera: </p>
 			<p ><?php echo utf8_encode($Carrera )?></p>
@@ -419,6 +400,18 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 <br>
 
 <div class="Info-Alumno3" >
+
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
 	<div class="status1"  >
 		<p >CUM Actual</p>
 		<h3 class="subtitle"><?php  echo  round($Promedio,2) ?> %</h3>
@@ -442,44 +435,6 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 <a href="solicitudCambio.php" class="btn btn-info" id="button-info">Cambiar</a>
 	</div>
 </div>
-
-
-<!-- Classic tabs -->
-<!-- Modal: modalCart -->
-<!--
-<div class="modal fade" id="modalCart2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-	<div class="modal-content">
-	-->
-		<!--Header
-		<div class="modal-header">
-			<h4 class="modal-title" id="myModalLabel">Lista de asistencia Reuniones</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">×</span>
-			</button>
-		</div>
-		-->
-		<!--Body
-		<div class="modal-body">
-			<div class="table-responsive">
-				<table class="table table-hover thead-dark">
-					<thead>
-						<tr>
-							<th>Reunión</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</thead>
-					<tfoot >
-						<tr>
-							<th>Reunión</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</tfoot>
-					<tbody>
-
 						<?php
 						if ($consulta11->rowCount()>=1)
 						{
@@ -502,52 +457,6 @@ aria-hidden="true">
 		</div>
 
 	</div>
-	-->
-	<!--Footer
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
-	</div>
-</div>
-</div>
-</div>
-</div>
--->
-
-<!-- Classic tabs -->
-<!-- Modal: modalCart
-<div class="modal fade" id="modalCart3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-	<div class="modal-content">
-		 -->
-		<!--Header
-		<div class="modal-header">
-			<h4 class="modal-title" id="myModalLabel">Lista de asistencia Talleres Externa</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">×</span>
-			</button>
-		</div>
--->
-		<!--Body-
-		<div class="modal-body">
-			<div class="table-responsive">
-				<table class="table table-hover thead-dark">
-					<thead>
-						<tr>
-							<th>Taller</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</thead>
-					<tfoot >
-						<tr>
-							<th>Taller</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</tfoot>
-					<tbody>
-
 						<?php
 						if ($consulta12->rowCount()>=1)
 						{
@@ -570,61 +479,6 @@ aria-hidden="true">
 		</div>
 
 	</div>
--->
-	<!--Footer
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
-	</div>
-</div>
-</div>
-</div>
-</div>
-
--->
-<!-- Classic tabs -->
-<!-- Modal: modalCart 
-<div class="modal fade bd-example-modal-lg" id="modalCart4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog modal-lg" role="document">
-	<div class="modal-content">
-		-->
-		<!--Header
-		<div class="modal-header">
-			<h4 class="modal-title" id="myModalLabel">Horas Sociales</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">×</span>
-			</button>
-		</div>
-		-->
-		<!--Body
-		<div class="modal-body">
-			<div class="table-responsive">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Inicio</th>
-							<th>Finalización</th>
-							<th>Encargado</th>
-							<th>Descripción</th>
-							<th>Ciclo</th>
-							<th>Cantidad</th>
-						</tr>
-					</thead>
-					<tfoot >
-						<tr>
-							<th>ID</th>
-							<th>Inicio</th>
-							<th>Finalización</th>
-							<th>Encargado</th>
-							<th>Descripción</th>
-							<th>Ciclo</th>
-							<th>Cantidad</th>
-						</tr>
-					</tfoot>
-					<tbody>
-
-
 						<?php
 						if ($consulta13->rowCount()>=1)
 						{
@@ -650,19 +504,7 @@ aria-hidden="true">
 		</div>
 
 	</div>
-	-->
-	<!--Footer
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
-	</div>
-</div>
-</div>
-</div>
-</div>
-
-
-</div>
--->
+	
 <!-- /#page-content-wrapper -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 
@@ -675,7 +517,7 @@ aria-hidden="true">
 </div>
 <!-- /#wrapper -->
 </div>
-
+<?php include "templates/saltos.php" ?>
 <?php
 
   require_once 'templates/footer.php';
