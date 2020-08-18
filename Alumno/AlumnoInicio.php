@@ -326,7 +326,7 @@ while($fila2 = $stmt2->fetch()){
 <meta charset="utf-8">
 <div class="row" >
 <!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center">
+<div class="container-fluid text-center"  ng-app="app">
 	<div class="title" style="margin-left: -9px;">
 	<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Expediente del Alumno</h2>
@@ -382,44 +382,26 @@ while($fila2 = $stmt2->fetch()){
 <div class="Info-Alumno2">
 			<h3 class="subtitle-p">Progreso</h3>
 	<section class="Info1">
-		<div class="grafico1">
+		<div class="grafico">
 					<?php
-$TotalTalleresAlumno = 9;
-		$Porcentaje = ($TotalTalleresAlumno * 100) / 15;
-
-
-		
+$TotalTalleresAlumno = 5;
+		$Porcentaje = ($TotalTalleresAlumno /6)*100 ;
 
 		?>
-		<span id="tallerAlumno"><?php echo $Porcentaje; ?></span>%<span id="totalTa"></span> 
-		<br>
-
-		<input type="text" value="<?php echo $TotalTalleresAlumno; ?>" class="grafic1">
-<p class="talleres">Talleres</p>
-<div class="Porc">
-<span id="reunionAlumno"><?php echo $TotalTalleresAlumno; ?></span>/<span id="totalRe">15</span>
-</div>
-
-		
+				
+<div id="container" height="400" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
 	</div>
 	<div class="grafico2">
 		
         <?php
-		$TotalReunionAlumno =8;
-		$TotalReuniones = 15;
+		$TotalReunionAlumno =4;
+		$TotalReuniones = 5;
        	$Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 
-
-		?>
-		<span id="tallerAlumno"><?php echo $Porc2; ?></span>%<span id="totalTa"></span> 
-		<br>
-
-		<input type="text" value="<?php echo $TotalReunionAlumno; ?>" class="grafic1">
-<p class="reuniones">Reuniones</p>
-<div class="Porc">
-<span id="reunionAlumno"><?php echo $TotalReunionAlumno; ?></span>/<span id="totalRe"><?php echo $TotalReuniones; ?></span>
-</div>
+?>
+<div id="container2" height="400" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+		
 	</div>
 
 	<div class="HorasVinculacion">
@@ -704,7 +686,13 @@ aria-hidden="true">
 </div>
 -->
 <!-- /#page-content-wrapper -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
 
+
+
+<script src="main.js"></script>
+<?php include "GRAFICA.php"?>
+<?php include "GRAFICA2.php"?>
 </div>
 </div>
 <!-- /#wrapper -->
