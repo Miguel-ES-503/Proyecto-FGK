@@ -123,7 +123,7 @@ if ($_GET['id']==null) {
   }
 
 
-    $stmt4 =$dbh->prepare("SELECT COUNT(idMateria) AS 'Aprobado' FROM `materias` WHERE `idExpedienteU` = ? AND Estado ='Aprobado'");
+    $stmt4 =$dbh->prepare("SELECT COUNT(idMateria) AS 'Aprobado' FROM `materias` WHERE `idExpedienteU` = ? AND estadoM ='Aprobada'");
   // Ejecutamos
   $stmt4->execute(array($idExpedienteU));
 
@@ -137,7 +137,7 @@ if ($_GET['id']==null) {
 
 
 
-  $stmt5 =$dbh->prepare("SELECT COUNT(Id_InscripcionM) AS 'Reprobado' FROM inscripcionmateria IM INNER JOIN inscripcionciclos IC ON IM.Id_InscripcionC = IC.Id_InscripcionC WHERE IC.idExpedienteU = ? AND estado = 'Reprobado' ");
+  $stmt5 =$dbh->prepare("SELECT COUNT(idMateria) AS 'Reprobado' FROM `materias` WHERE `idExpedienteU` = ? AND estadoM ='Reprobada'");
   // Ejecutamos
   $stmt5->execute(array($idExpedienteU));
 
@@ -233,7 +233,7 @@ if ($_GET['id']==null) {
       <h5 style="color: #555555; text-align: left;">Carnet U ?</h5>
       <table class="table table-responsive-lg float-left"  >
         <thead  style="background-color: #2D2D2E;; color: white; ">
-          <tr >
+          <tr  >
             <th scope="col">Universidad</th>
             <th scope="col">Carrera</th>
             <th scope="col">Facultad</th>
@@ -248,7 +248,7 @@ if ($_GET['id']==null) {
 
 
     while($fila2 = $stmt2->fetch()){
-      echo " <tr class='table-dark'>";
+      echo " <tr class='table-dark' style='color: black;'>";
         echo "<td scope=\"row\">".$fila2["Universidad"]."</td>";
         echo utf8_encode("<td>".$fila2["CARRERA"]."</td>")  ;
           echo utf8_encode("<td>".$fila2["Facultad"]."</td>") ;
@@ -290,7 +290,7 @@ if ($_GET['id']==null) {
           </tr>
         </thead>
         <tbody>
-         <tr class='table-dark'>
+         <tr class='table-dark' style="color: black;">
             <th scope="col"> <?php echo $Universi ?> </th>
            <th scope="col"> <?php echo utf8_encode($Carrera)?> </th>
             <th scope="col"> <?php echo $cum?></th>
@@ -385,7 +385,7 @@ if ($_GET['id']==null) {
           
                       <?php
     while($fila9 = $stmt9->fetch()){
-      echo " <tr class='table-dark'>";
+      echo " <tr class='table-dark' style ='color: black;'>";
         echo "<td scope=\"row\">".$fila9["Id_InscripcionC"]."</td>";
         echo "<td>".$fila9["cicloU"]."</td>";
         echo "<td><a class=\"btn btn-danger\" href=\"../pdfInscripCiclos/?id=".$fila9["comprobante"]."\"><i class=\"fas fa-file-pdf\"></i></a></td>";

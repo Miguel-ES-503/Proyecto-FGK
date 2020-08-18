@@ -61,8 +61,8 @@
 		<br><br>
 		<div class="table-responsive" >
 							<caption><h5 style="color: white;"></h5></caption>
-                    			  <table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" name="idA" style="margin-left: 5px;margin-right: 5px; width: 95%;">
-                                        <thead class="table-secondary">
+                    			  <table  id="tableUser" class="table table-sm table-fixed" name="idA" style="margin-left: 5px;margin-right: 5px; width: 95%;">
+                                        <thead style="background-color: #2D2D2E; color: white;">
                                           <tr>  
                                             
                                             <th scope="col">Ruta</th>

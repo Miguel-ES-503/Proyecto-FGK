@@ -257,7 +257,7 @@
                     <td >".$fila2['idMateria']."</td>
                     <td class='oscuro'>".$fila2['nombreMateria']."</td>
                     <td >".$fila2['nota']."</td>
-                    <td >".$fila2['estadoM']."</td>
+                    <td >".$fila2['estado']."</td>
                    
                     <td>
 
