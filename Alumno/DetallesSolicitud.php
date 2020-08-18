@@ -69,7 +69,7 @@
                                             <th scope="col">Costo</th>
                                             <th scope="col">Cantidad</th>
                                             <th scope="col">Total</th>
-                                            <th scope="col">Observaciones</th>
+                                    
                                            
                                           </tr>
                                         </tr>
@@ -89,13 +89,13 @@
                                       {
                                         while ($fila=$consulta->fetch())
                                           {   echo "
-                                        <tr class='table-light'>
+                                        <tr style='background-color: #c7c7c7;'>
                                        
                                         <th>".$fila['ruta']."</th>
                                         <th>".$fila['costo']."</th>
                                         <th>".$fila['cantidad']."</th>
                                         <th>$ ".$fila['total']."</th>
-                                        <th>".$fila['observaciones']."</th>
+                      
 
                                         
                                         </tr>";
@@ -113,7 +113,88 @@
 
                                       ?>
 
-                                      <tr class='table-dark' style="background: gray;">
+                                      <tr style="background-color: grey;">
+                                      	
+                                     <th colspan="6" ><center><b><h5 style="color: black;">Total: $ <?php echo  $totolTransporte;?> </h5></b></center> </th>
+                                      
+                                      </tr>
+
+                                      
+
+                                    </tbody> 
+                                    
+                                    	
+                                      	
+                                     
+                                   
+
+
+                                  </table> 
+                                  </div> 
+
+
+
+		
+
+	</fieldset>
+  <br><br>
+  <fieldset style="width: 95%;   "  >
+		<br><br>
+		<div class="table-responsive" >
+							<caption><h5 style="color: white;"></h5></caption>
+                    			  <table  id="tableUser" class="table table-sm table-fixed" name="idA" style="margin-left: 5px;margin-right: 5px; width: 95%;">
+                                        <thead style="background-color: #2D2D2E; color: white;">
+                                          <tr>  
+                                            
+                                            <th scope="col">Ruta</th>
+                                            <th scope="col">Costo</th>
+                                            <th scope="col">Cantidad</th>
+                                            <th scope="col">Total</th>
+                                    
+                                           
+                                          </tr>
+                                        </tr>
+                                      </thead>
+                                    
+                                    <tbody>
+                                      <?php 
+                                      // Consulta De La BASE DE DATOS
+                                      $consulta=$pdo->prepare("SELECT * FROM rutasbuses WHERE ID_Alumno = ? AND estado = 'Proceso'");
+                                      $iduser = $_GET['id'];
+
+                                      $totolTransporte = 0;
+
+                                      $consulta->execute(array($iduser));
+
+                                      if ($consulta->rowCount()>=1)
+                                      {
+                                        while ($fila=$consulta->fetch())
+                                          {   echo "
+                                        <tr style='background-color: #c7c7c7;'>
+                                       
+                                        <th>".$fila['ruta']."</th>
+                                        <th>".$fila['costo']."</th>
+                                        <th>".$fila['cantidad']."</th>
+                                        <th>$ ".$fila['total']."</th>
+                      
+
+                                        
+                                        </tr>";
+
+
+
+             
+                    
+
+              $totolTransporte = $fila['total'] +  $totolTransporte;
+
+
+                                      }
+                                    }
+
+                                      ?>
+
+                                      <tr style="background-color: grey;">
                                       	
                                      <th colspan="6" ><center><b><h5 style="color: black;">Total: $ <?php echo  $totolTransporte;?> </h5></b></center> </th>
                                       
