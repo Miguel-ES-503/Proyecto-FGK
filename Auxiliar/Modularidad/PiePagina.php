@@ -94,7 +94,7 @@ $(document).ready(function() {
 
         initComplete: function() {
             //En el columns especificamos las columnas que queremos que tengan filtro
-            this.api().columns([0,1,2,3,4,5,6]).every(function() {
+            this.api().columns([0,1,2,3,4,5,6,7,8]).every(function() {
                 var column = this;
 
                 var select = $('<select><option value=""></option></select>')
@@ -143,7 +143,7 @@ $(document).ready(function() {
 <script>
 
 $(document).ready(function() {
-  var table = $('#example10').DataTable({
+  var table = $('#example22').DataTable({
 
         "scrollX": true,
         "scrollY": "50vh",
@@ -173,7 +173,7 @@ $(document).ready(function() {
 
         initComplete: function() {
             //En el columns especificamos las columnas que queremos que tengan filtro
-            this.api().columns([0,1,2,3,4,5,6,7,8]).every(function() {
+            this.api().columns([0,1,2,3,4,5,6]).every(function() {
                 var column = this;
 
                 var select = $('<select><option value=""></option></select>')
@@ -219,6 +219,7 @@ $(document).ready(function() {
 } );
 
 </script>
+
 
 <script>
     var table2 = $('#tableUser').DataTable({

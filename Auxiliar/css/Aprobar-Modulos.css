@@ -11,15 +11,7 @@ height: 55px;
 h2 , .icon{
   float: left;
 }
-.main-title
-{
-text-align: left;
-font-size: 25px;
-margin-left: 25px;
-margin-top: 12px;
-font-weight: bold;
-letter-spacing: 5px;
-}
+
 .icon 
 {
 
@@ -28,7 +20,7 @@ letter-spacing: 5px;
   margin-left: 20px;
 }
 
-.title2,
+.title2
 {
 
 margin-left: 30px;
@@ -63,6 +55,7 @@ letter-spacing: 2px;
 {
 	width: 140px;
 	color: black;
+	background-color: #A6A6A6;
 	border-radius: 10px;
 	border-color: #ADADB2;
 	border-style: solid;
@@ -89,16 +82,10 @@ text-align: center;
 .card-body
 {
 	height: 80px;
-	border-radius: 10px;
 	width: 70%;
-	float: left;
 	margin-left: 30px;
 }
-img
-{
-	  width: 30px;
-	  margin-right: 5px;
-}
+
 #button
 {
 	border-radius: 20px;
@@ -106,9 +93,13 @@ img
 	margin-bottom: 10px;
 	margin-right: 10px;
 }
-.btn
+
+@media only screen and (max-width: 600px) {
+
+    .btn
 {
 	float: right;
-	margin-top: -15px;
-	margin-right: 20px;
+	margin-top: -23px;
+	margin-right: 10px;
+}
 }
