@@ -376,65 +376,43 @@ while($fila2 = $stmt2->fetch()){
 			<p ><?php echo "<b id='estado'>".$Financiamiento."</b>";  ?></p>
 
 </section>
-
+<?php
+$TotalTalleresAlumno = 5; 
+$Porcentaje = ($TotalTalleresAlumno /6)*100 ;
+$TotalReunionAlumno =4;
+$TotalReuniones = 5;
+$Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
+		?>
 </div>
 </div>
 <div class="Info-Alumno2">
 			<h3 class="subtitle-p">Progreso</h3>
-	<section class="Info1">
-		<div class="grafico">
-					<?php
-$TotalTalleresAlumno = 5;
-		$Porcentaje = ($TotalTalleresAlumno /6)*100 ;
-
-		?>
-				
-<div id="container" height="400" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-
-	</div>
-	<div class="grafico2">
-		
-        <?php
-		$TotalReunionAlumno =4;
-		$TotalReuniones = 5;
-       	$Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
-
-?>
-<div id="container2" height="400" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-		
+	<section class="Info1 float-left h-50 w-75"style="margin-left:-11%">
+	<div class="grafico w-50">
+		<div id="container" ></div>
 	</div>
 
-	<div class="HorasVinculacion">
+	<div class="grafico2  float-left h-50 " style="margin-left:-20%">
+		<div id="container2"  style="min-width: 310px; max-width: 600px;" ></div>
+	</div>
+
+	<div class="HorasVinculacion float-right" style="margin-top:-110%; ">
 		<p><img src="../img/maletin.jpg" width="120px" height="100px"  class="Img1">
 		<section class="horas">
 		
 		<p id="tallerAlumno"><?php echo $HorasSociales; ?> h</p>
 		</section>
 		<span id="totalTa">Horas de <br>vinculación</span> 
-		
-
 	</div>
-	<br><br><br><br><br>
-	<!--<div class="empresas" style="margin-right: -40px;" >
-		<span id="tallerAlumno"><?php echo $TotalExternaTallerAlumno;?>/</span><span id="totalExt"><?php echo $TotalEmpresasExterna; ?></span>
-		<br>
-		<span id="totalTa" >Empresas<br> Externas</span> 
+<p><img src="../img/industria.svg" style="margin-left:-2%; margin-top:5%;" width="120px" height="100px" class="Img2">
 
-	</div>
--->
-<p><img src="../img/industria.svg" width="120px" height="100px" class="Img2">
-
-	<div class="Empresas" >
+	<div class="Empresas" style="margin-left:-15%; margin-top:-20%;"  >
 		<section class="horas2">
-
 		<p id="tallerAlumno"><?php echo $TotalExternaTallerAlumno;?>/<?php echo $TotalEmpresasExterna; ?></p>
 		</section>
 		<div class="externa">
 		<span id="totalTa" >Empresas<br> Externas</span> 
-		</div>
-
-		
-
+		</div>	
 	</div>
 	</section>
 </div>

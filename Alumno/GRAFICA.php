@@ -23,10 +23,11 @@
 Highcharts.chart("container", {
 chart: {
     plotBorderWidth: 0,
-    height: "200px"
+    height: "200px",
+    
 },
 title: {
-    text: "Talleres<?php echo "<br>$TotalTalleresAlumno"."/6" ?>"
+    text: "Módulos<?php echo "<br>$TotalTalleresAlumno"."/6" ?>"
 },
 tooltip: {
     pointFormat: "<b>{point.percentage:.1f}%</b>"
