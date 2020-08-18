@@ -87,19 +87,17 @@ include 'Modularidad/MenuVertical.php';
    <!--<input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
         <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">-->
     <br>
-      <table  id="example" class="table table-hover table-sm table-bordered table-fixed h-100 w-100" >
+    <table  id="example" class="table table-hover table-sm table-bordered table-fixed h-100 w-100" >
       <br>
           <thead class="table-secondary h-100 w-100">
             <tr>
-              <th scope="col"><input type='checkbox' name='' class='case' value="" id="todos">Todos</th>
               <th scope="col">ID Alumno</th>
               <th scope="col">Alumno</th>
               <th scope="col">Sexo</th>
               <th scope="col">Class</th>
-              <th scope="col">Sede</th>
               <th scope="col">Universidad</th>
-              <th scope="col">Aprobar</th>
-              <th scope="col">Reprobar</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Estado Certificación</th>
             </tr>
           </thead>
 <tbody>
