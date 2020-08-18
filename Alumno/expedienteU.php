@@ -290,7 +290,7 @@ if ($_GET['id']==null) {
           </tr>
         </thead>
         <tbody>
-         <tr class='table-dark'>
+         <tr class='table-dark' style="color: black;">
             <th scope="col"> <?php echo $Universi ?> </th>
            <th scope="col"> <?php echo utf8_encode($Carrera)?> </th>
             <th scope="col"> <?php echo $cum?></th>
