@@ -8,8 +8,9 @@ include 'Modularidad/CabeceraInicio.php';
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
-include 'Modularidad/MenuHorizontal.php';
+//include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
+
 ?>
 <link rel="stylesheet" type="text/css" href="css/modulos-moodle.css">
 <div class="title">

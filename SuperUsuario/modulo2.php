@@ -9,41 +9,87 @@ include 'Modularidad/CabeceraInicio.php';
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
-// include 'Modularidad/MenuHorizontal.php';
+//include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
-
+<link rel='stylesheet' type="text/css" href="css/menumodulos.css">
 <link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
 
-    <h2 class="main-title" >Aprobar/Reprobar Módulo 2</h2>
+    <h2 class="main-title" >Aprobar / Reprobar Módulo C2</h2>
 </div>
-<div class="btn" >
+<!-- <div class="btn" >
 <a href="listadogeneral2.php" ><button class="btn btn-warning" id="button">Listado general 2</button></a>
-</div>
+</div> -->
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center" id="main">
-  <nav class="nav flex-column" id="nav">
-    <h2 class="title-1">Menu</h2>
-<a class="nav-link" href="AprobarModulos.php">Módulo C1</a>
-  <a class="nav-link active" href="modulo2.php" style="background-color:#BE0032; color:white;">Módulo C2</a>
-  <a class="nav-link" href="modulo3.php">Módulo B1</a>
-  <a class="nav-link" href="modulo4.php">Modulo B2</a>
-   <a class="nav-link" href="modulo5.php">Módulo A1</a>
-    <a class="nav-link" href="modulo6.php">Módulo A2</a>
-</nav>
+
+
+  <nav class="nav justify-content-center nav-pills nav-fill "  ><ul>
+<h2 >Seleccionar Módulo</h2>
+<br>
+<br>
+<b>
+        <li><a id="menuu" class="nav-link pg-0 "  href="AprobarModulos.php" >C1</a></li>
+        <li><a id="menuu" class="nav-link active pg-0" href="modulo2.php" style="background-color:#BE0032; color:white;" >C2</a></li>
+        <li><a id="menuu" class="nav-link pg-0"  href="modulo3.php" >B1</a></li>
+        <li><a id="menuu" class="nav-link pg-0"  href="modulo4.php">B2</a></li>
+        <li><a id="menuu" class="nav-link pg-0"  href="modulo5.php">A1</a></li>
+        <li><a id="menuu" class="nav-link pg-0"  href="modulo6.php">A2</a></li>
+</b>
+    </ul></nav>
 <!-- Inicio de tabla de asistencia  -->
-<div class="card-body h-100 ">
-      <div class="table-responsive w-100">
-        <form action="Aprobartodos2.php" method="POST">  <br>
-        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
+<div class="card-body mx-auto  h-100 bg-light " style="color:black; width:80% ">
+      <div class="table-responsive w-100" style="color:black;">
+      
+  
+
+        <form action="Aprobartodos.php" method="POST">  <br>
+        <h5 class="card-header" style="color: black;"><b>Listado de Alumnos</b>
+        <br class="salto">
+<br class="salto">
+		<span class="float-right">	
+			<a href='listadogeneral2.php'><button type="button" class="btn btn-primary" class="botonresponsivo" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;"><img src="img/contact.png" width="25px" height="25px">
+				Listado General C2
+			</button></a><br class="salto">
+<br class="salto">
+      
+			<a href="Reportes/ReporteModulo2.php">
+				<button type="button" class="btn btn-danger px-3" class="botonresponsivo" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;">
+					<img src="../img/PDF.png" width="25px" height="25px">
+					Descargar
+				</button>
+			</a><br class="salto">
+<br class="salto">
+      
+	     		<a href="ReportesExcel/ReporteModulo2.php">
+	     			<button type="button" class="btn btn-success px-3" style="border-radius: 20px;
+    border: 2px;
+    width: 200px;height: 38px;
+     color:white; background-color: green">
+	     				<img src="img/excell.png" width="25px" height="25px"> Descargar
+	     			</button>
+	     		</a>
+		</span>
+  </h5>	<br class="salto">
+<br class="salto">
+        <!-- <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm"> -->
     <br>
-      <table  id="example" class="table table-hover table-sm table-bordered table-fixed" >
+      <table  id="example" class="table table-sm table-bordered  h-100 w-100  "  >
       <br>
-          <thead class="table-secondary">
-            <tr>
+          <thead class="table-dark h-100 w-100">
+            <tr class="thead-dark">
               <th scope="col"><input type='checkbox' name='' class='case' value="" id="todos">Todos</th>
               <th scope="col">ID Alumno</th>
               <th scope="col">Alumno</th>
@@ -98,7 +144,7 @@ $(document).ready(function() {
 
         initComplete: function() {
             //En el columns especificamos las columnas que queremos que tengan filtro
-            this.api().columns([0,1,2,3,4,5,6]).every(function() {
+            this.api().columns([1,2,3,4,5,6]).every(function() {
                 var column = this;
 
                 var select = $('<select><option value=""></option></select>')
@@ -153,7 +199,7 @@ $(document).ready(function() {
               }
             });
         </script>
-        <div class="footer-copyright text-center py-3" style="background: black;margin-top:30%;">
+        <div class="footer-copyright text-center py-3" style="background: black;margin-top:10%;">
                   <img class="img-fluid" src="../img/funda.png" width="60px">
                   </img>
                   <img class="img-fluid" src="../img/logoblanco2.png" style="margin-left:30px;"></img>
