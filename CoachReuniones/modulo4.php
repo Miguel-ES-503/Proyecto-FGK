@@ -23,7 +23,7 @@ include 'Modularidad/MenuVertical.php';
 <!-- Menu 2-->
 <br><br><br>
 <div class="btn" >
-<a href="listadogeneral1.php" ><button class="btn btn-warning" id="button">Listado general 1</button></a>
+<a href="listadogeneral4.php" ><button class="btn btn-warning" id="button">Listado general 4</button></a>
 </div>
 <br><br>
 <div class="container-fluid text-center" id="main">
