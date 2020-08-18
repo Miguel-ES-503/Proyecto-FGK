@@ -33,7 +33,7 @@ include 'Modularidad/MenuVertical.php';
       <tr>
         <td colspan="2"><p style="color: black;font-size: 20px;text-align: center;margin-bottom: -10px;">*Menu</p></td>
       </tr>
-      <td><a class="nav-link active ml-2" href="modulo1.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo C1</a></td>
+      <td><a class="nav-link active ml-2" href="AprobarModulos.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo C1</a></td>
      <td><a class="nav-link ml-2" href="modulo2.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo C2</a></td>
     </tr>
     <tr>
