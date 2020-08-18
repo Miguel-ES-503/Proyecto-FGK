@@ -129,7 +129,7 @@ include 'Modularidad/MenuVertical.php';
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
-     color:white;text-decoration: none;'><img src='img/facultad.png' width='25px' height='25px' ><a href='../ComproCambio/".$Comprobante."' class='btn btn-success px-3 far fa-file-alt' target = '_blank'>Comprobante </a></button>";
+     color:white;text-decoration: none;'><img src='img/facultad.png' width='25px' height='25px' ><a href='../ComproCambio/".$Comprobante."'  target = '_blank'>Comprobante </a></button>";
                 }
               ?>
                   </div>

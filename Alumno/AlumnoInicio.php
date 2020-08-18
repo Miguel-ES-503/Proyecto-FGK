@@ -156,28 +156,6 @@ while($fila2 = $stmt2->fetch()){
 		$TotalEmpresasExterna = $fila5['TotalExterna'];
 	}
 
-
-	//Horas sociales
-	/*$consulta6=$dbh->prepare("SELECT * FROM hsociales where ID_Alumno = :IdAlumno AND `ID_Ciclo`='".$cicloActual."' AND `estado`='Aprobado'");
-	$consulta6->bindParam(":IdAlumno", $id);
-	$consulta6->execute();
-
-	$HorasSociales = 0;
-
-	if ($consulta6->rowCount() >0)
-	{
-		$fila6=$consulta6->fetch();
-
-		if ($fila6['CantidadH'] != null) {
-			$HorasSociales = $fila6['CantidadH'];
-		}else
-		{
-			$HorasSociales = 0;
-		}
-
-
-	}
-*/
 	foreach ($dbh->query("SELECT CantidadH FROM hsociales where ID_Alumno = '".$Carnet."' ") as $Datos) {
 		if ($Datos['CantidadH'] != 0) {
 			$HorasSociales = $Datos['CantidadH'];
@@ -324,14 +302,16 @@ while($fila2 = $stmt2->fetch()){
 <script src="JS/jquery.knob.js"></script>
 <script src="JS/graficos.js"></script>
 <meta charset="utf-8">
-<div class="row" >
-<!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center">
-	<div class="title" style="margin-left: -9px;">
+<div class="title w-100 linea-color">
 	<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Expediente del Alumno</h2>
 	
 </div>
+<div class="row" >
+
+<!--Comiezo de estructura de trabajo -->
+<div class="container-fluid text-center"  ng-app="app">
+	
 	<div class="principal">
 
   <div class="alerta" >
@@ -356,7 +336,8 @@ while($fila2 = $stmt2->fetch()){
 
 	</div>
 
-<div class="Info-Alumno1-sec">
+	<br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<div class="Info-Alumno1-sec h-100">
 <section class="opciones">
 			<p id="mainTitle" class="parrafo">Carrera: </p>
 			<p ><?php echo utf8_encode($Carrera )?></p>
@@ -376,89 +357,61 @@ while($fila2 = $stmt2->fetch()){
 			<p ><?php echo "<b id='estado'>".$Financiamiento."</b>";  ?></p>
 
 </section>
-
+<?php
+$TotalTalleresAlumno = 5; 
+$Porcentaje = ($TotalTalleresAlumno /6)*100 ;
+$TotalReunionAlumno =4;
+$TotalReuniones = 5;
+$Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
+		?>
 </div>
 </div>
 <div class="Info-Alumno2">
 			<h3 class="subtitle-p">Progreso</h3>
-	<section class="Info1">
-		<div class="grafico1">
-					<?php
-$TotalTalleresAlumno = 9;
-		$Porcentaje = ($TotalTalleresAlumno * 100) / 15;
-
-
-		
-
-		?>
-		<span id="tallerAlumno"><?php echo $Porcentaje; ?></span>%<span id="totalTa"></span> 
-		<br>
-
-		<input type="text" value="<?php echo $TotalTalleresAlumno; ?>" class="grafic1">
-<p class="talleres">Talleres</p>
-<div class="Porc">
-<span id="reunionAlumno"><?php echo $TotalTalleresAlumno; ?></span>/<span id="totalRe">15</span>
-</div>
-
-		
-
-	</div>
-	<div class="grafico2">
-		
-        <?php
-		$TotalReunionAlumno =8;
-		$TotalReuniones = 15;
-       	$Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
-
-
-		?>
-		<span id="tallerAlumno"><?php echo $Porc2; ?></span>%<span id="totalTa"></span> 
-		<br>
-
-		<input type="text" value="<?php echo $TotalReunionAlumno; ?>" class="grafic1">
-<p class="reuniones">Reuniones</p>
-<div class="Porc">
-<span id="reunionAlumno"><?php echo $TotalReunionAlumno; ?></span>/<span id="totalRe"><?php echo $TotalReuniones; ?></span>
-</div>
+	<section class="Info1 float-left h-50 w-75"style="margin-left:-11%">
+	<div class="grafico w-50">
+		<div id="container" ></div>
 	</div>
 
-	<div class="HorasVinculacion">
+	<div class="grafico2  float-left h-50 " style="margin-left:-20%">
+		<div id="container2"  style="min-width: 310px; max-width: 600px;" ></div>
+	</div>
+
+	<div class="HorasVinculacion float-right" style="margin-top:-110%; ">
 		<p><img src="../img/maletin.jpg" width="120px" height="100px"  class="Img1">
 		<section class="horas">
 		
 		<p id="tallerAlumno"><?php echo $HorasSociales; ?> h</p>
 		</section>
 		<span id="totalTa">Horas de <br>vinculación</span> 
-		
-
 	</div>
-	<br><br><br><br><br>
-	<!--<div class="empresas" style="margin-right: -40px;" >
-		<span id="tallerAlumno"><?php echo $TotalExternaTallerAlumno;?>/</span><span id="totalExt"><?php echo $TotalEmpresasExterna; ?></span>
-		<br>
-		<span id="totalTa" >Empresas<br> Externas</span> 
+<p><img src="../img/industria.svg" style="margin-left:-2%; margin-top:5%;" width="120px" height="100px" class="Img2">
 
-	</div>
--->
-<p><img src="../img/industria.svg" width="120px" height="100px" class="Img2">
-
-	<div class="Empresas" >
+	<div class="Empresas" style="margin-left:-15%; margin-top:-20%;"  >
 		<section class="horas2">
-
 		<p id="tallerAlumno"><?php echo $TotalExternaTallerAlumno;?>/<?php echo $TotalEmpresasExterna; ?></p>
 		</section>
 		<div class="externa">
 		<span id="totalTa" >Empresas<br> Externas</span> 
-		</div>
-
-		
-
+		</div>	
 	</div>
 	</section>
 </div>
 <br>
 
 <div class="Info-Alumno3" >
+
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
+<br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
 	<div class="status1"  >
 		<p >CUM Actual</p>
 		<h3 class="subtitle"><?php  echo  round($Promedio,2) ?> %</h3>
@@ -482,44 +435,6 @@ $TotalTalleresAlumno = 9;
 <a href="solicitudCambio.php" class="btn btn-info" id="button-info">Cambiar</a>
 	</div>
 </div>
-
-
-<!-- Classic tabs -->
-<!-- Modal: modalCart -->
-<!--
-<div class="modal fade" id="modalCart2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-	<div class="modal-content">
-	-->
-		<!--Header
-		<div class="modal-header">
-			<h4 class="modal-title" id="myModalLabel">Lista de asistencia Reuniones</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">×</span>
-			</button>
-		</div>
-		-->
-		<!--Body
-		<div class="modal-body">
-			<div class="table-responsive">
-				<table class="table table-hover thead-dark">
-					<thead>
-						<tr>
-							<th>Reunión</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</thead>
-					<tfoot >
-						<tr>
-							<th>Reunión</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</tfoot>
-					<tbody>
-
 						<?php
 						if ($consulta11->rowCount()>=1)
 						{
@@ -542,52 +457,6 @@ aria-hidden="true">
 		</div>
 
 	</div>
-	-->
-	<!--Footer
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
-	</div>
-</div>
-</div>
-</div>
-</div>
--->
-
-<!-- Classic tabs -->
-<!-- Modal: modalCart
-<div class="modal fade" id="modalCart3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-	<div class="modal-content">
-		 -->
-		<!--Header
-		<div class="modal-header">
-			<h4 class="modal-title" id="myModalLabel">Lista de asistencia Talleres Externa</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">×</span>
-			</button>
-		</div>
--->
-		<!--Body-
-		<div class="modal-body">
-			<div class="table-responsive">
-				<table class="table table-hover thead-dark">
-					<thead>
-						<tr>
-							<th>Taller</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</thead>
-					<tfoot >
-						<tr>
-							<th>Taller</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</tfoot>
-					<tbody>
-
 						<?php
 						if ($consulta12->rowCount()>=1)
 						{
@@ -610,61 +479,6 @@ aria-hidden="true">
 		</div>
 
 	</div>
--->
-	<!--Footer
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
-	</div>
-</div>
-</div>
-</div>
-</div>
-
--->
-<!-- Classic tabs -->
-<!-- Modal: modalCart 
-<div class="modal fade bd-example-modal-lg" id="modalCart4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog modal-lg" role="document">
-	<div class="modal-content">
-		-->
-		<!--Header
-		<div class="modal-header">
-			<h4 class="modal-title" id="myModalLabel">Horas Sociales</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">×</span>
-			</button>
-		</div>
-		-->
-		<!--Body
-		<div class="modal-body">
-			<div class="table-responsive">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Inicio</th>
-							<th>Finalización</th>
-							<th>Encargado</th>
-							<th>Descripción</th>
-							<th>Ciclo</th>
-							<th>Cantidad</th>
-						</tr>
-					</thead>
-					<tfoot >
-						<tr>
-							<th>ID</th>
-							<th>Inicio</th>
-							<th>Finalización</th>
-							<th>Encargado</th>
-							<th>Descripción</th>
-							<th>Ciclo</th>
-							<th>Cantidad</th>
-						</tr>
-					</tfoot>
-					<tbody>
-
-
 						<?php
 						if ($consulta13->rowCount()>=1)
 						{
@@ -690,26 +504,20 @@ aria-hidden="true">
 		</div>
 
 	</div>
-	-->
-	<!--Footer
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
-	</div>
-</div>
-</div>
-</div>
-</div>
-
-
-</div>
--->
+	
 <!-- /#page-content-wrapper -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
 
+
+
+<script src="main.js"></script>
+<?php include "GRAFICA.php"?>
+<?php include "GRAFICA2.php"?>
 </div>
 </div>
 <!-- /#wrapper -->
 </div>
-
+<?php include "templates/saltos.php" ?>
 <?php
 
   require_once 'templates/footer.php';

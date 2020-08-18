@@ -1,0 +1,39 @@
+.salto {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .salto {
+        display: initial;
+    }
+    .Info-Alumno1-sec {
+        width: 100%;
+        height: 400px;
+    }
+    .opciones {
+        display: inline-block;
+    }
+    .linea-color {
+        width: 100%;
+    }
+    .Info-Alumno2 {
+        display: inline-block;
+        margin: 0 auto;
+    }
+    .Info1 {
+        display: inline-block;
+    }
+    body {
+        display: inline-block;
+    }
+    .HorasVinculacion,
+    #tallerAlumno {
+        margin-left: -20%;
+    }
+    .Info-Alumno2 {
+        text-align: center;
+    }
+    .status1 {
+        float: center;
+    }
+}

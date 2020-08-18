@@ -8,7 +8,7 @@ include 'Modularidad/CabeceraInicio.php';
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
-// include 'Modularidad/MenuHorizontal.php';
+include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/modulos-moodle.css">
@@ -30,7 +30,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="card-body  bg-dark" >
     <div class="table-responsive">
       <br>
-      <table  id="example" class="table table-hover w-100 "  >
+      <table  id="tabla" class="table table-hover w-100 "  >
         <thead class="table-secondary">
           <tr>
             <th scope="col">Alumno</th>
@@ -53,6 +53,84 @@ include 'Modularidad/MenuVertical.php';
     </div> <!--Fin de la caja responsivo de la tabla-->
   </div>
 <br><br>
+<script>
+$(document).ready(function() {
+  var table = $('#tabla').DataTable({
+
+        "scrollX": true,
+        "scrollY": "50vh",
+        //Esto sirve que se auto ajuste la tabla al aplicar un filtro
+         "scrollCollapse": true,
+
+        language: {
+            "decimal": "",
+            "emptyTable": "No hay información",
+            "info": "Mostrando START a END de TOTAL Entradas",
+            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+            "infoFiltered": "(Filtrado de MAX total entradas)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar MENU Entradas",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        },
+
+        initComplete: function() {
+            //En el columns especificamos las columnas que queremos que tengan filtro
+            this.api().columns([0,1,2,3,4,5,6]).every(function() {
+                var column = this;
+
+                var select = $('<select><option value=""></option></select>')
+                    .appendTo($(column.header()))
+                    .on('change', function() {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val().trim()
+                        );
+
+                            column
+                            .search(val ? '^' + val + '$' : '', true, false)
+                            .draw();
+
+
+                    });
+                    //Este codigo sirve para que no se active el ordenamiento junto con el filtro
+                $(select).click(function(e) {
+                    e.stopPropagation();
+                });
+                //===================
+
+                column.data().unique().sort().each(function(d, j) {
+                    // select.append('<option value="' + d + '">' + d + '</option>')
+
+                        select.append('<option value="' + d + '">' + d + '</option>')
+
+                });
+
+
+
+            });
+        },
+        "aoColumnDefs": [
+         { "bSearchable": false
+         //"aTargets": [ 1] sirve para indicar que columna no queremos que funcione el filtro
+
+          }
+       ]
+
+    });
+    //****Esta bendita linea hace la magia, adjusta el header de la tabla con el body
+    table.columns.adjust();
+} );
+
+</script>
 <?php
 //Incluir el footer
 include 'Modularidad/PiePagina.php';

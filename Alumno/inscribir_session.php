@@ -31,21 +31,8 @@
     </tr>
   </thead>
   <tbody style="background-color: #c7c7c7">
-  <tr>
-  <td>10/04/2020</td>
-  <td>10:30 am - 11:30am</td>
-  <td>Disponible</td>
-  <td>Fatima Baldovinos</td>
-  <td>Abierto</td>
-  </tr>
-  <tr>
-  <td>10/04/2020</td>
-  <td>10:30 am - 11:30am</td>
-  <td>Disponible</td>
-  <td>Fatima Baldovinos</td>
-  <td>Abierto</td>
-  </tr>
-  </tr>
+  
+  
   <?php
   //obtener id from alumnos
   $correo = $_SESSION['Email'];

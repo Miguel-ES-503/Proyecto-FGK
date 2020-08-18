@@ -349,6 +349,7 @@ include 'Modularidad/MenuVertical.php';
 							<input type="hidden" id="cargo" name="cargo"  value="Estudiante">
 						<!-- Sign up button -->		
 									<label for="materialRegisterFormFirstName">Finalizar</label>	
+									<br>
 								<button name="Guardar_Datos" value="Crear Alumno" id="Guardar_Alumno" class="alumnoboton"> Crear Alumno</button>
 								<!--<input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" >-->
 							</div>

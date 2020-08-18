@@ -157,6 +157,26 @@
          text-align: left;
          width: 100%;
         }
+        .modal-content{
+    background-color: white;
+    border-color: black;
+    border-radius: 30px;
+    padding: 20px;
+}
+.modal-body{
+    text-align: left;
+}
+
+.form-control{
+    background-color: #ADADB2;
+    color: black;
+    border-radius: 20px;
+
+}
+.modal-header{
+    border-color: #ADADB2;
+    border:3px;
+}
         </style>  <!--Fin de CSS de las tablas -->
 
         
@@ -259,7 +279,11 @@
 
         
                   <div class='f1-buttons'>
-                  <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#comprobante' >Terminar proceso</button>
+                  <button type='button' style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;" data-toggle='modal' data-target='#comprobante' >Terminar proceso</button>
                   </div>
                   <br><br>
       </div>
@@ -334,8 +358,16 @@
       <div class="modal-footer">
       
       
-         <input class="btn btn-primary btn-rounded" type="submit" name="actualizar" value="Cerrar " data-dismiss="modal" > 
-        <input class="btn btn-primary btn-rounded" type="submit" name="comprobante_Ciclo" value="Guardar Cambios " id="comprobante_Ciclo">
+         <input style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 100px;height: 38px;
+     background-color: #9d120e;
+     color:white;" type="submit" name="actualizar" value="Cerrar " data-dismiss="modal" > 
+        <input style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;" type="submit" name="comprobante_Ciclo" value="Guardar Cambios " id="comprobante_Ciclo">
 
       </div>
 
