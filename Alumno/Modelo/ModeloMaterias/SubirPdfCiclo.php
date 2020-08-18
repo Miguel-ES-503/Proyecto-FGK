@@ -3,7 +3,7 @@ require_once "../../../BaseDatos/conexion.php";
 
 
 
- if(isset($_POST['actualizar']))
+ if(isset($_POST['comprobante_Ciclo']))
 {
 
 
@@ -12,22 +12,22 @@ require_once "../../../BaseDatos/conexion.php";
     $tipoarchivo = $_FILES["archivo"]["type"];
     $tama«Ðoarchivo = $_FILES["archivo"]["size"];
     $rutaarchivo = $_FILES["archivo"]["tmp_name"];
-    $destino = "../../../pdfPensum/";
+    $destino = "../../../pdfCicloInscripcion/";
 
-    $iduser = $_POST['alumno'];
-    //$cometario = $_POST['Comentario'];
-    //$ciclo=$_POST['ciclo'];
-    $idsOLI = $_POST['expediente'];
+    $iduser = $_POST['alumno'];  //guarda el id del alumno
+    $ciclo=$_POST['ciclo'];      //ciclo correspondiente de u
+    $idExpediente = $_POST['expediente'];   //codigo del expediente u
+    $incripCiclo = $_POST['idInscripcionCiclo'];   
 
-    $consulta2=$pdo->prepare("SELECT pensum FROM expedienteu where idExpedienteU = :idExpedienteU");
-    $consulta2->bindParam(":idExpedienteU", $idsOLI);
+    $consulta2=$pdo->prepare("SELECT comprobante FROM inscripcionciclos where Id_InscripcionC = :Id_InscripcionC");
+    $consulta2->bindParam(":Id_InscripcionC", $incripCiclo);
     $consulta2->execute();
   
    $ArchivoPDF;
  if ($consulta2->rowCount() >=0)
  {
   $fila2=$consulta2->fetch();
-  $ArchivoPDF = $fila2['pensum'];
+  $ArchivoPDF = $fila2['comprobante'];
 }
 
 
@@ -35,7 +35,7 @@ if ($tama«Ðoarchivo <= 5000000 ) {
 
 
 
-         $RutaArchivo = "../../../pdfPensum/".$ArchivoPDF; //Buscammos el archivo con el nombre que se encuentra en la base 
+         $RutaArchivo = "../../../pdfCicloInscripcion/".$ArchivoPDF; //Buscammos el archivo con el nombre que se encuentra en la base 
 
         
           unlink($RutaArchivo);  // Eliminanos el archivo
@@ -50,18 +50,20 @@ if ($tama«Ðoarchivo <= 5000000 ) {
         }
 
         
-        $nombrearchivo = $iduser."-pensum".".pdf";
+        $nombrearchivo = $iduser."-".$ciclo.".pdf";
         
         $destino .= $nombrearchivo;
       
 
         if(copy($rutaarchivo,$destino))
         {
-        $consulta=$pdo->prepare("UPDATE `expedienteu` SET `pensum`= :pensum WHERE `ID_Alumno` = :ID_Alumno AND `estado` = 'Activo'");
+        $consulta=$pdo->prepare("UPDATE `inscripcionciclos` SET `cicloU`= :cicloU , `comprobante`= :comprobante WHERE `idExpedienteU` = :idExpedienteU AND `Id_InscripcionC` = :Id_InscripcionC");
          
         //$consulta->bindParam(":Comentario1",$cometario );
-        $consulta->bindParam(":pensum",$nombrearchivo);
-        $consulta->bindParam(":ID_Alumno",$iduser );
+        $consulta->bindParam(":cicloU",$ciclo);
+        $consulta->bindParam(":comprobante",$nombrearchivo );
+        $consulta->bindParam(":idExpedienteU",$idExpediente );
+        $consulta->bindParam(":Id_InscripcionC",$incripCiclo );
 
               //Verifica si ha insertado los datos
          if ($consulta->execute()) 
@@ -166,8 +168,9 @@ if ($tama«Ðoarchivo <= 5000000 ) {
 
 
                 //Si todo fue correcto muestra el resultado con exito;
-          header("Location: ../../pensum.php?id=". $iduser);
-          echo $iduser;
+          header("Location: ../../ExpedienteU.php?id=". $iduser);
+          //echo $iduser;
+          //echo " Se guarda";
            
         }
         else

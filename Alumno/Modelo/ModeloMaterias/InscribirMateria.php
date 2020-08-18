@@ -33,15 +33,15 @@ $n6=mt_rand(1,9);
 
 
 
-  while ($comp==1) {
+ while ($comp==1) {
       //Comprobamos que no exista otro igual
-        $query=$pdo->prepare("SELECT COUNT(`idExpedienteU`) AS existe FROM `inscripcionmateria` WHERE `idExpedienteU`='".$materia."'");
+        $query=$pdo->prepare("SELECT COUNT(`idExpedienteU`) AS existe FROM `materias` WHERE `idExpedienteU`='".$materia."'");
         $query->execute();
         $existe;
         if ($query->rowCount() >0)
         {
           $r=$query->fetch();
-          $existe = $r['existe'];
+          
         }
         //Comprobamos que no exista
         if ($existe>=1) {
@@ -57,6 +57,7 @@ $n6=mt_rand(1,9);
           $comp=2;
         }
     }
+
 
 
    $consulta2=$pdo->prepare("UPDATE `materias` SET `estadoM`= 'Inscrita' WHERE idExpedienteU = :idExpedienteU and idMateria = :idMateria");

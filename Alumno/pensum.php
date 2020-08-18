@@ -12,7 +12,32 @@
 
   require '../Conexion/conexion.php';
 
- ?>
+        //Carnet del alumno
+        $stmt1 =$dbh->prepare("SELECT `ID_Alumno`  FROM `alumnos` WHERE correo='".$_SESSION['Email']."'");
+        $stmt1->execute();
+         while($fila = $stmt1->fetch()){
+           $alumno=$fila["ID_Alumno"];
+         }//Fin de while 
+
+
+
+         // Expediente U
+        $consulta=$pdo->prepare("SELECT idExpedienteU  FROM expedienteu WHERE ID_Alumno = ? AND estado = 'Activo'");
+     
+        $consulta->execute(array($alumno));
+        $idExpedienteU;
+         if ($consulta->rowCount()>=1)
+         {
+           while ($fila=$consulta->fetch())
+           {   
+             $idExpedienteU = $fila['idExpedienteU'];
+           }
+         }//fin de condicion
+
+
+?>
+
+ 
 
 <!--div principal-->
 <div class="container-fluid text-center"><br>
@@ -94,7 +119,36 @@
 
                           <span class="float-right">  
                                <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#ModalMateria' style="height: 50px;"><img src="../img/add.png" width="25px" height="25px"><br><p style="font-size: 10px;">Crear Materia</p></button>
-                              <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' style="height: 50px;"><img src="../img/paper.png" width="25px" height="25px"><br><p style="font-size: 10px;">Subir pensum</p></button>
+                              
+                               <?php
+                                    //consulta para seleccionar el comprobante de pensum
+                                    $PDF=$pdo->prepare("SELECT pensum FROM `expedienteu` WHERE `idExpedienteU` = ? ");
+                                    $PDF->execute(array($idExpedienteU));//ejecute consulta
+
+
+                                    if ($PDF->rowCount()>=1) {
+                                      //recorre las filas
+                                      while ($filapdf=$PDF->fetch()) {
+                                        //Validacion de boton finalizar
+                                      //------------------------------
+
+                                      //si comprobante es diferente a vacio
+                                      if ($filapdf['pensum'] !=null) {
+
+                                        echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#pensum' disabled style='height: 50px; '><img src='../img/paper.png' width='25px' height='25px'><br><p style='font-size: 10px; '>Subir pensum</p></button>";
+                                      }else
+                                      {
+
+                                        echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#pensum' style='height: 50px;'><img src='../img/paper.png' width='25px' height='25px'><br><p style='font-size: 10px;'>Subir pensum</p></button>" ;
+                                      } 
+                 
+                                    }//fin while
+                                   }//fin de if
+                           ?>
+
+                              
+                              
+                             
 
                             
 
@@ -113,7 +167,7 @@
                                    
                                     <th scope="col">Asignatura</th>
                                    
-                                    <th scope="col">Opciones</th>
+                                    <th scope="col">Eliminar</th>
                                    </tr>
                                </tr>
                            </thead>
@@ -302,9 +356,8 @@
 
 
 
-
-             <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal Pensum carrera -->
+<div class="modal fade" id="pensum" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -324,38 +377,32 @@
         <br><br>
         <div>
 
-          <?php
-          //------------EXTRAER ID DEL ALUMNO--------------------------
-          //-----------------------------------------------------------
-            $extraeIdAlumno=$dbh->prepare("SELECT `ID_Alumno` 
-                                           FROM `alumnos` 
-                                           WHERE `correo`='".$_SESSION['Email']."'");
-            $extraeIdAlumno->execute();
-              if ($extraeIdAlumno->rowCount()>0) {
-               // code...
-                $fila2=$extraeIdAlumno->fetch();
-                $alumno=$fila2['ID_Alumno'];
-              }
-      
-          ?>
-        
+          <?php 
+            $stmt1 =$dbh->prepare("SELECT `ID_Alumno`  FROM `alumnos` WHERE correo='".$_SESSION['Email']."'");
+                      
+            $stmt1->execute();
 
+            while($fila = $stmt1->fetch()){
+              $alumno=$fila["ID_Alumno"];
+                                
+            }
+            ?>
+
+        
         <!--idalumnos-->
         <input type="hidden" name="alumno" value="<?php echo $alumno;?>"> 
 
-        <!--idalumnos-->
-        <input type="text" name="expediente" value="<?php echo $idExpedienteU;?>"> 
-
-
-      
-
-        </div>
-
+        <!--id expedente-->
+        <input type="hidden" name="expediente" value="<?php echo $idExpedienteU;?>">  
+      </div>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <input type="submit" id="actualizar" name="actualizar" value="Guardar Cambios" class="btn btn-secondary">
+      
+      
+         <input class="btn btn-primary btn-rounded" type="submit" name="actualizar" value="Cerrar " data-dismiss="modal" > 
+        <input class="btn btn-primary btn-rounded" type="submit" name="actualizar" value="Guardar Cambios " id="actualizar">
+
       </div>
 
       </form>
@@ -365,11 +412,6 @@
 
 
 
-
-
-
-
-</div>
 
 </div>
 
