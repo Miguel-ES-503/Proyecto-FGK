@@ -58,6 +58,7 @@ include 'Modularidad/MenuVertical.php';
   
 
         <form action="Aprobartodos.php" method="POST"> 
+        
         <h5 class="card-header" style="color: black;"><b>Listado de Alumnos</b>
         <br class="salto">
 <br class="salto">
@@ -94,11 +95,17 @@ include 'Modularidad/MenuVertical.php';
 	     		</a>
 		</span>
   </h5>	<br class="salto">
-<br class="salto">
-  
-        <!-- <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary ">
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary "> -->
-    <br>
+  <br class="salto">
+  <br class="salto">
+  <br class="salto">
+  <br class="salto">
+  <br class="salto">
+  <div>
+  <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary " style="background-color:#BE0032;">
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary " style="background-color:#BE0032;">
+      </div>
+        
+    
       <table  id="example" class="table table-sm table-bordered  h-100 w-100  "  >
       <br>
           <thead class="table-dark h-100 w-100">
