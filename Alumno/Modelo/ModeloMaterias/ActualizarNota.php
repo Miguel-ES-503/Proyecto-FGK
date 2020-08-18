@@ -36,7 +36,7 @@ if(isset($_POST['Actualizar_Notas']))
    
 
     //if ($consulta2->execute() && $consulta3->execute()) 
-    if ($consulta2->execute()) 
+    if ($consulta2->execute() ) 
 	   {  
        $consulta3->execute();
 	   	
@@ -47,7 +47,7 @@ if(isset($_POST['Actualizar_Notas']))
 	    }
 		else
 		{			 	
-		header("Location: ../../Notas.php?id=".$idInscripcionCiclo);
+		//header("Location: ../../Notas.php?id=".$idInscripcionCiclo);
 
 		echo " No Funciona";
 		}

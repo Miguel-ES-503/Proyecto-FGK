@@ -186,7 +186,7 @@ div.centerTable table {
 
 <div class='centerTable '>
 <table  id="makeEditable" class="thead-dark" >
-  <h3 class="card-header h3s bg-light">Lista de materias Retiradas</h3>
+  <h3 class="card-header h3s bg-light">Historico de materias</h3>
   
   <thead>
     <tr>
@@ -264,7 +264,7 @@ div.centerTable table {
                             
                }//fin de while
             }else{
-              echo "<tr><td colspan='3'>No ha agregado ninguna Asignatura</td></tr>";
+              echo "<tr><td colspan='6'>No ha agregado ninguna Asignatura</td></tr>";
             }//fin de else-if
                                        
 

@@ -123,7 +123,7 @@ if ($_GET['id']==null) {
   }
 
 
-    $stmt4 =$dbh->prepare("SELECT COUNT(idMateria) AS 'Aprobado' FROM `materias` WHERE `idExpedienteU` = ? AND Estado ='Aprobado'");
+    $stmt4 =$dbh->prepare("SELECT COUNT(idMateria) AS 'Aprobado' FROM `materias` WHERE `idExpedienteU` = ? AND estadoM ='Aprobada'");
   // Ejecutamos
   $stmt4->execute(array($idExpedienteU));
 
@@ -137,7 +137,7 @@ if ($_GET['id']==null) {
 
 
 
-  $stmt5 =$dbh->prepare("SELECT COUNT(Id_InscripcionM) AS 'Reprobado' FROM inscripcionmateria IM INNER JOIN inscripcionciclos IC ON IM.Id_InscripcionC = IC.Id_InscripcionC WHERE IC.idExpedienteU = ? AND estado = 'Reprobado' ");
+  $stmt5 =$dbh->prepare("SELECT COUNT(idMateria) AS 'Reprobado' FROM `materias` WHERE `idExpedienteU` = ? AND estadoM ='Reprobada'");
   // Ejecutamos
   $stmt5->execute(array($idExpedienteU));
 
