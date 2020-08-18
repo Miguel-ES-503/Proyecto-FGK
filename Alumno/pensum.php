@@ -1,6 +1,28 @@
 <?php require_once 'templates/head.php'; ?>
-<title>Indicaciones transporte</title>
+<title>Pensum</title>
  <link rel="stylesheet" href="assets1/css1/style.css">
+ <style type="text/css">
+   .modal-content{
+    background-color: white;
+    border-color: black;
+    border-radius: 30px;
+    padding: 20px;
+}
+.modal-body{
+    text-align: left;
+}
+
+.form-control{
+    background-color: #ADADB2;
+    color: black;
+    border-radius: 20px;
+
+}
+.modal-header{
+    border-color: #ADADB2;
+    border:3px;
+}
+ </style>
 <?php  
   
   //Manda  allamar plantillas
@@ -118,7 +140,11 @@
 
 
                           <span class="float-right">  
-                               <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#ModalMateria' style="height: 50px;"><img src="../img/add.png" width="25px" height="25px"><br><p style="font-size: 10px;">Crear Materia</p></button>
+                               <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#ModalMateria' style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 100px;height: 50px;
+     background-color: #9d120e;
+     color:white;"><img src="../img/add.png" width="25px" height="25px"><br><p style="font-size: 10px;">Crear Materia</p></button>
                               
                                <?php
                                     //consulta para seleccionar el comprobante de pensum

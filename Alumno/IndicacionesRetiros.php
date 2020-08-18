@@ -85,8 +85,16 @@
                              
 
 
-                              <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#ModalMateria' style="height: 50px;"><img src="../img/add.png" width="25px" height="25px"><br><p style="font-size: 10px;">Inscribir Materias</p></button>
-                              <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' style="height: 50px;"><img src="../img/paper.png" width="25px" height="25px"><br><p style="font-size: 10px;">Subir Comprobante</p></button>
+                              <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#ModalMateria' style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 115px;height: 52px;
+     background-color: #9d120e;
+     color:white;"><img src="../img/add.png" width="25px" height="25px"><p style="font-size: 10px;">Inscribir Materias</p></button>
+                              <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' style="border-radius: 20px;
+    border: 2px solid #196fb0;
+    width: 115px;height: 52px;
+     background-color: #196fb0;
+     color:white;"><img src="../img/paper.png" width="25px" height="25px"><br><p style="font-size: 10px;">Subir Comprobante</p></button>
 
 
                                <!--<button type='button' class='btn btn-danger' disabled><i class='fas fa-file-pdf' ></i></button>-->
