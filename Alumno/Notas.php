@@ -1,296 +1,303 @@
-<?php require_once 'templates/head.php'; ?>
-<title>Indicaciones transporte</title>
- <link rel="stylesheet" href="assets1/css1/style.css">
-<?php  
-  
-  //Manda  allamar plantillas
+<?php
+  require_once 'templates/head.php';
+?>
+<title>Notas</title>
+<?php
   require_once 'templates/header.php';
-
-  require_once 'templates/MenuVertical.php';
-
+  //require_once 'templates/MenuVertical.php';
   require_once 'templates/MenuHorizontal.php';
-
   require '../Conexion/conexion.php';
 
- ?>
+  
+        //Carnet del alumno
+        $stmt1 =$dbh->prepare("SELECT `ID_Alumno`  FROM `alumnos` WHERE correo='".$_SESSION['Email']."'");
+        $stmt1->execute();
+         while($fila = $stmt1->fetch()){
+           $alumno=$fila["ID_Alumno"];
+         }//Fin de while 
 
-<!--div principal-->
-<div class="container-fluid text-center"><br>
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+
+         // Expediente U
+        $consulta=$pdo->prepare("SELECT idExpedienteU  FROM expedienteu WHERE ID_Alumno = ? AND estado = 'Activo'");
+     
+        $consulta->execute(array($alumno));
+        $idExpedienteU;
+         if ($consulta->rowCount()>=1)
+         {
+           while ($fila=$consulta->fetch())
+           {   
+             $idExpedienteU = $fila['idExpedienteU'];
+           }
+         }//fin de condicion
+
+
+          //-------------------------------------------------------------------
+       //Extraer ID Inscripcion ciclo 
+       // Consulta que muestra el idciclo del expediente correspondiente
+       //dependiendo del expediente asi se l mostrara los datos
+       $consultaIC=$pdo->prepare("SELECT Id_InscripcionC FROM inscripcionciclos WHERE idExpedienteU = ? ");
+       $consultaIC->execute(array($idExpedienteU));
+       $Id_InscripcionC;
+         if ($consultaIC->rowCount()>=1)
+         {
+            while ($fila=$consultaIC->fetch())
+            {   
+             $Id_InscripcionC = $fila['Id_InscripcionC'];
+            }
+         }
+
+
+      
 
 
 
-    
+  
+
+  setlocale(LC_TIME, 'es_SV.UTF-8');
+
+  //Extraemos el carnet del estudiante
+  $stmt1 =$dbh->prepare("SELECT `ID_Alumno`, `ID_Empresa` FROM `alumnos` WHERE correo='".$_SESSION['Email']."'");
+  // Ejecutamos
+  $stmt1->execute();
+
+  while($fila = $stmt1->fetch()){
+      $alumno=$fila["ID_Alumno"];
+      $universidad=$fila["ID_Empresa"];
+  }
+
+?>
+
 <!--///////////////////////////////////////////////-->
 <!--Para ver el nombre del archivo que sube-->
-    <script type="text/javascript">
+<script type="text/javascript">
   $(document).ready(function () {
     bsCustomFileInput.init()
   });
   </script>
-  <br><br>
+  
   <!--Fin de funcion-->
   <!--///////////////////////////////////////////////-->
 
 
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <!-- Collapsible content -->
-  <div class="collapse navbar-collapse" id="basicExampleNav">
 
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
-      
-      <li class="nav-item">
-        <a class="nav-link active" href="IndicacionesMaterias.php">Notas</a>
-     
-     
-    </ul>
-    <!-- Links -->   
-  </div>
-  <!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
+<!--Estructura -->
+<div class="container-fluid text-center">
+<div class="title" style="margin-left: -14px;">
+<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Agregar notas</h2>
+	
+</div>
+  <br>
+
 
   
-  <div>
 
-    <div>
+  
 
-                             
-        <div class="container" style="background: white; "><br>
+  <!--Información de solicitud-->
+  <div class="row">
 
-          <h2 style="color: #BF3E3E;">Notas de ciclo</h2>
-          
-           <div class="row">
-             
-              <!--Primera columna-->
-                  <div class="col-sm" style="color: #343434;">
+  
+    
+        
+
+    
+  
+
+    <!--tabla con informacion de solicitud-->
+    <div class="col text-center">
+      <br><br><br>
+
+      <!--CSS de las tablas -->
+      <style type="text/css">
+          table {
+            border-collapse: separate;
+            border-spacing: 6px;
+            background:  bottom left repeat-x;
+            color: #fff;
 
 
-                          <span class="float-right">  
-                              <!--button type="button" class="btn btn-danger px-3" data-toggle="modal" data-target="#ModalMateria"><i class="fas fa-book"></i>  Inscribir Materias</button-->
+          }
 
-                              <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' > Subir comprobante</button>
+          tr, th{
+            background: white;
+            color: #585858;
+            text-align: center;
 
-                              <button type='button' class='btn btn-danger' disabled><i class='fas fa-file-pdf' ></i></button>
 
-                              <!--button type='button' class='btn btn-danger' disabled><i class='fas fa-file-pdf' ></i></button-->
+          }
+          td  {
+            width: 150px;
+            background: #D8D8D8;
+            border-radius: 3px;
+            color: #000;
+          }
 
-                          </span>
-                           <br> <br><br>
-                        
-                     
-                      
-                      
-                       <table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" >
-                           <thead class="table-dark">
-                               <tr>  
-                                    <th scope="col">Codigo</th>
-                                    <th scope="col">Asignatura</th>
-                                    <th scope="col">Nota</th>
-                                    <th scope="col">Matricula</th>
-                                    <th scope="col">Estado</th>
-                                    <th scope="col">Editar nota</th>
-                                   </tr>
-                               </tr>
-                           </thead>
-                                    
-                           <tbody>
+           .oscuro{
+            background: #A4A4A4;
 
-                          
-                            <?php 
+          }
 
+
+
+          h3 {
+            color: #DE0B18;
+          }
+
+          h4{
+            color: white;
+          }
+          div.centerTable{
+        text-align: center;
+         }
+
+ 
+
+        div.centerTable table {
+         margin: 0 auto;
+         text-align: left;
+         width: 100%;
+        }
+        </style>  <!--Fin de CSS de las tablas -->
+
+        
+      <!--Tabla de buses de Ida -->
+        <h3 class="card-header h3s bg-light w-75 mx-auto">Notas</h3>
+        <div class='centerTable'>
+          <table  class="table-responsive mx-auto w-75" > 
+          <thead >
+            <tr>
+            <th>Codigo</th>
+              <th>Asignatura</th>
+              <th>Matricula</th>
+              <th>Ciclo</th>
+              <th>Nota</th>
+              <th>Estado</th>
+              
+              <th>Actualizar</th>
+            </tr>
+          </thead>
+
+          <tbody>
+           
+          <?php
+        //consulta que muestra las materias
+       $consulMaterias=$pdo->prepare("SELECT IM.Id_InscripcionM, IM.nota,IM.idMateria,IM.matricula, M.nombreMateria, IM.estado, IC.cicloU, M.idExpedienteU
+      from materias M
+      INNER JOIN inscripcionmateria IM
+      ON IM.idMateria= M.idMateria
+
+      INNER JOIN inscripcionciclos IC
+      ON IC.Id_InscripcionC=IM.Id_InscripcionC
+  
+      WHERE M.idExpedienteU = ?  OR M.estadoM = 'Inscrita' ");
+
+       $consulMaterias->execute(array($idExpedienteU));
+
+
+
+        
+        if ($consulMaterias->rowCount()>=1)
+        {
+          while ($fila2=$consulMaterias->fetch())
+          { 
+
+
+             if ($fila2['estadoM'] !='Inscrita') {
+              $IdInsM=$fila2["Id_InscripcionM"];
+
+               echo "<tr>
+               
+                    <td >".$fila2['idMateria']."</td>
+                    <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                    <td >".$fila2['matricula']."</td>
+                     <td >".$fila2['cicloU']."</td>
+                      <td >".$fila2['nota']."</td>
+                    <td >".$fila2['estado']."</td>
+                    
+                    <td>
+
+
+
+                    <center>
+                     <button type='button' id=".$fila2['idMateria']." class='btn ' data-toggle='modal' data-target='#ModalMateria' onclick='mandarId(id)' ><i class='fa fa-pen'></i>
+                     </button>
+                    </center>
+                    </td>
+                  </tr>";     
+
+        
+         
+             }else
+                 {
+
+                   echo "<tr>
+                    <td >".$fila2['idMateria']."</td>
+                    <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                    <td >".$fila2['nota']."</td>
+                    <td >".$fila2['estadoM']."</td>
+                   
+                    <td>
+
+
+
+                    <center>
+                     <button type='button' id=".$fila2['idMateria']." class='btn btn-danger' data-toggle='modal' data-target='#modalFinal' onclick='mandarId(id)' ><i class='fa fa-pen'></i>
+                     </button>
+                    </center>
+                    </td>
+                  </tr>";     
 
        
-                            //-------------------------------------------------------------------
-                            //Extraer ID Alumno
-                            //-------------------------------------------------------------------
-
-
-                              $stmt1 =$dbh->prepare("SELECT `ID_Alumno`  
-                                                     FROM `alumnos`
-                                                     WHERE correo='".$_SESSION['Email']."'");
-                      
-                               $stmt1->execute();
-
-                              while($fila = $stmt1->fetch()){
-                                $alumno=$fila["ID_Alumno"];
-                                
-                               }//fin de while
-
-                             //-------------------------------------------------------------------
+                  } //fin de else
 
 
 
-                            //-------------------------------------------------------------------
-                            //Extraer ID  Expediente U
-                            //-------------------------------------------------------------------
-                            // Consulta que muestra las solicitudes que haga el usuario
-                            //dependiendo del usuario asi se l mostrara los datos
-                              $consulta=$pdo->prepare("SELECT idExpedienteU  
-                                                      FROM expedienteu 
-                                                      WHERE ID_Alumno = ? AND estado = 'Activo'");
-      
-                              $consulta->execute(array($alumno));
-
-                               $idExpedienteU;
-
-                                      if ($consulta->rowCount()>=1)
-                                      {
-                                          while ($fila=$consulta->fetch())
-                                          {   
-                                            $idExpedienteU = $fila['idExpedienteU'];
-                                          }
-                                      }
-
-
-
-                            //-------------------------------------------------------------------
-                            //Extraer Todas las materias  con estado inscritas
-                            //-------------------------------------------------------------------
-
-
-
-                          $MateriasInscritas=$pdo->prepare("SELECT m.Id_InscripcionM, a.nombreMateria, a.idMateria, m.matricula, m.nota , m.estado  FROM inscripcionmateria m  INNER JOIN materias a 
-                                                            on m.idMateria=a.idMateria 
-                                                            WHERE not EXISTS (SELECT * from inscripcionmateria m where a.idExpedienteU= ? and m.nota <> 0)");
-
-
-                              $MateriasInscritas->execute(array($idExpedienteU));
-
-                                  if ($MateriasInscritas->rowCount()>=1)
-                                  {
-                                     while ($fila2=$MateriasInscritas->fetch())
-                                        {   echo "
-                                        <tr class='table-light'>
-                                        <th>".$fila2['idMateria']."</th>
-                                        
-                                        <th>".$fila2['nombreMateria']."</th>
-
-                                        <th>".$fila2['nota']."</th>
-
-                                        <th>".$fila2['matricula']."</th>
-
-                                        <th>".$fila2['estado']."</th>
-                                       
-                                       
-                                        
-                                        <td>
-                                        <center><button type='button' id=".$fila2['idMateria']." class='  btn btn-success' data-toggle='modal' data-target='#exampleModal2' onclick='mandarId(id)' >
-                                       </button></center></td>
-                                        </tr>";
-
-                                      }//fin de while 
-                                    }//fin de if
-
-                               ?>
-    
-
-                           </tbody>        
-                          </table>
-
-                          <br><br><br> 
-
+           
                             
-                          <br> 
-                         
-                           <!--div class="f1-buttons">
-                                    
-                                   
-                                    <button type="button" class="btn btn-next btn-dark">Enviar</button>
-                          </div-->
-                          <br>
+               }//fin de while
+            }else{
+              echo "<tr><td colspan='7'>No ha agregado ninguna Asignatura</td></tr>";
+            }//fin de else-if
+                                       
 
+                                  
+            ?>
+              
+        
+      
 
-                   </div>
+        
+      
+          </tbody>
 
-               <!-- Fin Primera columna-->
+          <tfoot>
+            
+          </tfoot>
+        </table>
 
-
-                       <br>
-
-           </div> <!--Fin de row-->
-
-
-         </div><!--Fin de container-->
-
-       </div> 
-
-     </div>
-  </div> 
-  <br>
-  <br>
-</div><!-- Fin de div principal-->
-
-<!-- /#page-content-wrapper -->
-
-
- <!--MODALS-->
- <div class="hidden" >
-                  
-
-<!-- Modal de retiro materia -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="background: green; color: white;">
-        <h5 class="modal-title " id="exampleModalLabel" >Ingreso de notas de materia</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        
+                  <div class='f1-buttons'>
+                  <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#comprobante' >Terminar proceso</button>
+                  </div>
+                  <br><br>
       </div>
-      <div class="modal-body">
+       <!--Fin Tabla de buses de Ida -->
 
 
-        <!--Funcion para mandar el id-->
-         <script type="text/javascript">
+  
+      
 
-           function mandarId(id){
-                var prueba = id;
-                var prueba2= id;
-                 //alert(id);
 
-                document.getElementById("Materia").value=prueba;
-                document.getElementById("codigoMateria").innerHTML=prueba2;
-
-           }
-        </script>
-
-        
-        <p style="text-align: justify; color: #2E2E2E;"><b>Nota:</b> Una vez ingrese la nota de la materia ya no podra cambiarla, asegurese y verifique que sean sus notas correctas.</p>
-        
-        
-        <form  method="POST" action="Modelo/ModeloMaterias/GuardarRetiros.php">
-
-          <div class="form-group">
-            <input type="hidden" name="idmaterias" id="Materia" value="">  
-             <input type="hidden" name="expediente" value="<?php echo $idExpedienteU;?>">
-
-            <h3 for="codigo">Codigo de materia:</label><h3 id="codigoMateria" for="codigo"> </h3> 
-             
-
-           </div>   
-        
-      </div>
-      <div class="modal-footer">
-        
-        <button type="button"  data-dismiss="modal">Close</button>
-        <input type="submit" name="retirar" value="Ingresar" class="btn btn-success">
-        
-      </div></form>
     </div>
   </div>
 </div>
 
 
-<!-- Modal de sbir comprobante de retiro -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal Pensum carrera -->
+<div class="modal fade" id="comprobante" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -298,52 +305,19 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+       
       </div>
       <div class="modal-body">
-        <br><br>
-        <form action="Modelo/ModeloMaterias/comprobanteRetiro.php" method="post" enctype="multipart/form-data">
+      
 
-          <!--Select materia retirada-->
-          <?php 
-               // Consulta De La BASE DE DATOS
-       $materiasRetiradas=$pdo->prepare("SELECT IM.Id_InscripcionM, IM.idMateria, 
-                                        M.nombreMateria, IM.estado
-                                        FROM inscripcionmateria IM
-                                        INNER JOIN materias M
-                                        ON IM.idMateria= M.idMateria
-                               WHERE NOT 
-                               EXISTS (SELECT retiros.Id_InscripcionM from retiros WHERE IM.Id_InscripcionM = retiros.Id_InscripcionM and m.idExpedienteU = ? or IM.estado = 'Inscrita')");
-                                        
-       $materiasRetiradas->execute(array($idExpedienteU));
-       ?>
-
-
-            <div class="form-group">
-              <select id="materiaRetirada" name="materiaRetirada" class="form-control" required>
-                  <option value="" disabled selected >Seleccione la materia que retiro</option>
-                  <?php 
-
-                    if ($materiasRetiradas->rowCount()>=1)
-                     {
-                        while ($fila22=$materiasRetiradas->fetch())
-                        {   
-                          echo "<option value=".$fila22['Id_InscripcionM'].">".$fila22['idMateria']."---".$fila22['nombreMateria'];"</option>";
-                        }
-                      }
-
-                   ?>
-
-                                          
-               </select>
-            </div><br>
-
-
-           <div class="form-group">
-                <textarea name="Comentario" placeholder="Comentario"  class="form-control" ></textarea>
-     
-                <center><small>Motivo de retiro</small></center>
-          </div><br>
-
+      <div class="alert alert-danger" role="alert">
+      Para que su solicitud sea terminada con exito agregue su comprobante de  notas.
+      </div>
+      
+       
+        <form action="Modelo/ModeloMaterias/ActualizarNota.php" method="post" enctype="multipart/form-data">
+            
+        
 
           <div class="custom-file">
           <input type="file" class="custom-file-input" accept=".pdf" id="customFileLang" name="archivo" required>
@@ -353,37 +327,34 @@
         <br><br>
         <div>
 
-          <?php
-          //------------EXTRAER ID DEL ALUMNO--------------------------
-          //-----------------------------------------------------------
-            $extraeIdAlumno=$dbh->prepare("SELECT `ID_Alumno` 
-                                           FROM `alumnos` 
-                                           WHERE `correo`='".$_SESSION['Email']."'");
-            $extraeIdAlumno->execute();
-              if ($extraeIdAlumno->rowCount()>0) {
-               // code...
-                $fila2=$extraeIdAlumno->fetch();
-                $alumno=$fila2['ID_Alumno'];
-              }
-      
-          ?>
+          <?php 
+            $stmt1 =$dbh->prepare("SELECT `ID_Alumno`  FROM `alumnos` WHERE correo='".$_SESSION['Email']."'");
+                      
+            $stmt1->execute();
 
+            while($fila = $stmt1->fetch()){
+              $alumno=$fila["ID_Alumno"];
+                                
+            }
+            ?>
 
-        <!--id del alumno-->
-        <input type="hidden" name="idalumno" value="<?php echo $alumno;?>"> 
+        
+        <!--idalumnos-->
+        <input type="hidden" name="alumno" value="<?php echo $alumno;?>"> 
 
-        <!--id expedienteU-->
-        <input type="hidden" name="expediente1" value="<?php echo $idExpedienteU;?>">
+        <!--id expedente-->
+        <input type="hidden" name="expediente" value="<?php echo $idExpedienteU;?>"> 
 
-     
-
-        </div>
-
+        <input type="hidden" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">  
+      </div>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <input type="submit" id="pdfRetiros" name="pdfRetiros" value="Guardar Cambios" class="btn btn-danger">
+      
+      
+         <input class="btn btn-primary btn-rounded" type="submit" name="actualizar" value="Cerrar " data-dismiss="modal" > 
+        <input class="btn btn-primary btn-rounded" type="submit" name="comprobante_Ciclo" value="Guardar Cambios " id="comprobante_Ciclo">
+
       </div>
 
       </form>
@@ -392,162 +363,95 @@
 </div>
 
 
-</div>
+<!-- MODAL Materias -->
+<!--**************-->
+<div class="modal fade " id="ModalMateria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar nota</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form action="Modelo/ModeloMaterias/ActualizarNota.php" method="POST" accept-charset="utf-8">
+           <div id="alerta5"></div>
+           <div class="col">
 
-</div>
+      <script type="text/javascript">
+        function mandarId(id){
+          var prueba = id;
+          var prueba2 = id;
+                                
+          document.getElementById("mate").innerHTML = prueba2;
+          document.getElementById("Materia").value=prueba;
 
-<!-- /#wrapper -->
+         }
+      </script>
+        <div class="form-group">
+             <label class="" for="Materia">Codigo de materia:</label>
+             <input type="text" name="materia" id="Materia"  class="Materia form-control"  >
+            </div>        
 
-
- <?php
-
-  require_once 'templates/footer.php';
-
-?>
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-fluid text-center">
-  <br><br>
-  <div>
-    <div>
-<!--div principal-->
-<div class="container-fluid text-center"><br>
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
-    
-  
-
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <!-- Collapsible content -->
-  <div class="collapse navbar-collapse" id="basicExampleNav">
-
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
       
-      <li class="nav-item">
-        <a class="nav-link active" href="Notas.php">Notas</a>
-      </li>
-     
-     
-    </ul>
-    <!-- Links -->   
-  </div>
-  <!-- Collapsible content -->
-</nav>
-<!--/.Navbar-->
   
-  <div>
+        <div class="form-group">
+         <label id="mate" style="margin-left:1%" for="matricula" hidden="hidden" ></label>
+        </div>
 
-    <div>
+         
 
-                             
-        <div class="container" style="background: white; "><br>
+           <div class="form-group">
+             <label class="" for="nota">Nota:</label>
+             <input type="text" name="nota" placeholder="0.00" class="nota form-control"  id="nota">
+            </div>
 
-          <h2 style="color: #BF3E3E;">Notas de ciclo</h2>
-          
-           <div class="row">
-             
-              <!--Primera columna-->
-                  <div class="col-sm" style="color: #343434;">
+            <div class="form-group ">
+            <label for="inputCity">Estado materia:</label>
+            <select id="estado" name="estado" class="form-control" required>
+                <option selected>Seleccione una opción...</option>
+                <option value="Aprobada">Aprobada</option>
+                <option value="Reprobada">Reprobada</option>
+        
+            </select>
+          </div>
 
-
-                          
-                           <br> <br><br>
-                        
-                     
-                      
-                      
-                       <table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed" >
-                           <thead class="table-dark">
-                               <tr>  
-                                    <th scope="col">Codigo</th>
-                                   
-                                    <th scope="col">Asignatura</th>
-                                  
-                                    <th scope="col">Notas</th>
-
-                                    <th scope="col">Opciones</th>
-                                   </tr>
-                               </tr>
-                           </thead>
-                                    
-                          <tbody>    
-
-                          </tbody> 
-
-                          </table>
-
-                          <br><br><br> 
-
-                            
-                          <br> 
-                         
-                           <!--div class="f1-buttons">
-                                    
-                                   
-                                    <button type="button" class="btn btn-next btn-dark">Enviar</button>
-                          </div-->
-                          <br>
-
-
-                   </div>
-
-               <!-- Fin Primera columna-->
-
-               <br>
-      
-    
-           </div> <!--Fin de row-->
-
-
-         </div><!--Fin de container-->
-
-       </div> 
-
-     </div>
-  </div> 
-  <br>
-  <br>
-</div><!--Fin de principal-->
+           
 
 
    
+         <input type="hidden" name="expedienteu" value="<?php echo $idExpedienteU;?>"> 
+
+         <input type="hidden" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>"> 
+         <input type="hidden" name="idInscripcionM" value="<?php echo $IdInsM;?>"> 
+                            
+       </div>
+
+      <input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0"    type="submit" name="Actualizar_Notas" value="Actualizar Nota" id="Actualizar_Notas">
+    </form>       
   </div>
-  <br>
-  <br>
-</div>
+  </div>
+                  </div>
 
-<!-- /#page-content-wrapper -->
+                <!-- FIN MODAL MATERIA -->
+                 <!--**********************-->
+               </div>
 
 
-
-</div>
-
-</div>
-
-<!-- /#wrapper -->
+             
 
 
 
 
 
- <?php
+</div>                   
 
+
+
+
+  <br><br>
+
+<?php
   require_once 'templates/footer.php';
-
 ?>

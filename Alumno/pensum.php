@@ -75,24 +75,24 @@
     <ul class="navbar-nav mr-auto" >
       
       <li class="nav-item">
-        <a class="nav-link active" href="SIT-CrearEmpresas.php">Pensum</a>
+        <a class="nav-link active" href="pensum.php">Pensum</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="RetiroMateria.php">Inscritas</a>
+        <a class="nav-link" href="MateriasInscritas.php">Inscritas</a>
       </li>
 
 
        <li class="nav-item">
-        <a class="nav-link" href="RetiroMateria.php">Aprobadas</a>
+        <a class="nav-link" href="MateriasAprobadas.php">Aprobadas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="SIT-CrearCarrera.php">Reprobadas</a>
+        <a class="nav-link" href="MateriasReprobadas.php">Reprobadas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="RetiroMateria.php">Retiros</a>
+        <a class="nav-link" href="MateriasRetiradas.php">Retiros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="RetiroMateria.php">Consolidado</a>
+        <a class="nav-link" href="ConsolidadoMaterias.php">Consolidado</a>
       </li>
      
     </ul>

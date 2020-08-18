@@ -170,6 +170,8 @@ background-color: #0D0D0D;
            <li><a href="pensum.php" class="list-group-item list-group-item-action">  <i class="fas fa-file-pdf"></i> Pensum</a></li>
            
            <li><a href="IndicacionesMaterias.php" class="list-group-item list-group-item-action">  <i class="fas fa-book"></i> Materias</a></li>
+           <li><a href="Notas.php" class="list-group-item list-group-item-action">  <i class="fas fa-check"></i> Notas</a></li>
+    
            <li><a href="IndicacionesRetiros.php" class="list-group-item list-group-item-action">  <i class="fas fa-ban"></i> Retiros</a></li>
            
 

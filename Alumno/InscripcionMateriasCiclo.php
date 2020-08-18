@@ -178,7 +178,9 @@
            
       <?php
         //consulta que muestra las materias
-       $consulMaterias=$pdo->prepare("SELECT idMateria, nombreMateria, Estado, estadoM from materias WHERE idExpedienteU = ? AND estado = 'Activo' or  estadoM = 'Inscrita'and not estadoM = 'Aprobada'");
+       $consulMaterias=$pdo->prepare("SELECT idMateria, nombreMateria, Estado, estadoM 
+                                      from materias as m
+                                      WHERE idExpedienteU = ? AND estado = 'Activo' or  estadoM = 'Inscrita'and not estado = 'Aprobada'");
 
        $consulMaterias->execute(array($idExpedienteU));
 
@@ -320,12 +322,12 @@
 
         
         <!--idalumnos-->
-        <input type="text" name="alumno" value="<?php echo $alumno;?>"> 
+        <input type="hidden" name="alumno" value="<?php echo $alumno;?>"> 
 
         <!--id expedente-->
-        <input type="text" name="expediente" value="<?php echo $idExpedienteU;?>"> 
+        <input type="hidden" name="expediente" value="<?php echo $idExpedienteU;?>"> 
 
-        <input type="text" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">  
+        <input type="hidden" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">  
       </div>
 
       </div>
@@ -391,9 +393,9 @@
 
 
    
-         <input type="text" name="expedienteu" value="<?php echo $idExpedienteU;?>"> 
+         <input type="hidden" name="expedienteu" value="<?php echo $idExpedienteU;?>"> 
 
-         <input type="text" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>"> 
+         <input type="hidden" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>"> 
                             
        </div>
 
@@ -433,8 +435,8 @@
 
             
          
-          <input type="text" name="idsoliTrans" value="<?php echo $_GET['id']; ?>">
-          <input type="text" name="alumno" value="<?php echo $alumno; ?>">
+          <input type="hidden" name="idsoliTrans" value="<?php echo $_GET['id']; ?>">
+          <input type="hidden" name="alumno" value="<?php echo $alumno; ?>">
         
       </div>
       <div class="modal-footer">
