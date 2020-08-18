@@ -18,16 +18,20 @@ include 'Modularidad/MenuVertical.php';
     <div class="title2">
 </div>
 </div>
-<!--Comiezo de estructura de trabajo -->
+<!--Comiezo de estructura de trabajo --><br>
+<div class="buttons">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="activarmodulos.php"><button type="buttom" class="btn btn-danger" id="btn" /><img src="../img/add.png" class="icon2">Activar Inscripción</button> </a>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="AprobarModulos.php"><button type="buttom" class="btn btn-success" id="btn2" /><img src="../img/add.png" class="icon2">Aprobar Modulos</button> </a>
+        </div>
+    </div>
+</div>
+<br>
 <div class="container-fluid text-center" id="main-inicio">
 <!-- botones de redirección -->
-<div class="buttons">
-  <a href="activarmodulos.php"><button type="buttom" class="btn btn-danger"/><img src="../img/add.png" class="icon2">Activar Inscripción</button> </a>
-<a href="AprobarModulos.php"><button type="buttom" class="btn btn-success"/><img src="../img/add.png" class="icon2">Aprobar Modulos</button> </a>
-</div>
-
-<br><br><br>
-<!-- Tabla con datos de alumnos -->
 <div class="card-body" >
     <div class="table table-responsive  table-hover table-striped">
       <br>
