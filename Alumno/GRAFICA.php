@@ -4,7 +4,7 @@
     
     y: 
     <?php echo $Porcentaje?>,
-    color: "#ff6666",
+    color:"#FFFF00",
     dataLabels: {
         enabled: false
     }
@@ -13,7 +13,7 @@
 {
     name: "Incompleto",
     y: <?php echo $TotalTalleresAlumno?>,
-    color: "#dddddd",
+    color: "grey",
     dataLabels: {
         enabled: false
     }
@@ -25,6 +25,11 @@ chart: {
     plotBorderWidth: 0,
     height: "200px",
     
+},
+
+credits: {
+
+    enabled: false
 },
 title: {
     text: "Módulos<?php echo "<br>$TotalTalleresAlumno"."/6" ?>"

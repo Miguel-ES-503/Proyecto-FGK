@@ -4,7 +4,7 @@
     
     y: 
     <?php echo $Porc2?>,
-    color: "#ff6666",
+    color: "#FFFF00",
     dataLabels: {
         enabled: false
     }
@@ -13,7 +13,7 @@
 {
     name: "Incompleto",
     y: <?php echo $TotalReunionAlumno?>,
-    color: "#dddddd",
+    color: "grey",
     dataLabels: {
         enabled: false
     }
@@ -24,6 +24,10 @@ Highcharts.chart("container2", {
 chart: {
     plotBorderWidth: 0,
     height: "200px"
+},
+credits: {
+
+enabled: false
 },
 title: {
     text: "Reuniones<?php echo "<br>$TotalReunionAlumno"."/5" ?>"

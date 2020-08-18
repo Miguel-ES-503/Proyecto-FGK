@@ -368,7 +368,7 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 </div>
 <div class="Info-Alumno2">
 			<h3 class="subtitle-p">Progreso</h3>
-	<section class="Info1 float-left h-50 w-75"style="margin-left:-11%">
+	<section class="Info1 float-left h-50 w-75"style="margin-left:10%">
 	<div class="grafico w-50">
 		<div id="container" ></div>
 	</div>
