@@ -2,8 +2,9 @@
 //Modularidad para inicializar el Head y <!DOCTYPE html>
 include 'Modularidad/CabeceraInicio.php';
 ?>
-<title>Modulos de Moodle</title>
+<title>Aprobar módulos</title>
 <?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos?>
+
 <?php
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
@@ -11,86 +12,82 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
+<link rel='stylesheet' type="text/css" href="css/menumodulos.css">
 <link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
 
-    <h2 class="main-title" >Aprobar/Reprobar Módulo 1</h2>
+    <h2 class="main-title" >Listado General Módulo 6</h2>
 </div>
-
-  
 <!--Comiezo de estructura de trabajo -->
-<!-- Menu 2-->
-<br><br><br>
-<div class="btn" >
+<div class="container-fluid text-center" id="main">
+<nav class="nav justify-content-center nav-pills nav-fill "  ><ul>
+<h2 >Seleccionar Módulo</h2>
+<br>
+<br>
+<b>
+        <li><a id="menuu" class="nav-link  pg-0 "  href="AprobarModulos.php">C1</a></li>
+        <li><a id="menuu" class="nav-link  pg-0" href="modulo2.php" >C2</a></li>
+        <li><a id="menuu" class="nav-link pg-0"  href="modulo3.php" >B1</a></li>
+        <li><a id="menuu" class="nav-link pg-0"  href="modulo4.php">B2</a></li>
+        <li><a id="menuu" class="nav-link pg-0"  href="modulo5.php">A1</a></li>
+        <li><a id="menuu" class="nav-link  active pg-0"  href="modulo6.php" style="background-color:#BE0032; color:white;">A2</a></li>
+</b>
+    </ul></nav>
+<br>
+<!-- <div class="btn" >
 
   <a href="Reportes/ReporteModulo6.php" target="_blank" ><button class="btn btn-danger" id="button"><img src="../img/PDF.png">Descargar</button></a>
 
   <a href="ReportesExcel/ReporteModulo6.php" class="float-left"  ><button class="btn btn-success" id="button"><img src="../img/excell.png">Descargar</button></a>
-</div>
-<br><br>
-<div class="container-fluid text-center" id="main">
-<div class="table-responsive-sm" id="nav1">
-  <table cellpadding="10" align="center">
-    <tr>
-      <tr>
-        <td colspan="2"><p style="color: black;font-size: 20px;text-align: center;margin-bottom: -10px;">*Menu</p></td>
-      </tr>
-      <td><a class="nav-link active ml-2" href="AprobarModulos.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo C1</a></td>
-     <td><a class="nav-link ml-2" href="modulo2.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo C2</a></td>
-    </tr>
-    <tr>
-       <td><a class="nav-link ml-2" href="modulo3.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo B1</a></td>
-     <td><a class="nav-link ml-2" href="modulo4.php" style="width: 80px;font-size: 10px;" id="btn-h">Modulo B2</a></td>
-    </tr>
-    <tr>
-      <td><a class="nav-link ml-2" href="modulo5.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo A1</a></td>
-     <td><a class="nav-link ml-2" href="modulo6.php"style="width: 80px;font-size: 10px;background-color:#BE0032; color:white;" id="btn-h">Módulo A2</a></td>
-    </tr>
-    </table>
-  </div>
-<div class="table-responsive-sm" id="nav2">
-
-  <table class="table">
-    <tr>
-      <td colspan="6"><h2 class="main-title">* Menu</h2></td>
-    </tr>
-   <tr>
-     <td><a class="nav-link active ml-2" href="AprobarModulos.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo C1</a></td>
-     <td><a class="nav-link ml-2" href="modulo2.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo C2</a></td>
-     <td><a class="nav-link ml-2" href="modulo3.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo B1</a></td>
-     <td><a class="nav-link ml-2" href="modulo4.php" style="width: 80px;font-size: 10px;" id="btn-h">Modulo B2</a></td>
-     <td><a class="nav-link ml-2" href="modulo5.php" style="width: 80px;font-size: 10px;" id="btn-h">Módulo A1</a></td>
-     <td><a class="nav-link ml-2" href="modulo6.php"style="width: 80px;font-size: 10px;background-color:#BE0032; color:white;" id="btn-h">Módulo A2</a></td>
-   </tr>
-  </table>
-</div>
-
-<div class="row">
-  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2" id="nav3">
-  <nav class="nav flex-column" id="nav">
-    <h2 class="title-1">Menu</h2>
-<a class="nav-link active" href="AprobarModulos.php" >Módulo C1</a>
-<a class="nav-link" href="modulo2.php">Módulo C2</a>
-  <a class="nav-link" href="modulo3.php">Módulo B1</a>
-  <a class="nav-link" href="modulo4.php">Modulo B2</a>
-   <a class="nav-link" href="modulo5.php">Módulo A1</a>
-    <a class="nav-link" href="modulo6.php" style="background-color:#BE0032; color:white;">Módulo A2</a>
-</nav>
-</div>
+</div> -->
 
 <!-- Inicio de tabla de asistencia  -->
-<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 w-100 ml-lg-5 ml-md-5">
-    <div class="card-body w-100 h-100" id="cont2">
-      <div class="table-responsive">
-        <form action="Aprobartodos.php" method="POST">  <br>
-   <!--<input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">-->
+<div class="card-body mx-auto  h-100 bg-light " style="color:black; width:80% ">
+      <div class="table-responsive w-100" style="color:black;">
+        <form action="Aprobartodos.php" method="POST">
+     <!--  <span class="float-left">
+   <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">  -->
+        <!-- <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
+      </span> -->
+
+      <h5 class="card-header" style="color: black;"><b>Listado de Alumnos</b>
+        <br class="salto">
+	<br class="salto">
+		<span class="float-right">	
+			
+      
+			<a href="Reportes/ReporteModulo6.php">
+				<button type="button" class="btn btn-danger px-3" class="botonresponsivo" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;">
+					<img src="../img/PDF.png" width="25px" height="25px">
+					Descargar
+				</button>
+			</a><br class="salto">
+	<br class="salto">
+      
+	     		<a href="ReportesExcel/ReporteModulo6.php">
+	     			<button type="button" class="btn btn-success px-3" style="border-radius: 20px;
+    border: 2px;
+    width: 200px;height: 38px;
+     color:white; background-color: green">
+	     				<img src="img/excell.png" width="25px" height="25px"> Descargar
+	     			</button>
+	     		</a>
+		</span>
+  </h5>	<br class="salto">
+	<br class="salto">
+        <!-- <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm"> -->
     <br>
-      <table  id="example" class="table table-hover table-sm table-bordered table-fixed h-100 w-100" >
+      <table  id="example" class="table table-sm table-bordered  h-100 w-100  "  >
       <br>
-          <thead class="table-secondary h-100 w-100">
-            <tr>
+          <thead class="table-dark h-100 w-100">
+            <tr class="thead-dark">
               <th scope="col">ID Alumno</th>
               <th scope="col">Alumno</th>
               <th scope="col">Sexo</th>
@@ -110,104 +107,13 @@ include 'Modularidad/MenuVertical.php';
 </form>
     </div>
   </div>
-</div>
-  </div>
+
 </div>
 <br>
-<script>
-$(document).ready(function() {
-  var table = $('#example').DataTable({
-
-        "scrollX": true,
-        "scrollY": "50vh",
-        //Esto sirve que se auto ajuste la tabla al aplicar un filtro
-         "scrollCollapse": true,
-
-        language: {
-            "decimal": "",
-            "emptyTable": "No hay información",
-            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-            "infoPostFix": "",
-            "thousands": ",",
-            "lengthMenu": "Mostrar _MENU_ Entradas",
-            "loadingRecords": "Cargando...",
-            "processing": "Procesando...",
-            "search": "Buscar:",
-            "zeroRecords": "Sin resultados encontrados",
-            "paginate": {
-                "first": "Primero",
-                "last": "Ultimo",
-                "next": "Siguiente",
-                "previous": "Anterior"
-            }
-        },
-
-        initComplete: function() {
-            //En el columns especificamos las columnas que queremos que tengan filtro
-            this.api().columns([0,1,2,3,4,5,6]).every(function() {
-                var column = this;
-
-                var select = $('<select><option value=""></option></select>')
-                    .appendTo($(column.header()))
-                    .on('change', function() {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val().trim()
-                        );
-
-                            column
-                            .search(val ? '^' + val + '$' : '', true, false)
-                            .draw();
-
-
-                    });
-                    //Este codigo sirve para que no se active el ordenamiento junto con el filtro
-                $(select).click(function(e) {
-                    e.stopPropagation();
-                });
-                //===================
-
-                column.data().unique().sort().each(function(d, j) {
-                    // select.append('<option value="' + d + '">' + d + '</option>')
-
-                        select.append('<option value="' + d + '">' + d + '</option>')
-
-                });
-
-
-
-            });
-        },
-        "aoColumnDefs": [
-         { "bSearchable": false
-         //"aTargets": [ 1] sirve para indicar que columna no queremos que funcione el filtro
-
-          }
-       ]
-
-    });
-    //********Esta bendita linea hace la magia, adjusta el header de la tabla con el body
-    table.columns.adjust();
-} );
-
+<?php include_once "js/lista.php"; ?>
 </script>
-<script type="text/javascript">
 
-  $("#todos").on("click", function() {
-    $(".case").prop("checked", this.checked);
-  });
-
-            // if all checkbox are selected, check the selectall checkbox and viceversa
-            $(".case").on("click", function() {
-              if ($(".case").length == $(".case:checked").length) {
-                $("#todos").prop("checked", true);
-              } else {
-                $("#todos").prop("checked", false);
-              }
-            });
-        </script>
-        <div class="footer-copyright text-center py-3" style="background: black;margin-top:30%;">
+        <div class="footer-copyright text-center py-3" style="background: black;margin-top:10%;">
                   <img class="img-fluid" src="../img/funda.png" width="60px">
                   </img>
                   <img class="img-fluid" src="../img/logoblanco2.png" style="margin-left:30px;"></img>
@@ -216,30 +122,3 @@ $(document).ready(function() {
                   <a href="https://instagram.com/bk2oportunidades?igshid=4rmcd55eld5h"><img class="img-fluid" src="../img/instagram.png" style="margin-left:30px; width:60px;"></a></img>
 
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
