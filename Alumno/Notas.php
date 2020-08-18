@@ -89,7 +89,7 @@
 	<h2 class="main-title" >Agregar notas</h2>
 	
 </div>
-  <br>
+  
 
 
   
@@ -97,7 +97,7 @@
   
 
   <!--Información de solicitud-->
-  <div class="row">
+   <center><div class="row">
 
   
     
@@ -107,8 +107,8 @@
   
 
     <!--tabla con informacion de solicitud-->
-    <div class="col text-center">
-      <br><br><br>
+   <div class="col text-center">
+      <br>
 
       <!--CSS de las tablas -->
       <style type="text/css">
@@ -117,6 +117,7 @@
             border-spacing: 6px;
             background:  bottom left repeat-x;
             color: #fff;
+            float: center;
 
 
           }
@@ -180,14 +181,16 @@
     border-color: #ADADB2;
     border:3px;
 }
+
+
         </style>  <!--Fin de CSS de las tablas -->
 
         
       <!--Tabla de buses de Ida -->
         <h3 class="card-header h3s bg-light w-75 mx-auto">Notas</h3>
-        <div class='centerTable'>
+        <center><div class="centerTable">
           <table  class="table-responsive mx-auto w-75" > 
-          <thead >
+          <thead>
             <tr>
             <th>Codigo</th>
               <th>Asignatura</th>
@@ -307,7 +310,7 @@
      color:white;" data-toggle='modal' data-target='#comprobante' >Terminar proceso</button>
                   </div>
                   <br><br>
-      </div>
+      </div></center>
        <!--Fin Tabla de buses de Ida -->
 
 
@@ -316,7 +319,7 @@
 
 
     </div>
-  </div>
+  </div></center>
 </div>
 
 
