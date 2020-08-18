@@ -10,6 +10,7 @@ height: 55px;
 }
 h2 , .icon{
   float: left;
+  font-family: 'Roboto', sans-serif;
 }
 
 .icon 
@@ -102,4 +103,10 @@ text-align: center;
 	margin-top: -23px;
 	margin-right: 10px;
 }
+.title h2 {
+    font-size: 20px;
+    margin-top: 8px;
+    margin-left: 0em;
+}
+
 }
