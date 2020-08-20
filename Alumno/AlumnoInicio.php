@@ -1,7 +1,7 @@
 <?php
   require_once 'templates/head.php';
 ?>
-<title>Expdiente de alumno</title>
+<title>Expediente de alumno</title>
 <style>
 @media only screen and (min-width: 320px) and (max-width: 767px ) {
 
