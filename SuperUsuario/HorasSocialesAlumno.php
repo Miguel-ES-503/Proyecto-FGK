@@ -164,7 +164,8 @@ function myFunction() {
 </script>
 
 
-
+<!--NOTA: IMPORTANTE
+CAMBIAR MENU, CONSULTAR-->
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 
 <div class="text-justify">
