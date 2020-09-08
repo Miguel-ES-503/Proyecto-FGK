@@ -14,29 +14,31 @@ require_once '../Conexion/conexion.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/Activar-Modulo.css">
 <div class="title">
-     <a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
-    <h2 class="main-title" >Activar o Desactivar Módulos</h2>
+    <a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
+    <h2 class="main-title">Activar o Desactivar Módulos</h2>
 </div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-  <br>
-<div class="row">
-<div class="col-xs-6 col-sm-11 col-md-11 col-lg-4 h-75" id="nota">
-  <strong >NOTA: </strong><p>Al momento de activar un módulos los alumnos se prodran inscribir a dicho módulo y al momento de desactivar, los alumnos ya no podrán inscribirse hasta que se vuelva a activar el módulo.</p>
-</div>
-    <div class="table table-responsive  table-hover table-striped">
-    <div class="table table-responsive  table-hover table-striped">
-<table  id="tabla" class="">
-        <thead class="table-secondary table-bordered">
-    <tr>
-    <th scope="col">ID</th>
-      <th scope="col">Titulo</th>
-      <th scope="col">Activar/Desactivar</th>
-      <th scope="col">Cambiar contraseña</th>
-    </tr>
-  </thead>
-  <tbody>
-<?php 
+    <br>
+    <div class="row">
+        <div class="w-75 mx-auto" id="nota">
+            <strong>NOTA: </strong>
+            <p>Al momento de activar un módulos los alumnos se prodran inscribir a dicho módulo y al momento de
+                desactivar, los alumnos ya no podrán inscribirse hasta que se vuelva a activar el módulo.</p>
+        </div>
+        <div class="table table-responsive  w-50  mx-auto table-hover table-striped">
+            <div class="table table-responsive  table-hover table-striped">
+                <table id="tabla" class="">
+                    <thead class="table-dark table-bordered">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Activar/Desactivar</th>
+                            <th scope="col">Cambiar contraseña</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
 
 // seleccionar módulo mientras que este desactivado
 $stmt2 = $dbh->query("SELECT * FROM modulos WHERE estado = 1");
@@ -60,92 +62,60 @@ while ($row = $stmt->fetch()) {
     echo "</tr>";
 }
 ?>
-  </tbody>
-</table>
-</div>
-</div>
-</div>
-<br><br>
-<script>
-$(document).ready(function() {
-  var table = $('#tabla').DataTable({
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <script>
+    $(document).ready(function() {
+        var table = $('#tabla').DataTable({
 
-        "scrollX": true,
-        "scrollY": "50vh",
-        //Esto sirve que se auto ajuste la tabla al aplicar un filtro
-         "scrollCollapse": true,
+            "scrollX": true,
+            "scrollY": "50vh",
+            //Esto sirve que se auto ajuste la tabla al aplicar un filtro
+            "scrollCollapse": true,
+            initComplete: function() {
+                //En el columns especificamos las columnas que queremos que tengan filtro
+                this.api().columns([0, 1]).every(function() {
+                    var column = this;
 
-        language: {
-            "decimal": "",
-            "emptyTable": "No hay información",
-            "info": "Mostrando START a END de TOTAL Entradas",
-            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-            "infoFiltered": "(Filtrado de MAX total entradas)",
-            "infoPostFix": "",
-            "thousands": ",",
-            "lengthMenu": "Mostrar MENU Entradas",
-            "loadingRecords": "Cargando...",
-            "processing": "Procesando...",
-            "search": "Buscar:",
-            "zeroRecords": "Sin resultados encontrados",
-            "paginate": {
-                "first": "Primero",
-                "last": "Ultimo",
-                "next": "Siguiente",
-                "previous": "Anterior"
-            }
-        },
-
-        initComplete: function() {
-            //En el columns especificamos las columnas que queremos que tengan filtro
-            this.api().columns([0,1,2,3,4,5,6]).every(function() {
-                var column = this;
-
-                var select = $('<select><option value=""></option></select>')
-                    .appendTo($(column.header()))
-                    .on('change', function() {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val().trim()
-                        );
+                    var select = $('<select><option value=""></option></select>')
+                        .appendTo($(column.header()))
+                        .on('change', function() {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val().trim()
+                            );
 
                             column
-                            .search(val ? '^' + val + '$' : '', true, false)
-                            .draw();
-
-
-                    });
+                                .search(val ? '^' + val + '$' : '', true, false)
+                                .draw();
+                        });
                     //Este codigo sirve para que no se active el ordenamiento junto con el filtro
-                $(select).click(function(e) {
-                    e.stopPropagation();
+                    $(select).click(function(e) {
+                        e.stopPropagation();
+                    });
+                    //===================
+
+                    column.data().unique().sort().each(function(d, j) {
+                        // select.append('<option value="' + d + '">' + d + '</option>')
+
+                        select.append('<option value="' + d + '">' + d +
+                            '</option>')
+                    });
                 });
-                //===================
-
-                column.data().unique().sort().each(function(d, j) {
-                    // select.append('<option value="' + d + '">' + d + '</option>')
-
-                        select.append('<option value="' + d + '">' + d + '</option>')
-
-                });
-
-
-
-            });
-        },
-        "aoColumnDefs": [
-         { "bSearchable": false
-         //"aTargets": [ 1] sirve para indicar que columna no queremos que funcione el filtro
-
-          }
-       ]
-
+            },
+            "aoColumnDefs": [{
+                "bSearchable": false
+                //"aTargets": [ 1] sirve para indicar que columna no queremos que funcione el filtro
+            }]
+        });
+        //****Esta bendita linea hace la magia, adjusta el header de la tabla con el body
+        table.columns.adjust();
     });
-    //****Esta bendita linea hace la magia, adjusta el header de la tabla con el body
-    table.columns.adjust();
-} );
-
-</script>
-<?php
+    </script>
+    <?php
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
 ?>
-
