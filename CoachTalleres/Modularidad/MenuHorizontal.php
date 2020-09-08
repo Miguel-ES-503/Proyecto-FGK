@@ -274,7 +274,10 @@
         <a class="list-group-item list-group-item-action" href="sessionesOneonOne.php"><i class="fas fa-user-friends"></i> Sesiones Individuales
         </a>
       </li>
-    
+      <li>
+        <a class="list-group-item list-group-item-action" href="modulosMoodle.php"><i class="fas fa-briefcase"></i> Módulos
+        </a>
+      </li>
       </ul>
     </div>
 
