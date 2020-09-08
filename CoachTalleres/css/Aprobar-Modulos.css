@@ -1,0 +1,112 @@
+.title{
+background-color: #ADADB2;
+color: black;
+height: 70px;
+margin-left: 0%;
+margin-bottom: -2%;
+height: 55px;
+
+
+}
+h2 , .icon{
+  float: left;
+  font-family: 'Roboto', sans-serif;
+}
+
+.icon 
+{
+
+  width: 30px;
+  margin-top: 13px;
+  margin-left: 20px;
+}
+
+.title2
+{
+
+margin-left: 30px;
+background-color: #BE0032;
+width: 150px;
+height: 54px;
+display: inline-block;
+}
+.title2-text
+{
+margin-left:25px;
+margin-top: -8px;
+color: white;
+font-weight: bold;
+letter-spacing: 2px;
+}
+#main
+{
+	margin-top: 50px;
+}
+#nav
+{
+		border-width: 2px;
+	border-color: black;
+	border-style: dotted;
+	float: left;
+	border-radius: 40px;
+	width: 20%;
+	margin-left: 35px;
+}
+#menuu
+{
+	width: 140px;
+	color: black;
+	background-color: #A6A6A6;
+	border-radius: 10px;
+	border-color: #ADADB2;
+	border-style: solid;
+	border-width: 1px;
+    margin:auto;
+	margin-bottom: 10px;
+
+}
+#menuu:hover
+{
+	background-color: #BE0032;
+	color: white;
+}
+span
+{
+	margin-left: 2px;
+	margin-right: 6px;
+}
+.title-1
+{
+font-size: 20px;
+text-align: center;
+}
+.card-body
+{
+	height: 80px;
+	width: 70%;
+	margin-left: 30px;
+}
+
+#button
+{
+	border-radius: 20px;
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .btn
+{
+	float: right;
+	margin-top: -23px;
+	margin-right: 10px;
+}
+.title h2 {
+    font-size: 20px;
+    margin-top: 8px;
+    margin-left: 0em;
+}
+
+}
