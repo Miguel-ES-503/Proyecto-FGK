@@ -629,11 +629,4 @@ echo"            var data = google.visualization.arrayToDataTable([";
   
       echo"        </script>";
 
-#====================FINALIZA LA SECCION DONDE SE DIBUJA EL GRAFICO PRINCIPAL         
-echo"<script>";
-echo"$(document).ready(function(){";
-echo "$('#table').append(dat2);";
-    
-  echo"});";
-echo"</script>";
 ?>

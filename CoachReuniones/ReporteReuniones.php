@@ -241,7 +241,7 @@ include 'Modularidad/MenuVertical.php';
         <div class="col" style="margin-top:5px; width: 100%; margin-left:15%;" id="piechart_principal">
         </div>
         <div class="col w-50 mx-auto " id="tabla">
-            <div id="fondo"  style="margin-top:5%; margin-right:20%">
+            <div id="fondo" style="margin-top:5%; margin-right:20%">
                 <table id="table">
 
                 </table>
