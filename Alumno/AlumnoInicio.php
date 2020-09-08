@@ -65,9 +65,38 @@ position: relative;
 bottom: 265px;
 right: 190px;
 width: 400px;
+}
 
+.grafico{
+position: relative;
+right: 60px;
 
 }
+.grafico2{
+	position: relative;
+	right: 20px;
+}
+.HorasVinculacion{
+	position: relative;
+	left: 35px;
+	bottom: 60px;
+}
+.Img2{
+position: relative;
+bottom: 180px;
+left: 115px;
+}
+.externa, .horas2{
+position: relative;
+right: 50px;
+bottom: 115px;
+}
+
+}
+.grafico{
+	position: relative;
+	right: 65px;
+	width: 300px;
 }
 </style>
 
@@ -432,7 +461,7 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 <div class="Info-Alumno2">
 			<h3 class="subtitle-p">Progreso</h3>
 	<section class="Info1 float-left h-50 w-75"style="margin-left:10%">
-	<div class="grafico w-50">
+	<div class="grafico ">
 		<div id="container" ></div>
 	</div>
 
