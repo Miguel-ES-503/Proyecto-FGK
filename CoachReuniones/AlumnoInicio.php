@@ -349,6 +349,9 @@ while($fila2 = $stmt2->fetch()){
 			    <a href="HorasVinculacionPorAlumno.php?id=<?php echo$id ?>" class="nav-link"  >Horas de vinculación</a>
 			    
 			</li>
+			<li class="nav-item">
+			    <a href='Renovacion.php?id=<?php echo$Carnet?>' class="nav-link">Renovaciones de Beca</a>
+			</li>
 			
 		</li>
 	</ul>

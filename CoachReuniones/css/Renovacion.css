@@ -1,0 +1,45 @@
+.title{
+background-color: #ADADB2;
+color: black;
+height: 70px;
+margin-left: 0%;
+margin-bottom: -2%;
+height: 55px;
+
+
+}
+h2 , .icon{
+  float: left;
+}
+.main-title
+{
+text-align: left;
+font-size: 25px;
+margin-left: 25px;
+margin-top: 12px;
+font-weight: bold;
+letter-spacing: 5px;
+}
+.icon
+{
+
+  width: 30px;
+  margin-top: 13px;
+  margin-left: 20px;
+}
+
+#table
+{
+margin: auto;
+width: 50%;
+margin-top: 50px;
+text-align: center;
+}
+
+#perfil
+{
+	height: 150px;
+	width: 150px; 
+	margin: 0 auto;
+	border-radius: 50%;
+}
