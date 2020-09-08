@@ -40,33 +40,13 @@ width: 100%;
 
 .status1{
 	position: relative;
-	right: 285px;
-}
-.status2{
-position: relative;
-bottom: 95px;
-right: 90px;
-
-}
-.status3{
-	position: relative;
-	right: 285px;
-	bottom: 100px;
-
-}
-.status4{
-position: relative;
-bottom: 260px;
-right: 90px;
-
-}
-.status5{
-position: relative;
-bottom: 265px;
-right: 190px;
-width: 400px;
-
-
+	width: 200px;
+    height: 85px;
+    border-width: 5px;
+    border-color: #FFF;
+    border-style: solid;
+    background-color: #c7c7c7;
+    border-radius: 15px;
 }
 }
 </style>
@@ -366,16 +346,12 @@ while($fila2 = $stmt2->fetch()){
 
 	</div>
 		
-	</div>
-	<!-- Fin primera Fila-->
-<br>
-<div class="row" >
-<!--Comiezo de estructura de trabajo 2fila-->
-<div class="container-fluid text-center"  ng-app="app">
-	
-	<div class="principal">
-
-  <div class="alerta" >
+    </div>
+    <!----------------------fila 2-------------------------------->
+    <div class="container-fluid text-center"  ng-app="app">
+    <div class="row">
+<div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+<div class="alerta" >
       <?php
     include "config/Alerta.php";
       ?>
@@ -428,7 +404,9 @@ $TotalReuniones = 5;
 $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 		?>
 </div>
+
 </div>
+<div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
 <div class="Info-Alumno2">
 			<h3 class="subtitle-p">Progreso</h3>
 	<section class="Info1 float-left h-50 w-75"style="margin-left:10%">
@@ -460,8 +438,9 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 	</div>
 	</section>
 </div>
-<br>
 
+</div>
+<div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
 <div class="Info-Alumno3 " >
 <br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
 <br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
@@ -497,7 +476,16 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 <a href="solicitudCambio.php" class="btn btn-info" id="button-info">Cambiar</a>
 	</div>
 </div>
-						<?php
+    
+</div>
+
+
+
+
+
+
+    </div>
+    <?php
 						if ($consulta11->rowCount()>=1)
 						{
 							while ($fila11=$consulta11->fetch())
@@ -577,10 +565,10 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 <?php include "GRAFICA2.php"?>
 </div>
 </div>
-<!-- /#wrapper -->
 </div>
 <?php include "templates/saltos.php" ?>
 <?php
 
   require_once 'templates/footer.php';
 ?>
+
