@@ -245,14 +245,14 @@ if ($i ==0) {
     echo "<div id=".$Company." class = 'col-md-4'></div> ";
     echo "<div class='col-md-2'>";
         echo "<div class=' row '>";
-            echo "<div style='padding-left: 0;' class='col-12 ' ><button style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
+            echo "<div style='padding-left: 0;' class='col-12 ' ><button style='margin-top:10px;width:90%; border-color: #43E684;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."1'>Asistieron</button> </div> ";
             echo " <div class='w-100'></div>";
-            echo "<div style='padding-left: 0;' class='col-12' ><button style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
+            echo "<div style='padding-left: 0;' class='col-12' ><button style='margin-top:10px;width:90%; border-color: #A61C1C;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."2'>Inasistieron</button> </div> ";
             echo " <div class='w-100'></div>";
             
-            echo "<div  style='padding-left: 0;' class='col-12'  ><button  style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
+            echo "<div  style='padding-left: 0;' class='col-12'  ><button  style='margin-top:10px;width:90%; border-color: #F2C438;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."3'>No incritos</button> </div> </div></div>";
    
 
@@ -264,13 +264,13 @@ else if($i==1)
     echo "<div id=".$Company." class = 'col-md-4'></div>";
     echo "<div class='col-md-2'>";
     echo "<div class='row '>";
-        echo "<div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%;'  type='button' class='btn btn-outline-dark' data-toggle='modal'
+        echo "<div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%; border-color: #43E684;'  type='button' class='btn btn-outline-dark' data-toggle='modal'
         data-target='#".$Company."1'>Asisitieron</button> </div> ";
         echo " <div class='w-100'></div>";
-        echo "<div style='padding-left: 0;'  class='col-md-12' ><button style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
+        echo "<div style='padding-left: 0;'  class='col-md-12' ><button style='margin-top:10px;width:90%; border-color: #A61C1C;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."2'>Inasistieron</button> </div> ";
             echo " <div class='w-100'></div>";
-        echo "<div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%;'  type='button' class='btn btn-outline-dark' data-toggle='modal'
+        echo "<div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%; border-color: #F2C438;'  type='button' class='btn btn-outline-dark' data-toggle='modal'
         data-target='#".$Company."3'>No incritos</button> </div> </div></div></div>";
     echo "</div>";
     echo "</div>";
@@ -292,9 +292,9 @@ echo "<script>";
             echo "         role: 'style' " ;
             echo "     }],";
             echo "    ['Poblacion estudiantil',".$fila2['T'].", '#BF0310'],";
-            echo "    ['Asistieron', ".$name.", '#B6C72C'],";
-            echo "    ['No asistieron',".$fila4['TotalAlum'].", '#DB9600'],";
-            echo "    ['No inscritos',".$fila3['T'].", '#0030f3']";
+            echo "    ['Asistieron', ".$name.", '#43E684'],";
+            echo "    ['No asistieron',".$fila4['TotalAlum'].", '#A61C1C'],";
+            echo "    ['No inscritos',".$fila3['T'].", '#F2C438']";
          
             echo " ]);";
 
