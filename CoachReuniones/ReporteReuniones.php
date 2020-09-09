@@ -21,27 +21,28 @@ include 'Modularidad/MenuVertical.php';
     <!--*********INICIO SECCION PARA UTILIZAR EL FILTRO DE DATOS-->
     <div class="card" style="margin-top: 10px; ">
         <div class='row'>
-         <div class="col-sm" style="margin: 1%;">
-            <select  id="FNombre" class="browser-default custom-select" name="Year">
-            <option  value=" " class='dropdown-item'  disabled selected>Nombre reunión</option>	
+            <div class="col-sm" style="margin: 1%;">
+                <select id="FNombre" class="browser-default bg-light custom-select" name="Year">
+                    <option value=" " class='dropdown-item' disabled selected>Nombre reunión</option>
                     <?php 
                                 require_once 'Modelo/ModeloReportes/CargarNombreReuniones.php';
-                                ?>                  
+                                ?>
                 </select>
             </div>
-        <div class="col-sm" style="margin: 1%;">
-            <select  id="FAno" class="browser-default custom-select" name="Year">
-            <option  value=" " class='dropdown-item'  disabled selected>Año</option>	
+            <div class="col-sm" style="margin: 1%;">
+                <select id="FAno" class="browser-default bg-light custom-select" name="Year">
+                    <option value=" " class='dropdown-item' disabled selected>Año</option>
                     <?php 
                                 require_once 'Modelo/ModeloReportes/CargarAnosReunion.php';
-                                ?>                  
+                                ?>
                 </select>
             </div>
-           
-        <div class="col-sm" style="margin: 1%;">
-                <select id="FFinanciamiento" class="browser-default custom-select" name="Meses" onchange="">
-                    <option  value=" " class='dropdown-item'  disabled selected>Fuente de financiamieto</option>
-                    <option value="FGK" class="dropdown-item">FGK</option><!--Incluye beca externa-->
+
+            <div class="col-sm" style="margin: 1%;">
+                <select id="FFinanciamiento" class="browser-default bg-light custom-select" name="Meses" onchange="">
+                    <option value=" " class='dropdown-item' disabled selected>Fuente de financiamieto</option>
+                    <option value="FGK" class="dropdown-item">FGK</option>
+                    <!--Incluye beca externa-->
                     <option value="BORJA" class="dropdown-item">BORJA</option>
                     <option value="FOM" class="dropdown-item">FOM</option>
                     <option value="Financiamiento Propio" class="dropdown-item">Financiamiento propio</option>
@@ -54,7 +55,7 @@ include 'Modularidad/MenuVertical.php';
     </div>
     <!--*********FINALIZA SECCION PARA UTILIZAR EL FILTRO DE DATOS-->
     <!--========================GRAFICO PRINCIPAL--->
-    
+
     <!--==========INICIA SECCION DONDE SE MUESTRA EL GRAFICO-->
     <div id="dashboard_div">
         <div class='row'>
@@ -226,8 +227,8 @@ include 'Modularidad/MenuVertical.php';
     ?>
     <!--FIN LOGICA PARA EXTRAER LOS DATOS-->
     <div>
-        
-       
+
+
     </div>
     <div style="margin-bottom:30px;margin-top: 30px;">
     </div>
@@ -235,110 +236,121 @@ include 'Modularidad/MenuVertical.php';
 
     <div id="columnchart_material">
     </div>
-    
-    <div class="row " style="margin-bottom: 50px;">
-    <div  class = "col" style="margin-top:0px; width: 100%;"  id="piechart_principal">
-    </div>
-    <div class= "col" id="tabla">
-        <div id="fondo">
-        <table   id="table">
 
-        </table>
+    <div class="row border border-dark w-100 h-100 mx-auto rounded" style="margin-bottom: 40px;">
+        <div class="col" style="margin-top:5px; width: 100%; margin-left:15%;" id="piechart_principal">
+        </div>
+        <div class="col w-50 mx-auto " id="tabla">
+            <div id="fondo" style="margin-top:5%; margin-right:20%">
+                <table id="table">
+
+                </table>
+            </div>
         </div>
     </div>
-    </div>
-    
+
     <!--En el div G1 se cargan todos los graficos dinamicamente-->
-    <div  class="container" id="G1" style = "margin-bottom: 10px;" >
-        
+    <div class="container" id="G1" style="margin-bottom: 10px;">
+
     </div>
 
     <!--============****************FINALIZA SECCION DONDE SE MOSTRARAN TODOS LOS GRAFICOS-->
-    
-    <div class= "G" style = "margin-bottom: 10px;"></div>
+
+    <div class="G" style="margin-bottom: 10px;"></div>
     <!--********************INICIA SECCION PARA HACER DINAMICOS LOS GRAFICOS-->
     <script>
-        var i= 0;
-        function llamada(){
+    var i = 0;
+
+    function llamada() {
         if (i == 0) {
-           var table = $('#table').dataTable( {
+            var table = $('#table').dataTable({
                 "scrollY": "175px",
                 "scrollCollapse": true,
                 "paging": false,
                 "searching": false
-                } );
+            });
 
-                
-                i=1
-            
+
+            i = 1
+
         } else {
-            
+
         }
     }
-        $(document).ready(function(){
-           
-            $("#FNombre").change(function(){
-               
-                $.ajax({
-                    type: 'POST',
-                    url: 'Modelo/ModeloReportes/CargarGraficos.php',
-                    data: {id:  $('#FNombre option:selected').val(), year: $('#FAno option:selected').val(), financiamieto: $('#FFinanciamiento option:selected').val()},
-                    success: function(data){
-                        $("#G1").empty();
-                        $("#table").empty();
-                        $(".G").remove();
-                        $("#G1").append(data);
-                    }
+    $(document).ready(function() {
 
-                });
-              //  llamada();
+        $("#FNombre").change(function() {
+
+            $.ajax({
+                type: 'POST',
+                url: 'Modelo/ModeloReportes/CargarGraficos.php',
+                data: {
+                    id: $('#FNombre option:selected').val(),
+                    year: $('#FAno option:selected').val(),
+                    financiamieto: $('#FFinanciamiento option:selected').val()
+                },
+                success: function(data) {
+                    $("#G1").empty();
+                    $("#table").empty();
+                    $(".G").remove();
+                    $("#G1").append(data);
+                }
+
             });
-            $("#FAno").change(function(){
-               
-               $.ajax({
-                   type: 'POST',
-                   url: 'Modelo/ModeloReportes/CargarGraficos.php',
-                   data: {id:  $('#FNombre option:selected').val(), year: $('#FAno option:selected').val(), financiamieto: $('#FFinanciamiento option:selected').val()},
-                   success: function(data){
-                       $("#G1").empty();
-                       $("#table").empty();
-                       $(".G").remove();
-                       $("#G1").append(data);
-                   }
-
-               });
-              // llamada();
-           });
-           $("#FFinanciamiento").change(function(){
-               
-               $.ajax({
-                   type: 'POST',
-                   url: 'Modelo/ModeloReportes/CargarGraficos.php',
-                   data: {id:  $('#FNombre option:selected').val(), year: $('#FAno option:selected').val(), financiamieto: $('#FFinanciamiento option:selected').val()},
-                   success: function(data){
-                       $("#G1").empty();
-                       $("#table").empty();
-                       $(".G").remove();
-                       $("#G1").append(data);
-                   }
-
-               });
-               if(i == 0 ){
-                llamada();
-               }
-               
-           });
+            //  llamada();
         });
+        $("#FAno").change(function() {
+
+            $.ajax({
+                type: 'POST',
+                url: 'Modelo/ModeloReportes/CargarGraficos.php',
+                data: {
+                    id: $('#FNombre option:selected').val(),
+                    year: $('#FAno option:selected').val(),
+                    financiamieto: $('#FFinanciamiento option:selected').val()
+                },
+                success: function(data) {
+                    $("#G1").empty();
+                    $("#table").empty();
+                    $(".G").remove();
+                    $("#G1").append(data);
+                }
+
+            });
+            // llamada();
+        });
+        $("#FFinanciamiento").change(function() {
+
+            $.ajax({
+                type: 'POST',
+                url: 'Modelo/ModeloReportes/CargarGraficos.php',
+                data: {
+                    id: $('#FNombre option:selected').val(),
+                    year: $('#FAno option:selected').val(),
+                    financiamieto: $('#FFinanciamiento option:selected').val()
+                },
+                success: function(data) {
+                    $("#G1").empty();
+                    $(".G").remove();
+                    $("#G1").append(data);
+                }
+
+            });
+            if (i == 0) {
+                llamada();
+            }
+
+        });
+    });
     </script>
     <!---->
 </div>
 <script>
 if ($('#table').lenght == 0) {
-    
-} else {
-    
-}
 
+} else {
+
+}
 </script>
 
 <!--*****************************************Finaliza estrucutra de trabajo ************************************-->
