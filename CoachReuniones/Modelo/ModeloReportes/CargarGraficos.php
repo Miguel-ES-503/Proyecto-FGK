@@ -245,8 +245,9 @@ if ($i ==0) {
     echo "<div id=".$Company." class = 'col-md-4'></div> ";
     echo "<div class='col-md-2'>";
         echo "<div class=' row '>";
+        //
             echo "<div style='padding-left: 0;' class='col-12 ' ><button style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
-            data-target='#".$Company."1'>Asistieron</button> </div> ";
+            data-target='#".$Company."1'>Asisitieron1</button> </div> ";
             echo " <div class='w-100'></div>";
             echo "<div style='padding-left: 0;' class='col-12' ><button style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."2'>Inasistieron</button> </div> ";
@@ -265,7 +266,7 @@ else if($i==1)
     echo "<div class='col-md-2'>";
     echo "<div class='row '>";
         echo "<div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%;'  type='button' class='btn btn-outline-dark' data-toggle='modal'
-        data-target='#".$Company."1'>Asisitieron</button> </div> ";
+        data-target='#".$Company."1'>Asisitieron2</button> </div> ";
         echo " <div class='w-100'></div>";
         echo "<div style='padding-left: 0;'  class='col-md-12' ><button style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."2'>Inasistieron</button> </div> ";
@@ -284,14 +285,13 @@ echo "<script>";
     echo "});";
  // Draw the pie chart for Sarah's pizza when Charts is loaded.
 
-
-
  echo "function drawUDB2Chart() {";
     echo "   var data = google.visualization.arrayToDataTable([";
         echo "       ['Element', 'Density', { ";
             echo "         role: 'style' " ;
             echo "     }],";
             echo "    ['Poblacion estudiantil',".$fila2['T'].", '#BF0310'],";
+            //Datos de pie
             echo "    ['Asistieron', ".$name.", '#B6C72C'],";
             echo "    ['No asistieron',".$fila4['TotalAlum'].", '#DB9600'],";
             echo "    ['No inscritos',".$fila3['T'].", '#0030f3']";
