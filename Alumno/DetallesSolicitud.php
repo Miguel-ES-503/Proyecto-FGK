@@ -11,6 +11,17 @@
 	<?php require_once 'templates/head.php'; ?>
 <title>Inicio</title>
  <link rel="stylesheet" href="assets1/css1/style.css">
+ <style>
+@media only screen and (min-width: 320px) and (max-width: 767px ) {
+ 
+  .tabla3{
+
+position: relative;
+right: 2.7em;
+  }
+
+}
+   </style>
 <?php  
 	
 	//Manda  allamar plantillas
@@ -51,13 +62,13 @@
 	<h2 class="main-title" >Transporte</h2>
 	
 </div>
-        <div class="col-md-12 col-ms-offset-10 col-md-offset-2  abs-center" style="position:static;">
+        <div class="col-md-12 col-ms-10 col-md-2 col-xs-2  abs-center" style="position:static;">
 
 <form style="background: white; ">
 	<h2 style="color: black; ">Detalles de solicitud Transporte</h2>
 
 
-	<center><fieldset style="width: 95%;   "  >
+	<center><fieldset style="width: 95%;"  >
 		<br><br>
 		<div class="table-responsive" >
 							<caption><h5 style="color: white;"></h5></caption>
@@ -221,7 +232,7 @@
 </center>
 <br><br>
 
-	<fieldset style="width: 95%; margin-left: 525px; ">
+	<fieldset style="width: 95%; margin-left: 3.3em ; " class="tabla3">
 
       <div class="table-responsive" style="">
       		<caption><h5 style="color: white;">Horario</h5></caption>
@@ -307,19 +318,18 @@
 
 
 
-        <div class="f1-buttons">
                                     
             <button type="button" class="btn btn-previous btn-dark" onclick="location.href='CrearSoliTransporte.php?id=<?php echo $alumno; ?>'">Regresar</button>
                                     
 <a href="../pdfTransporte/<?php echo $comprobante ; ?>" target="_blank" class="btn " style=" border-radius: 50px; background-color: #9c9c9c; color: white; height: 40px;" > <img src="../SuperUsuario/img/facultad.png" class="img-fluid" style="margin-right: 3px;" width="30px" height="23px"><b>Ver Comprobante</b></a>
 
-         
+
            <!-- Button trigger modal -->
 		<button type="button" class="btn btn-danger px-4" style=" border-radius: 50px;" data-toggle="modal" data-target="#exampleModalCenter" >  Enviar </button>
 		
 		
 
-       </div>
+      
 
 		
   </fieldset>

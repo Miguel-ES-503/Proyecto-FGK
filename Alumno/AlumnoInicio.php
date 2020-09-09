@@ -5,8 +5,8 @@
 <style>
 @media only screen and (min-width: 320px) and (max-width: 767px ) {
 
-.title h2{
-font-size: 20px;
+.main-title{
+font-size: 10px;
 margin-top: 8px;
 margin-left: 0em;
 
@@ -19,6 +19,8 @@ margin-top: 0px;
 
 .title{
 width: 100%;
+position: relative;
+	left: 70px;
 
 }
 
@@ -41,28 +43,29 @@ width: 100%;
 .status1{
 	position: relative;
 	right: 285px;
+	bottom: 350px;
 }
 .status2{
 position: relative;
-bottom: 95px;
+bottom: 445px;
 right: 90px;
 
 }
 .status3{
 	position: relative;
 	right: 285px;
-	bottom: 100px;
+	bottom: 460px;
 
 }
 .status4{
 position: relative;
-bottom: 260px;
+bottom: 620px;
 right: 90px;
 
 }
 .status5{
 position: relative;
-bottom: 265px;
+bottom: 635px;
 right: 190px;
 width: 400px;
 }
@@ -91,6 +94,92 @@ position: relative;
 right: 50px;
 bottom: 115px;
 }
+.opciones p{
+font-size: 15px;
+
+}
+.parrafo{
+	position: relative;
+	bottom: 20px;
+	left: 25px;
+}
+.carrera{
+	position: relative;
+	left: 90px;
+	bottom: 70px;
+}
+.promo1{
+
+	position: relative;
+	bottom: 80px;
+	left: 25px;
+	
+}
+.promo{
+	position: relative;
+	left: 115px;
+	bottom: 120px;
+
+}
+.estado1{
+	position: relative;
+	left: 25px;
+	bottom: 130px;
+
+}
+.estado{
+	position: relative;
+	left: 80px;
+	bottom: 170px;
+
+}
+.estadolab1{
+	position: relative;
+	left: 25px;
+	bottom: 170px;
+
+}
+.estadolab{
+	position: relative;
+	left: 90px;
+	bottom: 210px;
+
+}
+.talleres1{
+	position: relative;
+	left: 25px;
+	bottom: 210px;
+
+}
+.talleres{
+	position: relative;
+	left: 90px;
+	bottom: 250px;
+
+}
+.financiamiento1{
+	position: relative;
+	left: 25px;
+	bottom: 255px;
+
+}
+.financiamiento{
+	position: relative;
+	left: 145px;
+	bottom: 295px;
+
+}
+#carnet{
+position: relative;
+left: 55px;
+
+}
+.button1{
+width: 400px;
+
+}
+
+
 
 }
 .grafico{
@@ -363,18 +452,19 @@ while($fila2 = $stmt2->fetch()){
 <script src="JS/graficos.js"></script>
 <meta charset="utf-8">
 	<div class="row">
-	<div class="col-lg-12 col-xs-12 col-ms-12 col-md-12">
 	<div class="title w-100 linea-color">
+	<div class="col-lg-12 col-xs-12 col-ms-12 col-md-12">
+
 		<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 		<h2 class="main-title" >Expediente del Alumno</h2>
-		<div class="title2">
+		<div class="title2" class="button1">
 			<br>
-		<div class="title2-text">
+		<div class="title2-text" id="button1">
 		<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Historial Notas</p></a>
 		
 	</div>
 	</div>
-	<div class="title2">
+	<div class="title2" id="button2">
 			<br>
 		<div class="title2-text">
 		<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Cartas Becario</p></a>
@@ -382,7 +472,7 @@ while($fila2 = $stmt2->fetch()){
 	</div>
 
 	</div>
-	<div class="title2">
+	<div class="title2" id="button3">
 			<br>
 		<div class="title2-text">
 		<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Historial cartas</p></a>
@@ -427,25 +517,25 @@ while($fila2 = $stmt2->fetch()){
 	</div>
 
 	<br class="salto"><br class="salto"><br class="salto"><br class="salto">
-<div class="Info-Alumno1-sec h-100">
+<div class="Info-Alumno1-sec ">
 
 <section class="opciones">
 			<p id="mainTitle" class="parrafo">Carrera: </p>
-			<p ><?php echo utf8_encode($Carrera )?></p>
+			<p class="carrera" ><?php echo utf8_encode($Carrera )?></p>
 			<br>
-			<p id="mainTitle" >Promocion: </p>
-			<p ><?php echo $promocion ?></p>
+			<p id="mainTitle" class="promo1" >Promocion: </p>
+			<p class="promo"><?php echo $promocion ?></p>
 			<br>
-		    <p id="mainTitle" >Estatus Actual: </p>
-			<p ><?php echo $Estado; ?></p>
+		    <p id="mainTitle" class="estado1" >Estatus Actual: </p>
+			<p class="estado"><?php echo $Estado; ?></p>
 			<br>
-			<p id="mainTitle" c> Estado Laboral: </p>
-			<p><?php echo "<b id='estado'>".$estadoLaboral."</b>";  ?></p>
-			<p id="mainTitle" c> Total de Talleres: </p>
-			<p ><?php echo "<b id='estado'>".$Historico."</b>";  ?></p>
+			<p id="mainTitle" class="estadolab1"> Estado Laboral: </p>
+			<p class="estadolab" style="position: relative; right: 105px;"><?php echo "<b id='estado'>".$estadoLaboral."</b>";  ?></p>
+			<p id="mainTitle" class="talleres1"> Total de Talleres: </p>
+			<p class="talleres"><?php echo "<b id='estado'>".$Historico."</b>";  ?></p>
 			<br>
-		    <p id="mainTitle" > Financiamiento: </p>
-			<p ><?php echo "<b id='estado'>".$Financiamiento."</b>";  ?></p>
+		    <p id="mainTitle" class="financiamiento1" > Financiamiento: </p>
+			<p class="financiamiento"><?php echo "<b id='estado'>".$Financiamiento."</b>";  ?></p>
 
 </section>
 
