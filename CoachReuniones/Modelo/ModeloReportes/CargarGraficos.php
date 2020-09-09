@@ -266,7 +266,7 @@ else if($i==1)
     echo "<div class='col-md-2'>";
     echo "<div class='row '>";
         echo "<div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%;'  type='button' class='btn btn-outline-dark' data-toggle='modal'
-        data-target='#".$Company."1'>Asisitieron2</button> </div> ";
+        data-target='#".$Company."1'>Asisitieron22</button> </div> ";
         echo " <div class='w-100'></div>";
         echo "<div style='padding-left: 0;'  class='col-md-12' ><button style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."2'>Inasistieron</button> </div> ";
