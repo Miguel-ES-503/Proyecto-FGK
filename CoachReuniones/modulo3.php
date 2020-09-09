@@ -48,7 +48,7 @@ include 'Modularidad/MenuVertical.php';
       <br>
   
 
-        <form action="Aprobartodos3.php" method="POST">  <br>
+        <form action="Aprobartodos.php" method="POST">  <br>
         <h5 class="card-header" style="color: black;"><b>Listado de Alumnos</b>
         <br class="salto">
 	<br class="salto">
