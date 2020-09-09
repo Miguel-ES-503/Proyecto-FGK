@@ -8,13 +8,15 @@
 .main-title{
 font-size: 10px;
 margin-top: 8px;
-margin-left: 0em;
+
 
 }
  .icon{
 height: 18px;
 width: 18px;
 margin-top: 0px;
+position: relative;
+right: 20px;
  }
 
 .title{
@@ -25,8 +27,10 @@ position: relative;
 }
 
  .row, #carnet{
-	width: 280px;
+	width: 305px;
 	height: 250px;
+	
+	
 
 }
 #carnet h4, h6{
@@ -171,15 +175,23 @@ font-size: 15px;
 }
 #carnet{
 position: relative;
-left: 55px;
+left: 40px;
 
 }
 .button1{
 width: 400px;
 
 }
+.title{
+position: relative;
+right: 30em;
+}
 
+.Info1{
 
+	position: relative;
+	right: 50px;
+}
 
 }
 .grafico{
@@ -451,41 +463,41 @@ while($fila2 = $stmt2->fetch()){
 <script src="JS/jquery.knob.js"></script>
 <script src="JS/graficos.js"></script>
 <meta charset="utf-8">
-	<div class="row">
-	<div class="title w-100 linea-color">
-	<div class="col-lg-12 col-xs-12 col-ms-12 col-md-12">
+<div class="row">
+<div class="title linea-color">
 
-		<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-		<h2 class="main-title" >Expediente del Alumno</h2>
-		<div class="title2" class="button1">
-			<br>
-		<div class="title2-text" id="button1">
-		<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Historial Notas</p></a>
+			<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+			<h2 class="main-title" >Expediente del Alumno</h2>
+			<div class="title2" id="button1">
+				<br>
+			<div class="title2-text" >
+			<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Historial Notas</p></a>
+			
+		</div>
+		</div>
+		<div class="title2" id="button2">
+				<br>
+			<div class="title2-text">
+			<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Cartas Becario</p></a>
+			
+		</div>
+
+
+		</div>
+		<div class="title2" id="button3">
+				<br>
+			<div class="title2-text">
+			<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Historial cartas</p></a>
+			
+		</div>
+
+	</div>
+	</div>
+	</div>
+
+</div>
+	
 		
-	</div>
-	</div>
-	<div class="title2" id="button2">
-			<br>
-		<div class="title2-text">
-		<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Cartas Becario</p></a>
-		
-	</div>
-
-	</div>
-	<div class="title2" id="button3">
-			<br>
-		<div class="title2-text">
-		<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Historial cartas</p></a>
-		
-	</div>
-
-	</div>
-
-	</div>
-
-	</div>
-		
-	</div>
 	<!-- Fin primera Fila-->
 <br>
 <div class="row" >

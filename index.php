@@ -68,7 +68,7 @@ error_reporting(0);
     font-family: 'Roboto Light', arial;
 
 }
-.
+
 }
 @media screen and (max-width: 760px) {
   #Logo
