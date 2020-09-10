@@ -89,7 +89,7 @@ $n6=mt_rand(1,9);
       }
     else
     {       
-      $consulta2->execute();
+      
       echo "Funciona";
       header("Location: ../../InscripcionMateriasCiclo.php");
     }

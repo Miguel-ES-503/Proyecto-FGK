@@ -168,7 +168,7 @@ if ($tama«Ðoarchivo <= 5000000 ) {
 
 
                 //Si todo fue correcto muestra el resultado con exito;
-          header("Location: ../../ExpedienteU.php?id=". $iduser);
+          header("Location: ../../ExpedienteU.php");
           //echo $iduser;
           //echo " Se guarda";
            

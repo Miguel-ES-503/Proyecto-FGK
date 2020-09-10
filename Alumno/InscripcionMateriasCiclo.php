@@ -198,9 +198,15 @@
            
       <?php
         //consulta que muestra las materias
-       $consulMaterias=$pdo->prepare("SELECT idMateria, nombreMateria, Estado, estadoM 
-                                      from materias as m
-                                      WHERE idExpedienteU = ? AND estado = 'Activo' or  estadoM = 'Inscrita'and not estado = 'Aprobada'");
+       /*$consulMaterias=$pdo->prepare("SELECT m.idMateria, m.`idExpedienteU` , m.`nombreMateria` , m.`Estado` , m.`estadoM` , im.estado 
+       FROM materias m inner join inscripcionmateria  im on m.`idMateria` = im.`idMateria`
+        where `idExpedienteU` = ? AND m.Estado = 'Activo' 
+        AND(m.`estadoM` ='Inscrita' OR m.`estadoM` ='Reprobada' or m.`estadoM` ='Retirada')  
+        AND (im.estado = 'Inscrita' or im.estado = 'Reprobada' or im.estado = 'Retirada')");*/
+
+        $consulMaterias=$pdo->prepare("SELECT m.`idMateria`, m.nombreMateria, m.idExpedienteU, m.Estado, m.estadoM
+        FROM materias m
+        WHERE m.idExpedienteU=? And m.Estado ='Activo' and estadoM!='Aprobada'");
 
        $consulMaterias->execute(array($idExpedienteU));
 
@@ -209,13 +215,13 @@
         
         if ($consulMaterias->rowCount()>=1)
         {
-          while ($fila2=$consulMaterias->fetch())
-          { 
+           while ($fila2=$consulMaterias->fetch())
+           { 
 
 
-             if ($fila2['estadoM'] !='Inscrita') {
+              if ($fila2['estadoM'] !='Inscrita') {
 
-               echo "<tr>
+                echo "<tr>
                     <td >".$fila2['idMateria']."</td>
                     <td class='oscuro'>".$fila2['nombreMateria']."</td>
                     <td >".$fila2['Estado']."</td>
@@ -233,7 +239,7 @@
 
         
          
-             }else
+              }else
                  {
 
                    echo "<tr>
@@ -242,27 +248,21 @@
                     <td >".$fila2['estadoM']."</td>
                    
                     <td>
-
-
-
                     <center>
-                     <button type='button' id=".$fila2['idMateria']." class='btn btn-danger' data-toggle='modal' data-target='#modalFinal' onclick='mandarId(id)' ><i class='fa fa-ban'></i>
-                     </button>
+                    <a href='javascript:void(0)' data-toggle='modal' data-target='#modalFinal' class='btn btn-danger btn-icon-split'>
+                    <i class='fa fa-ban'></i></a>
                     </center>
                     </td>
                   </tr>";     
 
        
-                  } //fin de else
+                   } //fin de else
 
-
-
-           
-                            
-               }//fin de while
-            }else{
-              echo "<tr><td colspan='3'>No ha agregado ninguna Asignatura</td></tr>";
-            }//fin de else-if
+            
+           }//fin de while
+        }else{
+              echo "<tr><td colspan='8'>No ha agregado ninguna Asignatura</td></tr>";
+             }//fin de else-if
                                        
 
                                   
@@ -461,9 +461,11 @@
        
 
         
-        <form method="POST" action="Modelo/ModeloMaterias/DesinscribirM.php">
+        <form method="POST" action="Modelo/ModeloMaterias/eliminarInscripcion.php">
           
-
+        <input type="text" id="materia" class="form-control" disable >
+          <input type="hidden" id="idmateria" class="form-control" name= "idmateria">
+                
 
             
          
@@ -472,7 +474,9 @@
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Desinscribir</button>
+      <input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0"    type="submit" name="Desenscribir_Materia" value="Desenscribir Materia " id="Desenscribir_Materia">
+   
+        <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Desinscribir</button-->
         
         
       </div></form>
@@ -500,6 +504,29 @@
 
   <br><br>
 
+
+
+  <script type="text/javascript">
+        
+        window.onload=function(){
+    $("table tbody tr").click(function(){
+        // Tomar la captura la información  de la tabla 
+        var idmateria= $(this).find("td:eq(0)").text(); 
+        document.getElementById('idmateria').value=idmateria;
+
+        var nombre= $(this).find("td:eq(1)").text(); 
+        document.getElementById('materia').value=nombre;
+
+
+        
+    });    
+}
+
+</script>
+
 <?php
   require_once 'templates/footer.php';
 ?>
+
+
+
