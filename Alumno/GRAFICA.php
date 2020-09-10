@@ -4,7 +4,7 @@
     
     y: 
     <?php echo $Porcentaje?>,
-    color:"#FFFF00",
+    color:"#ffd400",
     dataLabels: {
         enabled: false
     }

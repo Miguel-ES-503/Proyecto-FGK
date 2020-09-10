@@ -3,7 +3,7 @@
 ?>
 <title>Expediente de alumno</title>
 <style>
-@media only screen and (min-width: 320px) and (max-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 967px) {
 
     .main-title {
         font-size: 10px;

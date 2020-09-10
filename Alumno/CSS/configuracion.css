@@ -161,3 +161,23 @@ margin-top: -50px;
       margin-left: 180px;
 }
 
+@media only screen and (max-width: 967px ){
+ .Info-1{
+width: 350px;
+
+ }
+ .parte2{
+      position: absolute;
+      top: -2px;
+    
+
+      }
+
+.table-Info{
+      margin-left: 0px;
+}
+.addimg{
+
+      width: 330px;
+}
+}

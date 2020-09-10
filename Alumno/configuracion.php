@@ -20,16 +20,7 @@
 	position: relative;
 right: 40px;
 }
-@media only screen and (min-width: 320px) and (max-width: 767px ){
 
-.parte2{
-position: relative;
-bottom: 300px;
-right: 500px;
-
-}
-      
-}
 </style>
 
 <!--Comiezo de estructura de trabajo -->
@@ -66,7 +57,7 @@ right: 500px;
 						<!--IMG A Subir -->
 						<div class="custom-file">
 							<div class="custom-file">
-							<input type="file" name="imgusu" id="imgusu" accept="image/*" />
+							<input type="file" name="imgusu" class="addimg" id="imgusu" accept="image/*" />
 							</div>
 							<br><br>
 							<input type="submit" name="SubirImg" id="file"  class="btn btn-dark btn-block" value="Cambiar foto" />
