@@ -7,7 +7,7 @@ include 'Modularidad/CabeceraInicio.php';
 
 <?php
 //Modularaidad para extraere los enlaces en HEAD
-include 'Modularidad/EnlacesCabecera.php';
+include 'Modularidad/EnlacesCabecera2.php';
 //Incluir el menu horizontal
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
