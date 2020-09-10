@@ -478,7 +478,7 @@ while($fila2 = $stmt2->fetch()){
 		<div class="title2" id="button2">
 				<br>
 			<div class="title2-text">
-			<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Cartas Becario</p></a>
+			<a href="renovacionBeca.php" style="text-decoration: none;"><p>Cartas Becario</p></a>
 			
 		</div>
 
