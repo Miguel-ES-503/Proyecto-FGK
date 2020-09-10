@@ -1,0 +1,64 @@
+/* Coach reuniones responsive */
+
+.salto {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .title2 {
+        max-width: 100%;
+    }
+    body .div1 {
+        width: 50%;
+    }
+    body .div0 {
+        padding: 0%;
+        margin: 0%;
+        width: 100%;
+        display: inline-block;
+    }
+    body .div0 {
+        text-align: center;
+    }
+    body .title2 {
+        width: 100%;
+        display: inline-block;
+        margin-left: 0%;
+    }
+    body .title3 {
+        border-top: 5px solid white;
+        width: 100%;
+        display: inline-block;
+        margin-left: 0%;
+    }
+    body .title2 p {
+        text-align: center;
+    }
+    body .title3 p {
+        text-align: center;
+    }
+    body .title3::after {
+        content: '\A';
+        white-space: pre;
+    }
+    .salto {
+        display: initial;
+    }
+    .title-111 {
+        display: inline-block;
+        margin-left: 0%;
+    }
+    .title-222 {
+        margin-left: 0%;
+    }
+    body .general-text {
+        margin-left: 0%;
+    }
+}
+
+
+/* crear sesiones contenido centrado */
+
+.enable {
+    margin-left: 12%;
+}
