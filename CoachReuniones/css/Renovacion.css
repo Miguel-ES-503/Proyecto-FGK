@@ -5,6 +5,7 @@ height: 70px;
 margin-left: 0%;
 margin-bottom: -2%;
 height: 55px;
+align-items: center;
 
 
 }
@@ -13,12 +14,11 @@ h2 , .icon{
 }
 .main-title
 {
-text-align: left;
-font-size: 25px;
+font-size: 20px;
 margin-left: 25px;
-margin-top: 12px;
 font-weight: bold;
-letter-spacing: 5px;
+letter-spacing: 3px;
+line-height: 50px;
 }
 .icon
 {
@@ -31,7 +31,7 @@ letter-spacing: 5px;
 #table
 {
 margin: auto;
-width: 50%;
+width: 80%;
 margin-top: 50px;
 text-align: center;
 }

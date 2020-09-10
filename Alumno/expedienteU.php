@@ -280,8 +280,19 @@ if ($_GET['id']==null) {
            <th scope="col"> <?php echo utf8_encode($Carrera)?> </th>
             <th scope="col"> <?php echo $cum?></th>
             <th scope="col"> <?php echo $Egreso ?> </th>
-            <th scope="col"> <?php echo $EstadoCarrera ?> </th> <th scope="col"><a href="../pdfPensum/<?php echo $Pensum ?>" class="btn btn-danger"><img src="../img/PDF.png" width="25px" height="25px"></a> </th>   
-    <th scope='col'><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' style="height: 50px;"><img src="../img/paper.png" width="25px" height="25px"><br><p style="font-size: 10px;">Subir pensum</p></button></th>
+            <th scope="col"> <?php echo $EstadoCarrera ?> </th>
+            <?php 
+                if ($Pensum == null) {
+                 echo "
+                 <th><button type='button' class='btn btn-danger'  disabled> <img src='../img/PDF.png' width='25px' height='25px'></button></th>";
+             
+              }else
+              {
+                echo "<th><a href='../pdfPensum/$Pensum' class='btn btn-danger '><img src='../img/PDF.png' width='25px' height='25px>'</a> </th>";  
+              }
+              ?>
+   
+             <th scope='col'><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' style="height: 50px;"><img src="../img/paper.png" width="25px" height="25px"><br><p style="font-size: 10px;">Subir pensum</p></button></th>
 
          </tr>
         </tbody>

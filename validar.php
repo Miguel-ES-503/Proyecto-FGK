@@ -109,7 +109,7 @@ if (isset($_POST['iniciar']))
       break;
 
       default:
-						# code...
+					echo "No encuentra los cargo";
       break;
     }
 
