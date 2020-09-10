@@ -64,6 +64,7 @@ $stmt2 = $pdo->query("SELECT * FROM alumnos WHERE ID_Alumno = '$id' ");
                     </select>
                 </div>
                 <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
+
             </fieldset>
             <fieldset>
                 <h2> Paso 2: Confirmacón de usuario</h2>
@@ -72,7 +73,6 @@ $stmt2 = $pdo->query("SELECT * FROM alumnos WHERE ID_Alumno = '$id' ");
                         su usuario.</label>
                     <input type="password" class="form-control" name="data3" id="fName" placeholder="password">
                 </div>
-
                 <input type="button" name="previous" class="previous btn btn-primary" value="Previo" />
                 <button type="submit" name="data4" class="btn btn-success"
                     value='<?php echo $row['ID_Alumno']; ?>' />Actualizar</button>
@@ -96,7 +96,7 @@ $estado = $_POST['estado'];
 if (isset($IdAlumno)) {
     if (password_verify($passuser2, $passuser)) {
     $sql = "UPDATE alumnos SET CantidadModulos=?, TotalTalleres=?, EstadoCerti = ? WHERE ID_Alumno=?";
-    $pdo->prepare($sql)->execute([$modulos, $talleres,$estado, $IdAlumno]);
+    $pdo->prepare($sql)->execute([$modulos, $talleres, $estado, $IdAlumno]);
     echo "<p class='p-1 mb-1 bg-success text-white text-center'>Datos actualizados.</p>";
 
 }

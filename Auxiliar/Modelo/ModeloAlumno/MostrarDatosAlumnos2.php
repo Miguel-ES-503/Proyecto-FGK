@@ -17,9 +17,9 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 //<td><input type='checkbox' name='ActuaAlumno[]' class='case' value=".$fila['ID_Alumno']."></td>
 
 	// Consulta De La BASE DE DATOS
-	$consulta=$pdo->prepare("SELECT * FROM alumnos LEFT JOIN carrera ON alumnos.ID_Carrera = carrera.Id_Carrera WHERE SedeAsistencia =  ? OR  SedeAsistencia  =  ? ");
+	$consulta=$pdo->prepare("SELECT * FROM alumnos LEFT JOIN carrera ON alumnos.ID_Carrera = carrera.Id_Carrera ");
 	
-	$consulta->execute(array($LugarFT,$LugarSAT));
+	$consulta->execute();
 
 	if ($consulta->rowCount()>=1)
 	{
