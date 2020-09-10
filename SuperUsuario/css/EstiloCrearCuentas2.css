@@ -124,11 +124,7 @@ hr{
     background: white;
 }
 
-label
-{
-    color:white;
-    font-family: 'Roboto Light', arial;
-}
+
 
 
 
@@ -209,20 +205,19 @@ h5
 
 /*ESTILO PARA LOS DATOS DEL ESTUDIANTE*/
 #carnet{
-      width: 300px;
-      height: 350px;
-      border-width: 5px;
-      border-color: #FFF;
-      border-style: solid;
-      background-color: #717175;
-      border-top-left-radius: 10%;
-      border-top-right-radius: 10%;
-      border-bottom-left-radius: 10%;
-      border-bottom-right-radius: 10%;
+  width: 300px;
+  height: 300px;
+  border-width: 1px;
+  border-color: #000000;
+  border-style: outset Outset;
+  background-color: #BE0032;
+  border-top-left-radius: 58%;
+  border-top-right-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 12%;
 }
 #foto {
 
-    top: auto;
     /* cambia estos dos valores para definir el tamaño de tu círculo */
     height: 150px;
     width: 150px;
@@ -231,7 +226,6 @@ h5
     background-position: 50%;
     border-radius: 50%;
     background-size: 100% auto;
-
 
 }
 

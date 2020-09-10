@@ -1,5 +1,5 @@
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="../img/WorkeysIcon.png" />
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+   <link rel="shortcut icon" href="../img/WorkeysIcon.png" />
  <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -16,7 +16,7 @@
   <link href="../css/simple-sidebar.css" rel="stylesheet">
 
   <!--Estilo css CrearCuentas-->
-  <link rel="stylesheet" type="text/css" href="css/EstiloCrearCuentas.css"> 
+  <link rel="stylesheet" type="text/css" href="css/EstiloCrearCuentas2.css">
 
   <!--Estilo calendario-->
   <link href="../css/fullcalendar.css" rel="stylesheet">
@@ -62,7 +62,7 @@
   <script type="text/javascript" src="../js/verificar.js"></script>
   <!--Calenario-->
 
-  
+    <link rel="stylesheet" href="../css/estilos.css">
 
   <script>  
   $(document).ready( function () {

@@ -6,7 +6,7 @@ include 'Modularidad/CabeceraInicio.php';
 <?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos
 
 //Modularaidad para extraere los enlaces en HEAD
-include 'Modularidad/EnlacesCabecera.php';
+include 'Modularidad/EnlacesCabecera2.php';
 //Incluir el menu horizontal
 //include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
@@ -18,8 +18,10 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
 
-    <h2 class="main-title" >Aprobar / Reprobar Módulo C1</h2>
+    <h2 class="main-title"  style="font-size:26px;">Aprobar/Reprobar Módulo C1</h2>
 </div>
+<br class="salto">
+<br class="salto">
 <!-- <div class="btn" >
 <a href="listadogeneral1.php" ><button class="btn btn-warning" id="button">Listado general 1</button></a>
 </div> -->
