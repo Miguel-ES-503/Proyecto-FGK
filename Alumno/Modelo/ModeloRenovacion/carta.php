@@ -13,7 +13,15 @@ $tipoarchivo = $_FILES["archivo"]["type"];
 $tama«Ðoarchivo = $_FILES["archivo"]["size"];
 $rutaarchivo=$_FILES["archivo"]["tmp_name"];
 $universidad=$_POST['uni'];
-$idRenovacion = "Prueba1";
+
+
+$numero = rand(1, 10000000);
+
+
+$idRenovacion = "RN-".$numero;
+
+
+
 
 if (file_exists("Renovacion/".$universidad."/".$alumno)) {
 
