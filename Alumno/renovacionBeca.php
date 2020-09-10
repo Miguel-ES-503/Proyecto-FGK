@@ -69,7 +69,9 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
 <script type="text/javascript">
   $(document).ready(function () {
     bsCustomFileInput.init()
+    $('#noti').fadeOut(4000);
   });
+
   </script>
   
   <!--Fin de funcion-->
@@ -86,6 +88,18 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
     <div>
                              
     <div class="container" style="">
+      <?php
+      $noti = $_GET['ntf'];
+      if ($noti != null) {
+      if ($noti == "Exito") {
+        echo "<div class='alert alert-success ' id='noti'>Renovacion de Beca ingresada correctamente</div>";
+      }else
+      {
+        echo "<div class='alert alert-danger' id='noti'>No se ha podido ingresar carta de Renovacion</div>";
+      }
+      }
+      ?>
+
           <h2 style="">Indicaciones Generales</h2>
           <br>
           <br>
@@ -152,11 +166,11 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
                            <label for="checkbox" class="agree" style="color:black;"><input type="checkbox"  class="checkbox" name="checkbox" id="checkbox" onclick= "enableSending();"/> <i>Acepto que he leido completamente la información y los requerimientos para la renovacion de becas.</i></label>
 
                        
-                        <!--ID Expediente U-->
+                        <!--ID Expediente U
                            <input type="hidden" name="expediente" value="<?php echo  $idExpedienteU;  ?>"> 
                         
-                        <!--IDCicloInscripcion-->
-                        <input type="hidden" name="inscriCiclo" value="<?php echo  $inscriC;  ?>"> 
+                        
+                        <input type="hidden" name="inscriCiclo" value="<?php echo  $inscriC;  ?>"> -->
                         
 
 
@@ -213,7 +227,11 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
         <br>
         <br>
         <label >Ciclo</label>
-        <input name="ciclo" placeholder="Ciclo" readonly class="form-control" value="2"></input>
+        <select name="ciclo" class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
         <br>
         <label >Año</label>
         <input name="anio" placeholder="año" readonly class="form-control" value="<?php echo date("Y");  ?>" ></input>
