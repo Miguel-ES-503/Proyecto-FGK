@@ -194,6 +194,7 @@ right: 30em;
 }
 
 }
+
 .grafico{
 	position: relative;
 	right: 65px;

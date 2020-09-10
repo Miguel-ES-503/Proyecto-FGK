@@ -14,6 +14,23 @@
 
   ?>
 
+<style>
+.table-Info{
+
+	position: relative;
+right: 40px;
+}
+@media only screen and (min-width: 320px) and (max-width: 767px ){
+
+.parte2{
+position: relative;
+bottom: 300px;
+right: 500px;
+
+}
+      
+}
+</style>
 
 <!--Comiezo de estructura de trabajo -->
 <link rel="stylesheet" type="text/css" href="CSS/configuracion.css">
@@ -27,8 +44,8 @@
     <a href="../Alumno/index.php"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Configuración</h2>
 </div>
-<div class="principal">
-	<div class="container py-4 my-2">
+
+	<div class="container ">
 		<br>
 		<div>
 		    <?php
@@ -38,7 +55,7 @@
 		</div>
 
 	<div class="row">
-			<div class="col-md-4 pr-md-5">
+			<div class="col-md-6 col-lg-6 pr-md-5">
 				<div class="Info-1">
 					<h3 class="title1">Foto de Perfil</h3>
 					
