@@ -245,7 +245,7 @@ if ($i ==0) {
     echo "<div id=".$Company." class = 'col-md-4'></div> ";
     echo "<div class='col-md-2'>";
         echo "<div class=' row '>";
-        echo " <div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%; border-color: #696969;'  type='button' class='btn btn-outline-dark' data-toggle='modal' data-target='#'>Poblacion Estudiantil<br>".$fila2['T']."</div>";
+        echo " <div style='padding-left: 0;' class='col-md-12' width:50px;><button style='margin-top:10px;width:90%; border-color: #696969;'  type='button' class='btn btn-outline-dark' data-toggle='modal' data-target='#'>Poblacion<br>Estudiantil<br><b>".$fila2['T']." Alumnos</b></div>";
     echo " <div class='w-100'></div>";
             echo "<div style='padding-left: 0;' class='col-12 ' ><button style='margin-top:10px;width:90%; border-color: #43E684;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."1'>Asistieron</button> </div> ";
@@ -266,7 +266,7 @@ else if($i==1)
     echo "<div id=".$Company." class = 'col-md-4'></div>";
     echo "<div class='col-md-2'>";
     echo "<div class='row '>";
-    echo " <div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%; border-color: #43E684;'  type='button' class='btn btn-outline-dark' data-toggle='modal' data-target='#'>Poblacion estudiantil<br>".$fila2['T']."</div>";
+    echo " <div style='padding-left: 0;' class='col-md-12' width:50px; ><button style='margin-top:10px;width:90%; border-color: #696969;'  type='button' class='btn btn-outline-dark' data-toggle='modal' data-target='#'>Poblacion<br>Estudiantil<br><b>".$fila2['T']." Alumnos</b></div>";
     echo " <div class='w-100'></div>";
         echo "<div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%; border-color: #43E684;'  type='button' class='btn btn-outline-dark' data-toggle='modal'
         data-target='#".$Company."1'>Asisitieron</button> </div> ";
