@@ -117,7 +117,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <style type="text/css">
-  
   /* The sidepanel menu */
 .sidepanel {
   height: 658px; /* Specify a height */
@@ -303,11 +302,11 @@ background-color: #0D0D0D;
 
 </div>
 </div>
-<nav class="navbar navbar-expand-lg border-bottom" id="menu" style="background-color: #2D2D2E;">
+<nav class="navbar navbar-expand-lg border-bottom" id="menu" style="background-color: #2D2D2E;color: white;">
     <button class="openbtn" onclick="openNav()">&#9776;</button>
     <center>
       <a href="index.php">
-        <img width="340px" height="80px" src="../img/SideBySideWhiteVersion.png" alt="">
+        <img width="340px" height="80px" src="../img/SideBySideWhiteVersion.png" alt="" style="width: 340px;">
       </a>
     </center>
     
@@ -318,7 +317,7 @@ background-color: #0D0D0D;
         
  
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0" style="border-style: none;">
       
       <script type="text/javascript">
           $(document).ready(function() {
@@ -466,7 +465,7 @@ background-color: #0D0D0D;
         }, 3000);
         </script>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown campana" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown campana" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-style: none;">
           <i class="far fa-bell"></i>
           <span class="badge badge-dark" id="cuantas"></span>
           </a>
@@ -576,9 +575,9 @@ background-color: #0D0D0D;
           </div>
         </li>
    
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+            <li class="nav-item dropdown" >
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-style: none;" id="problema">
               <?php 
               $NombreUser = $_SESSION['Nombre'];
               $PrimerNombre = explode(" ", $NombreUser);
@@ -588,9 +587,9 @@ background-color: #0D0D0D;
 
          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background: #2D2D2E;">
           
-                <a class="dropdown-item" href="Configuracion.php" style="color: white;">Configuración</a>
+                <a class="dropdown-item" href="Configuracion.php" style="color: white;border-style: none;">Configuración</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../CerrarSession.php" style="color: white;">Salir</a>
+                <a class="dropdown-item" href="../CerrarSession.php" style="color: white;border-style: none;">Salir</a>
               </div>
 
             </li>

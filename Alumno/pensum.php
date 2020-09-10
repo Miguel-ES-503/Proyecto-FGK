@@ -1,28 +1,7 @@
 <?php require_once 'templates/head.php'; ?>
 <title>Pensum</title>
  <link rel="stylesheet" href="assets1/css1/style.css">
- <style type="text/css">
-   .modal-content{
-    background-color: white;
-    border-color: black;
-    border-radius: 30px;
-    padding: 20px;
-}
-.modal-body{
-    text-align: left;
-}
-
-.form-control{
-    background-color: #ADADB2;
-    color: black;
-    border-radius: 20px;
-
-}
-.modal-header{
-    border-color: #ADADB2;
-    border:3px;
-}
- </style>
+ 
 <?php  
   
   //Manda  allamar plantillas
@@ -318,7 +297,28 @@
 </div><!-- Fin de div principal-->
 
 <!-- /#page-content-wrapper -->
+<style type="text/css">
+   .modal-content{
+    background-color: white;
+    border-color: black;
+    border-radius: 30px;
+    padding: 20px;
+}
+.modal-body{
+    text-align: left;
+}
 
+.form-control{
+    background-color: #ADADB2;
+    color: black;
+    border-radius: 20px;
+
+}
+.modal-header{
+    border-color: #ADADB2;
+    border:3px;
+}
+ </style>
 
 
 
@@ -366,7 +366,11 @@
 
                           </div>
 
-                          <input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0"    type="submit" name="Guardar_Materia" value="Agregar Materia " id="Guardar_Materia">
+                          <center><input style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;"   type="submit" name="Guardar_Materia" value="Agregar Materia " id="Guardar_Materia"></center>
                         </form>       
                           
                       </div>

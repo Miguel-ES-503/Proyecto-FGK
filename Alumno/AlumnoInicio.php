@@ -1,30 +1,36 @@
 <?php
   require_once 'templates/head.php';
 ?>
-<title>Expdiente de alumno</title>
+<title>Expediente de alumno</title>
 <style>
 @media only screen and (min-width: 320px) and (max-width: 767px ) {
 
-.title h2{
-font-size: 20px;
+.main-title{
+font-size: 10px;
 margin-top: 8px;
-margin-left: 0em;
+
 
 }
  .icon{
 height: 18px;
 width: 18px;
 margin-top: 0px;
+position: relative;
+right: 20px;
  }
 
 .title{
 width: 100%;
+position: relative;
+	left: 70px;
 
 }
 
  .row, #carnet{
-	width: 280px;
+	width: 305px;
 	height: 250px;
+	
+	
 
 }
 #carnet h4, h6{
@@ -37,6 +43,161 @@ width: 100%;
 
 
 }
+
+.status1{
+	position: relative;
+	right: 285px;
+	bottom: 350px;
+}
+.status2{
+position: relative;
+bottom: 445px;
+right: 90px;
+
+}
+.status3{
+	position: relative;
+	right: 285px;
+	bottom: 460px;
+
+}
+.status4{
+position: relative;
+bottom: 620px;
+right: 90px;
+
+}
+.status5{
+position: relative;
+bottom: 635px;
+right: 190px;
+width: 400px;
+}
+
+.grafico{
+position: relative;
+right: 60px;
+
+}
+.grafico2{
+	position: relative;
+	right: 20px;
+}
+.HorasVinculacion{
+	position: relative;
+	left: 35px;
+	bottom: 60px;
+}
+.Img2{
+position: relative;
+bottom: 180px;
+left: 115px;
+}
+.externa, .horas2{
+position: relative;
+right: 50px;
+bottom: 115px;
+}
+.opciones p{
+font-size: 15px;
+
+}
+.parrafo{
+	position: relative;
+	bottom: 20px;
+	left: 25px;
+}
+.carrera{
+	position: relative;
+	left: 90px;
+	bottom: 70px;
+}
+.promo1{
+
+	position: relative;
+	bottom: 80px;
+	left: 25px;
+	
+}
+.promo{
+	position: relative;
+	left: 115px;
+	bottom: 120px;
+
+}
+.estado1{
+	position: relative;
+	left: 25px;
+	bottom: 130px;
+
+}
+.estado{
+	position: relative;
+	left: 80px;
+	bottom: 170px;
+
+}
+.estadolab1{
+	position: relative;
+	left: 25px;
+	bottom: 170px;
+
+}
+.estadolab{
+	position: relative;
+	left: 90px;
+	bottom: 210px;
+
+}
+.talleres1{
+	position: relative;
+	left: 25px;
+	bottom: 210px;
+
+}
+.talleres{
+	position: relative;
+	left: 90px;
+	bottom: 250px;
+
+}
+.financiamiento1{
+	position: relative;
+	left: 25px;
+	bottom: 255px;
+
+}
+.financiamiento{
+	position: relative;
+	left: 145px;
+	bottom: 295px;
+
+}
+#carnet{
+position: relative;
+left: 40px;
+
+}
+.button1{
+width: 400px;
+
+}
+.title{
+position: relative;
+right: 30em;
+}
+
+.Info1{
+
+	position: relative;
+	right: 50px;
+}
+
+}
+.grafico{
+	position: relative;
+	right: 65px;
+	width: 300px;
 }
 </style>
 
@@ -302,14 +463,45 @@ while($fila2 = $stmt2->fetch()){
 <script src="JS/jquery.knob.js"></script>
 <script src="JS/graficos.js"></script>
 <meta charset="utf-8">
-<div class="title w-100 linea-color">
-	<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-	<h2 class="main-title" >Expediente del Alumno</h2>
-	
-</div>
-<div class="row" >
+<div class="row">
+<div class="title linea-color">
 
-<!--Comiezo de estructura de trabajo -->
+			<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+			<h2 class="main-title" >Expediente del Alumno</h2>
+			<div class="title2" id="button1">
+				<br>
+			<div class="title2-text" >
+			<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Historial Notas</p></a>
+			
+		</div>
+		</div>
+		<div class="title2" id="button2">
+				<br>
+			<div class="title2-text">
+			<a href="renovacionBeca.php" style="text-decoration: none;"><p>Cartas Becario</p></a>
+			
+		</div>
+
+
+		</div>
+		<div class="title2" id="button3">
+				<br>
+			<div class="title2-text">
+			<a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Historial cartas</p></a>
+			
+		</div>
+
+	</div>
+	</div>
+	</div>
+
+</div>
+	
+		
+	<!-- Fin primera Fila-->
+<br>
+<div class="row" >
+<!--Comiezo de estructura de trabajo 2fila-->
 <div class="container-fluid text-center"  ng-app="app">
 	
 	<div class="principal">
@@ -337,26 +529,28 @@ while($fila2 = $stmt2->fetch()){
 	</div>
 
 	<br class="salto"><br class="salto"><br class="salto"><br class="salto">
-<div class="Info-Alumno1-sec h-100">
+<div class="Info-Alumno1-sec ">
+
 <section class="opciones">
 			<p id="mainTitle" class="parrafo">Carrera: </p>
-			<p ><?php echo utf8_encode($Carrera )?></p>
+			<p class="carrera" ><?php echo utf8_encode($Carrera )?></p>
 			<br>
-			<p id="mainTitle" >Promocion: </p>
-			<p ><?php echo $promocion ?></p>
+			<p id="mainTitle" class="promo1" >Promocion: </p>
+			<p class="promo"><?php echo $promocion ?></p>
 			<br>
-		    <p id="mainTitle" >Estatus Actual: </p>
-			<p ><?php echo $Estado; ?></p>
+		    <p id="mainTitle" class="estado1" >Estatus Actual: </p>
+			<p class="estado"><?php echo $Estado; ?></p>
 			<br>
-			<p id="mainTitle" c> Estado Laboral: </p>
-			<p><?php echo "<b id='estado'>".$estadoLaboral."</b>";  ?></p>
-			<p id="mainTitle" c> Total de Talleres: </p>
-			<p ><?php echo "<b id='estado'>".$Historico."</b>";  ?></p>
+			<p id="mainTitle" class="estadolab1"> Estado Laboral: </p>
+			<p class="estadolab" style="position: relative; right: 105px;"><?php echo "<b id='estado'>".$estadoLaboral."</b>";  ?></p>
+			<p id="mainTitle" class="talleres1"> Total de Talleres: </p>
+			<p class="talleres"><?php echo "<b id='estado'>".$Historico."</b>";  ?></p>
 			<br>
-		    <p id="mainTitle" > Financiamiento: </p>
-			<p ><?php echo "<b id='estado'>".$Financiamiento."</b>";  ?></p>
+		    <p id="mainTitle" class="financiamiento1" > Financiamiento: </p>
+			<p class="financiamiento"><?php echo "<b id='estado'>".$Financiamiento."</b>";  ?></p>
 
 </section>
+
 <?php
 $TotalTalleresAlumno = 5; 
 $Porcentaje = ($TotalTalleresAlumno /6)*100 ;
@@ -369,7 +563,7 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 <div class="Info-Alumno2">
 			<h3 class="subtitle-p">Progreso</h3>
 	<section class="Info1 float-left h-50 w-75"style="margin-left:10%">
-	<div class="grafico w-50">
+	<div class="grafico ">
 		<div id="container" ></div>
 	</div>
 
@@ -399,8 +593,7 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 </div>
 <br>
 
-<div class="Info-Alumno3" >
-
+<div class="Info-Alumno3 " >
 <br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
 <br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">
 <br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto"><br class="salto">

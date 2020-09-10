@@ -14,19 +14,17 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <link rel='stylesheet' type="text/css" href="css/menumodulos.css">
 <link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
 
-    <h2 class="main-title" >Módulo C2</h2>
+    <h2 class="main-title" >Aprobar / Reprobar Módulo C2</h2>
 </div>
-<div class="btn" >
+<!-- <div class="btn" >
 <a href="listadogeneral2.php" ><button class="btn btn-warning" id="button">Listado general 2</button></a>
-</div>
+</div> -->
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center" id="main">
-<br><br>
-<br class="salto">
-	<br class="salto">
 
 
   <nav class="nav justify-content-center nav-pills nav-fill "  ><ul>
@@ -45,16 +43,54 @@ include 'Modularidad/MenuVertical.php';
 <!-- Inicio de tabla de asistencia  -->
 <div class="card-body mx-auto  h-100 bg-light " style="color:black; width:80% ">
       <div class="table-responsive w-100" style="color:black;">
-      <h2>Listado de Alumnos  </h2>
-      <br>
-      <br>
-      <br>
+      
   
 
         <form action="Aprobartodos.php" method="POST">  <br>
-        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
-    <br>
+        <h5 class="card-header" style="color: black;"><b>Listado de Alumnos</b>
+        <br class="salto">
+<br class="salto">
+		<span class="float-right">	
+			<a href='listadogeneral2.php'><button type="button" class="btn btn-primary" class="botonresponsivo" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;"><img src="img/contact.png" width="25px" height="25px">
+				Listado General C2
+			</button></a><br class="salto">
+<br class="salto">
+      
+			<a href="Reportes/ReporteModulo2.php">
+				<button type="button" class="btn btn-danger px-3" class="botonresponsivo" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;">
+					<img src="../img/PDF.png" width="25px" height="25px">
+					Descargar
+				</button>
+			</a><br class="salto">
+<br class="salto">
+      
+	     		<a href="ReportesExcel/ReporteModulo2.php">
+	     			<button type="button" class="btn btn-success px-3" style="border-radius: 20px;
+    border: 2px;
+    width: 200px;height: 38px;
+     color:white; background-color: green">
+	     				<img src="img/excell.png" width="25px" height="25px"> Descargar
+	     			</button>
+	     		</a>
+		</span>
+  </h5>	<br class="salto">
+  <br class="salto">
+  <br class="salto">
+  <br class="salto">
+  <br class="salto">
+  <br class="salto">
+  <div>
+  <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary " style="background-color:#BE0032;">
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary " style="background-color:#BE0032;">
+      </div>
       <table  id="example" class="table table-sm table-bordered  h-100 w-100  "  >
       <br>
           <thead class="table-dark h-100 w-100">
@@ -113,7 +149,7 @@ $(document).ready(function() {
 
         initComplete: function() {
             //En el columns especificamos las columnas que queremos que tengan filtro
-            this.api().columns([0,1,2,3,4,5,6]).every(function() {
+            this.api().columns([1,2,3,4,5,6]).every(function() {
                 var column = this;
 
                 var select = $('<select><option value=""></option></select>')

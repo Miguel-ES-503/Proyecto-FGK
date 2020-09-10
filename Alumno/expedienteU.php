@@ -194,22 +194,7 @@ if ($_GET['id']==null) {
   <div class="title" style="margin-left: -9px;">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
   <h2 class="main-title" >Expediente Universidad</h2>
-  <div class="title2">
-        <br>
-    <div class="title2-text">
-    <a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Historial Notas</p></a>
-    
-</div>
-</div>
-<div class="title2">
-        <br>
-    <div class="title2-text">
-    <a href="SIT-CrearReunion.php" style="text-decoration: none;"><p>Historial Notas</p></a>
-    
-</div>
-
-
-</div>
+  
 </div>
   </div>
   <div class="row">

@@ -1,0 +1,168 @@
+.title{
+background-color: #ADADB2;
+color: black;
+height: 70px;
+margin-left: 0%;
+margin-bottom: -2%;
+height: 55px;
+
+
+}
+h2 , .icon{
+  float: left;
+}
+.main-title
+{
+text-align: left;
+font-size: 20px;
+margin-left: 25px;
+margin-top: 12px;
+font-weight: bold;
+letter-spacing: 5px;
+}
+
+.icon 
+{
+
+  width: 30px;
+  margin-top: 13px;
+  margin-left: 20px;
+}
+
+.title2
+{
+
+margin-left: 30px;
+background-color: #BE0032;
+width: 150px;
+height: 54px;
+display: inline-block;
+}
+.title2-text
+{
+margin-left:25px;
+margin-top: -8px;
+color: white;
+font-weight: bold;
+letter-spacing: 2px;
+}
+#nav2,#nav1
+{
+	border-width: 2px;
+	border-color: black;
+	border-style: dotted;
+	border-radius: 40px;
+	margin-bottom: 20px;
+}
+#nav2 a
+
+{
+	margin-top: 10px;
+	margin-bottom: -10px;
+}
+#nav
+{
+	border-width: 2px;
+	border-color: black;
+	border-style: dotted;
+	float: left;
+	border-radius: 40px;
+	width: 130%;
+	margin-left: 35px;
+}
+.nav-link
+{
+	width: 140px;
+	color: black;
+	border-radius: 10px;
+	border-color: #ADADB2;
+	border-style: solid;
+	border-width: 1px;
+    margin:auto;
+	margin-bottom: 10px;
+
+}
+.nav-link:hover
+{
+	background-color: #BE0032;
+	color: white;
+}
+#table
+span
+{
+	margin-left: 2px;
+	margin-right: 6px;
+}
+.title-1
+{
+font-size: 20px;
+text-align: center;
+}
+.card-body
+{
+	height: 80px;
+	border-radius: 10px;
+	width: 70%;
+	float: left;
+
+
+}
+
+#button
+{
+	border-radius: 20px;
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+.btn
+{
+	float: right;
+	margin-top: -15px;
+	margin-right: 20px;
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	#nav
+	{
+		width: 80%;
+		margin-left: 70%;
+	}
+	}
+
+@media screen and (min-width: 10px) and (max-width: 680px) {
+	#nav2, #nav3{
+display: none;
+}
+
+}
+@media screen and (min-width: 681px) and (max-width: 767px)
+{
+#nav1, #nav3{
+display: none;
+}
+}
+@media screen and (min-width: 768px)
+{
+	#nav1, #nav2{
+display: none;
+}
+}
+@media screen and (max-width:500px)  {
+	.main-title
+	{
+		font-size: 20px;
+		letter-spacing: 0px;
+	}
+	
+}
+@media screen and (min-width: 768px) {
+	.card-body
+	{
+			margin-left: 30px;
+	}
+	
+}
+
+
+
+

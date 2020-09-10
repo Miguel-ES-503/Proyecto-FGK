@@ -1,3 +1,6 @@
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <?php
 require_once "../../../BaseDatos/conexion.php";
 
@@ -9,14 +12,11 @@ $Financiamiento = $_POST['financiamieto'];
 #===========Se agrega la clase a la tabla
 echo"<script>";
 echo"$(document).ready(function(){";
-    
-    
-   
-    echo "var dato= '<thead ><tr><th >Universidad</th> <th >Asistieron</th> <th >No asistieron</th> <th >No inscritos</th></tr> </thead>';";
+    echo "var dato= '<thead class=\"text-white\"><tr><th >Universidad</th> <th >Asistieron</th> <th >No asistieron</th> <th >No inscritos</th></tr> </thead>';";
     echo"$('#table').append(dato);";
-    echo "var dat = '<tbody>';";
+    echo "var dat = '<tbody class=\"bg-light\" >';";
     echo "$('#table').append(dat);";
-    echo" $('#table').addClass(  'table' );";
+    echo" $('#table').addClass(  'table-dark text-dark' );";
   echo" $('#fondo').addClass(  'card' );";
   echo"});";
 echo"</script>";
@@ -245,14 +245,16 @@ if ($i ==0) {
     echo "<div id=".$Company." class = 'col-md-4'></div> ";
     echo "<div class='col-md-2'>";
         echo "<div class=' row '>";
-            echo "<div style='padding-left: 0;' class='col-12 ' ><button style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
+        echo " <div style='padding-left: 0;' class='col-md-12' width:50px;><button style='margin-top:10px;width:90%; border-color: #696969;'  type='button' class='btn btn-outline-dark' data-toggle='modal' data-target='#'>Poblacion<br>Estudiantil<br><b>".$fila2['T']." Alumnos</b></div>";
+    echo " <div class='w-100'></div>";
+            echo "<div style='padding-left: 0;' class='col-12 ' ><button style='margin-top:10px;width:90%; border-color: #43E684;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."1'>Asistieron</button> </div> ";
             echo " <div class='w-100'></div>";
-            echo "<div style='padding-left: 0;' class='col-12' ><button style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
+            echo "<div style='padding-left: 0;' class='col-12' ><button style='margin-top:10px;width:90%; border-color: #A61C1C;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."2'>Inasistieron</button> </div> ";
             echo " <div class='w-100'></div>";
             
-            echo "<div  style='padding-left: 0;' class='col-12'  ><button  style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
+            echo "<div  style='padding-left: 0;' class='col-12'  ><button  style='margin-top:10px;width:90%; border-color: #F2C438;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."3'>No incritos</button> </div> </div></div>";
    
 
@@ -264,13 +266,15 @@ else if($i==1)
     echo "<div id=".$Company." class = 'col-md-4'></div>";
     echo "<div class='col-md-2'>";
     echo "<div class='row '>";
-        echo "<div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%;'  type='button' class='btn btn-outline-dark' data-toggle='modal'
+    echo " <div style='padding-left: 0;' class='col-md-12' width:50px; ><button style='margin-top:10px;width:90%; border-color: #696969;'  type='button' class='btn btn-outline-dark' data-toggle='modal' data-target='#'>Poblacion<br>Estudiantil<br><b>".$fila2['T']." Alumnos</b></div>";
+    echo " <div class='w-100'></div>";
+        echo "<div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%; border-color: #43E684;'  type='button' class='btn btn-outline-dark' data-toggle='modal'
         data-target='#".$Company."1'>Asisitieron</button> </div> ";
         echo " <div class='w-100'></div>";
-        echo "<div style='padding-left: 0;'  class='col-md-12' ><button style='margin-top:10px;width:90%;' type='button' class='btn btn-outline-dark' data-toggle='modal'
+        echo "<div style='padding-left: 0;'  class='col-md-12' ><button style='margin-top:10px;width:90%; border-color: #A61C1C;' type='button' class='btn btn-outline-dark' data-toggle='modal'
             data-target='#".$Company."2'>Inasistieron</button> </div> ";
             echo " <div class='w-100'></div>";
-        echo "<div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%;'  type='button' class='btn btn-outline-dark' data-toggle='modal'
+        echo "<div style='padding-left: 0;' class='col-md-12' ><button style='margin-top:10px;width:90%; border-color: #F2C438;'  type='button' class='btn btn-outline-dark' data-toggle='modal'
         data-target='#".$Company."3'>No incritos</button> </div> </div></div></div>";
     echo "</div>";
     echo "</div>";
@@ -291,10 +295,9 @@ echo "<script>";
         echo "       ['Element', 'Density', { ";
             echo "         role: 'style' " ;
             echo "     }],";
-            echo "    ['Poblacion estudiantil',".$fila2['T'].", '#BF0310'],";
-            echo "    ['Asistieron', ".$name.", '#B6C72C'],";
-            echo "    ['No asistieron',".$fila4['TotalAlum'].", '#DB9600'],";
-            echo "    ['No inscritos',".$fila3['T'].", '#0030f3']";
+            echo "    ['Asistieron', ".$name.", '#43E684'],";
+            echo "    ['No asistieron',".$fila4['TotalAlum'].", '#A61C1C'],";
+            echo "    ['No inscritos',".$fila3['T'].", '#F2C438']";
          
             echo " ]);";
 
@@ -346,7 +349,7 @@ echo "<script>";
     echo "                      <th scope='col'>Nombre</th>";
     echo "                  </tr>";
     echo "              </thead>      "    ;   
-    echo "              <tbody >";
+    echo "              <tbody  class=\"bg-light\">";
     if ($Financiamiento == 'FGK') {
         $consulta1=$pdo->prepare("SELECT  A.Nombre as 'Nombre' 
         FROM reuniones R 
@@ -432,7 +435,7 @@ echo "<script>";
     echo "                      <th scope='col'>Nombre</th>";
     echo "                  </tr>";
     echo "              </thead>      "    ;   
-    echo "              <tbody >";
+    echo "              <tbody class=\"bg-light\" >";
     if ($Financiamiento == 'FGK') {
         $consulta1=$pdo->prepare("SELECT  A.Nombre 
         FROM reuniones R 
@@ -612,11 +615,11 @@ echo"            var data = google.visualization.arrayToDataTable([";
   echo"       ]);";
 
   echo"       var options = {";
-      echo"          title: 'Participación estudiantil de alumnos en las reuniones',";
+      echo"          title: 'Resumen general de participación estudiantil',";
             
       echo"          height: 300,";
       echo"          pieHole: 0.4,";
-      echo "        colors: ['#BF0310', '#B6C72C', '#DB9600','#0030f3'],";
+      echo "        colors: ['#43E684', '#A61C1C', '#F2C438','#94BF75'],";
       echo"         chartArea: {'width': '80%', 'height': '80%'}";
       echo"        };";
 
@@ -629,16 +632,4 @@ echo"            var data = google.visualization.arrayToDataTable([";
   
       echo"        </script>";
 
-#====================FINALIZA LA SECCION DONDE SE DIBUJA EL GRAFICO PRINCIPAL         
-echo"<script>";
-echo"$(document).ready(function(){";
-    
-    
-   
-    
-    echo "var dat2 = '</tbody><tfoot ><tr><th >Universidad</th> <th >Asistieron</th> <th >No asistieron</th> <th >No inscritos</th></tr> </tfoot>';";
-    echo "$('#table').append(dat2);";
-    
-  echo"});";
-echo"</script>";
 ?>

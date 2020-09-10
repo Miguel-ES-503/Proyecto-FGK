@@ -2,50 +2,111 @@
 //Modularidad para inicializar el Head y <!DOCTYPE html>
 include 'Modularidad/CabeceraInicio.php';
 ?>
-<title>Aprobar módulos</title>
-<?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos?>
+<title>Modulos de Moodle</title>
+<?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos
 
-<?php
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
-// include 'Modularidad/MenuHorizontal.php';
+//include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
-<link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">
+<link rel='stylesheet' type="text/css" href="css/menumodulos.css">
+<link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">  
+<link rel='stylesheet' type="text/css" href="css/main.css">
+
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
 
-    <h2 class="main-title" >Aprobar/Reprobar Módulo 1</h2>
+    <h2 class="main-title" >Aprobar / Reprobar Módulo C1</h2>
 </div>
-<div class="btn" >
+<!-- <div class="btn" >
 <a href="listadogeneral1.php" ><button class="btn btn-warning" id="button">Listado general 1</button></a>
-</div>
+</div> -->
 <!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center" id="main">
+<div class="container-fluid text-center "  id="main-inicio">
 <br><br>
-  <nav class="nav flex-column" id="nav">
-    <h2 class="title-1">Menu</h2>
-<a class="nav-link active" href="AprobarModulos.php" style="background-color:#BE0032; color:white;">Módulo C1</a>
-<a class="nav-link" href="modulo2.php">Módulo C2</a>
-  <a class="nav-link" href="modulo3.php">Módulo B1</a>
-  <a class="nav-link" href="modulo4.php">Modulo B2</a>
-   <a class="nav-link" href="modulo5.php">Módulo A1</a>
-    <a class="nav-link" href="modulo6.php">Módulo A2</a>
-</nav>
+<!-- <center> -->
+
+<!-- </center> -->
+
+
+
+<nav class="nav justify-content-center nav-pills nav-fill "  ><ul>
+<h2 >Seleccionar Módulo</h2>
+<br>
+<br>
+<b>
+        <li><a id="menuu" class="nav-link active pg-0 "  href="AprobarModulos.php" style="background-color:#BE0032; color:white;">C1</a></li>
+        <li><a id="menuu" class="nav-link  pg-0" href="modulo2.php" >C2</a></li>
+        <li><a id="menuu" class="nav-link pg-0"  href="modulo3.php" >B1</a></li>
+        <li><a id="menuu" class="nav-link pg-0"  href="modulo4.php">B2</a></li>
+        <li><a id="menuu" class="nav-link pg-0"  href="modulo5.php">A1</a></li>
+        <li><a id="menuu" class="nav-link pg-0"  href="modulo6.php">A2</a></li>
+</b>
+    </ul></nav>
+
+    
 
 
 <!-- Inicio de tabla de asistencia  -->
-    <div class="card-body h-100 bg-dark">
-      <div class="table-responsive w-100">
-        <form action="Aprobartodos.php" method="POST">  <br>
-        <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary btn-sm">
-        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary btn-sm">
-    <br>
-      <table  id="example" class="table table-hover table-sm table-bordered table-fixed h-100 w-100" >
+    <div class="card-body mx-auto  h-100 bg-light " style="color:black; width:80% ">
+      <div class="table-responsive w-100" style="color:black;">
+      <!-- <h2>Listado de Alumnos  </h2> -->
       <br>
-          <thead class="table-secondary h-100 w-100">
-            <tr>
+      
+  
+
+        <form action="Aprobartodos.php" method="POST"> 
+        <h5 class="card-header" style="color: black;"><b>Listado de Alumnos</b>
+        <br class="salto">
+<br class="salto">
+		<span class="float-right">	
+			<a href='listadogeneral1.php'><button type="button" class="btn btn-primary" class="botonresponsivo" data-toggle="modal" data-target="#exampleModal" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;"><img src="img/contact.png" width="25px" height="25px">
+				Listado General C1
+      </button></a>
+      <br class="salto">
+<br class="salto">
+      
+			<a href="Reportes/ReporteModulo1.php">
+				<button type="button" class="btn btn-danger px-3" class="botonresponsivo" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;">
+					<img src="../img/PDF.png" width="25px" height="25px">
+					Descargar
+				</button>
+			</a>
+      <br class="salto">
+<br class="salto">
+	     		<a href="ReportesExcel/ReporteModulo1.php">
+	     			<button type="button" class="btn btn-success px-3" style="border-radius: 20px;
+    border: 2px;
+    width: 200px;height: 38px;
+     color:white; background-color: green">
+	     				<img src="img/excell.png" width="25px" height="25px"> Descargar
+	     			</button>
+	     		</a>
+		</span>
+  </h5>	<br class="salto">
+  <br class="salto">
+  <br class="salto">
+  <br class="salto">
+  <br class="salto">
+  <br class="salto">
+  <div>
+  <input type="submit" name="Aprobado" value="Aprobado" class="btn btn-primary " style="background-color:#BE0032;">
+        <input type="submit" name="Reprobado" value="Reprobado" class="btn btn-primary " style="background-color:#BE0032;">
+      </div>
+      <table  id="example" class="table table-sm table-bordered  h-100 w-100  "  >
+      <br>
+          <thead class="table-dark h-100 w-100">
+            <tr class="thead-dark">
               <th scope="col"><input type='checkbox' name='' class='case' value="" id="todos">Todos</th>
               <th scope="col">ID Alumno</th>
               <th scope="col">Alumno</th>
@@ -61,11 +122,13 @@ include 'Modularidad/MenuVertical.php';
 <?php   require_once 'Modelo/ModeloModulos/ListadoModulos/listadomodulos1.php'; ?>
         </tbody>
       </table>
+      
 </form>
     </div>
   </div>
 </div>
 <br>
+
 <script>
 $(document).ready(function() {
   var table = $('#example').DataTable({
@@ -98,7 +161,7 @@ $(document).ready(function() {
 
         initComplete: function() {
             //En el columns especificamos las columnas que queremos que tengan filtro
-            this.api().columns([0,1,2,3,4,5,6]).every(function() {
+            this.api().columns([1,2,3,4,5,6]).every(function() {
                 var column = this;
 
                 var select = $('<select><option value=""></option></select>')
@@ -159,7 +222,11 @@ $(document).ready(function() {
               }
             });
         </script>
-        <div class="footer-copyright text-center py-3" style="background: black;margin-top:30%;">
+
+
+
+    <div class="footer-copyright text-center " style="background: black;margin-top:10%; ">
+    
                   <img class="img-fluid" src="../img/funda.png" width="60px">
                   </img>
                   <img class="img-fluid" src="../img/logoblanco2.png" style="margin-left:30px;"></img>
