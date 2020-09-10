@@ -16,7 +16,7 @@
   <link href="../css/simple-sidebar.css" rel="stylesheet">
 
   <!--Estilo css CrearCuentas-->
-  <!-- <link rel="stylesheet" type="text/css" href="css/EstiloCrearCuentas.css"> -->
+  <link rel="stylesheet" type="text/css" href="css/EstiloCrearCuentas.css"> 
 
   <!--Estilo calendario-->
   <link href="../css/fullcalendar.css" rel="stylesheet">
