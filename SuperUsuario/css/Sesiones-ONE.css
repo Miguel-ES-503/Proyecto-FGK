@@ -86,7 +86,7 @@ letter-spacing: 2px;
 {
 	margin-bottom: 30px;
 }
-.nav-link
+#sesion
 {
 	width: 140px;
 	color: black;
@@ -102,7 +102,7 @@ letter-spacing: 2px;
 {
 	width:130px;
 }
-.nav-link:hover
+#sesion:hover
 {
 	background-color: #BE0032;
 	color: white;
@@ -133,5 +133,14 @@ text-align: center;
 
 @media only screen and (max-width: 600px) {
    
-    
+    #estadistica > li{
+    	margin-right: 40px;
+    	max-width: 500px;
+
+    }
+    #estadistica {
+    	margin-left: -160px;
+    	min-width: 500px;
+    }
+     
 }
