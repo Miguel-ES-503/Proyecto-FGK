@@ -1,12 +1,17 @@
 .title{
 background-color: #ADADB2;
 color: black;
-height: 70px;
-margin-left: 0%;
-margin-bottom: -2%;
 height: 55px;
 
 
+}
+.main-title {
+    font-size: 25px;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    margin-left: 5px;
 }
 h2 , .icon{
   float: left;
@@ -19,6 +24,23 @@ h2 , .icon{
   width: 30px;
   margin-top: 13px;
   margin-left: 20px;
+}
+@media screen and (max-width:600px) {
+	.main-title {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-left: 5px;
+    margin-top: 30px;
+}
+.icon 
+{
+
+  width: 25px;
+  margin-top: 16px;
+  margin-left: 20px;
+}
+
 }
 
 .title2
@@ -108,5 +130,15 @@ text-align: center;
     margin-top: 8px;
     margin-left: 0em;
 }
-
+@media screen and (max-width: 500px) {
+    .main-title
+    {
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin-left: 10px;
+    }
+    .icon {
+    width: 20px;
+    margin-top: 18px;
+}
 }

@@ -13,10 +13,11 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Preguntas.css">
+<link rel="stylesheet" type="text/css" href="css/Renovacion.css">
 <div class="title">
-<a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
+  <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
     <h2 class="main-title" >Preguntas Frecuentes</h2>
-</div>
+</div>>
 
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">

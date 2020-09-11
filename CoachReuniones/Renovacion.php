@@ -26,7 +26,10 @@ foreach ($dbh->query("SELECT COUNT(*) AS 'Condicion' FROM renovacion
 <link rel="stylesheet" type="text/css" href="css/Renovacion.css">
 <div class="title">
   <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
-    <h2 class="main-title" >Renovaciones de Beca</h2>
+    <h2 style="font-size: 25px;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 2px;margin-top: 10px;margin-left: 5px;">Renovaciones de Beca</h2>
 </div>
     <div id="body">
     	

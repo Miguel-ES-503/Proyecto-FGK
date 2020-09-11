@@ -17,7 +17,25 @@ include 'Modularidad/MenuVertical.php';
 </script>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Crear-Reunion.css">
-<div class="title div0 ">
+<link rel="stylesheet" type="text/css" href="css/Menu.css">
+<nav class="navbar navbar-expand-lg navbar-light" id="row">
+    <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+  <a class="navbar-brand" id="T1">Reuniones</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item" id="bloque">
+        <a class="nav-link text-center justify-content-center" href="LIS-Reunion.php"><svg width="2em" height="1.5em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-top: -2px;">
+  <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
+  <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+</svg>Ver Reuniones</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--<div class="title div0 ">
     <img src="../img/back.png" class="icon">
     <h2 class="main-title div1" >Reuniones</h2> 
     <div class="title2">
@@ -26,7 +44,7 @@ include 'Modularidad/MenuVertical.php';
     <a href="LIS-Reunion.php" class="text-decoration-none div2 " ><p><img src="../img/Ver.png" class="icon-2">Ver Reuniones</p></a>
 </div>
 </div>
-</div>
+</div>-->
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid ">
     <br>

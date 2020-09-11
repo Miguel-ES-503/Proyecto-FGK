@@ -14,7 +14,8 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Alumnos.css">
-<div class="title">
+<link rel="stylesheet" type="text/css" href="css/Menu.css">
+<!--<div class="title">
     <img src="../img/back.png" class="icon">
     <h2 class="main-title" >Listas-Alumnos</h2>
     <div class="title2">
@@ -33,6 +34,21 @@ include 'Modularidad/MenuVertical.php';
 
 </div>
 </div>
+-->
+<nav class="navbar navbar-expand-lg navbar-light" id="row">
+	<a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+  <a class="navbar-brand" id="T1">Lista-Alumnos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item" id="bloque">
+        <a class="nav-link" href="LIS-Cuentas.php"><img src="../img/Ver.png" class="icon-2">Cuentas</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
 	<br>
@@ -75,7 +91,7 @@ include 'Modularidad/MenuVertical.php';
 						<th scope="col">Ver expediente</th>
 					</tr>
 				</thead>
-				<tfoot class="table-secondary">
+				<!--<tfoot class="table-secondary">
 					<tr>
 						
 						<th scope="col">Carnet</th>
@@ -87,7 +103,7 @@ include 'Modularidad/MenuVertical.php';
 						<th scope="col">Estado de certificación</th>
 						<th scope="col">Ver expediente</th>						
 					</tr>
-				</tfoot>
+				</tfoot>-->
 				<tbody class="table h-100 w-100">
 					<?php
 					require_once 'Modelo/ModeloAlumno/MostrarDatosAlumnos.php';

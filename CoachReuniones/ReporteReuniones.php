@@ -16,7 +16,11 @@ include 'Modularidad/MenuVertical.php';
 ?>
 
 <!--****************************************Comiezo de estructura de trabajo *************************-->
-
+<link rel="stylesheet" type="text/css" href="css/Renovacion.css">
+<div class="title mb-5">
+  <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+    <h2 class="main-title" >Reporteria</h2>
+</div>
 <div class="container-fluid text-center">
     <!--*********INICIO SECCION PARA UTILIZAR EL FILTRO DE DATOS-->
     <div class="card" style="margin-top: 10px; ">

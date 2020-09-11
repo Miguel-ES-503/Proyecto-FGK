@@ -15,22 +15,25 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/horas-sociales.main.css">
-<br>
-<div class="title general-text">
-    <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
-    <h2 class="main-title title-111" >Horas Sociales</h2>
-    <div class="title2">
-    <div class="title2-text">
-    <a href="HorasVinculacion.php" class="text-decoration-none"><p><img src="../img/Ver.png" class="icon-2">Solicitudes</p></a>
-</div>
-</div>
-    <div class="title3">
-    <div class="title3-text">
-    <a href="ListaHorasSociales.php" class="text-decoration-none title-222" ><p><img src="../img/Ver.png" class="icon-2">Lista General</p></a>
-    
-</div>
-</div>
-</div>
+<link rel="stylesheet" type="text/css" href="css/Menu.css">
+<nav class="navbar navbar-expand-lg navbar-light" id="row">
+  <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+  <a class="navbar-brand"  id="T1">Horas Sociales</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+
+     <li class="nav-item" id="bloque">
+        <a class="nav-link" href="HorasVinculacion.php"><img src="../img/Ver.png" class="icon-2">Solicitudes</a>
+      </li>
+      <!--<li class="nav-item" id="bloque">
+        <a class="nav-link" href="ListaHorasSociales.php"><img src="../img/Ver.png" class="icon-2">Lista General</a>-->
+      </li>
+    </ul>
+  </div>
+</nav>
 <br class="salto">
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">

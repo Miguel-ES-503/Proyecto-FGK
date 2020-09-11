@@ -41,9 +41,10 @@ include 'Modularidad/MenuVertical.php';
 </style>
 <!-- CSS only -->
 
-<div class="title div0">
-     <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
-    <h2 class="main-title" >Sesiones One on One</h2>
+<div class="title">
+    <!--<a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>-->
+    <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+    <h2 class="main-title">Sesiones One on One</h2>
 </div>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">

@@ -1,0 +1,72 @@
+#row
+{
+	background-color: #ADADB2;
+	height: 50px;
+}
+@media screen and (max-width: 992px) {
+	#bloque,#bloque
+	{
+		background-color: #BE0032;
+		margin-top: 2px;
+		margin-bottom: 2px;
+		text-align: center;
+	}
+	#bloque a,#bloque a
+	{
+		color: white;
+	}
+	#T1
+	{
+		font-size: 20px;
+		font-weight: bold;
+		letter-spacing: 2px;
+		margin: 0 auto;
+		justify-content: center;
+
+	}
+.icon
+{
+	height: 30px;
+	width: 30px;
+	float: left;
+	align-items: center;
+	color: black;
+	float: left;
+}
+}
+@media screen and (min-width: 993px) {
+	#T1
+	{
+		font-size: 25px;
+		align-items: center;
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
+.icon
+{
+	width: 30px;
+	height: 30px;
+	float: left;
+	align-items: center;
+	color: black;
+	margin-right: 10px;
+}
+#bloque,#bloque2
+{
+	background-color: #BE0032;
+	text-align: center;
+	height: 50px;
+	color: white;
+	margin-left: 50px;
+	width: 170px;
+	align-items: center;
+
+}
+#bloque a,#bloque2 a
+{
+	color: white;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 5px;
+}
+}

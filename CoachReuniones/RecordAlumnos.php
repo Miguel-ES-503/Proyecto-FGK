@@ -13,7 +13,8 @@ include 'Modularidad/MenuVertical.php';
 ?>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Record-Alumnos.css">
-<div class="title">
+<link rel="stylesheet" type="text/css" href="css/Menu.css">
+<!--<div class="title">
     <img src="../img/back.png" class="icon">
     <h2 class="main-title" >Record de Alumnos</h2>
     <div class="title2">
@@ -23,7 +24,23 @@ include 'Modularidad/MenuVertical.php';
     
 </div>
 </div>
-</div>
+</div>-->
+<nav class="navbar navbar-expand-lg navbar-light" id="row">
+	<a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+  <a class="navbar-brand" href="#" id="T1">Record de Alumnos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+
+      <li class="nav-item" id="bloque">
+        <a class="nav-link" href="LIS-Alumnos.php"><img src="../img/Ver.png" class="icon-2">Alumnos</span></a>
+      </li>
+ 
+    </ul>
+  </div>
+</nav>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
 

@@ -15,15 +15,21 @@ include 'Modularidad/MenuVertical.php';
 <link rel='stylesheet' type="text/css" href="css/menumodulos.css">
 <link rel="stylesheet" type="text/css" href="css/Aprobar-Modulos.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<div class="title">
+<!--<div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
 
     <h2 class="main-title" >Aprobar / Reprobar Módulo C2</h2>
-</div>
+</div>-->
 <!-- <div class="btn" >
 <a href="listadogeneral2.php" ><button class="btn btn-warning" id="button">Listado general 2</button></a>
 </div> -->
 <!--Comiezo de estructura de trabajo -->
+<div class="title" style="align-items: center;align-content: center;">
+    <!--<a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>-->
+
+    <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+    <h2 class="main-title" style="align-items: center;align-content: center;">Aprobar o Desactivar Módulos</h2>
+</div>
 <div class="container-fluid text-center" id="main">
 
 

@@ -12,20 +12,23 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
-<br>
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/Menu.css">
 <link rel="stylesheet" type="text/css" href="css/Reuniones-Finalizadas.css">
-<div class="title">
-    <img src="../img/back.png" class="icon">
-    <h2 class="main-title" >Reuniones</h2>
-    <div class="title2">
-        <br>
-    <div class="title2-text">
-    <a href="LIS-Reunion.php" style="text-decoration: none;"><p><img src="../img/Ver.png" class="icon-2">Ver Reuniones</p></a>
-    
-</div>
-</div>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light" id="row">
+ <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+  <a class="navbar-brand" id="T1">Reuniones</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+      <li class="nav-item" id="bloque">
+        <a class="nav-link" href="SIT-CrearReunion.php"><img src="../img/Ver.png" class="icon-2">Crear Reuniones</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="container-fluid text-center">
 <br>
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>

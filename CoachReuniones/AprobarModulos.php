@@ -18,7 +18,7 @@ include 'Modularidad/MenuVertical.php';
 <div class="title">
   <a href="javascript:history.back();" ><img src="../img/back.png" class="icon"></a>
 
-    <h2 class="main-title" >Aprobar / Reprobar Módulo C1</h2>
+    <h2 class="main-title" style="margin-top: 13px;margin-left: 8px;">Aprobar / Reprobar Módulo C1</h2>
 </div>
 <!-- <div class="btn" >
 <a href="listadogeneral1.php" ><button class="btn btn-warning" id="button">Listado general 1</button></a>
