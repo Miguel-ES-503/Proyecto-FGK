@@ -42,14 +42,14 @@
       <br><br>
     
       
-      <table class="table table-responsive-lg">      
+      <table class="table table-responsive-lg" style="position: relative; left: 75px;">      
       <a href="IndicacionesTrans.php?id=<?php echo $alumno; ?>" id="crearsoli" style="float: right; border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
      color:white; text-decoration: none;" ><img src="../img/add.png" width="30px" height="25px"><b>Crear Solicitud</b></a>
       
-      <h3 id="h3" class="texto" style="text-align: justify;"><b>Solicitud de Transporte</b></h3>
+      <h3 id="h3" class="texto" style="text-align: center;"><b>Solicitud de Transporte</b></h3>
       <br>
        <br class="salto">
       <thead  style="background-color: #2D2D2E; color: white;">
