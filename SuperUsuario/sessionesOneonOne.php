@@ -5,7 +5,113 @@ require_once '../Conexion/conexion.php';
 include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos
 ?>
 <title>Sessiones One on One</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
 
+.topnav {
+  overflow: hidden;
+  background-color: #ADADB2;
+  max-width: 100%;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-width: 3px;
+  font-weight: bold;
+
+ 
+}
+.submenu1{
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #9d120e;
+  border-width: 3px;
+  font-weight: bold;
+  height: 68px;
+  letter-spacing: 2px;
+
+
+
+}
+.icon{
+  
+
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon1 {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon1 {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    height: 50px;
+  }
+  .titulomenu a{
+    font-size: 15px;
+  }
+  .modal-content{
+  background-color: white;
+  border-color: black;
+  border-radius: 30px;
+  padding: 20px;
+}
+.modal-body{
+  text-align: left;
+}
+
+.form-control{
+  background-color: #ADADB2;
+  color: black;
+  border-radius: 20px;
+
+}
+.modal-header{
+  border-color: #ADADB2;
+  border:3px;
+}
+.modal-footer{
+  border-color: #ADADB2;
+  border:3px;
+}
+
+}
+</style>
 <?php
  date_default_timezone_set('America/El_Salvador');
 //Modularaidad para extraere los enlaces en HEAD
@@ -38,17 +144,29 @@ include 'Modularidad/MenuVertical.php';
  
 </style>
 <!-- CSS only -->
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 
-<div class="title">
-     <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
-    <h2 class="main-title" >SESIONES ONE ON ONE</h2>
-    <div class="title2" style="background-color: #9d120e">
-	<a class="jjjjj" href="#" >SESIONES</a>
-</div>
-</div>
+
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-
+<div class="topnav" id="myTopnav">
+  <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+  <a  class="titulomenu" style="background-color:#ADADB2; color: #2D2D2E; font-size: 25px;">Sesiones one on one</a>
+  <a href="" class="submenu1">Sesiones</a>
+  
+  <a href="javascript:void(0);" class="icon1" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 <!-- Ver Horarios Disponibles-->
 <!-- Asistencia-->
 
@@ -58,17 +176,25 @@ include 'Modularidad/MenuVertical.php';
     
   <nav class="nav flex-column h-100" id="nav">
     <h2 class="title-1">Menu</h2>
-    <button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
-    <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Horarios Disponibles</button>
-    <button type="button" class="nav-link" role="link" onclick="window.location='sessionesAsistencia.php'">Listado de asistencia</button>
-    <button type="button" class="nav-link" role="link" onclick="window.location='sesionesfinalizadas.php'">Sesiones finalizadas</button>
+    <button class="nav-link" id="sesion" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
+    <button type="button" id="sesion" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Horarios Disponibles</button>
+    <button type="button" id="sesion" class="nav-link" role="link" onclick="window.location='sessionesAsistencia.php'">Listado de asistencia</button>
+    <button type="button" id="sesion" class="nav-link" role="link" onclick="window.location='sesionesfinalizadas.php'">Sesiones finalizadas</button>
 </nav>
   </div>
     <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
       <div class="tabla">
     <div align="right" class="h-100 botones" id="btns">
-    <a href="Reportes/ReporteSession.php"  target='blank'><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
-    <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
+    <a href="Reportes/ReporteSession.php"  target='blank'><button style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 150px;height: 38px;
+     background-color: #9d120e;
+     color:white;"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
+    <a href="ReportesExcel/ReporteReuniones.php"><button style="border-radius: 20px;
+    border: 2px solid green;
+    width: 150px;height: 38px;
+     background-color: green;
+     color:white;"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
   </div>
  <div class="panel-body img-fluid " style=" width:85%">
                     <div id="tablapdf">
@@ -109,11 +235,11 @@ include 'Modularidad/MenuVertical.php';
         </button>
       </div>
       <div class="modal-body">
-        <div class="overflow-auto">
-       <table class="table">
+        <div class="overflow-auto" style="border-radius: 20px;">
+       <table class="table" >
   <thead class="thead-dark">
-    <tr>
-      <th scope="col">Encargado</th>
+    <tr style="border-radius: 20px;">
+      <th scope="col" >Encargado</th>
       <th scope="col">Fecha</th>
       <th scope="col">Horario</th>
       <th scope="col">Acciones</th>
@@ -138,10 +264,18 @@ include 'Modularidad/MenuVertical.php';
                             } ?>
 </table>
  </div>
-      </div>
+      
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 100px;height: 38px;
+     background-color: #9d120e;
+     color:white;" data-dismiss="modal">Close</button>
+        <button type="button" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 150px;height: 38px;
+     background-color: #9d120e;
+     color:white;">Save changes</button>
       </div>
     </div>
   </div>
@@ -257,8 +391,6 @@ include 'Modularidad/MenuVertical.php';
       }
       ?>
 
-  <div>       
-    </div>
 </div>
   <br> 
   <script>

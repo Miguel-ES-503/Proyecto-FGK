@@ -68,135 +68,142 @@
 <!--///////////////////////////////////////////////-->
 <!--Para ver el nombre del archivo que sube-->
 <script type="text/javascript">
-  $(document).ready(function () {
+$(document).ready(function() {
     bsCustomFileInput.init()
-  });
-  </script>
-  
-  <!--Fin de funcion-->
-  <!--///////////////////////////////////////////////-->
+});
+</script>
+
+<!--Fin de funcion-->
+<!--///////////////////////////////////////////////-->
 
 
 
 
 <!--Estructura -->
 <div class="container-fluid text-center">
-<div class="title" style="margin-left: -14px;">
-<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-	<h2 class="main-title" >Inscripcion de materias</h2>
-	
-</div>
-  <br>
+    <div class="title" style="margin-left: -14px;">
+        <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+        <h2 class="main-title">Inscripcion de materias</h2>
 
-
-  
-
-  
-
-  <!--Información de solicitud-->
-  <div class="row">
-
-  
-    
-        
-
-    
-  
-
-    <!--tabla con informacion de solicitud-->
-    <div class="col text-center">
-      <br><br><br>
-
-      <!--CSS de las tablas -->
-      <style type="text/css">
-          table {
-            border-collapse: separate;
-            border-spacing: 6px;
-            background:  bottom left repeat-x;
-            color: #fff;
-
-
-          }
-
-          tr, th{
-            background: white;
-            color: #585858;
-            text-align: center;
-
-
-          }
-          td  {
-            width: 150px;
-            background: #D8D8D8;
-            border-radius: 3px;
-            color: #000;
-          }
-
-           .oscuro{
-            background: #A4A4A4;
-
-          }
+    </div>
+    <br>
 
 
 
-          h3 {
-            color: #DE0B18;
-          }
 
-          h4{
-            color: white;
-          }
-          div.centerTable{
-        text-align: center;
-         }
 
- 
 
-        div.centerTable table {
-         margin: 0 auto;
-         text-align: left;
-         width: 100%;
-        }
-        .modal-content{
-    background-color: white;
-    border-color: black;
-    border-radius: 30px;
-    padding: 20px;
-}
-.modal-body{
-    text-align: left;
-}
+    <!--Información de solicitud-->
+    <div class="row">
 
-.form-control{
-    background-color: #ADADB2;
-    color: black;
-    border-radius: 20px;
 
-}
-.modal-header{
-    border-color: #ADADB2;
-    border:3px;
-}
-        </style>  <!--Fin de CSS de las tablas -->
 
-        
-      <!--Tabla de buses de Ida -->
-        <h3 class="card-header h3s bg-light w-75 mx-auto">Materias por cursar</h3>
-        <div class='centerTable'>
-          <table  class="table-responsive mx-auto w-75" > 
-          <thead >
-            <tr>
-              <th>Codigo</th>
-              <th>Asignatura</th>
-              <th>Estado</th>
-              
-              <th>Inscribir</th>
-            </tr>
-          </thead>
 
-          <tbody>
-           
-      <?php
+
+
+
+
+        <!--tabla con informacion de solicitud-->
+        <div class="col text-center">
+            <br><br><br>
+
+            <!--CSS de las tablas -->
+            <style type="text/css">
+            table {
+                border-collapse: separate;
+                border-spacing: 6px;
+                background: bottom left repeat-x;
+                color: #fff;
+
+
+            }
+
+            tr,
+            th {
+                background: white;
+                color: #585858;
+                text-align: center;
+
+
+            }
+
+            td {
+                width: 150px;
+                background: #D8D8D8;
+                border-radius: 3px;
+                color: #000;
+            }
+
+            .oscuro {
+                background: #A4A4A4;
+
+            }
+
+
+
+            h3 {
+                color: #DE0B18;
+            }
+
+            h4 {
+                color: white;
+            }
+
+            div.centerTable {
+                text-align: center;
+            }
+
+
+
+            div.centerTable table {
+                margin: 0 auto;
+                text-align: left;
+                width: 100%;
+            }
+
+            .modal-content {
+                background-color: white;
+                border-color: black;
+                border-radius: 30px;
+                padding: 20px;
+            }
+
+            .modal-body {
+                text-align: left;
+            }
+
+            .form-control {
+                background-color: #ADADB2;
+                color: black;
+                border-radius: 20px;
+
+            }
+
+            .modal-header {
+                border-color: #ADADB2;
+                border: 3px;
+            }
+            </style>
+            <!--Fin de CSS de las tablas -->
+
+
+            <!--Tabla de buses de Ida -->
+            <h3 class="card-header h3s bg-light w-75 mx-auto">Materias por cursar</h3>
+            <div class='centerTable'>
+                <table class="table-responsive mx-auto w-75">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Asignatura</th>
+                            <th>Estado</th>
+
+                            <th>Inscribir</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <?php
         //consulta que muestra las materias
        /*$consulMaterias=$pdo->prepare("SELECT m.idMateria, m.`idExpedienteU` , m.`nombreMateria` , m.`Estado` , m.`estadoM` , im.estado 
        FROM materias m inner join inscripcionmateria  im on m.`idMateria` = im.`idMateria`
@@ -267,73 +274,77 @@
 
                                   
             ?>
-              
-        
-      
-          </tbody>
 
-          <tfoot>
-            
-          </tfoot>
-        </table>
 
-        
-                  <div class='f1-buttons'>
-                  <button type='button' style="border-radius: 20px;
+
+                    </tbody>
+
+                    <tfoot>
+
+                    </tfoot>
+                </table>
+
+
+                <div class='f1-buttons'>
+                    <button type='button' style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
-     color:white;" data-toggle='modal' data-target='#comprobante' >Terminar proceso</button>
-                  </div>
-                  <br><br>
-      </div>
-       <!--Fin Tabla de buses de Ida -->
+     color:white;" data-toggle='modal' data-target='#comprobante'>Terminar proceso</button>
+                </div>
+                <br><br>
+            </div>
+            <!--Fin Tabla de buses de Ida -->
 
 
-  
-      
 
 
+
+
+        </div>
     </div>
-  </div>
 </div>
 
 
 <!-- Modal Pensum carrera -->
-<div class="modal fade" id="comprobante" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Comprobante</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-       
-      </div>
-      <div class="modal-body">
-      
+<div class="modal fade" id="comprobante" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Comprobante</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
 
-      <div class="alert alert-danger" role="alert">
-      Para que su solicitud sea terminada con exito agregue los siguientes datos que se le solicitan.
-      </div>
-      
-       
-        <form action="Modelo/ModeloMaterias/SubirPdfCiclo.php" method="post" enctype="multipart/form-data">
-            
-        <div class="form-group">
-             <label class="" for="ciclo">Ciclo:</label>
-             <input type="text" name="ciclo" placeholder="Ciclo 00-yyyy" class="ciclo form-control"  id="ciclo">
             </div>
+            <div class="modal-body">
 
-          <div class="custom-file">
-          <input type="file" class="custom-file-input" accept=".pdf" id="customFileLang" name="archivo" required>
-          <label class="custom-file-label" for="customFileLang" data-browse="Buscar">Seleccionar Comprobante</label>
-          <center><small>El archivo no debe pesar más de 5MB</small></center>
-        </div>
-        <br><br>
-        <div>
 
-          <?php 
+                <div class="alert alert-danger" role="alert">
+                    Para que su solicitud sea terminada con exito agregue los siguientes datos que se le solicitan.
+                </div>
+
+
+                <form action="Modelo/ModeloMaterias/SubirPdfCiclo.php" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label class="" for="ciclo">Ciclo:</label>
+                        <input type="text" name="ciclo" placeholder="Ciclo 00-yyyy" class="ciclo form-control"
+                            id="ciclo">
+                    </div>
+
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" accept=".pdf" id="customFileLang" name="archivo"
+                            required>
+                        <label class="custom-file-label" for="customFileLang" data-browse="Buscar">Seleccionar
+                            Comprobante</label>
+                        <center><small>El archivo no debe pesar más de 5MB</small></center>
+                    </div>
+                    <br><br>
+                    <div>
+
+                        <?php 
             $stmt1 =$dbh->prepare("SELECT `ID_Alumno`  FROM `alumnos` WHERE correo='".$_SESSION['Email']."'");
                       
             $stmt1->execute();
@@ -344,144 +355,150 @@
             }
             ?>
 
-        
-        <!--idalumnos-->
-        <input type="hidden" name="alumno" value="<?php echo $alumno;?>"> 
 
-        <!--id expedente-->
-        <input type="hidden" name="expediente" value="<?php echo $idExpedienteU;?>"> 
+                        <!--idalumnos-->
+                        <input type="hidden" name="alumno" value="<?php echo $alumno;?>">
 
-        <input type="hidden" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">  
-      </div>
+                        <!--id expedente-->
+                        <input type="hidden" name="expediente" value="<?php echo $idExpedienteU;?>">
 
-      </div>
-      <div class="modal-footer">
-      
-      
-         <input style="border-radius: 20px;
+                        <input type="hidden" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+
+
+                <input style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 100px;height: 38px;
      background-color: #9d120e;
-     color:white;" type="submit" name="actualizar" value="Cerrar " data-dismiss="modal" > 
-        <input style="border-radius: 20px;
+     color:white;" type="submit" name="actualizar" value="Cerrar " data-dismiss="modal">
+                <input style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
      color:white;" type="submit" name="comprobante_Ciclo" value="Guardar Cambios " id="comprobante_Ciclo">
 
-      </div>
+            </div>
 
-      </form>
+            </form>
+        </div>
     </div>
-  </div>
 </div>
 
 
 <!-- MODAL Materias -->
 <!--**************-->
-<div class="modal fade " id="ModalMateria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" >
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Inscripcion Materia</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-         <form action="Modelo/ModeloMaterias/inscripcionM.php" method="POST" accept-charset="utf-8">
-           <div id="alerta5"></div>
-           <div class="col">
-
-      <script type="text/javascript">
-        function mandarId(id){
-          var prueba = id;
-          var prueba2 = id;
-                                
-          document.getElementById("mate").innerHTML = prueba2;
-          document.getElementById("Materia").value=prueba;
-
-         }
-      </script>
-        <div class="form-group">
-             <label class="" for="Materia">Codigo de materia:</label>
-             <input type="text" name="materia" id="Materia"  class="Materia form-control"  >
-            </div>        
-
-      
-  
-        <div class="form-group">
-         <label id="mate" style="margin-left:1%" for="matricula" hidden="hidden" ></label>
-        </div>
-
-         
-
-           <div class="form-group">
-             <label class="" for="matricula">Matricula:</label>
-             <input type="text" name="matricula" placeholder="" class="matricula form-control"  id="matricula">
+<div class="modal fade " id="ModalMateria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Inscripcion Materia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <div class="modal-body">
+                <form action="Modelo/ModeloMaterias/inscripcionM.php" method="POST" accept-charset="utf-8">
+                    <div id="alerta5"></div>
+                    <div class="col">
 
-           
+                        <script type="text/javascript">
+                        function mandarId(id) {
+                            var prueba = id;
+                            var prueba2 = id;
+
+                            document.getElementById("mate").innerHTML = prueba2;
+                            document.getElementById("Materia").value = prueba;
+
+                        }
+                        </script>
+                        <div class="form-group">
+                            <label class="" for="Materia">Codigo de materia:</label>
+                            <input type="text" name="materia" id="Materia" class="Materia form-control">
+                        </div>
 
 
-   
-         <input type="hidden" name="expedienteu" value="<?php echo $idExpedienteU;?>"> 
 
-         <input type="hidden" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>"> 
-                            
-       </div>
-
-      <input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0"    type="submit" name="Inscribir_Materia" value="Inscribir Materia " id="Inscribir_Materia">
-    </form>       
-  </div>
-  </div>
-                  </div>
-
-                <!-- FIN MODAL MATERIA -->
-                 <!--**********************-->
-               </div>
+                        <div class="form-group">
+                            <label id="mate" style="margin-left:1%" for="matricula" hidden="hidden"></label>
+                        </div>
 
 
-               <!-- Modal de verificacion -->
-<div class="modal fade" id="modalFinal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Desinscribir</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
 
-        <h3>¿Seguro desea desinscribir la materia?</h3>
+                        <div class="form-group">
+                            <label class="" for="matricula">Matricula:</label>
+                            <input type="text" name="matricula" placeholder="" class="matricula form-control"
+                                id="matricula">
+                        </div>
 
-       
-  
-       
 
-        
-        <form method="POST" action="Modelo/ModeloMaterias/eliminarInscripcion.php">
-          
-        <input type="text" id="materia" class="form-control" disable >
-          <input type="hidden" id="idmateria" class="form-control" name= "idmateria">
-                
 
-            
-         
-          <input type="hidden" name="idsoliTrans" value="<?php echo $_GET['id']; ?>">
-          <input type="hidden" name="alumno" value="<?php echo $alumno; ?>">
-        
-      </div>
-      <div class="modal-footer">
-      <input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0"    type="submit" name="Desenscribir_Materia" value="Desenscribir Materia " id="Desenscribir_Materia">
-   
-        <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Desinscribir</button-->
-        
-        
-      </div></form>
+
+
+                        <input type="hidden" name="expedienteu" value="<?php echo $idExpedienteU;?>">
+
+                        <input type="hidden" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">
+
+                    </div>
+
+                    <input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"
+                        name="Inscribir_Materia" value="Inscribir Materia " id="Inscribir_Materia">
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <!-- FIN MODAL MATERIA -->
+    <!--**********************-->
+</div>
+
+
+<!-- Modal de verificacion -->
+<div class="modal fade" id="modalFinal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Desinscribir</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <h3>¿Seguro desea desinscribir la materia?</h3>
+
+
+
+
+
+
+                <form method="POST" action="Modelo/ModeloMaterias/eliminarInscripcion.php">
+
+                    <input type="text" id="materia" class="form-control" disable>
+                    <input type="hidden" id="idmateria" class="form-control" name="idmateria">
+
+
+
+
+                    <input type="hidden" name="idsoliTrans" value="<?php echo $_GET['id']; ?>">
+                    <input type="hidden" name="alumno" value="<?php echo $alumno; ?>">
+
+            </div>
+            <div class="modal-footer">
+                <input class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"
+                    name="Desenscribir_Materia" value="Desenscribir Materia " id="Desenscribir_Materia">
+
+                <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Desinscribir</button-->
+
+
+            </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 
@@ -490,43 +507,38 @@
 
 
 
-                       
 
 
 
 
 
 
-</div>                   
+
+</div>
 
 
 
 
-  <br><br>
+<br><br>
 
 
 
-  <script type="text/javascript">
-        
-        window.onload=function(){
-    $("table tbody tr").click(function(){
+<script type="text/javascript">
+window.onload = function() {
+    $("table tbody tr").click(function() {
         // Tomar la captura la información  de la tabla 
-        var idmateria= $(this).find("td:eq(0)").text(); 
-        document.getElementById('idmateria').value=idmateria;
+        var idmateria = $(this).find("td:eq(0)").text();
+        document.getElementById('idmateria').value = idmateria;
 
-        var nombre= $(this).find("td:eq(1)").text(); 
-        document.getElementById('materia').value=nombre;
+        var nombre = $(this).find("td:eq(1)").text();
+        document.getElementById('materia').value = nombre;
 
 
-        
-    });    
+
+    });
 }
-
 </script>
 
 <?php
   require_once 'templates/footer.php';
 ?>
-
-
-

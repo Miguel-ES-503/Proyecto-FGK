@@ -20,7 +20,7 @@
 <div class="sesion mx-5 h-25" style="text-align:center;">
 
 <!-- /#page-content-wrapper -->
-<table class="table table-responsive w-100 mx-5" >
+<table class="table table-responsive w-100 mx-5" style="position: relative; left: 150px;" >
   <thead  style="background-color: #2D2D2E; color: white; ">
     <tr>
     <th scope="col">Fecha</th>
@@ -97,7 +97,7 @@
                           }
 
 ?>
-<table class="table table-responsive w-100 mx-5" >
+<table class="table table-responsive w-100 mx-5" style="position: relative; left: 150px;" >
   <thead  style="background-color: #2D2D2E; color: white; ">
     <tr>
     <th scope="col">Fecha</th>
@@ -108,21 +108,7 @@
     </tr>
   </thead>
   <tbody style="background-color: #c7c7c7">
-  <tr>
-  <td>10/04/2020</td>
-  <td>10:30 am - 11:30am</td>
-  <td>Disponible</td>
-  <td>Fatima Baldovinos  </td>
-  <td>Abierto</td>
-  </tr>
-  <tr>
-  <td>10/04/2020</td>
-  <td>10:30 am - 11:30am</td>
-  <td>Disponible</td>
-  <td>Fatima Baldovinos</td>
-  <td>Abierto</td>
-  </tr>
-  </tr>
+  
 <?php 
                           foreach($result2 as $row)
                             {

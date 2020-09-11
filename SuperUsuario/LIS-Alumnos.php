@@ -5,7 +5,95 @@ include 'Modularidad/CabeceraInicio.php';
 error_reporting(0);
 ?>
 <title>Listas De Alumnos</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
 
+.topnav {
+  overflow: hidden;
+  background-color: #ADADB2;
+  max-width: 100%;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-width: 3px;
+  font-weight: bold;
+
+ 
+}
+.submenu1{
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #9d120e;
+  border-width: 3px;
+  font-weight: bold;
+  height: 68px;
+  letter-spacing: 2px;
+
+
+
+}
+.icon{
+  
+
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon1 {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon1 {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    height: 50px;
+  }
+  .titulomenu a{
+    font-size: 15px;
+  }
+    .botonresponsivo {
+    max-width: 150px;
+    
+    margin-bottom: 1px;
+    display: block;
+    text-decoration: none;
+  }
+}
+</style>
 <?php
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
@@ -16,21 +104,27 @@ include 'Modularidad/MenuVertical.php';
 
 <!--Comiezo de estructura de trabajo -->
 <link rel="stylesheet" href="css/Competencia.css">
+
 <div class="container-fluid text-center">
-
-	<div class="title">
-
-		<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-		<h2 class="main-title" >Listas de alumnos</h2>
-		
-		<div class="title2" style="background-color: #9d120e">
-			<a class="nav-link active" href="LIS-Alumnos.php">Alumnos</a>
-		</div>
-
-		<div class="title2" style="background-color: #9d120e">
-			<a class="nav-link" href="LIS-Cuentas.php" >Cuentas</a>
-		</div>
-	</div>
+  <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<div class="topnav" id="myTopnav">
+  <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+  <a  class="titulomenu" style="background-color:#ADADB2; color: #2D2D2E; font-size: 25px;">Lista de alumnos</a>
+  <a href="LIS-Alumnos.php" class="submenu1">Alumnos</a>
+  <a href="LIS-Cuentas.php" class="submenu1">Cuentas</a>
+  <a href="javascript:void(0);" class="icon1" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 	
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 <div class="float-right"> <?php include 'Modularidad/AlertaCorreo.php'?></div>
@@ -62,7 +156,7 @@ include 'Modularidad/MenuVertical.php';
 			</a>
 
 	     		<a href="ReportesExcel/ReportesAlumnos.php">
-	     			<button type="button" class="btn btn-success px-3" style="border-radius: 20px;
+	     			<button type="button" class="btn btn-success px-3" class="botonresponsivo" style="border-radius: 20px;
     border: 2px;
     width: 200px;height: 38px;
      color:white; background-color: green">

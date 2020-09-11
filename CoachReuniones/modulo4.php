@@ -7,7 +7,7 @@ include 'Modularidad/CabeceraInicio.php';
 
 <?php
 //Modularaidad para extraere los enlaces en HEAD
-include 'Modularidad/EnlacesCabecera.php';
+include 'Modularidad/EnlacesCabecera2.php';
 //Incluir el menu horizontal
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
@@ -47,7 +47,7 @@ include 'Modularidad/MenuVertical.php';
       <br>
   
 
-        <form action="Aprobartodos.php" method="POST">  <br>
+        <form action="Aprobartodos4.php" method="POST">  <br>
         <h5 class="card-header" style="color: black;"><b>Listado de Alumnos</b>
         <br class="salto">
 	<br class="salto">

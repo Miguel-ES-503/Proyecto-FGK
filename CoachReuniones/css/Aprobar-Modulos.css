@@ -74,7 +74,7 @@ letter-spacing: 2px;
 	width: 20%;
 	margin-left: 35px;
 }
-.nav-link
+#menuu
 {
 	width: 140px;
 	color: black;
@@ -87,7 +87,7 @@ letter-spacing: 2px;
 	margin-bottom: 10px;
 
 }
-.nav-link:hover
+#menuu:hover
 {
 	background-color: #BE0032;
 	color: white;

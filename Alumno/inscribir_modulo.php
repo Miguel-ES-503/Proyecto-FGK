@@ -60,7 +60,7 @@
       <?php
       foreach($result as $row)
        {
-        echo " <tr class='table-dark'>";
+        echo " <tr class='table-dark' style='color: black;'>";
         echo '<th>'.utf8_encode($row['titulo']).'</th>';
         if ($IDalumno == $IDalumno2 && ($estado == 'Pendiente'  || $estado == 'Reprobado' )   ) {  
         echo "<td class='text-danger' ><i class='fas fa-times-circle' style='font-size:25px'></i></td>";        
@@ -80,7 +80,7 @@
 <!-- /#page-content-wrapper -->
 
 <table class="table" style="width:70%; margin:auto">
-  <thead style="background-color: #2D2D2E;; color: white;">
+  <thead style="background-color: #2D2D2E; color: white;">
     <tr>
     <th scope="col">Módulos Inscrito</th>
     <th scope="col">Contraseña</th>
@@ -107,7 +107,7 @@
       foreach($stmt7 as $row)
        {
          
-        echo " <tr class='table-dark'>";
+        echo " <tr class='table-dark' style='color: black; font-weight: bold;'>";
         echo '<td>'.utf8_encode($row['titulo']).'</td>';
         echo '<td>'.$row['password'].'</td>';  
         }           

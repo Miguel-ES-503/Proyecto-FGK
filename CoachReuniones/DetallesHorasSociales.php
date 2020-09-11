@@ -76,24 +76,24 @@ include 'Modularidad/MenuVertical.php';
 <!--Comiezo de estructura de trabajo -->
 <!--<div class="container-fluid text-center">-->
 
- 
+
 
 <div class="title">
-  <div class="row"  >
-   <div class="col-xs-2 ml-2 ml-lg-5 ml-sm-5 ml-md-5">
-    <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
-     
-   </div>
-   <div class="col-xs-10">
-     <h2 class="main-title" >Horas de Vinculación</h2>
-   </div>
- </div>
-    
-  
+    <div class="row">
+        <div class="col-xs-2 ml-2 ml-lg-5 ml-sm-5 ml-md-5">
+            <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+
+        </div>
+        <div class="col-xs-10">
+            <h2 class="main-title">Horas de Vinculación</h2>
+        </div>
+    </div>
+
+
 </div>
 <!--/.Navbar-->
 <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
-  <!--<div class="row"  >
+<!--<div class="row"  >
     <div class="alert alert-danger" id="mensaje">
       
     </div>
@@ -103,105 +103,112 @@ include 'Modularidad/MenuVertical.php';
 <div class="text-justify border border-light p-5" id="main">
     <h3 class="mt-0 mb-3" id="titulo">Detalles del Proyecto</h3>
 
-    
+
 
     <div class="row mt-1">
-      <div class="col-sm-12  col-md-12  col-lg-6" id="Contenedor1">
-        <div id="Info-1" class="m-lg-4 m-md-5 m-sm-4 m-3">
-          
-          <p id="Info-1_Texto-1" ><b>Alumno:</b> </p>
-          <p id="Info-1_Texto-1">Miguel Angel Barahona Garcia</p><br>
-          <p id="Info-1_Texto-1"><b>Sede: </b></p>
-          <p id="Info-1_Texto-1">SSFT</p>
-          <br>
-          <p id="Info-1_Texto-1"> <b>Class: </b>  </p>
-          <p id="Info-1_Texto-1">2019 </p>
-          <br>
-          <p id="Info-1_Texto-1"><b>Universidad:</b> </p>
-          <p id="Info-1_Texto-1">UDB</p>
+        <div class="col-sm-12  col-md-12  col-lg-6" id="Contenedor1">
+            <div id="Info-1" class="m-lg-4 m-md-5 m-sm-4 m-3">
+
+                <p id="Info-1_Texto-1"><b>Alumno:</b> </p>
+                <p id="Info-1_Texto-1">Miguel Angel Barahona Garcia</p><br>
+                <p id="Info-1_Texto-1"><b>Sede: </b></p>
+                <p id="Info-1_Texto-1">SSFT</p>
+                <br>
+                <p id="Info-1_Texto-1"> <b>Class: </b> </p>
+                <p id="Info-1_Texto-1">2019 </p>
+                <br>
+                <p id="Info-1_Texto-1"><b>Universidad:</b> </p>
+                <p id="Info-1_Texto-1">UDB</p>
+            </div>
+            <hr id="linea">
+
+
+            <div class="container m-lg-4 m-3 m-sm-3">
+                <form action="/action_page.php">
+                    <div class="row">
+                        <div class="col-75" id="status">
+                            <label id="label">Status del Alumno</label>
+                            <input type="text" id="input" name="firstname">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-75" id="status">
+                            <label id="label">Comentario</label>
+                            <textarea id="input" style="height:200px"></textarea>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div id="boton1" align="center">
+                        <!--<input type="submit" value="Comprobante"  >-->
+
+                        <button type="submit" id="btn"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                class="bi bi-journal-medical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4 1h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1H2a2 2 0 0 1 2-2z" />
+                                <path
+                                    d="M2 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2z" />
+                                <path fill-rule="evenodd"
+                                    d="M8 4a.5.5 0 0 1 .5.5v.634l.549-.317a.5.5 0 1 1 .5.866L9 6l.549.317a.5.5 0 1 1-.5.866L8.5 6.866V7.5a.5.5 0 0 1-1 0v-.634l-.549.317a.5.5 0 1 1-.5-.866L7 6l-.549-.317a.5.5 0 0 1 .5-.866l.549.317V4.5A.5.5 0 0 1 8 4zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+
+                            </svg> Comprobante</button>
+
+                    </div>
+                    <br><br>
+                </form>
+            </div>
+
+
         </div>
-        <hr id="linea">
+        <div class="col-sm-12 mt-sm-4 col-md-12 mt-md-4  col-lg-5 ml-lg-5 mt-lg-0 mt-3" id="Contenedor2">
+            <div id="Info-2" class="m-lg-3 m-md-4 m-sm-5">
+                <div class="container ml-lg-3">
+                    <form action="/action_page.php">
+                        <div class="row">
+                            <div class="col-md-12  mr-lg-5">
+                                <p id="Info-1_Texto-1"><b>Estado:</b> </p>
+                                <p id="Info-1_Texto-1" style="font-style: italic;">En Espera</p><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12  mr-lg-5">
+                                <label id="label"><b>Comentario</b></label>
+                                <textarea id="input" style="height:200px"></textarea>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-75 col-md-12">
+                                <label id="label"><b>Cambiar Estado</b></label>
+                                <select id="input">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <br><br><br><br><br>
+                        <div id="boton2">
+                            <button type="submit" id="btn"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                    class="bi bi-box-arrow-up-right" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M1.5 13A1.5 1.5 0 0 0 3 14.5h8a1.5 1.5 0 0 0 1.5-1.5V9a.5.5 0 0 0-1 0v4a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 5v8zm7-11a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.5H9a.5.5 0 0 1-.5-.5z" />
+                                    <path fill-rule="evenodd"
+                                        d="M14.354 1.646a.5.5 0 0 1 0 .708l-8 8a.5.5 0 0 1-.708-.708l8-8a.5.5 0 0 1 .708 0z" />
+                                </svg> Enviar</button>
+                            <!--<input type="submit" value="Enviar" id="btn">-->
+                        </div>
 
+                        <br><br>
+                    </form>
+                </div>
 
-        <div class="container m-lg-4 m-3 m-sm-3">
-  <form action="/action_page.php">
-    <div class="row">  
-      <div class="col-75" id="status">
-        <label id="label">Status del Alumno</label>
-        <input type="text" id="input" name="firstname">
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-75" id="status">
-        <label id="label">Comentario</label>
-        <textarea id="input"  style="height:200px"></textarea>
-      </div>
-    </div>
-    <br><br>
-<div id="boton1" align="center">
-  <!--<input type="submit" value="Comprobante"  >-->
-
-<button type="submit" id="btn"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journal-medical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path d="M4 1h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1H2a2 2 0 0 1 2-2z"/>
-  <path d="M2 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2z"/>
-  <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v.634l.549-.317a.5.5 0 1 1 .5.866L9 6l.549.317a.5.5 0 1 1-.5.866L8.5 6.866V7.5a.5.5 0 0 1-1 0v-.634l-.549.317a.5.5 0 1 1-.5-.866L7 6l-.549-.317a.5.5 0 0 1 .5-.866l.549.317V4.5A.5.5 0 0 1 8 4zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
-
-</svg> Comprobante</button>
-     
-    </div>
-      <br><br>
-  </form>
-</div>
-
-
-      </div>
-      <div class="col-sm-12 mt-sm-4 col-md-12 mt-md-4  col-lg-5 ml-lg-5 mt-lg-0 mt-3" id="Contenedor2">
-        <div id="Info-2" class="m-lg-3 m-md-4 m-sm-5">
-        <div class="container ml-lg-3">
-  <form action="/action_page.php">
-     <div class="row">  
-      <div class="col-md-12  mr-lg-5">
-          <p id="Info-1_Texto-1" ><b>Estado:</b> </p>
-          <p id="Info-1_Texto-1" style="font-style: italic;">En Espera</p><br>
-      </div>
-    </div>
-    <div class="row">  
-      <div class="col-md-12  mr-lg-5">
-        <label id="label"><b>Comentario</b></label>
-        <textarea id="input"  style="height:200px"></textarea>
-      </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-75 col-md-12">
-        <label id="label"><b>Cambiar Estado</b></label>
-          <select id="input" >
-            <option value=""></option>
-          </select>
-      </div>
-    </div>
-    <br><br><br><br><br>
-    <div id="boton2">
-      <button type="submit" id="btn"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-up-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M1.5 13A1.5 1.5 0 0 0 3 14.5h8a1.5 1.5 0 0 0 1.5-1.5V9a.5.5 0 0 0-1 0v4a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 5v8zm7-11a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.5H9a.5.5 0 0 1-.5-.5z"/>
-  <path fill-rule="evenodd" d="M14.354 1.646a.5.5 0 0 1 0 .708l-8 8a.5.5 0 0 1-.708-.708l8-8a.5.5 0 0 1 .708 0z"/>
-</svg> Enviar</button>
-      <!--<input type="submit" value="Enviar" id="btn">-->
-    </div>
-      
-      <br><br>
-  </form>
-</div>
-
-      </form>
-    </div>
-  </div>
-<br>
-<?php
+                </form>
+            </div>
+        </div>
+        <br>
+        <?php
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
 ?>
-

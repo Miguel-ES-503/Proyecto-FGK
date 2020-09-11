@@ -62,7 +62,7 @@ include 'Modularidad/MenuHorizontal.php';
  <div class="panel-body img-fluid " style=" width:90%">
                     <div id="tablapdf">
                     <br>
-                    <table  id="example10" class="table table-hover table-sm table-bordered table-fixed " >
+                    <table  id="example" class="table table-hover table-sm table-bordered table-fixed " >
         <thead class="table-secondary">
                                 <tr>
                                     <th>Encargado</th>

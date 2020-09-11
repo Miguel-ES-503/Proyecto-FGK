@@ -4,6 +4,112 @@ include 'Modularidad/CabeceraInicio.php';
 error_reporting(0);
 ?>
 <title>Expediente de alumno</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.topnav {
+  overflow: hidden;
+  background-color: #ADADB2;
+  max-width: 100%;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-width: 3px;
+  font-weight: bold;
+
+ 
+}
+.submenu1{
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #9d120e;
+  border-width: 3px;
+  font-weight: bold;
+  height: 68px;
+  letter-spacing: 2px;
+
+
+
+}
+.icon{
+  
+
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon1 {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon1 {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    height: 50px;
+  }
+  .titulomenu a{
+    font-size: 15px;
+  }
+  .modal-content{
+	background-color: white;
+	border-color: black;
+	border-radius: 30px;
+	padding: 20px;
+}
+.modal-body{
+	text-align: left;
+}
+
+.form-control{
+	background-color: #ADADB2;
+	color: black;
+	border-radius: 20px;
+
+}
+.modal-header{
+	border-color: #ADADB2;
+	border:3px;
+}
+.modal-footer{
+	border-color: #ADADB2;
+	border:3px;
+}
+}
+</style>
 <?php
 include 'Modularidad/EnlacesCabecera.php';
 //include 'Modularidad/MenuHorizontal.php';
@@ -322,22 +428,31 @@ while($fila2 = $stmt2->fetch()){
     bsCustomFileInput.init()
   });
   </script>
+
+   <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 <!--Comiezo de estructura de trabajo -->
 <div class="container-fluid text-center">
-	<div class="title">
-    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-  <h2 class="main-title" >Expediente del Alumno</h2>
-  <div class="title2">
-  <a class="nav-link active"  href="LIS-Alumnos.php">Alumnos</a>
+
+	<div class="topnav" id="myTopnav">
+  <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+  <a  class="titulomenu" style="background-color:#ADADB2; color: #2D2D2E; font-size: 25px;">Expediente del alumno</a>
+  <a href="LIS-Alumnos.php" class="submenu1">Alumnos</a>
+  <a href='NotasPorAlumno.php?id=<?php echo$Carnet?>' class="submenu1">Notas</a>
+   <a href="HorasVinculacionPorAlumno.php?id=<?php echo$id ?>" class="submenu1">Horas-vinculación</a>
+  <a href="javascript:void(0);" class="icon1" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
- 
-<div class="title21">
- <a href='NotasPorAlumno.php?id=<?php echo$Carnet?>' class="nav-link">Notas</a>
-</div>
-<div class="title21">
- <a href="HorasVinculacionPorAlumno.php?id=<?php echo$id ?>" class="nav-link"  >Horas-vinculación</a>
-</div>
-</div>
+
   <div>
       <?php
     include "config/Alerta.php";
@@ -362,8 +477,8 @@ while($fila2 = $stmt2->fetch()){
 
 		<div class="col text-center">
 			<br><br><br>
-			<table class="table table-responsive-lg float-left " >
-				<thead class="thead-dark">
+			<table class="table table-responsive-lg float-left " style="border-radius: 20px">
+				<thead  style="background-color: black;color: white;">
 					<tr>
 						<th scope="col">Carrera</th>
 						<th scope="col">Promoción</th>
@@ -524,12 +639,20 @@ while($fila2 = $stmt2->fetch()){
       			</div>
       			
       			<br><br>
-      			<input type="submit" name="SubirImg" id="SubirImg" class="btn btn-dark btn-block" value="Cambiar Foto" />
+      			<center><input type="submit" name="SubirImg" id="SubirImg" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;" value="Cambiar Foto" /></center>
       		</div>
       	</form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+        <button type="button" style="border-radius: 20px;
+    border: 2px solid #196fb0 ;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;" data-dismiss="modal">cerrar</button>
       </div>
     </div>
   </div>
@@ -543,10 +666,10 @@ while($fila2 = $stmt2->fetch()){
 	<!--Información sobre proceso de becas-->
 	<br>
 	<div class="classic-tabs mx-2">
-		<h1 class="text-light">Progreso</h1>
+		<h1  style="color: black;">Progreso</h1>
 		<br>
 		<div class="row">
-			<div class="col" id="taller">
+			<div class="col" id="taller" style="background-color: #196fb0;">
 				<br>
         <?php
 
@@ -556,6 +679,7 @@ while($fila2 = $stmt2->fetch()){
         ?>
 				<h2> <span id="tallerAlumno"><?php echo $TotalTalleresAlumno; ?></span>/<span id="totalTa">15</span> </h2>
       <?php } ?>
+      <br>
 				<hr>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
@@ -568,7 +692,7 @@ while($fila2 = $stmt2->fetch()){
       <?php } ?>
 
 			</div>
-			<div class="col" id="reuniones">
+			<div class="col" id="reuniones" style="background-color: #d5a130;">
 				<br>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
@@ -577,6 +701,7 @@ while($fila2 = $stmt2->fetch()){
         ?>
 				<h2> <span id="reunionAlumno"><?php echo $TotalReunionAlumno; ?></span>/<span id="totalRe"><?php echo $TotalReuniones; ?></span> </h2>
       <?php } ?>
+      <br>
 				<hr>
 
         <?php
@@ -590,7 +715,7 @@ while($fila2 = $stmt2->fetch()){
       <?php } ?>
 
 			</div>
-			<div class="col" id="externo">
+			<div class="col" id="externo" style="background-color: green;">
 				<br>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio' || $estadoTalleres=='Graduado') {
@@ -599,6 +724,7 @@ while($fila2 = $stmt2->fetch()){
         ?>
 				<h2> <span id="externoAlumno"><?php echo $TotalExternaTallerAlumno;?></span>/<span id="totalExt"><?php echo $TotalEmpresasExterna; ?></span> </h2>
       <?php } ?>
+      <br>
 				<hr>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
@@ -610,7 +736,7 @@ while($fila2 = $stmt2->fetch()){
 				<button class="tablinks btn btn-outline-light btn-lg btn-block" data-toggle="modal" data-target="#modalCart3">Empresas Externa</button>
       <?php } ?>
 			</div>
-			<div class="col" id="hora">
+			<div class="col" id="hora" style="background-color: #9d120e;">
 				<br>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
@@ -619,6 +745,7 @@ while($fila2 = $stmt2->fetch()){
         ?>
 				<h2> <span id="AlumnoHoras"><?php echo $HorasSociales; ?></span> Horas</h2>
       <?php } ?>
+      <br>
 				<hr>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
@@ -630,18 +757,22 @@ while($fila2 = $stmt2->fetch()){
 				<button class="tablinks btn btn-outline-light btn-lg btn-block"  data-toggle="modal" data-target="#modalCart4" >Horas de vinculación</button>
       <?php } ?>
 			</div>
-			<div class="col" id="total">
+			<div class="col" id="total" style="background-color: white;">
 				<h3 style="color: black;">Estado de beca</h3>
 				<br>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
             echo "<h2> 100%</h2>
+
     				<hr>
+
     				<h4 class=\"text-success\">Aprobado</h4>";
           }else {
         ?>
 				<h2><?php  echo  round($Promedio,2) ?> %</h2>
+				<br>
 				<hr>
+
 				<h4 id="beca"><?php echo $EstadoBeca; ?></h4>
 
       <?php } ?>
@@ -709,7 +840,11 @@ while($fila2 = $stmt2->fetch()){
 			</div>
 			<!--Footer-->
 			<div class="modal-footer">
-				<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+				<button type="button" style="border-radius: 20px;
+    border: 2px solid #196fb0 ;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;" data-dismiss="modal">Cerrar</button>
 			</div>
 		</div>
 	</div>
@@ -775,7 +910,11 @@ aria-hidden="true">
 	</div>
 	<!--Footer-->
 	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+		<button type="button" style="border-radius: 20px;
+    border: 2px solid #196fb0 ;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;" data-dismiss="modal">Cerrar</button>
 	</div>
 </div>
 </div>
@@ -840,7 +979,11 @@ aria-hidden="true">
 	</div>
 	<!--Footer-->
 	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+		<button type="button" style="border-radius: 20px;
+    border: 2px solid #196fb0 ;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;" data-dismiss="modal">Cerrar</button>
 	</div>
 </div>
 </div>
@@ -917,7 +1060,11 @@ aria-hidden="true">
 	</div>
 	<!--Footer-->
 	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+		<button type="button" style="border-radius: 20px;
+    border: 2px solid #196fb0 ;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;"s data-dismiss="modal">Cerrar</button>
 	</div>
 </div>
 </div>
