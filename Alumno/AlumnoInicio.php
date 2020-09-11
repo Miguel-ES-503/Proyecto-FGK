@@ -357,7 +357,7 @@ while($fila2 = $stmt2->fetch()){
 		$fila=$consulta->fetch();
 
 		$Nombre_Alumno = $fila['Nombre'];
-		$Carnet = $fila['ID_Alumno'];
+		 $Carnet = $fila['ID_Alumno'];
 		$Carrera = $fila['carrera'];
 		$Estado =   $fila['StatusActual'];
 		$promocion = $fila['Class'];
@@ -367,9 +367,7 @@ while($fila2 = $stmt2->fetch()){
     $Historico=$fila['TotalTalleres'];
     	$Financiamiento = $fila['FuenteFinacimiento'];
 
-	}
-
-
+    }
 	//Extraemos la foto del alumno
 
 	$FotoAlumno = '';
@@ -647,7 +645,13 @@ while($fila2 = $stmt2->fetch()){
                     </section>
 
                     <?php
-$TotalTalleresAlumno = 5; 
+                    $stmt123456 = $dbh->query("SELECT * FROM alumnos WHERE ID_Alumno = '$Carnet' ");
+                    $stmt123456->execute(); 
+                    while ($row = $stmt123456->fetch()) {
+                        $modulos = $row['CantidadModulos'];
+                    }    
+                    
+$TotalTalleresAlumno = $modulos; 
 $Porcentaje = ($TotalTalleresAlumno /6)*100 ;
 $TotalReunionAlumno =4;
 $TotalReuniones = 5;
@@ -657,6 +661,7 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
             </div>
             <div class="Info-Alumno2">
                 <h3 class="subtitle-p">Progreso</h3>
+                
                 <section class="Info1 float-left h-50 w-75" style="margin-left:10%">
                     <div class="grafico ">
                         <div id="container"></div>
