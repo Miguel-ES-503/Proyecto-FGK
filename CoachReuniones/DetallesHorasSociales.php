@@ -72,7 +72,6 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
-<br>
 <!--Comiezo de estructura de trabajo -->
 <!--<div class="container-fluid text-center">-->
 
@@ -106,41 +105,57 @@ include 'Modularidad/MenuVertical.php';
 
 
     <div class="row mt-1">
-        <div class="col-sm-12  col-md-12  col-lg-6" id="Contenedor1">
+        <div class="col-sm-12  col-md-12  col-lg-6" id="Contenedor1" style="height: 80%;">
             <div id="Info-1" class="m-lg-4 m-md-5 m-sm-4 m-3">
 
                 <p id="Info-1_Texto-1"><b>Alumno:</b> </p>
-                <p id="Info-1_Texto-1">Miguel Angel Barahona Garcia</p><br>
+                <p id="Info-1_Texto-1"><?php echo utf8_decode($Alumno);?></p><br>
                 <p id="Info-1_Texto-1"><b>Sede: </b></p>
-                <p id="Info-1_Texto-1">SSFT</p>
+                <p id="Info-1_Texto-1"><?php echo $Sede;?></p>
                 <br>
                 <p id="Info-1_Texto-1"> <b>Class: </b> </p>
-                <p id="Info-1_Texto-1">2019 </p>
+                <p id="Info-1_Texto-1"><?php echo $Class;?> </p>
                 <br>
                 <p id="Info-1_Texto-1"><b>Universidad:</b> </p>
-                <p id="Info-1_Texto-1">UDB</p>
+                <p id="Info-1_Texto-1"><?php echo utf8_decode($Universidad);?></p>
+                <br>
+                <p id="Info-1_Texto-1"><b>Cantidad Solicitado:</b> </p>
+                <p id="Info-1_Texto-1"><?php echo utf8_decode($CantidadHoras). " horas";?></p>
             </div>
             <hr id="linea">
 
 
-            <div class="container m-lg-4 m-3 m-sm-3">
-                <form action="/action_page.php">
-                    <div class="row">
-                        <div class="col-75" id="status">
-                            <label id="label">Status del Alumno</label>
-                            <input type="text" id="input" name="firstname">
+            <div class="m-lg-4 m-3 m-sm-3">
+                    <div class="row " align="center">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="status">
+                            <label id="label">Identificación</label>
+                            <input type="text" id="input" name="firstname" readonly value="<?php  echo $id ?>">
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"  id="status">
+                            <label id="label">Encargado</label>
+                            <input type="text" id="input" name="firstname" readonly 
+                            value="<?php  echo utf8_decode($Encargado) ?>">
                         </div>
                     </div>
-
+                     <div class="row" align="center">
+                        <div class="col-6" id="status">
+                            <label id="label">Fecha de Inicio</label>
+                            <input type="text" id="input" name="firstname" readonly value="<?php echo $FechaInico ?>">
+                        </div>
+                        <div class="col-6" id="status">
+                            <label id="label" id="problema">Fecha de Finalización</label>
+                            <input type="text" id="input" name="firstname"  readonly 
+                            value="<?php echo $FechaFianl ?>">
+                        </div>
+                    </div>
                     <div class="row">
-                        <div class="col-75" id="status">
+                        <div class="col-12" id="status">
                             <label id="label">Comentario</label>
-                            <textarea id="input" style="height:200px"></textarea>
+                            <textarea id="input" style="height:200px" disabled><?php echo utf8_decode($NombreProyecto); ?></textarea>
                         </div>
                     </div>
-                    <br><br>
-                    <div id="boton1" align="center">
-                        <!--<input type="submit" value="Comprobante"  >-->
+                    <!--<div id="boton1" align="center">
+                      <input type="submit" value="Comprobante"  >
 
                         <button type="submit" id="btn"><svg width="1em" height="1em" viewBox="0 0 16 16"
                                 class="bi bi-journal-medical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -153,9 +168,7 @@ include 'Modularidad/MenuVertical.php';
 
                             </svg> Comprobante</button>
 
-                    </div>
-                    <br><br>
-                </form>
+                    </div>-->
             </div>
 
 
@@ -163,14 +176,14 @@ include 'Modularidad/MenuVertical.php';
         <div class="col-sm-12 mt-sm-4 col-md-12 mt-md-4  col-lg-5 ml-lg-5 mt-lg-0 mt-3" id="Contenedor2">
             <div id="Info-2" class="m-lg-3 m-md-4 m-sm-5">
                 <div class="container ml-lg-3">
-                    <form action="/action_page.php">
+                    <form action="Modelo/ModeloHorasSociales/VerficarSolicuitud.php" method="POST">
                         <div class="row">
                             <div class="col-md-12  mr-lg-5">
                                 <p id="Info-1_Texto-1"><b>Estado:</b> </p>
-                                <p id="Info-1_Texto-1" style="font-style: italic;">En Espera</p><br>
+                                <p id="Info-1_Texto-1" style="font-style: italic;"> <?php echo $Estado?></p><br>
                             </div>
                         </div>
-                        <div class="row">
+                        <!--<div class="row">
                             <div class="col-md-12  mr-lg-5">
                                 <label id="label"><b>Comentario</b></label>
                                 <textarea id="input" style="height:200px"></textarea>
@@ -183,27 +196,65 @@ include 'Modularidad/MenuVertical.php';
                             <div class="col-75 col-md-12">
                                 <label id="label"><b>Cambiar Estado</b></label>
                                 <select id="input">
-                                    <option value=""></option>
+                                    <option value="">Aprobado</option>
+                                </select>
+                            </div>
+                        </div>-->
+                                <form action="Modelo/ModeloHorasSociales/VerficarSolicuitud.php" method="POST">
+          <input type="hidden" name="id" value="<?php  echo $id ?>" >
+          <input type="hidden" name="idsoli" value="<?php echo $idsoli  ?>">
+          <input type="hidden" name="correo" value="<?php echo $correo ?>" >
+          <input type="hidden" name="nombreEst" value="<?php echo $Alumno ?>"  >
+          <div class="row">
+                            <div class="col-md-12  mr-lg-5">
+                                <label id="label"><b>Comentario</b></label>
+                                <textarea id="input" style="height:200px" rows="3" minlength="1" maxlength="300" name="comentario" placeholder="comentario maximo 300 palabras..." required><?php echo $comentario;  ?></textarea>
+                            </div>
+                        </div>
+        <br>
+        <div class="row">
+                            <div class="col-75 col-md-12">
+                                <label id="label"><b>Cambiar Estado</b></label>
+                                <select id="input" name="estado" required="" style="height: 50px">
+                                    <option value="Aprobado" >Aprobado</option>
+                                    <option value="Rechazado">Rechazado</option>
                                 </select>
                             </div>
                         </div>
-                        <br><br><br><br><br>
+        <br><br>
+        <?php  if($Estado == "Aprobado" || $Estado == "Rechazado")
+        {
+          echo '<br><br><br><br><br>
                         <div id="boton2">
-                            <button type="submit" id="btn"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                            <button type="submit" id="btn" disabled name="EnviarDato" ><svg width="1em" height="1em" viewBox="0 0 16 16"
                                     class="bi bi-box-arrow-up-right" fill="currentColor"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M1.5 13A1.5 1.5 0 0 0 3 14.5h8a1.5 1.5 0 0 0 1.5-1.5V9a.5.5 0 0 0-1 0v4a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 5v8zm7-11a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.5H9a.5.5 0 0 1-.5-.5z" />
                                     <path fill-rule="evenodd"
                                         d="M14.354 1.646a.5.5 0 0 1 0 .708l-8 8a.5.5 0 0 1-.708-.708l8-8a.5.5 0 0 1 .708 0z" />
-                                </svg> Enviar</button>
+                                </svg> Enviar</button>';
+
+        }else
+        {
+          echo '<br><br><br><br><br>
+                        <div id="boton2">
+                            <button type="submit" id="btn" name="EnviarDato" ><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                    class="bi bi-box-arrow-up-right" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M1.5 13A1.5 1.5 0 0 0 3 14.5h8a1.5 1.5 0 0 0 1.5-1.5V9a.5.5 0 0 0-1 0v4a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 5v8zm7-11a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.5H9a.5.5 0 0 1-.5-.5z" />
+                                    <path fill-rule="evenodd"
+                                        d="M14.354 1.646a.5.5 0 0 1 0 .708l-8 8a.5.5 0 0 1-.708-.708l8-8a.5.5 0 0 1 .708 0z" />
+                                </svg> Enviar</button>';
+        }
+        ?>
+      </form>
+                        
                             <!--<input type="submit" value="Enviar" id="btn">-->
                         </div>
-
-                        <br><br>
                     </form>
                 </div>
-
                 </form>
             </div>
         </div>

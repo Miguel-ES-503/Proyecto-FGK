@@ -1,34 +1,46 @@
-
-
-.title{
+		.title{
 background-color: #ADADB2;
-margin-top: -30px;
 color: black;
-height: 70px;
-margin-left: -1.5%;
-margin-bottom: 3%;
 height: 55px;
 
 
 }
+.main-title {
+    font-size: 25px;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    margin-left: 5px;
+}
 h2 , .icon{
   float: left;
+  font-family: 'Roboto', sans-serif;
 }
-.main-title
-{
-text-align: left;
-font-size: 25px;
-margin-left: 25px;
-margin-top: 15px;
-font-weight: bold;
-letter-spacing: 5px;
-}
+
 .icon 
 {
 
   width: 30px;
-  margin-top: 15px;
+  margin-top: 13px;
   margin-left: 20px;
+}
+@media screen and (max-width: 480px) {
+	.main-title {
+    font-size: 15px;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.icon 
+{
+
+  width: 25px;
+  margin-top: 16px;
+  margin-left: 20px;
+}
 }
 
 
@@ -172,7 +184,10 @@ color: white;
   justify-content: center;
 }
 
-
+#Contenedor1,#Contenedor2
+{
+	height: 90%;
+}
 #Contenedor1
 {
 	border-color: #e4e4e4;
@@ -362,3 +377,10 @@ margin-left: 4px;
 {
 	margin-left: 30px;
 }*/
+@media screen and (max-width: 400px)
+{
+	#problema
+	{
+		font-size: 15px;
+	}
+}
