@@ -1,6 +1,7 @@
 <?php require_once 'templates/head.php'; ?>
 <title>Indicaciones Renovacion</title>
  <link rel="stylesheet" href="assets1/css1/style.css">
+ 
 <?php  
   
   //Manda  allamar plantillas
@@ -79,6 +80,32 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
 
 <!--div principal-->
 <div class="container-fluid text-center">
+  <style type="text/css">
+     .modal-content{
+  background-color: white;
+  border-color: black;
+  border-radius: 30px;
+  padding: 20px;
+}
+.modal-body{
+  text-align: left;
+}
+
+.form-control{
+  background-color: #ADADB2;
+  color: black;
+  border-radius: 20px;
+
+}
+.modal-header{
+  border-color: #ADADB2;
+  border:3px;
+}
+.modal-footer{
+  border-color: #ADADB2;
+  border:3px;
+}
+ </style>
 <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Renovacion de beca</h2>
@@ -270,11 +297,11 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
 
       <div class="modal-footer">
         
-          <input style="border-radius: 20px;
+          <center><input style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
-     color:white;" type="submit" id="subirCarta" name="subirCarta" value="Guardar Cambios" class="btn btn-secondary">
+     color:white;" type="submit" id="subirCarta" name="subirCarta" value="Guardar Cambios"></center>
       </div>
 
       </form>

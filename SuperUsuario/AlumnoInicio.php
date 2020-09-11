@@ -84,6 +84,30 @@ error_reporting(0);
   .titulomenu a{
     font-size: 15px;
   }
+  .modal-content{
+	background-color: white;
+	border-color: black;
+	border-radius: 30px;
+	padding: 20px;
+}
+.modal-body{
+	text-align: left;
+}
+
+.form-control{
+	background-color: #ADADB2;
+	color: black;
+	border-radius: 20px;
+
+}
+.modal-header{
+	border-color: #ADADB2;
+	border:3px;
+}
+.modal-footer{
+	border-color: #ADADB2;
+	border:3px;
+}
 }
 </style>
 <?php
@@ -453,8 +477,8 @@ function myFunction() {
 
 		<div class="col text-center">
 			<br><br><br>
-			<table class="table table-responsive-lg float-left " >
-				<thead class="thead-dark">
+			<table class="table table-responsive-lg float-left " style="border-radius: 20px">
+				<thead  style="background-color: black;color: white;">
 					<tr>
 						<th scope="col">Carrera</th>
 						<th scope="col">Promoción</th>
@@ -615,12 +639,20 @@ function myFunction() {
       			</div>
       			
       			<br><br>
-      			<input type="submit" name="SubirImg" id="SubirImg" class="btn btn-dark btn-block" value="Cambiar Foto" />
+      			<center><input type="submit" name="SubirImg" id="SubirImg" style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 200px;height: 38px;
+     background-color: #9d120e;
+     color:white;" value="Cambiar Foto" /></center>
       		</div>
       	</form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+        <button type="button" style="border-radius: 20px;
+    border: 2px solid #196fb0 ;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;" data-dismiss="modal">cerrar</button>
       </div>
     </div>
   </div>
@@ -634,10 +666,10 @@ function myFunction() {
 	<!--Información sobre proceso de becas-->
 	<br>
 	<div class="classic-tabs mx-2">
-		<h1 class="text-light">Progreso</h1>
+		<h1  style="color: black;">Progreso</h1>
 		<br>
 		<div class="row">
-			<div class="col" id="taller">
+			<div class="col" id="taller" style="background-color: #196fb0;">
 				<br>
         <?php
 
@@ -647,6 +679,7 @@ function myFunction() {
         ?>
 				<h2> <span id="tallerAlumno"><?php echo $TotalTalleresAlumno; ?></span>/<span id="totalTa">15</span> </h2>
       <?php } ?>
+      <br>
 				<hr>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
@@ -659,7 +692,7 @@ function myFunction() {
       <?php } ?>
 
 			</div>
-			<div class="col" id="reuniones">
+			<div class="col" id="reuniones" style="background-color: #d5a130;">
 				<br>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
@@ -668,6 +701,7 @@ function myFunction() {
         ?>
 				<h2> <span id="reunionAlumno"><?php echo $TotalReunionAlumno; ?></span>/<span id="totalRe"><?php echo $TotalReuniones; ?></span> </h2>
       <?php } ?>
+      <br>
 				<hr>
 
         <?php
@@ -681,7 +715,7 @@ function myFunction() {
       <?php } ?>
 
 			</div>
-			<div class="col" id="externo">
+			<div class="col" id="externo" style="background-color: green;">
 				<br>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio' || $estadoTalleres=='Graduado') {
@@ -690,6 +724,7 @@ function myFunction() {
         ?>
 				<h2> <span id="externoAlumno"><?php echo $TotalExternaTallerAlumno;?></span>/<span id="totalExt"><?php echo $TotalEmpresasExterna; ?></span> </h2>
       <?php } ?>
+      <br>
 				<hr>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
@@ -701,7 +736,7 @@ function myFunction() {
 				<button class="tablinks btn btn-outline-light btn-lg btn-block" data-toggle="modal" data-target="#modalCart3">Empresas Externa</button>
       <?php } ?>
 			</div>
-			<div class="col" id="hora">
+			<div class="col" id="hora" style="background-color: #9d120e;">
 				<br>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
@@ -710,6 +745,7 @@ function myFunction() {
         ?>
 				<h2> <span id="AlumnoHoras"><?php echo $HorasSociales; ?></span> Horas</h2>
       <?php } ?>
+      <br>
 				<hr>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
@@ -721,18 +757,22 @@ function myFunction() {
 				<button class="tablinks btn btn-outline-light btn-lg btn-block"  data-toggle="modal" data-target="#modalCart4" >Horas de vinculación</button>
       <?php } ?>
 			</div>
-			<div class="col" id="total">
+			<div class="col" id="total" style="background-color: white;">
 				<h3 style="color: black;">Estado de beca</h3>
 				<br>
         <?php
           if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
             echo "<h2> 100%</h2>
+
     				<hr>
+
     				<h4 class=\"text-success\">Aprobado</h4>";
           }else {
         ?>
 				<h2><?php  echo  round($Promedio,2) ?> %</h2>
+				<br>
 				<hr>
+
 				<h4 id="beca"><?php echo $EstadoBeca; ?></h4>
 
       <?php } ?>
@@ -800,7 +840,11 @@ function myFunction() {
 			</div>
 			<!--Footer-->
 			<div class="modal-footer">
-				<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+				<button type="button" style="border-radius: 20px;
+    border: 2px solid #196fb0 ;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;" data-dismiss="modal">Cerrar</button>
 			</div>
 		</div>
 	</div>
@@ -866,7 +910,11 @@ aria-hidden="true">
 	</div>
 	<!--Footer-->
 	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+		<button type="button" style="border-radius: 20px;
+    border: 2px solid #196fb0 ;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;" data-dismiss="modal">Cerrar</button>
 	</div>
 </div>
 </div>
@@ -931,7 +979,11 @@ aria-hidden="true">
 	</div>
 	<!--Footer-->
 	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+		<button type="button" style="border-radius: 20px;
+    border: 2px solid #196fb0 ;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;" data-dismiss="modal">Cerrar</button>
 	</div>
 </div>
 </div>
@@ -1008,7 +1060,11 @@ aria-hidden="true">
 	</div>
 	<!--Footer-->
 	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+		<button type="button" style="border-radius: 20px;
+    border: 2px solid #196fb0 ;
+    width: 100px;height: 38px;
+     background-color: #196fb0;
+     color:white;"s data-dismiss="modal">Cerrar</button>
 	</div>
 </div>
 </div>
