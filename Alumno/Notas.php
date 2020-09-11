@@ -13,7 +13,7 @@
         $stmt1 =$dbh->prepare("SELECT `ID_Alumno`  FROM `alumnos` WHERE correo='".$_SESSION['Email']."'");
         $stmt1->execute();
          while($fila = $stmt1->fetch()){
-           $alumno=$fila["ID_Alumno"];
+         $alumno=$fila["ID_Alumno"];
          }//Fin de while 
 
 
@@ -215,9 +215,8 @@
       INNER JOIN inscripcionciclos IC
       ON IC.Id_InscripcionC=IM.Id_InscripcionC
   
-      WHERE M.idExpedienteU = ?  OR M.estadoM = 'Inscrita' ");
-
-       $consulMaterias->execute(array($idExpedienteU));
+      WHERE M.idExpedienteU = $idExpedienteU ");
+      $consulMaterias->execute();
 
 
 
