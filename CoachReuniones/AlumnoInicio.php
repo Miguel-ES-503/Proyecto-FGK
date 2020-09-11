@@ -321,6 +321,14 @@ while($fila2 = $stmt2->fetch()){
   });
   </script>
 <!--Comiezo de estructura de trabajo -->
+<style type="text/css">
+	@media screen and (max-width: 992px) {
+	#main
+	{
+		margin-top: 100px;
+	}
+	}
+</style>
 <link rel="stylesheet" type="text/css" href="css/Menu.css">
 <nav class="navbar navbar-expand-lg navbar-light" id="row">
 <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
@@ -343,7 +351,7 @@ while($fila2 = $stmt2->fetch()){
     </ul>
   </div>
 </nav>
-<div class="container-fluid text-center">
+<div class="container-fluid text-center" id="main">
 <!--/.Navbar-->
 
 <!--/.Navbar-->
