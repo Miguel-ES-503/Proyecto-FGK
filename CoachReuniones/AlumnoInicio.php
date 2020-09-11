@@ -321,44 +321,29 @@ while($fila2 = $stmt2->fetch()){
   });
   </script>
 <!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center">
-		<br>
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Expediente del Alumno</a>
+<link rel="stylesheet" type="text/css" href="css/Menu.css">
+<nav class="navbar navbar-expand-lg navbar-light" id="row">
+<a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+  <a class="navbar-brand" href="#" id="T1">Expediente de Alumno</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
 
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-				<a class="nav-link active" href="LIS-Alumnos.php">Regresar</a>
-			</li>
-			<li class="nav-item">
-			    <a href='NotasPorAlumno.php?id=<?php echo$Carnet?>' class="nav-link">Notas</a>
-			</li>
-			
-			<li class="nav-item">
-			    <a href="HorasVinculacionPorAlumno.php?id=<?php echo$id ?>" class="nav-link"  >Horas de vinculación</a>
-			    
-			</li>
-			<li class="nav-item">
-			    <a href='Renovacion.php?id=<?php echo$Carnet?>' class="nav-link">Renovaciones de Beca</a>
-			</li>
-			
-		</li>
-	</ul>
-	<!-- Links -->   
-</div>
-<!-- Collapsible content -->
+      <li class="nav-item" id="bloque">
+        <a class="nav-link" href="NotasPorAlumno.php?id=<?php echo$Carnet?>">Notas<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" id="bloque">
+        <a class="nav-link" href="HorasVinculacionPorAlumno.php?id=<?php echo$id ?>">Horas de Vinculación</a>
+      </li>
+      <li class="nav-item" id="bloque">
+        <a class="nav-link" href="Renovacion.php?id=<?php echo$Carnet?>">Renovaciones de Beca</a>
+      </li>
+    </ul>
+  </div>
 </nav>
+<div class="container-fluid text-center">
 <!--/.Navbar-->
 
 <!--/.Navbar-->
