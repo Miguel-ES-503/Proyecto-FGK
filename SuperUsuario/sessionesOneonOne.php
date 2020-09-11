@@ -160,8 +160,16 @@ function myFunction() {
     <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8">
       <div class="tabla">
     <div align="right" class="h-100 botones" id="btns">
-    <a href="Reportes/ReporteSession.php"  target='blank'><button class="btn btn-danger"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
-    <a href="ReportesExcel/ReporteReuniones.php"><button class="btn btn-success"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
+    <a href="Reportes/ReporteSession.php"  target='blank'><button style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 150px;height: 38px;
+     background-color: #9d120e;
+     color:white;"><img src="../img/pdf.png" width="30px" height="30px"><span class="text">Descargar</span></button></a>
+    <a href="ReportesExcel/ReporteReuniones.php"><button style="border-radius: 20px;
+    border: 2px solid green;
+    width: 150px;height: 38px;
+     background-color: green;
+     color:white;"><img src="../img/excell.png" width="25px" height="30px"><span class="text">Descargar</span></button></a> 
   </div>
  <div class="panel-body img-fluid " style=" width:85%">
                     <div id="tablapdf">
