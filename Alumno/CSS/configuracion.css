@@ -8,9 +8,15 @@ margin-left: -1.5%;
 margin-bottom: 3%;
 height: 55px;
 font-weight: bold;
-width: 110%;
+width: 104%;
 
 
+}
+
+.parte2{
+
+      position: relative;
+      bottom: 50px;
 }
 h2 ,.icon{
 	float: left;
@@ -80,15 +86,18 @@ width: 385px;
 margin-top: -50px;
 }
 .subtitulo1
-{
-      margin-left: 65px;
+{   position: relative;
+      top: 50px;
+      left: 40px;
+       font-size: 30px;
       font-weight: bold;
+      text-align: left;
 }
 
 .table-Info
 {
       margin-top: 80px;
-      margin-left: -27%;
+      margin-left: 15%;
       background-color:#ADADB2;
       color: black;
       font-weight: bold;
@@ -160,24 +169,25 @@ margin-top: -50px;
       font-weight: bold;
       margin-left: 180px;
 }
+@media only screen  and (max-width: 967px) {
 
-@media only screen and (max-width: 967px ){
- .Info-1{
-width: 350px;
+      .Info-1 {
 
- }
- .parte2{
-      position: absolute;
-      top: -2px;
-    
-
+            position: relative;
+            left: 55px;;
       }
 
-.table-Info{
-      margin-left: 0px;
+      .sede{
+      
+      margin-left: 167px;
 }
-.addimg{
+.subtitulo1{
+      position: relative;
+      left: 97px;
+      
+}
+.parte2{
 
-      width: 330px;
+    position: inherit;
 }
 }

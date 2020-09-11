@@ -85,6 +85,13 @@ error_reporting(0);
   .titulomenu a{
     font-size: 15px;
   }
+    .botonresponsivo {
+    max-width: 150px;
+    
+    margin-bottom: 1px;
+    display: block;
+    text-decoration: none;
+  }
 }
 </style>
 <?php
@@ -97,6 +104,7 @@ include 'Modularidad/MenuVertical.php';
 
 <!--Comiezo de estructura de trabajo -->
 <link rel="stylesheet" href="css/Competencia.css">
+
 <div class="container-fluid text-center">
   <script>
 function myFunction() {
@@ -148,7 +156,7 @@ function myFunction() {
 			</a>
 
 	     		<a href="ReportesExcel/ReportesAlumnos.php">
-	     			<button type="button" class="btn btn-success px-3" style="border-radius: 20px;
+	     			<button type="button" class="btn btn-success px-3" class="botonresponsivo" style="border-radius: 20px;
     border: 2px;
     width: 200px;height: 38px;
      color:white; background-color: green">

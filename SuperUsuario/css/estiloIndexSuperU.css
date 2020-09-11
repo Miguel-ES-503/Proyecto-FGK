@@ -81,8 +81,10 @@
 	/*Formulario de crear cuenta*/
 	.botonresponsivo {
 		max-width: 150px;
-		margin: 50%;
+		
+		margin-bottom: 1px;
 		display: block;
+		text-decoration: none;
 	}
 	#formularioalumno {
 		display: block;

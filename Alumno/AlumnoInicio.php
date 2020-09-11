@@ -223,13 +223,82 @@
         position: relative;
         right: 50px;
     }
+    .Info-Alumno1{
+        position: relative;
+        top: 105px;
+    }
+    .Info-Alumno2 h3{
+        position: relative;
+        top: 30px;
+    }
+    .Info-Alumno2 {
+        position: relative;
+       top: 50px;
+    }
 
 }
+#row
+{
+	background-color: #c7c7c7;
+    height: 50px;
+    width: 100%;
+}
+@media screen and (max-width: 992px) {
+	#bloque,#bloque
+	{
+		background-color: #BE0032;
+		margin-top: 2px;
+		margin-bottom: 2px;
+		text-align: center;
+	}
+	#bloque a,#bloque a
+	{
+		color: white;
+	}
+	#T1
+	{
+		font-size: 20px;
+		font-weight: bold;
+		letter-spacing: 2px;
+		margin-top: -4px;
+		margin-right: 20px;
+	}
 
+}@media screen and (min-width: 993px) {
+	#T1
+	{
+		font-size: 30px;
+		align-items: center;
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
+
+#bloque,#bloque2
+{
+	background-color: #BE0032;
+	text-align: center;
+	height: 50px;
+	color: white;
+	margin-left: 50px;
+	width: 13vw;
+	align-items: center;
+
+}
+#bloque a,#bloque2 a
+{
+    color: white;
+    font-weight: bold;
+	font-size: 15px;
+	align-items: center;
+}
+}
 .grafico {
     position: relative;
     right: 65px;
     width: 300px;
+}
+.icon{
+    margin-bottom: 12px;
 }
 </style>
 
@@ -491,49 +560,36 @@ while($fila2 = $stmt2->fetch()){
 ?>
 
 <link rel="stylesheet" type="text/css" href="CSS/Alumno-Inicio.css">
+
+
 <script src="JS/jquery.js"></script>
 <script src="JS/jquery.knob.js"></script>
 <script src="JS/graficos.js"></script>
 <meta charset="utf-8">
-<div class="row">
-    <div class="title linea-color">
 
-        <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-        <h2 class="main-title">Expediente del Alumno</h2>
-        <div class="title2" id="button1">
-            <br>
-            <div class="title2-text">
-                <a href="SIT-CrearReunion.php" style="text-decoration: none;">
-                    <p>Historial Notas</p>
-                </a>
+<nav class="navbar navbar-expand-lg navbar-light" id="row">
+	<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
+</svg></a>
+  <span id="T1">Expediente de Alumno</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
 
-            </div>
-        </div>
-        <div class="title2" id="button2">
-            <br>
-            <div class="title2-text">
-                <a href="renovacionBeca.php" style="text-decoration: none;">
-                    <p>Cartas Becario</p>
-                </a>
+      
+      <li class="nav-item" id="bloque">
+        <a class="nav-link" href="#">Historial notas</a>
+      </li>
+      <li class="nav-item" id="bloque">
+        <a class="nav-link" href="renovacionBeca.php">Renovaciones de Beca</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    
 
-            </div>
-
-
-        </div>
-        <div class="title2" id="button3">
-            <br>
-            <div class="title2-text">
-                <a href="SIT-CrearReunion.php" style="text-decoration: none;">
-                    <p>Historial cartas</p>
-                </a>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-
-</div>
 
 
 <!-- Fin primera Fila-->
@@ -664,7 +720,7 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
                 <div class="status2">
                     <p>Avance de <br> Carrera</p>
                     <h3 class="subtitle"><?php  echo  round($Promedio,2) ?> %</h3>
-                    <button class="btn btn-info" id="button-info">Ver detalles</button>
+                    <a href="expedienteU.php"><button class="btn btn-info" id="button-info">Ver detalles</button></a>
                 </div>
                 <div class="status3">
                     <p>Estado de Beca</p>
