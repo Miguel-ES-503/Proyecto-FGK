@@ -9,6 +9,17 @@
   require '../Conexion/conexion.php';
   setlocale(LC_TIME, 'es_SV.UTF-8');
 ?> 
+<style>
+@media only screen  and (max-width: 967px) {
+#tabla1, #tabla2{
+
+ float: left;
+
+}
+
+}
+
+</style>
 <div class="container-fluid text-center h-25">
   <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
@@ -20,7 +31,7 @@
 <div class="sesion mx-5 h-25" style="text-align:center;">
 
 <!-- /#page-content-wrapper -->
-<table class="table table-responsive w-100 mx-5" style="position: relative; left: 150px;" >
+<table class="table table-responsive w-100 mx-5" id="tabla1"  >
   <thead  style="background-color: #2D2D2E; color: white; ">
     <tr>
     <th scope="col">Fecha</th>
@@ -97,7 +108,7 @@
                           }
 
 ?>
-<table class="table table-responsive w-100 mx-5" style="position: relative; left: 150px;" >
+<table class="table table-responsive w-100 mx-5" id="tabla2"  >
   <thead  style="background-color: #2D2D2E; color: white; ">
     <tr>
     <th scope="col">Fecha</th>
