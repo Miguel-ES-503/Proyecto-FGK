@@ -366,7 +366,7 @@ while($fila2 = $stmt2->fetch()){
 	<!--Información principal del estudiante-->
 	<div class="row">
 	   
-		<div class="text-center align-self-center" id="carnet">
+		<div class="text-center align-self-center" id="carnet" style="margin: 0 auto;">
 		    <br>
 			<img src="../img/imgUser/<?php echo $FotoAlumno?>" alt="img de usuario" style="height: 150px;
 			width: 150px; background-repeat: no-repeat;
@@ -559,7 +559,7 @@ while($fila2 = $stmt2->fetch()){
 
 	<!--Información sobre proceso de becas-->
 	<br>
-	<div class="classic-tabs mx-2">
+	<div class="classic-tabs mx-2 mb-5">
 		<h1 class="text-light">Progreso</h1>
 		<br>
 		<div class="row">

@@ -9,17 +9,17 @@ require_once '../Conexion/conexion.php';
 
 $ID = trim($_GET['id']);
 foreach ($dbh->query("SELECT ID_Empresa FROM alumnos WHERE ID_Alumno = '".$ID."'") as $Uni) {
-	$U = $Uni["ID_Empresa"];
+  $U = $Uni["ID_Empresa"];
 }
 foreach ($dbh->query("SELECT Nombre FROM alumnos WHERE ID_Alumno = '".$ID."'") as $ES) {
-	$Alumno = $ES["Nombre"];
+  $Alumno = $ES["Nombre"];
 }
 foreach ($dbh->query("SELECT imagen FROM usuarios WHERE nombre = '".$Alumno."'") as $PIC) {
-	$FotoAlumno = $PIC["imagen"];
+  $FotoAlumno = $PIC["imagen"];
 }
 foreach ($dbh->query("SELECT COUNT(*) AS 'Condicion' FROM renovacion 
-	WHERE ID_Alumno = '".$ID."'")  as $CON) {
-	$condicion = $CON["Condicion"];
+  WHERE ID_Alumno = '".$ID."'")  as $CON) {
+  $condicion = $CON["Condicion"];
 }
 ?>
 
@@ -32,54 +32,57 @@ foreach ($dbh->query("SELECT COUNT(*) AS 'Condicion' FROM renovacion
     letter-spacing: 2px;margin-top: 10px;margin-left: 5px;">Renovaciones de Beca</h2>
 </div>
     <div id="body">
-    	
+      
     <table  id="table" class="table table-striped" >
       <br>
 <?php 
 
-	if ($condicion < 1) {
-			echo "<thead><td colspan='4'><img src='../img/imgUser/$FotoAlumno?>' alt='img de usuario' id='perfil'></td></thead>";
-			echo " <thead><td colspan='4'>".utf8_decode($Alumno)."</td></thead>";
- 			echo "<td colspan='4' class='alert alert-danger'>Sin renovaciones de Beca</td>";
- 		}else
- 		{
- 		?>
+  if ($condicion < 1) {
+      echo " <thead><td colspan='4' style='font-size: 18px;font-weight: bold;''>".utf8_decode($Alumno)."</td></thead>";
+      echo "<thead><td colspan='4'><img src='../img/imgUser/$FotoAlumno?>' alt='img de usuario' id='perfil'></td></thead>";
+      echo "<td colspan='4' class='alert alert-danger'>Sin renovaciones de Beca</td>";
+    }else
+    {
+    ?>
+          </thead>
       <thead>
-      	<td colspan="4"><img src="../img/imgUser/<?php echo $FotoAlumno?>" alt="img de usuario" id="perfil"></td>
+        <td colspan="4" style="font-size: 18px;font-weight: bold;"><?php echo utf8_decode($Alumno) ?></td>
       </thead>
       <thead>
-      	<td colspan="4"><?php echo utf8_decode($Alumno) ?></td>
-      </thead>
+        <td colspan="4"><img src="../img/imgUser/<?php echo $FotoAlumno?>" alt="img de usuario" id="perfil"></td>
+
       
-          <thead class="table-secondary">
+          <thead class="table-dark">
             <tr>
               <th>Ciclo</th>
               <th>Año</th>
               <th>Archivo</th>
           </thead>
 <tbody>
-	<?php 
+  <?php 
 
- 		foreach ($dbh->query("SELECT ciclo,año,archivo FROM renovacion 
-	WHERE ID_Alumno = '".$ID."' ORDER BY AÑO DESC,ciclo DESC") as $datos) {	
+    foreach ($dbh->query("SELECT ciclo,año,archivo FROM renovacion 
+  WHERE ID_Alumno = '".$ID."' ORDER BY AÑO DESC,ciclo DESC") as $datos) { 
 
 
-		
-		 ?>
-		 <tr>
-		<td><?php  echo $datos["ciclo"] ?></td>
-		<td><?php  echo $datos["año"] ?></td>
-		<td><a id="btn" target="_black" href="Renovaciones/<?php  echo $U."/".$ID."/".$datos["archivo"] ?>" class="btn btn-warning"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    
+     ?>
+     <tr>
+    <td><?php  echo $datos["ciclo"] ?></td>
+    <td><?php  echo $datos["año"] ?></td>
+    <td><a id="btn" target="_black" href="Renovaciones/<?php  echo $U."/".$ID."/".$datos["archivo"] ?>" class="btn btn-warning"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
   <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
 </svg>Ver</a></td>
-	</tr>
- 		<?php
- 		}}
+  </tr>
+    <?php
+    }}
           ?>
         </tbody>
       </table>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </html>
-   

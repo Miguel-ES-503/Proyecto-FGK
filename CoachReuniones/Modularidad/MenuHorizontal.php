@@ -15,15 +15,12 @@
         <ul class="snip1135">
         
         
-
           <li>
             <a class="list-group-item list-group-item-action" href="Calendario.php" >
               <i class="far fa-calendar-alt"></i>  Calendario 
             </a>
           </li>
-
           
-
           <li>
             <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
               <i class="fas fa-chalkboard-teacher"></i> Administración <i class="fas fa-sort-down"></i>
@@ -48,7 +45,6 @@
                </ul>
             </div>
           </li>
-
 <br>
           <li>
             <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -61,13 +57,11 @@
                </ul>
             </div>
           </li>
-
              <li>
         <a class="list-group-item list-group-item-action" href="Manual/ManualTaller.pdf" >
           <i class="fas fa-info-circle"></i> Instrucciones
         </a>
       </li>
-
       <li>
         <a class="list-group-item list-group-item-action" href="ReporteReuniones.php" >
           <i class="fas fa-chart-pie"></i> Reporteria
@@ -200,12 +194,47 @@ background-color: #0D0D0D;
 
 
 }
-
+@media screen and (max-width: 767px) {
+  #menus
+  {
+    text-align: center;
+    margin-left: 35px;
+    font-size: 10px;
+  }
+  #submenu
+  {
+     font-size: 10px;
+  }
+ #pro
+ {
+  text-align: center;
+    margin-left: 30px;
+    font-size: 10px;
+ } 
+}
+#menus,#submenu, #pro
+  {
+    font-size: 13px;
+    text-align: center;
+  }
+  #sb{
+    color: white;
+  }
+  #sb:hover
+  {
+  color: black;
+  }
+  @media screen and (max-width: 992px) {
+    #s1
+    {
+      margin: 0 auto;
+    }
+  }
 </style>
 <body>
 
-<div id="mySidepanel" class="sidepanel" style="background-color: #BE0032;">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<div id="mySidepanel" class="sidepanel h-100" style="background-color: #BE0032;">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="color: white;">&times;</a>
      <div class="dark border-right" id="sidebar-wrapper">
       <div class="sidebar-heading justify-content-center align-items-center">
         <center>
@@ -223,7 +252,7 @@ background-color: #0D0D0D;
         
 
           <li>
-            <a class="list-group-item list-group-item-action" href="Calendario.php" >
+            <a class="list-group-item list-group-item-action" href="Calendario.php"  id="menus">
               <i class="far fa-calendar-alt"></i>  Calendario 
             </a>
           </li>
@@ -231,66 +260,66 @@ background-color: #0D0D0D;
           
 
           <li>
-            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="font-size: 13px;">
+            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="menus">
               <i class="fas fa-chalkboard-teacher"></i> Administración <i class="fas fa-sort-down"></i>
             </a>
             <div class="collapse" id="collapseExample">  
               <ul class="mr-lg-1">
-              <li><a href="SIT-CrearReunion.php" class="list-group-item list-group-item-action">Crear Reunión</a></li>
-              <li><a href="LIS-Reunion.php" class="list-group-item list-group-item-action">Reuniones Activos</a></li>
-              <li><a href="reunionesFinalizados.php" class="list-group-item list-group-item-action">Reuniones Finalizadas</a></li>
+              <li><a href="SIT-CrearReunion.php" class="list-group-item list-group-item-action" id="submenu">Crear Reunión</a></li>
+              <li><a href="LIS-Reunion.php" class="list-group-item list-group-item-action" id="submenu">Reuniones Activos</a></li>
+              <li><a href="reunionesFinalizados.php" class="list-group-item list-group-item-action" id="submenu">Reuniones Finalizadas</a></li>
              </ul>
            </div>
          </li>
           <li>
-            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample" id="menus">
             <i class="fas fa-user-graduate"></i>Estudiantes<i class="fas fa-sort-down"></i>
             </a>
             <div class="collapse" id="collapseExample4">  
               <ul>
-                <li><a href="LIS-Alumnos.php" class="list-group-item list-group-item-action">Alumnos</a></li>
-                <li><a href="RecordAlumnos.php" class="list-group-item list-group-item-action">Récord Alumnos</a></li>
-                <li><a href="BecasAprobadas.php" class="list-group-item list-group-item-action">Estado Beca</a></li> 
+                <li><a href="LIS-Alumnos.php" class="list-group-item list-group-item-action" id="submenu">Alumnos</a></li>
+                <li><a href="RecordAlumnos.php" class="list-group-item list-group-item-action" id="submenu">Récord Alumnos</a></li>
+                <li><a href="BecasAprobadas.php" class="list-group-item list-group-item-action" id="submenu">Estado Beca</a></li> 
                </ul>
             </div>
           </li>
 
 <br>
           <li>
-            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" id="menus">
              <i class="far fa-envelope"></i>Solicitud <i class="fas fa-sort-down"></i>
             </a>
             <div class="collapse" id="collapseExample3">  
               <ul>
-              <li><a href="HorasVinculacion.php" class="list-group-item list-group-item-action">Horas De Vinculación</a></li> 
+              <li><a href="HorasVinculacion.php" class="list-group-item list-group-item-action" id="submenu">Horas De Vinculación</a></li> 
                   
                </ul>
             </div>
           </li>
 
              <li>
-        <a class="list-group-item list-group-item-action" href="Manual/ManualTaller.pdf" >
-          <i class="fas fa-info-circle"></i> Instrucciones
+        <a class="list-group-item list-group-item-action" href="Manual/ManualTaller.pdf" id="menus" >
+          <i class="fas fa-info-circle" ></i> Instrucciones
         </a>
       </li>
 
       <li>
-        <a class="list-group-item list-group-item-action" href="ReporteReuniones.php" >
+        <a class="list-group-item list-group-item-action" href="ReporteReuniones.php" id="menus">
           <i class="fas fa-chart-pie"></i> Reporteria
         </a>
       </li>
       <!-- Link de preguntas Frecuentes -->
       <li>
-        <a class="list-group-item list-group-item-action" href="preguntas.php" ><i class="fas fa-question-circle"></i> Preguntas Frecuentes
+        <a class="list-group-item list-group-item-action" href="preguntas.php" id="menus" ><i class="fas fa-question-circle"></i> Preguntas Frecuentes
         </a>
       </li>
       <!-- fin de preguntas frecuentes -->
       <li>
-        <a class="list-group-item list-group-item-action" href="sessionesOneonOne.php"><i class="fas fa-user-friends"></i> Sesiones Individuales
+        <a class="list-group-item list-group-item-action" href="sessionesOneonOne.php" id="menus"><i class="fas fa-user-friends"></i> Sesiones Individuales
         </a>
       </li>
       <li>
-        <a class="list-group-item list-group-item-action" href="modulosMoodle.php"><i class="fas fa-briefcase"></i> Módulos
+        <a class="list-group-item list-group-item-action" href="modulosMoodle.php" id="menus"><i class="fas fa-briefcase"></i> Módulos
         </a>
       </li>
       </ul>
@@ -464,8 +493,8 @@ background-color: #0D0D0D;
           });
         }, 3000);
         </script>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown campana" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-style: none;">
+        <li class="nav-item dropdown" id="s1">
+          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown campana" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-style: none;color: white;">
           <i class="far fa-bell"></i>
           <span class="badge badge-dark" id="cuantas"></span>
           </a>
@@ -576,8 +605,8 @@ background-color: #0D0D0D;
         </li>
    
             
-            <li class="nav-item dropdown" >
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-style: none;" id="problema">
+            <li class="nav-item dropdown" id="s1">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-style: none;color: white;" id="problema">
               <?php 
               $NombreUser = $_SESSION['Nombre'];
               $PrimerNombre = explode(" ", $NombreUser);
@@ -587,9 +616,9 @@ background-color: #0D0D0D;
 
          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background: #2D2D2E;">
           
-                <a class="dropdown-item" href="Configuracion.php" style="color: white;border-style: none;">Configuración</a>
+      <a class="dropdown-item" href="Configuracion.php" id="sb">Configuración</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../CerrarSession.php" style="color: white;border-style: none;">Salir</a>
+  <a class="dropdown-item" href="../CerrarSession.php"  id="sb">Salir</a>
               </div>
 
             </li>

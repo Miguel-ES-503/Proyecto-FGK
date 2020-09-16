@@ -1,7 +1,7 @@
 <?php 
 if (isset($_POST['subirCarta']))
 {
-
+session_start();
 try {
   require_once "../../../BaseDatos/conexion.php";
 $nombreArchivo=$_FILES["archivo"]["name"];
@@ -10,52 +10,81 @@ $ciclo=$_POST['ciclo'];
 $year=date("Y");
 $alumno=$_POST['alumno'];
 $tipoarchivo = $_FILES["archivo"]["type"];
-$tama«Ðoarchivo = $_FILES["archivo"]["size"];
+$tamaño = $_FILES["archivo"]["size"];
 $rutaarchivo=$_FILES["archivo"]["tmp_name"];
 $universidad=$_POST['uni'];
 
-
+foreach ($pdo->query("SELECT Nombre,SedeAsistencia,Class FROM alumnos WHERE ID_Alumno = '".$alumno."'") as $Name) {
+  $Nombre = $Name['Nombre'];
+  $SC = $Name['SedeAsistencia'];
+  $Class = $Name['Class'];
+}
+$Sede = substr($SC, 0, 2);
+$Modalidad = substr($SC, 2, 2);
+$formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$Class.".pdf";
 $numero = rand(1, 10000000);
 
 
 $idRenovacion = "RN-".$numero;
+$archivero = "../../../CoachReuniones/Renovaciones/".$universidad."/".$alumno."/"."Ciclo 0".$ciclo."-".$year;
+$ubicacion = "Renovaciones/".$universidad."/".$alumno."/"."Ciclo 0".$ciclo."-".$year."/".$nombreArchivo;
 
-
-
-
-if (file_exists("../../../CoachReuniones/Renovaciones/".$universidad."/".$alumno)) {
-
-  $consulta=$pdo->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo)
-    VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo)");
-         $consulta->bindParam(':idRenovacion',$idRenovacion,PDO::PARAM_STR);
-         $consulta->bindParam(':ID_Alumno',$alumno,PDO::PARAM_STR);
-         $consulta->bindParam(':ciclo',$ciclo,PDO::PARAM_INT);
-         
-         $consulta->bindParam(':archivo',$nombreArchivo,PDO::PARAM_STR);
-
-  $consulta->execute();
-  move_uploaded_file($direccion,"../../../CoachReuniones/Renovaciones/".$universidad."/".$alumno."/".$nombreArchivo);
-  header("Location:../../renovacionBeca.php?ntf=Exito");
-}else{
-  mkdir("../../../CoachReuniones/Renovaciones/".$universidad."/".$alumno, 0777, true);
-  $consulta=$pdo->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo)
-    VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo)");
-         $consulta->bindParam(':idRenovacion',$idRenovacion,PDO::PARAM_STR);
-         $consulta->bindParam(':ID_Alumno',$alumno,PDO::PARAM_STR);
-         $consulta->bindParam(':ciclo',$ciclo,PDO::PARAM_INT);
-        
-         $consulta->bindParam(':archivo',$nombreArchivo,PDO::PARAM_STR);
-  $consulta->execute();
-move_uploaded_file($direccion,"../../../CoachReuniones/Renovaciones/".$universidad."/".$alumno."/".$nombreArchivo);
-  header("Location:../../renovacionBeca.php?ntf=Exito");
+if ($tamaño > 5000000) {
+  $_SESSION["error"] = "Tamaño de archivo mayor a 5MB";
+  header("Location:../../renovacionBeca.php");
+}elseif ($nombreArchivo != $formato) {
+  $_SESSION["error"] = "Nombre o formato de archivo diferente al solicitado";
+  header("Location:../../renovacionBeca.php");
+}elseif ($tipoarchivo != "application/pdf") {
+$_SESSION["error"] = "Formato de archivo diferente al solicitado";
+  header("Location:../../renovacionBeca.php");
 }
+
+else
+{
+  if (file_exists($archivero)) {
+
+  $consulta=$pdo->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo,direccion)
+    VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo,:direccion)");
+         $consulta->bindParam(':idRenovacion',$idRenovacion,PDO::PARAM_STR);
+         $consulta->bindParam(':ID_Alumno',$alumno,PDO::PARAM_STR);
+         $consulta->bindParam(':ciclo',$ciclo,PDO::PARAM_INT);
+         $consulta->bindParam(':archivo',$nombreArchivo,PDO::PARAM_STR);
+         $consulta->bindParam(':direccion',$ubicacion,PDO::PARAM_STR);
+
+  $consulta->execute();
+move_uploaded_file($direccion,$archivero."/".$nombreArchivo);
+  $_SESSION["exito"] = "Renovacion de Beca ingresada correctamente";
+  header("Location:../../renovacionBeca.php");
+}else{
+  mkdir($archivero, 0777, true);
+
+
+  $consulta=$pdo->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo,direccion)
+    VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo,:direccion)");
+         $consulta->bindParam(':idRenovacion',$idRenovacion,PDO::PARAM_STR);
+         $consulta->bindParam(':ID_Alumno',$alumno,PDO::PARAM_STR);
+         $consulta->bindParam(':ciclo',$ciclo,PDO::PARAM_INT);
+         $consulta->bindParam(':archivo',$nombreArchivo,PDO::PARAM_STR);
+         $consulta->bindParam(':direccion',$ubicacion,PDO::PARAM_STR);
+
+  $consulta->execute();
+move_uploaded_file($direccion,$archivero."/".$nombreArchivo);
+$_SESSION["exito"] = "Renovacion de Beca ingresada correctamente";
+  header("Location:../../renovacionBeca.php");
+}
+}
+
+
+
 } catch (PDOException $ex) {
   echo $ex->getMessage();
   
 }
 }else
 {
-header("Location:../../renovacionBeca.php?ntf=Error");
+  $_SESSION["error"] = "No se ha podido ingresar carta de Renovacion";
+header("Location:../../renovacionBeca.php");
 }
 
 
