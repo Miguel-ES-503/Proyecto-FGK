@@ -47,19 +47,21 @@ $eventsFin = $stmt2->fetchAll();
 			<h5 class="float-left ml-4">Proximos Eventos</h5>
 		</div>
         <div class="w-100">
-
+<?php
+foreach ($dbh->query("SELECT Titulo,Fecha,ID_Empresa,Lugar FROM REUNIONES WHERE  MONTH(Fecha) IN (MONTH(CURDATE()))") as $reuniones) {
+  # code...
+?>
 		<div class="row ml-3" id="actividad">
 			<br>
-			Taller  "Desarrolla tu creatividad
+			<?php echo $reuniones['Titulo'] ?>
 			</div>
-		<div class="row ml-3" id="fecha" >Junio 11 , 3:00 pm</div>
-		<br>
-		<div class="row ml-3" id="actividad">Taller "Finanzas en tiempos de Crisis</div>
-		<div class="row ml-3" id="fecha">Junio 11 , 3:00 pm</div>
-		<br>
-		<div class="row ml-3" id="actividad">Taller "Reputación Online</div>
-		<div class="row  ml-3" id="fecha">Junio 11 , 3:00 pm</div>
-		<br>
+		<div class="row ml-3" id="fecha" ><span style="font-weight: bold;margin-right: 8px;">Fecha: </span><?php echo $reuniones['Fecha'] ?></div>
+    <div class="row ml-3" id="fecha" ><span style="font-weight: bold;margin-right: 8px;">Universidad: </span><?php echo $reuniones['ID_Empresa'] ?></div>
+    <div class="row ml-3" id="fecha" ><span style="font-weight: bold;margin-right: 8px;">Lugar: </span><?php echo $reuniones['Lugar'] ?></div>
+    <br>
+    <?php
+  }
+    ?>
 	</div>
 	</div>
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8  col-xl-8 h-25 col-centered bg-ligth" id="calendar" >
@@ -80,6 +82,7 @@ $eventsFin = $stmt2->fetchAll();
   				 language: 'es',
   				left: 'prev,next today',
   				center: 'title',
+
 
   			},
   			defaultDate: yyyy+"-"+mm+"-"+dd,
