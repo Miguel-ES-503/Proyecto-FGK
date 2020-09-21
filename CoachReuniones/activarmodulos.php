@@ -26,13 +26,14 @@ require_once '../Conexion/conexion.php';
             <p>Al momento de activar un módulos los alumnos se prodran inscribir a dicho módulo y al momento de
                 desactivar, los alumnos ya no podrán inscribirse hasta que se vuelva a activar el módulo.</p>
         </div>
-        <div class="table table-responsive  w-50  mx-auto table-hover table-striped">
+        <div class="table table-responsive  mx-auto table-hover table-striped" style="width:60%">
             <div class="table table-responsive  table-hover table-striped">
                 <table id="tabla" class="">
                     <thead class="table-dark table-bordered">
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Titulo</th>
+                            <th scope="col">Contraseña</th>
                             <th scope="col">Activar/Desactivar</th>
                             <th scope="col">Cambiar contraseña</th>
                         </tr>
@@ -46,6 +47,7 @@ $stmt2 = $dbh->query("SELECT * FROM modulos WHERE estado = 1");
     echo "<tr class='bg-light'>";
     echo "<th scope='row'>".$row['id_modulo']."</th>";
     echo "<td>".utf8_encode($row['titulo'])."</td>";
+    echo "<td>".utf8_encode($row['password'])."</td>";
     echo "<td><form action='actualizarmodulo.php' method='POST'><button type='submit' class='btn btn-warning' value= '".$row['id_modulo']."' name='id' id='btn-desactivar'><img src='../img/desactivar.png' class='icon-img'>Desactivar </button> </form> </td>";
     echo "<td><form action='cambiarpasswd.php' method='POST'><button type='submit' class='btn btn-success' value= '".$row['id_modulo']."' name='id' id='btn-cambiar'><i class='fas fa-key'></i>Cambiar</button></form> </td>";
     echo "</tr>";
@@ -57,6 +59,7 @@ while ($row = $stmt->fetch()) {
     echo "<tr class='bg-light'>";
     echo "<th scope='row'>".$row['id_modulo']."</th>";
     echo "<td>".utf8_encode($row['titulo'])."</td>";
+    echo "<td>".utf8_encode($row['password'])."</td>";
     echo "<td><form action='actualizarmodulo2.php' method='POST'><button type='submit' class='btn btn-block' value= '".$row['id_modulo']."' name='id' id='btn-activar'><img src='../img/activar.png' class='icon-img-2' >Activar </button> </form> </td>";
     echo "<td><form action='cambiarpasswd.php' method='POST'><button type='submit' class='btn btn-success' value= '".$row['id_modulo']."' name='id' id='btn-cambiar' ><i class='fas fa-key'></i> Cambiar</button> </form> </td>";
     echo "</tr>";
