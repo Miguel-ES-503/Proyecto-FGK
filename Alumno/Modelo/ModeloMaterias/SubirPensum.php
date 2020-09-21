@@ -115,7 +115,7 @@ if ($tama«Ðoarchivo <= 5000000 ) {
          //--------------------------------------------------------------------------------
 
          //consulta que extrae el usuario
-         $extraeSuperUser=$pdo->prepare("SELECT `IDUsuario`,`nombre`,`correo` FROM `usuarios` WHERE `SedeAsistencia`=:sede AND `cargo`='Coach Reuniones'");
+         $extraeSuperUser=$pdo->prepare("SELECT `IDUsuario`,`nombre`,`correo` FROM `usuarios` WHERE `SedeAsistencia`=:sede AND `cargo`='Coach Fase 2'");
 
          //asignamos valor al campo por medio de la variable
          $extraeSuperUser->bindParam(":sede",$sedeAlumno);

@@ -341,7 +341,7 @@
       </div>
       
        
-        <form action="Modelo/ModeloMaterias/ActualizarNota.php" method="post" enctype="multipart/form-data">
+        <form action="Modelo/ModeloMaterias/Notaspdf.php" method="post" enctype="multipart/form-data">
             
         
 
