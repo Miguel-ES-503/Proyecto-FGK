@@ -227,7 +227,7 @@
           { 
 
 
-             if ($fila2['estadoM'] !='Inscrita' && $fila2['nota'] <=7) {
+             if ($fila2['estadoM'] !='Inscrita' && $fila2['nota'] <=6) {
               $IdInsM=$fila2["Id_InscripcionM"];
 
                echo "<tr>
