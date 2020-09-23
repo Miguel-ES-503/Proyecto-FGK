@@ -204,7 +204,7 @@ div.centerTable table {
    
   <?php
         //consulta que muestra las materias
-       $consulMaterias=$pdo->prepare("SELECT IM.nota,IM.idMateria,IM.matricula, M.nombreMateria, IM.estado, IC.cicloU, M.idExpedienteU
+       $consulMaterias=$pdo->prepare("SELECT IM.nota,IM.idMateria,M.estadoM,IM.matricula, M.nombreMateria, IM.estado, IC.cicloU, M.idExpedienteU
        from materias M
        INNER JOIN inscripcionmateria IM
       ON IM.idMateria= M.idMateria
@@ -212,7 +212,7 @@ div.centerTable table {
        INNER JOIN inscripcionciclos IC
       ON IC.Id_InscripcionC=IM.Id_InscripcionC
 
-      WHERE M.idExpedienteU = ? AND IM.estado = 'Retirada'");
+      WHERE M.idExpedienteU = ? AND M.estadoM = 'Retirada' ");
 
        $consulMaterias->execute(array($idExpedienteU));
 
@@ -233,11 +233,8 @@ div.centerTable table {
                     <td >".$fila2['matricula']."</td>
                      <td >".$fila2['cicloU']."</td>
                        <td >".$fila2['nota']."</td>
-                    <td >".$fila2['estado']."</td>
+                    <td >".$fila2['estadoM']."</td>
                   </tr>";     
-
-        
-         
              }else
                  {
 
@@ -245,21 +242,9 @@ div.centerTable table {
                     <td >".$fila2['idMateria']."</td>
                     <td class='oscuro'>".$fila2['nombreMateria']."</td>
                     <td >".$fila2['nota']."</td>
-                    <td >".$fila2['estadoM']."</td>
-                   
-                    
-
-
-                    
+                    <td >".$fila2['estadoM']."</td>            
                   </tr>";     
-
-       
                   } //fin de else
-
-
-
-           
-                            
                }//fin de while
             }else{
               echo "<tr><td colspan='6'>No hay ninguna asignatura aprobada.</td></tr>";
