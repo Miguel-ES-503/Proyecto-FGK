@@ -234,7 +234,7 @@ $(document).ready(function() {
   </div>
   <div class="form-check">
   </div>
-  <button type="submit" class="btn btn-success" name="id" value="<?php echo $idU = $_GET['id']; ?>">Actualizar</button>
+  <button type="submit"  class="btn btn-success" name="id" value="<?php echo $idU = $_GET['id']; ?>">Actualizar</button>
 </form>
 </div>
 <br><br><br><br><br><br><br>

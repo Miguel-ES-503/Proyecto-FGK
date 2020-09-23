@@ -45,4 +45,11 @@ $stmt->execute(['id' => $idUni]);
        $dbh->prepare($sql45)->execute([$idUniversidad,$alumno, $cumActualizar," "," ",$avance,"$u",$idU,"Activo",$carnetActualizar]);
        header("Location: expedienteU.php"); 
  }    
- 
+?>
+  <h1 class="text-center text-success" style="font-size:75px"><i class="fas fa-check-circle"></i></h1>
+  <h1 class="text-center 7x">Sus datos han sido actualizados</h1>
+ <center> <a href="expedienteU.php" class="btn btn-success mx-auto text-center">Regresar al expediente</a><center>
+<br><br><br><br><br><br><br><br><br>
+<?php
+  require_once 'templates/footer.php';
+?>
