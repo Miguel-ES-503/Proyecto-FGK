@@ -227,7 +227,7 @@
           { 
 
 
-             if ($fila2['estadoM'] !='Inscrita') {
+             if ($fila2['estadoM'] !='Inscrita' && $fila2['nota'] <=7) {
               $IdInsM=$fila2["Id_InscripcionM"];
 
                echo "<tr>
@@ -237,7 +237,7 @@
                     <td >".$fila2['matricula']."</td>
                      <td >".$fila2['cicloU']."</td>
                       <td >".$fila2['nota']."</td>
-                    <td >".$fila2['estado']."</td>
+                    <td >Reprobado</td>
                     
                     <td>
 
@@ -255,22 +255,25 @@
              }else
                  {
 
-                   echo "<tr>
-                    <td >".$fila2['idMateria']."</td>
-                    <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                  echo "<tr>
+               
+                  <td >".$fila2['idMateria']."</td>
+                  <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                  <td >".$fila2['matricula']."</td>
+                   <td >".$fila2['cicloU']."</td>
                     <td >".$fila2['nota']."</td>
-                    <td >".$fila2['estado']."</td>
-                   
-                    <td>
+                  <td >".$fila2['estado']."</td>
+                  
+                  <td>
 
 
 
-                    <center>
-                     <button type='button' id=".$fila2['idMateria']." class='btn btn-danger' data-toggle='modal' data-target='#modalFinal' onclick='mandarId(id)' ><i class='fa fa-pen'></i>
-                     </button>
-                    </center>
-                    </td>
-                  </tr>";     
+                  <center>
+                   <button type='button' id=".$fila2['idMateria']." class='btn ' data-toggle='modal' data-target='#ModalMateria' onclick='mandarId(id)' ><i class='fa fa-pen'></i>
+                   </button>
+                  </center>
+                  </td>
+                </tr>";     
 
        
                   } //fin de else
