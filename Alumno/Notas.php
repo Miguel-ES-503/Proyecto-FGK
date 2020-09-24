@@ -344,7 +344,7 @@
       </div>
       
        
-        <form action="Modelo/ModeloMaterias/Notaspdf.php" method="post" enctype="multipart/form-data">
+        <form action="Modelo/ModeloMaterias/subirpdfNotas.php" method="post" enctype="multipart/form-data">
             
         
 
@@ -369,12 +369,12 @@
 
         
         <!--idalumnos-->
-        <input type="hidden" name="alumno" value="<?php echo $alumno;?>"> 
+        <input type="text" name="alumno" value="<?php echo $alumno;?>"> 
 
         <!--id expedente-->
-        <input type="hidden" name="expediente" value="<?php echo $idExpedienteU;?>"> 
+        <input type="text" name="expediente" value="<?php echo $idExpedienteU;?>"> 
 
-        <input type="hidden" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">  
+        <input type="text" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">  
       </div>
 
       </div>
@@ -390,7 +390,7 @@
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
-     color:white;" type="submit" name="comprobante_Ciclo" value="Guardar Cambios " id="comprobante_Ciclo">
+     color:white;" type="submit" name="pdfNotas" value="Guardar Cambios " id="pdfNotas">
 
       </div>
 
