@@ -166,13 +166,39 @@ background-color: #0D0D0D;
           <ul >
            <li><a href="expedienteU.php" class="list-group-item list-group-item-action"><i class="fas fa-user-graduate"></i> Expediente</a></li>
 
-
-           <li><a href="pensum.php" class="list-group-item list-group-item-action">  <i class="fas fa-file-pdf"></i> Pensum</a></li>
-           
-           <li><a href="IndicacionesMaterias.php" class="list-group-item list-group-item-action">  <i class="fas fa-book"></i> Materias</a></li>
-           <li><a href="Notas.php" class="list-group-item list-group-item-action">  <i class="fas fa-check"></i> Notas</a></li>
+           <?php 
+$correo = $_SESSION['Email'];
+  $stmt2 =$pdo->prepare("SELECT alumnos.ID_Alumno , alumnos.TotalTalleres, alumnos.CantidadModulos, expedienteu.pensum FROM `alumnos` inner join expedienteu on alumnos.ID_Alumno = expedienteu.ID_Alumno WHERE alumnos.correo = '$correo'" );
+  $stmt2->execute();
+  while($row = $stmt2->fetch()){
+      $IDalumno = $row["ID_Alumno"];
+      $pensum = $row["pensum"];
+  }
     
-           <li><a href="IndicacionesRetiros.php" class="list-group-item list-group-item-action">  <i class="fas fa-ban"></i> Retiros</a></li>
+     if($pensum != ""){
+
+     echo "<li><a href='pensum.php' class='list-group-item list-group-item-action'>  <i class='fas fa-file-pdf'></i> Pensum</a></li>";
+     } 
+     
+     $stmt3 = $pdo->prepare("SELECT expedienteu.idExpedienteU, materias.nombreMateria FROM `expedienteu` inner join materias on expedienteu.idExpedienteU = materias.idExpedienteU WHERE expedienteu.ID_Alumno = '$IDalumno'");
+     $stmt3->execute();
+     while($row = $stmt3->fetch()){
+      $materia = $row["nombreMateria"];
+
+     }
+     if($materia != ""){
+
+      echo " <li><a href='IndicacionesMaterias.php' class='list-group-item list-group-item-action'>  <i class='fas fa-book'></i> Materias</a></li>
+      <li><a href='Notas.php' class='list-group-item list-group-item-action'>  <i class='fas fa-check'></i> Notas</a></li>
+
+      <li><a href='IndicacionesRetiros.php' class='list-group-item list-group-item-action'>  <i class='fas fa-ban'></i> Retiros</a></li>";
+
+     }
+?>
+
+
+           
+          
            
 
          </ul>

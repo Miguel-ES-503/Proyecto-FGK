@@ -1,5 +1,5 @@
 <?php require_once 'templates/head.php'; ?>
-<title>Retiradas</title>
+<title>Aprobadas</title>
  <link rel="stylesheet" href="assets1/css1/style.css">
 <?php  
   
@@ -186,7 +186,7 @@ div.centerTable table {
 
 <div class='centerTable '>
 <table  id="makeEditable" class="thead-dark" >
-  <h3 class="card-header h3s bg-light">Lista de materias Retiradas</h3>
+  <h3 class="card-header h3s bg-light">Lista de materias Inscritas</h3>
   
   <thead>
     <tr>
@@ -202,65 +202,58 @@ div.centerTable table {
 
   <tbody>
    
-<?php
-//consulta que muestra las materias
-$consulMaterias=$pdo->prepare("SELECT idMateria, nombreMateria, Estado, estadoM from materias WHERE idExpedienteU = ? AND estado = 'Activo' and  estadoM = 'Retirada'");
+  <?php
+        //consulta que muestra las materias
+       $consulMaterias=$pdo->prepare("SELECT IM.nota,IM.idMateria,M.estadoM,IM.matricula, M.nombreMateria, IM.estado, IC.cicloU, M.idExpedienteU
+       from materias M
+       INNER JOIN inscripcionmateria IM
+      ON IM.idMateria= M.idMateria
 
-$consulMaterias->execute(array($idExpedienteU));
+       INNER JOIN inscripcionciclos IC
+      ON IC.Id_InscripcionC=IM.Id_InscripcionC
 
+      WHERE M.idExpedienteU = ? AND M.estadoM = 'Retirada' ");
 
-
-
-if ($consulMaterias->rowCount()>=1)
-{
-  while ($fila2=$consulMaterias->fetch())
-  { 
-
-
-     if ($fila2['estadoM'] !='Inscrita') {
-
-       echo "<tr>
-            <td >".$fila2['idMateria']."</td>
-            <td class='oscuro'>".$fila2['nombreMateria']."</td>
-            <td ></td>
-             <td ></td>
-              <td >0.0</td>
-            <td >".$fila2['Estado']."</td>
-          </tr>";     
-
-
- 
-     }else
-         {
-
-           echo "<tr>
-            <td >".$fila2['idMateria']."</td>
-            <td class='oscuro'>".$fila2['nombreMateria']."</td>
-            <td >0.0</td>
-            <td >".$fila2['estadoM']."</td>
-           
-            
-
-
-            
-          </tr>";     
-
-
-          } //fin de else
+       $consulMaterias->execute(array($idExpedienteU));
 
 
 
-   
-                    
-       }//fin de while
-    }else{
-      echo "<tr><td colspan='6'>No hay asignaturas retiradas</td></tr>";
-    }//fin de else-if
-                               
+        
+        if ($consulMaterias->rowCount()>=1)
+        {
+          while ($fila2=$consulMaterias->fetch())
+          { 
 
-                          
-    ?>
-      
+
+             if ($fila2['estadoM'] !='Inscrita') {
+
+               echo "<tr>
+                    <td >".$fila2['idMateria']."</td>
+                    <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                    <td >".$fila2['matricula']."</td>
+                     <td >".$fila2['cicloU']."</td>
+                       <td >".$fila2['nota']."</td>
+                    <td >".$fila2['estadoM']."</td>
+                  </tr>";     
+             }else
+                 {
+
+                   echo "<tr>
+                    <td >".$fila2['idMateria']."</td>
+                    <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                    <td >".$fila2['nota']."</td>
+                    <td >".$fila2['estadoM']."</td>            
+                  </tr>";     
+                  } //fin de else
+               }//fin de while
+            }else{
+              echo "<tr><td colspan='6'>No hay ninguna asignatura aprobada.</td></tr>";
+            }//fin de else-if
+                                       
+
+                                  
+            ?>
+              
 
 
   </tbody>
@@ -306,18 +299,9 @@ if ($consulMaterias->rowCount()>=1)
 
 <!-- /#page-content-wrapper -->
 
-
-
-
-
 </div>
 
 <!-- /#wrapper -->
-
-
-
-
-
  <?php
 
   require_once 'templates/footer.php';
