@@ -291,7 +291,7 @@ while($fila2 = $stmt2->fetch()){
 
 
             <li class="nav-item" id="bloque">
-                <a class="nav-link" href="#">Historial notas</a>
+                <a class="nav-link" href="HistorialNotas.php">Historial notas</a>
             </li>
             <li class="nav-item" id="bloque">
                 <a class="nav-link" href="renovacionBeca.php">Renovaciones de Beca</a>

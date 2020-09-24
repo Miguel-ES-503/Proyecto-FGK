@@ -404,10 +404,24 @@ if ($_GET['id']==null) {
 
                     <?php
     while($fila9 = $stmt9->fetch()){
+
+        $pdfCiclo = $fila9['comprobante'];
+
       echo " <tr class='table-dark' style ='color: black;'>";
         echo "<td scope=\"row\">".$fila9["Id_InscripcionC"]."</td>";
         echo "<td>".$fila9["cicloU"]."</td>";
-        echo "<td><a class=\"btn btn-danger\" href=\"../pdfInscripCiclos/?id=".$fila9["comprobante"]."\"><i class=\"fas fa-file-pdf\"></i></a></td>";
+        
+        if ($pdfCiclo == null) {
+            echo "
+            <th><button type='button' class='btn btn-danger'  disabled> <img src='../img/PDF.png' width='25px' height='25px'></button></th>";
+        
+         }else
+         {
+           echo "<th><a href='../pdfCicloInscripcion/$pdfCiclo' class='btn btn-danger '><img src='../img/PDF.png' width='25px' height='25px>'</a> </th>";  
+         }
+
+        
+        //echo "<td><a class=\"btn btn-danger\" href=\"../pdfInscripCiclos/?id=".$fila9["comprobante"]."\"><i class=\"fas fa-file-pdf\"></i></a></td>";
         echo "<td><a class=\"btn btn-info\" href=\"#/?id=".$fila9["Id_InscripcionC"]."\"><i class=\"fas fa-info-circle\"></i></a></td>";
       echo "</tr>";
     }
