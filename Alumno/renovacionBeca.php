@@ -62,7 +62,14 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
       $universidad=$fila["ID_Empresa"];
   }
 
-
+  foreach ($pdo->query("SELECT Nombre,SedeAsistencia,Class FROM alumnos WHERE ID_Alumno = '".$alumno."'") as $Name) {
+  $Nombre = $Name['Nombre'];
+  $SC = $Name['SedeAsistencia'];
+  $Class = $Name['Class'];
+}
+$Sede = substr($SC, 0, 2);
+$Modalidad = substr($SC, 2, 2);
+$formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$Class;
 
  ?>
 <!--///////////////////////////////////////////////-->
@@ -70,7 +77,7 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
 <script type="text/javascript">
   $(document).ready(function () {
     bsCustomFileInput.init()
-    $('#noti').fadeOut(4000);
+    $('#noti').fadeOut(6000);
   });
 
   </script>
@@ -116,14 +123,14 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
                              
     <div class="container" style="">
       <?php
-      $noti = $_GET['ntf'];
-      if ($noti != null) {
-      if ($noti == "Exito") {
-        echo "<div class='alert alert-success ' id='noti'>Renovacion de Beca ingresada correctamente</div>";
-      }else
+     
+      if (isset($_SESSION['exito'])) {
+        echo "<div class='alert alert-success ' id='noti'>".$_SESSION["exito"]."</div>";
+        unset($_SESSION['exito']);
+      }else if (isset($_SESSION['error'])) 
       {
-        echo "<div class='alert alert-danger' id='noti'>No se ha podido ingresar carta de Renovacion</div>";
-      }
+        echo "<div class='alert alert-danger' id='noti'>".$_SESSION["error"]."</div>";
+        unset($_SESSION['error']);
       }
       ?>
 
@@ -242,16 +249,21 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Carta</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Carta</h5>        
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <div class="modal-body">
+        <div class="alert alert-danger" style="height: 60px;margin-bottom: -10px;">
+           <p style="font-size: 13px;text-align: center;">Debe de escribir el nombre del archivo  de la siguiente manera: <span style="font-style: italic; "><?php echo $formato; ?>.pdf</span></p>
+        </div>
+       
+        <br>
         <form action="Modelo/ModeloRenovacion/carta.php" method="post" enctype="multipart/form-data">
           <label >Universidad</label>
         <input name="uni" placeholder="año" readonly class="form-control" value="<?php echo $universidad;  ?>" ></input>
-        <br>
         <br>
         <label >Ciclo</label>
         <select name="ciclo" class="form-control">
@@ -263,7 +275,7 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
         <label >Año</label>
         <input name="anio" placeholder="año" readonly class="form-control" value="<?php echo date("Y");  ?>" ></input>
         <br>
-          <div class="custom-file">
+          <div class="custom-file" >
           <input type="file" class="custom-file-input" accept=".pdf" id="customFileLang" name="archivo" required>
           <label class="custom-file-label" for="customFileLang" data-browse="Buscar">Seleccionar Carta</label>
           <center><small>El archivo no debe pesar más de 5MB</small></center>
@@ -295,13 +307,13 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
 
       </div>
 
-      <div class="modal-footer">
+      <div class="modal-footer" style="margin-top: -30px;">
         
           <center><input style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
-     color:white;" type="submit" id="subirCarta" name="subirCarta" value="Guardar Cambios"></center>
+     color:white;margin-bottom: -10px;" type="submit" id="subirCarta" name="subirCarta" value="Guardar Cambios"></center>
       </div>
 
       </form>

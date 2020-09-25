@@ -26,8 +26,8 @@ $numero = rand(1, 10000000);
 
 
 $idRenovacion = "RN-".$numero;
-$archivero = "../../../CoachReuniones/Renovaciones/".$universidad."/".$alumno."/"."Ciclo 0".$ciclo."-".$year;
-$ubicacion = "Renovaciones/".$universidad."/".$alumno."/"."Ciclo 0".$ciclo."-".$year."/".$nombreArchivo;
+$archivero = "../../../CoachReuniones/Renovaciones/".$year."/Class-".$Class."/"."Ciclo 0".$ciclo."/".$alumno;
+$ubicacion = "Renovaciones/".$year."/Class-".$Class."/"."Ciclo 0".$ciclo."/".$alumno."/".$nombreArchivo;
 
 if ($tamaño > 5000000) {
   $_SESSION["error"] = "Tamaño de archivo mayor a 5MB";
