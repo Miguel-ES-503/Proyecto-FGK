@@ -300,7 +300,7 @@ if ($_GET['id']==null) {
              
               }else
               {
-                echo "<th><a href='../pdfPensum/$Pensum' class='btn btn-danger '><img src='../img/PDF.png' width='25px' height='25px>'</a> </th>";  
+                echo "<th><a href='../pdfPensum/$Pensum' target='_blank' class='btn btn-danger '><img src='../img/PDF.png' width='25px' height='25px>'</a> </th>";  
               }
               ?>
 
@@ -417,7 +417,7 @@ if ($_GET['id']==null) {
         
          }else
          {
-           echo "<th><a href='../pdfCicloInscripcion/$pdfCiclo' class='btn btn-danger '><img src='../img/PDF.png' width='25px' height='25px>'</a> </th>";  
+           echo "<th><a href='../pdfCicloInscripcion/$pdfCiclo' target='_blank' class='btn btn-danger '><img src='../img/PDF.png' width='25px' height='25px>'</a> </th>";  
          }
 
         
