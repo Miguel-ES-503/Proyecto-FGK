@@ -69,32 +69,32 @@ if ($tama«Ðoarchivo <= 5000000 ) {
          if ($consulta->execute()) 
          { 
 
-
-
+         
             //NOTIFICACIONES
         //---------------
 
         //Primer paso: Extraer el id del remitente (alumno) 
 
         //consulta del remitente
-         $extraeRemitente=$pdo->prepare("SELECT `SedeAsistencia`, `correo`,`Nombre` FROM `alumnos` WHERE `ID_Alumno`=:alumno");
+        $extraeRemitente=$pdo->prepare("SELECT `SedeAsistencia`, `correo`,`Nombre` FROM `alumnos` WHERE `ID_Alumno`=:alumno");
 
-         //asignamos valor al campo por medio de la variable
-         $extraeRemitente->bindParam(":alumno",$iduser);
+        //asignamos valor al campo por medio de la variable
+        $extraeRemitente->bindParam(":alumno",$iduser);
 
-         $extraeRemitente->execute();//ejecuto la consulta
+        $extraeRemitente->execute();//ejecuto la consulta
 
+        
         //condiciono la consulta de extraer Remitente
-         if ($extraeRemitente->rowCount()>0) {
+        if ($extraeRemitente->rowCount()>0) {
 
-           $fila1=$extraeRemitente->fetch();
-           $sedeAlumno=$fila1["SedeAsistencia"]; //sede a la que pertenece
-           $Correo=$fila1["correo"]; //correo oportunidades del alumno
-           $NombreAlumno=$fila1["Nombre"];//nombre del alumno
-         }
+          $fila1=$extraeRemitente->fetch();
+          $sedeAlumno=$fila1["SedeAsistencia"]; //sede a la que pertenece
+          $Correo=$fila1["correo"]; //correo oportunidades del alumno
+          $NombreAlumno=$fila1["Nombre"];//nombre del alumno
+        }
 
 
-         //*Segundo paso: Extraer el id del usuario
+        //*Segundo paso: Extraer el id del usuario
          //--------------------------------------------------------------------------------
 
          //consulta que extrae el usuario
@@ -112,34 +112,33 @@ if ($tama«Ðoarchivo <= 5000000 ) {
            $IdAlumnoUser=$fila2["IDUsuario"]; //id del usuario que pertenece al alumno
          }
 
-
+         
          //*Tercer paso: Extraer el id del receptor(Coaches, super usuario)
          //--------------------------------------------------------------------------------
 
          //consulta que extrae el usuario
-         $extraeSuperUser=$pdo->prepare("SELECT `IDUsuario`,`nombre`,`correo` FROM `usuarios` WHERE `SedeAsistencia`=:sede AND `cargo`='Coach Reuniones'");
+         $extraeSuperUser=$pdo->prepare("SELECT `IDUsuario`,`nombre`,`correo` FROM `usuarios` WHERE `SedeAsistencia`=:sede AND `cargo`='Coach Fase 2'");
 
          //asignamos valor al campo por medio de la variable
          $extraeSuperUser->bindParam(":sede",$sedeAlumno);
 
          $extraeSuperUser->execute();//ejecuto la consulta
 
+        
 
-
-
-
-
+         
          while ($fila3 = $extraeSuperUser->fetch()) {
 
           //consulta que inserta la notificacion en la base
-           $insertaNoti=$pdo->prepare("INSERT INTO `notificaciones`(`Id_Remitente`, `Id_Receptor`, `Tipo`,`idSolicitud`) VALUES (:idAlumnoUser,:idSuperUser,'Pensum',:idSoli)");
+           $insertaNoti=$pdo->prepare("INSERT INTO `notificaciones`(`Id_Remitente`, `Id_Receptor`, `Tipo`,`idSolicitud`) VALUES (:idAlumnoUser,:idSuperUser,'Materias',:idSoli)");
            //asignamos valor al campo por medio de las variables
            $insertaNoti->bindParam(":idAlumnoUser",$IdAlumnoUser);
            $insertaNoti->bindParam(":idSuperUser",$fila3['IDUsuario']);
-           $insertaNoti->bindParam(":idSoli",$idsOLI);
+           $insertaNoti->bindParam(":idSoli",$incripCiclo);
 
            $insertaNoti->execute();//ejecutamos la consulta
-
+          
+          
 
 
            
@@ -155,13 +154,10 @@ if ($tama«Ðoarchivo <= 5000000 ) {
 
          }
 
-         //FIN NOTIFICACIONES
+
+         
 
 
-
-
-
-          
 
 
 

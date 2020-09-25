@@ -343,13 +343,15 @@ background-color: #0D0D0D;
         <button class="navbar-toggler btn-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
           <span class="navbar-toggler-icon"><i class="fas fa-sort-down"></i></span>
         </button>
-        
+        <?php  $idUser=$_SESSION['iduser']; ?>
+
         
  
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0" style="border-style: none;">
-      
-      <script type="text/javascript">
+
+
+        <script type="text/javascript">
           $(document).ready(function() {
             //Recibir cantidad de notificaciones
             $.ajax({
@@ -367,6 +369,8 @@ background-color: #0D0D0D;
 
                   $("#cuantas").append('<p id="num">'+cuanto+'</p>');
               }
+            }
+              
             });
 
 
@@ -388,92 +392,14 @@ background-color: #0D0D0D;
                     var solicitud=notificacion[i].idSolicitud;
                     var estado=notificacion[i].Estado;
                     var idNoti=notificacion[i].Id;
-
-
-          if (tipo=='Cambio de estado') {
-                      //Si es desinscribirse de un taller
-                      if (EstadoSolicitud=='Aprobado') {
-                        if (estado=='Visto') {
-                          $("#notis").append('<div class="notificacion">'
-                             +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
-                              +'<div class="row Envia">'
-
-                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
-                                  +'width: 40px; background-repeat: no-repeat;'
-                                  +'border-radius: 50%;'
-                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
-                              +'</div>');
-                        }else {
-                          $("#notis").append('<div class="notificacion">'
-                           +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
-                              +'<div class="row Envia">'
-
-                              +'<div class="novisto"></div>'
-                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
-                                  +'width: 40px; background-repeat: no-repeat;'
-                                  +'border-radius: 50%;'
-                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
-                              +'</div>');
-                        }
-
-                         }else if (EstadoSolicitud=='Rechazado') {
-                            if (estado=='Visto') {
-                              $("#notis").append('<div class="notificacion">'
-                                +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
-                                  +'<div class="row Envia">'
-
-                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
-                                      +'width: 40px; background-repeat: no-repeat;'
-                                      +'border-radius: 50%;'
-                                    +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
-                                  +'</div>');
-                            }else {
-                              $("#notis").append('<div class="notificacion">'
-                               +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
-                                  +'<div class="row Envia">'
-
-                                  +'<div class="novisto"></div>'
-                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
-                                      +'width: 40px; background-repeat: no-repeat;'
-                                      +'border-radius: 50%;'
-                                      +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
-                                  +'</div>');
-                            }
-                      }else if (EstadoSolicitud=='Enviado') {
-                        if (estado=='Visto') {
-                          $("#notis").append('<div class="notificacion">'
-                             +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
-                              +'<div class="row Envia">'
-
-                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
-                                  +'width: 40px; background-repeat: no-repeat;'
-                                  +'border-radius: 50%;'
-                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
-                              +'</div>');
-                        }else {
-                          $("#notis").append('<div class="notificacion">'
-                            +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
-                              +'<div class="row Envia">'
-
-                              +'<div class="novisto"></div>'
-                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
-                                  +'width: 40px; background-repeat: no-repeat;'
-                                  +'border-radius: 50%;'
-                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
-                              +'</div>');
-                        }
-                      }
-                    }
                   }
 
-
-
-              }
-            });
+        
 
           });
+          
         </script>
-  <script type="text/javascript">
+        <script type="text/javascript">
         setInterval(function() {
           //Recibir notificaciones
           $.ajax({
@@ -494,13 +420,17 @@ background-color: #0D0D0D;
           });
         }, 3000);
         </script>
+
+    
+
+
         <li class="nav-item dropdown" id="s1">
           <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown campana" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-style: none;color: white;">
           <i class="far fa-bell"></i>
           <span class="badge badge-dark" id="cuantas"></span>
           </a>
-          <div class="contenedor dropdown-menu dropdown-menu-right bg-dark" id="notis" aria-labelledby="navbarDropdown">
-            <script type="text/javascript">
+          <div class="contenedor dropdown-menu dropdown-menu-right bg-secondary" id="notis" aria-labelledby="navbarDropdown" >
+          <script type="text/javascript">
               setInterval(function() {
                 //Recibir notificaciones
                 $.ajax({
@@ -520,88 +450,475 @@ background-color: #0D0D0D;
                         var estado=notificacion[i].Estado;
                         var idNoti=notificacion[i].Id;
 
-                     if (tipo=='Cambio de estado') {
+
+                    //1.Tipo: horas de vinculacion
+                     if (tipo=='Horas de vinculacion') {
                           //Si es desinscribirse de un taller
                           if (EstadoSolicitud=='Aprobado') {
                             if (estado=='Visto') {
                               $("#notis").append('<div class="notificacion">'
-                                 +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                +'<a class="dropdown-item noti" href="DetallesHorasSociales.php?id='+solicitud+'&&idNotif='+idNoti+'">'
                                   +'<div class="row Envia">'
 
                                       +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
                                       +'width: 40px; background-repeat: no-repeat;'
                                       +'border-radius: 50%;'
-                                      +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
+                                      +'background-size: 100% auto;" ><span class="textoNoti">   '+nombre+' ha solicitado horas de vinculación.</span>'
                                   +'</div>');
                             }else {
                               $("#notis").append('<div class="notificacion">'
-                                +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                +'<a class="dropdown-item noti" href="DetallesHorasSociales.php?id='+solicitud+'&&idNotif='+idNoti+'">'
                                   +'<div class="row Envia">'
 
                                   +'<div class="novisto"></div>'
                                       +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
                                       +'width: 40px; background-repeat: no-repeat;'
                                       +'border-radius: 50%;'
-                                     +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
+                                     +'background-size: 100% auto;" ><span class="textoNoti">   '+nombre+' ha solicitado horas de vinculación.</span>'
                                   +'</div>');
                             }
                             }else if (EstadoSolicitud=='Rechazado') {
                             if (estado=='Visto') {
                               $("#notis").append('<div class="notificacion">'
-                                 +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                +'<a class="dropdown-item noti" href="DetallesHorasSociales.php?id='+solicitud+'&&idNotif='+idNoti+'">'
                                   +'<div class="row Envia">'
 
                                       +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
                                       +'width: 40px; background-repeat: no-repeat;'
                                       +'border-radius: 50%;'
-                                     +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
+                                       +'background-size: 100% auto;" ><span class="textoNoti">   '+nombre+' ha solicitado horas de vinculación.</span>'
                                   +'</div>');
                             }else {
                               $("#notis").append('<div class="notificacion">'
-                                +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                +'<a class="dropdown-item noti" href="DetallesHorasSociales.php?id='+solicitud+'&&idNotif='+idNoti+'">'
                                   +'<div class="row Envia">'
 
                                   +'<div class="novisto"></div>'
                                       +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
                                       +'width: 40px; background-repeat: no-repeat;'
                                       +'border-radius: 50%;'
-                                      +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
+                                     +'background-size: 100% auto;" ><span class="textoNoti">   '+nombre+' ha solicitado horas de vinculación.</span>'
                                   +'</div>');
                             }
                           }else if (EstadoSolicitud=='Enviado') {
                             if (estado=='Visto') {
                               $("#notis").append('<div class="notificacion">'
-                                 +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                +'<a class="dropdown-item noti" href="../DetallesHorasSociales.php?id='+solicitud+'&&idNotif='+idNoti+'">'
                                   +'<div class="row Envia">'
 
                                       +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
                                       +'width: 40px; background-repeat: no-repeat;'
                                       +'border-radius: 50%;'
-                                     +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
+                                       +'background-size: 100% auto;" ><span class="textoNoti">   '+nombre+' ha solicitado horas de vinculación.</span>'
                                   +'</div>');
                             }else {
                               $("#notis").append('<div class="notificacion">'
-                               +'<a class="dropdown-item noti" href="DetallesSolicitudCampoLaboral.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                +'<a class="dropdown-item noti" href="DetallesHorasSociales.php?id='+solicitud+'&&idNotif='+idNoti+'">'
                                   +'<div class="row Envia">'
 
                                   +'<div class="novisto"></div>'
                                       +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
                                       +'width: 40px; background-repeat: no-repeat;'
                                       +'border-radius: 50%;'
-                                     +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un cambio de estado.</span>'
+                                       +'background-size: 100% auto;" ><span class="textoNoti">   '+nombre+' ha solicitado horas de vinculación.</span>'
                                   +'</div>');
                             }
                           }
                         }
+                        //2. Tipo: Transporte
+                        else if (tipo=='Transporte') {
+                      
+                      if (EstadoSolicitud=='Aprobado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado Transporte.</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                           +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado Transporte.</span>'
+                              +'</div>');
+                        }
+
+                         }else if (EstadoSolicitud=='Rechazado') {
+                            if (estado=='Visto') {
+                              $("#notis").append('<div class="notificacion">'
+                                +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                  +'<div class="row Envia">'
+
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                    +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado Transporte.</span>'
+                                  +'</div>');
+                            }else {
+                              $("#notis").append('<div class="notificacion">'
+                               +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                  +'<div class="row Envia">'
+
+                                  +'<div class="novisto"></div>'
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                      +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado Transporte.</span>'
+                                  +'</div>');
+                            }
+                      }else if (EstadoSolicitud=='Enviado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado un Transporte.</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                            +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado Transporte.</span>'
+                              +'</div>');
+                        }
                       }
+                    }//fin de transporte-----------------------------------------
+
+
+                    //3. Tipo: Pensum
+                    else if (tipo=='Pensum') {
+                      //Si es desinscribirse de un taller
+                      if (EstadoSolicitud=='Aprobado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado revision de pensum.</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                           +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado revision de pensum.</span>'
+                              +'</div>');
+                        }
+
+                         }else if (EstadoSolicitud=='Rechazado') {
+                            if (estado=='Visto') {
+                              $("#notis").append('<div class="notificacion">'
+                                +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                  +'<div class="row Envia">'
+
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                    +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado revision de pensum</span>'
+                                  +'</div>');
+                            }else {
+                              $("#notis").append('<div class="notificacion">'
+                               +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                  +'<div class="row Envia">'
+
+                                  +'<div class="novisto"></div>'
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                      +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado revision de pensum.</span>'
+                                  +'</div>');
+                            }
+                      }else if (EstadoSolicitud=='Enviado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado revision de pensum.</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                            +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado revision de pensum.</span>'
+                              +'</div>');
+                        }
+                      }
+                    }//fin de pensum---------------------
+
+
+                    //4. Tipo: Inscripcion Materias
+                    else if (tipo=='Materias') {
+                      //Si es desinscribirse de un taller
+                      if (EstadoSolicitud=='Aprobado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="DetallesMaterias.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha inscrito materias.</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                           +'<a class="dropdown-item noti" href="DetallesMaterias.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+'ha inscrito materias.</span>'
+                              +'</div>');
+                        }
+
+                         }else if (EstadoSolicitud=='Rechazado') {
+                            if (estado=='Visto') {
+                              $("#notis").append('<div class="notificacion">'
+                                +'<a class="dropdown-item noti" href="DetallesMaterias.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                  +'<div class="row Envia">'
+
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                    +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha inscrito materias.</span>'
+                                  +'</div>');
+                            }else {
+                              $("#notis").append('<div class="notificacion">'
+                               +'<a class="dropdown-item noti" href="DetallesMaterias.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                  +'<div class="row Envia">'
+
+                                  +'<div class="novisto"></div>'
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                      +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha inscrito materias.</span>'
+                                  +'</div>');
+                            }
+                      }else if (EstadoSolicitud=='Enviado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="DetallesMaterias.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+'ha inscrito materias.</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                            +'<a class="dropdown-item noti" href="DetallesMaterias.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha inscrito materias.</span>'
+                              +'</div>');
+                        }
+                      }
+                    }//fin de inscripcion Materias-------------------------------------------
+
+
+                    //5. Tipo: Notas
+                    else if (tipo=='Notas') {
+                      //Si es desinscribirse de un taller
+                      if (EstadoSolicitud=='Aprobado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha actualizado sus notas.</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                           +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+'ha actualizado sus notas.</span>'
+                              +'</div>');
+                        }
+
+                         }else if (EstadoSolicitud=='Rechazado') {
+                            if (estado=='Visto') {
+                              $("#notis").append('<div class="notificacion">'
+                                +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                  +'<div class="row Envia">'
+
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                    +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha actualizado sus notas</span>'
+                                  +'</div>');
+                            }else {
+                              $("#notis").append('<div class="notificacion">'
+                               +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                  +'<div class="row Envia">'
+
+                                  +'<div class="novisto"></div>'
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                      +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha actualizado sus notas.</span>'
+                                  +'</div>');
+                            }
+                      }else if (EstadoSolicitud=='Enviado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha actualizado sus notas.</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                            +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha actualizado sus notas.</span>'
+                              +'</div>');
+                        }
+                      }
+                    }//fin notas-------------------------------------------
+
+
+                    //6. Tipo: Retiros
+                    else if (tipo=='Retiros') {
+                     
+                      if (EstadoSolicitud=='Aprobado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado retirar una materia.</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                           +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" >ha solicitado retirar una materia.</span>'
+                              +'</div>');
+                        }
+
+                         }else if (EstadoSolicitud=='Rechazado') {
+                            if (estado=='Visto') {
+                              $("#notis").append('<div class="notificacion">'
+                                +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                  +'<div class="row Envia">'
+
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                    +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado retirar una materia</span>'
+                                  +'</div>');
+                            }else {
+                              $("#notis").append('<div class="notificacion">'
+                               +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                  +'<div class="row Envia">'
+
+                                  +'<div class="novisto"></div>'
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                      +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado revision de pensum.</span>'
+                                  +'</div>');
+                            }
+                      }else if (EstadoSolicitud=='Enviado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado retirar una materia.</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                            +'<a class="dropdown-item noti" href="DetallesTransporte.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha solicitado retirar una materia.</span>'
+                              +'</div>');
+                        }
+                      }
+                    }
 
 
 
+                    }//Retiro fin
                   }
+                  
+
+
                 });
               }, 3000);
             </script>
-
           </div>
         </li>
    

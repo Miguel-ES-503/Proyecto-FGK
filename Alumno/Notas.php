@@ -227,7 +227,7 @@
           { 
 
 
-             if ($fila2['estadoM'] !='Inscrita') {
+             if ($fila2['estadoM'] !='Inscrita' && $fila2['nota'] <=6) {
               $IdInsM=$fila2["Id_InscripcionM"];
 
                echo "<tr>
@@ -237,7 +237,7 @@
                     <td >".$fila2['matricula']."</td>
                      <td >".$fila2['cicloU']."</td>
                       <td >".$fila2['nota']."</td>
-                    <td >".$fila2['estado']."</td>
+                    <td >Reprobado</td>
                     
                     <td>
 
@@ -255,22 +255,25 @@
              }else
                  {
 
-                   echo "<tr>
-                    <td >".$fila2['idMateria']."</td>
-                    <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                  echo "<tr>
+               
+                  <td >".$fila2['idMateria']."</td>
+                  <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                  <td >".$fila2['matricula']."</td>
+                   <td >".$fila2['cicloU']."</td>
                     <td >".$fila2['nota']."</td>
-                    <td >".$fila2['estado']."</td>
-                   
-                    <td>
+                  <td >".$fila2['estado']."</td>
+                  
+                  <td>
 
 
 
-                    <center>
-                     <button type='button' id=".$fila2['idMateria']." class='btn btn-danger' data-toggle='modal' data-target='#modalFinal' onclick='mandarId(id)' ><i class='fa fa-pen'></i>
-                     </button>
-                    </center>
-                    </td>
-                  </tr>";     
+                  <center>
+                   <button type='button' id=".$fila2['idMateria']." class='btn ' data-toggle='modal' data-target='#ModalMateria' onclick='mandarId(id)' ><i class='fa fa-pen'></i>
+                   </button>
+                  </center>
+                  </td>
+                </tr>";     
 
        
                   } //fin de else
@@ -341,7 +344,7 @@
       </div>
       
        
-        <form action="Modelo/ModeloMaterias/ActualizarNota.php" method="post" enctype="multipart/form-data">
+        <form action="Modelo/ModeloMaterias/subirpdfNotas.php" method="post" enctype="multipart/form-data">
             
         
 
@@ -366,12 +369,12 @@
 
         
         <!--idalumnos-->
-        <input type="hidden" name="alumno" value="<?php echo $alumno;?>"> 
+        <input type="text" name="alumno" value="<?php echo $alumno;?>"> 
 
         <!--id expedente-->
-        <input type="hidden" name="expediente" value="<?php echo $idExpedienteU;?>"> 
+        <input type="text" name="expediente" value="<?php echo $idExpedienteU;?>"> 
 
-        <input type="hidden" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">  
+        <input type="text" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">  
       </div>
 
       </div>
@@ -387,7 +390,7 @@
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
-     color:white;" type="submit" name="comprobante_Ciclo" value="Guardar Cambios " id="comprobante_Ciclo">
+     color:white;" type="submit" name="pdfNotas" value="Guardar Cambios " id="pdfNotas">
 
       </div>
 

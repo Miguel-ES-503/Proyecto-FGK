@@ -1,5 +1,5 @@
 <?php require_once 'templates/head.php'; ?>
-<title>Retiradas</title>
+<title>Historial Notas</title>
  <link rel="stylesheet" href="assets1/css1/style.css">
 <?php  
   
@@ -40,11 +40,9 @@
  
 
 <!--div principal-->
-<div class="container-fluid text-center"><br>
+<div class="container-fluid text-center">
   <!--Navbar-->
-  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #2D2D2E">
-
-    <!-- Navbar brand -->
+ 
 
 
 
@@ -56,7 +54,7 @@
     bsCustomFileInput.init()
   });
   </script>
-  <br><br>
+  
   <!--Fin de funcion-->
   <!--///////////////////////////////////////////////-->
 
@@ -68,38 +66,8 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <!-- Collapsible content -->
-  <div class="collapse navbar-collapse" id="basicExampleNav">
+ 
 
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto" >
-      
-      <li class="nav-item">
-        <a class="nav-link active" href="pensum.php">Pensum</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="MateriasInscritas.php">Inscritas</a>
-      </li>
-
-
-       <li class="nav-item">
-        <a class="nav-link" href="MateriasAprobadas.php">Aprobadas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="MateriasReprobadas.php">Reprobadas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="MateriasRetiradas.php">Retiros</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ConsolidadoMaterias.php">Consolidado</a>
-      </li>
-     
-    </ul>
-    <!-- Links -->   
-  </div>
-  <!-- Collapsible content -->
-</nav>
 <!--/.Navbar-->
   
   <div>
@@ -185,14 +153,14 @@ div.centerTable table {
 
 
 <div class='centerTable '>
-<table  id="makeEditable" class="thead-dark" >
-  <h3 class="card-header h3s bg-light">Lista de materias Retiradas</h3>
+<table  id="makeEditable"  >
+  <h3 class="card-header h3s bg-light">Historial Notas</h3>
   
   <thead>
     <tr>
       <th>Codigo</th>
       <th>Asignatura</th>
-      <th>Matricula</th>
+      
       <th>Ciclo</th>
       <th>Nota</th>
       <th>Estado</th>
@@ -204,15 +172,15 @@ div.centerTable table {
    
   <?php
         //consulta que muestra las materias
-       $consulMaterias=$pdo->prepare("SELECT IM.nota,IM.idMateria,M.estadoM,IM.matricula, M.nombreMateria, IM.estado, IC.cicloU, M.idExpedienteU
-       from materias M
-       INNER JOIN inscripcionmateria IM
+       $consulMaterias=$pdo->prepare("SELECT  IM.nota,IM.idMateria,IM.matricula, M.nombreMateria, IM.estado, IC.cicloU, M.idExpedienteU
+      from materias M
+      INNER JOIN inscripcionmateria IM
       ON IM.idMateria= M.idMateria
 
-       INNER JOIN inscripcionciclos IC
+      INNER JOIN inscripcionciclos IC
       ON IC.Id_InscripcionC=IM.Id_InscripcionC
-
-      WHERE M.idExpedienteU = ? AND M.estadoM = 'Retirada' ");
+  
+      WHERE M.idExpedienteU = ? AND IM.estado = 'Reprobada' OR IM.estado = 'Aprobada'");
 
        $consulMaterias->execute(array($idExpedienteU));
 
@@ -225,85 +193,112 @@ div.centerTable table {
           { 
 
 
-             if ($fila2['estadoM'] !='Inscrita') {
+            if ($fila2['estadoM'] !='Inscrita') {
 
-               echo "<tr>
-                    <td >".$fila2['idMateria']."</td>
-                    <td class='oscuro'>".$fila2['nombreMateria']."</td>
-                    <td >".$fila2['matricula']."</td>
-                     <td >".$fila2['cicloU']."</td>
-                       <td >".$fila2['nota']."</td>
-                    <td >".$fila2['estadoM']."</td>
-                  </tr>";     
-             }else
-                 {
+              echo "<tr>
+                   <td >".$fila2['idMateria']."</td>
+                   <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                   
+                    <td >".$fila2['cicloU']."</td>
+                      <td >".$fila2['nota']."</td>
+                   <td >".$fila2['estado']."</td>
+                 </tr>";     
 
-                   echo "<tr>
-                    <td >".$fila2['idMateria']."</td>
-                    <td class='oscuro'>".$fila2['nombreMateria']."</td>
-                    <td >".$fila2['nota']."</td>
-                    <td >".$fila2['estadoM']."</td>            
-                  </tr>";     
-                  } //fin de else
-               }//fin de while
-            }else{
-              echo "<tr><td colspan='6'>No hay ninguna asignatura aprobada.</td></tr>";
-            }//fin de else-if
-                                       
+       
+        
+            }else
+                {
 
-                                  
-            ?>
-              
+                  echo "<tr>
+                   <td >".$fila2['idMateria']."</td>
+                   <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                   <td ></td>
+                    <td ></td>
+                     <td >".$fila2['nota']."</td>
+                   <td >".$fila2['estadoM']."</td>
+                  
+                   
 
 
-  </tbody>
+                   
+                 </tr>";     
 
-  <tfoot>
-    
-  </tfoot>
+      
+                 } //fin de else
+
+
+
+          
+                           
+              }//fin de while
+           }else{
+             echo "<tr><td colspan='6'>No ha agregado ninguna Asignatura</td></tr>";
+           }//fin de else-if
+                                      
+
+                                 
+           ?>
+             
+
+
+
+ </tbody>
+
+ <tfoot>
+   
+ </tfoot>
 </table>
 </div>
 <br>
 <br>
 <br><br><br>
 
-                            
-                          <br> 
-                         
-                           <!--div class="f1-buttons">
-                               <button type="button" class="btn btn-next btn-dark">Enviar</button>
-                          </div-->
-                          <br>
+                           
+                         <br> 
+                        
+                          <!--div class="f1-buttons">
+                              <button type="button" class="btn btn-next btn-dark">Enviar</button>
+                         </div-->
+                         <br>
 
 
-                   </div>
+                  </div>
 
-               <!-- Fin Primera columna-->
+              <!-- Fin Primera columna-->
 
-                       <br>
-                       
-      
-    
-           </div> <!--Fin de row-->
+                      <br>
+                      
+     
+   
+          </div> <!--Fin de row-->
 
 
-         </div><!--Fin de container-->
+        </div><!--Fin de container-->
 
-       </div> 
+      </div> 
 
-     </div>
-  </div> 
-  <br>
-  <br><br><br>
+    </div>
+ </div> 
+ <br>
+ <br><br><br>
 </div><!-- Fin de div principal-->
 
 <!-- /#page-content-wrapper -->
 
+
+
+
+
 </div>
 
 <!-- /#wrapper -->
- <?php
 
-  require_once 'templates/footer.php';
+
+
+
+
+<?php
+
+ require_once 'templates/footer.php';
 
 ?>

@@ -2,310 +2,12 @@
   require_once 'templates/head.php';
 ?>
 <title>Expediente de alumno</title>
-<style>
-@media only screen and (min-width: 320px) and (max-width: 967px) {
 
-    .main-title {
-        font-size: 10px;
-        margin-top: 8px;
-
-
-    }
-
-    .icon {
-        height: 18px;
-        width: 18px;
-        margin-top: 0px;
-        position: relative;
-        right: 20px;
-    }
-
-    .title {
-        width: 100%;
-        position: relative;
-        left: 70px;
-
-    }
-
-    .row,
-    #carnet {
-        width: 305px;
-        height: 250px;
-
-
-
-    }
-
-    #carnet h4,
-    h6 {
-        font-size: 20px;
-
-    }
-
-    .Info-Alumno1-sec,
-    .opciones {
-        width: 10px;
-        height: 250px;
-
-
-    }
-
-    .status1 {
-        position: relative;
-        right: 285px;
-        bottom: 350px;
-    }
-
-    .status2 {
-        position: relative;
-        bottom: 445px;
-        right: 90px;
-
-    }
-
-    .status3 {
-        position: relative;
-        right: 285px;
-        bottom: 460px;
-
-    }
-
-    .status4 {
-        position: relative;
-        bottom: 620px;
-        right: 90px;
-
-    }
-
-    .status5 {
-        position: relative;
-        bottom: 635px;
-        right: 190px;
-        width: 400px;
-    }
-
-    .grafico {
-        position: relative;
-        right: 60px;
-
-    }
-
-    .grafico2 {
-        position: relative;
-        right: 20px;
-    }
-
-    .HorasVinculacion {
-        position: relative;
-        left: 35px;
-        bottom: 60px;
-    }
-
-    .Img2 {
-        position: relative;
-        bottom: 180px;
-        left: 115px;
-    }
-
-    .externa,
-    .horas2 {
-        position: relative;
-        right: 50px;
-        bottom: 115px;
-    }
-
-    .opciones p {
-        font-size: 15px;
-
-    }
-
-    .parrafo {
-        position: relative;
-        bottom: 20px;
-        left: 25px;
-    }
-
-    .carrera {
-        position: relative;
-        left: 90px;
-        bottom: 70px;
-    }
-
-    .promo1 {
-
-        position: relative;
-        bottom: 80px;
-        left: 25px;
-
-    }
-
-    .promo {
-        position: relative;
-        left: 115px;
-        bottom: 120px;
-
-    }
-
-    .estado1 {
-        position: relative;
-        left: 25px;
-        bottom: 130px;
-
-    }
-
-    .estado {
-        position: relative;
-        left: 80px;
-        bottom: 170px;
-
-    }
-
-    .estadolab1 {
-        position: relative;
-        left: 25px;
-        bottom: 170px;
-
-    }
-
-    .estadolab {
-        position: relative;
-        left: 90px;
-        bottom: 210px;
-
-    }
-
-    .talleres1 {
-        position: relative;
-        left: 25px;
-        bottom: 210px;
-
-    }
-
-    .talleres {
-        position: relative;
-        left: 90px;
-        bottom: 250px;
-
-    }
-
-    .financiamiento1 {
-        position: relative;
-        left: 25px;
-        bottom: 255px;
-
-    }
-
-    .financiamiento {
-        position: relative;
-        left: 145px;
-        bottom: 295px;
-
-    }
-
-    #carnet {
-        position: relative;
-        left: 40px;
-
-    }
-
-    .button1 {
-        width: 400px;
-
-    }
-
-    .title {
-        position: relative;
-        right: 30em;
-    }
-
-    .Info1 {
-
-        position: relative;
-        right: 50px;
-    }
-    .Info-Alumno1{
-        position: relative;
-        top: 105px;
-    }
-    .Info-Alumno2 h3{
-        position: relative;
-        top: 30px;
-    }
-    .Info-Alumno2 {
-        position: relative;
-       top: 50px;
-    }
-
-}
-#row
-{
-	background-color: #c7c7c7;
-    height: 50px;
-    width: 100%;
-}
-@media screen and (max-width: 992px) {
-	#bloque,#bloque
-	{
-		background-color: #BE0032;
-		margin-top: 2px;
-		margin-bottom: 2px;
-		text-align: center;
-	}
-	#bloque a,#bloque a
-	{
-		color: white;
-	}
-	#T1
-	{
-		font-size: 20px;
-		font-weight: bold;
-		letter-spacing: 2px;
-		margin-top: -4px;
-		margin-right: 20px;
-	}
-
-}@media screen and (min-width: 993px) {
-	#T1
-	{
-		font-size: 30px;
-		align-items: center;
-		font-weight: bold;
-		letter-spacing: 2px;
-	}
-
-#bloque,#bloque2
-{
-	background-color: #BE0032;
-	text-align: center;
-	height: 50px;
-	color: white;
-	margin-left: 50px;
-	width: 13vw;
-	align-items: center;
-
-}
-#bloque a,#bloque2 a
-{
-    color: white;
-    font-weight: bold;
-	font-size: 15px;
-	align-items: center;
-}
-}
-.grafico {
-    position: relative;
-    right: 65px;
-    width: 300px;
-}
-.icon{
-    margin-bottom: 12px;
-}
-</style>
 
 <?php
 //llama las plantillas
+  include "CSS/cod.php";
   require_once 'templates/header.php';
-
   require_once 'templates/MenuHorizontal.php';
   require_once '../Conexion/conexion.php';
 ?>
@@ -367,6 +69,14 @@ while($fila2 = $stmt2->fetch()){
     $Historico=$fila['TotalTalleres'];
     	$Financiamiento = $fila['FuenteFinacimiento'];
 
+    }
+    $stmt123456 =$dbh->prepare("SELECT `cum`, `avancePensum` FROM `expedienteu` WHERE ID_Alumno='$Carnet'");
+    // Ejecutamos
+    $stmt123456->execute();
+
+    while($fila = $stmt123456->fetch()){
+         $cum=$fila["cum"];
+         $avancePensum=$fila["avancePensum"];
     }
 	//Extraemos la foto del alumno
 
@@ -566,27 +276,30 @@ while($fila2 = $stmt2->fetch()){
 <meta charset="utf-8">
 
 <nav class="navbar navbar-expand-lg navbar-light" id="row">
-	<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon">
-  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
-</svg></a>
-  <span id="T1">Expediente de Alumno</span>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon">
+        <path fill-rule="evenodd"
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z" />
+        </svg>
+    </a>
+    <span id="T1">Expediente de Alumno</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
 
-      
-      <li class="nav-item" id="bloque">
-        <a class="nav-link" href="#">Historial notas</a>
-      </li>
-      <li class="nav-item" id="bloque">
-        <a class="nav-link" href="renovacionBeca.php">Renovaciones de Beca</a>
-      </li>
-    </ul>
-  </div>
+
+            <li class="nav-item" id="bloque">
+                <a class="nav-link" href="HistorialNotas.php">Historial notas</a>
+            </li>
+            <li class="nav-item" id="bloque">
+                <a class="nav-link" href="renovacionBeca.php">Renovaciones de Beca</a>
+            </li>
+        </ul>
+    </div>
 </nav>
-    
+
 
 
 
@@ -661,7 +374,7 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
             </div>
             <div class="Info-Alumno2">
                 <h3 class="subtitle-p">Progreso</h3>
-                
+
                 <section class="Info1 float-left h-50 w-75" style="margin-left:10%">
                     <div class="grafico ">
                         <div id="container"></div>
@@ -720,11 +433,11 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
                     class="salto">
                 <div class="status1">
                     <p>CUM Actual</p>
-                    <h3 class="subtitle"><?php  echo  round($Promedio,2) ?> %</h3>
+                    <h3 class="subtitle"><?php  echo  round($cum,2) ?> </h3>
                 </div>
                 <div class="status2">
                     <p>Avance de <br> Carrera</p>
-                    <h3 class="subtitle"><?php  echo  round($Promedio,2) ?> %</h3>
+                    <h3 class="subtitle"><?php  echo  round($avancePensum,2) ?> %</h3>
                     <a href="expedienteU.php"><button class="btn btn-info" id="button-info">Ver detalles</button></a>
                 </div>
                 <div class="status3">
