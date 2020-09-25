@@ -1,5 +1,5 @@
 <?php require_once 'templates/head.php'; ?>
-<title>Aprobadas</title>
+<title>Retiradas</title>
  <link rel="stylesheet" href="assets1/css1/style.css">
 <?php  
   
@@ -186,7 +186,7 @@ div.centerTable table {
 
 <div class='centerTable '>
 <table  id="makeEditable" class="thead-dark" >
-  <h3 class="card-header h3s bg-light">Lista de materias Inscritas</h3>
+  <h3 class="card-header h3s bg-light">Lista de materias Retiradas</h3>
   
   <thead>
     <tr>
