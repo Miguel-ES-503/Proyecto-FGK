@@ -58,17 +58,6 @@
      color:white;"><img src="../img/add.png" width="25px" height="25px">
                              <p style="font-size: 10px;">Inscribir Materias</p>
                          </a>
-                         
-                         <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal'
-                             style="border-radius: 20px;
-    border: 2px solid #196fb0;
-    width: 115px;height: 52px;
-     background-color: #196fb0;
-     color:white;"><img src="../img/paper.png" width="25px" height="25px"><br>
-                             <p style="font-size: 10px;">Subir Comprobante</p>
-                         </button>
-
-
                          <!--<button type='button' class='btn btn-danger' disabled><i class='fas fa-file-pdf' ></i></button>-->
 
                      </span>
@@ -112,7 +101,7 @@
                                 echo "<tr>";
                                 echo "<td>".$row['idMateria']."</td>";
                                 echo "<td>".$row['nombreMateria']."</td>";
-                                echo "<td><a class='btn btn-warning' href='Modelo/ModeloRetiro/retirar.php?id=".$row['idMateria']."'
+                                echo "<td><a class='btn btn-warning' href='retirar.php?id=".$row['idMateria']."&idAlumno=$alumno&materia=".$row['nombreMateria']."'
                                  >Retirar</a></td>";
                                 echo "</tr>";
                             }

@@ -433,7 +433,7 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
                     class="salto">
                 <div class="status1">
                     <p>CUM Actual</p>
-                    <h3 class="subtitle"><?php  echo  round($cum,2) ?> %</h3>
+                    <h3 class="subtitle"><?php  echo  round($cum,2) ?> </h3>
                 </div>
                 <div class="status2">
                     <p>Avance de <br> Carrera</p>
