@@ -369,12 +369,12 @@
 
         
         <!--idalumnos-->
-        <input type="text" name="alumno" value="<?php echo $alumno;?>"> 
+        <input type="hidden" name="alumno" value="<?php echo $alumno;?>"> 
 
         <!--id expedente-->
-        <input type="text" name="expediente" value="<?php echo $idExpedienteU;?>"> 
+        <input type="hidden" name="expediente" value="<?php echo $idExpedienteU;?>"> 
 
-        <input type="text" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">  
+        <input type="hidden" name="idInscripcionCiclo" value="<?php echo $Id_InscripcionC;?>">  
       </div>
 
       </div>
