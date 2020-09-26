@@ -123,6 +123,12 @@ color: white;
 
 }
 
+#imgaviso{
+position: relative;
+left: 10px;
+
+}
+
 
 #enlaces{
   float: left;
@@ -189,8 +195,8 @@ color: white;
         </div>
         <div id="avisos" >
         <h3  class="avisos" style="font-weight: bold;">Avisos<h3>
-        <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
-        <div style="float: right; " ><p class="enlace" style="text-align: left;">Enlace:<br>
+        <img class="img-fluid" id="imgaviso" src="../img/avisos.png" width="100px" height="100px">
+        <div style="float: right; " ><p class="enlace" style="text-align: left;">Enlace IG:<br>
         </p>
         <center><button class="btn-leer2" >Leer</button></center>
         </div>

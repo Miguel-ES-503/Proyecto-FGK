@@ -354,6 +354,7 @@ h2,
     color: #fff;
     width: 60%;
     height: 30px;
+    border-radius: 20px;
     border-radius: 25.bordepx;
     background: #BE0032;
     display: -webkit-box;
@@ -375,6 +376,7 @@ h2,
     color: #fff;
     width: 90%;
     height: 30px;
+    border-radius: 20px;
     position: relative;
     top: 15px;
     border-radius: 25.bordepx;
