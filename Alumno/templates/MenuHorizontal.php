@@ -152,7 +152,7 @@ background-color: #0D0D0D;
 
 
     <!--Menu Transporte-->
-       <li><a href="InscripcionTransporte.php" class="list-group-item list-group-item-action"><i class="fas fa-bus"></i> Transporte</a></li>
+       <!-- <li><a href="InscripcionTransporte.php" class="list-group-item list-group-item-action"><i class="fas fa-bus"></i> Transporte</a></li> -->
       <li>
 
     <!--Menu Carrera Universitaria-->
