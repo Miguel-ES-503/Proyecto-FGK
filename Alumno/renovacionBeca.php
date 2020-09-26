@@ -257,7 +257,7 @@ $formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$C
 
       <div class="modal-body">
         <div class="alert alert-danger" style="height: 60px;margin-bottom: -10px;">
-           <p style="font-size: 13px;text-align: center;">Debe de escribir el nombre del archivo  de la siguiente manera: <span style="font-style: italic; "><?php echo $formato; ?>.pdf</span></p>
+           <p style="font-size: 13px;text-align: center;">Debe de escribir el nombre del archivo  de la siguiente manera: <span style="font-style: italic; "><?php echo utf8_encode($formato); ?>.pdf</span></p>
         </div>
        
         <br>
