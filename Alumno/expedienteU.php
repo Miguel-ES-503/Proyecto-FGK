@@ -282,7 +282,6 @@ if ($_GET['id']==null) {
                             <th scope="col">proyecto Egreso</th>
                             <th scope="col">Estado</th>
                             <th scope="col">Pensum</th>
-                            <th scope="col">Comprobante</th>
 
                         </tr>
                     </thead>
@@ -304,11 +303,7 @@ if ($_GET['id']==null) {
               }
               ?>
 
-                            <th scope='col'><button type='button' class='btn btn-primary' data-toggle='modal'
-                                    data-target='#exampleModal' style="height: 50px;"><img src="../img/paper.png"
-                                        width="25px" height="25px"><br>
-                                    <p style="font-size: 10px;">Subir pensum</p>
-                                </button></th>
+                        
 
                         </tr>
                     </tbody>
