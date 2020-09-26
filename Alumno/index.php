@@ -106,7 +106,7 @@ width: 100px;
   width: 30%;
 }
 .btn-leer2{
-  height: 22px;
+  height: 20px;
   position: relative;
   top: 22px;
   right: 50px;
@@ -198,7 +198,7 @@ left: 10px;
         <img class="img-fluid" id="imgaviso" src="../img/avisos.png" width="100px" height="100px">
         <div style="float: right; " ><p class="enlace" style="text-align: left;">Enlace IG:<br>
         </p>
-        <center><button class="btn-leer2" >Leer</button></center>
+        <center><button class="btn-leer2" >Visitar</button></center>
         </div>
         
         </div>
