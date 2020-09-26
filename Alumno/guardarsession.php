@@ -30,9 +30,9 @@
     <label for="formGroupExampleInput2" class="float-left">Sugerir temas a tratar</label>
     <textarea name="temas" class="form-control" id="" cols="20" rows="10"></textarea>
   </div>
-  <button type="submit" class="btn btn-success"  name="finalizar" value='<?php echo $id ?>' >Enviar</button>
+  <button type="submit" class="btn btn-success"   onclick="alert('¡Hola, su inscripción se realizon con éxito!')"   name="finalizar" value='<?php echo $id ?>' >Enviar</button>
 </form>   
-  <a href="inscribir_session.php"><button type="submit" class="btn btn-success"  name="finalizar" value='Eliminar'>Regresar</button></a>
+  <a href="inscribir_session.php"><button type="submit"class="btn btn-success"  name="finalizar" value='Eliminar'>Regresar</button></a>
 </div>
 
 <!-- /#wrapper -->
