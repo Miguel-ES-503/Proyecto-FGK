@@ -27,15 +27,15 @@ $numero = rand(1, 10000000);
 
 $idRenovacion = "RN-".$numero;
 $archivero = "../../../CoachReuniones/Renovaciones/".$year."/Class-".$Class."/"."Ciclo 0".$ciclo."/".$alumno;
-$ubicacion = "Renovaciones/".$year."/Class-".$Class."/"."Ciclo 0".$ciclo."/".$alumno."/".$nombreArchivo;
+$ubicacion = "Renovaciones/".$year."/Class-".$Class."/"."Ciclo 0".$ciclo."/".$alumno."/".$formato;
 
 
 if ($tamaño > 5000000) {
   $_SESSION["error"] = "Tamaño de archivo mayor a 5MB";
   header("Location:../../renovacionBeca.php");
-/*}elseif ($nombreArchivo != $formato) {
+}elseif ($nombreArchivo != $formato) {
   $_SESSION["error"] = "Nombre o formato de archivo diferente al solicitado";
-  header("Location:../../renovacionBeca.php");*/
+  header("Location:../../renovacionBeca.php");
 }elseif ($tipoarchivo != "application/pdf") {
 $_SESSION["error"] = "Formato de archivo diferente al solicitado";
   header("Location:../../renovacionBeca.php");
@@ -50,7 +50,7 @@ else
          $consulta->bindParam(':idRenovacion',$idRenovacion,PDO::PARAM_STR);
          $consulta->bindParam(':ID_Alumno',$alumno,PDO::PARAM_STR);
          $consulta->bindParam(':ciclo',$ciclo,PDO::PARAM_INT);
-         $consulta->bindParam(':archivo',$nombreArchivo,PDO::PARAM_STR);
+         $consulta->bindParam(':archivo',$formato,PDO::PARAM_STR);
          $consulta->bindParam(':direccion',$ubicacion,PDO::PARAM_STR);
 
   $consulta->execute();
@@ -69,7 +69,7 @@ rename("../../../CoachReuniones/".$ubicacion, $archivero."/".$formato);
          $consulta->bindParam(':idRenovacion',$idRenovacion,PDO::PARAM_STR);
          $consulta->bindParam(':ID_Alumno',$alumno,PDO::PARAM_STR);
          $consulta->bindParam(':ciclo',$ciclo,PDO::PARAM_INT);
-         $consulta->bindParam(':archivo',$nombreArchivo,PDO::PARAM_STR);
+         $consulta->bindParam(':archivo',$formato,PDO::PARAM_STR);
          $consulta->bindParam(':direccion',$ubicacion,PDO::PARAM_STR);
 
   $consulta->execute();
