@@ -170,18 +170,73 @@
 .openbtn:hover {
   background-color: #2D2D2E;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
 
-  .sidepanel a{
+  
 
-    height: 300px;
-    background-size: 100%;
-    padding: 0px;
+.sidepanel #sidebar-wrapper { 
+  margin-right: -18px;
+font-size: 13px;
 
-  }
+
+  
+}
+.linemenu{
+  width: 210px;
+  
+}
+#sidebar-wrapper .snip1135{
+  margin-left: 210px;
+  font-size: 13px;
+ 
+}
+
+.sidebar-heading {
+
+margin-right: -230px;
+font-size: 1.2rem;
+background-color: #0D0D0D;
+
+}
 
 
 }
+@media screen and (max-width: 767px) {
+  #menus
+  {
+    text-align: center;
+    margin-left: 35px;
+    font-size: 10px;
+  }
+  #submenu
+  {
+     font-size: 10px;
+  }
+ #pro
+ {
+  text-align: center;
+    margin-left: 30px;
+    font-size: 10px;
+ } 
+}
+#menus,#submenu, #pro
+  {
+    font-size: 13px;
+    text-align: center;
+  }
+  #sb{
+    color: white;
+  }
+  #sb:hover
+  {
+  color: black;
+  }
+  @media screen and (max-width: 992px) {
+    #s1
+    {
+      margin: 0 auto;
+    }
+  }
 </style>
 <body>
 
