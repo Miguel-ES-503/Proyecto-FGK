@@ -53,7 +53,7 @@
   clear: both;
   display: table;
 }
-@media only screen and (min-width: 320px) and (max-width: 767px ) {
+@media only screen and (max-width: 767px ) {
 
 #novedades h3, p{
 font-size: 15px;
@@ -105,6 +105,24 @@ width: 100px;
 
   width: 30%;
 }
+.btn-leer2{
+  height: 22px;
+  position: relative;
+  top: 22px;
+  right: 50px;
+ 
+}
+.avisos{
+position: relative;
+right: 20px;
+
+}
+
+.enlace{
+color: white;
+
+}
+
 
 #enlaces{
   float: left;
@@ -170,10 +188,13 @@ width: 100px;
         <center><button class="btn-leer" >Leer</button></center>
         </div>
         <div id="avisos" >
-        <h3  style="font-weight: bold;">Avisos<h3>
+        <h3  class="avisos" style="font-weight: bold;">Avisos<h3>
         <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
-        <div style="float: right; " ><p style="text-align: left;">Boletin:<br>
-        </p></div>
+        <div style="float: right; " ><p class="enlace" style="text-align: left;">Enlace:<br>
+        </p>
+        <center><button class="btn-leer2" >Leer</button></center>
+        </div>
+        
         </div>
         <div id="enlaces">
         <table>
