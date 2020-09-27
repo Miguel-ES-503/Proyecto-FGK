@@ -209,7 +209,7 @@ function myFunction() {
     border: 2px solid #9d120e;
     width: 150px;height: 38px;
      background-color: #9d120e;
-     color:white;"><img src="../img/pdf.png" width="30px" height="30px"><span
+     color:white;"><img src="../img/PDF.png" width="30px" height="28px"><span
                                 class="text">Descargar</span></button></a>
                     <a href="ReportesExcel/ReporteReuniones.php"><button style="border-radius: 20px;
     border: 2px solid green;

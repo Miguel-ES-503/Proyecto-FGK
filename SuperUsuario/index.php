@@ -63,13 +63,18 @@ include 'Modularidad/MenuVertical.php';
         <div id="avisos" >
         <h3  style="font-weight: bold;">Avisos<h3>
         <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
-        <div style="float: right; " ><p style="text-align: left;">Boletin:<br>
-        </p></div>
+        <div style="float: right; " ><p style="text-align: left;">Entérate de lo<br>
+             más reciente:<br>
+        </p>
+        
+    </div>
+<center><a href="https://instagram.com/bk2oportunidades?igshid=9m3e1upgfi84" target="_black" style="text-decoration: none;"><button class="btn-visitar" >Visita IG</button></center>
+
         </div>
         <div id="enlaces">
         <table>
 
-        <h3  style="font-weight: bold;">Enlaces<h3>
+        <h3  style="font-weight: bold; color: black;">Enlaces<h3>
         
         <tr>
         <td>
@@ -77,7 +82,7 @@ include 'Modularidad/MenuVertical.php';
         <img class="img-fluid" src="../img/manual.png" width="100px" height="100px">
         </a>
         <td>
-        <h4>Manual de usuario</h4>
+        <h4 style="color:black;">Manual de usuario</h4>
         </td>
         </td>
         </tr>
@@ -86,7 +91,7 @@ include 'Modularidad/MenuVertical.php';
         <a href="http://workeysoportunidades.org/" target="_black"><img class="img-fluid" src="../img/landing.png" width="90px" height="90px">
         </td>
         <td>
-        <h4>Workey's landing page</h4>
+        <h4 style="color:black;">Workey's landing page</h4>
         </td>
 
         </tr>
