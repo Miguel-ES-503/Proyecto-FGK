@@ -123,6 +123,7 @@ include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de d
         border-color: #ADADB2;
         border: 3px;
     }
+    
 
 }
 </style>
@@ -155,6 +156,10 @@ include 'Modularidad/MenuVertical.php';
 
     .nav {
         margin-left: 20%;
+       
+        height: 85%;
+
+    
     }
 
 }
@@ -190,9 +195,10 @@ function myFunction() {
     <div class="row">
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nav">
 
-            <nav class="nav flex-column menu-responsive" id="nav" style="height:85%">
+            <nav class="nav flex-column menu-responsive" id="nav">
                 <h2 class="title-1">Menu</h2>
-                <button class="nav-link" id="sesion" type='button' data-toggle='modal' data-target='#myModal3'>Crear
+                <button class="nav-link" id="sesion" type='button' role="link"
+                    onclick="window.location='crearSesiones.php'" >Crear
                     Sesiones</button>
                 <button type="button" id="sesion" data-toggle="modal" data-target="#exampleModalLong"
                     class="nav-link">Horarios Disponibles</button>

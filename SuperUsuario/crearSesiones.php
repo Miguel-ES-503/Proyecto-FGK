@@ -10,7 +10,6 @@ include 'Modularidad/CabeceraInicio.php';
 //Modularaidad para extraere los enlaces en HEAD
 include 'Modularidad/EnlacesCabecera.php';
 //Incluir el menu horizontal
-include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
 <!--Comiezo de estructura de trabajo -->
@@ -19,21 +18,6 @@ include 'Modularidad/MenuVertical.php';
 <h1>Actualizar Horario</h1>
 <a href="javascript:history.back();" class="btn float-left"  title="Regresar"><i class="fas fa-chevron-circle-left display-4"></i></a>
 
-<?php 
-$id = $_POST['Disponible7'];
-      $query = "SELECT * FROM one_on_one WHERE estado = 'Disponible' and id = $id ";
-              $stat = $dbh->prepare($query);
-              $stat->execute();
-              $result = $stat->fetchAll();
-        foreach($result as $row)
-                            {
-                              $id = $row["id"];
-                              $titulo = utf8_encode($row["titulo"]);
-                              $fecha = $row["fecha"];
-                              $horaInicio = $row["hora_inicio"];
-                              $horafin = $row["hora_fin"];
-                            }
-?>
 <div  aria-hidden="true" class="text-center float-center" style="margin-right: 6%;">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -47,47 +31,74 @@ $id = $_POST['Disponible7'];
 
   <div class="form-group">
     <label for="exampleInputEmail1" class="text-dark">Ingrese el titulo de la sessión</label>
-    <input type="text" name="titulo" class="form-control" value = '<?php echo $titulo; ?>' required>
-  </div>
+    <select name="titulo" id="" class="form-control float-right">
+                            <option value="Geo Albanés">Geo Albanés</option>
+                            <option value="Ónix Landaverde">Ónix Landaverde</option>
+                        </select>  </div>
   <div class="form-group">
     <label for="exampleInputPassword1" class="text-dark">Ingrese la fecha de la sessión</label>
     <?php $today = date("Y-m-d");?>
-    <input type="date" name="fecha" class="form-control" min='<?php echo $today; ?>' value="<?php echo $fecha; ?>" required>
+    <input type="date" name="fecha" class="form-control" min='<?php echo $today; ?>'  required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1" class="text-dark">Hora de inicio de la se sessión: </label>
-    <input type="time" name="TimeInit" value="<?php echo $horaInicio; ?>" class="form-control" required>
+    <input type="time" name="TimeInit" class="form-control" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1" class="text-dark">Hora de finalización de la sessión: </label>
-    <input type="time" name="TimeEnd" class="form-control" value="<?php echo $horafin; ?>" required>
-  </div>
-  <button type="submit" class="btn btn-primary btn1" value="<?php echo $id ?>" name='idactualizar'>Actualizar <i class="fas fa-paper-plane"></i></button>
-  </form>
+    <input type="time" name="TimeEnd" class="form-control" required>
+  </div><button type="submit" class="submit btn btn-success btn1 mx-auto text-center">Crear <i
+                                class="fas fa-paper-plane"></i></button>
+  </form><br>
   <a href="sessionesOneonOne.php"><button type="submit" class="btn btn-primary btn1" >Regresar <i class="fas fa-paper-plane"></i></button>
 </a>
+
 <br>
           </div>
         </div>
       </div>        
 </div>
 
-<?php 
-// Actualizar Horario
-$id2 = $_POST['idactualizar'];
-$tituloactualizar = $_POST['titulo'];
-$fechaactualizar = $_POST['fecha'];
-$hora_inicioactualizar = $_POST['TimeInit'];
-$hora_finactualizar = $_POST['TimeEnd'];
-if (isset($tituloactualizar)) {
-$sqlactualizar = "UPDATE one_on_one SET titulo=?, fecha=?, hora_inicio=?, hora_fin=? WHERE id=?";
-$stmt= $dbh->prepare($sqlactualizar);
-$stmt->execute([utf8_decode($tituloactualizar), $fechaactualizar, $hora_inicioactualizar,$hora_finactualizar, $id2]);
- echo "<p class='text-success text-center'>Actualizado correctamente</p>";
- header("Location:sessionesOneonOne.php");
-}
-$dbh->close();
-?>
+<?php  
+
+    @$timeInit = $_POST['TimeInit']; 
+    @$timeEnd = $_POST['TimeEnd'];
+    @$fecha = $_POST['fecha'];
+    @$titulo = $_POST['titulo'];
+    @$TimeStart = $_POST['TimeInit'];
+    @$TimeE  = $_POST['TimeEnd'];
+
+                            
+     if(isset($fecha) && isset($titulo) && isset($TimeStart) && isset($TimeE)){
+        if(isset($timeInit)){
+          if ($timeInit < $timeEnd) {
+
+            $stmt2 = $dbh->query("SELECT * FROM one_on_one");
+            
+            while ($row = $stmt2->fetch()) { 
+              $fecha1[] = ($row['fecha'])." ".$row['hora_inicio']." - ".$row['hora_fin'];
+              $titulo1[] = utf8_encode($row['titulo']);
+            }
+            $fechavar[] = $fecha." ".$timeInit." - ".$timeEnd;
+            $titulovar[] = $titulo;
+            
+           if(($fechavar != $fecha1) && ($titulovar != $titulo1)){
+              $sql = "INSERT INTO one_on_one (titulo, fecha, hora_inicio, hora_fin, cupo, estado, estado_alumno) VALUES (?,?,?,?,?,?,?)";
+              $stmt= $dbh->prepare($sql);
+              $stmt->execute([utf8_decode($titulo), $fecha,$TimeStart,$TimeE,1,'Disponible','Disponible']);
+              header("Location:sessionesOneonOne.php");
+              echo "<p class='text-center text-success font-weight-bold'>Enviado correctamente</p>";
+          }else{
+              echo "<script>alert('Error, Ya hay una fecha existente para ese día')</script>";
+          }
+          
+         }
+         else{
+           echo "<p class='text-danger text-center font-weight-bold' >Error al guardar, la hora de inicio debe ser menor a la hora de finalización</p>";
+         }
+        }
+      }
+      ?>
   <br> 
 <script type="text/javascript" src="js/datatables.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

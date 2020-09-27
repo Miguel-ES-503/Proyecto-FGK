@@ -21,10 +21,23 @@ include 'Modularidad/MenuHorizontal.php';
   #regiration_form fieldset:not(:first-of-type) {
     display: none;
   }
-    @media only screen and (max-width: 600px) {
-  .panel-body {
-    margin-left:25%;
-  }
+  @media only screen and (max-width: 600px) {
+    .panel-body {
+        margin-left: 25%;
+    }
+
+    .enable {
+        margin-left: 0%;
+    }
+
+    .botones {
+        margin-top: 25%;
+        margin-left: 25%;
+    }
+
+    #nav {
+        margin-left: 20%;
+    }
 }
  
 </style>
@@ -46,7 +59,7 @@ include 'Modularidad/MenuHorizontal.php';
     
   <nav class="nav flex-column h-100" id="nav">
     <h2 class="title-1">Menu</h2>
-    <button class="nav-link" type='button' data-toggle='modal' data-target='#myModal3'>Crear Sesiones</button> 
+    <button class="nav-link"  type='button' role="link" onclick="window.location='crearSesiones.php'" >Crear Sesiones</button>   
     <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Horarios Disponibles</button>
     <button type="button" class="nav-link" role="link" onclick="window.location='sessionesAsistencia.php'">Listado de asistencia</button>
     <button type="button" class="nav-link" role="link" onclick="window.location='sesionesfinalizadas.php'">Sesiones finalizadas</button>

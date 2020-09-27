@@ -64,6 +64,8 @@ $id = $_POST['Disponible7'];
   </div>
   <button type="submit" class="btn btn-primary btn1" value="<?php echo $id ?>" name='idactualizar'>Actualizar <i class="fas fa-paper-plane"></i></button>
   </form>
+  <a href="sessionesOneonOne.php"><button type="submit" class="btn btn-primary btn1" >Regresar <i class="fas fa-paper-plane"></i></button>
+</a>
 <br>
           </div>
         </div>
