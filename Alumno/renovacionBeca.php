@@ -1,5 +1,6 @@
 <?php require_once 'templates/head.php'; ?>
 <title>Indicaciones Renovacion</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
  <link rel="stylesheet" href="assets1/css1/style.css">
  
 <?php  
@@ -256,9 +257,9 @@ $formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$C
       </div>
 
       <div class="modal-body">
-        <div class="alert alert-danger" style="height: 60px;margin-bottom: -10px;">
-           <p style="font-size: 13px;text-align: center;">Debe de escribir el nombre del archivo  de la siguiente manera: <span style="font-style: italic; "><?php echo utf8_encode($formato); ?>.pdf</span></p>
-        </div>
+        <!--<div class="alert alert-danger" style="height: 60px;margin-bottom: -10px;">
+           <p style="font-size: 13px;text-align: center;">Debe de escribir el nombre del archivo  de la siguiente manera: <span style="font-style: italic; "><?php echo $formato ?>.pdf</span></p>
+        </div>-->
        
         <br>
         <form action="Modelo/ModeloRenovacion/carta.php" method="post" enctype="multipart/form-data">

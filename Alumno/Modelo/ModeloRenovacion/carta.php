@@ -19,6 +19,10 @@ foreach ($pdo->query("SELECT Nombre,SedeAsistencia,Class FROM alumnos WHERE ID_A
   $SC = $Name['SedeAsistencia'];
   $Class = $Name['Class'];
 }
+$sql = "SELECT COUNT(*) AS 'condicion'FROM renovacion WHERE ID_Alumno = '".$alumno."' AND ciclo = '".$ciclo."' AND año = Date_format(now(),'%Y')";
+foreach ($pdo->query($sql) as $C) {
+ $condicion = $C['condicion'];
+}
 $Sede = substr($SC, 0, 2);
 $Modalidad = substr($SC, 2, 2);
 $formato = utf8_encode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$Class.".pdf";
@@ -33,11 +37,14 @@ $ubicacion = "Renovaciones/".$year."/Class-".$Class."/"."Ciclo 0".$ciclo."/".$al
 if ($tamaño > 5000000) {
   $_SESSION["error"] = "Tamaño de archivo mayor a 5MB";
   header("Location:../../renovacionBeca.php");
-}elseif ($nombreArchivo != $formato) {
+}/*elseif ($nombreArchivo != $formato) {
   $_SESSION["error"] = "Nombre o formato de archivo diferente al solicitado";
   header("Location:../../renovacionBeca.php");
-}elseif ($tipoarchivo != "application/pdf") {
+}*/elseif (mime_content_type($rutaarchivo) != "application/pdf") {
 $_SESSION["error"] = "Formato de archivo diferente al solicitado";
+  header("Location:../../renovacionBeca.php");
+}elseif ($condicion > 0) {
+  $_SESSION["error"] = "Ya ha ingresado renovacion de beca para el ciclo seleccionado";
   header("Location:../../renovacionBeca.php");
 }
 
@@ -54,10 +61,9 @@ else
          $consulta->bindParam(':direccion',$ubicacion,PDO::PARAM_STR);
 
   $consulta->execute();
-
+$nombreArchivo = $formato;
 move_uploaded_file($direccion,$archivero."/".$nombreArchivo);
 //rename("../../../CoachReuniones/".$ubicacion, $formato);
-rename("../../../CoachReuniones/".$ubicacion, $archivero."/".$formato);
   $_SESSION["exito"] = "Renovacion de Beca ingresada correctamente";
   header("Location:../../renovacionBeca.php");
 }else{
