@@ -32,7 +32,7 @@ include 'Modularidad/MenuHorizontal.php';
     }
 
     .botones {
-        margin-top: 50%;
+        margin-top: 25%;
         margin-left: 25%;
     }
 

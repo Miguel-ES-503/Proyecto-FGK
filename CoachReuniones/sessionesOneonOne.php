@@ -34,11 +34,12 @@ include 'Modularidad/MenuVertical.php';
 
     .botones {
         margin-top: 25%;
-        margin-left: 25%;
+        margin-left: 10%;
     }
 
     #nav {
         margin-left: 20%;
+        height: 85%;
     }
 }
 </style>

@@ -1,4 +1,5 @@
-<?php 
+<?php
+ob_start();
 require_once '../Conexion/conexion.php';
 @$estado = $_POST['Finalizars'];
 if (isset($estado)) {
@@ -6,9 +7,9 @@ if (isset($estado)) {
 		$stmt= $dbh->prepare($sqlactualizar);
 		$stmt->execute(['Finalizado', $estado]);
  		echo "<p class='text-success text-center'>Sesión correctamente</p>";
-		 header("Location:sessionesOneonOne.php");
+		header("Location:sessionesOneonOne.php");
 	}else{
 				 header("Location:sessionesOneonOne.php");
 				 echo "Error";
 	}
- ?>
+ob_flush();

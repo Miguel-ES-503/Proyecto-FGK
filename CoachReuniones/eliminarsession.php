@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once '../Conexion/conexion.php';
 // delete preguntas
 $pregunta = $_POST['eliminarsession'];
@@ -12,3 +13,4 @@ if ($dbh->query($sql) === TRUE) {
   header("Location:sessionesOneonOne.php");
 }
 $dbh->close();
+ob_flush();
