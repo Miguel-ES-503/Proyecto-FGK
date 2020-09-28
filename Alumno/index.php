@@ -191,21 +191,21 @@ left: 10px;
         <img class="img-fluid" id="img2" src="../img/logonegro.png" width="150px">
         </div>
             <br>
-        <center><a href="https://issuu.com/oportunidades0?issuu_product=header&issuu_subproduct=document_page&issuu_context=link&issuu_cta=profile" target="_black" style="text-decoration: none;"><button class="btn-leer">Leer</button></center>
+        <center><a href="https://www.instagram.com/bk2oportunidades/" target="blank" style="text-decoration: none;"><button class="btn-leer"  >Leer</button></a></center>
         </div>
         <div id="avisos" >
-        <h3  class="avisos" style="font-weight: bold;color: black;">Avisos<h3>
+        <h3  class="avisos" style="font-weight: bold;">Avisos<h3>
         <img class="img-fluid" id="imgaviso" src="../img/avisos.png" width="100px" height="100px">
-        <div style="float: right; " ><p class="enlace" style="text-align: left;color: black;">Enlace IG:<br>
+        <div style="float: right; " ><p class="enlace" style="text-align: left;">Enlace IG:<br>
         </p>
-        <center><button class="btn-leer2" >Visitar</button></center>
+        <center><a href="https://issuu.com/oportunidades0?issuu_product=header&issuu_subproduct=document_page&issuu_context=link&issuu_cta=profile" target="_black" style="text-decoration: none;"><button class="btn-leer2" >Visitar</button></a></center>
         </div>
         
         </div>
         <div id="enlaces">
         <table>
 
-        <h3  style="font-weight: bold;color: black;">Enlaces<h3>
+        <h3  style="font-weight: bold;">Enlaces<h3>
         
         <tr>
         <td>
@@ -213,7 +213,7 @@ left: 10px;
         <img class="img-fluid" src="../img/manual.png" width="100px" height="100px">
         </a>
         <td>
-        <h4 style="color: black;">Manual de usuario</h4>
+        <h4>Manual de usuario</h4>
         </td>
         </td>
         </tr>
@@ -222,7 +222,7 @@ left: 10px;
         <a href="http://workeysoportunidades.org/" target="_black"><img class="img-fluid" src="../img/landing.png" width="90px" height="90px">
         </td>
         <td>
-        <h4 style="color: black;">Workey's landing page</h4>
+        <h4>Workey's landing page</h4>
         </td>
 
         </tr>
