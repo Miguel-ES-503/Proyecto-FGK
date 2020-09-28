@@ -1,0 +1,197 @@
+
+	.title{
+background-color: #c7c7c7;
+margin-top: -1px;
+color: black;
+height: 70px;
+margin-left: -1.5%;
+margin-bottom: 3%;
+height: 55px;
+font-weight: bold;
+width: 104%;
+
+
+}
+
+.parte2{
+
+      position: relative;
+      bottom: 50px;
+}
+h2 ,.icon{
+	float: left;
+}
+.main-title
+{
+text-align: left;
+font-size: 25px;
+margin-left: 25px;
+margin-top: 5px;
+font-weight: bold;
+letter-spacing: 5px;
+}
+.icon 
+{
+
+	width: 30px;
+	margin-top: 15px;
+	margin-left: 20px;
+	transform: rotate(180deg);
+}
+
+#file
+{
+background-color: #BE0032;
+width: 200px;
+display: inline-block;
+font-size: 12px;
+font-weight: bold;
+border-radius: 20px;
+height:30px;
+}
+.img 
+{
+height: 150px;
+width: 150px; 
+background-repeat: no-repeat;
+background-position: 50%;
+border-radius: 50%;
+background-size: 100% auto;
+margin-top: 20px;
+}
+
+.Info-1 
+{
+width: 385px;
+      height: 400px;
+      border-width: 5px;
+      border-color: #FFF;
+      border-style: solid;
+      background-color: #c7c7c7;
+      border-top-left-radius: 10%;
+      border-top-right-radius: 10%;
+      border-bottom-left-radius: 10%;
+      border-bottom-right-radius: 10%;
+      margin-left: 0px;
+      margin-top:-5px;
+	  padding: 10px;
+
+}
+.title1
+{
+	margin-top: 20px;
+}
+.principal 
+{
+margin-top: -50px;
+}
+.subtitulo1
+{   position: relative;
+      top: 50px;
+      left: 40px;
+       font-size: 30px;
+      font-weight: bold;
+      text-align: left;
+}
+
+.table-Info
+{
+      margin-top: 80px;
+      margin-left: 15%;
+      background-color:#ADADB2;
+      color: black;
+      font-weight: bold;
+      letter-spacing: 1px;
+      width: 480px;
+      height: 30px;
+      border-radius: 10px;
+
+}
+.correo
+{
+      float: left;
+      margin-left: 15px;
+      color: black;
+
+}
+.correo-title
+{
+      font-weight: bold;
+      margin-top: 1px;
+}
+.sede
+{
+      float:left;
+      margin-left: 213px;
+      color: black;
+}
+.sede-title
+{
+      font-weight: bold;
+}
+
+.correo-info
+{
+      float: left;
+      margin-left: 9%;
+      color: black;
+}
+.sede-info
+{
+      float: left;
+      margin-left: 14%;
+      color: black;
+}
+.change-pass
+{
+      margin-top: 40px;
+}
+.change-pass-title1
+{
+      margin-left: -422px;
+      font-size: 21px;
+      font-weight: bold;
+}
+#password
+{
+      background-color: #ADADB2;
+      border-radius: 10px;
+      width: 90%;
+}
+#passwordVerifcado
+{
+      background-color: #ADADB2;
+      border-radius: 10px;width: 90%;
+}
+#Restablecer
+{
+      background-color: #BE0032;
+      width: 200px;
+      font-size: 13px;
+      height: 30px;
+      border-radius: 15px;
+      font-weight: bold;
+      margin-left: 180px;
+}
+@media only screen  and (max-width: 967px) {
+
+      .Info-1 {
+
+            position: relative;
+            left: 55px;;
+      }
+
+      .sede{
+      
+      margin-left: 167px;
+}
+.subtitulo1{
+      position: relative;
+      left: 97px;
+      
+}
+.parte2{
+
+    position: inherit;
+}
+}

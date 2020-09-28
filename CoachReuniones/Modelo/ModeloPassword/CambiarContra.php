@@ -21,7 +21,7 @@ if (isset($_POST['cambiarContra']))
 
 			$_SESSION['message'] = 'Contraseña Cambiada';
 			$_SESSION['message2'] = 'success';
-			header("Location: ../../../login.php");
+			header("Location: ../../../");
 		}
 		else
 		{

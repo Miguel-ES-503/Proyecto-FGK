@@ -13,111 +13,126 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
 
+<style>
+.table-Info{
+
+	position: relative;
+right: 40px;
+}
+
+</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <!--Comiezo de estructura de trabajo -->
-<div class="container-fluid text-center">
+<link rel="stylesheet" type="text/css" href="css/configuraciones.css">
+<div class="container-fluid text-center" >
     <script type="text/javascript">
   $(document).ready(function () {
     bsCustomFileInput.init()
   });
   </script>
-	<br>
-	
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<div class="title">
+	<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Configuración</h2>
+</div>
 
-		<!-- Navbar brand -->
-		<a class="navbar-brand" href="#">Configuración</a>
-
-		<!-- Collapse button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-		aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<!-- Collapsible content -->
-	<div class="collapse navbar-collapse" id="basicExampleNav">
-
-		<!-- Links -->
-		<ul class="navbar-nav mr-auto">
-			
-			<li class="nav-item">
-				<a class="nav-link active" href="#">Datos Personal</a>
-			</li>
-			
-
-		</ul>
-		<!-- Links -->   
-	</div>
-	<!-- Collapsible content -->
-</nav>
-
-	<div class="container py-4 my-2">
+	<div class="container ">
 		<br>
 		<div class="float-right"><?php include "Modularidad/Alerta.php"; ?></div>
 
-		<div class="row">
-			<div class="col-md-4 pr-md-5">
-				<img class="w-100 rounded border"  src="../img/imgUser/<?php echo $_SESSION['Foto']?>"  style="width: 25px; height: 325px;" />
-				<div class="pt-4 mt-2" >
-					<section class="mb-4 pb-1" >
+	<div class="row">
+			<div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 pr-md-5">
+				<div class="Info-1">
+					<h3 class="title1">Foto de Perfil</h3>
+					
+				<img class="img" src="../img/imgUser/<?php echo $_SESSION['Foto']?>">
+				<div class="pt-4 mt-2">
+					<section class="mb-4 pb-1">
 						<form method="POST" action="Modelo/ModeloPassword/CambiarImg.php" enctype="multipart/form-data">
 						<!--IMG A Subir -->
 						<div class="custom-file">
 							<div class="custom-file">
-							<input type="file" name="imgusu" id="imgusu" class="custom-file-input" accept="image/*" required />
-							<label class="custom-file-label" for="customFileLang" data-browse="Buscar">Seleccionar Archivo</label>
+							<input type="file" name="imgusu" class="addimg" id="imgusu" accept="image/*" />
 							</div>
 							<br><br>
-							<input type="submit" name="SubirImg" id="SubirImg" class="btn btn-dark btn-block" value="Cambiar Foto" style="background: #212529;" />
+							<input type="submit" name="SubirImg" id="file"  class="btn btn-dark btn-block" value="Cambiar foto" />
 						</div>
 						</form>
 					</section>
 				</div>
 			</div>
-			<div class="col-md-8">
-				<div class="d-flex align-items-center">
-
-					<table class="table">
-						<thead class="thead-dark">
-							<tr>
-								<th scope="col">Correo Electrónico</th>
-								<th scope="col">Sede</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="table-light">
-								<td colspan="" rowspan="" headers=""><?php echo $_SESSION['Email'] ?></td>
-								<td colspan="" rowspan="" headers=""><?php echo $_SESSION['Lugar'] ?></td>
-
-							</tr>
-						</tbody>
-					</table>
+			</div>
+			<div class="parte2 col-md-6 col-lg-6 col-xs-12 col-sm-12" style=" " >
+			<h3 class="subtitulo1">Datos de la cuenta</h3>
+				<div class="d-flex ">
+					
+					<div class="table-Info">
+						<div class="correo">
+						<p class="correo-title" style="color: black;font-weight: bold;">Correo Electrónico</p>
+					</div>
+					<div class="sede">
+						<p class="sede-title" style="color: black;font-weight: bold;">Sede</p>
+					</div>
+					</div>
 				</div>
-        
-				<div id="pass"></div>
 
+
+<!--<div class="correo-info">
+<p style="color: black;font-weight: bold"><?php echo $_SESSION['Email'] ?></p>
+</div>
+<div class="sede-info">
+<p style="color: black;font-weight: bold;"><?php echo $_SESSION['Lugar'] ?></p>
+</div>-->
+
+					
+					<div class="table-Info" style="margin-top: 0px;background-color: white;">
+						<div class="correo">
+						<p class="correo-title" style="color: black;font-weight: bold;"><?php echo $_SESSION['Email'] ?></p>
+					</div>
+					<div class="sede">
+						<p class="sede-title" style="color: black;font-weight: bold;margin-left: -30px;"><?php echo $_SESSION['Lugar'] ?></p>
+					</div>
+					</div>
+
+							
+
+        <!--<div id="pass" class="alert alert-danger">
+          Las contraseñas no coinciden.
+        </div>-->
 				<!-- Default form subscription -->
-				<form class="text-center border border-light p-5" action="Modelo/ModeloPassword/CambiarContra.php" method="POST" style="background: #343a40;" >
+				<div class="change-pass">
+				<form class="text-center border border-light p-5" action="Modelo/ModeloPassword/CambiarContra.php" method="POST">
 
-					<p class="h4 mb-4">Cambiar Contraseña</p>
-
-					<p class="text-ligth">Ingrese una nueva Contraseña para poder acceder a la plataforma</p>
-					<!-- Name -->
-					<input type="password" id="password" name="Contra1" class="form-control mb-4" placeholder="Nueva Contraseña" required >
+			<h3 class="change-pass-title1" style="position: relative; left: 90px;">Cambiar Contraseña</h3>
+					<input type="password" id="password" name="Contra1" class="form-control mb-4" placeholder="Nueva Contraseña">
 					<!-- Email -->
-					<input type="password" id="passwordVerifcado" name="ContraVerificado"  class="form-control mb-4" placeholder="Ingrese Nuevamente Contraseña" required >
+					<input type="password" id="passwordVerifcado" name="ContraVerificado"  class="form-control mb-4" placeholder="Confirmar Nueva Contraseña">
 
 					<!-- Sign in button -->
 
-					<input type="submit" name="cambiarContra" id="Restablecer" class="btn btn-light btn-block" value="Cambiar Contraseña" />
+					<input type="submit" style="position: relative; right: 90px;" name="cambiarContra" id="Restablecer" class="btn btn-dark btn-block" value="Guardar Cambios"/>
 
 				</form>
+			</div>
 				<!-- Default form subscription -->
 
-
+				</div>
 			</div>
 		</div>
 	</div>
-	<?php
-//Incluir el footer
-include 'Modularidad/PiePagina.php';
+	</div>
+	<!-- /#page-content-wrapper -->
+
+</div>
+
+</div>
+
+</div>
+
+<!-- /#wrapper -->
+
+
+<?php
+
+  require_once 'templates/footer.php';
+
 ?>
