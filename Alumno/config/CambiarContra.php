@@ -32,7 +32,7 @@ if (isset($_POST['cambiarContra']))
 
 	}else 
 	{
-		echo "No esta llegando el dato de entradad";
+		echo "No esta llegando el dato de entrada";
 	}
 
 	?>

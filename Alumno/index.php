@@ -53,7 +53,7 @@
   clear: both;
   display: table;
 }
-@media only screen and (max-width: 767px ) {
+@media only screen and (max-width: 720px ) {
 
 #novedades h3, p{
 font-size: 15px;
