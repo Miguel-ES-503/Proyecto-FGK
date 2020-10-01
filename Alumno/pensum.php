@@ -41,8 +41,13 @@
 
 
 <!--div principal-->
-<div class="container-fluid text-center"><br>
+<div class="container-fluid text-center">
     <!--Navbar-->
+    
+    <div class="title">
+	<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Pensum</h2>
+</div>
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #2D2D2E">
 
         <!-- Navbar brand -->
@@ -60,7 +65,6 @@
         <br><br>
         <!--Fin de funcion-->
         <!--///////////////////////////////////////////////-->
-
 
 
         <!-- Collapse button -->

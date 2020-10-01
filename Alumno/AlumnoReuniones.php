@@ -29,9 +29,8 @@
 <div class="container-fluid text-center" style="margin-bottom: 40%;">
 
 <div class="title">
-    <a href="../Alumno/AlumnoInicio.php"><img src="../img/proximo.svg" class="icon"></a>
-	<h1 class="main-title" >Reuniones mensuales</h1>
-
+	<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Reuniones mensuales</h2>
 </div>
 <br>
 
