@@ -120,8 +120,7 @@ background-color: #0D0D0D;
             <div class="collapse" id="collapseExample">
               <ul>
                <li><a href="AlumnoInscritos.php" class="list-group-item list-group-item-action">Talleres inscritos</a></li>
-               <li><a href="AlumnoMensuales.php" class="list-group-item list-group-item-action">Talleres mensuales</a></li>
-
+               
 
 
              </ul>
