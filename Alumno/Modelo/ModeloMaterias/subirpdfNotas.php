@@ -1,7 +1,8 @@
 <?php
 require_once "../../../BaseDatos/conexion.php";
 
-
+// Desactivar toda notificación de error
+error_reporting(0);
 
  if(isset($_POST['pdfNotas']))
 {
