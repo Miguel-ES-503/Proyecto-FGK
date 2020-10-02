@@ -71,7 +71,7 @@ setlocale(LC_TIME, 'es_SV.UTF-8');
 $Sede = substr($SC, 0, 2);
 $Modalidad = substr($SC, 2, 2);
 $formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$Class;
-
+$direccion = $_SERVER['PHP_SELF'];
  ?>
 <!--///////////////////////////////////////////////-->
 <!--Para ver el nombre del archivo que sube-->
@@ -114,6 +114,9 @@ $formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$C
   border:3px;
 }
  </style>
+ <script type="../js/alertify.js"></script>
+ <link rel="stylesheet" type="text/css" href="../css/alertify.core.css">
+ <link rel="stylesheet" type="text/css" href="../css/alertify.default.css">
 <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Renovacion de beca</h2>
@@ -123,8 +126,8 @@ $formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$C
     <div>
                              
     <div class="container" style="">
-      <?php
-     
+      <!--<?php
+     session_start();
       if (isset($_SESSION['exito'])) {
         echo "<div class='alert alert-success ' id='noti'>".$_SESSION["exito"]."</div>";
         unset($_SESSION['exito']);
@@ -133,8 +136,7 @@ $formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$C
         echo "<div class='alert alert-danger' id='noti'>".$_SESSION["error"]."</div>";
         unset($_SESSION['error']);
       }
-      ?>
-
+      ?>-->
           <h2 style="">Indicaciones Generales</h2>
           <br>
           <br>
@@ -262,7 +264,7 @@ $formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$C
         </div>-->
        
         <br>
-        <form action="Modelo/ModeloRenovacion/carta.php" method="post" enctype="multipart/form-data">
+        <form action="<?php $direccion ?>" method="post" enctype="multipart/form-data">
           <label >Universidad</label>
         <input name="uni" placeholder="año" readonly class="form-control" value="<?php echo $universidad;  ?>" ></input>
         <br>
@@ -318,6 +320,9 @@ $formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$C
       </div>
 
       </form>
+      <?php 
+       include 'Modelo/ModeloRenovacion/carta.php';
+      ?>
     </div>
   </div>
 </div>
@@ -335,6 +340,7 @@ $formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$C
 
  <?php
 
-  require_once 'templates/footer.php';
+require_once 'templates/footer.php';
+
 
 ?>

@@ -145,14 +145,14 @@
                                       //------------------------------
 
                                       //si comprobante es diferente a vacio
-                                      if ($filapdf['pensum'] !=null) {
+                                     /* if ($filapdf['pensum'] !=null) {
 
                                         echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#pensum' disabled style='height: 50px; '><img src='../img/paper.png' width='25px' height='25px'><br><p style='font-size: 10px; '>Subir pensum</p></button>";
                                       }else
                                       {
 
                                         echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#pensum' style='height: 50px;'><img src='../img/paper.png' width='25px' height='25px'><br><p style='font-size: 10px;'>Subir pensum</p></button>" ;
-                                      } 
+                                      } */
                  
                                     }//fin while
                                    }//fin de if

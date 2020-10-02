@@ -279,9 +279,10 @@ if ($_GET['id']==null) {
                             <th scope="col">Universidad</th>
                             <th scope="col">Carrera</th>
                             <th scope="col">Cum</th>
-                            <th scope="col">proyecto Egreso</th>
                             <th scope="col">Estado</th>
-                            <th scope="col">Pensum</th>
+                            <th scope="col">Subir Pensum</th>
+                            
+                            <th scope="col">Ver Pensum</th>
 
                         </tr>
                     </thead>
@@ -290,10 +291,17 @@ if ($_GET['id']==null) {
                             <th scope="col"> <?php echo $Universi ?> </th>
                             <th scope="col"> <?php echo utf8_encode($Carrera)?> </th>
                             <th scope="col"> <?php echo $cum?></th>
-                            <th scope="col"> <?php echo $Egreso ?> </th>
                             <th scope="col"> <?php echo $EstadoCarrera ?> </th>
-                            <?php 
-                if ($Pensum == null) {
+                            <th scope="col"> <button type='button' class='btn btn-danger' data-toggle='modal' data-target='#pensum'
+                                style="border-radius: 20px;
+    border: 2px solid #9d120e;
+    width: 100px;height: 50px;
+     background-color: #9d120e;
+     color:white;"><img src="../img/add.png" width="25px" height="25px"><br>
+                                <p style="font-size: 10px;">Subir pensum</p>
+                            </button> </th>
+                                                 <?php 
+               if ($Pensum == null) {
                  echo "
                  <th><button type='button' class='btn btn-danger'  disabled> <img src='../img/PDF.png' width='25px' height='25px'></button></th>";
              
@@ -441,50 +449,67 @@ if ($_GET['id']==null) {
 <!-- /#page-content-wrapper -->
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Comprobante</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <br><br>
-                <form action="Modelo/ModeloTransporte/comprobanteSoliT.php" method="post" enctype="multipart/form-data">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" accept=".pdf" id="customFileLang" name="archivo"
-                            required>
-                        <label class="custom-file-label" for="customFileLang" data-browse="Buscar">Seleccionar
-                            pensum</label>
-                        <center><small>El archivo no debe pesar más de 5MB</small></center>
-                    </div>
+<!-- Modal Pensum carrera -->
+<div class="modal fade" id="pensum" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Comprobante</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
                     <br><br>
-                    <div>
+                    <form action="Modelo/ModeloMaterias/subirPensum.php" method="post" enctype="multipart/form-data">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" accept=".pdf" id="customFileLang"
+                                name="archivo" required>
+                            <label class="custom-file-label" for="customFileLang" data-browse="Buscar">Seleccionar
+                                Comprobante</label>
+                            <center><small>El archivo no debe pesar más de 5MB</small></center>
+                        </div>
+                        <br><br>
+                        <div>
+
+                            <?php 
+            $stmt1 =$dbh->prepare("SELECT `ID_Alumno`  FROM `alumnos` WHERE correo='".$_SESSION['Email']."'");
+                      
+            $stmt1->execute();
+
+            while($fila = $stmt1->fetch()){
+              $alumno=$fila["ID_Alumno"];
+                                
+            }
+            ?>
 
 
-                        <!--idsolicitudTrans-->
-                        <input type="hidden" name="soli" value="<?php echo $_GET['id'];?>">
+                            <!--idalumnos-->
+                            <input type="hidden" name="alumno" value="<?php echo $alumno;?>">
+
+                            <!--id expedente-->
+                            <input type="hidden" name="expediente" value="<?php echo $idExpedienteU;?>">
+                        </div>
+
+                </div>
+                <div class="modal-footer">
 
 
+                    <input class="btn btn-primary btn-rounded" type="submit" name="actualizar" value="Cerrar "
+                        data-dismiss="modal">
+                    <input class="btn btn-primary btn-rounded" type="submit" name="actualizar" value="Guardar Cambios "
+                        id="actualizar">
 
-                    </div>
+                </div>
 
-
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <input type="submit" id="subirComprobante" name="subirComprobante" value="Guargar Cambios"
-                    class="btn btn-secondary">
-            </div>
-
-            </form>
         </div>
     </div>
-</div>
+
+
+
 
 </div>
 
