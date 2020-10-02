@@ -44,9 +44,8 @@ $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
         <th>".$fila['estado']."</th>
         <th>". utf8_encode(strftime("%A %d "." de"." %B del %Y ",strtotime($fila['fecha'])))."</th>
 		<th>".$fila['hora_inicio']." - ".$fila['hora_fin']."</th>
-		<th><form method='post'><button type='submit' class='btn btn-danger btn-borrar'"." name='eliminarsession' value='"."$fila[id]'"."title='Eliminar' ><i class='fas fa-trash-alt'></i></button></form>".
-		"<form  method='post'>
-		<button type='submit' class='btn btn-primary ' title='Finalizar' name='Finalizars'  value='"."$fila[id]'"."><i class='fas fa-check-circle'></i></button>
+		<th>"."<form  method='post'>
+		<button type='submit' onclick='alert('¡Hola, su inscripción se finalizo con éxito!')' class='btn btn-primary ' title='Finalizar' name='Finalizars'  value='"."$fila[id]'"."><i class='fas fa-check-circle'></i></button>
 		</form></th>
 		</tr>";
 		
@@ -59,22 +58,10 @@ if (isset($estado)) {
 		$sqlactualizar = "UPDATE one_on_one SET estado = ? WHERE id = ?";
 		$stmt= $dbh->prepare($sqlactualizar);
 		$stmt->execute(['Finalizado', $estado]);
-		echo '<script language="javascript">alert("Sesión Finalizada con Exito!!! (Por favor recargar la página para observar los cambios) ");</script>';
 		header("Location:sessionesOneonOne.php");
+		echo'<script type="text/javascript">alert("¡¡¡Sesion finalizada con éxito!!!");window.location.href="sessionesOneonOne.php";</script>';
 	}else{
 				 header("Location:sessionesOneonOne.php");
 				
 	}
-
-
-	// delete preguntas
-@$pregunta = $_POST['eliminarsession'];
-$sql = "DELETE FROM one_on_one WHERE id = $pregunta";
-if ($dbh->query($sql) == TRUE) {
-	echo '<script language="javascript">alert("Sesión Eliminada con Exito!!! (Por favor recargar la página para observar los cambios) ");</script>';
-	header("Location:sessionesOneonOne.php");
-
-} else {
-  header("Location:sessionesOneonOne.php");
-}
 ?>
