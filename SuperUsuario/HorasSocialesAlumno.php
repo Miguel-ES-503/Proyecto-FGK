@@ -173,9 +173,6 @@ CAMBIAR MENU, CONSULTAR-->
 <div class="topnav" id="myTopnav">
   <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
   <a href="#home" class="titulomenu" style="background-color:#ADADB2; color: #2D2D2E; font-size: 25px;">Horas Sociales</a>
-  <a href="#news" class="submenu1">News</a>
-  <a href="#contact" class="submenu1">Contact</a>
-  <a href="#about" class="submenu1">About</a>
   <a href="javascript:void(0);" class="icon1" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
