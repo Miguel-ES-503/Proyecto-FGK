@@ -61,7 +61,7 @@ include 'Modularidad/MenuVertical.php';
         <center><a href="https://issuu.com/oportunidades0?issuu_product=header&issuu_subproduct=document_page&issuu_context=link&issuu_cta=profile" target="_black" style="text-decoration: none;"><button class="btn-leer">Leer</button></center>
         </div>
         <div id="avisos" >
-        <h3  style="font-weight: bold;">Avisos<h3>
+        <h3  style="font-weight: bold;color: black;">Avisos<h3>
         <img class="img-fluid" src="../img/avisos.png" width="100px" height="100px">
         <div style="float: right; " ><p style="text-align: left;">Entérate de lo<br>
              más reciente:<br>
