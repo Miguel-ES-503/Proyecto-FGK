@@ -53,7 +53,7 @@
   clear: both;
   display: table;
 }
-@media only screen and (max-width: 720px ) {
+@media only screen and (max-width: 1080px ) {
 
 #novedades h3, p{
 font-size: 15px;
@@ -193,7 +193,7 @@ left: 10px;
             <br>
         <center><a href="https://www.instagram.com/bk2oportunidades/" target="blank" style="text-decoration: none;"><button class="btn-leer"  >Leer</button></a></center>
         </div>
-        <div id="avisos" >
+        <div id="avisos"  >
         <h3  class="avisos" style="font-weight: bold;">Avisos<h3>
         <img class="img-fluid" id="imgaviso" src="../img/avisos.png" width="100px" height="100px">
         <div style="float: right; " ><p class="enlace" style="text-align: left;">Enlace IG:<br>
@@ -203,7 +203,7 @@ left: 10px;
         
         </div>
         <div id="enlaces">
-        <table>
+        <table class="table-responsive">
 
         <h3  style="font-weight: bold;">Enlaces<h3>
         
