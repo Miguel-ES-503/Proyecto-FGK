@@ -7,6 +7,7 @@
   
   require_once 'templates/MenuHorizontal.php';
   require '../Conexion/conexion.php';
+  error_reporting(0);
 
   foreach ($dbh->query("SELECT imagen FROM usuarios WHERE correo = '".$_SESSION['Email']."' ") as $Foto) {
   	$FotoAlumno = $Foto['imagen'];
