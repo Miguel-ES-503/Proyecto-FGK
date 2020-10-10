@@ -315,10 +315,7 @@ background-color: #0D0D0D;
         </a>
       </li>
       <!-- fin de preguntas frecuentes -->
-      <li>
-        <a class="list-group-item list-group-item-action" href="sessionesOneonOne.php" id="menus"><i class="fas fa-user-friends"></i> Sesiones Individuales
-        </a>
-      </li>
+   
       <li>
         <a class="list-group-item list-group-item-action" href="modulosMoodle.php" id="menus"><i class="fas fa-briefcase"></i> Módulos
         </a>
