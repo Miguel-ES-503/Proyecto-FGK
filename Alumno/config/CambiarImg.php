@@ -49,7 +49,7 @@ if ($Foto !=null) {
         if(in_array($_FILES["imgusu"]["type"], $tipoimg)){
 
             //hacemos referencia a la ruta donde guardaremos la imagen
-            $rutaimg = '../img/imgUser/';
+            $rutaimg = '../../img/imgUser/';
 
             //guardamos la extencion de la imagen
             $extensionimg = explode("/",$_FILES["imgusu"]["type"]);
@@ -120,7 +120,7 @@ if ($Foto !=null) {
        }
    }else{
 
-       $_SESSION['message'] = 'No se pude cambiar la imagen ya que no esta con una extension valida';
+       $_SESSION['message'] = 'No se pude cambiar la imagen ya que no esta con una extencion valida';
        $_SESSION['message2'] = 'danger';
        header("Location: ../configuracion.php");
             //Si entra a este else es porque la imagen no esta con una extencion valida
