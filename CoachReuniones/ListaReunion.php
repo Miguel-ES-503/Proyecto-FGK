@@ -20,7 +20,10 @@ if (isset($_GET['id'])) {
 	$consulta2->execute(array($id));
 
 	$consulta3=$pdo->prepare("SELECT * FROM horariosreunion WHERE ID_Reunion = ? ");
-	$consulta3->execute(array($id));
+    $consulta3->execute(array($id));
+    
+    $consulta77=$pdo->prepare("SELECT * FROM universidadreunion u INNER JOIN empresas e ON e.ID_Empresa = u.ID_Empresa WHERE u.ID_Reunion = ? ");
+	$consulta77->execute(array($id));
 
 
 	$consulta4=$pdo->prepare("SELECT alu.Nombre ,hora.HorarioInicio , `telefono` FROM inscripcionreunion inr inner join alumnos alu on inr.`id_alumno`= alu.`id_alumno` left join horariosreunion hora on inr.`Horario` = hora.`IDHorRunion` WHERE inr.`id_reunion` = :id_reunion ORDER BY `hora`.`HorarioInicio` ASC ");
@@ -744,7 +747,64 @@ include 'Modularidad/MenuVertical.php';
     <!-- Modal: modalCart -->
     <br>
 
+  <!-- Modal de universidades   -->
+    <!-- Modal -->
+    <div class="modal fade" id="universidades" role="dialog">
+        <div class="modal-dialog">
 
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Lista de Universidades</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    
+                </div>
+                <div class="modal-body">
+                <div class="table-responsive">
+                                        <br>
+
+                                        <table id="tableUser" class="table table-bordered">
+                                            <thead class="table-secondary">
+                                                <tr>
+                                                    <th scope="col">Nombre de Universidad</th>
+                                                    <th scope="col">Eliminar</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot class="table-secondary">
+                                                <tr>
+                                                    <th scope="col">Nombre de Universidad</th>
+                                                    <th scope="col">Eliminar</th>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody class="table-hover">
+                                                <?php
+
+										if ($consulta77->rowCount()>=1)
+										{
+											while ($fila3=$consulta77->fetch())
+												{		echo "
+											<tr class='table-light'>
+											<th>".utf8_encode($fila3['Nombre'])."</th>
+    <td><a href='#?id=".$fila3['IDHorRunion']."&id2=".$id."' class='fas fa-trash  btn btn-danger'></a> </td>
+
+											</tr>";
+
+										}
+									}
+
+
+									?>
+
+                                            </tbody>
+                                        </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
     <!-- Modal -->
@@ -793,6 +853,7 @@ include 'Modularidad/MenuVertical.php';
         </div>
     </div>
 
+    </div>
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -831,27 +892,7 @@ include 'Modularidad/MenuVertical.php';
             </div>
         </div>
     </div>
-    <!-- Modal de universidades   -->
-    <!-- Modal -->
-    <div class="modal fade" id="universidades" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
+  
 
     <script type="text/javascript">
     $("#todos").on("click", function() {
