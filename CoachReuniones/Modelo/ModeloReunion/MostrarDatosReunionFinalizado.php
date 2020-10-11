@@ -29,7 +29,6 @@ if ($consulta->rowCount()>=1)
 	<th>".$fila['Titulo']."</th>
 	<th>".$fila['Fecha']."</th>
 	<th>".$fila['Lugar']."</th>
-	<th>".utf8_encode($fila['uni'])."</th>
 	<th>".$fila['ID_Ciclo']."</th>
 	<th>".$fila['Estado']."</th>
 	<td><a href='Vistas/VistaReunion/ActualizarReunion.php?id=".$fila['ID_Reunion']."' class='fas fa-pencil-alt  btn btn-success'></a> </td>

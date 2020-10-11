@@ -13,7 +13,7 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 ?>
 
-<script src="js/NombreReunion.js">
+<!--<script src="js/NombreReunion.js">-->
 </script>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Crear-Reunion.css">
@@ -74,8 +74,8 @@ include 'Modularidad/MenuVertical.php';
                         <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
                             <div class="Imfo">
                                 <label for="materialRegisterFormLastName">Titulo Reunión</label>
-                                <input type="text" id="NombreReunion" name="NombreReunion" class="form-control"
-                                    placeholder="Nombre de la reunión">
+                                <input type="text" id="NombreReunion" value="Reunion " name="NombreReunion" class="form-control"
+                                    >
                             </div>
                         </div>
                         <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
@@ -87,20 +87,20 @@ include 'Modularidad/MenuVertical.php';
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
                             <div class="Imfo">
-                                <label for="materialRegisterFormFirstName">Universidad</label>
-                                <select id="idempresa" name="idempresa" class="form-control" required>
-                                    <?php
-                                  echo '<option value="0" disabled selected >Seleccione la opción</option>';
-                                  foreach($pdo->query("SELECT * FROM  empresas  WHERE  Tipo =  'Universidad' ORDER by nombre asc") as $row)
-                                  {
-                                    echo '<option value="'.$row['ID_Empresa'].'">'.utf8_encode($row['Nombre']).'</option>';
-                                  }
-                                  echo '</select>';
-                                  ?>
+                                <label for="materialRegisterFormFirstName">Tipo de reunión</label>
+                                <select type="text" id="tipo" name="tipo" class="form-control" required>
+                                    <option value="" disabled selected>Seleccione la opción</option>
+                                    <option value="Charla Informativa">Charla Informativa</option>
+                                    <option value="Taller">Taller</option>
+                                    <option value="Reunión General">Reunión General</option>
+                                    <option value="Sesión individual">Sesión individual</option>
+                                    <option value="Otro">Otro</option>
+
                                 </select>
                             </div>
+
                         </div>
                         <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
                             <div class="Imfo">
@@ -139,21 +139,7 @@ include 'Modularidad/MenuVertical.php';
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
-                            <div class="Imfo">
-                                <label for="materialRegisterFormFirstName">Tipo de reunión</label>
-                                <select type="text" id="tipo" name="tipo" class="form-control" required>
-                                    <option value="" disabled selected>Seleccione la opción</option>
-                                    <option value="Charla Informativa">Charla Informativa</option>
-                                    <option value="Taller">Taller</option>
-                                    <option value="Reunión General">Reunión General</option>
-                                    <option value="Sesión individual">Sesión individual</option>
-                                    <option value="Otro">Otro</option>
-
-                                </select>
-                            </div>
-
-                        </div>
+                       
                         <input class="bot btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"
                             name="Guardar_Reunion" value="Crear Reunión" id="Guardar_Reunion">
                     </div>

@@ -51,10 +51,11 @@ if (isset($_GET['id'])) {
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<script src="../../js/NombreReunionActualizar.js" >
+<!--<script src="../../js/NombreReunionActualizar.js" >-->
 
 
 </script>
+
 <body class="container">
     <br><br><br><br>
 
@@ -75,7 +76,8 @@ if (isset($_GET['id'])) {
                         <div class="col">
                             <div class="md-form">
                                 <input type="text" id="NombreReunion" value="<?php echo $TituloReunion ?>"
-                                    name="NombreReunion" class="form-control" placeholder="Nombre de la reunión" readonly>
+                                    name="NombreReunion" class="form-control" placeholder="Nombre de la reunión"
+                                    >
                                 <label for="materialRegisterFormLastName">Titulo Reunión </label>
                             </div>
                         </div>
@@ -92,23 +94,14 @@ if (isset($_GET['id'])) {
 
                     <div class="form-row">
                         <div class="col">
-                            <!-- First name   Tema , fecha , la hora y el tipo de taller -->
                             <div class="md-form">
-                                <select id="idempresa" name="idempresa" class="form-control" >
-                                    <option value="<?php echo $IDUniversidad ?>" selected>
-                                        <?php echo utf8_encode($Universidad) ?></option>
-                                    <?php     
-                
-                foreach($pdo->query("SELECT * FROM  empresas  WHERE  Tipo =  'Universidad'") as $row) 
-                {
-                  echo '<option value="'.$row['ID_Empresa'].'">'.utf8_encode($row['Nombre']).'</option>';
-                }
-                echo '</select>';
-                ?>
-                                    <label for="materialRegisterFormFirstName">Universidad</label>
+                                <input type="text" id="Lugar" value="<?php echo $place ?>" name="Lugar"
+                                    class="form-control" placeholder="Especifique el lugar">
+                                <label for="materialRegisterFormLastName">Lugar/Plataforma</label>
                             </div>
                         </div>
                         <div class="col">
+
                             <!-- Last name -->
                             <div class="md-form">
                                 <select id="idCICLO" name="idCICLO" class="form-control" blocked>
@@ -155,17 +148,6 @@ if (isset($_GET['id'])) {
                             </div>
                         </div>
                     </div>
-                    <div class="form-row">
-                    <div class="col">
-                            <div class="md-form">
-                                <input type="text" id="Lugar" value="<?php echo $place ?>"
-                                    name="Lugar" class="form-control" placeholder="Especifique el lugar">
-                                <label for="materialRegisterFormLastName">Lugar/Plataforma</label>
-                            </div>
-                        </div>
-                    
-                    </div>
-
                     <input class="btn btn-light btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"
                         name="ActualizarReunion" value="Actualizar Reunión" id="Actualizar_Reunion">
                     <hr>
