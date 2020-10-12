@@ -216,9 +216,12 @@ include 'Modularidad/MenuVertical.php';
 
                             <div class="col">
                                 <div class="md-form">
-                                    <input type="number" id="cantidad" name="cantidad" class="form-control" min="1"
-                                        required>
-                                    <label for="materialRegisterFormFirstName" style="color: black">Cantidad</label>
+                                    <select name="cantidad" id="cantidad" class="form-control" require>
+                                        <option value="10">10 Minutos</option>
+                                        <option value="15">15 Minutos</option>
+                                        <option value="30">30 Minutos</option>
+                                    </select>
+                                    <label for="materialRegisterFormFirstName" style="color: black">Duración por sesión</label>
                                 </div>
                             </div>
 
@@ -747,7 +750,7 @@ include 'Modularidad/MenuVertical.php';
     <!-- Modal: modalCart -->
     <br>
 
-  <!-- Modal de universidades   -->
+    <!-- Modal de universidades   -->
     <!-- Modal -->
     <div class="modal fade" id="universidades" role="dialog">
         <div class="modal-dialog">
@@ -757,27 +760,27 @@ include 'Modularidad/MenuVertical.php';
                 <div class="modal-header">
                     <h4 class="modal-title">Lista de Universidades</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    
+
                 </div>
                 <div class="modal-body">
-                <div class="table-responsive">
-                                        <br>
+                    <div class="table-responsive">
+                        <br>
 
-                                        <table id="tableUser" class="table table-bordered">
-                                            <thead class="table-secondary">
-                                                <tr>
-                                                    <th scope="col">Nombre de Universidad</th>
-                                                    <th scope="col">Eliminar</th>
-                                                </tr>
-                                            </thead>
-                                            <tfoot class="table-secondary">
-                                                <tr>
-                                                    <th scope="col">Nombre de Universidad</th>
-                                                    <th scope="col">Eliminar</th>
-                                                </tr>
-                                            </tfoot>
-                                            <tbody class="table-hover">
-                                                <?php
+                        <table id="tableUser" class="table table-bordered">
+                            <thead class="table-secondary">
+                                <tr>
+                                    <th scope="col">Nombre de Universidad</th>
+                                    <th scope="col">Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tfoot class="table-secondary">
+                                <tr>
+                                    <th scope="col">Nombre de Universidad</th>
+                                    <th scope="col">Eliminar</th>
+                                </tr>
+                            </tfoot>
+                            <tbody class="table-hover">
+                                <?php
 
 										if ($consulta77->rowCount()>=1)
 										{
@@ -795,63 +798,66 @@ include 'Modularidad/MenuVertical.php';
 
 									?>
 
-                                            </tbody>
-                                        </table>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+
             </div>
-
         </div>
-    </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel" style="color:black;">Importar Asistencia</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel" style="color:black;">Importar Asistencia</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
 
 
 
-                    <form method="post" id="addproduct" action="ImportarArchivo/importReunion.php"
-                        enctype="multipart/form-data" role="form">
+                        <form method="post" id="addproduct" action="ImportarArchivo/importReunion.php"
+                            enctype="multipart/form-data" role="form">
 
-                        <label id="lblimg" style="color: black;">Seleccione un Archivo Excel en Formato (.xlsx)</label>
-                        <br><br>
-                        <div class="custom-file">
+                            <label id="lblimg" style="color: black;">Seleccione un Archivo Excel en Formato
+                                (.xlsx)</label>
+                            <br><br>
                             <div class="custom-file">
-                                <input type="file" name="name" id="name2"
-                                    accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-                                    class="custom-file-input" required />
-                                <label class="custom-file-label" for="customFileLang" data-browse="Buscar">Seleccionar
-                                    Archivo</label>
+                                <div class="custom-file">
+                                    <input type="file" name="name" id="name2"
+                                        accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                                        class="custom-file-input" required />
+                                    <label class="custom-file-label" for="customFileLang"
+                                        data-browse="Buscar">Seleccionar
+                                        Archivo</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <input type="hidden" name="MantenerID" value="<?php echo $fila['ID_Reunion'];}?>">
-                        <br><br>
-                        <div id="alerta5"></div>
-                        <button type="submit" class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0"
-                            id="importarExcel">Importar Datos</button>
+                            <input type="hidden" name="MantenerID" value="<?php echo $fila['ID_Reunion'];}?>">
+                            <br><br>
+                            <div id="alerta5"></div>
+                            <button type="submit"
+                                class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                id="importarExcel">Importar Datos</button>
 
-                    </form>
+                        </form>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     </div>
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -892,7 +898,7 @@ include 'Modularidad/MenuVertical.php';
             </div>
         </div>
     </div>
-  
+
 
     <script type="text/javascript">
     $("#todos").on("click", function() {
