@@ -462,7 +462,7 @@ if ($_GET['id']==null) {
                 </div>
                 <div class="modal-body">
                     <br><br>
-                    <form action="Modelo/ModeloMaterias/subirPensum.php" method="post" enctype="multipart/form-data">
+                    <form action="Modelo/ModeloMaterias/SubirPensum.php" method="post" enctype="multipart/form-data">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" accept=".pdf" id="customFileLang"
                                 name="archivo" required>
