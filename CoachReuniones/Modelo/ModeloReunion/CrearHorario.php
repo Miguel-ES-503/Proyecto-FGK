@@ -14,7 +14,7 @@ if ($varsesion == null || $varsesion = "") {
 
 date_default_timezone_set('America/El_Salvador');
 
- $fecha =  date('Y-m-d');
+ $fecha =  date('Y-d-m');
 
 if(isset($_POST['Guardar_Datos']))
 {
@@ -23,34 +23,30 @@ if(isset($_POST['Guardar_Datos']))
 	$HoraFinal = $_POST['horafinalizar'];
 	$tiempoN = $_POST['cantidad'];
 
-	echo $fecha1 = new DateTime('2016-11-30 03:55:06');//fecha inicial
-	echo $fecha2 = new DateTime('2016-11-30 11:55:06');//fecha de cierre
-	echo $intervalo = $fecha1->diff($fecha2);
+$fecha1 = new DateTime($fecha.' '.$HoraInicio.':00');
+$fecha2 = new DateTime($fecha.' '.$HoraFinal.':00');
 
-echo $intervalo->format('%i minutos');//00 años 0 meses 0 días 08 horas 0 minutos 0 segundos
-	$Cantidad = ($intervalo/$tiempoN);
+ $intervalo = $fecha1->diff($fecha2);
+  $cupos = $intervalo->format('%h')*3600/60/$tiempoN;//00 años 0 meses 0 días 08 horas 0 minutos 0 segundos
 
-	// $consulta3=$pdo->prepare("INSERT INTO horariosreunion (ID_Reunion,HorarioInicio,HorarioFinalizado ,Canitdad) VALUES(:idreunion,:horainicio,:horafinalizado,:cantidad)");
-	// $consulta3->bindParam(':idreunion',$IDreunion);
-	// $consulta3->bindParam(':horainicio',$HoraInicio);
-	// $consulta3->bindParam(':horafinalizado',$HoraFinal);
-	// $consulta3->bindParam(':cantidad',$Cantidad);
+	$consulta3=$pdo->prepare("INSERT INTO horariosreunion (ID_Reunion,HorarioInicio,HorarioFinalizado ,Canitdad) VALUES(:idreunion,:horainicio,:horafinalizado,:cantidad)");
+	$consulta3->bindParam(':idreunion',$IDreunion);
+    $consulta3->bindParam(':horainicio',$HoraInicio);
+	$consulta3->bindParam(':horafinalizado',$HoraFinal);
+	$consulta3->bindParam(':cantidad',$cupos);
 
-
-
-
-	// if (!$consulta3->execute()) 
-	// {
-	// 	$_SESSION['message'] = 'Fallo al crear horario';
-	// 	$_SESSION['message2'] = 'danger';
-	// 	header("Location: ../../ListaReunion.php?id=".urlencode($IDreunion));
-	// }
-	// else
-	// {			 	
-	// 	$_SESSION['message'] = 'Horario creado con exito';
-	// 	$_SESSION['message2'] = 'success';
-	// header("Location: ../../ListaReunion.php?id=".urlencode($IDreunion));
-	// }
+	if (!$consulta3->execute()) 
+	{
+		$_SESSION['message'] = 'Fallo al crear horario';
+		$_SESSION['message2'] = 'danger';
+		header("Location: ../../ListaReunion.php?id=".urlencode($IDreunion));
+	}
+	else
+	{			 	
+		$_SESSION['message'] = 'Horario creado con exito';
+		$_SESSION['message2'] = 'success';
+	header("Location: ../../ListaReunion.php?id=".urlencode($IDreunion));
+	}
 
 
 
