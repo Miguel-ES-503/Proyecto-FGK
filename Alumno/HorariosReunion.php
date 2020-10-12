@@ -4,7 +4,7 @@
 <title>Horarios Disponibles</title>
 <?php
   require_once 'templates/header.php';
-  require_once 'templates/MenuVertical.php';
+  //require_once 'templates/MenuVertical.php';
   require_once 'templates/MenuHorizontal.php';
   require '../Conexion/conexion.php';
 
@@ -33,7 +33,7 @@
 
 
   <br>
-  <h1 class="h1 text-light">Inscripción reuniones</h1>
+  <h1 class="h1">Inscripción reuniones</h1>
   <br>
   <br>
   <div>
@@ -46,7 +46,7 @@
 
   <div class="row">
     <div class="col">
-      <table class="table table-responsive-lg float-left">
+      <table class="table table-responsive-lg w-75 mx-auto float-center">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Hora inicio</th>
@@ -157,6 +157,7 @@
   </div>
 </div>
 <!-- /#page-content-wrapper -->
+<br><br><br><br><br><br><br><br><br><br>
 
 </div>
 </div>

@@ -57,7 +57,7 @@
         echo "<td>".$fila2["Titulo"]."</td>";
         $fechaReunion=strftime("%A, %d de %B de %Y", strtotime($fila2["Fecha"]));
         echo "<td>".$fechaReunion."</td>";
-        echo "<td><a class=\"btn btn-info\" href=\"HorariosReunion.php?id=".$fila2["ID_Reunion"]."\"><i class=\"fas fa-calendar-week\"></i> Ver horarios</a></td>";
+        echo "<td><a class=\"btn btn-info\" href=\"HorariosReunion.php?id=".$fila2["id"]."\"><i class=\"fas fa-calendar-week\"></i> Ver horarios</a></td>";
       echo "</tr>";
     }
     ?>
