@@ -631,7 +631,7 @@ $correo = $_SESSION['Email'];
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"
                         style="background: #2D2D2E;">
 
-                        <a class="dropdown-item" href="Configuracion.php" style="color: white;">Configuración</a>
+                        <a class="dropdown-item" href="configuracion.php" style="color: white;">Configuración</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="../CerrarSession.php" style="color: white;">Salir</a>
                     </div>
