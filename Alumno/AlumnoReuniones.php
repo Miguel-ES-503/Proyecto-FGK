@@ -35,7 +35,7 @@
 <br>
 
   <?php
-  $stmt2 =$dbh->prepare("SELECT `ID_Reunion`, `Titulo`, `Fecha` FROM `reuniones` WHERE `ID_Empresa`= '".$universidad."' and `Estado`='Activo'");
+  $stmt2 =$dbh->prepare("SELECT r.ID_Reunion AS 'id', r.Titulo, r.Fecha FROM reuniones r INNER JOIN universidadreunion u ON r.ID_Reunion = u.ID_Reunion WHERE u.ID_Empresa= '".$universidad."' and r.Estado='Activo'");
   // Ejecutamos
   $stmt2->execute();
   ?>
@@ -53,7 +53,7 @@
     <?php
     while($fila2 = $stmt2->fetch()){
       echo "<tr>";
-        echo "<td scope=\"row\">".$fila2["ID_Reunion"]."</td>";
+        echo "<td scope=\"row\">".$fila2["id"]."</td>";
         echo "<td>".$fila2["Titulo"]."</td>";
         $fechaReunion=strftime("%A, %d de %B de %Y", strtotime($fila2["Fecha"]));
         echo "<td>".$fechaReunion."</td>";
