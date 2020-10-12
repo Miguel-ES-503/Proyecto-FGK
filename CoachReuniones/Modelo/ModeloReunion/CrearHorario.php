@@ -19,16 +19,16 @@ date_default_timezone_set('America/El_Salvador');
 if(isset($_POST['Guardar_Datos']))
 {
 	$IDreunion = $_POST['idreunion'];
-	 $HoraInicio = $_POST['horaInicio'];
-	 $HoraFinal = $_POST['horafinalizar'];
+	$HoraInicio = $_POST['horaInicio'];
+	$HoraFinal = $_POST['horafinalizar'];
 	$tiempoN = $_POST['cantidad'];
-	$horafin = $fecha." ".$HoraFinal.":00";
-	$date2 = $fecha." ".$HoraInicio.":00";
-	$diff = $horafin->diff($date2);
-	echo $cupos =(( ($diff->days * 24 ) * 60 ) + ( $diff->i ));
-	$error = (($diff->invert == 1 ) ? '' : ' to go ');
 
-	$Cantidad = ($cupos/$tiempoN);
+	echo $fecha1 = new DateTime('2016-11-30 03:55:06');//fecha inicial
+	echo $fecha2 = new DateTime('2016-11-30 11:55:06');//fecha de cierre
+	echo $intervalo = $fecha1->diff($fecha2);
+
+echo $intervalo->format('%i minutos');//00 años 0 meses 0 días 08 horas 0 minutos 0 segundos
+	$Cantidad = ($intervalo/$tiempoN);
 
 	// $consulta3=$pdo->prepare("INSERT INTO horariosreunion (ID_Reunion,HorarioInicio,HorarioFinalizado ,Canitdad) VALUES(:idreunion,:horainicio,:horafinalizado,:cantidad)");
 	// $consulta3->bindParam(':idreunion',$IDreunion);
