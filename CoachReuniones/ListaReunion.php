@@ -785,7 +785,7 @@ include 'Modularidad/MenuVertical.php';
 												{		echo "
 											<tr class='table-light'>
 											<th>".utf8_encode($fila3['Nombre'])."</th>
-    <td><a href='#?id=".$fila3['IDHorRunion']."&id2=".$id."' class='fas fa-trash  btn btn-danger'></a> </td>
+    <td><a  href='Modelo/ModeloReunion/eliminarUniversidad.php?id=".$fila3['idreunion']."&id2=".$_GET['id']."' class=' btn btn-danger'><i class='fas fa-trash-alt'></i></a> </td>
 
 											</tr>";
 
