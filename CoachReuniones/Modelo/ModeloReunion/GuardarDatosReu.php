@@ -37,6 +37,7 @@ else if (isset($_POST['NombreReunion']))
 		$NombreReunion = $_POST['NombreReunion'];
 		$FechaReunion = $_POST['fecha'];
 		$LugarReunion = $_POST['idempresa'];
+		$encargado = $_POST['encargado'];
 		$Ciclo = $_POST['idCICLO'];
 		$Tipo = $_POST['tipo'];
 		$Place = $_POST['Lugar'];
@@ -75,15 +76,15 @@ else if (isset($_POST['NombreReunion']))
 
 		
       
-        	$consulta=$pdo->prepare("INSERT INTO reuniones (ID_Reunion,Titulo,Fecha,ID_Empresa,ID_Ciclo,Estado,Tipo,ID_Sede,Lugar) VALUES(:ID_Reunion,:Titulo,:Fecha,:IDempresa,:IDcilo,'Activo',:Tipo,:ID_Sede,:Lugar)");
+        	$consulta=$pdo->prepare("INSERT INTO reuniones (ID_Reunion,Titulo,Fecha,ID_Ciclo,Estado,Tipo,ID_Sede,Lugar,encargado) VALUES(:ID_Reunion,:Titulo,:Fecha,:IDcilo,'Activo',:Tipo,:ID_Sede,:Lugar,:encargado)");
         	$consulta->bindParam(':ID_Reunion',$IDReunion);
         	$consulta->bindParam(':Titulo',$NombreReunion);
         	$consulta->bindParam(':Fecha',$FechaReunion);
-        	$consulta->bindParam(':IDempresa',$LugarReunion);
         	$consulta->bindParam(':IDcilo',$Ciclo);
         	$consulta->bindParam(':Tipo',$Tipo);
 			$consulta->bindParam(':ID_Sede',$LugarFT);
 			$consulta->bindParam(':Lugar',$Place);
+			$consulta->bindParam(':encargado',$encargado);
 			
 
         	if (!$consulta->execute()) 

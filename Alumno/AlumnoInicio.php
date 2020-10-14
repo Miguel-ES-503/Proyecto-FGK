@@ -452,7 +452,7 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
                 </div>
                 <div class="status5">
                     <p>Estado <br>Laboral</p>
-                    <a href="solicitudCambio.php" class="btn btn-info" id="button-info">Cambiar</a>
+                    <a href="SolicitudCambio.php" class="btn btn-info" id="button-info">Cambiar</a>
                 </div>
             </div>
             <?php

@@ -93,7 +93,7 @@ include 'Modularidad/MenuVertical.php';
               <th scope="col">Sexo</th>
               <th scope="col">Class</th>
               <th scope="col">Universidad</th>
-              <th scope="col">Estado</th>
+              <th scope="col">Estado Modulo Actual</th>
               <th scope="col">Estado Certificación</th>
             </tr>
           </thead>

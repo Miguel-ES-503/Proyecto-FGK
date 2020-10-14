@@ -18,133 +18,132 @@ include 'Modularidad/MenuVertical.php';
 <link rel="stylesheet" type="text/css" href="css/Menu.css">
 <nav class="navbar navbar-expand-lg navbar-light" id="row">
     <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
-  <a class="navbar-brand" id="T1">Reuniones</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item" id="bloque">
-        <a class="nav-link" href="SIT-CrearReunion.php"><img src="../img/Ver.png" class="icon-2">Crear Reuniones</a>
-      </li>
-    </ul>
-  </div>
+    <a class="navbar-brand" id="T1">Reuniones</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item" id="bloque">
+                <a class="nav-link" href="SIT-CrearReunion.php"><img src="../img/Ver.png" class="icon-2">Crear
+                    Reuniones</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 <div class="container-fluid text-center">
-<!--/.Navbar-->
+    <!--/.Navbar-->
 
-<!--/.Navbar-->
-<br>
-
-
-<div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
+    <!--/.Navbar-->
+    <br>
 
 
-<br>
-
-<div>
-  <div>
-     <span class="first-title">  
-        Reuniones Activos 
-      </span>
-  </div>
-  <br>
-  <div class="card-body" id="main">
-  	<div class="table-responsive">
-  		<table  id="tableUser" class="table table-hover table-sm table-bordered table-fixed " >
-  			<thead class="table-secondary">
-  				<tr>  
-  					<th scope="col">ID Reunión</th>
-  					<th scope="col">Titulo</th>
-  					<th scope="col">Fecha</th>
-					<th scope="col">Lugar</th>
-  					<th scope="col">Univerisdad</th>
-  					<th scope="col">Ciclo</th>
-  					<th scope="col">Estado</th>
-  					<th scope="col">Actualizar</th>
-  					<th scope="col">Ver Lista</th>
-  				</tr>
-  			</thead>
-  			<tfoot class="table-secondary">
-  				<tr>
-  					<th scope="col">ID Reunión</th>
-  					<th scope="col">Titulo</th>
-  					<th scope="col">Fecha</th>
-					 <th scope="col">Lugar</th>
-  					<th scope="col">Univerisdad</th>
-  					<th scope="col">Ciclo</th>
-  					<th scope="col">Estado</th>
-  					<th scope="col">Actualizar</th>
-  					<th scope="col">Ver Lista</th>
-  				</tr>
-  			</tfoot>
-
-  			<tbody>
-
-				<?php include 'Modelo/ModeloReunion/MostrarDatosReunionActivo.php' ?>
-
-			</tbody>        
-		</table>  
-
-	</div> <!--Fin de la caja responsivo de la tabla-->
-  </div>
-</div>
-
-<br><br>
+    <div class="float-right"> <?php include 'Modularidad/Alerta.php'?></div>
 
 
-<div>
-  <div>
-     <span class="first-title">  
-        Reuniones Finalizados 
-      </span>
+    <br>
 
-  </div>
-  <br>
-  <div class="card-body" id="main">
-  	<div class="table-responsive">
-  		<table  id="tableUser2" class="table table-hover table-sm table-bordered table-fixed" >
-  			<thead class="table-secondary">
-  				<tr>  
-  					<th scope="col">ID Reunión</th>
-  					<th scope="col">Titulo</th>
-  					<th scope="col">Fecha</th>
-					  <th scope="col">Lugar</th>
-  					<th scope="col">Univerisdad</th>
-  					<th scope="col">Ciclo</th>
-  					<th scope="col">Estado</th>
-  					<th scope="col">Actualizar</th>
-  					<th scope="col">Ver Lista</th>
-  				</tr>
-  			</thead>
-  			<tfoot class="table-secondary">
-  				<tr>
-  					<th scope="col">ID Reunión</th>
-  					<th scope="col">Titulo</th>
-  					<th scope="col">Fecha</th>
-					  <th scope="col">Lugar</th>
-  					<th scope="col">Univerisdad</th>
-  					<th scope="col">Ciclo</th>
-  					<th scope="col">Estado</th>
-  					<th scope="col">Actualizar</th>
-  					<th scope="col">Ver Lista</th>
-  				</tr>
-  			</tfoot>
+    <div>
+        <div>
+            <span class="first-title">
+                Reuniones Activos
+            </span>
+        </div>
+        <br>
+        <div class="card-body" id="main">
+            <div class="table-responsive">
+                <table id="tableUser" class="table table-hover table-sm table-bordered table-fixed ">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th scope="col">ID Reunión</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Lugar</th>
+                            <th scope="col">Ciclo</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Actualizar</th>
+                            <th scope="col">Ver Lista</th>
+                        </tr>
+                    </thead>
+                    <tfoot class="table-secondary">
+                        <tr>
+                            <th scope="col">ID Reunión</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Lugar</th>
+                            <th scope="col">Ciclo</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Actualizar</th>
+                            <th scope="col">Ver Lista</th>
+                        </tr>
+                    </tfoot>
 
-  			<tbody>
+                    <tbody>
 
-				<?php include 'Modelo/ModeloReunion/MostrarDatosReunionFinalizado.php' ?>
+                        <?php include 'Modelo/ModeloReunion/MostrarDatosReunionActivo.php' ?>
 
-			</tbody>        
-		</table>  
+                    </tbody>
+                </table>
 
-	</div> <!--Fin de la caja responsivo de la tabla-->
-  </div>
-</div>
+            </div>
+            <!--Fin de la caja responsivo de la tabla-->
+        </div>
+    </div>
 
-<br><br>
-<?php
+    <br><br>
+
+
+    <div>
+        <div>
+            <span class="first-title">
+                Reuniones Finalizados
+            </span>
+
+        </div>
+        <br>
+        <div class="card-body" id="main">
+            <div class="table-responsive">
+                <table id="tableUser2" class="table table-hover table-sm table-bordered table-fixed">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th scope="col">ID Reunión</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Lugar</th>
+                            <th scope="col">Ciclo</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Actualizar</th>
+                            <th scope="col">Ver Lista</th>
+                        </tr>
+                    </thead>
+                    <tfoot class="table-secondary">
+                        <tr>
+                            <th scope="col">ID Reunión</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Lugar</th>
+                            <th scope="col">Ciclo</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Actualizar</th>
+                            <th scope="col">Ver Lista</th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody>
+
+                        <?php include 'Modelo/ModeloReunion/MostrarDatosReunionFinalizado.php' ?>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <!--Fin de la caja responsivo de la tabla-->
+        </div>
+    </div>
+
+    <br><br>
+    <?php
 //Incluir el footer
 include 'Modularidad/PiePagina.php';
 ?>
-

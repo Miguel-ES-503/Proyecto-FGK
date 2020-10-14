@@ -314,11 +314,19 @@ background-color: #0D0D0D;
         <a class="list-group-item list-group-item-action" href="preguntas.php" id="menus" ><i class="fas fa-question-circle"></i> Preguntas Frecuentes
         </a>
       </li>
+                <li>
+            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false" aria-controls="collapseExample" id="menus">
+            <i class="fas fa-user-graduate"></i>Renovaciones<i class="fas fa-sort-down"></i>
+            </a>
+            <div class="collapse" id="collapseExample10">  
+              <ul>
+                <li><a href="LIS-Alumnos.php" class="list-group-item list-group-item-action" id="submenu">Listados</a></li>
+                <li><a href="RecordAlumnos.php" class="list-group-item list-group-item-action" id="submenu">Descargas</a></li>
+               </ul>
+            </div>
+          </li>
       <!-- fin de preguntas frecuentes -->
-      <li>
-        <a class="list-group-item list-group-item-action" href="sessionesOneonOne.php" id="menus"><i class="fas fa-user-friends"></i> Sesiones Individuales
-        </a>
-      </li>
+   
       <li>
         <a class="list-group-item list-group-item-action" href="modulosMoodle.php" id="menus"><i class="fas fa-briefcase"></i> Módulos
         </a>

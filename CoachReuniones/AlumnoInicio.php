@@ -7,6 +7,8 @@ include 'Modularidad/EnlacesCabecera.php';
 include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 require_once '../Conexion/conexion.php';
+include "../Alumno/CSS/cod.php";
+  require_once '../Alumno/templates/header.php';
 ?>
 
 <?php
@@ -314,6 +316,7 @@ while($fila2 = $stmt2->fetch()){
 
 
 ?>
+<link rel="stylesheet" type="text/css" href="../Alumno/CSS/Alumno-Inicio.css">
 
 	    <script type="text/javascript">
   $(document).ready(function () {
@@ -364,162 +367,203 @@ while($fila2 = $stmt2->fetch()){
   </div>
 
 	<!--Información principal del estudiante-->
-	<div class="row">
-	   
-		<div class="text-center align-self-center" id="carnet" style="margin: 0 auto;">
-		    <br>
-			<img src="../img/imgUser/<?php echo $FotoAlumno?>" alt="img de usuario" style="height: 150px;
-			width: 150px; background-repeat: no-repeat;
-			background-position: 50%;
-			border-radius: 50%;
-			background-size: 100% auto;" >
-			<h6 style="color: white;"> <?php echo utf8_encode($univerisdad);  ?></h6>
-			<h4 style="text-align: center; color: white"><?php echo $Nombre_Alumno;?></h4>
-			<h4 style="color: white;"><?php echo $Carnet; ?></h4>
+<div class="row">
+    <!--Comiezo de estructura de trabajo 2fila-->
+    <div class="container-fluid text-center" ng-app="app">
 
-		</div>
+        <div class="principal">
 
-		<div class="col text-center">
-			<br><br><br>
-			<table class="table table-responsive-lg float-left " >
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">Carrera</th>
-						<th scope="col">Promoción</th>
-						<th scope="col">Status Actual</th>
-						<th scope="col">Fuente de Finacimiento</th>
-						<th scope="col">Total de talleres</th>
-						<th scope="col">Estado de certificación</th>
-						<th scope="col">Estado laboral</th>
-						
-						<th>Cambiar de imagen</th>
-						
+            <div class="alerta">
+                <?php
+    include "config/Alerta.php";
+      ?>
+            </div>
 
-					</tr>
-				</thead>
-				<tbody>
-					<tr class="table-light">
-						<td><?php echo utf8_encode($Carrera);?></td>
-						<td><?php echo $promocion ?></td>
-				        <td><b><?php echo $StatusActualAlu ?></b></td>
-				        <td><b><?php echo $finaciamiento ?></b></td>
-						<td><b><?php echo $HistoricoTaller ?></b></td>
-						<td><?php echo $estadoTalleres; ?></td>
-						<td><?php echo "<b id='estado'>".$estadoLaboral."</b>";
+            <!--Información principal del estudiante-->
+            <div class="Info-Alumno1">
+                <div class="row">
+                    <div class="text-center align-self-center" id="carnet">
+                        <br>
+                        <img src="../img/imgUser/<?php echo $FotoAlumno?>" alt="img de usuario" class="user">
 
 
-						if ($estadoLaboral == 'Estudiando-Pasantias' || $estadoLaboral == 'Estudiando y Trabajando' || $estadoLaboral == 'Pasantias' || $estadoLaboral == 'Trabajando' ) 
-						{
-							if( $conteoSolic == 0)
-							{
-								echo "<br>No hay comprobante";
-							}
-							else
-							{
-								echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal6">
-							Detalles
-							</button>';
-							}
-							
-						}
+                        <h4 id="info1"><?php echo $Nombre_Alumno; ?></h4>
+                        <h4 id="info1"><?php echo $Carnet; ?></h4>
+                        <h6 id="info1" class="little"> <?php echo utf8_encode($univerisdad); ?></h6>
 
-						?></td>
-          
-        <td>
-        	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        		 <i class="far fa-image"></i>
-        	</button>
-        </td>
-        
-    </tr>
-				</tbody>
-			</table>
+                    </div>
 
+                </div>
+                <div class="Info-Alumno1-sec" style="height: 330px;">
 
-		</div>
-	</div>
+                    <section class="opciones">
+                        <p id="mainTitle" class="parrafo">Carrera: </p>
+                        <p class="carrera"><?php echo utf8_encode($Carrera )?></p>
+                        <br>
+                        <p id="mainTitle" class="promo1">Promocion: </p>
+                        <p class="promo"><?php echo $promocion ?></p>
+                        <br>
+                        <p id="mainTitle" class="estado1">Estatus Actual: </p>
+                        <p class="estado"><?php echo $StatusActualAlu; ?></p>
+                        <br>
+                        <p id="mainTitle" class="estadolab1"> Estado Laboral: </p>
+                        <p class="estadolab" style="position: relative;">
+                            <?php echo "<b id='estado'>".$estadoLaboral."</b>";  ?></p>
+                            <br>
+                        <p id="mainTitle" class="talleres1"> Total de Talleres: </p>
+                        <p class="talleres"><?php echo "<b id='estado'>".$HistoricoTaller."</b>";  ?></p>
+                        <br>
+                        <p id="mainTitle" class="financiamiento1"> Financiamiento: </p>
+                        <p class="financiamiento"><?php echo "<b id='estado'>".$finaciamiento ."</b>";  ?></p>
+                        <br>
+                        <p id="mainTitle" class="financiamiento1" > Estado de certificación  : </p>
+                        <p class="financiamiento"><?php echo "<b id='estado'>".$estadoTalleres."</b>";  ?></p>
+                        <br>
+                    </section>
 
+                    <?php
+                    $stmt123456 = $dbh->query("SELECT * FROM alumnos WHERE ID_Alumno = '$Carnet' ");
+                    $stmt123456->execute(); 
+                    while ($row = $stmt123456->fetch()) {
+                        $modulos = $row['CantidadModulos'];
+                    }    
+                    
+$TotalTalleresAlumno = $modulos; 
+$Porcentaje = ($TotalTalleresAlumno /6)*100 ;
+$TotalReunionAlumno =4;
+$TotalReuniones = 5;
+$Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
+    ?>
+                </div>
+            </div>
+            <div class="Info-Alumno2" >
+                <h3 class="subtitle-p">Progreso</h3>
 
+                <section class="Info1 float-left h-50 w-75" style="margin-left:10%">
+                    <div class="grafico ">
+                        <div id="container"></div>
+                    </div>
 
+                    <div class="grafico2  float-left h-50 " style="margin-left:-20%">
+                        <div id="container2" style="min-width: 310px; max-width: 600px;"></div>
+                    </div>
 
+                    <div class="HorasVinculacion float-right" style="margin-top:-110%; ">
+                        <p><img src="../img/maletin.jpg" width="120px" height="100px" class="Img1">
+                        <section class="horas">
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="color:black;">Solicutud <?php echo $IdSolicEstado ?></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-    
+                            <p id="tallerAlumno"><?php echo $HorasSociales; ?> h</p>
+                        </section>
+                        <span id="totalTa">Horas de <br>vinculación</span>
+                    </div>
+                    <p><img src="../img/industria.svg" style="margin-left:-2%; margin-top:5%;" width="120px"
+                            height="100px" class="Img2">
 
+                    <div class="Empresas" style="margin-left:-15%; margin-top:-20%;">
+                        <section class="horas2">
+                            <p id="tallerAlumno">
+                                <?php echo $TotalExternaTallerAlumno;?>/<?php echo $TotalEmpresasExterna; ?></p>
+                        </section>
+                        <div class="externa">
+                            <span id="totalTa">Empresas<br> Externas</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <br>
 
-         <!-- Default form contact -->
-         <form class="text-center border border-light p-5" action="#!">
+            <div class="Info-Alumno3 " >
+                <div class="status1">
+                    <p style="text-align: center;">CUM Actual</p>
+                    <h3 class="subtitle" ><?php  echo  round($cum,2) ?> </h3>
+                </div>
+                <div class="status2">
+                    <p style="text-align: center;">Avance de <br> Carrera</p>
+                    <h3 class="subtitle"><?php  echo  round($avancePensum,2) ?> %</h3>
+                    <a href="expedienteU.php"><button class="btn btn-info" id="button-info">Ver detalles</button></a>
+                </div>
+                <div class="status3">
+                    <p style="text-align: center;">Estado de Beca</p>
+                    <h3 class="subtitle"><?php  echo  round($Promedio,2) ?> %</h3>
+                    <span id="subtitle"><?php echo $EstadoBeca; ?></span>
+                </div>
+                <div class="status5">
+                    <p style="text-align: center;">Cambiar Imagen de <br>perfil</p>
+                    
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" id="button-info">
+             <i class="far fa-image"></i>
+          </button>
+                </div>
+            </div>
+            <?php
+            if ($consulta11->rowCount()>=1)
+            {
+              while ($fila11=$consulta11->fetch())
+                {   echo "
+              <tr class='bg-light'>
+              <td>".$fila11['Titulo']."</td>
+              <td>".$fila11['Fecha']."</td>
+              <td>".$fila11['asistencia']."</td>
 
-         	<p class="h4 mb-4" style="color: black;">Datos general</p>
+              </tr>";
 
-         	<!-- Name -->
-         	<div>
-         		<p style="color: black;">Estado Laboral</p>
-         		<input type="text" id="defaultContactFormName" class="form-control mb-4"  value="<?php echo $estadoLaboral ?>" disabled >
-         	</div>
-     
-         	
+            }
+          }
 
-         	<!-- Email -->
-         	<div>
-         		<p style="color: black;">Fecha y hora</p>
-         		<input type="email" id="defaultContactFormEmail" class="form-control mb-4" value="<?php echo$Fecha?>" disabled>	
-         	</div>
-         	
+          ?>
 
-     		
+            </tbody>
+            </table>
+        </div>
 
-
-         	<!-- Message -->
-         	<div class="form-group">
-         		<p style="color: black;">Comentario del estudiante</p>
-         		<textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message" disabled ><?php echo $CometarioSoliEstado ?></textarea>
-         	</div>
-
-         	<div class="form-group">
-         		<p style="color: black;">Comentario del coach</p>
-         		<textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message" disabled><?php echo $ComentarioCoach ?></textarea>
-         	</div>
-
-         	<!-- Copy -->
-         	<div class="custom-control custom-checkbox mb-4">
-         		<input type="checkbox" class="custom-control-input" id="defaultContactFormCopy" checked>
-         		<label class="custom-control-label" for="defaultContactFormCopy" style="color: black;">Aprobado</label>
-         	</div>
-
-         	<!-- Send button -->
-         	<a href="../ComproCambio/<?php echo $ComprobanteSolEstado ?>" class="btn btn-info btn-block">
-         	Comprobante
-         	</a>
-         </form>
-         <!-- Default form contact -->
-
-
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      </div>
     </div>
-  </div>
+    <?php
+            if ($consulta12->rowCount()>=1)
+            {
+              while ($fila12=$consulta12->fetch())
+                {   echo "
+              <tr class='table-light'>
+              <td>".$fila12['Titulo']."</td>
+              <td>".$fila12['Fecha']."</td>
+              <td>".$fila12['Asistencia']."</td>
+
+              </tr>";
+
+            }
+          }
+
+          ?>
+
+    </tbody>
+    </table>
 </div>
 
+</div>
+<?php
+            if ($consulta13->rowCount()>=1)
+            {
+              while ($fila13=$consulta13->fetch())
+                {   echo "
+              <tr class='table-light'>
+              <td>".$fila13['ID_HSociales']."</td>
+              <td>".$fila13['FechaInicio']."</td>
+              <td>".$fila13['FechaFinal']."</td>
+              <td>".$fila13['Encargado']."</td>
+              <td>".$fila13['Descripcion']."</td>
+              <td>".$fila13['ID_Ciclo']."</td>
+              <td>".$fila13['CantidadH']."</td>
+              </tr>";
 
+            }
+          }
 
+          ?>
 
-		<!-- Modal -->
+</tbody>
+</table>
+</div>
+
+</div>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -531,21 +575,21 @@ while($fila2 = $stmt2->fetch()){
       </div>
       <div class="modal-body">
         
-      	<form method="POST" action="Modelo/ModeloPassword/CambiarImgAlumno.php" enctype="multipart/form-data">
-      		<!--IMG A Subir -->
-      		<div class="custom-file">
-      			<div class="custom-file">
-					
-      				<input type="hidden" name="iduser" value="<?php echo $IDusuario ?>">
-      				<input type="hidden" name="idalumno" value="<?php echo $IDCooreoAlumno ?>">
-      				<input type="file" name="imgusu" id="imgusu" class="custom-file-input" accept="image/*" required />
-      				<label class="custom-file-label" for="customFileLang" data-browse="Buscar">Seleccionar Archivo</label>
-      			</div>
-      			
-      			<br><br>
-      			<input type="submit" name="SubirImg" id="SubirImg" class="btn btn-dark btn-block" value="Cambiar Foto" />
-      		</div>
-      	</form>
+        <form method="POST" action="Modelo/ModeloPassword/CambiarImgAlumno.php" enctype="multipart/form-data">
+          <!--IMG A Subir -->
+          <div class="custom-file">
+            <div class="custom-file">
+          
+              <input type="hidden" name="iduser" value="<?php echo $IDusuario ?>">
+              <input type="hidden" name="idalumno" value="<?php echo $IDCooreoAlumno ?>">
+              <input type="file" name="imgusu" id="imgusu" class="custom-file-input" accept="image/*" required />
+              <label class="custom-file-label" for="customFileLang" data-browse="Buscar">Seleccionar Archivo</label>
+            </div>
+            
+            <br><br>
+            <input type="submit" name="SubirImg" id="SubirImg" class="btn btn-dark btn-block" value="Cambiar Foto" />
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
@@ -553,402 +597,11 @@ while($fila2 = $stmt2->fetch()){
     </div>
   </div>
 </div>
-
-
-
-
-	<!--Información sobre proceso de becas-->
-	<br>
-	<div class="classic-tabs mx-2 mb-5">
-		<h1 class="text-light">Progreso</h1>
-		<br>
-		<div class="row">
-			<div class="col" id="taller">
-				<br>
-        <?php
-
-          if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio' || $estadoTalleres=='Graduado') {
-            echo "<h2><span id='comple1'>Completo</span></h2>";
-          }else {
-        ?>
-				<h2> <span id="tallerAlumno"><?php echo $TotalTalleresAlumno; ?></span>/<span id="totalTa">15</span> </h2>
-      <?php } ?>
-				<hr>
-        <?php
-          if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
-            ?>
-            <button class="tablinks btn btn-outline-light btn-lg btn-block" data-toggle="modal" data-target="#modalCart" disabled>Talleres</button>
-            <?php
-          }else {
-        ?>
-				<button class="tablinks btn btn-outline-light btn-lg btn-block" data-toggle="modal" data-target="#modalCart" >Talleres</button>
-      <?php } ?>
-
-			</div>
-			<div class="col" id="reuniones">
-				<br>
-        <?php
-          if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
-            echo "<h2><span id='comple'>Completo</span></h2>";
-          }else {
-        ?>
-				<h2> <span id="reunionAlumno"><?php echo $TotalReunionAlumno; ?></span>/<span id="totalRe"><?php echo $TotalReuniones; ?></span> </h2>
-      <?php } ?>
-				<hr>
-
-        <?php
-          if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
-            ?>
-            <button class="tablinks btn btn-outline-light btn-lg btn-block" data-toggle="modal" data-target="#modalCart2" disabled>Reuniones</button>
-            <?php
-          }else {
-        ?>
-				<button class="tablinks btn btn-outline-light btn-lg btn-block" data-toggle="modal" data-target="#modalCart2">Reuniones</button>
-      <?php } ?>
-
-			</div>
-			<div class="col" id="externo">
-				<br>
-        <?php
-          if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio' || $estadoTalleres=='Graduado') {
-            echo "<h2><span id='comple1'>Completo</span></h2>";
-          }else {
-        ?>
-				<h2> <span id="externoAlumno"><?php echo $TotalExternaTallerAlumno;?></span>/<span id="totalExt"><?php echo $TotalEmpresasExterna; ?></span> </h2>
-      <?php } ?>
-				<hr>
-        <?php
-          if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
-            ?>
-            <button class="tablinks btn btn-outline-light btn-lg btn-block" data-toggle="modal" data-target="#modalCart3" disabled>Empresas Externa</button>
-            <?php
-          }else {
-        ?>
-				<button class="tablinks btn btn-outline-light btn-lg btn-block" data-toggle="modal" data-target="#modalCart3">Empresas Externa</button>
-      <?php } ?>
-			</div>
-			<div class="col" id="hora">
-				<br>
-        <?php
-          if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
-            echo "<h2><span id='comple'>Completo</span></h2>";
-          }else {
-        ?>
-				<h2> <span id="AlumnoHoras"><?php echo $HorasSociales; ?></span> Horas</h2>
-      <?php } ?>
-				<hr>
-        <?php
-          if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
-            ?>
-            <button class="tablinks btn btn-outline-light btn-lg btn-block"  data-toggle="modal" data-target="#modalCart4" disabled>Horas de vinculación</button>
-            <?php
-          }else {
-        ?>
-				<button class="tablinks btn btn-outline-light btn-lg btn-block"  data-toggle="modal" data-target="#modalCart4" >Horas de vinculación</button>
-      <?php } ?>
-			</div>
-			<div class="col" id="total">
-				<h3 style="color: black;">Estado de beca</h3>
-				<br>
-        <?php
-          if ($estadoLaboral=='Estudiando-Pasantias' || $estadoLaboral=='Estudiando y Trabajando' || $estadoLaboral=='Pasantias' || $estadoLaboral=='Trabajando' || $estadoLaboral=='Pausa de estudio') {
-            echo "<h2> 100%</h2>
-    				<hr>
-    				<h4 class=\"text-success\">Aprobado</h4>";
-          }else {
-        ?>
-				<h2><?php  echo  round($Promedio,2) ?> %</h2>
-				<hr>
-				<h4 id="beca"><?php echo $EstadoBeca; ?></h4>
-
-      <?php } ?>
-      <br>
-      <br>
-			</div>
-		</div>
-
-
-
-		<!-- Classic tabs -->
-		<!-- Modal: modalCart -->
-		<div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<!--Header-->
-				<div class="modal-header">
-					<h4 class="modal-title" id="myModalLabel">Lista de asistencia Talleres</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<!--Body-->
-				<div class="modal-body">
-					<div class="table-responsive">
-						<table class="table table-hover thead-dark">
-							<thead>
-								<tr>
-									<th>Taller</th>
-									<th>Fecha</th>
-									<th>Estado</th>
-								</tr>
-							</thead>
-							<tfoot >
-								<tr>
-									<th>Taller</th>
-									<th>Fecha</th>
-									<th>Estado</th>
-								</tr>
-							</tfoot>
-							<tbody>
-								<?php
-
-
-								if ($consulta10->rowCount()>=1)
-								{
-									while ($fila10=$consulta10->fetch())
-										{		echo "
-									<tr class='table-light'>
-									<td>".$fila10['Titulo']."</td>
-									<td>".$fila10['Fecha']."</td>
-									<td>".$fila10['Asistencia']."</td>
-
-									</tr>";
-
-								}
-							}
-
-							?>
-						</tbody>
-					</table>
-				</div>
-
-			</div>
-			<!--Footer-->
-			<div class="modal-footer">
-				<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-
-
-
-<!-- Classic tabs -->
-<!-- Modal: modalCart -->
-<div class="modal fade" id="modalCart2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-	<div class="modal-content">
-		<!--Header-->
-		<div class="modal-header">
-			<h4 class="modal-title" id="myModalLabel">Lista de asistencia Reuniones</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">×</span>
-			</button>
-		</div>
-		<!--Body-->
-		<div class="modal-body">
-			<div class="table-responsive">
-				<table class="table table-hover thead-dark">
-					<thead>
-						<tr>
-							<th>Reunión</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</thead>
-					<tfoot >
-						<tr>
-							<th>Reunión</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</tfoot>
-					<tbody>
-
-						<?php
-						if ($consulta11->rowCount()>=1)
-						{
-							while ($fila11=$consulta11->fetch())
-								{		echo "
-							<tr class='bg-light'>
-							<td>".$fila11['Titulo']."</td>
-							<td>".$fila11['Fecha']."</td>
-							<td>".$fila11['asistencia']."</td>
-
-							</tr>";
-
-						}
-					}
-
-					?>
-
-				</tbody>
-			</table>
-		</div>
-
-	</div>
-	<!--Footer-->
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
-	</div>
-</div>
-</div>
-</div>
-</div>
-
-
-<!-- Classic tabs -->
-<!-- Modal: modalCart -->
-<div class="modal fade" id="modalCart3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-	<div class="modal-content">
-		<!--Header-->
-		<div class="modal-header">
-			<h4 class="modal-title" id="myModalLabel">Lista de asistencia Talleres Externa</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">×</span>
-			</button>
-		</div>
-		<!--Body-->
-		<div class="modal-body">
-			<div class="table-responsive">
-				<table class="table table-hover thead-dark">
-					<thead>
-						<tr>
-							<th>Taller</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</thead>
-					<tfoot >
-						<tr>
-							<th>Taller</th>
-							<th>Fecha</th>
-							<th>Estado</th>
-						</tr>
-					</tfoot>
-					<tbody>
-
-						<?php
-						if ($consulta12->rowCount()>=1)
-						{
-							while ($fila12=$consulta12->fetch())
-								{		echo "
-							<tr class='table-light'>
-							<td>".$fila12['Titulo']."</td>
-							<td>".$fila12['Fecha']."</td>
-							<td>".$fila12['Asistencia']."</td>
-
-							</tr>";
-
-						}
-					}
-
-					?>
-
-				</tbody>
-			</table>
-		</div>
-
-	</div>
-	<!--Footer-->
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
-	</div>
-</div>
-</div>
-</div>
-</div>
-
-
-<!-- Classic tabs -->
-<!-- Modal: modalCart -->
-<div class="modal fade bd-example-modal-lg" id="modalCart4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog modal-lg" role="document">
-	<div class="modal-content">
-		<!--Header-->
-		<div class="modal-header">
-			<h4 class="modal-title" id="myModalLabel">Horas Sociales</h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">×</span>
-			</button>
-		</div>
-		<!--Body-->
-		<div class="modal-body">
-			<div class="table-responsive">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Inicio</th>
-							<th>Finalización</th>
-							<th>Encargado</th>
-							<th>Descripción</th>
-							<th>Ciclo</th>
-							<th>Cantidad</th>
-						</tr>
-					</thead>
-					<tfoot >
-						<tr>
-							<th>ID</th>
-							<th>Inicio</th>
-							<th>Finalización</th>
-							<th>Encargado</th>
-							<th>Descripción</th>
-							<th>Ciclo</th>
-							<th>Cantidad</th>
-						</tr>
-					</tfoot>
-					<tbody>
-
-
-						<?php
-						if ($consulta13->rowCount()>=1)
-						{
-							while ($fila13=$consulta13->fetch())
-								{		echo "
-							<tr class='table-light'>
-							<td>".$fila13['ID_HSociales']."</td>
-							<td>".$fila13['FechaInicio']."</td>
-							<td>".$fila13['FechaFinal']."</td>
-							<td>".$fila13['Encargado']."</td>
-							<td>".$fila13['Descripcion']."</td>
-							<td>".$fila13['ID_Ciclo']."</td>
-							<td>".$fila13['CantidadH']."</td>
-							</tr>";
-
-						}
-					}
-
-					?>
-
-				</tbody>
-			</table>
-		</div>
-
-	</div>
-	<!--Footer-->
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
-	</div>
-</div>
-</div>
-</div>
-</div>
-
-
-</div>
-<!-- /#page-content-wrapper -->
-
-</div>
-</div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 <!-- /#wrapper -->
-
+<script src="main.js"></script>
+<?php include "../Alumno/GRAFICA.php"?>
+<?php include "../Alumno/GRAFICA2.php"?>
 
 <?php
 

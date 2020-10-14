@@ -35,7 +35,7 @@
 <br>
 
   <?php
-  $stmt2 =$dbh->prepare("SELECT `ID_Reunion`, `Titulo`, `Fecha` FROM `reuniones` WHERE `ID_Empresa`= '".$universidad."' and `Estado`='Activo'");
+  $stmt2 =$dbh->prepare("SELECT r.ID_Reunion AS 'id', r.Titulo, r.Fecha, r.encargado, r.Tipo FROM reuniones r INNER JOIN universidadreunion u ON r.ID_Reunion = u.ID_Reunion WHERE u.ID_Empresa= '".$universidad."' and r.Estado='Activo'");
   // Ejecutamos
   $stmt2->execute();
   ?>
@@ -45,6 +45,8 @@
       <th scope="col">ID</th>
       <th scope="col">Titulo</th>
       <th scope="col">Fecha</th>
+      <th scope="col">Encargado</th>
+      <th scope="col">Tipo de reunión</th>
       <th scope="col">Opciones</th>
 
     </tr>
@@ -53,11 +55,13 @@
     <?php
     while($fila2 = $stmt2->fetch()){
       echo "<tr>";
-        echo "<td scope=\"row\">".$fila2["ID_Reunion"]."</td>";
+        echo "<td scope=\"row\">".$fila2["id"]."</td>";
         echo "<td>".$fila2["Titulo"]."</td>";
         $fechaReunion=strftime("%A, %d de %B de %Y", strtotime($fila2["Fecha"]));
         echo "<td>".$fechaReunion."</td>";
-        echo "<td><a class=\"btn btn-info\" href=\"HorariosReunion.php?id=".$fila2["ID_Reunion"]."\"><i class=\"fas fa-calendar-week\"></i> Ver horarios</a></td>";
+        echo "<td>".utf8_decode(utf8_encode($fila2["encargado"]))."</td>";
+        echo "<td>".utf8_decode(utf8_encode($fila2["Tipo"]))."</td>";
+        echo "<td><a class=\"btn btn-info\" href=\"HorariosReunion.php?id=".$fila2["id"]."\"><i class=\"fas fa-calendar-week\"></i> Ver horarios</a></td>";
       echo "</tr>";
     }
     ?>
