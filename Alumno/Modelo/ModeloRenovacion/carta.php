@@ -20,7 +20,7 @@ foreach ($dbh->query("SELECT Nombre,SedeAsistencia,Class FROM alumnos WHERE ID_A
   $SC = $Name['SedeAsistencia'];
   $Class = $Name['Class'];
 }
-$sql = "SELECT COUNT(*) AS 'condicion'FROM renovacion WHERE ID_Alumno = '".$alumno."' AND ciclo = '".$ciclo."' AND año = Date_format(now(),'%Y')";
+$sql = "SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE ID_Alumno = '".$alumno."' AND ciclo = '".$ciclo."' AND año = Date_format(now(),'%Y')";
 foreach ($dbh->query($sql) as $C) {
  $condicion = $C['condicion'];
 }
@@ -54,28 +54,51 @@ $_SESSION['noti'] = "<script>swal({
 });</script>";
 header("Location:../../renovacionBeca.php");
 }elseif ($condicion > 0) {
-$_SESSION['noti'] = "<script>swal({
+  $sql = "SELECT COUNT(*) AS 'contar' FROM renovacion WHERE año = Date_format(now(),'%Y')  AND ciclo = '"..$ciclo"' AND archivo = '".$formato."' AND Estado != 'Rechazado'";
+foreach ($dbh->query($sql) as $re) {
+  $contar = $re['contar'];
+}
+if ($contar > 0) {
+  $_SESSION['noti'] = "<script>swal({
   title: 'Error!',
-  text: 'Ya ha ingresado renovacion de beca para el ciclo seleccionado!',
+  text: 'Ya ha subido renovacion!',
   icon: 'error',
   button: 'Cerrar',
 });</script>";
 header("Location:../../renovacionBeca.php");
-
+}
 }
 
 else
 {
-  if (file_exists($archivero)) {
-  
-  $consulta=$dbh->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo,direccion,carpeta)
-    VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo,:direccion,:carpeta)");
+    $sql = "SELECT COUNT(*) AS 'contar' FROM renovacion WHERE año = Date_format(now(),'%Y')  AND ciclo = '"..$ciclo"' AND archivo = '".$formato."' AND Estado == 'Rechazado'";
+foreach ($dbh->query($sql) as $re) {
+  $contador = $re['contar'];
+}
+if ($contador == 1) {
+$nombreArchivo = $formato;
+move_uploaded_file($direccion,$archivero."/".$nombreArchivo);
+//$_SESSION["exito"] = "Renovacion de Beca ingresada correctamente";
+$_SESSION['noti'] = "<script>swal({
+  title: 'Exito!',
+  text: 'Renovacion de Beca ingresada correctamente!',
+  icon: 'success',
+  button: 'Cerrar',
+});</script>";
+header("Location:../../renovacionBeca.php");
+}else
+{
+    if (file_exists($archivero)) {
+  $estado = "enviado";
+  $consulta=$dbh->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo,direccion,carpeta,Estado)
+    VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo,:direccion,:carpeta,:estado)");
          $consulta->bindParam(':idRenovacion',$idRenovacion,PDO::PARAM_STR);
          $consulta->bindParam(':ID_Alumno',$alumno,PDO::PARAM_STR);
          $consulta->bindParam(':ciclo',$ciclo,PDO::PARAM_INT);
          $consulta->bindParam(':archivo',$formato,PDO::PARAM_STR);
          $consulta->bindParam(':direccion',$ubicacion,PDO::PARAM_STR);
          $consulta->bindParam(':carpeta',$carpeta,PDO::PARAM_STR);
+         $consulta->bindParam(':estado',$estado,PDO::PARAM_STR);
 
   $consulta->execute();
 $nombreArchivo = $formato;
@@ -91,14 +114,16 @@ header("Location:../../renovacionBeca.php");
 
 }else{
   mkdir($archivero, 0777, true);
-  $consulta=$dbh->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo,direccion,carpeta)
-    VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo,:direccion,:carpeta)");
+  $consulta=$dbh->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo,direccion,carpeta,Estado)
+    VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo,:direccion,:carpeta,:estado)");
          $consulta->bindParam(':idRenovacion',$idRenovacion,PDO::PARAM_STR);
          $consulta->bindParam(':ID_Alumno',$alumno,PDO::PARAM_STR);
          $consulta->bindParam(':ciclo',$ciclo,PDO::PARAM_INT);
          $consulta->bindParam(':archivo',$formato,PDO::PARAM_STR);
          $consulta->bindParam(':direccion',$ubicacion,PDO::PARAM_STR);
          $consulta->bindParam(':carpeta',$carpeta,PDO::PARAM_STR);
+         $consulta->bindParam(':estado',$estado,PDO::PARAM_STR);
+
 
   $consulta->execute();
 $nombreArchivo = $formato;
@@ -111,6 +136,7 @@ $_SESSION['noti'] = "<script>swal({
   button: 'Cerrar',
 });</script>";
 header("Location:../../renovacionBeca.php");
+}
 }
 }
 

@@ -292,7 +292,6 @@ background-color: #0D0D0D;
             <div class="collapse" id="collapseExample3">  
               <ul>
               <li><a href="HorasVinculacion.php" class="list-group-item list-group-item-action" id="submenu">Horas De Vinculación</a></li>
-              <li><a href="#" class="list-group-item list-group-item-action" id="submenu">Renovaciones de Beca</a></li> 
                   
                </ul>
             </div>
@@ -320,7 +319,7 @@ background-color: #0D0D0D;
             </a>
             <div class="collapse" id="collapseExample10">  
               <ul>
-                <li><a href="LIS-Alumnos.php" class="list-group-item list-group-item-action" id="submenu">Listados</a></li>
+                <li><a href="listadoRenovacion.php" class="list-group-item list-group-item-action" id="submenu">Listados</a></li>
                 <li><a href="RecordAlumnos.php" class="list-group-item list-group-item-action" id="submenu">Descargas</a></li>
                </ul>
             </div>
