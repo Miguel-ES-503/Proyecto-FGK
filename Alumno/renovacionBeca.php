@@ -2,6 +2,7 @@
 <title>Indicaciones Renovacion</title>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
  <link rel="stylesheet" href="assets1/css1/style.css">
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  
 <?php  
   
@@ -75,11 +76,6 @@ $direccion = $_SERVER['PHP_SELF'];
  ?>
 <!--///////////////////////////////////////////////-->
 <!--Para ver el nombre del archivo que sube-->
-<script type="text/javascript">
-  $(document).ready(function () {
-    bsCustomFileInput.init()
-    $('#noti').fadeOut(6000);
-  });
 
   </script>
   
@@ -126,17 +122,14 @@ $direccion = $_SERVER['PHP_SELF'];
     <div>
                              
     <div class="container" style="">
-      <!--<?php
+      <?php
      session_start();
-      if (isset($_SESSION['exito'])) {
-        echo "<div class='alert alert-success ' id='noti'>".$_SESSION["exito"]."</div>";
-        unset($_SESSION['exito']);
-      }else if (isset($_SESSION['error'])) 
-      {
-        echo "<div class='alert alert-danger' id='noti'>".$_SESSION["error"]."</div>";
-        unset($_SESSION['error']);
+      if (isset($_SESSION['noti']) && $_SESSION['noti'] != "") {
+        echo $_SESSION['noti'];
+        unset($_SESSION['noti']);
+        $_SESSION['noti'] = "";
       }
-      ?>-->
+      ?>
           <h2 style="">Indicaciones Generales</h2>
           <br>
           <br>
@@ -264,7 +257,7 @@ $direccion = $_SERVER['PHP_SELF'];
         </div>-->
        
         <br>
-        <form action="<?php $direccion ?>" method="post" enctype="multipart/form-data">
+        <form action="Modelo/ModeloRenovacion/carta.php" method="post" enctype="multipart/form-data">
           <label >Universidad</label>
         <input name="uni" placeholder="año" readonly class="form-control" value="<?php echo $universidad;  ?>" ></input>
         <br>
