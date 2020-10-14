@@ -14,7 +14,7 @@ if ($varsesion == null || $varsesion = "") {
 
 date_default_timezone_set('America/El_Salvador');
 
- $fecha =  date('Y-d-m');
+ $fecha =  date('Y-m-d');
 
 if(isset($_POST['Guardar_Datos']))
 {
