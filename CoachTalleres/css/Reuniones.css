@@ -1,0 +1,61 @@
+.title{
+background-color: #ADADB2;
+color: black;
+height: 70px;
+margin-left: -1.5%;
+margin-bottom: -2%;
+height: 55px;
+margin-top: -25px;
+width: 110%;
+
+
+}
+h2 , .icon{
+  float: left;
+}
+.main-title
+{
+text-align: left;
+font-size: 25px;
+margin-left: 25px;
+margin-top: 12px;
+font-weight: bold;
+letter-spacing: 5px;
+}
+.icon 
+{
+
+  width: 30px;
+  margin-top: 13px;
+  margin-left: 20px;
+}
+.icon-2
+{
+
+  width: 20px;
+  margin-right: 3px;
+  margin-top: -3px;
+}
+.title2
+{
+
+margin-left: 300px;
+background-color: #BE0032;
+width: 180px;
+height: 54px;
+}
+.title2-text 
+{
+margin-left:16px;
+margin-top: -8px;
+color: white;
+font-weight: bold;
+letter-spacing: 2px;
+}
+.first-title
+{
+	font-size: 26px;
+	letter-spacing: 2px;
+	text-align: center;
+}
+

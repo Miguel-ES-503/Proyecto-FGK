@@ -249,9 +249,9 @@ background-color: #0D0D0D;
             </a>
             <div class="collapse" id="collapseExample4">  
               <ul class="mr-lg-1">
-              <li><a href="SIT-CrearReunion.php" class="list-group-item list-group-item-action">Crear Reunión</a></li>  
-              <li><a href="LIS-Reunion.php" class="list-group-item list-group-item-action">Reuniones Activos</a></li>
-              <li><a href="reunionesFinalizados.php" class="list-group-item list-group-item-action">Reuniones Finalizadas</a></li>
+              <li><a href="SIT-CrearReunion.php" class="list-group-item list-group-item-action" id="submenu">Crear Reunión</a></li>
+              <li><a href="LIS-Reunion.php" class="list-group-item list-group-item-action" id="submenu">Reuniones Activos</a></li>
+              <li><a href="reunionesFinalizados.php" class="list-group-item list-group-item-action" id="submenu">Reuniones Finalizadas</a></li>
              </ul>
            </div>
          </li>
@@ -303,10 +303,7 @@ background-color: #0D0D0D;
 <br>
          
       <!-- fin de preguntas frecuentes -->
-      <li>
-        <a class="list-group-item list-group-item-action" href="sessionesOneonOne.php"><i class="fas fa-user-friends"></i> Sesiones Individuales
-        </a>
-      </li>
+     
       <li>
         <a class="list-group-item list-group-item-action" href="modulosMoodle.php"><i class="fas fa-briefcase"></i> Módulos
         </a>

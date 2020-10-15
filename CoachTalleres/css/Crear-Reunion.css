@@ -1,0 +1,40 @@
+
+.title-1 {
+	color: black;
+	font-weight: bold;
+	font-size: 25px;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+#main {
+	border-color: #a29c9c;
+	border-width: 5px;
+	border-style: solid;
+	border-radius: 30px;
+	margin: 0 auto;
+}
+
+label {
+	color: #be0032;
+	font-weight: bold;
+}
+
+.row {
+	margin-top: 20px;
+}
+
+.form-control {
+	background-color: #d9d2d2;
+	border-radius: 30px;
+	border-color: white;
+}
+
+#Guardar_Reunion {
+	text-align: center;
+	background-color: #be0032;
+	width: 35%;
+	color: white;
+	border-radius: 30px;
+	margin: auto;
+}

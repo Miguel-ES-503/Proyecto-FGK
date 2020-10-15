@@ -19,7 +19,7 @@ include 'Modularidad/MenuVertical.php';
 <link rel="stylesheet" type="text/css" href="css/Crear-Reunion.css">
 <link rel="stylesheet" type="text/css" href="css/Menu.css">
 <nav class="navbar navbar-expand-lg navbar-light" id="row">
-    <a href="javascript:history.back();"><img src="../img/back.png" class="icon"></a>
+    <a href="javascript:history.back();"><img src="../img/back.png" class="icon" style="width:30px;"></a>
     <a class="navbar-brand" id="T1">Reuniones</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
