@@ -22,15 +22,30 @@ include 'Modularidad/MenuVertical.php';
     <h2 class="main-title" >Reporteria Renovacion</h2>
 </div>
 <div class="container-fluid text-center">
+    <?php
+    $enviado=0;
+    $filaG;
+        #Consulta para saber cuantos alumnos enviaron la renovacion 
+        $query = "SELECT  COUNT(r.id_alumno) as 'Total' FROM renovacion r where r.estado = 'enviado' and r.ciclo = '1'";
+        $consulta =$pdo->prepare($query) ;
+        $consulta->setFetchMode(PDO::FETCH_ASSOC);
+        $consulta->execute();
+        
+  /* while ($enviado=$consulta->fetch()){
+    $enviado=$enviado["Total"];
+       echo $enviado;
+   }*/
+
+  ?>
     <!--*********INICIO SECCION PARA UTILIZAR EL FILTRO DE DATOS-->
     <div class="card" style="margin-top: 10px; ">
         <div class='row'>
             <div class="col-sm" style="margin: 1%;">
-                <select id="Festado" class="browser-default bg-light custom-select" name="Meses" onchange="">
+                <select id="Festado" class="browser-default bg-light custom-select" name="estado" onchange="">
                     <option value=" " class='dropdown-item' disabled selected>Estado</option>
                     <option value="enviado" class="dropdown-item">enviado</option>
                     
-                    <option value="no enviado" class="dropdown-item">No enviados</option>
+                    <option value="noenviado" class="dropdown-item">No enviados</option>
                    
                 </select>
 
@@ -38,9 +53,9 @@ include 'Modularidad/MenuVertical.php';
             <div class="col-sm" style="margin: 1%;">
                 <select id="Fciclo" class="browser-default bg-light custom-select" name="ciclo">
                     <option value=" " class='dropdown-item' disabled selected>Ciclo</option>
-                    <?php 
-                                require_once 'Modelo/ModeloRenovacion/CargarCiclosRenovacion.php';
-                                ?>
+                    <option value="ciclo 1" class="dropdown-item">ciclo 1</option>
+                    
+                    <option value="ciclo 2" class="dropdown-item">ciclo 2</option>
                 </select>
             </div>
 
@@ -76,14 +91,7 @@ include 'Modularidad/MenuVertical.php';
 
     <!--============****************INICIA SECCION DONDE SE MOSTRARAN TODOS LOS GRAFICOS-->
     <!--INICIO LOGICA PARA EXTRAER LOS DATOS-->
-    <?php
-        #Consulta para saber cuantos alumnos enviaron la renovacion 
-        $query = "SELECT DISTINCT(r.ID_alumno) as 'Nombre' , COUNT(r.id_alumno) as 'Total' FROM renovacion r where r.estado = 'enviado' and r.ciclo = '1'";
-        $consulta =$pdo->prepare($query) ;
-        $consulta->execute();
-        
-        
-    ?>
+    
     <!--FIN LOGICA PARA EXTRAER LOS DATOS-->
     <div>
 

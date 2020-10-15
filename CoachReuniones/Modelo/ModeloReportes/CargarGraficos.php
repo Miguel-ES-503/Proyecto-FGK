@@ -598,7 +598,6 @@ echo "<script>";
     echo "</div>";
     #**********************FINALIZA SECCION DE LOS MODALES-->
 
-}
  #====================SE DIBUJA EL GRAFICO PRINCIPAL
 echo"<script>";
 // Load Charts and the corechart package.
@@ -631,5 +630,4 @@ echo"            var data = google.visualization.arrayToDataTable([";
       echo"        google.charts.setOnLoadCallback(GraficoPrincipal);";
   
       echo"        </script>";
-
 ?>
