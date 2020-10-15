@@ -48,7 +48,8 @@ require_once '../Conexion/conexion.php';
 						<th scope="col">Total</th>	
 						<th scope="col">Horas Vinculación</th>
 						<th scope="col">Porcentaje</th>	
-						<th scope="col">Estado</th>		
+						<th scope="col">Estado</th>	
+						<th scope="col">Modificar Beca</th>	
 					</tr>
 				</tr>
 			</thead>
@@ -67,7 +68,9 @@ require_once '../Conexion/conexion.php';
 					<th scope="col">Total</th>	
 					<th scope="col">Horas Vinculación</th>
 					<th scope="col">Porcentaje</th>	
-					<th scope="col">Estado</th>		
+					<th scope="col">Estado</th>	
+					<th scope="col">Modificar Beca</th>	
+
 
 				</tr>
 			</tr>

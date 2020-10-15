@@ -16,7 +16,7 @@ $Sabatino = "SAT";
 $LugarFT=$InicialDep . $FinalDep . $FullTime; //Ejemplo SSFT
 $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 
-$stmt1 =$dbh->prepare("SELECT `ID_Alumno` , a.`Nombre` , `Class` ,  e.ID_Empresa ,  e.Nombre AS 'Universidad' , `ID_Sede` , s.Nombre AS 'Status' , StatusActual FROM alumnos a inner join status s on a.`ID_Status` = s.`ID_Status` LEFT JOIN empresas e on a.ID_Empresa = e.ID_Empresa WHERE SedeAsistencia = ? OR SedeAsistencia =  ?   ");
+$stmt1 =$dbh->prepare("SELECT `ID_Alumno`,correo , a.`Nombre` , `Class` ,  e.ID_Empresa ,  e.Nombre AS 'Universidad' , `ID_Sede` , s.Nombre AS 'Status' , StatusActual FROM alumnos a inner join status s on a.`ID_Status` = s.`ID_Status` LEFT JOIN empresas e on a.ID_Empresa = e.ID_Empresa WHERE SedeAsistencia = ? OR SedeAsistencia =  ?   ");
 // Ejecutamos
 $stmt1->execute(array($LugarFT,$LugarSAT));
 
@@ -272,6 +272,7 @@ while($fila = $stmt1->fetch()){
 		<td>".$HorasSociales."</td>
 		<td>".$PorcentajeColor ." </td>
 		<td>".$EstadoBecaFinal."</td>
+		<td><a href='ModificarBeca.php?id=".$fila['correo']."' class='fas fa-user  btn btn-warning'></a> </td>
 	
 		</tr>";
      

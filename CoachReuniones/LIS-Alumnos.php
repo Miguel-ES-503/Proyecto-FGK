@@ -89,6 +89,7 @@ include 'Modularidad/MenuVertical.php';
 						<th scope="col">STATUS ACTUAL</th>
 						<th scope="col">Estado de certificación</th>
 						<th scope="col">Ver expediente</th>
+						<th scope="col">Modificar Beca</th>
 					</tr>
 				</thead>
 				<!--<tfoot class="table-secondary">
