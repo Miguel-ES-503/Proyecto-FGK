@@ -54,6 +54,7 @@
             <th>Cupo</th>
             <th>Duración por sesión</th>
             <th>Telefono</th>
+            <th>Listado por Horario</th>
             <th>Acción</th>
           </tr>
         </thead>
@@ -70,6 +71,7 @@
               echo "<td>".$row["Canitdad"]."</td>";
               echo "<td>".$row["TiempoReunion"]." Minutos"."</td>";
               echo "<td><input type=\"text\" class=\"form-control-sm\" form=\"formulario".$vuelta."\" name=\"telefono\" placeholder=\"0000-0000\" pattern=\"[0-9]{4}-[0-9]{4}\" title=\"El teleono debe ser en el formato '0000-0000'\" required></td>";
+              echo "<td><a href='listadoxReunion.php?id=".$row['IDHorRunion']."' class='fas fa-user  btn btn-warning'></a></td>";
               echo "<td>";
               $verificar="SELECT COUNT(`id_reunion`) as total FROM `inscripcionreunion` WHERE `id_alumno`='".$alumno."' AND `id_reunion`='".$taller."' AND `Horario`=".$row["IDHorRunion"]."";
               $stmt2 =$dbh->prepare($verificar);
@@ -158,38 +160,7 @@
       
     </div>
   </div>
-  <div class="col">
-      <table id="data" class="table table-responsive-lg w-75 mx-auto float-center">
-        <thead class="thead-dark">
-          <tr>           
-            <th scope="col">Posicion</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Hora inicio-Hora Final</th>
-            <th scope="col">Tiempo por Sesión</th>
-          </tr>
-        </thead>
-        <tbody >
-        <?php
-            $numero = 0;
-            $stmt = $dbh->query("SELECT * FROM inscripcionreunion i INNER JOIN alumnos a ON i.id_alumno = a.ID_Alumno INNER JOIN horariosreunion h ON h.IDHorRunion = i.Horario WHERE i.id_reunion = '".$taller."' ");
-            while ($row = $stmt->fetch()) {
-              //`HorarioInicio`, `HorarioFinalizado`, `Canitdad` FROM `horariosreunion`IDHorRunion`, `HorarioInicio`, `HorarioFinalizado`, `Canitdad`
-                 $nombre = $row['Nombre'];
-                 $horaInicio=$row['HorarioInicio'];
-                 $horaFinal= $row['HorarioFinalizado'];
-                 $tiempo = $row['TiempoReunion'];
-                 
-                 echo "<tr>";
-                 echo "<td>".($numero = $numero +1)."</td>";
-                 echo "<td>$nombre</td>";
-                 echo "<td>$horaInicio - $horaFinal</td>";
-                 echo "<td>$tiempo Minutos</td>";
-                 echo "</tr>";
-            }
-            ?>
-        </tbody>
-        </table>
-    </div>
+  
 </div>
 <!-- /#page-content-wrapper -->
 <br><br><br><br><br><br><br><br><br><br>
