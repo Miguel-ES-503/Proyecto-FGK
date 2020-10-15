@@ -321,6 +321,7 @@ background-color: #0D0D0D;
               <ul>
                 <li><a href="listadoRenovacion.php" class="list-group-item list-group-item-action" id="submenu">Listados</a></li>
                 <li><a href="RecordAlumnos.php" class="list-group-item list-group-item-action" id="submenu">Descargas</a></li>
+                <li><a href="ReporteRenovacion.php" class="list-group-item list-group-item-action" id="submenu">Reporteria</a></li>
                </ul>
             </div>
           </li>
