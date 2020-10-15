@@ -30,26 +30,12 @@ include 'Modularidad/MenuVertical.php';
         $consulta =$pdo->prepare($query) ;
         $consulta->setFetchMode(PDO::FETCH_ASSOC);
         $consulta->execute();
-        
-  /* while ($enviado=$consulta->fetch()){
-    $enviado=$enviado["Total"];
-       echo $enviado;
-   }*/
+
 
   ?>
     <!--*********INICIO SECCION PARA UTILIZAR EL FILTRO DE DATOS-->
     <div class="card" style="margin-top: 10px; ">
         <div class='row'>
-            <div class="col-sm" style="margin: 1%;">
-                <select id="Festado" class="browser-default bg-light custom-select" name="estado" onchange="">
-                    <option value=" " class='dropdown-item' disabled selected>Estado</option>
-                    <option value="enviado" class="dropdown-item">enviado</option>
-                    
-                    <option value="noenviado" class="dropdown-item">No enviados</option>
-                   
-                </select>
-
-            </div>
             <div class="col-sm" style="margin: 1%;">
                 <select id="Fciclo" class="browser-default bg-light custom-select" name="ciclo">
                     <option value=" " class='dropdown-item' disabled selected>Ciclo</option>
@@ -58,7 +44,10 @@ include 'Modularidad/MenuVertical.php';
                     <option value="ciclo 2" class="dropdown-item">ciclo 2</option>
                 </select>
             </div>
+<div class="col-sm" style="margin: 1%;">
+                
 
+            </div>
             
         </div>
     </div>
@@ -107,13 +96,6 @@ include 'Modularidad/MenuVertical.php';
     <div class="row border border-dark w-100 h-100 mx-auto rounded" style="margin-bottom: 40px;">
         <div class="col" style="margin-top:5px; width: 100%; margin-left:15%;" id="piechart_principal">
         </div>
-        <div class="col w-50 mx-auto " id="tabla">
-            <div id="fondo" style="margin-top:5%; margin-right:20%">
-                <table id="table">
-
-                </table>
-            </div>
-        </div>
     </div>
 
     <!--En el div G1 se cargan todos los graficos dinamicamente-->
@@ -145,27 +127,6 @@ include 'Modularidad/MenuVertical.php';
         }
     }
     $(document).ready(function() {
-
-        $("#Festado").change(function() {
-
-            $.ajax({
-                type: 'POST',
-                url: 'Modelo/ModeloRenovacion/cargarGraficos.php',
-                data: {
-                    estado: $('#Festado option:selected').val(),
-                    ciclo: $('#Fciclo option:selected').val(),
-                    
-                },
-                success: function(data) {
-                    $("#G1").empty();
-                    $("#table").empty();
-                    $(".G").remove();
-                    $("#G1").append(data);
-                }
-
-            });
-            //  llamada();
-        });
         $("#Fciclo").change(function() {
 
             $.ajax({
