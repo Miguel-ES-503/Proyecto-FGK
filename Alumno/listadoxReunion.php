@@ -28,46 +28,61 @@
 
 
 
-  <br>
-  <h1 class="h1">Listado por el horario </h1>
-  <br>
-  <br>
-  <div>
-      <?php
+    <br>
+    <h1 class="h1">Listado por el horario </h1>
+    <br>
+    <br>
+    <div>
+        <?php
     include "config/Alerta.php";
       ?>
-  </div>
+    </div>
 
-  <div class="col">
-      <table id="data" class="table table-responsive-lg w-75 mx-auto float-center">
-        <thead class="thead-dark">
-          <tr>           
-            <th scope="col">Posicion</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Hora inicio-Hora Final</th>
-            <th scope="col">Tiempo por Sesión</th>
-          </tr>
-        </thead>
-        <tbody >
-        <?php
+    <div class="col">
+        <table id="data" class="table table-responsive-lg w-75 mx-auto float-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Orden a seguir</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Hora inicio</th>
+                    <th scope="col">Hora Final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
             $numero = 0;
+             $date = date("Y-m-d");
             $stmt = $dbh->query("SELECT * FROM inscripcionreunion i INNER JOIN alumnos a ON i.id_alumno = a.ID_Alumno INNER JOIN horariosreunion h ON h.IDHorRunion = i.Horario WHERE h.IDHorRunion = '".$taller."' ");
             while ($row = $stmt->fetch()) {
               //`HorarioInicio`, `HorarioFinalizado`, `Canitdad` FROM `horariosreunion`IDHorRunion`, `HorarioInicio`, `HorarioFinalizado`, `Canitdad`
                  $nombre = $row['Nombre'];
                  $horaInicio=$row['HorarioInicio'];
+                 $horaInicio2=$row['HorarioInicio'];
                  $horaFinal= $row['HorarioFinalizado'];
                  $tiempo = $row['TiempoReunion'];
-                 
+                 $tiempo2 = $row['TiempoReunion'];
+                 $numero ++;
+                 $numero2 ++;
                  echo "<tr>";
-                 echo "<td>".($numero = $numero +1)."</td>";
+                 echo "<td>".($numero = $numero)."</td>";                 
+                 $mifecha = new DateTime($date." ".$horaInicio);
+                 $mifecha2 = new DateTime($date2." ".$horaInicio2);
+                 for ($i=0; $i <$numero ; $i++) { 
+                  $mifecha =  $mifecha->modify('+'.$tiempo.' minute');
+                 }  
+                 for ($i=1; $i <$numero2 ; $i++) { 
+                  $mifecha2 =  $mifecha2->modify('+'.$tiempo2.' minute');
+                 }  
+                 $horaFin =  $mifecha->format('H:i:s'); 
+                 $hora =  $mifecha2->format('H:i:s'); 
+                 
                  echo "<td>$nombre</td>";
-                 echo "<td>$horaInicio - $horaFinal</td>";
-                 echo "<td>$tiempo Minutos</td>";
+                 echo "<td>".$hora."</td>";
+                 echo "<td>".$horaFin." </td>";
                  echo "</tr>";
             }
             ?>
-        </tbody>
+            </tbody>
         </table>
     </div>
 </div>
@@ -75,75 +90,6 @@
 <br><br><br><br><br><br><br><br><br><br>
 
 </div>
-<script>
-$(document).ready(function() {
-  var table = $('#data').DataTable({
-
-        "scrollX": true,
-        "scrollY": "50vh",
-        //Esto sirve que se auto ajuste la tabla al aplicar un filtro
-         "scrollCollapse": true,
-
-        language: {
-            "decimal": "",
-            "emptyTable": "No hay información",
-            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-            "infoPostFix": "",
-            "thousands": ",",
-            "lengthMenu": "Mostrar _MENU_ Entradas",
-            "loadingRecords": "Cargando...",
-            "processing": "Procesando...",
-            "search": "Buscar:",
-            "zeroRecords": "Sin resultados encontrados",
-            "paginate": {
-                "first": "Primero",
-                "last": "Ultimo",
-                "next": "Siguiente",
-                "previous": "Anterior"
-            }
-        },
-
-        initComplete: function() {
-            //En el columns especificamos las columnas que queremos que tengan filtro
-            this.api().columns([1,2,3]).every(function() {
-                var column = this;
-
-                var select = $('<select><option value=""></option></select>')
-                    .appendTo($(column.header()))
-                    .on('change', function() {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val().trim()
-                        );
-                            column
-                            .search(val ? '^' + val + '$' : '', true, false)
-                            .draw();
-                    });
-                    //Este codigo sirve para que no se active el ordenamiento junto con el filtro
-                $(select).click(function(e) {
-                    e.stopPropagation();
-                });
-                //===================
-
-                column.data().unique().sort().each(function(d, j) {
-                    // select.append('<option value="' + d + '">' + d + '</option>')
-
-                        select.append('<option value="' + d + '">' + d + '</option>')
-
-                });
-            });
-        },
-        "aoColumnDefs": [
-         { "bSearchable": false
-         //"aTargets": [ 1] sirve para indicar que columna no queremos que funcione el filtro
-          }
-       ]
-    });
-    //********Esta bendita linea hace la magia, adjusta el header de la tabla con el body
-    table.columns.adjust();
-} );
-</script>
 </div>
 <!-- /#wrapper -->
 
