@@ -216,7 +216,7 @@ if ($_GET['id']==null) {
             <br><br><br>
 
 
-            <h3 style="text-align: left; color: #555555; font-weight: bold;"><?php echo $Nombre_Alumno; ?> </h3>
+            <h3 style="text-align: left; color: #555555; font-weight: bold;"><?php echo utf8_encode ($Nombre_Alumno); ?> </h3>
             <h5 style="color: #555555; text-align: left;">Carnet Universidad: <?php echo $carnet; ?></h5>
             <table class="table table-responsive-lg float-left">
                 <thead style="background-color: #2D2D2E;; color: white; ">

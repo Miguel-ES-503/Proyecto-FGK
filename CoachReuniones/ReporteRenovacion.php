@@ -23,15 +23,7 @@ include 'Modularidad/MenuVertical.php';
 </div>
 <div class="container-fluid text-center">
     <?php
-    $enviado=0;
-    $filaG;
-        #Consulta para saber cuantos alumnos enviaron la renovacion 
-        $query = "SELECT  COUNT(r.id_alumno) as 'Total' FROM renovacion r where r.estado = 'enviado' and r.ciclo = '1'";
-        $consulta =$pdo->prepare($query) ;
-        $consulta->setFetchMode(PDO::FETCH_ASSOC);
-        $consulta->execute();
-
-
+   
   ?>
     <!--*********INICIO SECCION PARA UTILIZAR EL FILTRO DE DATOS-->
     <div class="card" style="margin-top: 10px; ">

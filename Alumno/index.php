@@ -133,6 +133,9 @@ left: 10px;
 #enlaces{
   float: left;
 }
+#enlace2{
+  color: white;
+}
 }
 </style>
 
@@ -205,7 +208,7 @@ left: 10px;
         <div id="enlaces">
         <table class="table-responsive">
 
-        <h3  style="font-weight: bold;">Enlaces<h3>
+        <h3 id="enlace2" style="font-weight: bold;">Enlaces<h3>
         
         <tr>
         <td>
