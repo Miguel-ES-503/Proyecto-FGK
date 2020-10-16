@@ -194,14 +194,14 @@ left: 10px;
         <img class="img-fluid" id="img2" src="../img/logonegro.png" width="150px">
         </div>
             <br>
-        <center><a href="https://www.instagram.com/bk2oportunidades/" target="blank" style="text-decoration: none;"><button class="btn-leer"  >Leer</button></a></center>
+        <center><a href="https://issuu.com/oportunidades0?issuu_product=header&issuu_subproduct=document_page&issuu_context=link&issuu_cta=profile" target="blank" style="text-decoration: none;"><button class="btn-leer"  >Leer</button></a></center>
         </div>
         <div id="avisos"  >
         <h3  class="avisos" style="font-weight: bold;">Avisos<h3>
         <img class="img-fluid" id="imgaviso" src="../img/avisos.png" width="100px" height="100px">
         <div style="float: right; " ><p class="enlace" style="text-align: left;">Enlace IG:<br>
         </p>
-        <center><a href="https://issuu.com/oportunidades0?issuu_product=header&issuu_subproduct=document_page&issuu_context=link&issuu_cta=profile" target="_black" style="text-decoration: none;"><button class="btn-leer2" >Visitar</button></a></center>
+        <center><a href="https://www.instagram.com/bk2oportunidades/" target="_black" style="text-decoration: none;"><button class="btn-leer2" >Visitar</button></a></center>
         </div>
         
         </div>
