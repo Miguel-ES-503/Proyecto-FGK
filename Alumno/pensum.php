@@ -255,7 +255,7 @@
                                        
                                         
                                         <td>
-                                        <center><a href='Modelo/ModeloMaterias/EliminarMaterias.php?id=".$fila2['idMateria']."' class='fas fa-trash  btn btn-danger'></a></center>
+                                        <center><a href='Modelo/ModeloMaterias/EliminarMaterias.php?id=".$fila2['idMateria']."' class='btn btn-danger'><i class='fas fa-trash'></i></a></center>
                                         </td>
                                         </tr>";
 
@@ -367,13 +367,6 @@
                                 <input type="text" name="nombremateria" placeholder="Nombre de materia"
                                     class="nombremateria form-control" id="nombremateria">
                             </div>
-
-
-
-
-
-
-
                             <input type="hidden" name="expedienteu" value="<?php echo $idExpedienteU;?>">
 
 

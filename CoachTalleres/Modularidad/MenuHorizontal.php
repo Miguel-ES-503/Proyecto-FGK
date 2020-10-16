@@ -275,6 +275,9 @@ background-color: #0D0D0D;
               <li><a href="SIT-ProcesoInscripcion.php" class="list-group-item list-group-item-action">Hora Inscripción</a></li>
                <li><a href="SIT-CrearTaller.php" class="list-group-item list-group-item-action">Crear Taller</a></li>
                <li><a href="LIS-Talleres.php" class="list-group-item list-group-item-action">Talleres Activos</a></li>
+               <li><a href="SIT-CrearReunion.php" class="list-group-item list-group-item-action" id="submenu">Crear Reunión</a></li>
+              <li><a href="LIS-Reunion.php" class="list-group-item list-group-item-action" id="submenu">Reuniones Activos</a></li>
+              <li><a href="reunionesFinalizados.php" class="list-group-item list-group-item-action" id="submenu">Reuniones Finalizadas</a></li>
              </ul>
            </div>
          </li>
@@ -325,10 +328,7 @@ background-color: #0D0D0D;
       </li>
 
       <!-- fin de preguntas frecuentes -->
-      <li>
-        <a class="list-group-item list-group-item-action" href="sessionesOneonOne.php"><i class="fas fa-user-friends"></i> Sesiones Individuales
-        </a>
-      </li>
+      
       <li>
         <a class="list-group-item list-group-item-action" href="modulosMoodle.php"><i class="fas fa-briefcase"></i> Módulos
         </a>
