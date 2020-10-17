@@ -18,7 +18,7 @@ $LugarFT=$InicialDep . $FinalDep . $FullTime; //Ejemplo SSFT
 $LugarSAT=$InicialDep . $FinalDep .$Sabatino; //Ejemplo SSSAT
 
 	// Consulta De La BASE DE DATOS
-$consulta=$pdo->prepare("SELECT `ID_Alumno` , A.`Nombre` , `Class` , `correo` , C.nombre AS 'Carrera' , E.Nombre AS 'Univerisdad' , S.Nombre AS 'Status'  , `Sexo` , `ID_Sede` , `SedeAsistencia` , `Estado` FROM alumnos A INNER JOIN carrera C ON A.`ID_Carrera` = C.`ID_Carrera` LEFT JOIN empresas E on A.`ID_Empresa` = E.`ID_Empresa` LEFT JOIN status S on A.`ID_Status` = S.`ID_Status` WHERE SedeAsistencia = ? OR SedeAsistencia = ? ");
+$consulta=$pdo->prepare("SELECT `ID_Alumno` , A.`Nombre` , `Class` , `correo` , C.nombre AS 'Carrera' , E.Nombre AS 'Univerisdad' , S.Nombre AS 'Status'  , `Sexo` , `ID_Sede` , `SedeAsistencia` , `Estado`, StatusActual FROM alumnos A INNER JOIN carrera C ON A.`ID_Carrera` = C.`ID_Carrera` LEFT JOIN empresas E on A.`ID_Empresa` = E.`ID_Empresa` LEFT JOIN status S on A.`ID_Status` = S.`ID_Status` WHERE SedeAsistencia = ? OR SedeAsistencia = ? ");
 $consulta->execute(array($LugarFT,$LugarSAT));
 
 
@@ -45,12 +45,13 @@ $pagina->setCellValue('B2','Nombre');
 $pagina->setCellValue('C2','Class');
 $pagina->setCellValue('D2','Correo');
 $pagina->setCellValue('E2','Carrera');
-$pagina->setCellValue('F2','Univerisdad');
+$pagina->setCellValue('F2','Universidad');
 $pagina->setCellValue('G2','Status');
-$pagina->setCellValue('H2','Sexo');
-$pagina->setCellValue('I2','SEDE');
-$pagina->setCellValue('J2','Asistencia');
-$pagina->setCellValue('K2','Estado');
+$pagina->setCellValue('H2','Estado actual');
+$pagina->setCellValue('I2','Sexo');
+$pagina->setCellValue('J2','SEDE');
+$pagina->setCellValue('K2','Asistencia');
+$pagina->setCellValue('L2','Estado');
 
 $i = 2;
 if ($consulta->rowCount()>=1)
@@ -64,17 +65,18 @@ if ($consulta->rowCount()>=1)
 		$pagina->setCellValue('E'.($i+1), utf8_encode($fila2['Carrera']));
 		$pagina->setCellValue('F'.($i+1), utf8_encode($fila2['Univerisdad']));
 		$pagina->setCellValue('G'.($i+1), $fila2['Status']);
-		$pagina->setCellValue('H'.($i+1), $fila2['Sexo']);
-		$pagina->setCellValue('I'.($i+1), $fila2['ID_Sede']);
-		$pagina->setCellValue('J'.($i+1), $fila2['SedeAsistencia']);
-		$pagina->setCellValue('K'.($i+1), $fila2['Estado']);
+		$pagina->setCellValue('H'.($i+1), $fila2['StatusActual']);
+		$pagina->setCellValue('I'.($i+1), $fila2['Sexo']);
+		$pagina->setCellValue('J'.($i+1), $fila2['ID_Sede']);
+		$pagina->setCellValue('K'.($i+1), $fila2['SedeAsistencia']);
+		$pagina->setCellValue('L'.($i+1), $fila2['Estado']);
 
 		$i++;
 	}		
 }
 
 
- foreach (range('A','L') as $columna) 
+ foreach (range('A','M') as $columna) 
  {
  	$pagina->getColumnDimension($columna)->setAutoSize(true);
  }
