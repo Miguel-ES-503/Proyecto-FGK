@@ -39,7 +39,7 @@
     </div>
 
     <div class="col">
-        <table id="data" class="table table-responsive-lg w-75 mx-auto float-center">
+        <table id="data" class="table table-hover table-striped table-bordered table-responsive-lg w-75 mx-auto float-center">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Orden a seguir</th>
