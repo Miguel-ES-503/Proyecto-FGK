@@ -52,6 +52,9 @@
                 <?php
             $numero = 0;
              $date = date("Y-m-d");
+             $stmt2 = $dbh->query("SELECT * FROM horariosreunion WHERE IDHorRunion = '".$taller."' ");
+            
+            
             $stmt = $dbh->query("SELECT * FROM inscripcionreunion i INNER JOIN alumnos a ON i.id_alumno = a.ID_Alumno INNER JOIN horariosreunion h ON h.IDHorRunion = i.Horario WHERE h.IDHorRunion = '".$taller."' ");
             while ($row = $stmt->fetch()) {
               //`HorarioInicio`, `HorarioFinalizado`, `Canitdad` FROM `horariosreunion`IDHorRunion`, `HorarioInicio`, `HorarioFinalizado`, `Canitdad`
@@ -80,6 +83,27 @@
                  echo "<td>".$hora."</td>";
                  echo "<td>".$horaFin." </td>";
                  echo "</tr>";
+            }
+            $indice = ($numero+1);
+          
+            while ($row = $stmt2->fetch()) {
+              $new =new DateTime($date." ".$hora);
+              $new2 =new DateTime($date." ".$horaFin);            
+              $cantidad1 = $row['Canitdad'];
+              for ($i=0; $i < $cantidad1 ; $i++) { 
+              $hour = ($new->modify('+'.$tiempo2.' minute'));
+              $hour2 = $hour->format('H:i:s');
+
+              $hour1 = ($new2->modify('+'.$tiempo2.' minute'));
+              $hour3 = $hour1->format('H:i:s');
+  
+                echo "<tr>";
+                echo "<td>".$indice++."</td>";
+                   echo "<td><b>Cupo Disponible</b></td>";
+                   echo "<td>".$hour2."</td>";
+                   echo "<td>".$hour3." </td>";
+                     echo "</tr>";
+              }
             }
             ?>
             </tbody>
