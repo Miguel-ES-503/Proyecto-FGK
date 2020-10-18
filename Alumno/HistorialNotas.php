@@ -43,7 +43,11 @@
 <div class="container-fluid text-center">
   <!--Navbar-->
  
-
+  <div class="title">
+	<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
+	<h2 class="main-title" >Historial Notas</h2>
+</div>
+<br>
 
 
 
@@ -154,16 +158,16 @@ div.centerTable table {
 
 <div class='centerTable '>
 <table  id="makeEditable"  >
-  <h3 class="card-header h3s bg-light">Historial Notas</h3>
+
   
   <thead>
     <tr>
-      <th>Codigo</th>
-      <th>Asignatura</th>
+      <th style="color: red;">Codigo</th>
+      <th style="color: red;">Asignatura</th>
       
-      <th>Ciclo</th>
-      <th>Nota</th>
-      <th>Estado</th>
+      <th style="color: red;">Ciclo</th>
+      <th style="color: red;">Nota</th>
+      <th style="color: red;">Estado</th>
       
     </tr>
   </thead>

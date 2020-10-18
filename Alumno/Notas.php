@@ -181,6 +181,23 @@
     border-color: #ADADB2;
     border:3px;
 }
+#endprocess{
+position: relative;
+right: 600px;
+
+}
+
+@media screen and (max-width: 1080px) {
+
+#endprocess{
+
+
+position: none;
+right: 140px;
+top: 10px;
+
+}
+}
 
 
         </style>  <!--Fin de CSS de las tablas -->
@@ -302,10 +319,10 @@
             
           </tfoot>
         </table>
-
+       <br>
         
                   <div class='f1-buttons'>
-                  <button type='button' style="border-radius: 20px;
+                  <button type='button' id="endprocess" style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;

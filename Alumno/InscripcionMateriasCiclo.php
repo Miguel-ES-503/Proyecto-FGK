@@ -114,6 +114,8 @@ $(document).ready(function() {
                 border-spacing: 6px;
                 background: bottom left repeat-x;
                 color: #fff;
+                position: relative;
+                left: 200px;
 
 
             }
@@ -126,7 +128,12 @@ $(document).ready(function() {
 
 
             }
+          #terminarprocess{
 
+
+              position: relative;
+              right: 600px;
+          }
             td {
                 width: 150px;
                 background: #D8D8D8;
@@ -159,6 +166,7 @@ $(document).ready(function() {
                 margin: 0 auto;
                 text-align: left;
                 width: 100%;
+
             }
 
             .modal-content {
@@ -183,6 +191,29 @@ $(document).ready(function() {
                 border-color: #ADADB2;
                 border: 3px;
             }
+
+            @media screen and (max-width: 1080px) {
+
+ #terminarprocess{
+
+
+position: none;
+right: 120px;
+top: 10px;
+
+}
+table {
+              float: left;
+              position: relative;
+              left: 50px;
+             
+                 
+                 
+
+
+            }    
+    }
+}
             </style>
             <!--Fin de CSS de las tablas -->
 
@@ -283,16 +314,17 @@ $(document).ready(function() {
 
                     </tfoot>
                 </table>
-
+            <br>
 
                 <div class='f1-buttons'>
-                    <button type='button' style="border-radius: 20px;
+                
+                    <button id="terminarprocess" type='button' style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
      background-color: #9d120e;
      color:white;" data-toggle='modal' data-target='#comprobante'>Terminar proceso</button>
                 </div>
-                <br><br>
+                <br><br><br> <br>
             </div>
             <!--Fin Tabla de buses de Ida -->
 
@@ -432,8 +464,8 @@ $(document).ready(function() {
 
                         <div class="form-group">
                             <label class="" for="matricula">Matricula:</label>
-                            <small id="passwordHelpBlock" class="form-text text-muted">
-                            ingrese las veces que ha cursado la materia
+                            <small  id="passwordHelpBlock" class="form-text text-muted">
+                            Ingrese el número de veces que ha cursado la materia
 </small>
                             <input type="number" name="matricula" min="0" max="10" placeholder="" class="matricula form-control"
                                 id="matricula">
