@@ -330,8 +330,10 @@ $(document).ready(function() {
 
                     <div class="form-group">
                         <label class="" for="ciclo">Ciclo:</label>
-                        <input type="text" name="ciclo" placeholder="Ciclo 00-yyyy" class="ciclo form-control"
-                            id="ciclo">
+                        <select name="ciclo" id="ciclo" class="ciclo form-control">
+                            <option value="Ciclo 01-<?php echo $date = date('Y');?>">Ciclo 01-<?php echo $date = date('Y');?></option>
+                            <option value="Ciclo 02-<?php echo $date = date('Y');?>">Ciclo 02-<?php echo $date = date('Y');?></option>
+                        </select>
                     </div>
 
                     <div class="custom-file">
@@ -430,7 +432,10 @@ $(document).ready(function() {
 
                         <div class="form-group">
                             <label class="" for="matricula">Matricula:</label>
-                            <input type="text" name="matricula" placeholder="" class="matricula form-control"
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                            ingrese las veces que ha cursado la materia
+</small>
+                            <input type="number" name="matricula" min="0" max="10" placeholder="" class="matricula form-control"
                                 id="matricula">
                         </div>
 

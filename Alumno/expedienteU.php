@@ -225,7 +225,7 @@ if ($_GET['id']==null) {
                         <th scope="col">Carrera</th>
                         <th scope="col">Facultad</th>
                         <th scope="col">Estado</th>
-                        <th scope="col">Detalles</th>
+                        <!-- <th scope="col">Detalles</th> -->
                         <th scope="col">Actualizar</th>
                     </tr>
                 </thead>
@@ -239,7 +239,7 @@ if ($_GET['id']==null) {
                           echo utf8_encode("<td>".$fila2["CARRERA"]."</td>")  ;
                           echo utf8_encode("<td>".$fila2["Facultad"]."</td>") ;
                           echo "<td>".$fila2["estado"]."</td>";
-                          echo "<td><a class=\"btn btn-info\" href=\"expedienteU.php?id=".$fila2["idExpedienteU"]."\"><i class=\"fas fa-info-circle\"></i></a></td>";
+                        //   echo "<td><a class=\"btn btn-info\" href=\"expedienteU.php?id=".$fila2["idExpedienteU"]."\"><i class=\"fas fa-info-circle\"></i></a></td>";
                           echo "<td><a class=\"btn btn-warning\" href=\"ActualizarexpedienteU.php?id=".$fila2["idExpedienteU"]."\"><i class='fas fa-pen'></i></a></td>";
                           echo "</tr>";
                       }
@@ -249,7 +249,7 @@ if ($_GET['id']==null) {
                           echo utf8_encode("<td>Debe actualizar </td>")  ;
                           echo utf8_encode("<td>Debe actualizar </td>") ;
                           echo "<td>Debe actualizar</td>";
-                          echo "<td><a class=\"btn btn-info\" href=\"expedienteU.php\"><i class=\"fas fa-info-circle\"></i></a></td>";
+                        //   echo "<td><a class=\"btn btn-info\" href=\"expedienteU.php\"><i class=\"fas fa-info-circle\"></i></a></td>";
                           echo "<td><a class=\"btn btn-warning\" href=\"ActualizarexpedienteU.php?Universidad=$iduniverisdad&id=$IDempresa\"><i class='fas fa-pen'></i></a></td>";
                           echo "</tr>";
                     }
@@ -406,9 +406,15 @@ if ($_GET['id']==null) {
                 <tbody>
 
                     <?php
+                    $numero =0;
+                    $numero++;
+                    $num =0;
+                    $num ++;
     while($fila9 = $stmt9->fetch()){
 
         $pdfCiclo = $fila9['comprobante'];
+        $prueba = $fila9["cicloU"];
+        $ciclou = $fila9["Id_InscripcionC"];
 
       echo " <tr class='table-dark' style ='color: black;'>";
         echo "<td scope=\"row\">".$fila9["Id_InscripcionC"]."</td>";
@@ -416,17 +422,51 @@ if ($_GET['id']==null) {
         
         if ($pdfCiclo == null) {
             echo "
-            <th><button type='button' class='btn btn-danger'  disabled> <img src='../img/PDF.png' width='25px' height='25px'></button></th>";
+            <th><button type='button' class='btn btn-danger'  disabled> 
+            <img src='../img/PDF.png' width='25px' height='25px'></button></th>";
         
          }else
          {
            echo "<th><a href='../pdfCicloInscripcion/$pdfCiclo' target='_blank' class='btn btn-danger '><img src='../img/PDF.png' width='25px' height='25px>'</a> </th>";  
          }
 
-        
+         $num2 =1;
         //echo "<td><a class=\"btn btn-danger\" href=\"../pdfInscripCiclos/?id=".$fila9["comprobante"]."\"><i class=\"fas fa-file-pdf\"></i></a></td>";
-        echo "<td><a class=\"btn btn-info\" href=\"#/?id=".$fila9["Id_InscripcionC"]."\"><i class=\"fas fa-info-circle\"></i></a></td>";
+        echo "<td>";
+        echo "<button type='button' class='btn btn-info' data-toggle='modal' 
+        data-target='#exampleModalCenter".($numero++)."'>
+        <i class=\"fas fa-info-circle\"></i></button></td>";
       echo "</tr>";
+
+      echo "<!-- Modal -->
+      <div class='modal fade' id='exampleModalCenter".($num++)."' tabindex='-1' role='dialog'
+       aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
+        <div class='modal-dialog modal-dialog-centered' role='document'>
+          <div class='modal-content'>
+            <div class='modal-header'>
+              <h5 class='modal-title' id='exampleModalLongTitle'>Materias Inscritas: $prueba </h5>
+              <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            </div>
+            <div class='modal-body'>";
+            $stmt123456 = $pdo->query("SELECT m.nombreMateria  FROM inscripcionmateria i INNER JOIN materias m ON m.idMateria = i.idMateria INNER JOIN inscripcionciclos n ON n.Id_InscripcionC = i.Id_InscripcionC WHERE n.Id_InscripcionC = '$ciclou' ");
+            while ($row = $stmt123456->fetch()) {
+                
+                echo "<center><div class='card' style='width: 18rem;'>
+                <ul class='list-group list-group-flush'>
+                  <li class='list-group-item'>"."<p class='float-left'>".($num2++)."</p>"."&nbsp; &nbsp; &nbsp;".$row['nombreMateria']."</li>
+                </ul>
+              </div></center>";
+            }
+            echo "
+            <div class='modal-footer'>
+              <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+              <button type='button' class='btn btn-primary'>Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>";
     }
     ?>
 

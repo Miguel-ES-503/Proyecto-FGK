@@ -1,6 +1,6 @@
 <?php
 require_once "../../../BaseDatos/conexion.php";
-
+error_reporting(0);
 if(isset($_POST["pdfRetiros"])){
 
   //variables del archivo

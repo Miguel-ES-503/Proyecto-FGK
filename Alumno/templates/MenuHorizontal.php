@@ -129,13 +129,13 @@
                     <li><a href="AlumnoInicio.php" class="list-group-item list-group-item-action"><i
                                 class="far fa-address-book"></i> Expediente</a></li>
                     <br>
-                    <li>
+                    <!-- <li>
                         <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseExample"
                             role="button" aria-expanded="false" aria-controls="collapseExample">
                             <i class="fas fa-tasks"></i> Talleres <i class="fas fa-sort-down"></i>
                         </a>
-                    </li>
-                    <div class="collapse" id="collapseExample">
+                    </li> -->
+                    <!-- <div class="collapse" id="collapseExample">
                         <ul>
                             <li><a href="AlumnoInscritos.php" class="list-group-item list-group-item-action">Talleres
                                     inscritos</a></li>
@@ -144,7 +144,7 @@
 
                         </ul>
 
-                    </div>
+                    </div> -->
                     <?php
           $anio=date("Y");
           $month=date("m");
@@ -159,12 +159,12 @@
 
           if ($estadoInsc=='Activo') {
           ?>
-                    <li><a href="AlumnoInscribir.php" class="list-group-item list-group-item-action"><i
-                                class="fas fa-pencil-alt"></i> Inscribir taller</a></li>
+                    <!-- <li><a href="AlumnoInscribir.php" class="list-group-item list-group-item-action"><i
+                                class="fas fa-pencil-alt"></i> Inscribir taller</a></li> -->
                     <?php }else {
       ?>
-                    <li><a href="AlumnoInscribir.php" class="list-group-item list-group-item-action disabled"><i
-                                class="fas fa-pencil-alt"></i> Inscribir taller</a></li>
+                    <!-- <li><a href="AlumnoInscribir.php" class="list-group-item list-group-item-action disabled"><i
+                                class="fas fa-pencil-alt"></i> Inscribir taller</a></li> -->
                     <?php
     }
      ?>

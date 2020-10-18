@@ -154,18 +154,8 @@ if ($tama«Ðoarchivo <= 5000000 ) {
            // mail($fila3['correo'],$asunto,$Mensaje,$header);
 
          }
-
-
-         
-
-
-
-
-
-
-
                 //Si todo fue correcto muestra el resultado con exito;
-          header("Location: ../../ExpedienteU.php");
+          header("Location: ../../expedienteU.php");
           //echo $iduser;
           //echo " Se guarda";
            

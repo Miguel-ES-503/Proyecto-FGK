@@ -1,7 +1,7 @@
 <?php
 require_once "../../../BaseDatos/conexion.php";
 
-
+error_reporting(0);
 
 
 //Guardar solicitud

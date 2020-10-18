@@ -1,6 +1,6 @@
 <?php
 require_once "../../../BaseDatos/conexion.php";
-
+session_start();
 // Desactivar toda notificación de error
 error_reporting(0);
 
@@ -84,8 +84,7 @@ error_reporting(0);
           // de inscripcion ciclo y guarda el comprobante
           //----------------------------------------------
 
-        $consulta=$pdo->prepare("UPDATE `inscripcionciclos` 
-                                 SET `pdfnotas`= :pdfnotas 
+        $consulta=$pdo->prepare("UPDATE `inscripcionciclos` SET `pdfnotas`= :pdfnotas 
                                  WHERE `Id_InscripcionC` = :Id_InscripcionC ");
          
         
@@ -105,12 +104,6 @@ error_reporting(0);
         {
             echo " no se guarda";
         }
-         
-         
-  
-
-         
-
         }
     else
     {
@@ -127,13 +120,6 @@ else
    echo "Archivo Demasiado Grande";
 }
 
-
-
-
-
 }
-
-
-
 
  ?>
