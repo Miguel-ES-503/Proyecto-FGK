@@ -3,7 +3,7 @@ include '../../../BaseDatos/conexion.php';
 
 if (isset($_POST["noti"])) {
   $idUser=$_POST["user"];
-  $extraeNotificaciones=$pdo->prepare("SELECT `Id`,`EstadoSolicitud`,`Tipo`,`idSolicitud`,`Estado`, substring_index(u.nombre,' ',1) AS nombreUsuario, u.imagen AS imgUsuario FROM notificaciones n JOIN usuarios u ON n.Id_Remitente=u.IDUsuario WHERE `Id_Receptor`='".$idUser."' ORDER BY FechaHora ASC");
+  $extraeNotificaciones=$pdo->prepare("SELECT `Id`,`EstadoSolicitud`,`Tipo`,`idSolicitud`,`Estado`, substring_index(u.nombre,' ',1) AS nombreUsuario, u.imagen AS imgUsuario,u.correo AS correo FROM notificaciones n JOIN usuarios u ON n.Id_Remitente=u.IDUsuario WHERE `Id_Receptor`='".$idUser."' ORDER BY FechaHora ASC");
   $extraeNotificaciones->execute();
 
   $results = $extraeNotificaciones->fetchAll(PDO::FETCH_ASSOC);

@@ -206,7 +206,7 @@ $direccion = $_SERVER['PHP_SELF'];
 
                          
                           <center>
-                          	<button type="button" class="btn btn-dark px-3" data-toggle="modal" data-target="#ModalPdf" style="border-radius: 20px;border: 2px solid ;width: 205px;height: 38px" id="GuardarRenovacion"  name = "GuardarRenovacion" disabled="disabled" > <i class="fa fa-file-pdf"></i> Subir Carta</button>
+                        <button type="button" class="btn btn-dark px-3" data-toggle="modal" data-target="#ModalPdf" style="border-radius: 20px;border: 2px solid ;width: 205px;height: 38px" id="GuardarRenovacion"  name = "GuardarRenovacion" disabled="disabled" > <i class="fa fa-file-pdf"></i> Subir Carta</button>
                                                     </center>
                          </form>
           
@@ -313,9 +313,6 @@ $direccion = $_SERVER['PHP_SELF'];
       </div>
 
       </form>
-      <?php 
-       include 'Modelo/ModeloRenovacion/carta.php';
-      ?>
     </div>
   </div>
 </div>

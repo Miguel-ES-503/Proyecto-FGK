@@ -1,10 +1,10 @@
 <?php 
 require '../../../Conexion/conexion.php';
 $idRenovacion = $_POST['idRenovacion'];
-echo $idRenovacion;
-session_start();  
+
 if (isset($_POST['aceptar'])) {
-	$actualizar = $dbh->prepare("UPDATE renovacion SET Estado = 'Aceptado' WHERE idRenovacion = :id");
+	session_start();  
+	$actualizar = $dbh->prepare("UPDATE renovacion SET Estado = 'aceptada' WHERE idRenovacion = :id");
 	$actualizar->bindParam(':id',$idRenovacion,PDO::PARAM_STR);
 	if ($actualizar->execute()) {
 		$_SESSION['noti'] = "<script>swal({
@@ -17,8 +17,10 @@ if (isset($_POST['aceptar'])) {
 header("Location:../../listadoRenovacion.php");
 	}
 }else if (isset($_POST['rechazar'])) {
+	session_start();  
 	$_SESSION['idRenovacion'] = $idRenovacion;
-	header("Location:rechazarRenovacion.php");
+	header("Location:../../rechazarRenovacion.php");
+
 }
 
 ?>

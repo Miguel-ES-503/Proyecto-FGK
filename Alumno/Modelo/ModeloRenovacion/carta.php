@@ -30,6 +30,13 @@ $formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$C
 $numero = rand(1, 10000000);
 
 
+$mysql = "SELECT COUNT(*) AS 'contar' FROM renovacion WHERE año = Date_format(now(),'%Y')  
+    AND ciclo = '".$ciclo."' AND archivo = '".$formato."' AND Estado = 'rechazado' AND ID_Alumno = '".$alumno."'";
+  foreach ($dbh->query($mysql) as $con) {
+    $ex = $con['contar'];
+      }
+
+
 $idRenovacion = "RN-".$numero;
 $archivero = "../../../CoachReuniones/Renovaciones/".$year."/Class-".$Class."/"."Ciclo 0".$ciclo."/".$alumno;
 $ubicacion = "Renovaciones/".$year."/Class-".$Class."/"."Ciclo 0".$ciclo."/".$alumno."/".$formato;
@@ -53,12 +60,8 @@ $_SESSION['noti'] = "<script>swal({
   button: 'Cerrar',
 });</script>";
 header("Location:../../renovacionBeca.php");
-}elseif ($condicion > 0) {
-  $sql = "SELECT COUNT(*) AS 'contar' FROM renovacion WHERE año = Date_format(now(),'%Y')  AND ciclo = '"..$ciclo"' AND archivo = '".$formato."' AND Estado != 'Rechazado'";
-foreach ($dbh->query($sql) as $re) {
-  $contar = $re['contar'];
-}
-if ($contar > 0) {
+}elseif ($condicion > 0 && $ex < 1) {
+
   $_SESSION['noti'] = "<script>swal({
   title: 'Error!',
   text: 'Ya ha subido renovacion!',
@@ -67,28 +70,31 @@ if ($contar > 0) {
 });</script>";
 header("Location:../../renovacionBeca.php");
 }
-}
-
 else
 {
-    $sql = "SELECT COUNT(*) AS 'contar' FROM renovacion WHERE año = Date_format(now(),'%Y')  AND ciclo = '"..$ciclo"' AND archivo = '".$formato."' AND Estado == 'Rechazado'";
-foreach ($dbh->query($sql) as $re) {
-  $contador = $re['contar'];
-}
-if ($contador == 1) {
-$nombreArchivo = $formato;
-move_uploaded_file($direccion,$archivero."/".$nombreArchivo);
-//$_SESSION["exito"] = "Renovacion de Beca ingresada correctamente";
-$_SESSION['noti'] = "<script>swal({
+
+
+if ($ex > 0) {
+ 
+  $nombreArchivo = $formato;
+  move_uploaded_file($direccion,$archivero."/".$nombreArchivo);
+  $actualizar = $dbh->prepare("UPDATE renovacion SET Estado = 'enviado' WHERE año = Date_format(now(),'%Y')  
+  AND ciclo = :ciclo AND archivo = :archivo AND Estado = 'rechazado' AND ID_Alumno = :alumno");
+  $actualizar->bindParam(':ciclo',$ciclo,PDO::PARAM_STR);
+  $actualizar->bindParam(':archivo',$formato,PDO::PARAM_STR);
+  $actualizar->bindParam(':alumno',$alumno,PDO::PARAM_STR);
+  if ($actualizar->execute()) {
+  $_SESSION['noti'] = "<script>swal({
   title: 'Exito!',
   text: 'Renovacion de Beca ingresada correctamente!',
   icon: 'success',
   button: 'Cerrar',
-});</script>";
-header("Location:../../renovacionBeca.php");
+  });</script>";
+  header("Location:../../renovacionBeca.php");
+  }
 }else
 {
-    if (file_exists($archivero)) {
+ if (file_exists($archivero)) {
   $estado = "enviado";
   $consulta=$dbh->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo,direccion,carpeta,Estado)
     VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo,:direccion,:carpeta,:estado)");
@@ -113,6 +119,7 @@ $_SESSION['noti'] = "<script>swal({
 header("Location:../../renovacionBeca.php");
 
 }else{
+    $estado = "enviado";
   mkdir($archivero, 0777, true);
   $consulta=$dbh->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo,direccion,carpeta,Estado)
     VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo,:direccion,:carpeta,:estado)");
@@ -123,9 +130,7 @@ header("Location:../../renovacionBeca.php");
          $consulta->bindParam(':direccion',$ubicacion,PDO::PARAM_STR);
          $consulta->bindParam(':carpeta',$carpeta,PDO::PARAM_STR);
          $consulta->bindParam(':estado',$estado,PDO::PARAM_STR);
-
-
-  $consulta->execute();
+        $consulta->execute();
 $nombreArchivo = $formato;
 move_uploaded_file($direccion,$archivero."/".$nombreArchivo);
 //$_SESSION["exito"] = "Renovacion de Beca ingresada correctamente";
@@ -137,8 +142,9 @@ $_SESSION['noti'] = "<script>swal({
 });</script>";
 header("Location:../../renovacionBeca.php");
 }
+
 }
-}
+}//Aqui
 
 
 

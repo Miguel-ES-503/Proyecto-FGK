@@ -320,7 +320,7 @@ background-color: #0D0D0D;
             <div class="collapse" id="collapseExample10">  
               <ul>
                 <li><a href="listadoRenovacion.php" class="list-group-item list-group-item-action" id="submenu">Listados</a></li>
-                <li><a href="RecordAlumnos.php" class="list-group-item list-group-item-action" id="submenu">Descargas</a></li>
+                <li><a href="descargas.php" class="list-group-item list-group-item-action" id="submenu">Descargas</a></li>
                 <li><a href="ReporteRenovacion.php" class="list-group-item list-group-item-action" id="submenu">Reporteria</a></li>
                </ul>
             </div>
@@ -400,6 +400,7 @@ background-color: #0D0D0D;
                     var solicitud=notificacion[i].idSolicitud;
                     var estado=notificacion[i].Estado;
                     var idNoti=notificacion[i].Id;
+                    var correo = notificacion[i].correo;
                   }
 
         
@@ -457,6 +458,7 @@ background-color: #0D0D0D;
                         var solicitud=notificacion[i].idSolicitud;
                         var estado=notificacion[i].Estado;
                         var idNoti=notificacion[i].Id;
+                        var correo = notificacion[i].correo;
 
 
                     //1.Tipo: horas de vinculacion
@@ -685,6 +687,80 @@ background-color: #0D0D0D;
                         }
                       }
                     }//fin de pensum---------------------
+                    else if (tipo=='Cambio-Foto') {
+                      
+                      if (EstadoSolicitud=='Aprobado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="AlumnoInicio.php?id='+correo+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha cambiado su foto de perfil.</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                           +'<a class="dropdown-item noti" href="AlumnoInicio.php?id='+correo+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                  +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha cambiado su foto de perfil.</span>'
+                              +'</div>');
+                        }
+
+                         }else if (EstadoSolicitud=='Rechazado') {
+                            if (estado=='Visto') {
+                              $("#notis").append('<div class="notificacion">'
+                                +'<a class="dropdown-item noti" href="AlumnoInicio.php?id='+correo+'">'
+                                  +'<div class="row Envia">'
+
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                    +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha cambiado su foto de perfil..</span>'
+                                  +'</div>');
+                            }else {
+                              $("#notis").append('<div class="notificacion">'
+                               +'<a class="dropdown-item noti" href="AlumnoInicio.php?id='+solicitud+'&&idNotif='+idNoti+'">'
+                                  +'<div class="row Envia">'
+
+                                  +'<div class="novisto"></div>'
+                                      +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                      +'width: 40px; background-repeat: no-repeat;'
+                                      +'border-radius: 50%;'
+                                      +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha cambiado su foto de perfil..</span>'
+                                  +'</div>');
+                            }
+                      }else if (EstadoSolicitud=='Enviado') {
+                        if (estado=='Visto') {
+                          $("#notis").append('<div class="notificacion">'
+                             +'<a class="dropdown-item noti" href="AlumnoInicio.php?id='+correo+'">'
+                              +'<div class="row Envia">'
+
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha cambiado su foto de perfil..</span>'
+                              +'</div>');
+                        }else {
+                          $("#notis").append('<div class="notificacion">'
+                            +'<a class="dropdown-item noti" href="AlumnoInicio.php?id='+correo+'">'
+                              +'<div class="row Envia">'
+
+                              +'<div class="novisto"></div>'
+                                  +'<img src="../img/imgUser/'+imagen+'" alt="img de usuario" class="imgUsu" style = "height: 40px;'
+                                  +'width: 40px; background-repeat: no-repeat;'
+                                  +'border-radius: 50%;'
+                                 +'background-size: 100% auto;" ><span class="textoNoti"> '+nombre+' ha cambiado su foto de perfil..</span>'
+                              +'</div>');
+                        }
+                      }
+                    }
 
 
                     //4. Tipo: Inscripcion Materias

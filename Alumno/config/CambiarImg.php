@@ -21,9 +21,13 @@ if ($consulta->rowCount() >=0)
         $fila=$consulta->fetch();
         $Foto = $fila['imagen'];
         $IDUser = $fila['IDUsuario'];
+        $Sede = $fila['ID_Sede'];
     }
 
-
+$sql = "SELECT IDUsuario FROM usuarios WHERE cargo = 'Coach Fase 2' AND ID_Sede = '".$Sede."'";
+foreach ($pdo->query($sql) as $coach) {
+    $idCoach = $coach['IDUsuario'];
+}
 
 
 
@@ -98,7 +102,7 @@ if ($Foto !=null) {
                     $Vaciar = null;
                     $_SESSION['Foto'] = $Vaciar;
                     $_SESSION['Foto'] = $img;
-
+                    include 'notificacion.php';
 
                 header("Location: ../configuracion.php");
             }
