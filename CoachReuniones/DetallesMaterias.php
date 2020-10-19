@@ -20,10 +20,18 @@ if (isset($_GET['id'])) {
   //variables para extraer informacion de la solicitud
 
  
-
-    // Consulta para extrear la informacion del alumno
-  $Consulta1=$pdo->prepare("SELECT T.idSoliTrans, T.ID_Ciclo, T.observacion1, T.totalSolicitado,T.comprobante ,A.Nombre, A.Class,A.SedeAsistencia, A.correo,A.ID_Empresa, T.estado FROM solitransporte T INNER JOIN alumnos A ON T.ID_Alumno=A.ID_Alumno WHERE T.idSoliTrans=:ID_SoliTransporte");
-  $Consulta1->bindParam(":ID_SoliTransporte",$id);
+  $Consulta1=$pdo->prepare("SELECT eu.carnet, a.Nombre, a.SedeAsistencia, a.Class, eu.ID_Empresa, a.correo, ic.Id_InscripcionC,im.idMateria,m.nombreMateria, ic.comprobante,ic.cicloU
+                            FROM expedienteu eu
+                            INNER JOIN alumnos a
+                            on eu.ID_Alumno= a.ID_Alumno
+                            INNER JOIN inscripcionciclos ic
+                            on ic.idExpedienteU=eu.idExpedienteU
+                            INNER JOIN inscripcionmateria im 
+                            on im.Id_InscripcionC=ic.Id_InscripcionC
+                            INNER JOIN materias m 
+                            on im.idMateria=m.idMateria
+                            WHERE ic.Id_InscripcionC=:Id_InscripcionC");
+  $Consulta1->bindParam(":Id_InscripcionC",$id);
   $Consulta1->execute();
 
    if ($Consulta1->rowCount() >=0)
@@ -33,12 +41,13 @@ if (isset($_GET['id'])) {
     $Sede = $fila['SedeAsistencia'];
     $Class = $fila['Class'];
     $Universidad = $fila['ID_Empresa'];
-    $ciclo = $fila['ID_Ciclo'];
-    $totalSolicitado = $fila['totalSolicitado'];
-    $comentarioA = $fila['observacion1'];
+    $ciclo = $fila['cicloU'];
+    $idInscripcionCiclo = $fila['Id_InscripcionC'];
+    $carnet = $fila['carnet'];
     $comprobante = $fila['comprobante'];
     $correo = $fila['correo'];
-    $EstadoSoli = $fila['estado'];
+
+    //$EstadoSoli = $fila['estado'];
     
   
   }
@@ -84,75 +93,74 @@ include 'Modularidad/MenuVertical.php';
 
 <br>
 <div class="text-justify border border-light p-5" id="main">
-    <h3 class="mt-0 mb-3" id="titulo">Detalles del Proyecto</h3>
+    <h3 class="mt-0 mb-3" id="titulo">Detalles de inscripción ciclo</h3>
 
 
 
     <div class="row mt-1">
         <div class="col-sm-12  col-md-12  col-lg-6" id="Contenedor1" style="height: 80%;">
             <div id="Info-1" class="m-lg-4 m-md-5 m-sm-4 m-3">
-
+                <p id="Info-1_Texto-1"><b>Carnet:</b></p>
+                <p id="Info-1_Texto-1"><?php echo utf8_decode($carnet);?></p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <p id="Info-1_Texto-1"><b>Alumno:</b> </p>
-                <p id="Info-1_Texto-1"><?php echo $Alumno?></p><br>
+                <p id="Info-1_Texto-1"><?php echo utf8_decode($Alumno); ?></p><br>
                 <p id="Info-1_Texto-1"><b>Sede: </b></p>
-                <p id="Info-1_Texto-1"><?php echo $Sede;?></p>
-                <br>
+                <p id="Info-1_Texto-1"><?php echo $Sede;?></p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                
                 <p id="Info-1_Texto-1"> <b>Class: </b> </p>
                 <p id="Info-1_Texto-1"><?php echo $Class;?> </p>
                 <br>
                 <p id="Info-1_Texto-1"><b>Universidad:</b> </p>
                 <p id="Info-1_Texto-1"><?php echo utf8_decode($Universidad);?></p>
                 <br>
-                <p id="Info-1_Texto-1"><b>Cantidad Solicitado:</b> </p>
-                <p id="Info-1_Texto-1"><?php echo utf8_decode($CantidadHoras). " horas";?></p>
+                
             </div>
             <hr id="linea">
 
 
             <div class="m-lg-4 m-3 m-sm-3">
-                    <div class="row " align="center">
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="status">
-                            <label id="label">Identificación</label>
-                            <input type="text" id="input" name="firstname" readonly value="<?php  echo $id ?>">
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"  id="status">
-                            <label id="label">Encargado</label>
-                            <input type="text" id="input" name="firstname" readonly 
-                            value="<?php  echo utf8_decode($Encargado) ?>">
-                        </div>
+                <div class="row " align="center">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="status">
+                    <br>
+                    <h4>Materias inscritas</h4>
+                    <br>
                     </div>
-                     <div class="row" align="center">
-                        <div class="col-6" id="status">
-                            <label id="label">Fecha de Inicio</label>
-                            <input type="text" id="input" name="firstname" readonly value="<?php echo $FechaInico ?>">
-                        </div>
-                        <div class="col-6" id="status">
-                            <label id="label" id="problema">Fecha de Finalización</label>
-                            <input type="text" id="input" name="firstname"  readonly 
-                            value="<?php echo $FechaFianl ?>">
-                        </div>
+
+                    <table class="table table-hover">
+                         <thead>
+                             <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Codigo</th>
+                                <th scope="col">Materia</th>
+                        
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <?php
+
+                            $num=1;
+                                
+                             while ($fila2=$Consulta1->fetch())
+                             { 
+                                echo "<tr>
+                                <td >".$num."</td>
+                                <td>".$fila2['idMateria']."</td>
+                                <td>".$fila2['nombreMateria']."</td>
+                                
+                                </tr>";   
+
+
+                             }
+                            
+                            ?>
+                           
+                        
+                    </tbody>
+                    </table>
+                       
                     </div>
-                    <div class="row">
-                        <div class="col-12" id="status">
-                            <label id="label">Comentario</label>
-                            <textarea id="input" style="height:200px" disabled><?php echo utf8_decode($NombreProyecto); ?></textarea>
-                        </div>
-                    </div>
-                    <!--<div id="boton1" align="center">
-                      <input type="submit" value="Comprobante"  >
-
-                        <button type="submit" id="btn"><svg width="1em" height="1em" viewBox="0 0 16 16"
-                                class="bi bi-journal-medical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M4 1h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1H2a2 2 0 0 1 2-2z" />
-                                <path
-                                    d="M2 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2z" />
-                                <path fill-rule="evenodd"
-                                    d="M8 4a.5.5 0 0 1 .5.5v.634l.549-.317a.5.5 0 1 1 .5.866L9 6l.549.317a.5.5 0 1 1-.5.866L8.5 6.866V7.5a.5.5 0 0 1-1 0v-.634l-.549.317a.5.5 0 1 1-.5-.866L7 6l-.549-.317a.5.5 0 0 1 .5-.866l.549.317V4.5A.5.5 0 0 1 8 4zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
-
-                            </svg> Comprobante</button>
-
-                    </div>-->
+                    
+                   
             </div>
 
 
@@ -160,45 +168,24 @@ include 'Modularidad/MenuVertical.php';
         <div class="col-sm-12 mt-sm-4 col-md-12 mt-md-4  col-lg-5 ml-lg-5 mt-lg-0 mt-3" id="Contenedor2">
             <div id="Info-2" class="m-lg-3 m-md-4 m-sm-5">
                 <div class="container ml-lg-3">
-                    <form action="Modelo/ModeloHorasSociales/VerficarSolicuitud.php" method="POST">
+                    <form action="Modelo/ModeloMaterias/VerificarSolicitudCiclo.php" method="POST">
                         <div class="row">
                             <div class="col-md-12  mr-lg-5">
-                                <p id="Info-1_Texto-1"><b>Estado:</b> </p>
-                                <p id="Info-1_Texto-1" style="font-style: italic;"> <?php echo $Estado?></p><br>
+                                <p id="Info-1_Texto-1"><b>Comprobante inscripción materias</b> </p><br>
+                               <center> <a href='../pdfCicloInscripcion/$pdfCiclo' target='_blank' class='btn btn-danger '><img src='../img/PDF.png' width="35px" height="30px">PDF Inscripción</a> </center>
                             </div>
                         </div>
-                        <!--<div class="row">
-                            <div class="col-md-12  mr-lg-5">
-                                <label id="label"><b>Comentario</b></label>
-                                <textarea id="input" style="height:200px"></textarea>
-                            </div>
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="row">
-                            <div class="col-75 col-md-12">
-                                <label id="label"><b>Cambiar Estado</b></label>
-                                <select id="input">
-                                    <option value="">Aprobado</option>
-                                </select>
-                            </div>
-                        </div>-->
-                                <form action="Modelo/ModeloHorasSociales/VerficarSolicuitud.php" method="POST">
-          <input type="hidden" name="id" value="<?php  echo $id ?>" >
-          <input type="hidden" name="idsoli" value="<?php echo $idsoli  ?>">
-          <input type="hidden" name="correo" value="<?php echo $correo ?>" >
-          <input type="hidden" name="nombreEst" value="<?php echo $Alumno ?>"  >
-          <div class="row">
-                            <div class="col-md-12  mr-lg-5">
-                                <label id="label"><b>Comentario</b></label>
-                                <textarea id="input" style="height:200px" rows="3" minlength="1" maxlength="300" name="comentario" placeholder="comentario maximo 300 palabras..." required><?php echo $comentario;  ?></textarea>
-                            </div>
-                        </div>
-        <br>
+                        <br><br>
+                       
+                        <form action="Modelo/ModeloHorasSociales/VerificarCiclo.php" method="POST">
+                            <input type="text" name="id" value="<?php  echo $id ?>" >
+                            <input type="text" name="idsoli" value="<?php echo $idsoli  ?>">
+                            <input type="text" name="correo" value="<?php echo $correo ?>" >
+                            <input type="text" name="nombreEst" value="<?php echo $Alumno ?>"  >
+        
         <div class="row">
                             <div class="col-75 col-md-12">
-                                <label id="label"><b>Cambiar Estado</b></label>
+                                <label id="label"><b>Seleccione un estado para la solicitud</b></label>
                                 <select id="input" name="estado" required="" style="height: 50px">
                                     <option value="Aprobado" >Aprobado</option>
                                     <option value="Rechazado">Rechazado</option>
@@ -208,7 +195,7 @@ include 'Modularidad/MenuVertical.php';
         <br><br>
         <?php  if($Estado == "Aprobado" || $Estado == "Rechazado")
         {
-          echo '<br><br><br><br><br>
+          echo '<br><br>
                         <div id="boton2">
                             <button type="submit" id="btn" disabled name="EnviarDato" ><svg width="1em" height="1em" viewBox="0 0 16 16"
                                     class="bi bi-box-arrow-up-right" fill="currentColor"
@@ -221,7 +208,7 @@ include 'Modularidad/MenuVertical.php';
 
         }else
         {
-          echo '<br><br><br><br><br>
+          echo '<br><br>
                         <div id="boton2">
                             <button type="submit" id="btn" name="EnviarDato" ><svg width="1em" height="1em" viewBox="0 0 16 16"
                                     class="bi bi-box-arrow-up-right" fill="currentColor"
