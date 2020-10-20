@@ -10,14 +10,14 @@ if (isset($_POST['descargar'])) {
   $dir = "Archivos/Renovaciones";
   deleteDir($dir);
   if (!(empty($year)) AND (empty($class)) AND (empty($ciclo)) AND (empty($alumnos)) AND (empty($estado))) {
-     foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE año = '".$year."'") as $C ) {
+     foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE year = '".$year."'") as $C ) {
        $condicion = $C['condicion'];
      }
     if ($condicion == 0) {
       echo "No hay Renovaciones";
     }else
     {
-            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE año = '".$year."'") as $carpeta) 
+            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE year = '".$year."'") as $carpeta) 
     {
         $source = $carpeta['carpeta'];
    if(!is_dir('carpeta_copia')){
@@ -145,14 +145,14 @@ header("Location:Zip.php");
   }
     }
   }else if (!(empty($year)) AND !(empty($class)) AND !(empty($ciclo)) AND !(empty($alumnos)) AND !(empty($estado))) {
-       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE Estado = '".$estado."' AND año = '".$year."' AND class = '".$class."' AND ciclo = '".$ciclo."' AND ID_Alumno = '".$alumnos."'") as $C ) {
+       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE Estado = '".$estado."' AND year = '".$year."' AND class = '".$class."' AND ciclo = '".$ciclo."' AND ID_Alumno = '".$alumnos."'") as $C ) {
        $condicion = $C['condicion'];
      }
     if ($condicion == 0) {
       echo "No hay Renovaciones";
     }else
     {
-            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE Estado = '".$estado."' AND año = '".$year."' AND class = '".$class."' AND ciclo = '".$ciclo."' AND ID_Alumno = '".$alumnos."'") as $carpeta) 
+            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE Estado = '".$estado."' AND year = '".$year."' AND class = '".$class."' AND ciclo = '".$ciclo."' AND ID_Alumno = '".$alumnos."'") as $carpeta) 
     {
         $source = $carpeta['carpeta'];
    if(!is_dir('carpeta_copia')){
@@ -183,14 +183,14 @@ header("Location:Zip.php");
   }
     }
   }else if (!(empty($year)) AND !(empty($class)) AND (empty($ciclo)) AND (empty($alumnos)) AND (empty($estado))) {
-       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE año = '".$year."' AND class = '".$class."'") as $C ) {
+       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE year = '".$year."' AND class = '".$class."'") as $C ) {
        $condicion = $C['condicion'];
      }
     if ($condicion == 0) {
       echo "No hay Renovaciones";
     }else
     {
-            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE año = '".$year."' AND class = '".$class."'") as $carpeta) 
+            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE year = '".$year."' AND class = '".$class."'") as $carpeta) 
     {
         $source = $carpeta['carpeta'];
    if(!is_dir('carpeta_copia')){
@@ -202,14 +202,14 @@ header("Location:Zip.php");
   }
     }
   }else if (!(empty($year)) AND (empty($class)) AND !(empty($ciclo)) AND (empty($alumnos)) AND (empty($estado))) {
-       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE año = '".$year."' AND ciclo = '".$ciclo."'") as $C ) {
+       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE year = '".$year."' AND ciclo = '".$ciclo."'") as $C ) {
        $condicion = $C['condicion'];
      }
     if ($condicion == 0) {
       echo "No hay Renovaciones";
     }else
     {
-            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE año = '".$year."' AND ciclo = '".$ciclo."'") as $carpeta) 
+            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE year = '".$year."' AND ciclo = '".$ciclo."'") as $carpeta) 
     {
         $source = $carpeta['carpeta'];
    if(!is_dir('carpeta_copia')){
@@ -221,14 +221,14 @@ header("Location:Zip.php");
   }
     }
   }else if (!(empty($year)) AND (empty($class)) AND (empty($ciclo)) AND !(empty($alumnos)) AND (empty($estado))) {
-       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE año = '".$year."' AND ID_Alumno = '".$alumnos."'") as $C ) {
+       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE year = '".$year."' AND ID_Alumno = '".$alumnos."'") as $C ) {
        $condicion = $C['condicion'];
      }
     if ($condicion == 0) {
       echo "No hay Renovaciones";
     }else
     {
-            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE año = '".$year."' AND ID_Alumno = '".$alumnos."'") as $carpeta) 
+            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE year = '".$year."' AND ID_Alumno = '".$alumnos."'") as $carpeta) 
     {
         $source = $carpeta['carpeta'];
    if(!is_dir('carpeta_copia')){
@@ -240,14 +240,14 @@ header("Location:Zip.php");
   }
     }
   }else if (!(empty($year)) AND (empty($class)) AND (empty($ciclo)) AND (empty($alumnos)) AND !(empty($estado))) {
-       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE año = '".$year."' AND Estado = '".$estado."'") as $C ) {
+       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE year = '".$year."' AND Estado = '".$estado."'") as $C ) {
        $condicion = $C['condicion'];
      }
     if ($condicion == 0) {
       echo "No hay Renovaciones";
     }else
     {
-            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE año = '".$year."' AND Estado = '".$estado."'") as $carpeta) 
+            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE year = '".$year."' AND Estado = '".$estado."'") as $carpeta) 
     {
         $source = $carpeta['carpeta'];
    if(!is_dir('carpeta_copia')){
@@ -259,14 +259,14 @@ header("Location:Zip.php");
   }
     }
   }else if (!(empty($year)) AND !(empty($class)) AND !(empty($ciclo)) AND !(empty($alumnos)) AND (empty($estado))) {
-       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE año = '".$year."' AND class='".$class."' AND ciclo ='".$ciclo."' AND ID_Alumno = '".$alumnos."'") as $C ) {
+       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE year = '".$year."' AND class='".$class."' AND ciclo ='".$ciclo."' AND ID_Alumno = '".$alumnos."'") as $C ) {
        $condicion = $C['condicion'];
      }
     if ($condicion == 0) {
       echo "No hay Renovaciones";
     }else
     {
-            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE año = '".$year."' AND class='".$class."' AND ciclo ='".$ciclo."' AND ID_Alumno = '".$alumnos."'") as $carpeta) 
+            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE year = '".$year."' AND class='".$class."' AND ciclo ='".$ciclo."' AND ID_Alumno = '".$alumnos."'") as $carpeta) 
     {
         $source = $carpeta['carpeta'];
    if(!is_dir('carpeta_copia')){
@@ -278,14 +278,14 @@ header("Location:Zip.php");
   }
     }
   }else if (!(empty($year)) AND !(empty($class)) AND !(empty($ciclo)) AND (empty($alumnos)) AND !(empty($estado))) {
-       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE año = '".$year."' AND class='".$class."' AND ciclo ='".$ciclo."' AND Estado = '".$estado."'") as $C ) {
+       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE year = '".$year."' AND class='".$class."' AND ciclo ='".$ciclo."' AND Estado = '".$estado."'") as $C ) {
        $condicion = $C['condicion'];
      }
     if ($condicion == 0) {
       echo "No hay Renovaciones";
     }else
     {
-            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE año = '".$year."' AND class='".$class."' AND ciclo ='".$ciclo."' AND Estado = '".$estado."'") as $carpeta) 
+            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE year = '".$year."' AND class='".$class."' AND ciclo ='".$ciclo."' AND Estado = '".$estado."'") as $carpeta) 
     {
         $source = $carpeta['carpeta'];
    if(!is_dir('carpeta_copia')){
@@ -297,14 +297,14 @@ header("Location:Zip.php");
   }
     }
   }else if (!(empty($year)) AND !(empty($class)) AND (empty($ciclo)) AND !(empty($alumnos)) AND !(empty($estado))) {
-       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE año = '".$year."' AND class='".$class."' AND Estado ='".$estado."' AND ID_Alumno = '".$alumnos."'") as $C ) {
+       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE year = '".$year."' AND class='".$class."' AND Estado ='".$estado."' AND ID_Alumno = '".$alumnos."'") as $C ) {
        $condicion = $C['condicion'];
      }
     if ($condicion == 0) {
       echo "No hay Renovaciones";
     }else
     {
-            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE año = '".$year."' AND class='".$class."' AND Estado ='".$estado."' AND ID_Alumno = '".$alumnos."'") as $carpeta) 
+            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE year = '".$year."' AND class='".$class."' AND Estado ='".$estado."' AND ID_Alumno = '".$alumnos."'") as $carpeta) 
     {
         $source = $carpeta['carpeta'];
    if(!is_dir('carpeta_copia')){
@@ -316,14 +316,14 @@ header("Location:Zip.php");
   }
     }
   }else if (!(empty($year)) AND (empty($class)) AND !(empty($ciclo)) AND !(empty($alumnos)) AND !(empty($estado))) {
-       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE año = '".$year."' AND ciclo='".$ciclo."' AND Estado ='".$estado."' AND ID_Alumno = '".$alumnos."'") as $C ) {
+       foreach ($conexion->query("SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE year = '".$year."' AND ciclo='".$ciclo."' AND Estado ='".$estado."' AND ID_Alumno = '".$alumnos."'") as $C ) {
        $condicion = $C['condicion'];
      }
     if ($condicion == 0) {
       echo "No hay Renovaciones";
     }else
     {
-            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE año = '".$year."' AND ciclo='".$class."' AND Estado ='".$estado."' AND ID_Alumno = '".$alumnos."'") as $carpeta) 
+            foreach ($conexion->query("SELECT carpeta,archivo FROM renovacion WHERE year = '".$year."' AND ciclo='".$class."' AND Estado ='".$estado."' AND ID_Alumno = '".$alumnos."'") as $carpeta) 
     {
         $source = $carpeta['carpeta'];
    if(!is_dir('carpeta_copia')){

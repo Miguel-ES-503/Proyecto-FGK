@@ -63,7 +63,7 @@ if (isset($_SESSION['noti'])) {
         </thead>
         <tbody style="color: black;">
           <?php 
-          $sql = "SELECT idRenovacion,renovacion.Estado,renovacion.ID_Alumno,alumnos.Nombre as 'alumno',carrera.nombre as 'carrera',empresas.Nombre as 'uni',ciclo,año,direccion FROM renovacion JOIN alumnos
+          $sql = "SELECT idRenovacion,renovacion.Estado,renovacion.ID_Alumno,alumnos.Nombre as 'alumno',carrera.nombre as 'carrera',empresas.Nombre as 'uni',ciclo,year,direccion FROM renovacion JOIN alumnos
 ON alumnos.ID_Alumno = renovacion.ID_Alumno
 JOIN carrera
 ON carrera.Id_Carrera = alumnos.ID_Carrera
@@ -79,7 +79,7 @@ foreach ($dbh->query($sql) as $datos) {
                 <td><?php echo $datos['carrera'] ?></td>
                 <td><?php echo $datos['uni'] ?></td>
                 <td><?php echo $datos['ciclo'] ?></td>
-                <td><?php echo $datos['año'] ?></td>
+                <td><?php echo $datos['year'] ?></td>
                 <td><?php echo $datos['Estado'] ?></td>
 <td>
     <div class="btn-grupo">

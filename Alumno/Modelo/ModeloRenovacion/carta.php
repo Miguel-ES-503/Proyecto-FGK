@@ -20,7 +20,7 @@ foreach ($dbh->query("SELECT Nombre,SedeAsistencia,Class FROM alumnos WHERE ID_A
   $SC = $Name['SedeAsistencia'];
   $Class = $Name['Class'];
 }
-$sql = "SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE ID_Alumno = '".$alumno."' AND ciclo = '".$ciclo."' AND año = Date_format(now(),'%Y')";
+$sql = "SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE ID_Alumno = '".$alumno."' AND ciclo = '".$ciclo."' AND year = Date_format(now(),'%Y')";
 foreach ($dbh->query($sql) as $C) {
  $condicion = $C['condicion'];
 }
@@ -30,7 +30,7 @@ $formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$C
 $numero = rand(1, 10000000);
 
 
-$mysql = "SELECT COUNT(*) AS 'contar' FROM renovacion WHERE año = Date_format(now(),'%Y')  
+$mysql = "SELECT COUNT(*) AS 'contar' FROM renovacion WHERE year = Date_format(now(),'%Y')  
     AND ciclo = '".$ciclo."' AND archivo = '".$formato."' AND Estado = 'rechazada' AND ID_Alumno = '".$alumno."'AND class='".$Class."'";
   foreach ($dbh->query($mysql) as $con) {
     $ex = $con['contar'];
@@ -78,7 +78,7 @@ if ($ex > 0) {
  
   $nombreArchivo = $formato;
   move_uploaded_file($direccion,$archivero."/".$nombreArchivo);
-  $actualizar = $dbh->prepare("UPDATE renovacion SET Estado = 'enviado' WHERE año = Date_format(now(),'%Y')  
+  $actualizar = $dbh->prepare("UPDATE renovacion SET Estado = 'enviado' WHERE year = Date_format(now(),'%Y')  
   AND ciclo = :ciclo AND archivo = :archivo AND Estado = 'rechazada' AND ID_Alumno = :alumno");
   $actualizar->bindParam(':ciclo',$ciclo,PDO::PARAM_STR);
   $actualizar->bindParam(':archivo',$formato,PDO::PARAM_STR);
@@ -96,7 +96,7 @@ if ($ex > 0) {
 {
  if (file_exists($archivero)) {
   $estado = "enviado";
-  $consulta=$dbh->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo,direccion,carpeta,Estado,class)
+  $consulta=$dbh->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,year,archivo,direccion,carpeta,Estado,class)
     VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo,:direccion,:carpeta,:estado,:class)");
          $consulta->bindParam(':idRenovacion',$idRenovacion,PDO::PARAM_STR);
          $consulta->bindParam(':ID_Alumno',$alumno,PDO::PARAM_STR);
@@ -122,7 +122,7 @@ header("Location:../../renovacionBeca.php");
 }else{
     $estado = "enviado";
   mkdir($archivero, 0777, true);
-  $consulta=$dbh->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,año,archivo,direccion,carpeta,Estado,class)
+  $consulta=$dbh->prepare("INSERT INTO renovacion(idRenovacion,ID_Alumno,ciclo,year,archivo,direccion,carpeta,Estado,class)
     VALUES(:idRenovacion,:ID_Alumno,:ciclo,Date_format(now(),'%Y'),:archivo,:direccion,:carpeta,:estado,:class)");
          $consulta->bindParam(':idRenovacion',$idRenovacion,PDO::PARAM_STR);
          $consulta->bindParam(':ID_Alumno',$alumno,PDO::PARAM_STR);
