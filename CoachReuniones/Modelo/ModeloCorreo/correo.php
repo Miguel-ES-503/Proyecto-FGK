@@ -15,14 +15,10 @@ require 'PHPMailer/SMTP.php';
 $mail = new PHPMailer(true);
 try{
     session_start();
-    $asunto = $_POST['asunto'];
-    $mensaje = $_POST['mensaje'];
-    $correo = $_POST['correo'];
-    $nombre = $_POST['nombre'];
-    $id = $_POST['id'];
     //Server settings
     $mail->SMTPDebug = 0;                                       // Enable verbose debug output
-    $mail->isSMTP();                                            // Send using SMTP
+    $mail->isSMTP();     
+    $mail->CharSet = 'UTF-8';                                       // Send using SMTP
     $mail->Host       = 'smtp.office365.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'sidebyside@oportunidades.org.sv';                     // SMTP username

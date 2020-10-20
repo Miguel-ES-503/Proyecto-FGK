@@ -87,6 +87,7 @@ foreach ($dbh->query($sql) as $datos) {
     </div>
 </td>
     <input type="hidden" name="id" id="id" value="<?php echo $datos['idRenovacion']?>">
+    <input type="hidden" name="carne" value="<?php echo $datos['ID_Alumno']?>">
     
             </tr>
             <?php 
