@@ -55,7 +55,7 @@ while($row = $stmt2->fetch()){
 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
-<form id="regiration_form"   action="Modelo/ModeloAlumno/ActualizarBeca.php" method="post">
+<form id="regiration_form"   action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
 <fieldset>
 <h2>Paso 1: Insertar cambios</h2> <br><br>
 <div class="form-group">
@@ -99,6 +99,7 @@ while($row = $stmt2->fetch()){
 <br>
 <br>
 <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
+<a href="LIS-Alumnos.php"><input type="button" name="previous" class="previous btn btn-danger" value="Cancelar" /></a>
 </fieldset>
 
 
@@ -112,6 +113,7 @@ while($row = $stmt2->fetch()){
 </div>
 <input type="button" name="previous" class="previous btn btn-info" value="Previo" />
 <button type="submit" class="btn btn-success"  value= "<?php echo $id ?>" name='idsave' >Guardar cambios</button>
+<a href="LIS-Alumnos.php"><input type="button" name="previous" class="previous btn btn-danger" value="Regresar" /></a>
 </fieldset>
 
 </form>
@@ -120,7 +122,53 @@ while($row = $stmt2->fetch()){
 </div>
 <br><br>
 </div> <br>
+<?php
+$comparar = $_POST['idsave']; 
+$dato2 = $_POST['idEstado'];
+$dato3 = $_POST['userpassword'];
+$correo =  $_SESSION['Email'];
+$correoEstudiante = $_POST['correo'];
 
+ $stmt = $dbh->query("SELECT * FROM usuarios WHERE correo = '$correo' ");
+ while ($row = $stmt->fetch()) {
+	  $passuser = $row['contrasena'];
+ }
+ 
+
+ if (isset($comparar)) {
+	
+		if (password_verify($dato3, $passuser)) {
+    	try{
+        $sql2 = "UPDATE alumnos SET StatusActual = ? WHERE correo =?";
+        if($pdo->prepare($sql2)->execute([$dato2, $correoEstudiante])){ 
+		
+			echo'<script type="text/javascript">
+			window.location.href="LIS-Alumnos.php";
+			</script>';
+			
+		$_SESSION['message'] = "Beca modificada Correctamente";
+        $_SESSION['message2'] = 'success';
+		}
+	}catch (PDOException $e) {
+		echo'<script type="text/javascript">
+			window.location.href="LIS-Alumnos.php";
+			</script>';
+        $_SESSION['message'] = 'Fallo al modificar la Beca';
+        $_SESSION['message2'] = 'danger';
+	  }
+	}else{
+		echo'<script type="text/javascript">
+			window.location.href="LIS-Alumnos.php";
+			</script>';
+			$_SESSION['message'] = 'Contraseña incorrecta';
+			$_SESSION['message2'] = 'danger';
+		echo "<p class='p-1 mb-1 bg-danger text-white text-center'>Error, la contraseña de usuario en incorrecta.</p>";
+
+	
+   }
+   
+}
+?>
 <!-- validar script -->
 <script>
 $(document).ready(function() {
