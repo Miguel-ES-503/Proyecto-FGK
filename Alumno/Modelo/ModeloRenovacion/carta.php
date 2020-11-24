@@ -1,3 +1,35 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@Miguel-ES-503 
+Miguel-ES-503
+/
+Proyecto-FGK
+0
+10
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Proyecto-FGK/Alumno/Modelo/ModeloRenovacion/carta.php /
+@Miguel-ES-503
+Miguel-ES-503 Actualizacion
+Latest commit 5dcdcc6 on 19 Oct
+ History
+ 2 contributors
+@Miguel-ES-503@tejadakatherine19
+160 lines (141 sloc)  5.81 KB
+  
 <?php 
 if (isset($_POST['subirCarta']) && $_POST['subirCarta'] != null && !(empty($_POST['subirCarta'])))
 {
@@ -158,3 +190,15 @@ header("Location:../../renovacionBeca.php");
 
 
 ?>
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

@@ -1,11 +1,19 @@
 <?php 
 include '../../../Conexion/conexion.php';
 include '../../../BaseDatos/conexion.php';
-$asunto = "Renovacion de Beca Ciclo 2-2020";
+session_start();
+
 $msj = $_POST['mensaje'];
 $correo = $_POST['correo'];
 $nombre = $_POST['nombre'];
 $id = $_POST['id'];
+
+foreach ($dbh->query("SELECT ID_Alumno,year,ciclo FROM renovacion WHERE idRenovacion = '".$id."'") as $alumno) {
+	$idAlumno = $alumno['ID_Alumno'];
+	$year = $alumno['year'];
+	$ciclo = $alumno['ciclo'];
+}
+$asunto = "Proceso de renovación de Beca Ciclo 0".$ciclo."-".$year;
 $mysql = "UPDATE renovacion SET estado = 'rechazada' WHERE idRenovacion = :id";
     $actualizar = $dbh->prepare($mysql);
     $actualizar->bindParam(":id",$id,PDO::PARAM_STR);

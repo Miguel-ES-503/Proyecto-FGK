@@ -26,9 +26,9 @@ require_once '../Conexion/conexion.php';
 <?php
 
 if (isset($_SESSION['noti'])) {
-	echo $_SESSION['noti'];
-	unset($_SESSION['noti']);
-	unset($_SESSION['idRenovacion']);
+    echo $_SESSION['noti'];
+    unset($_SESSION['noti']);
+    unset($_SESSION['idRenovacion']);
 }
 ?>
 <link rel="stylesheet" type="text/css" href="css/modulos-moodle.css">
@@ -75,7 +75,7 @@ foreach ($dbh->query($sql) as $datos) {
             <tr>
                 <td><?php echo $datos['idRenovacion'] ?></td>
                 <td><?php echo $datos['ID_Alumno'] ?></td>
-                <td><?php echo utf8_decode($datos['alumno'] )?></td>
+                <td><?php echo utf8_decode($datos['alumno'])?></td>
                 <td><?php echo $datos['carrera'] ?></td>
                 <td><?php echo $datos['uni'] ?></td>
                 <td><?php echo $datos['ciclo'] ?></td>
@@ -147,7 +147,7 @@ $(document).ready(function(){
       </div>
       <div class="modal-body">
         <input type="hidden" name="idRenovacion" id="idRenovacion">
-        <input type="hidden" name="direccionpdf" id="direccionpdf">
+        <input type="text" name="direccionpdf" id="direccionpdf">
         <div id="pdf2" style="margin: 0 auto;"></div>
       </div>
       <div class="modal-footer">

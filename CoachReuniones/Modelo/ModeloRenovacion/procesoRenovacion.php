@@ -2,8 +2,10 @@
 require '../../../Conexion/conexion.php';
 $idRenovacion = $_POST['idRenovacion'];
 
-foreach ($dbh->query("SELECT ID_Alumno FROM renovacion WHERE idRenovacion = '".$idRenovacion."'") as $alumno) {
+foreach ($dbh->query("SELECT ID_Alumno,year,ciclo FROM renovacion WHERE idRenovacion = '".$idRenovacion."'") as $alumno) {
 	$idAlumno = $alumno['ID_Alumno'];
+	$year = $alumno['year'];
+	$ciclo = $alumno['ciclo'];
 }
 $nombre = "";
 $correo = "";
@@ -11,7 +13,7 @@ foreach ($dbh->query("SELECT LEFT(Nombre,LOCATE(' ',Nombre) - 1) AS 'nombre' ,co
 	$nombre = $envio['nombre'];
 	$correo = $envio['correo'];
 }
-$asunto = "Proceso de renovacion de Beca Ciclo 02-2020";
+$asunto = "Proceso de renovación de Beca Ciclo 0".$ciclo."-".$year;
 $mensaje = "Hola ".$nombre." , su renovacion de beca ha sido aceptada";
 if (isset($_POST['aceptar'])) {
 	session_start();  

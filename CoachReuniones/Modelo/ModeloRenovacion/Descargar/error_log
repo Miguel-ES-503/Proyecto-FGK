@@ -1,0 +1,9 @@
+[22-Oct-2020 17:06:00 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home2/oportunidad/desarrollo.workeysoportunidades.org/CoachReuniones/Modelo/ModeloRenovacion/Descargar/archiver.php:3
+Stack trace:
+#0 /home2/oportunidad/desarrollo.workeysoportunidades.org/CoachReuniones/Modelo/ModeloRenovacion/Descargar/archiver.php(3): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 {main}
+  thrown in /home2/oportunidad/desarrollo.workeysoportunidades.org/CoachReuniones/Modelo/ModeloRenovacion/Descargar/archiver.php on line 3
+[22-Oct-2020 17:11:58 America/Chicago] PHP Parse error:  syntax error, unexpected '$conexion' (T_VARIABLE) in /home2/oportunidad/desarrollo.workeysoportunidades.org/CoachReuniones/Modelo/ModeloRenovacion/Descargar/archiver.php on line 4
+[22-Oct-2020 17:15:26 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home2/oportunidad/desarrollo.workeysoportunidades.org/CoachReuniones/Modelo/ModeloRenovacion/Descargar/archiver.php on line 5
+[22-Oct-2020 17:16:21 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oportunidad/desarrollo.workeysoportunidades.org/CoachReuniones/Modelo/ModeloRenovacion/Descargar/archiver.php:1) in /home2/oportunidad/desarrollo.workeysoportunidades.org/CoachReuniones/Modelo/ModeloRenovacion/Descargar/archiver.php on line 107
+[22-Oct-2020 17:16:21 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oportunidad/desarrollo.workeysoportunidades.org/CoachReuniones/Modelo/ModeloRenovacion/Descargar/archiver.php:1) in /home2/oportunidad/desarrollo.workeysoportunidades.org/CoachReuniones/Modelo/ModeloRenovacion/Descargar/archiver.php on line 107

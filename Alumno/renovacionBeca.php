@@ -115,7 +115,7 @@ $direccion = $_SERVER['PHP_SELF'];
  <link rel="stylesheet" type="text/css" href="../css/alertify.default.css">
 <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-	<h2 class="main-title" >Renovacion de beca</h2>
+	<h2 class="main-title" >Renovación de beca</h2>
   <br>
 </div> 
   <div>
@@ -145,7 +145,7 @@ $direccion = $_SERVER['PHP_SELF'];
                            <br>
                             <li>Ser becario activo del Programa Oportunidades.</li>
                             <li>Haber cumplido con todos los requisitos que usted ya conoce como parte de su responsabilidad como alumno becado del Programa Oportunidades.</li>
-                            <li>Mandar el documento dentro de la fecha estipulada.</li>
+                            <li>Enviar el documento dentro de la fecha estipulada.</li>
 
                                
                          </ul>
@@ -179,7 +179,7 @@ $direccion = $_SERVER['PHP_SELF'];
                             <h3 style="color: #BF3E3E;">Pasos:</h3>
                             <br>
                             <li>Leer la información completa del PDF que se les proporciona.</li>
-                            <li>Completar y llenar el PDF con sus datos personales,el archivo que manden en PDF tienen que tener 5 cosas, nombre completo, universidad ( siglas por ejemplo ESEN, UDB UJMD, UCA etc…) sede, modalidad y promoción, si no trae esta información quedara como invalida su carta de renovación.</li>
+                            <li>Completar y llenar el PDF con sus datos personales,el archivo que envie en PDF tiene debe tener la siguiente información: nombre completo, universidad ( siglas por ejemplo ESEN, UDB UJMD, UCA etc…) sede, modalidad y promoción, si no trae esta información quedara como invalida su carta de renovación.</li>
                            
      
                          </ol>
