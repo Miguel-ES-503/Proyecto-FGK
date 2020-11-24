@@ -1,4 +1,5 @@
- <?php require_once 'templates/head.php'; ?>
+ <?php require_once 'templates/head.php';
+ error_reporting(0); ?>
  <title>Indicaciones retiro</title>
  <link rel="stylesheet" href="assets1/css1/style.css">
  <?php  

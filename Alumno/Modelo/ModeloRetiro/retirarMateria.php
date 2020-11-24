@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 require_once "../../../BaseDatos/conexion.php";
 // header("Location: ../../MateriasRetiradas.php");
  $idMateria = $_POST['idMateria'];
