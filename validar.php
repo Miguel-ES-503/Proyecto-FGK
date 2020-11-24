@@ -24,6 +24,7 @@ if (isset($_POST['iniciar']))
     session_destroy();
   }
   else{
+    header('Content-Type: text/html; charset=utf-8');
     session_start();
   }
 
@@ -32,7 +33,7 @@ if (isset($_POST['iniciar']))
    $fila=$consulta->fetch();
    if ($fila['correo'] ==  $Correo && password_verify($Clave, $fila['contrasena'])){
     if($fila['conteo_entradas'] == 0){
-     
+      header('Content-Type: text/html; charset=utf-8');
      session_start();
      $_SESSION['Email'] = $fila['correo'];
 
@@ -42,6 +43,7 @@ if (isset($_POST['iniciar']))
      $Cargo = $fila['cargo'];
      switch ($Cargo) {
       case 'SuperUsuario':
+        header('Content-Type: text/html; charset=utf-8');
       session_start();
       $_SESSION['Email'] = $fila['correo'];
       $_SESSION['Lugar'] = $fila['SedeAsistencia'];
@@ -53,6 +55,7 @@ if (isset($_POST['iniciar']))
       break;
 
       case 'Coach Fase 3':
+        header('Content-Type: text/html; charset=utf-8');
       session_start();
       $_SESSION['Email'] = $fila['correo'];
       $_SESSION['Lugar'] = $fila['SedeAsistencia'];
@@ -66,6 +69,7 @@ if (isset($_POST['iniciar']))
 
 
        case 'Coach Fase 2':
+        header('Content-Type: text/html; charset=utf-8');
       session_start();
       $_SESSION['Email'] = $fila['correo'];
       $_SESSION['Lugar'] = $fila['SedeAsistencia'];
@@ -78,6 +82,7 @@ if (isset($_POST['iniciar']))
 
 
       case 'SuperVisor':
+        header('Content-Type: text/html; charset=utf-8');
       session_start();
       $_SESSION['Email'] = $fila['correo'];
       $_SESSION['Lugar'] = $fila['SedeAsistencia'];
@@ -88,6 +93,7 @@ if (isset($_POST['iniciar']))
       break;
       
       case 'Estudiante':
+        header('Content-Type: text/html; charset=utf-8');
       session_start();
       $_SESSION['Email'] = $fila['correo'];
       $_SESSION['Lugar'] = $fila['SedeAsistencia'];
@@ -98,6 +104,7 @@ if (isset($_POST['iniciar']))
 
 
       case 'Auxiliar':
+        header('Content-Type: text/html; charset=utf-8');
       session_start();
       $_SESSION['Email'] = $fila['correo'];
       $_SESSION['Lugar'] = $fila['SedeAsistencia'];
