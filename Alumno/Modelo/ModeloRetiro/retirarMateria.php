@@ -1,6 +1,8 @@
 <?php
 error_reporting(0);
 require_once "../../../BaseDatos/conexion.php";
+header('Content-Type: text/html; charset=utf-8');
+session_start(); 
 // header("Location: ../../MateriasRetiradas.php");
  $idMateria = $_POST['idMateria'];
  $ciclo = $_POST['ciclo'];
@@ -45,17 +47,25 @@ if ($tipoarchivo != null) {
        $sql = "INSERT INTO `soliretiro`(`ID_Alumno`, `ID_Ciclo`, `ID_Materia`,`Comentario`, `notaAcumulada`, `Motivo`, `CartaRetiro`) VALUES (?,?,?,?,?,?,?)";
        $stmt= $pdo->prepare($sql);
      if ($stmt->execute([$idAlumno, $ciclo, $idMateria," ",$nota,$motivo,$nombrearchivo])) {
+        $_SESSION['message'] = 'Materia retirada';
+        $_SESSION['message2'] = 'success';
         header("Location: ../../MateriasRetiradas.php");
      }else
      {
+        $_SESSION['message'] = 'Error al retirar la materia';
+        $_SESSION['message2'] = 'success';
          echo "FAllo al actualizar en la base de datos";
      }
      }else
      {
+        $_SESSION['message'] = 'Error al retirar la materia,se produjo un error al guardar el archivo';
+        $_SESSION['message2'] = 'success';
          echo "se produjo un error al guardar el archivo";
      }	
     }else
-    {
+    { 
+        $_SESSION['message'] = 'Error al retirar la materia, ARCHIVO DEMASIANDO GRANDE';
+        $_SESSION['message2'] = 'success';
      echo "ARCHIVO DEMASIANDO GRAN";
  }
 }else
