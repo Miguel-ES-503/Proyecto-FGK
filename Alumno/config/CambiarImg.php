@@ -1,6 +1,8 @@
 <?php
+error_reporting(0);
 //Conexión con la base de datos;
 require_once "../../BaseDatos/conexion.php";
+header('Content-Type: text/html; charset=utf-8');
 session_start();
 $varsesion = $_SESSION['Email'];
 
