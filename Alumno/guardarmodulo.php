@@ -16,11 +16,19 @@ if(isset($IDalumno)){
   $sql = "INSERT INTO datos_modulos (id_alumno, estado, fechain,inscripcion,id_modulo) VALUES (?,?,?,?,?)";
 $stmt= $pdo->prepare($sql);
 $stmt->execute([$IDalumno,'Pendiente', $date,'Si', $id]);
-    header('Location: inscribir_modulo.php');
-     echo "Inscrición Guardada";
+echo'<script type="text/javascript">
+			window.location.href="inscribir_modulo.php";
+			</script>';
+			
+		$_SESSION['message'] = "Inscrición Guardada Correctamente";
+        $_SESSION['message2'] = 'success';
   }
   else{
-    header('Location: inscribir_modulo.php');
-    echo "Error";
+    echo'<script type="text/javascript">
+    window.location.href="inscribir_modulo.php";
+    </script>';
+    
+  $_SESSION['message'] = "Error";
+      $_SESSION['message2'] = 'danger';
   }
 ?>
