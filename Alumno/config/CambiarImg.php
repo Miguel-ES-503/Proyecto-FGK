@@ -2,7 +2,6 @@
 error_reporting(0);
 //Conexión con la base de datos;
 require_once "../../BaseDatos/conexion.php";
-header('Content-Type: text/html; charset=utf-8');
 session_start();
 $varsesion = $_SESSION['Email'];
 
@@ -35,9 +34,14 @@ foreach ($pdo->query($sql) as $coach) {
 
 if($_FILES["imgusu"]["error"]>0){
         //Si entra aqui es porque ha tenido un error al subir la img
-        $_SESSION['message'] = 'No has selecciona la imagen';
-        $_SESSION['message2'] = 'danger';
-        header("Location: ../configuracion.php");
+
+        echo'<script type="text/javascript">
+                    window.location.href="../configuracion.php";
+                    </script>';
+                    $_SESSION['message'] = 'No has selecciona la imagen';
+                    $_SESSION['message2'] = 'danger';
+
+       // header("Location: ../configuracion.php");
     }
     else
     {
@@ -98,6 +102,9 @@ if ($Foto !=null) {
                 {
                 //Si todo fue correcto muestra el resultado con exito;
 
+                
+               
+
                    $_SESSION['message'] = 'Imagen Cambiada con exito';
                    $_SESSION['message2'] = 'success';
 
@@ -106,29 +113,52 @@ if ($Foto !=null) {
                     $_SESSION['Foto'] = $img;
                     include 'notificacion.php';
 
-                header("Location: ../configuracion.php");
+                    echo'<script type="text/javascript">
+                    window.location.href="../configuracion.php";
+                    </script>';
+
+                // header("Location: ../configuracion.php");   
             }
             else
             {
 
-                $_SESSION['message'] = 'No se pude actualizar la imagen en la BDD';
-                $_SESSION['message2'] = 'danger';
-                header("Location: ../configuracion.php");
+
+                echo'<script type="text/javascript">
+                window.location.href="../configuracion.php";
+                </script>';
+                
+            $_SESSION['message'] = "No se pude actualizar la imagen en la BDD";
+            $_SESSION['message2'] = 'danger';
+
+               
+                // header("Location: ../configuracion.php");
             }
 
 
         }else{
 
-           $_SESSION['message'] = 'existe una imagen con el mismo nombre generado';
-           $_SESSION['message2'] = 'danger';
-           header("Location: ../configuracion.php");
+            echo'<script type="text/javascript">
+			window.location.href="../configuracion.php";
+			</script>';
+			
+		$_SESSION['message'] = "existe una imagen con el mismo nombre generado";
+        $_SESSION['message2'] = 'danger';
+
+        
+        //    header("Location: ../configuracion.php");
                 //entra a este else si existe una imagen con el mismo nombre generado
        }
    }else{
 
-       $_SESSION['message'] = 'No se pude cambiar la imagen ya que no esta con una extencion valida';
-       $_SESSION['message2'] = 'danger';
-       header("Location: ../configuracion.php");
+    echo'<script type="text/javascript">
+			window.location.href="../configuracion.php";
+			</script>';
+			
+		$_SESSION['message'] = "No se pude cambiar la imagen ya que no esta con una extencion valida";
+        $_SESSION['message2'] = 'danger';
+
+    
+    //    header("Location: ../configuracion.php");
             //Si entra a este else es porque la imagen no esta con una extencion valida
 
    }
