@@ -1,40 +1,9 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@Miguel-ES-503 
-Miguel-ES-503
-/
-Proyecto-FGK
-0
-10
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Proyecto-FGK/Alumno/Modelo/ModeloRenovacion/carta.php /
-@Miguel-ES-503
-Miguel-ES-503 Actualizacion
-Latest commit 5dcdcc6 on 19 Oct
- History
- 2 contributors
-@Miguel-ES-503@tejadakatherine19
-160 lines (141 sloc)  5.81 KB
-  
 <?php 
 if (isset($_POST['subirCarta']) && $_POST['subirCarta'] != null && !(empty($_POST['subirCarta'])))
 {
     require '../../../Conexion/conexion.php';
     require '../../../BaseDatos/conexion.php';
+    require '../../../Alumno/templates/header.php';
   session_start();
 try {
 $nombreArchivo=$_FILES["archivo"]["name"];
@@ -47,10 +16,12 @@ $tamaño = $_FILES["archivo"]["size"];
 $rutaarchivo=$_FILES["archivo"]["tmp_name"];
 $universidad=$_POST['uni'];
 
-foreach ($dbh->query("SELECT Nombre,SedeAsistencia,Class FROM alumnos WHERE ID_Alumno = '".$alumno."'") as $Name) {
+foreach ($dbh->query("SELECT LEFT(alumnos.Nombre,LOCATE(' ',alumnos.Nombre) - 1) AS 'name',SedeAsistencia,Class,correo FROM alumnos WHERE ID_Alumno = '".$alumno."'") as $Name) {
   $Nombre = $Name['Nombre'];
   $SC = $Name['SedeAsistencia'];
   $Class = $Name['Class'];
+  $correo = $Name['correo'];
+  $lN = $Name['name'];
 }
 $sql = "SELECT COUNT(*) AS 'condicion' FROM renovacion WHERE ID_Alumno = '".$alumno."' AND ciclo = '".$ciclo."' AND year = Date_format(now(),'%Y')";
 foreach ($dbh->query($sql) as $C) {
@@ -122,7 +93,11 @@ if ($ex > 0) {
   icon: 'success',
   button: 'Cerrar',
   });</script>";
+  $asunto = "Renovaciones de Beca";
+  $mensaje = "Hola".$lN.", tu renovacion ha sido entregada\nPasa lindo dia.";
+  include '../../../CoachReuniones/Modelo/ModeloCorreo/correo.php';
   header("Location:../../renovacionBeca.php");
+
   }
 }else
 {
@@ -149,6 +124,9 @@ $_SESSION['noti'] = "<script>swal({
   icon: 'success',
   button: 'Cerrar',
 });</script>";
+$asunto = "Renovaciones de Beca";
+$mensaje = "Hola".$lN.", tu renovacion ha sido entregada\nPasa lindo dia.";
+include '../../../CoachReuniones/Modelo/ModeloCorreo/correo.php';
 header("Location:../../renovacionBeca.php");
 
 }else{
@@ -174,6 +152,9 @@ $_SESSION['noti'] = "<script>swal({
   icon: 'success',
   button: 'Cerrar',
 });</script>";
+$asunto = "Renovaciones de Beca";
+$mensaje = "Hola ".$lN.", tu renovacion ha sido entregada\nPasa lindo dia.";
+include '../../../CoachReuniones/Modelo/ModeloCorreo/correo.php';
 header("Location:../../renovacionBeca.php");
 }
 
@@ -190,15 +171,3 @@ header("Location:../../renovacionBeca.php");
 
 
 ?>
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

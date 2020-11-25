@@ -265,7 +265,6 @@ $direccion = $_SERVER['PHP_SELF'];
         <select name="ciclo" class="form-control">
           <option>1</option>
           <option>2</option>
-          <option>3</option>
         </select>
         <br>
         <label >Año</label>

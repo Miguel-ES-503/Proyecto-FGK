@@ -10,5 +10,4 @@ $message = "Este es mi primer envío de email con PHP";*/
  
 mail($correo, $asunto, $mensaje,$cabeceras);
 
-
 ?>
