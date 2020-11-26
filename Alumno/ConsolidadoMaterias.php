@@ -208,15 +208,15 @@ div.centerTable table {
    
   <?php
         //consulta que muestra las materias
-       $consulMaterias=$pdo->prepare("SELECT  IM.nota,IM.idMateria,IM.matricula, M.nombreMateria, IM.estado, IC.cicloU, M.idExpedienteU
-      from materias M
-      INNER JOIN inscripcionmateria IM
+       $consulMaterias=$pdo->prepare("SELECT IM.nota,IM.idMateria,IM.matricula, M.nombreMateria, IM.estado, IC.cicloU, M.idExpedienteU
+       from materias M
+       INNER JOIN inscripcionmateria IM
       ON IM.idMateria= M.idMateria
 
-      INNER JOIN inscripcionciclos IC
+       INNER JOIN inscripcionciclos IC
       ON IC.Id_InscripcionC=IM.Id_InscripcionC
-  
-      WHERE M.idExpedienteU = ? AND IM.estado = 'Reprobada' OR IM.estado = 'Aprobada'");
+
+      WHERE M.idExpedienteU = ? AND (IM.estado = 'Aprobada' OR IM.estado = 'Reprobada') ");
 
        $consulMaterias->execute(array($idExpedienteU));
 
