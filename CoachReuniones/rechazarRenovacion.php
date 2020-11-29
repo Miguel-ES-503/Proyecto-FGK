@@ -3,7 +3,7 @@
 include 'Modularidad/CabeceraInicio.php';
 ?>
 <title>Rechazar Renovacion</title>
-<?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos
+<?php include("../BaseDatos/conexion.php"); //Realizamos la conexi贸n con la base de datos
 	  include '../Conexion/conexion.php';
 	  session_start();
 	  if (!(isset($_SESSION['idRenovacion']))) {
@@ -26,6 +26,7 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 //echo $_SESSION['idRenovacion'];
 ?>
+  <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/modulos-moodle.css">
 <style type="text/css">
 	#mensaje
@@ -46,7 +47,7 @@ include 'Modularidad/MenuVertical.php';
 </style>
 <div class="title">
   <a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
-    <h2 class="main-title" >Rechazar Renovacion</h2>
+    <h2 class="main-title" ><?php echo'Rechazar renovacion' ?></h2>
     <div class="title2">
 </div>
 </div>
@@ -57,8 +58,8 @@ include 'Modularidad/MenuVertical.php';
 	<form action="Modelo/ModeloRenovacion/rechazoRenovacion.php" method="POST">
 
 	<div class="form-group">
-		<label style="color: black">Mensaje</label>
-		<textarea type="text" name="mensaje" class="form-control" id="mensaje"></textarea>
+		<label style="color: black">Motivo</label>
+		<textarea type="text" name="mensaje" class="form-control" id="mensaje" required></textarea>
 	</div>
 	<input type="hidden" name="correo" value="<?php echo $correo?>">
 	<input type="hidden" name="nombre" value="<?php echo $nombre?>">

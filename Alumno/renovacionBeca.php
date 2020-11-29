@@ -115,7 +115,7 @@ $direccion = $_SERVER['PHP_SELF'];
  <link rel="stylesheet" type="text/css" href="../css/alertify.default.css">
 <div class="title">
     <a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
-	<h2 class="main-title" >Renovación de beca</h2>
+  <h2 class="main-title" >Renovación de beca</h2>
   <br>
 </div> 
   <div>

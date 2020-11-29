@@ -2,7 +2,7 @@
 //Modularidad para inicializar el Head y <!DOCTYPE html>
 include 'Modularidad/CabeceraInicio.php';
 ?>
-<title>Listados-Renovacion</title>
+<title>Listados-Renovación</title>
 
 <?php
 //Modularaidad para extraere los enlaces en HEAD
@@ -34,7 +34,7 @@ if (isset($_SESSION['noti'])) {
 <link rel="stylesheet" type="text/css" href="css/modulos-moodle.css">
 <div class="title">
   <a href="javascript:history.back();" title=""><img src="../img/back.png" class="icon"></a>
-    <h2 class="main-title" >Listados-Renovacion</h2>
+    <h2 class="main-title" >Listados-Renovación</h2>
     <div class="title2">
 </div>
 </div>
@@ -75,8 +75,8 @@ foreach ($dbh->query($sql) as $datos) {
             <tr>
                 <td><?php echo $datos['idRenovacion'] ?></td>
                 <td><?php echo $datos['ID_Alumno'] ?></td>
-                <td><?php echo utf8_decode($datos['alumno'])?></td>
-                <td><?php echo $datos['carrera'] ?></td>
+                <td><?php echo $datos['alumno']?></td>
+                <td><?php echo utf8_encode($datos['carrera']) ?></td>
                 <td><?php echo $datos['uni'] ?></td>
                 <td><?php echo $datos['ciclo'] ?></td>
                 <td><?php echo $datos['year'] ?></td>
@@ -147,7 +147,7 @@ $(document).ready(function(){
       </div>
       <div class="modal-body">
         <input type="hidden" name="idRenovacion" id="idRenovacion">
-        <input type="text" name="direccionpdf" id="direccionpdf">
+        <input type="hidden" name="direccionpdf" id="direccionpdf">
         <div id="pdf2" style="margin: 0 auto;"></div>
       </div>
       <div class="modal-footer">
@@ -195,7 +195,7 @@ $(document).ready(function(){
             <td><?php echo utf8_decode($ausentes['name']) ?></td>
             <td><?php echo $ausentes['Class'] ?></td>
             <td><?php echo $ausentes['correo'] ?></td>
-            <td><?php echo $ausentes['nombre'] ?></td>
+            <td><?php echo utf8_encode($ausentes['nombre']) ?></td>
         </tr>
         <?php  
     }

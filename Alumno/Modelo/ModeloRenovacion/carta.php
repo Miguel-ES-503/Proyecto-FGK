@@ -3,7 +3,6 @@ if (isset($_POST['subirCarta']) && $_POST['subirCarta'] != null && !(empty($_POS
 {
     require '../../../Conexion/conexion.php';
     require '../../../BaseDatos/conexion.php';
-    require '../../../Alumno/templates/header.php';
   session_start();
 try {
 $nombreArchivo=$_FILES["archivo"]["name"];
@@ -16,7 +15,7 @@ $tamaño = $_FILES["archivo"]["size"];
 $rutaarchivo=$_FILES["archivo"]["tmp_name"];
 $universidad=$_POST['uni'];
 
-foreach ($dbh->query("SELECT LEFT(alumnos.Nombre,LOCATE(' ',alumnos.Nombre) - 1) AS 'name',SedeAsistencia,Class,correo FROM alumnos WHERE ID_Alumno = '".$alumno."'") as $Name) {
+foreach ($dbh->query("SELECT Nombre,LEFT(alumnos.Nombre,LOCATE(' ',alumnos.Nombre) - 1) AS 'name',SedeAsistencia,Class,correo FROM alumnos WHERE ID_Alumno = '".$alumno."'") as $Name) {
   $Nombre = $Name['Nombre'];
   $SC = $Name['SedeAsistencia'];
   $Class = $Name['Class'];
@@ -29,7 +28,7 @@ foreach ($dbh->query($sql) as $C) {
 }
 $Sede = substr($SC, 0, 2);
 $Modalidad = substr($SC, 2, 2);
-$formato = utf8_decode($Nombre)." ".$universidad." ".$Sede." ".$Modalidad." ".$Class.".pdf";
+$formato = $Nombre." ".$universidad." ".$Sede." ".$Modalidad." ".$Class.".pdf";
 $numero = rand(1, 10000000);
 
 
@@ -93,11 +92,10 @@ if ($ex > 0) {
   icon: 'success',
   button: 'Cerrar',
   });</script>";
-  $asunto = "Renovaciones de Beca";
-  $mensaje = "Hola".$lN.", tu renovacion ha sido entregada\nPasa lindo dia.";
+  $asunto = "Renovaciones de Beca Ciclo-0".$ciclo;
+  $mensaje = "Hola ".$lN."\nPor este medio se te informa que tu  renovación ha sido entregada con exito.\nTen un lindo dia.";
   include '../../../CoachReuniones/Modelo/ModeloCorreo/correo.php';
   header("Location:../../renovacionBeca.php");
-
   }
 }else
 {
@@ -124,10 +122,10 @@ $_SESSION['noti'] = "<script>swal({
   icon: 'success',
   button: 'Cerrar',
 });</script>";
-$asunto = "Renovaciones de Beca";
-$mensaje = "Hola".$lN.", tu renovacion ha sido entregada\nPasa lindo dia.";
-include '../../../CoachReuniones/Modelo/ModeloCorreo/correo.php';
-header("Location:../../renovacionBeca.php");
+ $asunto = "Renovaciones de Beca Ciclo-0".$ciclo;
+  $mensaje = "Hola ".$lN."\nPor este medio se te informa que tu  renovación ha sido entregada con exito.\nTen un lindo dia.";
+  include '../../../CoachReuniones/Modelo/ModeloCorreo/correo.php';
+//header("Location:../../renovacionBeca.php");
 
 }else{
     $estado = "enviado";
@@ -152,9 +150,9 @@ $_SESSION['noti'] = "<script>swal({
   icon: 'success',
   button: 'Cerrar',
 });</script>";
-$asunto = "Renovaciones de Beca";
-$mensaje = "Hola ".$lN.", tu renovacion ha sido entregada\nPasa lindo dia.";
-include '../../../CoachReuniones/Modelo/ModeloCorreo/correo.php';
+ $asunto = "Renovaciones de Beca Ciclo-0".$ciclo;
+  $mensaje = "Hola ".$lN."\nPor este medio se te informa que tu  renovación ha sido entregada con exito.\nTen un lindo dia.";
+  include '../../../CoachReuniones/Modelo/ModeloCorreo/correo.php';
 header("Location:../../renovacionBeca.php");
 }
 
@@ -171,3 +169,4 @@ header("Location:../../renovacionBeca.php");
 
 
 ?>
+
