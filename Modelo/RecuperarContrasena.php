@@ -54,12 +54,16 @@
 					//Si todo fue correcto muestra el resultado con exito;
 					$_SESSION['message'] = 'Correo Enviado';
 					$_SESSION['message2'] = 'success';
-					header("Location: ../login.php");
+					echo'<script type="text/javascript">
+					window.location.href="../index.php";
+					</script>';
 				}else
 				{
 					$_SESSION['message'] = 'Correo No Enviado';
 					$_SESSION['message2'] = 'danger';
-					header("Location: ../login.php");
+					echo'<script type="text/javascript">
+					window.location.href="../index.php";
+					</script>';
 				}
 			
 				}
@@ -67,7 +71,9 @@
 				{
 					$_SESSION['message'] = 'No se pudo Restablcer contraseña';
 					$_SESSION['message2'] = 'danger';
-					header("Location: ../login.php");
+					echo'<script type="text/javascript">
+					window.location.href="../index.php";
+					</script>';
 				}
 
 			}
@@ -76,7 +82,9 @@
 
 				$_SESSION['message'] = 'Correo no encontrado';
 				$_SESSION['message2'] = 'danger';
-			   header("Location: RecuperarContrasena.php");
+				echo'<script type="text/javascript">
+					window.location.href="RecuperarContrasena.php";
+					</script>';
 			}
 	}
 
@@ -85,8 +93,10 @@
   else 
   {
   	$_SESSION['message'] = 'Correo no encontrado';
-  	$_SESSION['message2'] = 'danger';
-  	header("Location: ../CambiarContrasena/RecuperarCuenta.php");
+	  $_SESSION['message2'] = 'danger';
+	  echo'<script type="text/javascript">
+					window.location.href="../CambiarContrasena/RecuperarCuenta.php";
+					</script>';
   }
 
- ?>,,
+ ?>
