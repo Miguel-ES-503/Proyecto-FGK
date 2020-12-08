@@ -128,12 +128,14 @@ $(document).ready(function() {
 
 
             }
-          #terminarprocess{
+
+            #terminarprocess {
 
 
-              position: relative;
-              right: 600px;
-          }
+                position: relative;
+                right: 600px;
+            }
+
             td {
                 width: 150px;
                 background: #D8D8D8;
@@ -194,26 +196,27 @@ $(document).ready(function() {
 
             @media screen and (max-width: 1080px) {
 
- #terminarprocess{
+                #terminarprocess {
 
 
-position: none;
-right: 120px;
-top: 10px;
+                    position: none;
+                    right: 120px;
+                    top: 10px;
 
-}
-table {
-              float: left;
-              position: relative;
-              left: 50px;
-             
-                 
-                 
+                }
+
+                table {
+                    float: left;
+                    position: relative;
+                    left: 50px;
 
 
-            }    
-    }
-}
+
+
+
+                }
+            }
+            }
             </style>
             <!--Fin de CSS de las tablas -->
 
@@ -314,10 +317,10 @@ table {
 
                     </tfoot>
                 </table>
-            <br>
+                <br>
 
                 <div class='f1-buttons'>
-                
+
                     <button id="terminarprocess" type='button' style="border-radius: 20px;
     border: 2px solid #9d120e;
     width: 200px;height: 38px;
@@ -363,8 +366,20 @@ table {
                     <div class="form-group">
                         <label class="" for="ciclo">Ciclo:</label>
                         <select name="ciclo" id="ciclo" class="ciclo form-control">
-                            <option value="Ciclo 01-<?php echo $date = date('Y');?>">Ciclo 01-<?php echo $date = date('Y');?></option>
-                            <option value="Ciclo 02-<?php echo $date = date('Y');?>">Ciclo 02-<?php echo $date = date('Y');?></option>
+                            <option value="Ciclo 01-2017">Ciclo 01-2015</option>
+                            <option value="Ciclo 02-2017">Ciclo 02-2015</option>
+                            <option value="Ciclo 01-2017">Ciclo 01-2016</option>
+                            <option value="Ciclo 02-2017">Ciclo 02-2016</option>
+                            <option value="Ciclo 01-2017">Ciclo 01-2017</option>
+                            <option value="Ciclo 02-2017">Ciclo 02-2017</option>
+                            <option value="Ciclo 01-2018">Ciclo 01-2018</option>
+                            <option value="Ciclo 02-2018">Ciclo 02-2018</option>
+                            <option value="Ciclo 01-2019">Ciclo 01-2019</option>
+                            <option value="Ciclo 02-2019">Ciclo 02-2019</option>
+                            <option value="Ciclo 01-<?php echo $date = date('Y');?>">Ciclo
+                                01-<?php echo $date = date('Y');?></option>
+                            <option value="Ciclo 02-<?php echo $date = date('Y');?>">Ciclo
+                                02-<?php echo $date = date('Y');?></option>
                         </select>
                     </div>
 
@@ -464,11 +479,11 @@ table {
 
                         <div class="form-group">
                             <label class="" for="matricula">Matricula:</label>
-                            <small  id="passwordHelpBlock" class="form-text text-muted">
-                            Ingrese el número de veces que ha cursado la materia
-</small>
-                            <input type="number" name="matricula" min="0" max="10" placeholder="" class="matricula form-control"
-                                id="matricula">
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Ingrese el número de veces que ha cursado la materia
+                            </small>
+                            <input type="number" name="matricula" min="0" max="10" placeholder=""
+                                class="matricula form-control" id="matricula">
                         </div>
 
 
