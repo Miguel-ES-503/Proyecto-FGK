@@ -1,5 +1,4 @@
-  <?php 
-
+<?php 
 include '../../../../Conexion/conexion.php';
 include '../../../../BaseDatos/conexion.php';
 if (isset($_POST['descargar'])) {

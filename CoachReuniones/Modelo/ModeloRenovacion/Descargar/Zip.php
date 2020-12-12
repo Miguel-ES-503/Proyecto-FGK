@@ -36,4 +36,11 @@ $zip->close();
  readfile('Renovaciones.zip');
  // Por último eliminamos el archivo temporal creado
  unlink('Renovaciones.zip');//Destruye el archivo temporal
+     	$_SESSION['noti'] = "<script>swal({
+  title: 'Aviso!',
+  text: 'No existe renovaciones!',
+  icon: 'error',
+  button: 'Cerrar',
+});</script>";
+ header("../../../descargas.php");
 ?>

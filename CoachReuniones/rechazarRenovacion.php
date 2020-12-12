@@ -3,7 +3,7 @@
 include 'Modularidad/CabeceraInicio.php';
 ?>
 <title>Rechazar Renovacion</title>
-<?php include("../BaseDatos/conexion.php"); //Realizamos la conexi贸n con la base de datos
+<?php include("../BaseDatos/conexion.php"); //Realizamos la conexión con la base de datos
 	  include '../Conexion/conexion.php';
 	  session_start();
 	  if (!(isset($_SESSION['idRenovacion']))) {
@@ -26,7 +26,7 @@ include 'Modularidad/MenuHorizontal.php';
 include 'Modularidad/MenuVertical.php';
 //echo $_SESSION['idRenovacion'];
 ?>
-  <meta charset="utf-8">
+  
 <link rel="stylesheet" type="text/css" href="css/modulos-moodle.css">
 <style type="text/css">
 	#mensaje

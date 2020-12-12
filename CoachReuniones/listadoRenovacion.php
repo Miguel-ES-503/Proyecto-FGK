@@ -40,10 +40,10 @@ if (isset($_SESSION['noti'])) {
 </div>
 <br><br>
     <body>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ausentes" 
+        <a type="button" class="btn btn-primary" href="renovaciones2.php"
         style="float: right;margin-right: 113px;">
         No Recibidas
-</button>
+</a>
 <br>
         <div class="container" style="background: black;color: white;margin-top: 20px;border-radius: 20px;text-align: center;">
  <table id="example" class="display" style="width:100%;padding: 50px;margin-top: 20px;">
@@ -57,18 +57,20 @@ if (isset($_SESSION['noti'])) {
                 <th>Universidad</th>
                 <th>Ciclo</th>
                 <th>Año</th>
+                <th>Sede</th>
+                <th>Class</th>
                 <th>Estado</th>
                 <th>PDF</th>
             </tr>
         </thead>
         <tbody style="color: black;">
           <?php 
-          $sql = "SELECT idRenovacion,renovacion.Estado,renovacion.ID_Alumno,alumnos.Nombre as 'alumno',carrera.nombre as 'carrera',empresas.Nombre as 'uni',ciclo,year,direccion FROM renovacion JOIN alumnos
-ON alumnos.ID_Alumno = renovacion.ID_Alumno
-JOIN carrera
-ON carrera.Id_Carrera = alumnos.ID_Carrera
-JOIN empresas
-ON empresas.ID_Empresa = alumnos.ID_Empresa";
+          $sql = "SELECT idRenovacion,renovacion.Estado,renovacion.ID_Alumno,alumnos.Nombre as 'alumno',carrera.nombre as 'carrera',empresas.Nombre as 'uni',ciclo,year,direccion,alumnos.ID_Sede AS 'sede',alumnos.Class 
+          FROM renovacion 
+          JOIN alumnos ON alumnos.ID_Alumno = renovacion.ID_Alumno 
+          JOIN carrera ON carrera.Id_Carrera = alumnos.ID_Carrera 
+          JOIN empresas ON empresas.ID_Empresa = alumnos.ID_Empresa 
+          WHERE renovacion.Estado != 'eliminado'";
 foreach ($dbh->query($sql) as $datos) {
                 $n=1;
             ?>
@@ -77,9 +79,11 @@ foreach ($dbh->query($sql) as $datos) {
                 <td><?php echo $datos['ID_Alumno'] ?></td>
                 <td><?php echo $datos['alumno']?></td>
                 <td><?php echo utf8_encode($datos['carrera']) ?></td>
-                <td><?php echo $datos['uni'] ?></td>
+                <td><?php echo utf8_encode($datos['uni']) ?></td>
                 <td><?php echo $datos['ciclo'] ?></td>
                 <td><?php echo $datos['year'] ?></td>
+                <td><?php echo $datos['sede'] ?></td>
+                <td><?php echo $datos['Class'] ?></td>
                 <td><?php echo $datos['Estado'] ?></td>
 <td>
     <div class="btn-grupo">
@@ -158,63 +162,6 @@ $(document).ready(function(){
     </div>
   </div>
 </form>
-</div>
-<div class="modal fade" id="ausentes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    
-  <div class="modal-dialog modal-lg" role="document" style="width: 750px;margin: auto;">
-    <div class="modal-content">
-           <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">No recibidas</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <table id="tabla2" class="display" style="width:100%">
-<thead>
-                <td>Carné</td>
-                <td>Nombre</td>
-                <td>Class</td>
-                <td>Correo</td>
-                <td>Carrera</td>
-            </thead>
-            <tbody>
-        <?php 
-        $consulta = "SELECT ID_Alumno,alumnos.Nombre as 'name',Class,correo,carrera.nombre FROM alumnos 
-        JOIN carrera 
-        ON carrera.Id_Carrera = alumnos.ID_Carrera
-        WHERE ID_Alumno 
-        NOT IN( 
-        SELECT r.ID_alumno FROM renovacion r LEFT JOIN alumnos A ON r.ID_alumno = A.ID_Alumno 
-        WHERE ciclo = 1
-        )";
-        foreach ($dbh->query($consulta) as $ausentes) {
-        ?>
-        <tr>
-            <td><?php echo $ausentes['ID_Alumno'] ?></td>
-            <td><?php echo utf8_decode($ausentes['name']) ?></td>
-            <td><?php echo $ausentes['Class'] ?></td>
-            <td><?php echo $ausentes['correo'] ?></td>
-            <td><?php echo utf8_encode($ausentes['nombre']) ?></td>
-        </tr>
-        <?php  
-    }
-        ?>
-            </tbody>
-        <tfoot>
-            <tr>
-                <th>Carné</th>
-                <th>Nombre</th>
-                <th>Class</th>
-                <th>Correo</th>
-                <th>Carrera</th>
-            </tr>
-        </tfoot>
-    </table>
-
-      </div>
-    </div>
-  </div>
 </div>
 
 <script type="text/javascript">

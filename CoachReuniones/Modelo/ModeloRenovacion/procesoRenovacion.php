@@ -13,8 +13,8 @@ foreach ($dbh->query("SELECT LEFT(Nombre,LOCATE(' ',Nombre) - 1) AS 'nombre' ,co
 	$nombre = $envio['nombre'];
 	$correo = $envio['correo'];
 }
-$asunto = "Proceso de renovaci贸n de Beca Ciclo 0".$ciclo."-".$year;
-$mensaje = "Hola ".$nombre." .\nPor este medio se te informa que tu renovaci贸n de beca ha sido aceptada.\n\nTen un lindo dia.";
+$asunto = "Proceso de renovación de Beca Ciclo 0".$ciclo."-".$year;
+$mensaje = "Hola ".$nombre." .\nPor este medio se te informa que tu renovación de beca ha sido aceptada.\n\nTen un lindo dia.";
 if (isset($_POST['aceptar'])) {
 	session_start();  
 	$actualizar = $dbh->prepare("UPDATE renovacion SET Estado = 'aceptada' WHERE idRenovacion = :id");

@@ -33,7 +33,7 @@ $numero = rand(1, 10000000);
 
 
 $mysql = "SELECT COUNT(*) AS 'contar' FROM renovacion WHERE year = Date_format(now(),'%Y')  
-    AND ciclo = '".$ciclo."' AND archivo = '".$formato."' AND Estado = 'rechazada' AND ID_Alumno = '".$alumno."'AND class='".$Class."'";
+    AND ciclo = '".$ciclo."' AND archivo = '".$formato."' AND Estado = 'rechazada' OR Estado = 'eliminado' AND ID_Alumno = '".$alumno."'AND class='".$Class."'";
   foreach ($dbh->query($mysql) as $con) {
     $ex = $con['contar'];
       }
@@ -81,7 +81,7 @@ if ($ex > 0) {
   $nombreArchivo = $formato;
   move_uploaded_file($direccion,$archivero."/".$nombreArchivo);
   $actualizar = $dbh->prepare("UPDATE renovacion SET Estado = 'enviado' WHERE year = Date_format(now(),'%Y')  
-  AND ciclo = :ciclo AND archivo = :archivo AND Estado = 'rechazada' AND ID_Alumno = :alumno");
+  AND ciclo = :ciclo AND archivo = :archivo AND Estado = 'rechazada' OR Estado = 'eliminado' AND ID_Alumno = :alumno");
   $actualizar->bindParam(':ciclo',$ciclo,PDO::PARAM_STR);
   $actualizar->bindParam(':archivo',$formato,PDO::PARAM_STR);
   $actualizar->bindParam(':alumno',$alumno,PDO::PARAM_STR);
@@ -93,7 +93,7 @@ if ($ex > 0) {
   button: 'Cerrar',
   });</script>";
   $asunto = "Renovaciones de Beca Ciclo-0".$ciclo;
-  $mensaje = "Hola ".$lN."\nPor este medio se te informa que tu  renovación ha sido entregada con exito.\nTen un lindo dia.";
+  $mensaje = "Hola ".$lN."\nPor este medio se te informa que tu  renovación ha sido entregada con exito\nTen un lindo dia.";
   include '../../../CoachReuniones/Modelo/ModeloCorreo/correo.php';
   header("Location:../../renovacionBeca.php");
   }
@@ -123,7 +123,7 @@ $_SESSION['noti'] = "<script>swal({
   button: 'Cerrar',
 });</script>";
  $asunto = "Renovaciones de Beca Ciclo-0".$ciclo;
-  $mensaje = "Hola ".$lN."\nPor este medio se te informa que tu  renovación ha sido entregada con exito.\nTen un lindo dia.";
+  $mensaje = "Hola ".$lN."\nPor este medio se te informa que tu  renovación ha sido entregada con exito\nTen un lindo dia.";
   include '../../../CoachReuniones/Modelo/ModeloCorreo/correo.php';
 //header("Location:../../renovacionBeca.php");
 
@@ -151,7 +151,7 @@ $_SESSION['noti'] = "<script>swal({
   button: 'Cerrar',
 });</script>";
  $asunto = "Renovaciones de Beca Ciclo-0".$ciclo;
-  $mensaje = "Hola ".$lN."\nPor este medio se te informa que tu  renovación ha sido entregada con exito.\nTen un lindo dia.";
+  $mensaje = "Hola ".$lN."\nPor este medio se te informa que tu  renovación ha sido entregada con exito\nTen un lindo dia.";
   include '../../../CoachReuniones/Modelo/ModeloCorreo/correo.php';
 header("Location:../../renovacionBeca.php");
 }
