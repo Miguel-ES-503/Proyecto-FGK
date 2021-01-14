@@ -41,7 +41,24 @@ include 'Modularidad/MenuVertical.php';
                                 ?>
                 </select>
             </div>
+            <div class="col-sm" style="margin: 1%;">
+                <select id="Fsede" class="browser-default bg-light custom-select" name="Fsede">
+                    <option value=" " class='dropdown-item' disabled selected>Sede</option>
+                    <?php 
+                                require_once 'Modelo/ModeloReportes/CargarSede.php';
+                                ?>
+                </select>
+            </div>
 
+            <div class="col-sm" style="margin: 1%;">
+                <select id="Fpromocion" class="browser-default bg-light custom-select" name="Fpromocion">
+                    <option value=" " class='dropdown-item' disabled selected>Promoción</option>
+                    <?php 
+                                require_once 'Modelo/ModeloReportes/CargarPromocion.php';
+                                ?>
+                </select>
+            </div>
+            
             <div class="col-sm" style="margin: 1%;">
                 <select id="FFinanciamiento" class="browser-default bg-light custom-select" name="Meses" onchange="">
                     <option value=" " class='dropdown-item' disabled selected>Fuente de financiamieto</option>
@@ -291,7 +308,9 @@ include 'Modularidad/MenuVertical.php';
                 data: {
                     id: $('#FNombre option:selected').val(),
                     year: $('#FAno option:selected').val(),
-                    financiamieto: $('#FFinanciamiento option:selected').val()
+                    financiamieto: $('#FFinanciamiento option:selected').val(),
+                    sede: $('#Fsede option:selected').val(),
+                    promocion: $('#Fpromocion option:selected ').val()
                 },
                 success: function(data) {
                     $("#G1").empty();
@@ -311,7 +330,9 @@ include 'Modularidad/MenuVertical.php';
                 data: {
                     id: $('#FNombre option:selected').val(),
                     year: $('#FAno option:selected').val(),
-                    financiamieto: $('#FFinanciamiento option:selected').val()
+                    financiamieto: $('#FFinanciamiento option:selected').val(),
+                    sede: $('#Fsede option:selected').val(),
+                    promocion: $('#Fpromocion option:selected ').val()
                 },
                 success: function(data) {
                     $("#G1").empty();
@@ -323,6 +344,53 @@ include 'Modularidad/MenuVertical.php';
             });
             // llamada();
         });
+
+
+        $("#Fsede").change(function() {
+
+$.ajax({
+    type: 'POST',
+    url: 'Modelo/ModeloReportes/CargarGraficos.php',
+    data: {
+        id: $('#FNombre option:selected').val(),
+        year: $('#FAno option:selected').val(),
+        financiamieto: $('#FFinanciamiento option:selected').val(),
+        sede: $('#Fsede option:selected').val(),
+        promocion: $('#Fpromocion option:selected ').val()
+    },
+    success: function(data) {
+        $("#G1").empty();
+        $("#table").empty();
+        $(".G").remove();
+        $("#G1").append(data);
+    }
+
+});
+// llamada();
+});
+$("#Fpromocion").change(function() {
+
+$.ajax({
+    type: 'POST',
+    url: 'Modelo/ModeloReportes/CargarGraficos.php',
+    data: {
+        id: $('#FNombre option:selected').val(),
+        year: $('#FAno option:selected').val(),
+        financiamieto: $('#FFinanciamiento option:selected').val(),
+        sede: $('#Fsede option:selected').val(),
+        promocion: $('#Fpromocion option:selected ').val()
+    },
+    success: function(data) {
+        $("#G1").empty();
+        $("#table").empty();
+        $(".G").remove();
+        $("#G1").append(data);
+    }
+
+});
+// llamada();
+});
+
         $("#FFinanciamiento").change(function() {
 
             $.ajax({
@@ -331,7 +399,9 @@ include 'Modularidad/MenuVertical.php';
                 data: {
                     id: $('#FNombre option:selected').val(),
                     year: $('#FAno option:selected').val(),
-                    financiamieto: $('#FFinanciamiento option:selected').val()
+                    financiamieto: $('#FFinanciamiento option:selected').val(),
+                    sede: $('#Fsede option:selected').val(),
+                    promocion: $('#Fpromocion option:selected ').val()
                 },
                 success: function(data) {
                     $("#G1").empty();

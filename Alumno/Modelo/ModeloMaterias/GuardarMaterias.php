@@ -61,7 +61,7 @@ $n6=mt_rand(1,9);
 
 
     	//consulta para insertar solicitud de transporte
-    $consulta=$pdo->prepare("INSERT INTO materias(idMateria,idExpedienteU,nombreMateria,Estado, estadoM) VALUES(:idMateria,:idExpedienteU,:nombreMateria,'Activo', '')");
+    $consulta=$pdo->prepare("INSERT INTO materias(idMateria,idExpedienteU,nombreMateria,Estado, estadoM) VALUES(:idMateria,:idExpedienteU,:nombreMateria,'Activo', null)");
 
 
 		$consulta->bindParam(':idMateria',$materia);
