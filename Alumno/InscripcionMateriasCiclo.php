@@ -4,7 +4,6 @@
 <title>Inscripcion materias</title>
 <?php
   require_once 'templates/header.php';
-  //require_once 'templates/MenuVertical.php';
   require_once 'templates/MenuHorizontal.php';
   require '../Conexion/conexion.php';
 
@@ -19,7 +18,7 @@
 
 
          // Expediente U
-        $consulta=$pdo->prepare("SELECT idExpedienteU  FROM expedienteu WHERE ID_Alumno = ? AND estado = 'Activo'");
+        $consulta=$pdo->prepare("SELECT idExpedienteU  FROM expedienteu WHERE ID_Alumno = ? ");
      
         $consulta->execute(array($alumno));
         $idExpedienteU;
@@ -34,7 +33,7 @@
 
           //-------------------------------------------------------------------
        //Extraer ID Inscripcion ciclo 
-       // Consulta que muestra el idciclo del expediente correspondiente
+       // Consulta que muestra el id ciclo del expediente correspondiente
        //dependiendo del expediente asi se l mostrara los datos
        $consultaIC=$pdo->prepare("SELECT Id_InscripcionC FROM inscripcionciclos WHERE idExpedienteU = ? ");
        $consultaIC->execute(array($idExpedienteU));
@@ -88,138 +87,15 @@ $(document).ready(function() {
     </div>
     <br>
 
-
-
-
-
-
     <!--Información de solicitud-->
     <div class="row">
-
-
-
-
-
-
-
 
         <!--tabla con informacion de solicitud-->
         <div class="col text-center">
             <br><br><br>
-
-            <!--CSS de las tablas -->
-            <style type="text/css">
-            table {
-                border-collapse: separate;
-                border-spacing: 6px;
-                background: bottom left repeat-x;
-                color: #fff;
-                position: relative;
-                left: 200px;
-
-
-            }
-
-            tr,
-            th {
-                background: white;
-                color: #585858;
-                text-align: center;
-
-
-            }
-
-            #terminarprocess {
-
-
-                position: relative;
-                right: 600px;
-            }
-
-            td {
-                width: 150px;
-                background: #D8D8D8;
-                border-radius: 3px;
-                color: #000;
-            }
-
-            .oscuro {
-                background: #A4A4A4;
-
-            }
-
-
-
-            h3 {
-                color: #DE0B18;
-            }
-
-            h4 {
-                color: white;
-            }
-
-            div.centerTable {
-                text-align: center;
-            }
-
-
-
-            div.centerTable table {
-                margin: 0 auto;
-                text-align: left;
-                width: 100%;
-
-            }
-
-            .modal-content {
-                background-color: white;
-                border-color: black;
-                border-radius: 30px;
-                padding: 20px;
-            }
-
-            .modal-body {
-                text-align: left;
-            }
-
-            .form-control {
-                background-color: #ADADB2;
-                color: black;
-                border-radius: 20px;
-
-            }
-
-            .modal-header {
-                border-color: #ADADB2;
-                border: 3px;
-            }
-
-            @media screen and (max-width: 1080px) {
-
-                #terminarprocess {
-
-
-                    position: none;
-                    right: 120px;
-                    top: 10px;
-
-                }
-
-                table {
-                    float: left;
-                    position: relative;
-                    left: 50px;
-
-
-
-
-
-                }
-            }
-            }
-            </style>
-            <!--Fin de CSS de las tablas -->
-
+            <?php 
+    include "CSS/inscripcionMaterias.php";
+    ?>
 
             <!--Tabla de buses de Ida -->
             <h3 class="card-header h3s bg-light w-75 mx-auto">Materias por cursar</h3>
@@ -236,7 +112,6 @@ $(document).ready(function() {
                     </thead>
 
                     <tbody>
-
                         <?php
         //consulta que muestra las materias
        /*$consulMaterias=$pdo->prepare("SELECT m.idMateria, m.`idExpedienteU` , m.`nombreMateria` , m.`Estado` , m.`estadoM` , im.estado 
@@ -245,72 +120,55 @@ $(document).ready(function() {
         AND(m.`estadoM` ='Inscrita' OR m.`estadoM` ='Reprobada' or m.`estadoM` ='Retirada')  
         AND (im.estado = 'Inscrita' or im.estado = 'Reprobada' or im.estado = 'Retirada')");*/
 
-        $consulMaterias=$pdo->prepare("SELECT m.`idMateria`, m.nombreMateria, m.idExpedienteU, m.Estado, m.estadoM
-        FROM materias m
-        WHERE m.idExpedienteU=? And m.Estado ='Activo' and estadoM!='Aprobada'");
+        $consulMaterias=$pdo->prepare("SELECT * FROM materias WHERE idExpedienteU = ? ");
 
        $consulMaterias->execute(array($idExpedienteU));
-
-
-
         
         if ($consulMaterias->rowCount()>=1)
         {
            while ($fila2=$consulMaterias->fetch())
            { 
+               if( $fila2['estadoM']!='Aprobada'){
+                if ($fila2['estadoM'] !='Inscrita') {
 
-
-              if ($fila2['estadoM'] !='Inscrita') {
-
-                echo "<tr>
-                    <td >".$fila2['idMateria']."</td>
-                    <td class='oscuro'>".$fila2['nombreMateria']."</td>
-                    <td >".$fila2['Estado']."</td>
+                    echo "<tr>
+                        <td >".$fila2['idMateria']."</td>
+                        <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                        <td >".$fila2['Estado']."</td>                
+                        <td>
+                        <center>
+                         <button type='button' id=".$fila2['idMateria']." class='btn btn-primary' data-toggle='modal' data-target='#ModalMateria' onclick='mandarId(id)' ><i class='fa fa-check'></i>
+                         </button>
+                        </center>
+                        </td>
+                      </tr>";     
+                  }else
+                     {
+    
+                       echo 
+                       "<tr>
+                             <td >".$fila2['idMateria']."</td>
+                             <td class='oscuro'>".$fila2['nombreMateria']."</td>
+                             <td >".$fila2['estadoM']."</td>        
+                             <td>
+                        <center>
+                        <a href='javascript:void(0)' data-toggle='modal' data-target='#modalFinal' class='btn btn-danger btn-icon-split'>
+                        <i class='fa fa-ban'></i></a>
+                        </center>
+                        </td>
+                      </tr>"; 
+                       } //fin de else
+    
                     
-                    <td>
+               }else{
 
-
-
-                    <center>
-                     <button type='button' id=".$fila2['idMateria']." class='btn btn-primary' data-toggle='modal' data-target='#ModalMateria' onclick='mandarId(id)' ><i class='fa fa-check'></i>
-                     </button>
-                    </center>
-                    </td>
-                  </tr>";     
-
-        
-         
-              }else
-                 {
-
-                   echo "<tr>
-                    <td >".$fila2['idMateria']."</td>
-                    <td class='oscuro'>".$fila2['nombreMateria']."</td>
-                    <td >".$fila2['estadoM']."</td>
-                   
-                    <td>
-                    <center>
-                    <a href='javascript:void(0)' data-toggle='modal' data-target='#modalFinal' class='btn btn-danger btn-icon-split'>
-                    <i class='fa fa-ban'></i></a>
-                    </center>
-                    </td>
-                  </tr>";     
-
-       
-                   } //fin de else
-
-            
+               }
+              
            }//fin de while
         }else{
               echo "<tr><td colspan='8'>No ha agregado ninguna Asignatura</td></tr>";
-             }//fin de else-if
-                                       
-
-                                  
+             }//fin de else-if                           
             ?>
-
-
-
                     </tbody>
 
                     <tfoot>
@@ -360,26 +218,52 @@ $(document).ready(function() {
                     Para que su solicitud sea terminada con exito agregue los siguientes datos que se le solicitan.
                 </div>
 
-
+                <?php
+$date = date('Y');
+?>
                 <form action="Modelo/ModeloMaterias/SubirPdfCiclo.php" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <label class="" for="ciclo">Ciclo:</label>
                         <select name="ciclo" id="ciclo" class="ciclo form-control">
+                            <!-- año 2015 -->
+                            <option disabled>2015</option>
                             <option value="Ciclo 01-2017">Ciclo 01-2015</option>
                             <option value="Ciclo 02-2017">Ciclo 02-2015</option>
+                            <option value="Ciclo 03-2017">Ciclo 03-2015</option>
+                            <!-- año 2016 -->
+                            <option disabled>2016</option>
                             <option value="Ciclo 01-2017">Ciclo 01-2016</option>
                             <option value="Ciclo 02-2017">Ciclo 02-2016</option>
+                            <option value="Ciclo 03-2017" title="Interciclo">Ciclo 03-2016</option>
+                            <!-- año 2017 -->
+                            <option disabled>2017</option>
                             <option value="Ciclo 01-2017">Ciclo 01-2017</option>
                             <option value="Ciclo 02-2017">Ciclo 02-2017</option>
+                            <option value="Ciclo 03-2017" title="Interciclo">Ciclo 03-2017</option>
+                            <!-- año 2018 -->
+                            <option disabled>2018</option>
                             <option value="Ciclo 01-2018">Ciclo 01-2018</option>
                             <option value="Ciclo 02-2018">Ciclo 02-2018</option>
+                            <option value="Ciclo 03-2018" title="Interciclo">Ciclo 03-2018</option>
+                            <!-- año 2019 -->
+                            <option disabled>2019</option>
                             <option value="Ciclo 01-2019">Ciclo 01-2019</option>
                             <option value="Ciclo 02-2019">Ciclo 02-2019</option>
-                            <option value="Ciclo 01-<?php echo $date = date('Y');?>">Ciclo
-                                01-<?php echo $date = date('Y');?></option>
-                            <option value="Ciclo 02-<?php echo $date = date('Y');?>">Ciclo
-                                02-<?php echo $date = date('Y');?></option>
+                            <option value="Ciclo 03-2019" title="Interciclo">Ciclo 03-2019</option>
+                            <!-- año 2020 -->
+                            <option disabled>2020</option>
+                            <option value='Ciclo 01-2020'>Ciclo 01-2020</option>
+                            <option value='Ciclo 02-2020'>Ciclo 02-2020</option>
+                            <option value='Ciclo 03-2020' title="Interciclo">Ciclo 03-2020</option>
+                            <!-- año 2021 -->
+                            <option disabled>2021</option>
+                            <option value='Ciclo 01-2021'>Ciclo 01-2021</option>
+                            <option value='Ciclo 02-2021'>Ciclo 02-2021</option>
+                            <option value='Ciclo 03-2021' title="Interciclo">Ciclo 03-2021</option>";
+
+
+
                         </select>
                     </div>
 

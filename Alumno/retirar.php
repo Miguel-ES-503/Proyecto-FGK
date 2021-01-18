@@ -34,8 +34,43 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect2" class="float-left">Ciclo actual:</label>
                         <select class="form-control" name="ciclo" id="exampleFormControlSelect1">
-                            <option name="ciclo">01-<?php echo date("Y")?></option>
-                            <option name="ciclo">02-<?php echo date("Y")?></option>
+                              <!-- año 2015 -->
+                              <option disabled>2015</option>
+                            <option value="Ciclo 01-2017">Ciclo 01-2015</option>
+                            <option value="Ciclo 02-2017">Ciclo 02-2015</option>
+                            <option value="Ciclo 03-2017">Ciclo 03-2015</option>
+                            <!-- año 2016 -->
+                            <option disabled>2016</option>
+                            <option value="Ciclo 01-2017">Ciclo 01-2016</option>
+                            <option value="Ciclo 02-2017">Ciclo 02-2016</option>
+                            <option value="Ciclo 03-2017" title="Interciclo">Ciclo 03-2016</option>
+                            <!-- año 2017 -->
+                            <option disabled>2017</option>
+                            <option value="Ciclo 01-2017">Ciclo 01-2017</option>
+                            <option value="Ciclo 02-2017">Ciclo 02-2017</option>
+                            <option value="Ciclo 03-2017" title="Interciclo">Ciclo 03-2017</option>
+                            <!-- año 2018 -->
+                            <option disabled>2018</option>
+                            <option value="Ciclo 01-2018">Ciclo 01-2018</option>
+                            <option value="Ciclo 02-2018">Ciclo 02-2018</option>
+                            <option value="Ciclo 03-2018" title="Interciclo">Ciclo 03-2018</option>
+                            <!-- año 2019 -->
+                            <option disabled>2019</option>
+                            <option value="Ciclo 01-2019">Ciclo 01-2019</option>
+                            <option value="Ciclo 02-2019">Ciclo 02-2019</option>
+                            <option value="Ciclo 03-2019" title="Interciclo">Ciclo 03-2019</option>
+                            <!-- año 2020 -->
+                            <option disabled>2020</option>
+                            <option value='Ciclo 01-2020'>Ciclo 01-2020</option>
+                            <option value='Ciclo 02-2020'>Ciclo 02-2020</option>
+                            <option value='Ciclo 03-2020' title="Interciclo">Ciclo 03-2020</option>
+                            <!-- año 2021 -->
+                            <option disabled>2021</option>
+                            <option value='Ciclo 01-2021'>Ciclo 01-2021</option>
+                            <option value='Ciclo 02-2021'>Ciclo 02-2021</option>
+                            <option value='Ciclo 03-2021' title="Interciclo">Ciclo 03-2021</option>";
+
+
                         </select>
                     </div>
                     <div class="form-group"><br>
