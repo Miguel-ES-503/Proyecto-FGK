@@ -211,12 +211,6 @@ $stmt99452464->execute();
   $stmt9 =$dbh->prepare("SELECT * FROM `inscripcionciclos` WHERE `idExpedienteU` = ?");
   $stmt9->execute(array($idExpedienteU));
 
-  $stmt16584 = $dbh->prepare("SELECT * FROM `materias` WHERE  `idExpedienteU` = ? ORDER BY estadoM DESC");
-  $stmt16584->execute(array($idExpedienteU));
-
-
-
-
 ?>
 <div class="container-fluid text-center">
 
@@ -226,6 +220,11 @@ $stmt99452464->execute();
             <h2 class="main-title">Expediente Universidad</h2>
 
         </div>
+    </div>
+    <div class="alerta">
+        <?php
+    include "config/Alerta.php";
+      ?>
     </div>
     <div class="row">
         <div class="text-center align-self-center " id="carnet" style="background-color:  #c7c7c7;">
@@ -359,7 +358,8 @@ $stmt99452464->execute();
                                     </h1>
                                 </div>
                                 <div class="card-footer">
-                                    <small><button  type="button"  data-toggle="modal" data-target="#notas4" style="color: white; background-color: transparent; border-color: transparent; cursor: default;" >APROBADAS</button></small>
+                                    <small><button type="button" data-toggle="modal" data-target="#notas4"
+                                            style="color: white; background-color: transparent; border-color: transparent; cursor: default;">APROBADAS</button></small>
                                 </div>
                             </div>
                         </div>
@@ -371,7 +371,8 @@ $stmt99452464->execute();
                                     </h1>
                                 </div>
                                 <div class="card-footer">
-                                    <small><button  type="button"  data-toggle="modal" data-target="#notas3" style="color: white; background-color: transparent; border-color: transparent; cursor: default;" >REPROBADAS</button></small>
+                                    <small><button type="button" data-toggle="modal" data-target="#notas3"
+                                            style="color: white; background-color: transparent; border-color: transparent; cursor: default;">REPROBADAS</button></small>
                                 </div>
                             </div>
                         </div>
@@ -383,11 +384,12 @@ $stmt99452464->execute();
                                     </h1>
                                 </div>
                                 <div class="card-footer">
-                                    <small><button  type="button"  data-toggle="modal" data-target="#notas2" style="color: white; background-color: transparent; border-color: transparent; cursor: default;" >RETIRADAS</button></small>
+                                    <small><button type="button" data-toggle="modal" data-target="#notas2"
+                                            style="color: white; background-color: transparent; border-color: transparent; cursor: default;">RETIRADAS</button></small>
                                 </div>
                             </div>
                         </div>
-                       
+
                         <div class="col-lg-3 col-xs-6 text-center">
                             <div class="panel panel-udb text-white bg-primary">
                                 <div class="card-header">
@@ -396,11 +398,12 @@ $stmt99452464->execute();
                                     </h1>
                                 </div>
                                 <div class="card-footer">
-                                    <small > <button  type="button"  data-toggle="modal" data-target="#notas" style="color: white; background-color: transparent; border-color: transparent; cursor: default;" >INSCRITAS</button></small>
+                                    <small> <button type="button" data-toggle="modal" data-target="#notas"
+                                            style="color: white; background-color: transparent; border-color: transparent; cursor: default;">INSCRITAS</button></small>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -432,7 +435,6 @@ $stmt99452464->execute();
                         <th scope="col">Ciclo Universidad</th>
                         <th scope="col">Comprobante</th>
                         <th scope="col">Detalles</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -454,9 +456,11 @@ $stmt99452464->execute();
         $ciclou = $fila9["Id_InscripcionC"];
         $nota = $fila[""];
 //consulta para obtener nota de materia
-$stmt1658484 = $dbh->prepare("SELECT nota FROM `inscripcionmateria` WHERE  `Id_InscripcionC` = ?");
+$stmt1658484 = $dbh->prepare("SELECT * FROM `inscripcionmateria` WHERE  `Id_InscripcionC` = ?");
 $stmt1658484->execute(array($ciclou));
 
+$stmt16584842 = $dbh->prepare("SELECT * FROM `inscripcionmateria` WHERE  `Id_InscripcionC` = ?");
+$stmt16584842->execute(array($ciclou));
 
       echo " <tr class='table-dark' style ='color: black;'>";
         echo "<td scope=\"row\">".$fila9["Id_InscripcionC"]."</td>";
@@ -475,11 +479,22 @@ $stmt1658484->execute(array($ciclou));
          $num2 =1;
         //echo "<td><a class=\"btn btn-danger\" href=\"../pdfInscripCiclos/?id=".$fila9["comprobante"]."\"><i class=\"fas fa-file-pdf\"></i></a></td>";
         echo "<td>";
-        echo "<button type='button' class='btn btn-info' data-toggle='modal' 
-        data-target='#exampleModalCenter".($numero++)."'>
-        <i class=\"fas fa-info-circle\"></i></button></td>";
-      echo "</tr>";
+        echo "<button type='button' class='btn btn-info' data-toggle='modal' data-target='#exampleModalCenter".($numero++)."'><i class=\"fas fa-info-circle\"></i></button>
+        
 
+        <div class='btn-group' role='group' aria-label='Button group with nested dropdown'>
+  <div class='btn-group' role='group'>
+    <button id='btnGroupDrop1' type='button' class='btn btn-secondary ' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+    <i class='fas fa-ellipsis-v'></i>
+    </button>
+    <div class='dropdown-menu' aria-labelledby=btnGroupDrop1'>
+      <a class='dropdown-item' href='Modelo/ModeloMaterias/EliminarInscripcio.php?id=$ciclou&idAlumno=$idExpedienteU' ><button class='btn btn-danger'>Eliminar</button></a>
+      <a class='dropdown-item' href='ModificarInscripcio.php?id=$ciclou&idAlumno=$idExpedienteU' ><button class='btn btn-warning'>Modificar</button></a>
+    </div>
+  </div>
+</div></td>";
+    
+      echo "</tr>";
       
       $stmt123456 = $pdo->query("SELECT m.nombreMateria  FROM inscripcionmateria i INNER JOIN materias m
       ON m.idMateria = i.idMateria INNER JOIN inscripcionciclos n ON n.Id_InscripcionC = i.Id_InscripcionC 
@@ -511,16 +526,16 @@ $stmt1658484->execute(array($ciclou));
                              }
                              echo "</ul>";
             echo "</div>";
-        echo "</div>
+        echo "</div>";
 
 
-        <div class='col-sm-3' >";
+       echo "<div class='col-sm-3' >";
                   echo "<div class='card' style='width: 10rem; >
                  <ul class='list-group list-group-flush'>";
                    echo"   <li class='list-group-item'> &nbsp; &nbsp;"."Estado"."&nbsp;". "  </li> ";
-                  while ($row2 = $stmt16584->fetch()) {
-                      if ($row2["estadoM"] != null) {
-                        echo " <li class='list-group-item'>".trim($row2["estadoM"])
+                  while ($row2 = $stmt1658484->fetch()) {
+                      if ($row2["estado"] != null) {
+                        echo " <li class='list-group-item'>".trim($row2["estado"])
                         ."<p class=''></p> "."</li> ";
                         
                       }
@@ -533,7 +548,7 @@ echo "</div>";
         echo "<div class='card' style='width: 10rem; >
                  <ul class='list-group list-group-flush'>";
                    echo"   <li class='list-group-item'> &nbsp; &nbsp;"."Nota"."&nbsp;". "  </li> ";
-                  while ($row2 = $stmt1658484->fetch()) {
+                  while ($row2 = $stmt16584842->fetch()) {
                         echo " <li class='list-group-item'>"."<p class=''></p> ".trim($row2["nota"])
                         ."&nbsp;"."</li> ";
                        
@@ -598,30 +613,13 @@ echo "</div>";
                     </div>
                     <br><br>
                     <div>
-
-                        <?php 
-            $stmt1 =$dbh->prepare("SELECT `ID_Alumno`  FROM `alumnos` WHERE correo='".$_SESSION['Email']."'");
-                      
-            $stmt1->execute();
-
-            while($fila = $stmt1->fetch()){
-              $alumno=$fila["ID_Alumno"];
-                                
-            }
-            ?>
-
-
                         <!--idalumnos-->
                         <input type="hidden" name="alumno" value="<?php echo $alumno;?>">
-
                         <!--id expedente-->
                         <input type="hidden" name="expediente" value="<?php echo $idExpedienteU;?>">
                     </div>
-
             </div>
             <div class="modal-footer">
-
-
                 <input class="btn btn-primary btn-rounded" type="submit" name="actualizar" value="Cerrar "
                     data-dismiss="modal">
                 <input class="btn btn-primary btn-rounded" type="submit" name="actualizar" value="Guardar Cambios "
@@ -635,8 +633,6 @@ echo "</div>";
 </div>
 
 
-
-
 </div>
 
 </div>
@@ -646,116 +642,116 @@ echo "</div>";
 
 <!-- Modal -->
 <div class="modal fade" id="notas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Listado de materias inscritas</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <ul>
-      <?php 
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Listado de materias inscritas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <?php 
 
         while ($row = $stmt9945246->fetch()) { 
             echo "<li>". utf8_encode(utf8_decode($row['nombreMateria']))."</li>";
         }
 
       ?>
-      </ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 
 <!-- Modal -->
 <div class="modal fade" id="notas2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Listado de materias retiradas</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <ul>
-      <?php 
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Listado de materias retiradas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <?php 
 
         while ($row = $stmt99452462->fetch()) { 
             echo "<li>". utf8_encode(utf8_decode($row['nombreMateria']))."</li>";
         }
 
       ?>
-      </ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 
 <!-- Modal -->
 <div class="modal fade" id="notas3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Listado de materias reprobadas</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <ul>
-      <?php 
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Listado de materias reprobadas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <?php 
 
         while ($row = $stmt99452463->fetch()) { 
             echo "<li>". utf8_encode(utf8_decode($row['nombreMateria']))."</li>";
         }
 
       ?>
-      </ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- Modal -->
 <div class="modal fade" id="notas4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Listado de materias Aprobadas</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <ul>
-      <?php 
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Listado de materias Aprobadas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <?php 
 
         while ($row = $stmt99452464->fetch()) { 
             echo "<li>". utf8_encode(utf8_decode($row['nombreMateria']))."</li>";
         }
 
       ?>
-      </ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <?php

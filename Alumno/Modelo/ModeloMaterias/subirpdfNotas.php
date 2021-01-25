@@ -97,12 +97,14 @@ error_reporting(0);
                 //Si todo fue correcto muestra el resultado con exito;
           // header("Location: ../../HistorialNotas.php?id=". $IdCiclo);
           header("Location: ../../expedienteU.php");
-          echo "funciona";
+          $_SESSION['message'] = 'Comprobante de notas actualizado';
+          $_SESSION['message2'] = 'success';
            
         }
         else
         {
-            echo " no se guarda";
+          $_SESSION['message'] = 'Error al acualizar el comprobante';
+          $_SESSION['message2'] = 'danger';
         }
         }
     else

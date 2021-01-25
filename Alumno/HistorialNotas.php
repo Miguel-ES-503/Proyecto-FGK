@@ -184,7 +184,7 @@ div.centerTable table {
       INNER JOIN inscripcionciclos IC
       ON IC.Id_InscripcionC=IM.Id_InscripcionC
   
-      WHERE M.idExpedienteU = ? AND IM.estado = 'Reprobada' OR IM.estado = 'Aprobada'");
+      WHERE M.idExpedienteU = ? AND (IM.estado = 'Reprobada' OR IM.estado = 'Aprobada' OR IM.estado ='Retirada' ) ");
 
        $consulMaterias->execute(array($idExpedienteU));
 

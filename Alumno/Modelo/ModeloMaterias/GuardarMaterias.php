@@ -1,6 +1,6 @@
 <?php
 require_once "../../../BaseDatos/conexion.php";
-
+session_start();
 
 
 
@@ -58,43 +58,59 @@ $n6=mt_rand(1,9);
     }
 
 
+    $verificarNombreMateria=$pdo->prepare("SELECT * FROM materias WHERE nombreMateria='$nomMateria' AND idExpedienteU='$idExpedienteU'");
+    $verificarNombreMateria->execute();
 
+    $valor= $verificarNombreMateria->rowCount();
+    $nombreMateria="";
+    while ($row = $verificarNombreMateria->fetch()) {
+      $nombreMateria= $row ['nombreMateria'];  
 
-    	//consulta para insertar solicitud de transporte
-    $consulta=$pdo->prepare("INSERT INTO materias(idMateria,idExpedienteU,nombreMateria,Estado, estadoM) VALUES(:idMateria,:idExpedienteU,:nombreMateria,'Activo', null)");
+    }
 
+    
+    if($nombreMateria == $nomMateria) {
+      
+            $_SESSION['message'] = 'Error, Registro duplicado';
+            $_SESSION['message2'] = 'danger';
+            header("Location: ../../pensum.php");
+    } else {
+     
 
-		$consulta->bindParam(':idMateria',$materia);
-		$consulta->bindParam(':idExpedienteU',$idExpedienteU);
-		//$consulta->bindParam(':cicloPensum',$ciclou);
-		$consulta->bindParam(':nombreMateria',$nomMateria);
-		
-		
-	
-	
-	
+      //Crea materia
+      $consulta=$pdo->prepare("INSERT INTO materias(idMateria,idExpedienteU,nombreMateria,Estado, estadoM) 
+        VALUES(:idMateria,:idExpedienteU,:nombreMateria,'Activo', null)");
 
+        $consulta->bindParam(':idMateria',$materia);
+        $consulta->bindParam(':idExpedienteU',$idExpedienteU);
+        //$consulta->bindParam(':cicloPensum',$ciclou);
+        $consulta->bindParam(':nombreMateria',$nomMateria);
 
-	if (!$consulta->execute()) 
-	   {
-	   		header("Location: ../../pensum.php");
-	   		echo "No se puedo guardar el dato";
-	    }
-		else
-		{			 	
-			header("Location: ../../pensum.php");
-			echo "Funciona";
-		}
+        if($consulta->execute()) {
+            //Si todo fue correcto muestra el resultado con exito;
+          $_SESSION['message'] = 'Materia agregada';
+          $_SESSION['message2'] = 'success';
+          header("Location: ../../pensum.php");
+        }else {
+    
+         
+            $_SESSION['message'] = 'Error, No se pudo guardar el dato';
+            $_SESSION['message2'] = 'danger';
+            header("Location: ../../pensum.php");
+        }
 
+    }//fin de if
 
+  }//fin while
 
-
-
-
-}
+    
 else
 {
-	echo "dATOS NO RECIBIDO";
+   //Si todo fue correcto muestra el resultado con exito;
+   $_SESSION['message'] = 'Datos no recibidos';
+   $_SESSION['message2'] = 'danger';
+   header("Location: ../../pensum.php");
+  
 }
 
 

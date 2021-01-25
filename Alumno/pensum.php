@@ -48,6 +48,11 @@
 	<a href="javascript:history.back();"><img src="../img/proximo.svg" class="icon"></a>
 	<h2 class="main-title" >Pensum</h2>
 </div>
+         <div class="alerta">
+            <?php
+            include "config/Alerta.php";
+            ?>
+          </div>
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #2D2D2E">
 
         <!-- Navbar brand -->
@@ -341,7 +346,7 @@
 
 
     <!-- MODAL Materias -->
-    <!--**************-->
+    <!--******-->
 
     <div class="modal fade " id="ModalMateria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -384,7 +389,7 @@
         </div>
 
         <!-- FIN MODAL Pensum -->
-        <!--**********************-->
+        <!--********-->
 
 
     </div>
