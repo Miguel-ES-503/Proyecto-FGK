@@ -176,7 +176,7 @@ $stmt99452464->execute();
 
 
 
-  $stmt6 =$dbh->prepare("SELECT COUNT(idMateria) AS 'RETIRADAS' FROM materias WHERE idExpedienteU = ? AND estadoM = 'Retirada' ");
+ $stmt6 =$dbh->prepare("SELECT COUNT(Id_InscripcionM) AS 'RETIRADAS' FROM inscripcionmateria IM INNER JOIN inscripcionciclos IC ON IM.Id_InscripcionC = IC.Id_InscripcionC WHERE IC.idExpedienteU = ? AND estado = 'Retirada' ");
   // Ejecutamos
   $stmt6->execute(array($idExpedienteU));
 
