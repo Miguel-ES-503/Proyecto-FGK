@@ -313,14 +313,14 @@ $incripcionCiclo= $_GET['id'];
                         <select name="ciclo" id="ciclo" class="ciclo form-control">
                             <!-- año 2015 -->
                             <option disabled>2015</option>
-                            <option value="Ciclo 01-2017">Ciclo 01-2015</option>
-                            <option value="Ciclo 02-2017">Ciclo 02-2015</option>
-                            <option value="Ciclo 03-2017">Ciclo 03-2015</option>
+                            <option value="Ciclo 01-2015">Ciclo 01-2015</option>
+                            <option value="Ciclo 02-2015">Ciclo 02-2015</option>
+                            <option value="Ciclo 03-2015">Ciclo 03-2015</option>
                             <!-- año 2016 -->
                             <option disabled>2016</option>
-                            <option value="Ciclo 01-2017">Ciclo 01-2016</option>
-                            <option value="Ciclo 02-2017">Ciclo 02-2016</option>
-                            <option value="Ciclo 03-2017" title="Interciclo">Ciclo 03-2016</option>
+                            <option value="Ciclo 01-2016">Ciclo 01-2016</option>
+                            <option value="Ciclo 02-2016">Ciclo 02-2016</option>
+                            <option value="Ciclo 03-2016" title="Interciclo">Ciclo 03-2016</option>
                             <!-- año 2017 -->
                             <option disabled>2017</option>
                             <option value="Ciclo 01-2017">Ciclo 01-2017</option>
