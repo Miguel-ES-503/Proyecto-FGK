@@ -86,7 +86,11 @@ $(document).ready(function() {
 
     </div>
     <br>
-
+    <div class="alerta">
+        <?php
+    include "config/Alerta.php";
+      ?>
+    </div>
     <!--Información de solicitud-->
     <div class="row">
 
