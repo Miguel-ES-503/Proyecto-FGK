@@ -15,9 +15,12 @@ $n3=mt_rand(1,9);
 $n4=mt_rand(1,9);
 $n5=mt_rand(1,9);
 $n6=mt_rand(1,9);
+$n7=mt_rand(1,9);
+$n8=mt_rand(1,9);
+$n9=mt_rand(1,9);
 
  //Generamos el id con el año y 4 numeros random
- $materia= $MI."".$n1."".$n2."".$n3."".$n4."".$n5."".$n6;
+ $materia= $MI.$n1.$n2.$n3.$n4.$n5.$n6.$n8.$n9;
   $comp=1;
 
 
@@ -46,19 +49,22 @@ if ($stmt->execute()) {
         if ($consulta2->execute()) {
             $_SESSION['message'] = 'Materia ingresada a la inscripcion :'. $idinscripcion;
             $_SESSION['message2'] = 'success';
-            header("Location: ../../expedienteU.php");
-        }else{
+            header("Location: ../../ModificarInscripcio.php?id=$idinscripcion&idAlumno=$idexpedienteU");
+       }else{
             $_SESSION['message'] = 'Erro al actualizar la Materia '.$idMateria.' a la inscripcion :'. $idinscripcion;
             $_SESSION['message2'] = 'danger';
-            header("Location: ../../expedienteU.php");
+            header("Location: ../../ModificarInscripcio.php?id=$idinscripcion&idAlumno=$idexpedienteU");
         }
     }else{
         $_SESSION['message'] = 'Erro al insertar la Materia '.$idMateria.' a la inscripcion :'. $idinscripcion;
         $_SESSION['message2'] = 'danger';
-        header("Location: ../../expedienteU.php");
+        header("Location: ../../ModificarInscripcio.php?id=$idinscripcion&idAlumno=$idexpedienteU");
     }
         }else{
-            echo "Error";
+            $_SESSION['message'] = 'Error fatal';
+            $_SESSION['message2'] = 'danger';
+            header("Location: ../../ModificarInscripcio.php?id=$idinscripcion&idAlumno=$idexpedienteU");
+    
 }
 
 ?>
