@@ -162,7 +162,7 @@ $stmt99452464->execute();
 
 
 
-  $stmt5 =$dbh->prepare("SELECT COUNT(idMateria) AS 'Reprobado' FROM `materias` WHERE `idExpedienteU` = ? AND estadoM ='Reprobada'");
+  $stmt5 =$dbh->prepare("SELECT COUNT(Id_InscripcionM) AS 'Reprobada' FROM inscripcionmateria IM INNER JOIN inscripcionciclos IC ON IM.Id_InscripcionC = IC.Id_InscripcionC WHERE IC.idExpedienteU = ? AND estado = 'Reprobada' ");
   // Ejecutamos
   $stmt5->execute(array($idExpedienteU));
 
@@ -170,7 +170,7 @@ $stmt99452464->execute();
   if ($stmt5->rowCount() >=0)
   {
     $fila5=$stmt5->fetch();
-     $Reprobado = $fila5['Reprobado'];
+     $Reprobado = $fila5['Reprobada'];
 
   }
 
