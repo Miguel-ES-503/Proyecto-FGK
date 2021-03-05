@@ -1,0 +1,126 @@
+.fb_gd_wrap .content {
+    height: 200px;
+    background: transparent;
+    z-index: 10;
+    position: absolute;
+    left: 600px;
+}
+
+.fb_gd_wrap .content::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: -30px;
+}
+
+.fb_gd_wrap .header {
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+}
+
+.fb_gd_wrap .header .text {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.fb_gd_wrap .header .btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    background: transparent;
+}
+
+.fb_gd_wrap .body {
+    height: 100px;
+}
+
+.fb_gd_wrap .body .text {
+    font-size: .9rem;
+    color: #999;
+    overflow: hidden;
+    width: 360px;
+    margin: 0 20px;
+}
+
+.fb_gd_wrap .body .textList {
+    padding: 0;
+    margin: 0;
+    width: 10000px;
+    font-size: 0;
+    margin-left: 0;
+    transition: all .5s;
+}
+
+.fb_gd_wrap .body .textList p {
+    display: inline-block;
+    font-size: 14px;
+    width: 360px;
+    padding: 0;
+    vertical-align: top;
+}
+
+.fb_gd_wrap .footer {
+    height: 50px;
+    border-radius: 0 0 5px 5px;
+    font-size: 0;
+}
+
+.fb_gd_wrap .footer .btn {
+    display: inline-block;
+    width: 80px;
+    border: none;
+    height: 100%;
+    padding: 0;
+    font-size: 16px;
+    vertical-align: top;
+    color: #fff;
+    background: transparent;
+}
+
+.fb_gd_wrap .footer .btn:hover {
+    color: #666;
+}
+
+.fb_gd_wrap .footer .steps {
+    display: inline-block;
+    width: 240px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.fb_gd_wrap .footer .dot {
+    width: 8px;
+    height: 8px;
+    background: transparent;
+    border: 1px solid #666;
+    margin: 30px 12px 12px 12px;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+}
+
+.fb_gd_wrap .footer .line::after {
+    content: "";
+    display: block;
+    width: 24px;
+    border-top: 1px solid #666;
+    position: absolute;
+    top: 4px;
+    left: 9px;
+}
+
+.fb_gd_wrap .footer .dot::before {
+    content: attr(data-step);
+    display: block;
+    color: #fff;
+    position: absolute;
+    top: -20px;
+    left: 1.2px;
+    font-size: 10px;
+}

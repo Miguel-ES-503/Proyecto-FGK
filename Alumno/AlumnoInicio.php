@@ -2,7 +2,7 @@
   require_once 'templates/head.php';
 ?>
 <title>Expediente de alumno</title>
-
+<link rel="stylesheet" href="CSS/tour.css">
 
 <?php
 //llama las plantillas
@@ -300,6 +300,48 @@ while($fila2 = $stmt2->fetch()){
     </div>
 </nav>
 
+<!-- ejemplo de como crear un guide tour -->
+
+<!-- 
+<div class="fb_gd_wrap " style="z-index: 999;">
+  <div class="content bg-light" id="guideContent">
+    <div class="header">
+      <span class="text">Tour de actualización</span>
+      <button class="btn" id="closeBtn">&times;</button>
+    </div>
+    <div  class="body">
+   
+      <div  class="text">
+        <div id="guideBodyText" class="textList">
+          <p>El historial de todas las materias que has llevado con su respectiva nota lo prodrás encontrar en <strong> Historial nota</strong> </p>
+          <p>step 2: here you can make your own house or do whatever your like when you at house. for example you can clean the house or you can sleep in the house</p>
+          <p>step 3: when you would like to earn mony or get what you wart here you can buy or sell products here!</p>
+          <p>step 4: if you are tired you can choose here to have fun there are all kinds of entertainments! just enjoy yourself and take a really relax!</p>
+          <p>step 5: making friends is so important for everyone! you can find others users here and contract them at any time!</p>
+        </div>                            
+      </div>
+    </div>
+    <div class="footer bg-dark">
+      <button id="guidePrevBtn" class="btn prev" style="background-color: #be0032;">previous</button>
+      <ul class="steps" style='background-color:#333;'>
+        <li class="dot line active"></li>
+        <li class="dot line "></li>
+        <li class="dot line "></li>
+        <li class="dot line "></li>
+        <li class="dot  "></li>
+      </ul>
+      <button id="guideNextBtn"  class="btn next btn" style="background-color: #be0032;">next</button>
+    </div>
+  </div>
+</div> 
+</div>
+
+</div>
+
+ -->
+
+
+
 
 
 
@@ -445,7 +487,7 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
                     <h3 class="subtitle"><?php  echo  round($Promedio,2) ?> %</h3>
                     <span id="subtitle"><?php echo $EstadoBeca; ?></span>
                 </div>
-                <div class="status4" style=";height:150px ">
+                <div class="status4" style="height:150px ">
                     <p>Horas de <br>vinculación</p>
                     <a href="solicitudHoras.php?id=<?php echo $alumno; ?>&ciclo=<?php echo $cicloActual; ?>"
                         class="btn btn-info" id="button-info">Registrar</a>
@@ -521,15 +563,13 @@ $Porc2 = round((($TotalReunionAlumno * 100)/$TotalReuniones),1);
 
 </tbody>
 </table>
-</div>
 
-</div>
 
 <!-- /#page-content-wrapper -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 
 
-
+<script src="JS/tour.js"></script>
 <script src="main.js"></script>
 <?php include "GRAFICA.php"?>
 <?php include "GRAFICA2.php"?>

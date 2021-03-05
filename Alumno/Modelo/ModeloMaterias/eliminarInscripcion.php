@@ -12,8 +12,7 @@ require_once "../../../BaseDatos/conexion.php";
 if ($response = $q->execute()) {
   $sql2 = $pdo->prepare("UPDATE  materias SET estadoM = ? WHERE idMateria = ? ");
   // validar si la segunda consulta se ejecuto
-  if($sql2->execute(array(" ",$iddescripcion))){
-      echo "Chale ya funcionado";
+  if($sql2->execute(array(null,$iddescripcion))){
       //Si todo fue correcto muestra el resultado con exito;
 	    $_SESSION['message'] = 'materia desinscrita';
 	    $_SESSION['message2'] = 'success';
@@ -28,7 +27,4 @@ if ($response = $q->execute()) {
   $_SESSION['message2'] = 'danger';
   header("Location: ../../InscripcionMateriasCiclo.php?id=".$idInscripcionCiclo);
 }
-
-
- 
 ?>
